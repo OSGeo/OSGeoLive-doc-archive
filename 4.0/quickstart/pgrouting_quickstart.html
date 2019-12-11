@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pgRouting Quickstart &mdash; OSGeo-Live v4.0 documentation</title>
+    <link rel="stylesheet" href="_static/howto.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '#',
+        VERSION:     '4.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.0 documentation" href="index.html" />
+    <link rel="next" title="SAGA GIS Quickstart" href="saga_quickstart.html" />
+    <link rel="prev" title="Ossim Quickstart" href="ossim_quickstart.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+      <ul id="breadcrumbs">
+            <li class="right" style="margin-right: 10px">
+              <a href="genindex.html" title="General Index"
+                 accesskey="I">index</a></li>
+            <li class="right" >
+              <a href="saga_quickstart.html" title="SAGA GIS Quickstart"
+                 accesskey="N">next</a> |</li>
+            <li class="right" >
+              <a href="ossim_quickstart.html" title="Ossim Quickstart"
+                 accesskey="P">previous</a> |</li>
+        <li><a href="quickstart.html">OSGeo-Live v4.0 documentation</a> &raquo;</li>
+        <li><a href="#">pgRouting Quickstart</a></li>
+      </ul>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.pgrouting.org" id="pgrouting-quickstart"><img align="right" alt="pgRouting logo" class="align-right" src="_images/logo-pgRouting.png" style="width: 130.0px; height: 126.0px;" /></a>
+<div class="section" id="id1">
+<h1>pgRouting Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>pgRouting is an extension of <a class="reference external" href="http://www.postgis.org">PostGIS</a> and adds routing functionality to <a class="reference external" href="http://www.postgis.org">PostGIS</a>/<a class="reference external" href="http://www.postgresql.org">PostgreSQL</a>.</p>
+<p>This Quick Start describes how to open a database with the command line and run a basic shortest path query with the sample test data.</p>
+<div class="section" id="running-pgrouting">
+<h2>Running pgRouting<a class="headerlink" href="#running-pgrouting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Open a <em>Applications ‣ Accessories ‣ Terminal</em> window and connect to the <tt class="docutils literal"><span class="pre">pgrouting</span></tt> database:</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre>psql -U user pgrouting
+</pre></div>
+</div>
+<ul class="simple">
+<li>Type <strong>\d</strong> will list you all available tables:</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre>                      <span class="n">List</span> <span class="k">of</span> <span class="n">relations</span>
+ <span class="k">Schema</span> <span class="o">|</span>        <span class="n">Name</span>         <span class="o">|</span>   <span class="k">Type</span>   <span class="o">|</span>  <span class="k">Owner</span>
+<span class="c1">--------+---------------------+----------+----------</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">geography_columns</span>   <span class="o">|</span> <span class="k">view</span>     <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">geometry_columns</span>    <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">spatial_ref_sys</span>     <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">vertices_tmp</span>        <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">vertices_tmp_id_seq</span> <span class="o">|</span> <span class="n">sequence</span> <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">ways</span>                <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="n">postgres</span>
+<span class="p">(</span><span class="mi">6</span> <span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Run the Dijkstra shortest path function:</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">shortest_path</span><span class="p">(</span><span class="s1">&#39;</span>
+<span class="s1">                SELECT gid as id,</span>
+<span class="s1">                         source::integer,</span>
+<span class="s1">                         target::integer,</span>
+<span class="s1">                         length::double precision as cost</span>
+<span class="s1">                        FROM ways&#39;</span><span class="p">,</span>
+                <span class="mi">605</span><span class="p">,</span> <span class="mi">359</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre> <span class="n">vertex_id</span> <span class="o">|</span> <span class="n">edge_id</span> <span class="o">|</span>        <span class="n">cost</span>
+<span class="c1">-----------+---------+---------------------</span>
+       <span class="mi">605</span> <span class="o">|</span>    <span class="mi">5575</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">0717467247513547</span>
+      <span class="mi">1679</span> <span class="o">|</span>    <span class="mi">2095</span> <span class="o">|</span>   <span class="mi">0</span><span class="p">.</span><span class="mi">148344716070272</span>
+       <span class="mi">588</span> <span class="o">|</span>    <span class="mi">2094</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">0611856933258344</span>
+       <span class="p">...</span> <span class="o">|</span>     <span class="p">...</span> <span class="o">|</span>  <span class="p">...</span>
+       <span class="mi">359</span> <span class="o">|</span>      <span class="o">-</span><span class="mi">1</span> <span class="o">|</span>                   <span class="mi">0</span>
+<span class="p">(</span><span class="mi">82</span> <span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Try the wrapper function to get the routing result in a different format:</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="n">gid</span><span class="p">,</span> <span class="n">AsText</span><span class="p">(</span><span class="n">the_geom</span><span class="p">)</span> <span class="k">AS</span> <span class="n">the_geom</span>
+        <span class="k">FROM</span> <span class="n">dijkstra_sp</span><span class="p">(</span><span class="s1">&#39;ways&#39;</span><span class="p">,</span> <span class="mi">605</span><span class="p">,</span> <span class="mi">359</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre>  <span class="n">gid</span>   <span class="o">|</span>                              <span class="n">the_geom</span>
+<span class="c1">--------+---------------------------------------------------------------</span>
+    <span class="mi">168</span> <span class="o">|</span> <span class="n">MULTILINESTRING</span><span class="p">((</span><span class="mi">2</span><span class="p">.</span><span class="mi">1633077</span> <span class="mi">41</span><span class="p">.</span><span class="mi">3802886</span><span class="p">,</span><span class="mi">2</span><span class="p">.</span><span class="mi">1637094</span> <span class="mi">41</span><span class="p">.</span><span class="mi">3803008</span><span class="p">))</span>
+    <span class="mi">169</span> <span class="o">|</span> <span class="n">MULTILINESTRING</span><span class="p">((</span><span class="mi">2</span><span class="p">.</span><span class="mi">1637094</span> <span class="mi">41</span><span class="p">.</span><span class="mi">3803008</span><span class="p">,</span><span class="mi">2</span><span class="p">.</span><span class="mi">1638796</span> <span class="mi">41</span><span class="p">.</span><span class="mi">3803093</span><span class="p">))</span>
+    <span class="mi">170</span> <span class="o">|</span> <span class="n">MULTILINESTRING</span><span class="p">((</span><span class="mi">2</span><span class="p">.</span><span class="mi">1638796</span> <span class="mi">41</span><span class="p">.</span><span class="mi">3803093</span><span class="p">,</span><span class="mi">2</span><span class="p">.</span><span class="mi">1640527</span> <span class="mi">41</span><span class="p">.</span><span class="mi">3803265</span><span class="p">))</span>
+    <span class="p">...</span> <span class="o">|</span> <span class="p">...</span>
+   <span class="mi">5575</span> <span class="o">|</span> <span class="n">MULTILINESTRING</span><span class="p">((</span><span class="mi">2</span><span class="p">.</span><span class="mi">1436976</span> <span class="mi">41</span><span class="p">.</span><span class="mi">3897581</span><span class="p">,</span><span class="mi">2</span><span class="p">.</span><span class="mi">143876</span> <span class="mi">41</span><span class="p">.</span><span class="mi">3903893</span><span class="p">))</span>
+<span class="p">(</span><span class="mi">81</span> <span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>With <strong>\q</strong> command leave the PostgreSQL shell.</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2>What next?<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>pgRouting Website</strong> - Visit the project website <a class="reference external" href="http://www.pgrouting.org">http://www.pgrouting.org</a> to learn more about pgRouting.</li>
+<li><strong>Workshop on DVD</strong> - Included on this LiveDVD is the FOSS4G 2010 pgRouting workshop <cite>&#8220;FOSS4G routing with pgRouting tools, OpenStreetMap road data and GeoEx&#8221;</cite>, available in: <tt class="docutils literal"><span class="pre">/usr/share/pgrouting/workshop/</span></tt></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To update to the latest version of the tutorial, open a terminal window, then run <tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span> <span class="pre">&amp;&amp;</span> <span class="pre">apt-get</span> <span class="pre">upgrade</span> <span class="pre">pgrouting-workshop</span></tt></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <ul id="breadcrumbs">
+            <li class="right" style="margin-right: 10px">
+              <a href="genindex.html" title="General Index"
+                 >index</a></li>
+            <li class="right" >
+              <a href="saga_quickstart.html" title="SAGA GIS Quickstart"
+                 >next</a> |</li>
+            <li class="right" >
+              <a href="ossim_quickstart.html" title="Ossim Quickstart"
+                 >previous</a> |</li>
+        <li><a href="quickstart.html">OSGeo-Live v4.0 documentation</a> &raquo;</li>
+        <li><a href="#">pgRouting Quickstart</a></li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      &copy; Copyright 2010, OSGeo.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.4.
+    </div>
+  </body>
+</html>

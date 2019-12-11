@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GeoKettle &mdash; OSGeo-Live v4.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.geokettle.org/" id="geokettle-overview"><img align="right" alt="project logo" class="align-right" src="../../_images/logo-geokettle.png" style="width: 80.0px; height: 80.0px;" /></a>
+<div class="section" id="geokettle">
+<h1>GeoKettle<a class="headerlink" href="#geokettle" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="data-integration">
+<h2>Data Integration<a class="headerlink" href="#data-integration" title="Permalink to this headline">¶</a></h2>
+<p>GeoKettle is a &#8220;spatially-enabled&#8221; version of the <a class="reference external" href="http://www.pentaho.com/products/data_integration/">Pentaho Data Integration (Kettle)</a>. It is a powerful, metadata-driven spatial ETL (Extract, Transform and Load) tool dedicated to the integration of different data sources for building and updating geospatial databases and data warehouses.</p>
+<p>GeoKettle enables the Extraction of data from data sources, the Transformation of data in order to correct errors, make some data cleansing, change the data structure, make them compliant to defined standards, and the Loading of transformed data into a target DataBase Management System (DBMS), GIS file, or geospatial web service.</p>
+<p>GeoKettle is particularly useful when a user wants to automate complex and repetitive data processing without producing any specific code, to make conversions between various data formats, to migrate data from one DBMS to another, to perform some data feeding tasks into various DBMS, to populate analytical data warehouses for decision support purposes, etc.</p>
+<p>In the geospatial domain, Geokettle compares to FME, a proprietary spatial ETL tool edited by Safe Software. GeoKettle is stable, fast, standards compliant, with hundreds of functions and read/write support for many file formats, services and DBMS. GeoKettle is used by diverse organisations from around the world, including governmental agencies, banks, insurance and geospatial system integrators.</p>
+<a class="reference external image-reference" href="../../_images/geokettle-overview.png"><img align="right" alt="project logo" class="align-right" src="../../_images/geokettle-overview.png" style="width: 512.0px; height: 384.0px;" /></a>
+<div class="section" id="core-features">
+<h3>Core Features<a class="headerlink" href="#core-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Extract data from:<ul>
+<li>35+ database types: MySQL, PostgreSQL, Oracle, ...</li>
+<li>XML files</li>
+<li>XLS files</li>
+<li>Xbase files (dBase, Foxpro, etc)</li>
+<li>File systems information</li>
+<li>Generated data</li>
+<li>MS Access files</li>
+<li>LDAP</li>
+<li>Geospatial data formats: Shapefile, ...</li>
+</ul>
+</li>
+<li>Transformation of data:<ul>
+<li>Engine based data transfer (no code generator)</li>
+<li>Looking up data in databases, files or memory</li>
+<li>Calculating</li>
+<li>Scripting: Javascript, SQL, RegExp</li>
+<li>Splitting</li>
+<li>Mapping</li>
+<li>Selecting</li>
+<li>Partitioning</li>
+<li>Filtering</li>
+<li>Merging</li>
+<li>Joining</li>
+<li>Duplicating</li>
+<li>Clustering (MPP)</li>
+<li>Pivotting</li>
+<li>Geospatial data analysis and processing</li>
+</ul>
+</li>
+<li>Load data into a target format:<ul>
+<li>Database loads</li>
+<li>Data warehouse population</li>
+<li>Partitioned loading</li>
+<li>Bulk loading</li>
+<li>Parallel loading</li>
+<li>Clustering</li>
+</ul>
+</li>
+<li>Environment:<ul>
+<li>Full GUI named &#8220;Spoon&#8221; to edit every transformation options</li>
+<li>Command line tools: execute jobs and transformations</li>
+<li>Web server: remote execution and clustering perfect in cloud
+computing environment for very large datasets processing</li>
+<li>Programming API for Java</li>
+<li>Plugin eco-system</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>Implemented Standards<a class="headerlink" href="#implemented-standards" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>OGC standards compliant (SFS)</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h3>
+<p><strong>Website:</strong> <a class="reference external" href="http://www.geokettle.org/">http://www.geokettle.org/</a></p>
+<p><strong>Licence:</strong> GNU Lesser General Public License (LGPL) version 2.1</p>
+<p><strong>Software Version:</strong> 3.2.0-20090609</p>
+<p><strong>Supported Platforms:</strong> Windows, Linux, Mac, Solaris</p>
+<p><strong>API Interfaces:</strong> Java, Javascript</p>
+<p><strong>Support:</strong> <a class="reference external" href="http://www.spatialytics.org">http://www.spatialytics.org</a> &amp; <a class="reference external" href="http://www.spatialytics.com">http://www.spatialytics.com</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../quickstart/geokettle_quickstart.html">Quickstart documentation</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i>&copy; OSGeo Foundation and LISAsoft 2011... <a href="../disclaimer.html">Disclaimer</a></i></span>
+
+  </body>
+</html>

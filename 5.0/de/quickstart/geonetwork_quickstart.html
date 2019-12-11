@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GeoNetwork Quickstart &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="figure align-right" id="geonetwork-quickstart">
+<img alt="project logo" src="../../_images/logo-GeoNetwork.png" />
+</div>
+<div class="section" id="id1">
+<h1>GeoNetwork Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>GeoNetwork opensource ist ein aus Standards basierendes, verteiltes räumliches Informationsmanagementsystem. Es wurde entwickeltet um Zugriff aus Geodaten von verschiedenen Quellen durch Metadaten zu ermöglichen.</p>
+<p>Diese Anleitung beschreibt die Einrichtung von GeoNetwork, und zusätzlich:</p>
+<ul class="simple">
+<li>Möglichkeiten nach Metadaten zu suchen</li>
+<li>Wie Daten heruntergeladen und angeschaut werden können</li>
+<li>Das Rechtemanagementsystem, Rollen und Nutzergruppen.</li>
+</ul>
+<p>Eine ausführliche Anleitung kann unter <a class="reference external" href="http://localhost:8880/geonetwork/docs/eng/users/index.html">http://localhost:8880/geonetwork/docs/eng/users/index.html</a> gefunden werden. Sie können auch den &#8216;Hilfe&#8217; Link auf der GeoNetwork Webseite anklicken.</p>
+<div class="section" id="start-gn">
+<h2>Start GeoNetwork<a class="headerlink" href="#start-gn" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Wählen Sie &#8220;Start GeoNetwork&#8221; Icon.</li>
+<li>Die Anwendung braucht ein paar Minuten zum starten</li>
+<li>Gehen Sie zur GeoNetwork Webseite <a class="reference external" href="http://localhost:8080/geonetwork">http://localhost:8080/geonetwork</a>. Ihr erster Besuch GeoNetwork sollte wie der Screenshot unten aussehen.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-firstviews.png" src="../../_images/geonetwork-firstviews.png" />
+</div>
+<ul class="simple">
+<li>Um GeoNetwork kennenzulernen laden wir die Beispielmetadaten. Melden Sie sich mit dem Nutzer <em>admin</em> und Passwort <em>admin</em> oben rechts an.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-login.png" src="../../_images/geonetwork-login.png" />
+</div>
+<ul class="simple">
+<li>Sie sollten nun einen <em>Administration</em> Menüpunkt im Banner vorfinden. Klicken Sie auf diesen.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-administration-banner.png" src="../../_images/geonetwork-administration-banner.png" />
+</div>
+<ul class="simple">
+<li>Gehen Sie zum Ende der Seite und klicken Sie auf den &#8216;Add sample metadata&#8217; button.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-addsampledatabutton.png" src="../../_images/geonetwork-addsampledatabutton.png" />
+</div>
+<ul class="simple">
+<li>Gehen Sie zurück auf die Startseite, um mit der Quickstartanleitung fortzufahren. sie sollten nun folgende Ansicht erhalten.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-returntohomepage.png" src="../../_images/geonetwork-returntohomepage.png" />
+</div>
+</div>
+<div class="section" id="suchen">
+<h2>Suchen<a class="headerlink" href="#suchen" title="Permalink to this headline">¶</a></h2>
+<p>Es gibt viele verschiedene den Katalog nach Karten und anderen Geodaten zu durchsuchen. Diese Anleitung gibt Ihnen eine Einleitung in die einfache, erweiterte Suche und in die Suche an Hand von Kategorien. Welche Suchmöglichkeit Sie auch wählen, die Suchergebnisse basieren immer auf den Rechten, die Ihnen zugewiesen sind (dazu später mehr).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Der Begriff <em>Daten</em> bezieht sich auf Datensets, Karten, Tabellen, Dokumente, etc, also alles was mit dem Metadatensatz verbunden ist und durch diesen beschrieben wird.</p>
+</div>
+</div>
+<div class="section" id="einfache-suche">
+<h2>Einfache Suche<a class="headerlink" href="#einfache-suche" title="Permalink to this headline">¶</a></h2>
+<p>Die einfache Suche erlaubt Ihnen einen Begriff im gesamten Metadatendokument zu suchen, wie Schlüsselwörter von Metadaten..</p>
+<p><strong>Freitext Suche.</strong> Geben Sie einen Suchbegriff in dcas Feld <em>Was?</em> ein. Sie können hier alles eingeben
+(Freitext). Sie können Anführungszeichen um Text setzen, um exakte Kombinationen zu finden.</p>
+<p>Text und Operatoren (and, or, not) sind nicht case sensitive.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-what.png" src="../../_images/geonetwork-what.png" />
+<p class="caption"><em>Das Freitext Feld.</em></p>
+</div>
+<p><strong>Geographische Suche.</strong> Für die geographische Suche sind zwei Optionen verfügbar, um eine Region zu wählen und die Suche auf diese Region zu beschränken:</p>
+<p>Sie können eine <strong>Region</strong> von einer vordefinierten Liste wählen;</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-where1.png" src="../../_images/geonetwork-where1.png" />
+<p class="caption"><em>Das Regionsfeld</em></p>
+</div>
+<p>Sie können eine Auswahl über drag and drop über die Karte wählen. Klicken Sie dazu den Button in der rechten oberen Ecke des Kartenviewers.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-where2.png" src="../../_images/geonetwork-where2.png" />
+<p class="caption"><em>Interaktive Karte zum wählen einer Region</em></p>
+</div>
+<p><strong>Suche starten.</strong> Beide Optionen der Suche, Freitext Suche und Geographische Suche können kombiniert werden.</p>
+<p>Klicken Sie den <em>Suche</em> Button um die Suche zu starten und sich die Ergebnisse anzeigen zu lassen.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-search_button.png" src="../../_images/geonetwork-search_button.png" />
+<p class="caption"><em>Der Suchbutton</em></p>
+</div>
+</div>
+<div class="section" id="suchen-an-hand-von-kategorien">
+<h2>Suchen an Hand von Kategorien<a class="headerlink" href="#suchen-an-hand-von-kategorien" title="Permalink to this headline">¶</a></h2>
+<p>Ein anderer Weg um Daten zu suchen ist die Suche an Hand von <strong>Kategorien</strong>. Eine Liste von Kategorien wird dem Nutzer präsentiert: <strong>Applikationen</strong>, <strong>Audio/Video</strong>, <strong>Fallstudien</strong>, <strong>Konferenz Ergebnisse</strong>, <strong>Datensets</strong>, <strong>Verzeichnisse</strong>, <strong>Interaktive Resourcen</strong>, <strong>Karten und Grafiken</strong>, <strong>Andere Resourcen</strong>, <strong>Photo</strong>.</p>
+<p>Wenn Sie nur nach Karten suchen, klicken Sie auf <strong>Maps and Graphics</strong>. Eine Liste aller Karten wird Ihnen angezeigt, von denen Sie sich auch die Details ansehen können: Klicken Sie nur auf den <strong>Metadaten</strong>-Button der Karte, die Sie sehen wollen.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-Categories.png" src="../../_images/geonetwork-Categories.png" />
+<p class="caption"><em>Suche an Hand von Kategorien</em></p>
+</div>
+</div>
+<div class="section" id="erweiterte-suche">
+<h2>Erweiterte Suche<a class="headerlink" href="#erweiterte-suche" title="Permalink to this headline">¶</a></h2>
+<p>Die Optionen der erweiterten Suche funktionieren ähnlich der einfachen Suche. Sie können hier nur spezifischere Einschränkunen in den Suchparametern definieren. Dies folgt dem Muster: <em>Was?, Wo?, Wann?</em></p>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search1.png" src="../../_images/geonetwork-advanced_search1.png" />
+<p class="caption"><em>Optionen der erweiterten Suche</em></p>
+</div>
+<p>Um die <strong>erweiterte Suche</strong> zu starten, klicken Sie auf der Startseite auf <strong>erweitert</strong> direkt unter dem Suche-Button.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_button.png" src="../../_images/geonetwork-advanced_search_button.png" />
+<p class="caption"><em>Zeige erweiterte Suchoptionen</em></p>
+</div>
+<p>In der <strong>WAS?</strong> Sektion sind alle Elemente mit den Daten verbunden. In Erweiterung zur einfachen Suche können Sie hier nicht nur nach Schlüsselwörten im kompletten Metadatensatz suchen, sondern auch direkt nach Titel, Kurzzusammenfassung und Schlüsselwörtern. Sie können zusätzlich die Suchgenauigkeit definieren.</p>
+<ul class="simple">
+<li>Um nach <strong>Titel, Kurzzusammenfassung, Freitext, oder Schlüsselwörtern</strong> zu suchen, geben Sie in dem entsprechenden Feld(ern) den/die Suchbegriff(e) ein. Sie können in beliebigen Feldern Text eintragen. Sie können Felder auch leer lassen;</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_what.png" src="../../_images/geonetwork-advanced_search_what.png" />
+<p class="caption"><em>&#8220;Was&#8221; Sektion in der erweiterten Suche</em></p>
+</div>
+<p>Die <strong>WO?</strong> Parameter, beziehen sich auf den räumlichen Extent, und erlauben Ihnen, wie in der einfachen Suche, die Auswahl einer Region über drag&amp;drop oder über eine vordefinierten Region über eine Auswahlbox.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_where.png" src="../../_images/geonetwork-advanced_search_where.png" />
+<p class="caption"><em>&#8220;Wo&#8221; Sektion in der erweiterten Suche</em></p>
+</div>
+<p>Was für Typen von Metadaten Sie auch suchen, in dem Feld <strong>räumliche Auswahltyp</strong> können Sie aus folgenden Optionen wählen: <strong>ist genau</strong>, <strong>anfügen</strong>, <strong>ist enthalten</strong>, <strong>ist komplett außerhalb von</strong>.</p>
+<p>Die <strong>WANN?</strong> Sektion gibt Ihnen die Möglichkeit die Suche um die zeitliche Dimension einzuschränken, Sie können zwischen Erstellungsdatum und Publikationsdatum wählen.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_when.png" src="../../_images/geonetwork-advanced_search_when.png" />
+<p class="caption"><em>&#8220;Wann&#8221; Sektion in der erweiterten Suche</em></p>
+</div>
+<p>Als letztes erlaubt die erweiterte Suche die Einschränkung durch weitere Parameter, wie Datenquelle, Datenkategorie und Datenformat.</p>
+<p>sie können auch die Anzahl der Ergebnisse pro Seite spezifizieren.</p>
+<ul class="simple">
+<li>Klicken Sie zum Schluss den <strong>Suche</strong> Button.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_morerest.png" src="../../_images/geonetwork-advanced_search_morerest.png" />
+<p class="caption"><em>Weitere Optionen in der erweiterten Suche</em></p>
+</div>
+</div>
+<div class="section" id="suchergebnisse">
+<h2>Suchergebnisse<a class="headerlink" href="#suchergebnisse" title="Permalink to this headline">¶</a></h2>
+<p>Sie erhalten nach Abschicken der Suche eine Liste der Metadatensätze, die auf Ihre Suchanfrage passt. Für jeden Datensatz sehen Sie den Titel, die Kurzzusammenfassung und die Schlüsselwörter. Je nach Privilegien werden maximal 4 Sektionen angezeigt (siehe unten).</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-search_output2.png" src="../../_images/geonetwork-search_output2.png" />
+<p class="caption"><em>Suchergebnisse</em></p>
+</div>
+<ol class="arabic simple">
+<li><strong>Metadaten</strong>: Die Metadatensektion beschreibt den Datesatz.</li>
+<li><strong>Download</strong>: Je nach Zugriffsrecht und Datensatz erlaubt Ihn dieser Button die Daten herunterzuladen.</li>
+</ol>
+<div class="figure">
+<img alt="../../_images/geonetwork-search_output1.png" src="../../_images/geonetwork-search_output1.png" />
+<p class="caption"><em>Ein einzelnes Suchergebniss</em></p>
+</div>
+<div class="figure">
+<img alt="../../_images/geonetwork-download.png" src="../../_images/geonetwork-download.png" />
+<p class="caption"><em>Verfügbare Services zu diesem Datensatz</em></p>
+</div>
+<ol class="arabic simple">
+<li><strong>Interaktive Karte</strong>: Der Kartenservice ist opional. Mit Klick auf diesen Button, wird der Datensatz dem Kartenviewer hizugefügt. UM den Datensatz besser sehen zu können, klicken Sie auf <strong>Zeige Karte</strong> oben auf der Seite.</li>
+</ol>
+<div class="figure">
+<img alt="../../_images/geonetwork-interactive_map.png" src="../../_images/geonetwork-interactive_map.png" />
+<p class="caption"><em>Der interaktive Kartenviewer</em></p>
+</div>
+<ol class="arabic simple">
+<li><strong>Graphik Überblick</strong>: Es gibt kleine und große Übersichten. Klicken Sie auf die kleine Übersicht, um eine große Übersicht zu erhalten.</li>
+</ol>
+<div class="figure">
+<img alt="../../_images/geonetwork-thumbnail.png" src="../../_images/geonetwork-thumbnail.png" />
+<p class="caption"><em>großes Übersichtsbild</em></p>
+</div>
+</div>
+<div class="section" id="privilegien-rollen-und-nutzergruppen">
+<h2>Privilegien, Rollen und Nutzergruppen<a class="headerlink" href="#privilegien-rollen-und-nutzergruppen" title="Permalink to this headline">¶</a></h2>
+<p>GeoNetwork nutzt ein System von <em>Privilegien</em>, <em>Rollen</em> und <em>Nutzergruppen</em>.</p>
+<p>Es gibt keine Restriktionen für Nutzer beim Zugriff auf <strong>öffenltiche Information</strong> in GeoNetwork opensource. Um auf <strong>zugriffsbeschränkte Informationen</strong> und erweitertet Funktionalitäten zugreifen zu können, wir ein Account benötigt. Dieser wird Ihnen durch den Administrator bereitgestellt.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-login.png" src="../../_images/geonetwork-login.png" />
+<p class="caption"><em>Login</em></p>
+</div>
+</div>
+<div class="section" id="weitere-informationen">
+<h2>Weitere Informationen<a class="headerlink" href="#weitere-informationen" title="Permalink to this headline">¶</a></h2>
+<p>Klicken Sie auf den &#8216;Hilfe&#8217; Link im Banner von GeoNetwork oder direkt über diesen Link: <a class="reference external" href="http://localhost:8880/geonetwork/docs/deu/users/index.html">http://localhost:8880/geonetwork/docs/deu/users/index.html</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

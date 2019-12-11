@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>uDig Quickstart &mdash; OSGeo-Live v4.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="../../_images/logo-uDig.png" id="udig-quickstart"><img align="right" alt="project logo" class="align-right" id="udig-quickstart" src="../../_images/logo-uDig.png" style="width: 76.8px; height: 79.2px;" /></a>
+<div class="section" id="id1">
+<h1>uDig Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>uDig (User Friendly Internet Desktop GIS), is a GIS Desktop client for
+editing and viewing GeoSpatial data.</p>
+<p>This Quick Start describes how to:</p>
+<blockquote>
+<ul class="simple">
+<li>load a map layers from a shapefile and Web Map Service (WMS)</li>
+<li>use the standard map tools</li>
+<li>apply colour to map features using styling</li>
+</ul>
+</blockquote>
+<div class="section" id="start-udig">
+<h2>start uDig<a class="headerlink" href="#start-udig" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Choose uDig 1.1 &gt; uDig from the start menu</li>
+<li>The application will take a few moments to start up</li>
+</ol>
+<p>If you have any difficulties, or are running uDig please review the Running uDig reference page.</p>
+</div>
+<div class="section" id="welcome-view">
+<h2>Welcome View<a class="headerlink" href="#welcome-view" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>When you start up uDig for the first time the Welcome view takes up the entire display. This screen
+has links to tutorials, documentation and the project website.</li>
+<li>Click the arrow labelled Workbench in the upper right corner, to reveal the contents of the uDig workbench.</li>
+</ol>
+<blockquote>
+<img alt="../../_images/udig_welcome.png" src="../../_images/udig_welcome.png" />
+</blockquote>
+<p>You can return to the Welcome view at any time by selecting the Help &gt; Welcome from the menu bar.</p>
+</div>
+<div class="section" id="workbench">
+<h2>Workbench<a class="headerlink" href="#workbench" title="Permalink to this headline">¶</a></h2>
+<p>The Workbench window offers multiple Editors (each showing a Map) and supporting Views (offering
+information about the current Map).</p>
+<blockquote>
+<img alt="../../_images/udig_workbench.png" src="../../_images/udig_workbench.png" />
+</blockquote>
+<p>Shown above is a typical uDig session with the Map editor, Projects view, Layers view and Catalog
+view labelled . These views will be described further as we demonstrate their use.</p>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<p>To start out with we are going to load some of the sample data included on the DVD.</p>
+<ol class="arabic simple">
+<li>Choose <em>Layer ‣ Add</em> from the menu bar to open up the <strong>Add Data</strong> wizard</li>
+<li>Select <strong>Files</strong> from the list of data sources</li>
+<li>Press <strong>Next</strong> to open up a file dialog</li>
+<li>The OSGeo Live DVD contains sample data in:<ul>
+<li><tt class="docutils literal"><span class="pre">~/data</span></tt> (a short cut to <tt class="docutils literal"><span class="pre">/usr/local/share/data</span></tt>)</li>
+<li><tt class="docutils literal"><span class="pre">/usr/local/share/udig/udig/udig-data/</span></tt></li>
+</ul>
+</li>
+<li>Select the following file from the udig-data folder:<ul>
+<li><tt class="docutils literal"><span class="pre">countries.shp</span></tt></li>
+</ul>
+</li>
+<li>Press <strong>Open</strong><ul>
+<li>A new Map editor will be opened based on the contents of your shapefile. The default name and
+projection of the Map has been taken from your shapefile.</li>
+<li>You can see the <strong>Catalog view</strong> has been updated with an entry for <tt class="docutils literal"><span class="pre">countries.shp</span></tt>. This
+view is used to track the use of resources by the uDig application.</li>
+<li>The <strong>Layers</strong> view shows a single layer is displayed on this map. This view is used to change
+the order and appearance of information in your Map.</li>
+<li>The <strong>Projects</strong> view has been updated to show that your map is stored in projects &gt; countries.
+You can have multiple projects open at a time, each project can have several maps.</li>
+</ul>
+</li>
+<li>Open up your data folder on the desktop</li>
+<li>Drag <tt class="docutils literal"><span class="pre">clouds.jpg</span></tt> onto the Map Editor, a new layer is added to to the map.</li>
+<li>You can see the order the layers are drawn in the layer view. Right now the clouds.jpg layer is drawn
+ontop of the countries layer.</li>
+<li>Select the clouds.jpg layer in the catalog view and drag it to the bottom of the list</li>
+</ol>
+<blockquote>
+<img alt="../../_images/udig_QuickstartCountriesMap.jpg" src="../../_images/udig_QuickstartCountriesMap.jpg" />
+</blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">One of the most common questions asked when uDig is considered for an organization is how much memory
+the application uses. Unlike most GIS applications uDig can get by with a fixed amount of memory. The
+above shapefile is not loaded into memory, we have a policy of keeping data on disk and drawing data
+like this shapefile onto the screen as needed.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You can also drag and drop shapefiles directly into the uDig application!</p>
+</div>
+</div>
+<div class="section" id="map">
+<h2>Map<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h2>
+<p>You can control where in the world the Map Editor is looking by using the navigation tools in the tool bar along the top of the screen.</p>
+<ol class="arabic simple">
+<li>The <img alt="ZOOM" src="../../_images/udig_zoom_mode.gif" /> Zoom tool is available by default<ul>
+<li>Use the zoom tool by drawing a box using the left mouse button around the area of the wold you wish
+to see.</li>
+<li>To zoom out draw a box with the right mouse button. The current map extents will be located within
+the box you draw.</li>
+</ul>
+</li>
+<li>The <img alt="PAN" src="../../_images/udig_pan_mode.gif" /> Pan tool can be used to scroll around your map with out changing scale.</li>
+<li>There are also several navigation buttons that can be used at any time:<ul>
+<li><img alt="SHOWALL" src="../../_images/udig_zoom_extent_co.gif" /> Show All, can be used to return to the full extents at any time</li>
+<li><img alt="ZOOM_IN" src="../../_images/udig_zoom_in_co.gif" /> Zoom In and <img alt="ZOOM_OUT" src="../../_images/udig_zoom_out_co.gif" /> Zoom Out can be used to change the scale by a fixed amount.</li>
+<li>You can use Navigation &gt; Back and Navigation &gt; Forward in the menu bar to cycle though previously
+visited locations.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Most tools allow you to Pan by holding the center button and control the scale using the
+scroll wheel.</p>
+</div>
+</div>
+<div class="section" id="web-map-server">
+<h2>Web Map Server<a class="headerlink" href="#web-map-server" title="Permalink to this headline">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Offline</p>
+<p class="last">If you are not connected to the internet run <strong>Start GeoServer</strong> for a local WMS. The script
+will open a page with a &#8220;wms capabilities&#8221; link you can drag into your empty map.</p>
+</div>
+<p>One of the reasons to use an application like uDig is to access all the great free geospatial
+information available on the web. This section covers the use of Web Map Servers which make
+available layers of information that you can mix into your own maps.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You can also connect to Web Map Servers using the Add Data Wizard
+for Drag and Drop.</p>
+</div>
+<ol class="arabic simple">
+<li>Select <em>File ‣ New ‣ New Map</em> from the menu bar</li>
+<li>Change to the <strong>Web</strong> view, click on the tab next to the <strong>Catalog</strong> view to reveal the <em>Web</em> view.</li>
+</ol>
+<blockquote>
+<a class="reference external image-reference" href="../../_images/udig_WebViewClick.png"><img alt="../../_images/udig_WebViewClick.png" src="../../_images/udig_WebViewClick.png" style="width: 527.1px; height: 176.4px;" /></a>
+</blockquote>
+<ol class="arabic simple">
+<li>Click on the link <em>WMS:dm solutions</em> link</li>
+<li>From the Resource Selection page we are going to choose the following layers:<ul>
+<li>Elevation/Bathymetry</li>
+<li>Parks</li>
+<li>Cities</li>
+</ul>
+</li>
+</ol>
+<a class="reference external image-reference" href="../../_images/udig_AddWMSLayers.png"><img alt="../../_images/udig_AddWMSLayers.png" src="../../_images/udig_AddWMSLayers.png" style="width: 306.6px; height: 290.5px;" /></a>
+<ol class="arabic simple">
+<li>Press <strong>Finish</strong> to add these layers to your map</li>
+</ol>
+<img alt="../../_images/udig_WMSMap.png" src="../../_images/udig_WMSMap.png" />
+<ol class="arabic simple">
+<li>Use the <img alt="ZOOM" src="../../_images/udig_zoom_mode.gif" /> Zoom Tool to move closer to one of the Parks</li>
+<li>Switch to the <img alt="INFO" src="../../_images/udig_info_mode.gif" /> Info Tool and click on one the parks to learn more about it</li>
+</ol>
+<p>Tip: You can switch between the zoom and info tools by pressing Z and I on the keyboard.</p>
+</div>
+<div class="section" id="style">
+<h2>Style<a class="headerlink" href="#style" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Select the project &gt; countries, you can double click to open this Map, or Right Click and choose Open Map</p>
+</li>
+<li><p class="first">Select the countries layer in the Layer view</p>
+</li>
+<li><p class="first">Open up the Style Editor by right clicking on countries layer and choosing Change Style</p>
+</li>
+<li><p class="first">We are going to change a few things about how countries are displayed</p>
+<ul class="simple">
+<li>Line: Click on the Color and change the color to BLACK</li>
+<li>Fill: uncheck the box to turn off fill</li>
+<li>Label: check the box, and choose CNTRY_NAME from the list of attributes</li>
+</ul>
+<a class="reference external image-reference" href="../../_images/udig_StyleEditor.png"><img alt="../../_images/udig_StyleEditor.png" src="../../_images/udig_StyleEditor.png" style="width: 406.0px; height: 235.2px;" /></a>
+</li>
+<li><p class="first">Press <strong>Apply</strong> to see what this looks like on your Map, the <strong>Layer</strong> view will also be updated
+to reflect the current style</p>
+</li>
+<li><p class="first">When you are happy with the result you can press <strong>Close</strong> to dismiss the dialog</p>
+</li>
+<li><p class="first">Some files include style settings, Select <em>Layer ‣ Add</em> from the menu bar</p>
+</li>
+<li><p class="first">Select <strong>Files</strong> from the list of data sources and press <strong>Next</strong></p>
+</li>
+<li><p class="first">Using the file chooser open up <strong>timezone.shp</strong> and press <strong>Open</strong></p>
+</li>
+<li><p class="first">It is a bit hard to see what is going on with the clouds.jpg layer providing so much details.
+Select <em>Map ‣ Mylar</em> from the menu bar to focus on the selected layer</p>
+</li>
+<li><p class="first">Using the <em>Layer</em> view select timezone, countries and clouds.jpg in turn to see the effect</p>
+</li>
+</ol>
+<img alt="../../_images/udig_MapMylar.jpg" src="../../_images/udig_MapMylar.jpg" />
+<ol class="arabic simple">
+<li>You can turn off this effect at any time using <em>Map ‣ Mylar</em> from the menu bar</li>
+</ol>
+</div>
+<div class="section" id="things-to-try">
+<h2>Things to Try<a class="headerlink" href="#things-to-try" title="Permalink to this headline">¶</a></h2>
+<p>Here are some additional challenges for you to try:</p>
+<ol class="arabic simple">
+<li>Try viewing your own GIS map layers, or try adding a layer from a Web Feature Service (WFS).</li>
+<li>Try styling the WFS layer.</li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2>What Next?<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<p>This is only the first step on the road to using uDig. There is a lot more great material (and ability) left for your to discover in our walkthroughs.</p>
+<ul>
+<li><p class="first">Walkthrough 1</p>
+<p>Try out the use of PostGIS, extract data from a Web Feature Server and explore the
+use of Themes with our powerful Color Brewer technology.</p>
+<p><tt class="docutils literal"><span class="pre">/usr/data/udig/udig-docs/uDigWalkthrough</span> <span class="pre">1.pdf</span></tt></p>
+</li>
+<li><p class="first">Walkthrough 2 - Learn how to create shapefiles and use the Edit tools to manipulate
+feature data, covers the installation of GeoServer and editing with a Web Feature
+Server.</p>
+<p>Available on <a class="reference external" href="http://udig.refractions.net/">http://udig.refractions.net/</a></p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i>&copy; OSGeo Foundation and LISAsoft 2011... <a href="../disclaimer.html">Disclaimer</a></i></span>
+
+  </body>
+</html>

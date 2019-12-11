@@ -1,0 +1,169 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pgRouting Quickstart &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.pgrouting.org" id="pgrouting-quickstart"><img alt="pgRouting logo" class="align-right" src="../../_images/logo-pgRouting.png" style="width: 130.0px; height: 126.0px;" /></a>
+<div class="section" id="id1">
+<h1>pgRouting Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>pgRouting erweitert eine <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a>/` PostgreSQL &lt;<a class="reference external" href="http://www.postgresql.org">http://www.postgresql.org</a>&gt;`_ Geo-Datenbank um Funktionen für &#8220;Kürzeste-Wege&#8221; Berechnung (Routing).</p>
+<p>Diese Quickstart Anleitung beschreibt, wie man eine Routingdatenbank öffnet und darauf einfache &#8220;Kürzeste-Wege&#8221; Berechnungen von der Kommandozeile aus durchführt.</p>
+<div class="section" id="pgrouting-starten">
+<h2>pgRouting Starten<a class="headerlink" href="#pgrouting-starten" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Starte ein <em class="menuselection">Applications ‣ Accessories ‣ Terminal</em> Fenster und stelle eine Verbindung mit der <tt class="docutils literal"><span class="pre">pgrouting</span></tt> Datenbank her:</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre>psql -U user pgrouting
+</pre></div>
+</div>
+<ul class="simple">
+<li>Tippe <strong class="command">\d</strong>, um alle vorhandenen Tabellen aufzulisten:</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre>                      <span class="n">List</span> <span class="k">of</span> <span class="n">relations</span>
+ <span class="k">Schema</span> <span class="o">|</span>        <span class="n">Name</span>         <span class="o">|</span>   <span class="k">Type</span>   <span class="o">|</span>  <span class="k">Owner</span>
+<span class="c1">--------+---------------------+----------+----------</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">classes</span>               <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">geography_columns</span>   <span class="o">|</span> <span class="k">view</span>    <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">geometry_columns</span>      <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">nodes</span>                 <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">spatial_ref_sys</span>       <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">types</span>                 <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">vertices_tmp</span>          <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">vertices_tmp_id_seq</span> <span class="o">|</span> <span class="n">sequence</span> <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">ways</span>                  <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">user</span>
+<span class="p">(</span><span class="mi">9</span> <span class="n">Zeilen</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Führe die &#8220;Dijkstra-Shortest-Path&#8221; Funktion aus:</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">shortest_path</span><span class="p">(</span><span class="s1">&#39;</span>
+<span class="s1">                SELECT gid as id,</span>
+<span class="s1">                         source::integer,</span>
+<span class="s1">                         target::integer,</span>
+<span class="s1">                         length::double precision as cost</span>
+<span class="s1">                        FROM ways&#39;</span><span class="p">,</span>
+                <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre>     <span class="n">vertex_id</span> <span class="o">|</span> <span class="n">edge_id</span> <span class="o">|</span>       <span class="n">cost</span>
+    <span class="c1">-----------+---------+---------------------</span>
+           <span class="mi">100</span> <span class="o">|</span>    <span class="mi">1457</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">0152981335887719</span>
+           <span class="mi">554</span> <span class="o">|</span>     <span class="mi">543</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">0658986376594475</span>
+           <span class="mi">553</span> <span class="o">|</span>     <span class="mi">542</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">0720522950545032</span>
+           <span class="p">...</span> <span class="o">|</span>     <span class="p">...</span> <span class="o">|</span>  <span class="p">...</span>
+          <span class="mi">1803</span> <span class="o">|</span>    <span class="mi">1902</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">1000754339802650</span>
+           <span class="mi">600</span> <span class="o">|</span>      <span class="o">-</span><span class="mi">1</span> <span class="o">|</span>                   <span class="mi">0</span>
+<span class="p">(</span><span class="mi">77</span> <span class="n">Zeilen</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Verwende eine Wrapper-Funktion, um das Routingergebnis in einem anderen Format auszugeben:</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="n">gid</span><span class="p">,</span> <span class="n">AsText</span><span class="p">(</span><span class="n">the_geom</span><span class="p">)</span> <span class="k">AS</span> <span class="n">the_geom</span>
+        <span class="k">FROM</span> <span class="n">dijkstra_sp</span><span class="p">(</span><span class="s1">&#39;ways&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre>  <span class="n">gid</span>   <span class="o">|</span>                              <span class="n">the_geom</span>
+<span class="c1">--------+---------------------------------------------------------------</span>
+    <span class="mi">533</span> <span class="o">|</span> <span class="n">MULTILINESTRING</span><span class="p">((</span><span class="o">-</span><span class="mi">105</span><span class="p">.</span><span class="mi">0205242</span> <span class="mi">39</span><span class="p">.</span><span class="mi">7613979</span><span class="p">,</span><span class="o">-</span><span class="mi">105</span><span class="p">.</span><span class="mi">0205115</span> <span class="mi">39</span><span class="p">.</span><span class="mi">7620158</span><span class="p">))</span>
+    <span class="mi">534</span> <span class="o">|</span> <span class="n">MULTILINESTRING</span><span class="p">((</span><span class="o">-</span><span class="mi">105</span><span class="p">.</span><span class="mi">0205115</span> <span class="mi">39</span><span class="p">.</span><span class="mi">7620158</span><span class="p">,</span><span class="o">-</span><span class="mi">105</span><span class="p">.</span><span class="mi">0205151</span> <span class="mi">39</span><span class="p">.</span><span class="mi">7632155</span><span class="p">))</span>
+    <span class="mi">535</span> <span class="o">|</span> <span class="n">MULTILINESTRING</span><span class="p">((</span><span class="o">-</span><span class="mi">105</span><span class="p">.</span><span class="mi">0205151</span> <span class="mi">39</span><span class="p">.</span><span class="mi">7632155</span><span class="p">,</span><span class="o">-</span><span class="mi">105</span><span class="p">.</span><span class="mi">0205098</span> <span class="mi">39</span><span class="p">.</span><span class="mi">764433</span><span class="p">))</span>
+        <span class="p">...</span> <span class="o">|</span> <span class="p">...</span>
+   <span class="mi">9395</span> <span class="o">|</span> <span class="n">MULTILINESTRING</span><span class="p">((</span><span class="o">-</span><span class="mi">104</span><span class="p">.</span><span class="mi">9921535</span> <span class="mi">39</span><span class="p">.</span><span class="mi">7209342</span><span class="p">,</span><span class="o">-</span><span class="mi">104</span><span class="p">.</span><span class="mi">9921516</span> <span class="mi">39</span><span class="p">.</span><span class="mi">722527</span><span class="p">))</span>
+   <span class="mi">9400</span> <span class="o">|</span> <span class="n">MULTILINESTRING</span><span class="p">((</span><span class="o">-</span><span class="mi">104</span><span class="p">.</span><span class="mi">9921793</span> <span class="mi">39</span><span class="p">.</span><span class="mi">7147876</span><span class="p">,</span><span class="o">-</span><span class="mi">104</span><span class="p">.</span><span class="mi">9923595</span> <span class="mi">39</span><span class="p">.</span><span class="mi">714781</span><span class="p">))</span>
+<span class="p">(</span><span class="mi">76</span> <span class="n">Zeilen</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Mit dem Kommando <strong class="command">\q</strong> verlässt man die PostgreSQL Shell wieder.</li>
+</ul>
+</div>
+<div class="section" id="wie-geht-es-weiter">
+<h2>Wie geht es weiter?<a class="headerlink" href="#wie-geht-es-weiter" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>pgRouting Webseite</strong> - Besuche die Projektseite unter <a class="reference external" href="http://www.pgrouting.org">http://www.pgrouting.org</a>, um mehr über pgRouting zu erfahren.</li>
+<li><strong>Workshop auf DVD</strong> - Auf dieser LiveDVD enthalten ist der FOSS4G 2011 pgRouting Workshop <cite>&#8220;FOSS4G routing with pgRouting tools, OpenStreetMap road data and GeoExt&#8221;</cite>, zu finden unter: <tt class="file docutils literal"><span class="pre">/usr/share/pgrouting/workshop/</span></tt></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Um mit der aktuellen Version des Workshops zu arbeiten, öffne ein Terminal Fenster und führe <tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span> <span class="pre">&amp;&amp;</span> <span class="pre">apt-get</span> <span class="pre">upgrade</span> <span class="pre">pgrouting-workshop</span></tt> aus.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

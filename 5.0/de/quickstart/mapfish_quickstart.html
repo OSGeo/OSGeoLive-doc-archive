@@ -1,0 +1,137 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Mapfish Quickstart &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.mapfish.org" id="mapfish-quickstart"><img alt="project logo" class="align-right" src="../../_images/logo-mapfish.png" style="width: 180.0px; height: 96.0px;" /></a>
+<div class="section" id="id1">
+<h1>Mapfish Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Mapfish ist ein flexibles Framework um interaktive Internet-Kartenanwendungen zu erstellen. Das Projekt legt besonderen Wert auf hohe Produktivität und hohe Entwicklungsqualität.</p>
+<p>Dieser Quickstart beschriebt wie</p>
+<ul class="simple">
+<li>die Beispiel-Anwendung auf der LiveDVD gestartet,</li>
+<li>Mapfish installiert und zum Schluss</li>
+<li>eine Mapfish Anwendung erstellt wird.</li>
+</ul>
+<div class="section" id="beispiel-anwendung-starten">
+<h2>Beispiel Anwendung starten<a class="headerlink" href="#beispiel-anwendung-starten" title="Permalink to this headline">¶</a></h2>
+<p>Um die Beispiel-Anwendung zu starten klicken Sie auf den Mapfish-Link auf dem Desktop. Nun öffnet sich die Anwendung in einem neuen FireFox Fenster. Die Anwendung wird über das Modul mod_wsgi bereitgestellt (<a class="reference external" href="http://localhost/mapfishsample/osgeolive/wsgi/">http://localhost/mapfishsample/osgeolive/wsgi/</a>).</p>
+<p>Die Demo hat folgende Funktionen: abfragen, editieren, suchen und drucken. Um das Mapfish REST Protokoll bei der Arbeit zu sehen, können Sie den Firebug Debugger öffnen. Im Bereich request/responses werden die Daten dargestellt die zwischen Browser und dem Mapfish Web-Services ausgetauscht werden.</p>
+</div>
+<div class="section" id="mapfish-installieren">
+<h2>Mapfish installieren<a class="headerlink" href="#mapfish-installieren" title="Permalink to this headline">¶</a></h2>
+<p>Um Mapfish zu installieren muss das Download-Script heruntergeladen und im Terminal ausgeführt werden:</p>
+<div class="highlight-python"><pre>$ wget http://www.mapfish.org/downloads/go-mapfish-framework-2.2.py
+
+$ python go-mapfish-framework-2.2.py --no-site-packages venv</pre>
+</div>
+<p>Die Kommandozeile erstellt eine virtuelle Python-Entwicklungsumgebung in dem Order <tt class="docutils literal"><span class="pre">venv</span></tt> und führt das Installation-Script aus. Mapfish wird so mit allen Abhängigkeiten in die virtuelle Umgebung installiert.</p>
+<p>Die virtuelle Python Umgebung kann nun aktiviert und die Installation überprüft werden:</p>
+<div class="highlight-python"><pre>$ source venv/bin/activate
+
+(venv) $ paster create --list-templates</pre>
+</div>
+<p>Das oben stehende Kommando sollte folgende Ausgabe:</p>
+<div class="highlight-python"><pre>Available templates:
+basic_package:   A basic setuptools-enabled package
+mapfish:         MapFish application template
+mapfish_client:  MapFish client plugin template
+paste_deploy:    A web application deployed through paste.deploy
+pylons:          Pylons application template
+pylons_minimal:  Pylons minimal application template</pre>
+</div>
+<p>Das Framework wurde erfolgreich installiert. Im nächsten Abschnitt folgt nun die Beschreibung wie eine Mapfish Anwendung erstellt werden kann.</p>
+</div>
+<div class="section" id="mapfish-anwendung-erstellen">
+<h2>Mapfish Anwendung erstellen<a class="headerlink" href="#mapfish-anwendung-erstellen" title="Permalink to this headline">¶</a></h2>
+<p>Nach dem die virtuelle Umgebung aktiviert wurde, kann nun die erste Mapfish Anwendung erstellt werden. Diese trägt zum Beispiel den Namen MyMapFishApp:</p>
+<div class="highlight-python"><pre>(venv) $ paster create -t mapfish MyMapFishApp sqlalchemy=true</pre>
+</div>
+<p>Nun kann auch die Javascript Bibliothek in der Anwendung installiert werden:</p>
+<blockquote>
+(venv) $ paster create &#8211;no-interactive -t mapfish_client MyMapFishApp</blockquote>
+<p>Die eben ausgeführten Zeilen haben eine Mapfish-Anwendung in dem Verzeichnis <tt class="docutils literal"><span class="pre">MyMapFishApp</span></tt> erstellt.</p>
+<p>Nun können die Anwendung starten:</p>
+<div class="highlight-python"><pre>(venv) $ cd MyMapFishApp
+(venv) $ paster serve development.ini</pre>
+</div>
+<p>Öffnen Sie <a class="reference external" href="http://localhost:5000">http://localhost:5000</a> in Ihrem Browser. Sie sehen nun eine minimale Mapfish Anwendung, diese enthält eine Karte mit zwei <a class="reference external" href="http://www.openstreetmap.org/">OSM Layern</a>, eine Toolbar überhalb der Karte sowie einem Layerbaum.</p>
+<p>Das Mapfish Framework stellt natürlich noch weitere Funktionen bereit. Insbesondere erlaubt es die Bereitstellung von RESTful Web-Services zum Erstellen, Lesen, Aktualisieren und Löschen von Features. Für weitere Informationen schauen Sie in die Dokumentation unter <a class="reference external" href="http://mapfish.org/doc/2.2/quickstart.html">http://mapfish.org/doc/2.2/quickstart.html</a> und besuchen Sie <a class="reference external" href="http://mapfish.org">http://mapfish.org</a>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

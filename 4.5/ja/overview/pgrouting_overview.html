@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pgRouting &mdash; OSGeo-Live v4.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.pgrouting.org/" id="pgrouting-overview"><img align="right" alt="pgRouting logo" class="align-right" src="../../_images/logo-pgRouting.png" style="width: 130.0px; height: 126.0px;" /></a>
+<div class="section" id="pgrouting">
+<h1>pgRouting<a class="headerlink" href="#pgrouting" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gis">
+<h2>GIS ツール<a class="headerlink" href="#gis" title="Permalink to this headline">¶</a></h2>
+<p>pgRouting は <a class="reference external" href="postgis_overview.html">PostGIS</a> / <a class="reference external" href="http://www.postgresql.org">PostgreSQL</a> 地理空間データベースに経路探索機能を提供するための拡張ライブラリです。</p>
+<p>データベース上でルート検索を行う方法の利点には、以下のようなものがあります。</p>
+<ul class="simple">
+<li>多くのクライアントアプリケーション、例えば <a class="reference external" href="qgis_overview.html">Quantum GIS</a> や <a class="reference external" href="udig_overview.html">uDig</a> のようなプログラムからJDBCやODBC経由、もしくは直接PL/pgSQLを発行することでデータ及び属性を更新することができます。クライアントは、PCやモバイルデバイスでもかまいません。</li>
+<li>データへの変更は、ルート探索エンジン経由で、すぐに反映させることができます。ルート探索の為の事前の計算処理は必要ありません。</li>
+<li>&#8220;cost&#8221; パラメータは動的にSQLで計算され、その値は複数のテーブルのフィートから計算することも可能です。</li>
+</ul>
+<a class="reference external image-reference" href="../../_images/pgrouting.png"><img align="right" alt="pgRouting query in pgAdminIII" class="align-right" src="../../_images/pgrouting.png" style="width: 481.2px; height: 343.8px;" /></a>
+<div class="section" id="id1">
+<h3>主な機能<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>pgRouting は以下のファンクションを提供します。</p>
+<ul class="simple">
+<li>Shortest Path Dikstra: ヒューリスティック手法を使わない、最短経路アルゴリズム</li>
+<li>Shortest Path A-Star: ヒューリスティック手法を利用した、大規模データセットの為の最短経路探索</li>
+<li>Shortest Path Shooting-Star: ヒューリスティック手法を利用した、一方通行を考慮した最短経路探索</li>
+<li>Traveling Salesperson Problem (TSP) :巡回セールスマン問題</li>
+<li>Driving Distance calculation (Isolines): 到達圏検索</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>詳細<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><strong>Website:</strong> <a class="reference external" href="http://www.pgrouting.org">http://www.pgrouting.org</a></p>
+<p><strong>Licence:</strong> GNU General Public License (GPL) version 2</p>
+<p><strong>Software Version:</strong> 1.05</p>
+<p><strong>Supported Platforms:</strong> Linux, Windows, Mac</p>
+<p><strong>API Interfaces:</strong> SQL</p>
+<p><strong>Commercial Support:</strong> <a class="reference external" href="http://www.pgrouting.org">http://www.pgrouting.org</a></p>
+</div>
+<div class="section" id="id3">
+<h3>クイックスタート<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../quickstart/pgrouting_quickstart.html">Quickstart documentation</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i>&copy; OSGeo Foundation and LISAsoft 2011... <a href="../disclaimer.html">Disclaimer</a></i></span>
+
+  </body>
+</html>

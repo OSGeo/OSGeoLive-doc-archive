@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OpenJUMP Quickstart &mdash; OSGeo-Live v4.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="openjump-quickstart">
+<span id="udig-quickstart"></span><h1>OpenJUMP Quickstart<a class="headerlink" href="#openjump-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>OpenJUMP is a desktop GIS program that allows for easy viewing and editing
+of vector GIS data. It also has limited support for the viewing of raster
+data.</p>
+<p>This Quick Start describes how to:</p>
+<blockquote>
+<ul class="simple">
+<li>Open an ESRI shapefile with OpenJUMP.</li>
+<li>Style the layer created from the shapefile for easier viewing.</li>
+<li>Edit the geometries of the features in the layer.</li>
+<li>Run a simple attribute query on the features in the layer.</li>
+</ul>
+</blockquote>
+<div class="section" id="starting-openjump">
+<h2>Starting OpenJUMP<a class="headerlink" href="#starting-openjump" title="Permalink to this headline">¶</a></h2>
+<p>To start OpenJUMP, simply double click the openjump.bat file (if your are using a computer
+with a Microsoft Windows operating system) or the oj_linux.sh file
+(if you are using a computer with a Linux operating system) in the
+bin folder of OpenJUMP install folder. (Please note: A Java runtime
+environment is required to run OpenJUMP. You can download a Java
+runtime environment for your computer here: <a class="reference external" href="http://java.com/en/download/index.jsp">http://java.com/en/download/index.jsp</a>)</p>
+</div>
+<div class="section" id="basic-user-interface-overview">
+<h2>Basic User Interface Overview<a class="headerlink" href="#basic-user-interface-overview" title="Permalink to this headline">¶</a></h2>
+<p>The OpenJUMP graphical interface has four (4) basic components. The first is a top-level menu bar.
+The second is a main toolbar that sits just below the menu bar. The third is a tree view that shows
+all of the layers displayed in the current map view. This is called the layer list. The fourth is the
+layer view. This is the actual map where a graphical representatio of the spatial data in each layer is
+displayed. Each layer list and layer view are contained as a pair in a task frame or project frame. Each
+instance of OpenJUMP  can contain multiple task frames. In our quick start, we will only be working
+with a single task frame.</p>
+</div>
+<div class="section" id="open-an-esri-shapefile">
+<h2>Open an ESRI Shapefile<a class="headerlink" href="#open-an-esri-shapefile" title="Permalink to this headline">¶</a></h2>
+<p>This section of the quick start briefly explains how to open an ESRI shapfile.</p>
+<p>On the top-level menu bar in Open Jump select the File menu. Then select the Open menu item.
+This will present you with a dialog box that allows you to open files containing geospatial data.
+In our example, you want to browse for an ESRI shapefile. Look for a file with the .shp extension.
+Select the file and click the open button on the dialog. After a few moments, you will be able to
+see the data from your shapefile in the Layer View. You will also see a new layer created for your data in the Layer List. The name of the layer will
+match the name of the shapefile.</p>
+</div>
+<div class="section" id="style-a-layer">
+<h2>Style a Layer<a class="headerlink" href="#style-a-layer" title="Permalink to this headline">¶</a></h2>
+<p>This section of the quick start briefly explains how to style a layer.</p>
+<p>In the Layer List, right click on the layer name. This will show a pop-up menu. Select the Change Styles menu itme
+from this pop-up menu. The Change Styles dialog has four (4) tabs that allow you to change how the layer is
+displayed at the Layer View. This includes changing stroke color, changing fill color, chainging stroke or fill
+transparency, adding labels, and determining at which maximum and minimum scales the layer is displayed at.</p>
+</div>
+<div class="section" id="edit-feature-geometries-in-a-layer">
+<h2>Edit Feature Geometries in a Layer<a class="headerlink" href="#edit-feature-geometries-in-a-layer" title="Permalink to this headline">¶</a></h2>
+<p>This section of the quick start briefly explains how to edit feature geometry for features in a layer.</p>
+<p>In the Layer List, right click on the layer name. This will show a pop-up menu. Check the box next to the
+Editable menu entry. This will open a new floating toolbar over the Layer View. This toolbar has a set of
+toolbar buttons that you can use to edit feature geometry.</p>
+<p>Let&#8217;s try a quick edit. First, click the button that shows a mouse cursor. Use it to click on and select a single
+feature in the Layer View. It should change to yellow and show small yellow squares at each node or angle point in the
+feature geometry. As an example, click on the button that shows a blue crosshair with a yellow square in the middle. You
+should now see your mouse cursor change to a small black corsshair when you move it over the Layer View. Try using it to move the
+node on the geometry you selected.</p>
+</div>
+<div class="section" id="other-learning-resources-for-openjump">
+<h2>Other Learning Resources for OpenJUMP<a class="headerlink" href="#other-learning-resources-for-openjump" title="Permalink to this headline">¶</a></h2>
+<p>This is only the first step on the road to using uDig. There is a lot more great material (and ability) left for your to discover in our walkthroughs.</p>
+<p>You can download the user guide for the original JUMP program here:
+<a class="reference external" href="http://sourceforge.net/projects/surveyos/files/JUMP_PDF_Docs.zip/download">http://sourceforge.net/projects/surveyos/files/JUMP_PDF_Docs.zip/download</a></p>
+<p>You can read the OpenJUMP wiki here:
+<a class="reference external" href="http://sourceforge.net/apps/mediawiki/jump-pilot/index.php?title=Main_Page">http://sourceforge.net/apps/mediawiki/jump-pilot/index.php?title=Main_Page</a></p>
+<p>You can download tutorials for OpenJUMP here:
+<a class="reference external" href="http://sourceforge.net/projects/jump-pilot/files/Documentation/">http://sourceforge.net/projects/jump-pilot/files/Documentation/</a></p>
+<p>You can get help with OpenJUMP on the OpenJUMP users mailing list:
+<a class="reference external" href="http://groups.google.com/group/openjump-users">http://groups.google.com/group/openjump-users</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i>&copy; OSGeo Foundation and LISAsoft 2011... <a href="../disclaimer.html">Disclaimer</a></i></span>
+
+  </body>
+</html>

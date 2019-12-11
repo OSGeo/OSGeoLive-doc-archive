@@ -1,0 +1,142 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MapProxy Quickstart &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://mapproxy.org/" id="mapproxy-quickstart"><img alt="project logo" class="align-right" src="../../_images/logo-mapproxy.png" /></a>
+<div class="section" id="id1">
+<h1>MapProxy Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>MapProxy ist das &#8220;Schweizer Taschenmesser&#8221; für alle WMS- und Kacheldienste. MapProxy speichert, beschleunigt und transformiert bestehende Kartendienste aller Art.</p>
+<img alt="MapProxy diagram" class="align-center" src="../../_images/mapproxy.png" />
+<p>MapProxy ist weit mehr als nur eine Caching-Lösung. MapProxy bietet umfangreiche und innovative Funktionen an. So beschleunigt MapProxy zum Beispiel WMS-Dienste, ohne dass dabei der WMS-Standard verloren geht. Vorhandene Desktop- und WebGIS Anwendungen können weiter genutzt werden.</p>
+<div class="section" id="demo-starten">
+<h2>Demo starten<a class="headerlink" href="#demo-starten" title="Permalink to this headline">¶</a></h2>
+<p>MapProxy kann flexibel in vorhandene Systeme eingebaut werden. So ist zum Beispiel eine Integration in den Apache Webserver möglich. Zusätzlich kann MapProxy aber auch als eigener Dienst gestartet werden. Dies ist die einfachste Methode um zu Beginn mit dem MapProxy zu arbeiten.</p>
+<p>Um MapProxy als eigenen Service zu starten klicken Sie im Menü unter <em class="menuselection">Geospatial ‣ Web Services ‣ MapProxy ‣ Start MapProxy</em>.</p>
+</div>
+<div class="section" id="mapproxy-demo">
+<h2>MapProxy Demo<a class="headerlink" href="#mapproxy-demo" title="Permalink to this headline">¶</a></h2>
+<p>Die MapProxy Demo beinhaltet eine rudimentären WMS- und Kachel-Anwendung. In der Demo-Anwendung wird jeder konfigurierte Layer automatisch zur Verfügung gestellt. Die Projektion kann in der Demo nicht ausgewählt werden. Die MapProxy Demo dient vor allem zur Kontrolle von Installation und Konfiguration.</p>
+<p>Sie können die Demo im Firefox öffnen: <a class="reference external" href="http://localhost:8011/demo">http://localhost:8011/demo</a></p>
+</div>
+<div class="section" id="mapproxy-im-desktop-gis">
+<h2>MapProxy im Desktop GIS<a class="headerlink" href="#mapproxy-im-desktop-gis" title="Permalink to this headline">¶</a></h2>
+<p>Die Dienste, die über den MapProxy zu Verfügung gestellt werden, können Sie in das Desktop GIS ihrer Wahl zum Beispiel uDig, QGIS oder gvSIG einbinden. Die WMS-URL lautet: <a class="reference external" href="http://localhost:8011/service?">http://localhost:8011/service?</a></p>
+<p>Die Beispiel-Konfiguration des MapProxy beinhaltet einige Layer die unterschiedliche Kartenserver und Kartendaten verwenden. Im Folgenden sind nähere Einzelheiten zu den einzelnen Layern beschrieben:</p>
+<div class="figure align-center">
+<img alt="MapProxy Beispiel in uDig" src="../../_images/mapproxy_udig.png" />
+<p class="caption">WMS Layer mit Daten von zwei kaskadierenden Quellen und <cite>FeatureInformation</cite></p>
+</div>
+</div>
+<div class="section" id="verfugbare-layer">
+<h2>Verfügbare Layer<a class="headerlink" href="#verfugbare-layer" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>mapnik</strong>:</dt>
+<dd>Der Mapnik stellt die Weltbevölkerung graphisch dar. Hierfür muss der Mapnik-Dienst nicht gestartet werden, da der Layer über die direkte Mapnik-Unterstützung in den MapProxy eingebunden ist.</dd>
+<dt><strong>tilelite</strong>:</dt>
+<dd>TileLite ist ein einfacher Server zum Ausliefern von Kacheln über den Mapnik. Dieser Layer demonstriert die Fähigkeit bestehende Kachel-Dienste in den MapProxy einzufügen und diese als WMS zur Verfügung zu stellen.
+Um den Layer anzuzeigen müssen sie TileLite über <em>Start Mapnik &amp; TileLite</em> starten.</dd>
+<dt><strong>geoserver</strong>:</dt>
+<dd>In diesem Layer wird die US Bevölkerung mit Hilfe des Geoserver WMS dargestellt. Der Layer unterstützt <tt class="docutils literal"><span class="pre">GetFeatureInfo</span></tt> anfragen, welche von mehreren Quellen zusammengefasst wurden.
+Um den Layer anzuzeigen müssen sie den Geoserver über <em class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</em> starten.</dd>
+<dt><strong>mapnik_geoserver</strong>:</dt>
+<dd>Dieser Layer demonstriert die Fähigkeit unterschiedliche Quellen in einem Layer zu kombinieren. Der Layer kombiniert die Weltbevölkerung vom Mapnik mit der US Bevölkerung vom GeoServer. Die Unterstützung vom <tt class="docutils literal"><span class="pre">GetFeatureInfo</span></tt> für den US Bevölkerungs-Layer ist weiterhin verfügbar.
+Um den Layer anzuzeigen müssen sie den Geoserver über <em class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</em> starten.</dd>
+</dl>
+</div>
+<div class="section" id="eigene-mapproxy-konfiguration-erstellen">
+<h2>Eigene MapProxy Konfiguration erstellen<a class="headerlink" href="#eigene-mapproxy-konfiguration-erstellen" title="Permalink to this headline">¶</a></h2>
+<p>Sie können das Konsolenwerkzeug <tt class="docutils literal"><span class="pre">mapproxy-util</span></tt> benutzen um eine Konfiguration zu erstellen und um den Testserver zu starten.</p>
+<p>Neue Konfiguration erstellen:</p>
+<blockquote>
+mapproxy-util create -t base-config ~/mapproxy</blockquote>
+<p>MapProxy-Testserver unter Port 8011 und mit der Beispiel Konfiguration starten:</p>
+<blockquote>
+mapproxy-util serve-develop ~/mapproxy/mapproxy.yaml -b 0.0.0.0:8011</blockquote>
+<p>Sie können nun die Demo aufrufen: <a class="reference external" href="http://127.0.0.1:8011/demo/">http://127.0.0.1:8011/demo/</a>.
+MapProxy startet automatisch neu wenn Sie Änderungen an der Konfigurationsdatei durchgeführt haben.</p>
+</div>
+<div class="section" id="der-nachste-schritt">
+<h2>Der nächste Schritt<a class="headerlink" href="#der-nachste-schritt" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Lesen Sie die <a class="reference external" href="../../mapproxy/index.html">MapProxy Dokumentation</a></li>
+<li>Schauen Sie die Beispiel-Konfiguration an: (<tt class="docutils literal"><span class="pre">/usr/local/share/mapproxy/mapproxy.yaml</span></tt>)</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

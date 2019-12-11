@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MapFish Quickstart &mdash; OSGeo-Live v4.0 documentation</title>
+    <link rel="stylesheet" href="_static/howto.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '#',
+        VERSION:     '4.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.0 documentation" href="index.html" />
+    <link rel="next" title="MapGuide Quick Start" href="mapguide_quickstart.html" />
+    <link rel="prev" title="Mapbender Quickstart" href="mapbender_quickstart.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+      <ul id="breadcrumbs">
+            <li class="right" style="margin-right: 10px">
+              <a href="genindex.html" title="General Index"
+                 accesskey="I">index</a></li>
+            <li class="right" >
+              <a href="mapguide_quickstart.html" title="MapGuide Quick Start"
+                 accesskey="N">next</a> |</li>
+            <li class="right" >
+              <a href="mapbender_quickstart.html" title="Mapbender Quickstart"
+                 accesskey="P">previous</a> |</li>
+        <li><a href="quickstart.html">OSGeo-Live v4.0 documentation</a> &raquo;</li>
+        <li><a href="#">MapFish Quickstart</a></li>
+      </ul>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.mapfish.org" id="mapfish-quickstart"><img align="right" alt="project logo" class="align-right" src="_images/logo-mapfish.png" style="width: 180.0px; height: 96.0px;" /></a>
+<div class="section" id="id1">
+<h1>MapFish Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>MapFish is a flexible and complete framework for building rich web-mapping
+applications. It emphasizes high productivity, and high-quality development.</p>
+<p>This Quickstart describes how to (a) run the minimal MapFish application
+installed on this live DVD, (b) create MapFish applications, and (b) install
+MapFish.</p>
+<div class="section" id="run-the-minimal-application">
+<h2>Run the minimal application<a class="headerlink" href="#run-the-minimal-application" title="Permalink to this headline">¶</a></h2>
+<p>To run the minimal application click on the MapFish link on the Desktop. This
+will start the server and open a FireFox tab pointing to the application
+(<a class="reference external" href="http://localhost:5000">http://localhost:5000</a>).</p>
+<p>The minimal application includes a map with two <a class="reference external" href="http://www.openstreetmap.org">OSM</a> layers, a toolbar above the map, and a layer
+tree.</p>
+</div>
+<div class="section" id="create-a-mapfish-application">
+<h2>Create a MapFish application<a class="headerlink" href="#create-a-mapfish-application" title="Permalink to this headline">¶</a></h2>
+<p>The MapFish framework is installed on the live DVD in the virtual Python
+environment located in the <tt class="docutils literal"><span class="pre">/usr/lib/mapfish/mapfish-venv</span></tt> directory. We
+will use this installation of the framework here.&lt;/p&gt;</p>
+<p>A MapFish application is created in three commands (from a terminal):</p>
+<ul>
+<li><p class="first">activate the virtual Python environment:</p>
+<div class="highlight-python"><pre>$ source /usr/lib/mapfish/mapfish-venv/bin/activate</pre>
+</div>
+</li>
+<li><p class="first">create the application:</p>
+<div class="highlight-python"><pre>$ paster create -t mapfish MyMapFishApp sqlalchemy=true</pre>
+</div>
+</li>
+<li><p class="first">install the JavaScript librairies in the application:</p>
+<div class="highlight-python"><pre>$ paster create -t mapfish_client MyMapFishApp</pre>
+</div>
+</li>
+</ul>
+<p>The above commands should have created the MapFish application in the
+<tt class="docutils literal"><span class="pre">MyMapFishApp</span></tt> directory.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">if the sample application (from the <a class="reference internal" href="#run-the-minimal-application">Run the minimal application</a> section)
+is running then port 5000 is already used, and you&#8217;ll have to edit the
+<tt class="docutils literal"><span class="pre">MyMapFishApp/development.ini</span></tt> file and change the port number from 5000
+to for example 5001.</p>
+</div>
+<p>At this point you should be able to run the application with:</p>
+<div class="highlight-python"><pre>$ cd MyMapFishApp
+$ paster serve development.ini</pre>
+</div>
+<p>Open <a class="reference external" href="http://localhost:5000">http://localhost:5000</a> (or <a class="reference external" href="http://localhost:5001">http://localhost:5001</a>) in your browser. You
+should see the same minimal application as that presented in the previous
+section.</p>
+<p>The MapFish framework offers more than that. In particular it allows easily
+creating RESTful web services for creating, reading, updating and deleting
+features. Please visit <a class="reference external" href="http://www.mapfish.org">http://www.mapfish.org</a> to learn more about
+MapFish.</p>
+</div>
+<div class="section" id="install-mapfish">
+<h2>Install MapFish<a class="headerlink" href="#install-mapfish" title="Permalink to this headline">¶</a></h2>
+<p>As indicated in the previous section the MapFish
+framework is installed on the Live DVD in the  the virtual Python environment
+located in the <tt class="docutils literal"><span class="pre">/usr/lib/mapfish/mapfish-venv</span></tt> directory. Yet, keep
+reading if you want to know how to install MapFish in a fresh, clean virtual
+environment.</p>
+<p>Installing the MapFish framework is done with one command line:</p>
+<div class="highlight-python"><pre>$ go-mapfish-framework-all.py --python=python2.5 venv</pre>
+</div>
+<p>The above command creates the virtual Python environment in the
+<tt class="docutils literal"><span class="pre">venv</span></tt> directory, fetches MapFish and its dependencies and install
+them all in the virtual environment.</p>
+<p>Ok, the framework is installed, you can go back to <a class="reference internal" href="#create-a-mapfish-application">Create a MapFish
+application</a> section to create a MapFish application using this installation.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <ul id="breadcrumbs">
+            <li class="right" style="margin-right: 10px">
+              <a href="genindex.html" title="General Index"
+                 >index</a></li>
+            <li class="right" >
+              <a href="mapguide_quickstart.html" title="MapGuide Quick Start"
+                 >next</a> |</li>
+            <li class="right" >
+              <a href="mapbender_quickstart.html" title="Mapbender Quickstart"
+                 >previous</a> |</li>
+        <li><a href="quickstart.html">OSGeo-Live v4.0 documentation</a> &raquo;</li>
+        <li><a href="#">MapFish Quickstart</a></li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      &copy; Copyright 2010, OSGeo.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.4.
+    </div>
+  </body>
+</html>

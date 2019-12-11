@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>QGIS mapserver Quickstart &mdash; OSGeo-Live v4.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="../../_images/logo-qgis_mapserver.png" id="qgis-mapserver-quickstart"><img align="right" alt="project logo" class="align-right" id="qgis-mapserver-quickstart" src="../../_images/logo-qgis_mapserver.png" style="width: 300.0px; height: 100.0px;" /></a>
+<div class="section" id="id1">
+<h1>QGIS mapserver Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>QGIS mapserver provides a web map service (WMS) based on libraries from the Quantum GIS (QGIS) desktop application.</p>
+<p>This Quick Start describes how to:</p>
+<blockquote>
+<ul class="simple">
+<li>update an existing QGIS project and render it with QGIS mapserver</li>
+<li>create a new QGIS project and open the WMS directly in a browser</li>
+</ul>
+</blockquote>
+<div class="section" id="start-geoext-viewer">
+<h2>Start GeoExt viewer<a class="headerlink" href="#start-geoext-viewer" title="Permalink to this headline">¶</a></h2>
+<p>OSGeo Live contains an example of web map viewer based on the GeoExt Javascript framework and using QGIS mapserver for rendering the map.</p>
+<ul class="simple">
+<li>Click <em>Desktop ‣ Spatial Tools ‣ QGIS Mapserver</em></li>
+</ul>
+<p>You should see a browser window with a web map viewer showing a world map.</p>
+<img alt="../../_images/qgis_mapserver_browser.jpg" src="../../_images/qgis_mapserver_browser.jpg" />
+<p>We will now change the map styling using QGIS.</p>
+</div>
+<div class="section" id="edit-qgis-project">
+<h2>Edit QGIS project<a class="headerlink" href="#edit-qgis-project" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Click <em>Desktop ‣ Desktop GIS ‣ Quantum GIS</em>.</li>
+<li>Choose <em>File ‣ Open Project...</em> from the menu bar.</li>
+<li>Select <tt class="docutils literal"><span class="pre">QGIS-NaturalEarth-Example.qgs</span></tt> and press <strong>Open</strong>.<ul>
+<li>You should see the same world map rendered by QGIS.
+We will now change river styling and look at the result in the web map viewer.</li>
+</ul>
+</li>
+<li>Double click <strong>10m_rivers_lake_centerlines</strong> in the Layers tree.</li>
+<li>Change the color in Outline Options to a different blue tone.</li>
+<li>Press <strong>OK</strong>.<ul>
+<li>Rivers are now rendered in a new color.</li>
+</ul>
+</li>
+<li>Save the project with <em>File ‣ Save Project</em>.</li>
+<li>Reopen the web browser</li>
+<li>Zoom in<ul>
+<li>You should now see rivers rendered in the same new color.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="create-a-new-qgis-project">
+<h2>Create a new QGIS project<a class="headerlink" href="#create-a-new-qgis-project" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Reopen QGIS</li>
+<li>Choose <em>File ‣ New Project</em>.</li>
+<li>Click <em>Layer ‣ Add Vector Layer...</em>.</li>
+<li>Browse to dataset <tt class="docutils literal"><span class="pre">/home/user/data/natural_earth/10m_admin_0_countries.shp</span></tt>.</li>
+<li>Press <strong>Open</strong>.<ul>
+<li>You should see all world countries.</li>
+</ul>
+</li>
+<li>Save the project with <em>File ‣ Save Project</em>.</li>
+<li>Use file name <tt class="docutils literal"><span class="pre">/home/user/world.qgs</span></tt> and press <strong>Save</strong>.</li>
+<li>Open the <a class="reference external" href="http://localhost/cgi-bin/qgis_mapserv?map=/home/user/world.qgs&amp;SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;BBOX=-91.901820,-180.000000,83.633800,180.000000&amp;CRS=EPSG:4326&amp;WIDTH=722&amp;HEIGHT=352&amp;LAYERS=10m_admin_0_countries&amp;STYLES=default&amp;FORMAT=image/png&amp;DPI=96&amp;TRANSPARENT=true">WMS URL</a>.<ul>
+<li>You should see all world countries, this time rendered by QGIS mapserver.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2>What Next?<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<p>To learn more about QGIS mapserver, you can follow the blog articles of <a class="reference external" href="http://linfiniti.com/2010/08/qgis-mapserver-a-wms-server-for-the-masses/">Linfiniti</a> or <a class="reference external" href="http://www.3liz.com/blog/rldhont/index.php/2010/12/03/355-qgis-mapserver-an-wysiwyg-open-source-wms-server">3LIZ</a>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i>&copy; OSGeo Foundation and LISAsoft 2011... <a href="../disclaimer.html">Disclaimer</a></i></span>
+
+  </body>
+</html>

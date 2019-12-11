@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης osgEarth &mdash; OSGeo-Live v4.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="../../_images/logo-osgearth.gif" id="osgearth-quickstart"><img align="right" alt="project logo" class="align-right" id="osgearth-quickstart" src="../../_images/logo-osgearth.gif" style="width: 190.0px; height: 28.0px;" /></a>
+<div class="section" id="osgearth">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης osgEarth<a class="headerlink" href="#osgearth" title="Permalink to this headline">¶</a></h1>
+<p>Το osgEarth είναι ένα περιβάλλον οπτικοποίησης εδάφους για το <a class="reference external" href="http://www.openscenegraph.org/">OpenSceneGraph</a>.</p>
+<p>Αυτό το εγχειρίδιο περιγράφει πως να εκκινήσετε μια τρισδιάστατη υδρόγειο με διάφορα επίπεδα.</p>
+<div class="section" id="osgearth-simple">
+<h2>Εκτελώντας το osgearth_simple<a class="headerlink" href="#osgearth-simple" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Σε ένα τερματικό ανοίξτε το osgearth simple viewer με την εντολή:</p>
+<div class="highlight-python"><pre>osgearth_simple --window 50 50 900 700</pre>
+</div>
+</li>
+<li><p class="first">Πατήστε &#8216;1&#8217;-&#8216;5&#8217; για προκαθορισμένες οπτικές γωνίες.</p>
+</li>
+<li><p class="first">Με απλό κλικ πλοηγείστε; με δεξί ή τον τροχό κύλισης για zoom in ή zoom out.</p>
+</li>
+<li><p class="first">Για στροφή αριστερό και δεξί κλικ και ταυτόχρονη κύλιση στο ποντίκι.</p>
+</li>
+<li><p class="first">Πατείστε το &#8216;escape&#8217; για έξοδο.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="wms">
+<h2>Προσθέτοντας μια υπήρεσία WMS<a class="headerlink" href="#wms" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Σε ένα τερματικό εκτελέστε την εντολή:</p>
+<div class="highlight-python"><pre>osgearth_simple --window 50 50 900 700 /usr/share/osgearth/maps/nexrad.earth</pre>
+</div>
+</li>
+</ul>
+<p>Θα δείτε μια υδρόγειο με δεδομένα radar σε μερικά τμήματα της Βορείου Αμερικής.</p>
+</div>
+<div class="section" id="osgviewer-openstreetmap">
+<h2>Εκτελώντας το osgviewer με ένα επίπεδο OpenStreetMap<a class="headerlink" href="#osgviewer-openstreetmap" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Σε ένα τερματικό εκτελέστε τις εντολές:</p>
+<div class="highlight-python"><pre>export OSG_FILE_PATH=/usr/share/osgearth
+osgviewer /usr/share/osgearth/maps/openstreetmap.earth</pre>
+</div>
+</li>
+<li><p class="first">Πατήστε &#8216;h&#8217; για βοήθεια. Δείτε επίσης <a class="reference external" href="http://www.openscenegraph.org/projects/osg/wiki/Support/UserGuides/osgviewer">openscenegraph.org</a> για περισσότερα.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>Τεκμηρίωση<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Για να μάθετε περισσότερα για το osgEarth, ξεκινείστε από την σελίδα <a class="reference external" href="http://osgearth.org/wiki/Documentation">Documentation page</a> στο Wiki.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i>&copy; OSGeo Foundation and LISAsoft 2011... <a href="../disclaimer.html">Disclaimer</a></i></span>
+
+  </body>
+</html>

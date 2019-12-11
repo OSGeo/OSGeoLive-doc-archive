@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//ABISOURCE//DTD XHTML plus AWML 2.2//EN" "http://www.abisource.com/2004/xhtml-awml/xhtml-awml.mod">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:awml="http://www.abisource.com/2004/xhtml-awml/">
+ <head><link href="../arramagong.css" type="text/css" rel="stylesheet"/>
+  <!-- ======================================================= -->
+  <!-- Created by AbiWord, a free, Open Source wordprocessor.  -->
+  <!-- For more information visit http://www.abisource.com.    -->
+  <!-- ======================================================= -->
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>octave_description.html</title>
+  <style type="text/css">
+   <!--
+#toc,
+.toc,
+.mw-warning {
+	border: 1px solid #aaa;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+#toc h2,
+.toc h2 {
+	display: inline;
+	border: none;
+	padding: 0;
+	font-size: 100%;
+	font-weight: bold;
+}
+#toc #toctitle,
+.toc #toctitle,
+#toc .toctitle,
+.toc .toctitle {
+	text-align: center;
+}
+#toc ul,
+.toc ul {
+	list-style-type: none;
+	list-style-image: none;
+	margin-left: 0;
+	padding-left: 0;
+	text-align: left;
+}
+#toc ul ul,
+.toc ul ul {
+	margin: 0 0 0 2em;
+}
+#toc .toctoggle,
+.toc .toctoggle {
+	font-size: 94%;
+}@media print, projection, embossed {
+	body {
+		padding-top:28.000000mm;
+		padding-bottom:28.000000mm;
+		padding-left:28.000000mm;
+		padding-right:28.000000mm;
+	}
+}
+body {
+	font-weight:normal;
+	font-family:'Liberation Serif';
+	widows:2;
+	text-indent:0in;
+	color:#000000;
+	font-size:12pt;
+	text-align:left;
+}
+table {
+}
+td {
+	border-collapse:collapse;
+	text-align:left;
+	vertical-align:top;
+}
+p, h1, h2, h3, li {
+	color:#000000;
+	font-family:'Liberation Serif';
+	font-size:12pt;
+	text-align:left;
+}
+h1 {
+	font-family:'Liberation Sans';
+	font-size:17pt;
+	font-weight:bold;
+	margin-bottom:3pt;
+	margin-top:22pt;
+	page-break-after:avoid;
+}
+h2 {
+	font-family:'Liberation Sans';
+	font-size:14pt;
+	font-weight:bold;
+	margin-bottom:3pt;
+	margin-top:22pt;
+	page-break-after:avoid;
+}
+h3 {
+	font-family:'Liberation Sans';
+	font-weight:bold;
+	margin-bottom:3pt;
+	margin-top:22pt;
+	page-break-after:avoid;
+}
+*.plain_text {
+	font-family:'Courier New';
+}
+     -->
+  </style>
+ </head>
+ <body> <div class="header"><div class="banner"><a href="http://www.arramagong.com/"><img src="../banner.png"></a></div><ul>  <li><a href="../index.html">Home</a></li> | <li><a href="../content.html">Contents</a></li> | <li><a href="../contact.html">Contact and Support</a></li> | <li><a href="../tests.html">Tests</a></li> | <li><a href="../sponsors.html">Sponsors</a></li></ul></div><br />
+  <div>
+   <h1>Octave Mapping Toolbox</h1>
+   <h2>About</h2>
+   <p>GNU Octave is a (mostly Matlab<span style="vertical-align:super">®</span> compatible) high-level language, primarily intended for numerical computations. It provides a convenient command-line interface for solving linear and nonlinear problems numerically. </p>
+   <p>Octave uses some of the best and most respected numerical libraries as balgen, dassl, eispack, fftpack, lapack, linpack, minpack, odepack, ranlib, slatec-fn and villad. Octave can be dynamically extended with user-supplied C++ files. </p>
+   <p>The mapping toolbox includes functions for computing angular distances and displacements between points on a sphere, as well as the great circle azimuth. This Octave add-on package is part of the Octave-Forge project. </p>
+   <p>Homepage</p>
+   <p><a href="http://www.gnu.org/software/octave/">http://www.gnu.org/software/octave/</a>&nbsp;</p>
+   <p>License</p>
+   <p>GNU General Public License (GPL) version 3 </p>
+   <h2>Documentation</h2>
+   <p>* "<a href="http://www.gnu.org/software/octave/meetings/2006/octave_gis.pdf"><span style="font-style:italic">Bringing GIS to Octave</span>"</a> (PDF) <br />* Mapping toolbox <a href="http://octave.sourceforge.net/doc/funref_mapping.html">function reference</a>&nbsp;</p>
+   <h3>Quick example</h3>
+   <p>Open a terminal and start the program by typing "octave". </p>
+   <p><span style="font-weight:bold">• Which way to Barcelona from Sydney?</span>&nbsp;</p>
+   <p class="plain_text"><br /> &nbsp;&nbsp;sydney = [-33.8750 151.2005]<br /> &nbsp;&nbsp;barcelona = [41+23/60 2+11/60]<br /><br /> &nbsp;&nbsp;dirn = azimuth(sydney, barcelona)<br /> &nbsp;&nbsp;deg_symb = 176;<br /> &nbsp;&nbsp;disp(['Heading: ' num2str(dirn) deg_symb])<br /></p>
+   <p><span style="font-weight:bold">• How far's the trip? (roughly)</span>&nbsp;</p>
+   <p class="plain_text"><br /> &nbsp;&nbsp;system('proj -le')<br /> &nbsp;&nbsp;wgs84_a = 6378137.0 &nbsp;% major radius of the Earth, in meters<br /> &nbsp;&nbsp;dist_deg = distance(sydney, barcelona)<br /> &nbsp;&nbsp;dist_meters = pi * wgs84_a * (dist_deg / 360.0)<br /> &nbsp;&nbsp;disp(['Distance: ' num2str(dist_meters / 1000) ' km'])<br /></p>
+   <p>Type "exit" to leave. </p>
+   <p></p>
+   <p></p>
+   <p></p>
+  </div>
+ <div class="footer"> <div class="copyright">&copy; The Open Source Geospatial Foundation and LISAsoft 2010</div> </body>
+</html>

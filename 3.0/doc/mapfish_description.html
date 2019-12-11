@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//ABISOURCE//DTD XHTML plus AWML 2.2//EN" "http://www.abisource.com/2004/xhtml-awml/xhtml-awml.mod">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:awml="http://www.abisource.com/2004/xhtml-awml/">
+ <head><link href="../arramagong.css" type="text/css" rel="stylesheet"/>
+  <!-- ======================================================= -->
+  <!-- Created by AbiWord, a free, Open Source wordprocessor.  -->
+  <!-- For more information visit http://www.abisource.com.    -->
+  <!-- ======================================================= -->
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>mapfish_description.html</title>
+  <style type="text/css">
+   <!--
+#toc,
+.toc,
+.mw-warning {
+	border: 1px solid #aaa;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+#toc h2,
+.toc h2 {
+	display: inline;
+	border: none;
+	padding: 0;
+	font-size: 100%;
+	font-weight: bold;
+}
+#toc #toctitle,
+.toc #toctitle,
+#toc .toctitle,
+.toc .toctitle {
+	text-align: center;
+}
+#toc ul,
+.toc ul {
+	list-style-type: none;
+	list-style-image: none;
+	margin-left: 0;
+	padding-left: 0;
+	text-align: left;
+}
+#toc ul ul,
+.toc ul ul {
+	margin: 0 0 0 2em;
+}
+#toc .toctoggle,
+.toc .toctoggle {
+	font-size: 94%;
+}@media print, projection, embossed {
+	body {
+		padding-top:28.000000mm;
+		padding-bottom:28.000000mm;
+		padding-left:28.000000mm;
+		padding-right:28.000000mm;
+	}
+}
+body {
+	font-weight:normal;
+	font-family:'Liberation Serif';
+	widows:2;
+	text-indent:0in;
+	color:#000000;
+	font-size:12pt;
+	text-align:left;
+}
+table {
+}
+td {
+	border-collapse:collapse;
+	text-align:left;
+	vertical-align:top;
+}
+p, h1, h2, h3, li {
+	color:#000000;
+	font-family:'Liberation Serif';
+	font-size:12pt;
+	text-align:left;
+}
+h1 {
+	font-family:'Liberation Sans';
+	font-size:17pt;
+	font-weight:bold;
+	margin-bottom:3pt;
+	margin-top:22pt;
+	page-break-after:avoid;
+}
+h2 {
+	font-family:'Liberation Sans';
+	font-size:14pt;
+	font-weight:bold;
+	margin-bottom:3pt;
+	margin-top:22pt;
+	page-break-after:avoid;
+}
+*.plain_text {
+	font-family:'Courier New';
+}
+     -->
+  </style>
+ </head>
+ <body> <div class="header"><div class="banner"><a href="http://www.arramagong.com/"><img src="../banner.png"></a></div><ul>  <li><a href="../index.html">Home</a></li> | <li><a href="../content.html">Contents</a></li> | <li><a href="../contact.html">Contact and Support</a></li> | <li><a href="../tests.html">Tests</a></li> | <li><a href="../sponsors.html">Sponsors</a></li></ul></div><br />
+  <div>
+   <h1>MapFish</h1>
+   <h2>About</h2>
+   <p><a href="http://www.mapfish.org/">MapFish</a> is a complete and flexible framework for building rich web-mapping applications. It is based on the <a href="http://pylonshq.com/">Pylons</a> Python web framework for the server side, and on the <a href="http://www.openlayers.org/">OpenLayers</a> and <a href="http://www.geoext.org/">GeoExt</a> JavaScript toolkits for the client side.</p>
+   <h2>Sample</h2>
+   <p>A minimal application built with MapFish is installed on the Live DVD. To launch it, click on the MapFish link on the desktop. This will start the server and open a FireFox tab pointing to the application (<a href="http://localhost:5000/">http://localhost:5000</a>).</p>
+   <p>The minimal application includes a map with two <a href="http://www.openstreetmap.org/">OSM</a> layers, a toolbar above the map, and a layer tree.</p>
+   <p>This minimal application is what users of the MapFish framework get right after the creation of their application with the framework. Read on to learn more.</p>
+   <h2>Create a MapFish application</h2>
+   <p>The MapFish framework is installed on the Live DVD in the virtual Python environment located in the <span style="font-family:'Courier'">/usr/lib/mapfish/mapfish-venv</span> directory. We will use this installation of the framework here.</p>
+   <p>A MapFish application is created in three commands (from a terminal): </p>
+   <ul>
+    <li style="text-align:left;margin-bottom:0pt;margin-top:0pt;margin-right:0pt">	&nbsp;&nbsp;&nbsp;activate the virtual Python environment:     </li>
+   </ul>
+   <p class="plain_text"> &nbsp;$ source /usr/lib/mapfish/mapfish-venv/bin/activate<br /> &nbsp;</p>
+   <ul>
+    <li style="text-align:left;margin-bottom:0pt;margin-top:0pt;margin-right:0pt">	&nbsp;&nbsp;&nbsp;create the application:     </li>
+   </ul>
+   <p class="plain_text"> &nbsp;$ paster create -t mapfish MyMapFishApp sqlalchemy=true<br /> &nbsp;</p>
+   <ul>
+    <li style="text-align:left;margin-bottom:0pt;margin-top:0pt;margin-right:0pt">	&nbsp;&nbsp;&nbsp;install the JavaScript librairies in the application:     </li>
+   </ul>
+   <p class="plain_text"> &nbsp;$ paster create -t mapfish_client MyMapFishApp<br /> &nbsp;</p>
+   <p></p>
+   <p>The above commands should have created the MapFish application in the <span style="font-family:'Courier'">MyMapFishApp</span> directory. <span style="font-weight:bold">Note</span>: if the sample application (from the previous <a href="#sample">section</a>) is running then port 5000 is already used, so you'll have to edit the <span style="font-family:'Courier'">MyMapFishApp/development.ini</span> file and change the port number from 5000 to for example 5001.</p>
+   <p>At this point you should be able to run the application with: </p>
+   <p class="plain_text">$ cd MyMapFishApp<br />$ paster serve development.ini<br /></p>
+   <p>Open <a href="http://localhost:5000/">http://localhost:5000</a> (or <a href="http://localhost:5001/">http://localhost:5001</a>) in your browser. You should see the same minimal application as that presented in the <a href="#sample">Sample section</a>.</p>
+   <p>The MapFish framework offers more than that. In particular it allows easily creating RESTful web services for creating, reading, updating and deleting features. Please visit our <a href="http://www.mapfish.org/">web site</a> to learn more about MapFish.</p>
+   <h2>Install MapFish</h2>
+   <p>As indicated in the <a href="#create">previous section</a> the MapFish framework is installed on the Live DVD in the the virtual Python environment located in the <span style="font-family:'Courier'">/usr/lib/mapfish/mapfish-venv</span> directory. Yet, keep reading if you want to know how to install MapFish in a fresh, clean virtual environment.</p>
+   <p></p>
+   <p>Installing the MapFish framework is done with one command line: </p>
+   <p class="plain_text">$ go-mapfish-framework-all.py --python=python2.5 venv<br /></p>
+   <p></p>
+   <p>The above command creates the virtual Python environment in the <span style="font-family:'Courier'">venv</span> directory, fetches MapFish and its dependencies and install them all in the virtual environment.</p>
+   <p>Ok, the framework is installed, you can go back to the <a href="#create">Create a MapFish application</a> to create a MapFish application using this installation.</p>
+   <p></p>
+   <p></p>
+   <p></p>
+  </div>
+ <div class="footer"> <div class="copyright">&copy; The Open Source Geospatial Foundation and LISAsoft 2010</div> </body>
+</html>

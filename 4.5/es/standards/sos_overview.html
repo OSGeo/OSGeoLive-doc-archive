@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sensor Observation Service (SOS) &mdash; OSGeo-Live v4.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <span class="target" id="sos-overview"></span><a class="reference external image-reference" href="../../_images/logo-OGC-left.png"><img align="right" alt="OGC logo" class="align-right" src="../../_images/logo-OGC-left.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference external image-reference" href="../../_images/logo-OGC-right.png"><img align="right" alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="sensor-observation-service-sos">
+<h1>Sensor Observation Service (SOS)<a class="headerlink" href="#sensor-observation-service-sos" title="Permalink to this headline">¶</a></h1>
+<p>El estandar OGC Sensor Observation Service (SOS) es un servicio de datos. El estandar OGC SOS define un interface estandarizado y operaciones para el acceso a observaciones desde sensores y sistemas de sensores que es consistente con todos los sistemas, incluyendo remoto, in-situ, fijos y sensores móviles. SOS proporciona resultados de consultas en el formato estandar de observación y medida ( en inglés Observation and Mesurements, O&amp;M)  para modelizar observaciones de sensores y la especificación SensorML para modelizar sensores y sistemas sensor. (<a class="reference external" href="http://www.opengeospatial.org/standards/sos">http://www.opengeospatial.org/standards/sos</a>)</p>
+<a class="reference external image-reference" href="../../_images/sos.jpg"><img alt="SOS in Context" src="../../_images/sos.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>El estandar SOS define un modelo común para sensores y sistemas sensor que no son de un dominio específico y que se pueden utilizar sin un conocimiento a-priori de esquemas de aplicación de dominio específico.</p>
+<p>Una observación es un evento cuyo resultado es una estimación del valor de alguna propiedad de la característica de interés, obtenida usando un procedimiento específico. Las observaciones se definen por</p>
+<p>eventTime – Cuando se tomó la medida
+featureOfInterest – La entidad que se mide
+observedProperty - La característica que se midió
+procedure  - cómo se midió</p>
+<p>Operaciones SOS requeridas incluyen:
+GetObservation - acceso a datos de observación y medida del sensor a través de una consulta espacio-temporal que se puede filtrar por un fenómeno
+GetCapabilities - Metadatos del servicio SOS
+DescribeSensor - información sobre los sensores, sus procesos y plataformas en SensorML</p>
+<p>Operaciones opcionales incluyen: GetResult, GetFeatureOfInterest, GetFeatureOfInterestTime, DescribeFeatureofInterest, DescribeObservationType, DescribeResultModel, Register Sensor, y InsertObservation.</p>
+<p>Hay numerosas y excelentes implementaciones de SOS. El OpenIOOS.org tiene trece organizaciones que proveen instancias de servicios SOS que proporcionan acceso a más de 1400 sensores de oceanos (<a class="reference external" href="http://www.openioos.org/real_time_data/gm_sos.html">http://www.openioos.org/real_time_data/gm_sos.html</a>). Esta demostración operacional “representa una iniciativa para el desarrollo de una arquitectura de Servicios Web para la observación de los oceanos”.</p>
+<div class="section" id="ver-tambien">
+<h2>Ver también<a class="headerlink" href="#ver-tambien" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="wcs_overview.html"><em>Web Coverage Service (WCS)</em></a></li>
+<li><a class="reference external" href="wfs_overview.html"><em>Web Feature Service (WFS)</em></a></li>
+<li>Grid Coverage Service</li>
+<li>Sensor Planning Service</li>
+<li>Coordinate Transformation Service</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i>&copy; OSGeo Foundation and LISAsoft 2011... <a href="../disclaimer.html">Disclaimer</a></i></span>
+
+  </body>
+</html>

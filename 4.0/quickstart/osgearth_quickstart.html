@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>osgEarth Quickstart &mdash; OSGeo-Live v4.0 documentation</title>
+    <link rel="stylesheet" href="_static/howto.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '#',
+        VERSION:     '4.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.0 documentation" href="index.html" />
+    <link rel="next" title="OpenStreetMap Quickstart" href="osm_quickstart.html" />
+    <link rel="prev" title="OpenLayers Quickstart" href="openlayers_quickstart.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+      <ul id="breadcrumbs">
+            <li class="right" style="margin-right: 10px">
+              <a href="genindex.html" title="General Index"
+                 accesskey="I">index</a></li>
+            <li class="right" >
+              <a href="osm_quickstart.html" title="OpenStreetMap Quickstart"
+                 accesskey="N">next</a> |</li>
+            <li class="right" >
+              <a href="openlayers_quickstart.html" title="OpenLayers Quickstart"
+                 accesskey="P">previous</a> |</li>
+        <li><a href="quickstart.html">OSGeo-Live v4.0 documentation</a> &raquo;</li>
+        <li><a href="#">osgEarth Quickstart</a></li>
+      </ul>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="_images/logo-osgearth.gif" id="osgearth-quickstart"><img align="right" alt="project logo" class="align-right" id="osgearth-quickstart" src="_images/logo-osgearth.gif" style="width: 190.0px; height: 28.0px;" /></a>
+<div class="section" id="id1">
+<h1>osgEarth Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>osgEarth is a scalable terrain rendering toolkit for <a class="reference external" href="http://www.openscenegraph.org/">OpenSceneGraph</a>.</p>
+<p>This Quick Start describes how to start a 3D globe with different overlays.</p>
+<div class="section" id="running-osgearth-simple">
+<h2>Running osgearth_simple<a class="headerlink" href="#running-osgearth-simple" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Open a console and start the osgearth simple viewer:</p>
+<div class="highlight-python"><pre>osgearth_simple --window 50 50 900 700</pre>
+</div>
+</li>
+<li><p class="first">Press &#8216;1&#8217;-&#8216;5&#8217; for predefined viewpoints.</p>
+</li>
+<li><p class="first">Click to navigate; right-click or scroll wheel to zoom in and out.</p>
+</li>
+<li><p class="first">Drag mouse with left+right click for tilt.</p>
+</li>
+<li><p class="first">hit the &#8216;escape&#8217; key to quit</p>
+</li>
+</ul>
+</div>
+<div class="section" id="overlay-a-wms-service">
+<h2>Overlay a WMS Service<a class="headerlink" href="#overlay-a-wms-service" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">In a console, type:</p>
+<div class="highlight-python"><pre>osgearth_simple --window 50 50 900 700 /usr/share/osgearth/maps/nexrad.earth</pre>
+</div>
+</li>
+</ul>
+<p>You should see a globe with radar data over some parts of North America.</p>
+</div>
+<div class="section" id="running-osgviewer-with-an-openstreetmap-overlay">
+<h2>Running osgviewer with an OpenStreetMap overlay<a class="headerlink" href="#running-osgviewer-with-an-openstreetmap-overlay" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">In a console, type:</p>
+<div class="highlight-python"><pre>export OSG_FILE_PATH=/usr/share/osgearth
+osgviewer /usr/share/osgearth/maps/openstreetmap.earth</pre>
+</div>
+</li>
+<li><p class="first">Press &#8216;h&#8217; for help. See also <a class="reference external" href="http://www.openscenegraph.org/projects/osg/wiki/Support/UserGuides/osgviewer">openscenegraph.org</a> for more help.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2>What Next?<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<p>To learn more about osgEarth, a starting point is the <a class="reference external" href="http://osgearth.org/wiki/Documentation">Documentation page</a> in the Wiki.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <ul id="breadcrumbs">
+            <li class="right" style="margin-right: 10px">
+              <a href="genindex.html" title="General Index"
+                 >index</a></li>
+            <li class="right" >
+              <a href="osm_quickstart.html" title="OpenStreetMap Quickstart"
+                 >next</a> |</li>
+            <li class="right" >
+              <a href="openlayers_quickstart.html" title="OpenLayers Quickstart"
+                 >previous</a> |</li>
+        <li><a href="quickstart.html">OSGeo-Live v4.0 documentation</a> &raquo;</li>
+        <li><a href="#">osgEarth Quickstart</a></li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      &copy; Copyright 2010, OSGeo.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.4.
+    </div>
+  </body>
+</html>

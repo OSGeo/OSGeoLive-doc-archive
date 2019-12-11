@@ -1,0 +1,160 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TinyOWS Quickstart &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.tinyows.org/" id="tinyows-quickstart-de"><img alt="Projektlogo" class="align-right" src="../../_images/logo-TinyOWS.png" style="width: 40.0px; height: 40.0px;" /></a>
+<div class="section" id="tinyows-quickstart">
+<h1>TinyOWS Quickstart<a class="headerlink" href="#tinyows-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>TinyOWS ist ein hochperformanter, leichtgewichtiger und einfach einzurichtender Transaktionaler Web Feature Service (WFS-T), der CGI und FastCGI Schnittstellen unterstützt und <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a> für die Datenspeicherung nutzt.</p>
+<p>Dieser Quickstart Guide beschreibt folgende Schritte:</p>
+<blockquote>
+<ul class="simple">
+<li>Einen WFS Layer in QGIS anzeigen</li>
+<li>Einen WFS Layer mit dem WFS-T Protokoll in QGIS editieren</li>
+</ul>
+</blockquote>
+<div class="section" id="wfs-layer-mit-qgis-anzeigen">
+<h2>WFS Layer mit QGIS anzeigen<a class="headerlink" href="#wfs-layer-mit-qgis-anzeigen" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first"><em class="menuselection">Applications ‣ Desktop GIS ‣ Quantum GIS</em> im Startmenü des Desktops wählen</p>
+</li>
+<li><p class="first">Wählen Sie <em class="menuselection">Layer ‣ PostGIS Layer hinzufügen...</em>.</p>
+<ul class="simple">
+<li>Wir zeigen zuersten den Original PostGIS Layer an</li>
+</ul>
+</li>
+<li><p class="first">Klicken Sie auf die Schaltfläche <em class="guilabel">Neu</em>.</p>
+</li>
+<li><p class="first"><strong>pgrouting</strong> als Name und Datenbank der Verbindung eingeben</p>
+</li>
+<li><p class="first">Klicken Sie auf die Schaltfläche <em class="guilabel">OK</em>.</p>
+</li>
+<li><p class="first">Klicken Sie auf die Schaltfläche <em class="guilabel">Verbinden</em>.</p>
+</li>
+<li><p class="first">Zeile <strong>ways</strong> der Tabellen Liste auswählen</p>
+</li>
+<li><p class="first">Klicken Sie auf die Schaltfläche <em class="guilabel">Hinzufügen</em>.</p>
+</li>
+<li><p class="first">Zoomen Sie auf einen beliebigen Teilbereich hinein</p>
+</li>
+<li><p class="first">Wählen Sie <em class="menuselection">Layer ‣ WFS Layer hinzufügen...</em>.</p>
+<ul class="simple">
+<li>Jetzt fügen wir einen WFS Layer hinzu, der auf der selben Tabelle basiert</li>
+</ul>
+</li>
+<li><p class="first">Klicken Sie auf die Schaltfläche <em class="guilabel">Neu</em>.</p>
+</li>
+<li><p class="first"><strong>tinyows</strong> als Name und <strong>http://localhost/cgi-bin/tinyows</strong> als URL einfüllen</p>
+</li>
+<li><p class="first">Klicken Sie auf die Schaltfläche <em class="guilabel">OK</em>.</p>
+</li>
+<li><p class="first">Klicken Sie auf die Schaltfläche <em class="guilabel">Verbinden</em>.</p>
+</li>
+<li><p class="first"><strong>ows:ways</strong> in der Layer-Liste auswählen</p>
+</li>
+<li><p class="first">Setzen Sie einen Haken bei der Option <em class="guilabel">Nur Objekte, die den aktuellen Ausschnitt scheiden laden</em>.</p>
+</li>
+<li><p class="first">Klicken Sie auf die Schaltfläche <em class="guilabel">OK</em>.</p>
+<ul>
+<li><p class="first">Der WFS Layer wird jetzt angezeigt:</p>
+<a class="reference internal image-reference" href="../../_images/tinyows_wfs_layer.png"><img alt="../../_images/tinyows_wfs_layer.png" src="../../_images/tinyows_wfs_layer.png" style="width: 640.0px; height: 425.6px;" /></a>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="daten-editieren-mit-wfs-t">
+<h2>Daten editieren mit WFS-T<a class="headerlink" href="#daten-editieren-mit-wfs-t" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Wählen Sie <em class="menuselection">Layer ‣ Bearbeitungsstatus umschalten</em>.</li>
+<li>Wählen Sie <em class="menuselection">Bearbeiten ‣ Objekte überarbeiten</em>.</li>
+<li>Verschieben Sie einen Randpunkt (Kreuz) an eine andere Position</li>
+<li>Wählen Sie <em class="menuselection">Layer ‣ Änderungen speichern</em>.</li>
+<li>Deselektieren Sie <strong>tows:ways</strong> in der Layer Liste, um den WFS-Layer auszublenden<ul>
+<li>Sie sollten den eben editierten Linienzug in einer anderen Farbe sehen, direkt von PostGIS geliefert.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="wie-geht-es-weiter">
+<h2>Wie geht es weiter?<a class="headerlink" href="#wie-geht-es-weiter" title="Permalink to this headline">¶</a></h2>
+<p>Um mehr über TinyOWS zu erfahren, dient die Seite <a class="reference external" href="http://tinyows.org/trac/wiki/UserDocumentation">User Documentation</a> auf der TinyOWS Homepage als Ausgangspunkt.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

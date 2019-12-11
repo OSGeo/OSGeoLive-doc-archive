@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GRASS GIS Quickstart &mdash; OSGeo-Live v4.0 documentation</title>
+    <link rel="stylesheet" href="_static/howto.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '#',
+        VERSION:     '4.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.0 documentation" href="index.html" />
+    <link rel="next" title="Mapbender Quickstart" href="mapbender_quickstart.html" />
+    <link rel="prev" title="GpsDrive Quickstart" href="gpsdrive_quickstart.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+      <ul id="breadcrumbs">
+            <li class="right" style="margin-right: 10px">
+              <a href="genindex.html" title="General Index"
+                 accesskey="I">index</a></li>
+            <li class="right" >
+              <a href="mapbender_quickstart.html" title="Mapbender Quickstart"
+                 accesskey="N">next</a> |</li>
+            <li class="right" >
+              <a href="gpsdrive_quickstart.html" title="GpsDrive Quickstart"
+                 accesskey="P">previous</a> |</li>
+        <li><a href="quickstart.html">OSGeo-Live v4.0 documentation</a> &raquo;</li>
+        <li><a href="#">GRASS GIS Quickstart</a></li>
+      </ul>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://grass.osgeo.org" id="grass-quickstart"><img align="right" alt="project logo" class="align-right" src="_images/logo-GRASS.png" style="width: 110.0px; height: 123.0px;" /></a>
+<div class="section" id="grass-gis-quickstart">
+<h1>GRASS GIS Quickstart<a class="headerlink" href="#grass-gis-quickstart" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="running">
+<h2>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h2>
+<p>To run GRASS on the Live DVD, click on the GRASS link on the desktop.
+From the &#8220;Welcome to GRASS&#8221; window select either the Spearfish or North
+Carolina (nc_spm_08) dataset for the location, and &#8220;user1&#8221; for the mapset,
+then click on [Start Grass].</p>
+<a class="reference external image-reference" href="_images/grass-startup.png"><img align="right" alt="screenshot" class="align-right" src="_images/grass-startup.png" style="width: 248.0px; height: 258.0px;" /></a>
+<p>This will launch GRASS with our brand new GUI written in wxPython. At
+the time of writing we have gotten just about all of the kinks out of
+it and are nearly ready to call it (and GRASS 6.4.0) complete. The old
+Tcl/Tk GUI is still available if you prefer to use that; you can start
+it by typing <tt class="docutils literal"><span class="pre">g.gui</span> <span class="pre">--ui</span></tt> on the command line.</p>
+<p>If you are on a netbook with a very small display (800x600 resolution)
+the startup screen might get a little scrunched and the [Start GRASS]
+button hidden behind the location and mapset lists. If this happens to
+you the solution is to drag the corner of the window to make it a little
+bigger. You might have to move the window up past the top of the screen
+a bit to get the room (hold down the Alt key and left-click drag the
+window to move it).</p>
+<div class="section" id="displaying-maps">
+<h3>Displaying maps<a class="headerlink" href="#displaying-maps" title="Permalink to this headline">¶</a></h3>
+<a class="reference external image-reference" href="_images/grass-layerman.png"><img align="left" alt="screenshot" class="align-left" src="_images/grass-layerman.png" style="width: 389.0px; height: 298.0px;" /></a>
+<p>Once inside add a raster map layer such as &#8220;<cite>elevation</cite>&#8221; from the PERMANENT
+mapset. To do this go into the GIS Layer Manager window and click on the
+checkerboard toolbar button with a &#8220;+&#8221; on it. Then select the map name
+you want from the &#8220;<em>map to be displayed</em>&#8221; pull-down list, and
+click [Ok].</p>
+<p>In a similar fashion add the &#8220;<cite>roads</cite>&#8221; vector layer from the PERMANENT
+mapset by clicking on the toolbar button with a &#8220;+&#8221; and a bent poly-line
+which looks a bit like a &#8220;V&#8221;.</p>
+<p>Over in the Map Display window toolbar click on the eyeball button to
+render the view.</p>
+<p>You should now see the maps displayed.</p>
+</div>
+<div class="section" id="plot-an-elevation-profile">
+<h3>Plot an elevation profile<a class="headerlink" href="#plot-an-elevation-profile" title="Permalink to this headline">¶</a></h3>
+<a class="reference external image-reference" href="_images/grass-profile.png"><img align="right" alt="screenshot" class="align-right" src="_images/grass-profile.png" style="width: 344.0px; height: 219.5px;" /></a>
+<p>Back in the GIS Layer Manager window click on the <cite>elevation</cite> raster
+map name to select it. Then in the Map Display window, to the right of the
+zooming buttons on the Map Display toolbar is an icon with a line graph
+and checkerboard on it. Click on that and select <strong>Profile Surface Map</strong>.
+If it isn&#8217;t automatically listed again pick an elevation map as the raster
+layer and press [Ok]. The second button in from the left allows you to
+set out the profile line, click it then mark out a few points on the Map
+Display canvas. When done go back to the Profile window and click on the
+eyeball button to create the plot. Click on the I/O button of the far
+right to close the profile window.</p>
+</div>
+<div class="section" id="create-a-random-surface">
+<h3>Create a random surface<a class="headerlink" href="#create-a-random-surface" title="Permalink to this headline">¶</a></h3>
+<p>Now let&#8217;s create a new map. Select <em>Raster ‣ Generate
+surfaces ‣ Fractal surface</em> from the menu (near the bottom);
+give your new map a name; adjust any options you like in the Options
+tab (the defaults are fine); and click [Run]. You can then [Close] the
+<em>r.surf.fractal</em> module&#8217;s dialog window.</p>
+<a class="reference external image-reference" href="_images/grass-fractal.png"><img align="right" alt="screenshot" class="align-right" src="_images/grass-fractal.png" style="width: 341.0px; height: 302.0px;" /></a>
+</div>
+<div class="section" id="adjust-colors">
+<h3>Adjust colors<a class="headerlink" href="#adjust-colors" title="Permalink to this headline">¶</a></h3>
+<p>Now add your new raster layer to the layer list as you did before with
+the elevation raster map, except this time it will be in your &#8220;user1&#8221;
+working mapset. You might un-tick the elevation layer check-box
+now so that the two don&#8217;t draw over the top of each other. Click on the
+eyeball to view your new map.
+The colors might not be as you&#8217;d like so let&#8217;s change them. With the
+fractal DEM selected in the layer list, in the
+<cite>Raster</cite> menu select <em>Manage colors ‣ Color Tables</em>.
+In the &#8220;Colors&#8221; tab click on the pull-down list for the &#8220;Type of color
+table&#8221; option, and pick one from the list. &#8220;srtm&#8221; is a nice choice. Once
+done click the [Run] button and close the <em>r.colors</em> dialog window.</p>
+<p>Because you have altered the map&#8217;s metadata, this time to re-render it
+you will have to fully flush the display cache. So click on the little
+refresh button next to the eyeball button to re-render all layers and you
+should see your map with its new colors.</p>
+</div>
+<div class="section" id="create-a-shaded-relief-map">
+<h3>Create a shaded relief map<a class="headerlink" href="#create-a-shaded-relief-map" title="Permalink to this headline">¶</a></h3>
+<a class="reference external image-reference" href="_images/grass-shadedrelief.png"><img align="right" alt="screenshot" class="align-right" src="_images/grass-shadedrelief.png" style="width: 341.0px; height: 302.0px;" /></a>
+<p>Next we&#8217;ll create a shaded relief map of the elevation layer we saw
+earlier. Start by verifying that the computational region is set match
+the raster map of interest, &#8220;<cite>elevation</cite>&#8221; in the PERMANENT mapset. To
+do this, make sure it is loaded into the layer list of the main Layer
+Manager window, right click on its name and select &#8220;Set computation region
+from selected map(s)&#8221;. In the <cite>Raster</cite> menu select <em>Terrain
+analysis ‣ Shaded relief</em> (Terrain analysis is about half way
+down), and the module control dialog will appear. With the elevation
+map name selected as the input map click [Run]. Now add the new
+elevation.shade &#64;user1 map into your layer list and un-tick the other
+raster layers, then click the eyeball to re-render. (If you get sick of
+clicking the eyeball all the time you can tick the &#8220;Render&#8221; box in the
+bottom right of the Map Display window to have that happen automatically)</p>
+</div>
+<div class="section" id="watersheds-and-streams">
+<h3>Watersheds and streams<a class="headerlink" href="#watersheds-and-streams" title="Permalink to this headline">¶</a></h3>
+<p>Once again select the <cite>elevation</cite> &#64;PERMANENT map and in the <cite>Raster</cite> menu
+choose <em>Hydrologic modeling ‣ Watershed analysis</em>. This
+will open the <tt class="docutils literal"><span class="pre">r.watershed</span></tt> module. Set the <cite>elevation</cite> layer as your
+input map, in the &#8216;Input Options&#8217; tab set the sub-basin <em>threshold</em> to
+10000 cells, then in the &#8216;Output Options&#8217; tab enter &#8220;elev.basins&#8221; for the
+watershed basin option and &#8220;elev.streams&#8221; for the stream segments option
+just below it. Then click [Run].</p>
+<p>Back in the Layer Manager window add those two new raster maps to the
+layer list and make sure that they are the only two which are ticked
+for display in the box to the left of the layer name. Right click on
+the elev.basins raster map layer name and select &#8220;Change opacity level&#8221;.
+Set it to about 50% then re-render the Map Display.</p>
+<a class="reference external image-reference" href="_images/grass-watersheds.png"><img align="left" alt="screenshot" class="align-left" src="_images/grass-watersheds.png" style="width: 341.0px; height: 302.0px;" /></a>
+<p>In the GIS Layer Manager window click on the third button in from the
+right to add a grid layer. For size of grid put 0:03 for 0 degrees and
+3 minutes (format is D:M:S), then in the &#8220;Optional&#8221; tab tick Draw
+geographic grid and press [Run] and re-render.</p>
+<p>To add a scalebar go to the Map Display window and press the &#8220;Add
+map elements&#8221; button to the right of where you selected the Profile tool
+earlier and select &#8220;Add scalebar and north arrow&#8221;. Read the instructions
+then click [Ok]. A scalebar will appear in the top left. Drag it down
+to the bottom left. From the same toolbar menu select &#8220;Add legend&#8221; and
+in the instructions window click the Set Options button to set the
+raster map name to create the legend for. After picking one click [Ok]
+and [Ok] again. Drag your new legend over to the right side of the map
+canvas.</p>
+<p>Now you may be thinking to yourself that these fonts are a bit bare.
+That&#8217;s easily fixed in the GIS Layer Manager menus open <em>Config  ‣
+Preferences</em> and in the Display tab click the [Set font] button and
+then [Apply] in the Preferences window. You will have to do a full
+re-render to see the change so click on the re-render button next to the
+eyeball. The fonts will now be much prettier.</p>
+</div>
+<div class="section" id="vector-modules">
+<h3>Vector modules<a class="headerlink" href="#vector-modules" title="Permalink to this headline">¶</a></h3>
+<p>The above tasks have only covered a few raster modules. Don&#8217;t let this
+give you the idea that GRASS is just for raster maps &#8211; the vector engine
+and modules are every bit as full-featured as the raster ones. GRASS
+maintains a fully topological vector system which allows all sorts of
+very powerful analyses.</p>
+</div>
+<div class="section" id="d-visualization">
+<h3>3D visualization<a class="headerlink" href="#d-visualization" title="Permalink to this headline">¶</a></h3>
+<a class="reference external image-reference" href="_images/grass-nviz.png"><img align="right" alt="screenshot" class="align-right" src="_images/grass-nviz.png" style="width: 310.2px; height: 233.4px;" /></a>
+<p>Start the 3D visualization suite from the <em>File ‣ NVIZ</em>
+menu item. Select an <cite>elevation</cite> map as the raster elevation.
+Once the 3D display interface loads, maximize the window.
+Next select <em>Visualize ‣ Raster Surfaces</em> from the top menu,
+and set the fine resolution to &#8220;1&#8221;, then move the positioning puck and height
+slider around to get different views.</p>
+<p>To drape satellite or aerial imagery over the top of the DEM, in the
+<strong>Raster Surfaces</strong> controls click on the <strong>Surface Attributes</strong>
+drop down menu and select &#8220;color&#8221;. Select &#8220;New Map&#8221; to pick the overlay
+image. In the Spearfish dataset &#8220;<cite>spot.image</cite>&#8221; in PERMANENT is a
+good choice; in the North Carolina dataset &#8220;<cite>lsat7_2002_50</cite>&#8221;
+in PERMANENT is a good choice. Finally, click &#8220;Accept&#8221; and then once
+back at the main window click on the &#8220;Draw&#8221; button in the top-left, just
+under the File menu.</p>
+</div>
+<div class="section" id="shutdown-and-the-command-line">
+<h3>Shutdown and the command line<a class="headerlink" href="#shutdown-and-the-command-line" title="Permalink to this headline">¶</a></h3>
+<p>When finished, exit the GRASS GUI with <em>File ‣ Exit</em>.
+Before you close the GRASS terminal session as well, try a GRASS
+module by typing &#8220;<tt class="docutils literal"><span class="pre">g.manual</span> <span class="pre">--help</span></tt>&#8221; which will give you a list
+of module options. The GRASS command line is where the true power of
+the GIS comes into its own. GRASS is designed to allow all commands
+to be tied together in scripts for large bulk processing jobs. Popular
+scripting languages are Bourne Shell and Python, and some neat tricks
+for making scripting easier are included for both. With these tools
+you can make a new GRASS module with only about 5 minutes of coding,
+complete with powerful parser, GUI, and help page template.</p>
+<p>&#8220;<tt class="docutils literal"><span class="pre">g.manual</span> <span class="pre">-i</span></tt>&#8221; will launch a web browser
+with the module help pages. When done close the browser and type &#8220;exit&#8221;
+at the GRASS terminal prompt to leave the GIS environment.</p>
+</div>
+</div>
+<div class="section" id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Visit the GRASS website at <a class="reference external" href="http://grass.osgeo.org">http://grass.osgeo.org</a></li>
+<li>Visit the GRASS Wiki help site at <a class="reference external" href="http://grass.osgeo.org/wiki">http://grass.osgeo.org/wiki</a></li>
+<li>A more tutorials and overviews can be found <a class="reference external" href="http://grass.osgeo.org/wiki/GRASS_Help#Getting_Started">here</a>.</li>
+<li>A <a class="reference external" href="http://grass.osgeo.org/gdp/grassmanuals/grass64_module_list.pdf">synopsis of the GRASS modules</a>, including
+GUI menu position. (<a class="reference external" href="http://grass.osgeo.org/gdp/grassmanuals/grass64_module_list.html">HTML version</a>)</li>
+<li>If the 400 GIS modules which come with GRASS aren&#8217;t enough for you have a look at the many contributed
+add-ons at <a class="reference external" href="http://grass.osgeo.org/wiki/AddOns">http://grass.osgeo.org/wiki/AddOns</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <ul id="breadcrumbs">
+            <li class="right" style="margin-right: 10px">
+              <a href="genindex.html" title="General Index"
+                 >index</a></li>
+            <li class="right" >
+              <a href="mapbender_quickstart.html" title="Mapbender Quickstart"
+                 >next</a> |</li>
+            <li class="right" >
+              <a href="gpsdrive_quickstart.html" title="GpsDrive Quickstart"
+                 >previous</a> |</li>
+        <li><a href="quickstart.html">OSGeo-Live v4.0 documentation</a> &raquo;</li>
+        <li><a href="#">GRASS GIS Quickstart</a></li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      &copy; Copyright 2010, OSGeo.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.4.
+    </div>
+  </body>
+</html>

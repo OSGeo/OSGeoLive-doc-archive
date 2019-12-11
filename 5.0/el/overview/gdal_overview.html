@@ -1,0 +1,131 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GDAL/OGR &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://gdal.org/" id="gdal-overview"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL.png" style="width: 81.0px; height: 89.4px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org/incubator/process/principles.html"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="gdal-ogr">
+<h1>GDAL/OGR<a class="headerlink" href="#gdal-ogr" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Εργαλεία διαχείρισης γεωχωρικών δεδομένων<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Η βιβλιοθήκη Geospatial Data Abstraction Library (GDAL/OGR) παρέχει εργαλεία για την μετατροπή και επεξεργασία μεγάλης ποικιλίας διανυσματικών και πινακοποιημένων (raster) τυποποιήσεων αρχείων γεωχωρικών δεδομένων (format).</p>
+<p>Τα εργαλεία αυτά στηρίζονται σε μια μεταφέρσιμη (cross platform) βιβλιοθήκη C++ προσβάσιμη από σχεδόν όλες τις λοιπές γλώσσες προγραμματισμού. Ως βιβλιοθήκη αναπαριστά μέσω ενός αφαιρετικού μοντέλου όλες τις υποστηριζόμενες τυποποιήσεις.</p>
+<p>Σήμερα είναι η πλέον διαδεδομένη βιβλιοθήκη διαχείρισης γεωχωρικών δεδομένων. Λειτουργεί στην μηχανή πρόσβασης στα δεδομένα σε πολλά γνωστά λογισμικά όπως: MapServer, GRASS, QGIS, and OpenEV. Επίσης υποστηρίζεται από πακέτα όπως: OSSIM, Cadcorp SIS, FME, Google Earth, VTP, Thuban, ILWIS, MapGuide and ArcGIS.</p>
+<a class="reference internal image-reference" href="../../_images/gdal_ogr_proj_overview.png"><img alt="Η GDAL υποστηρίζει πολλά format" class="align-right" src="../../_images/gdal_ogr_proj_overview.png" style="width: 609.0px; height: 456.0px;" /></a>
+<div class="section" id="id2">
+<h3>Κύρια Χαρακτηριστικά<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Εργαλεία γραμμής εντολών για την μετατροπή, γεωμετρικό μετασχηματισμό, τεμαχιοποίηση και πολλές άλλες εργασίες</li>
+<li>Εξαιρετικά βελτιστοποιημένη πρόσβαση στα δεδομένα με χρήση ενδιάμεσης αποθήκευσης τύπου τετραγωνιδίου (tile) καθώς και εικόνες επίβλεψης (overviews)</li>
+<li>Υποστήριξη για μεγάλα αρχεία - μεγαλύτερα από 4Gb</li>
+<li>Πρόσβαση μέσω των γλωσσών Python, Java, C#, Ruby, VB6 και Perl</li>
+<li>Περιέχει την μηχανή γεωγραφικού γεωδαιτικού συστήματος PROJ.4 και OGC με υποστήριξη σε πολλά συστήματα</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Διαδεδομένες υποστηριζόμενες τυποποιήσεις<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Η GDAL υποστηρίζει περισσότερες από 50 πινακοποιημένες τυποποιήσεις και η OGR περισσότερες από 20 διανυσματικές.</p>
+<p>Σε αυτές περιλαμβάνονται:</p>
+<ul class="simple">
+<li><strong>Raster:</strong> GeoTIFF, Erdas Imagine, SDTS, ESRI Grids, ECW, MrSID, JPEG2000, DTED, και πολλές άλλες ...</li>
+<li><strong>Vector:</strong> MapInfo (tab και mid/mif), ESRI Shapefile, ESRI Coverages, ESRI Personal Geodatabase, DGN, GML, PostGIS, Oracle Spatial, και πολλές άλλες ...</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>Υποστηριχθέντα πρότυπα<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Η διανυσματική βιβλιοθήκη OGR είναι σύμφωνη με την προδιαγραφή OGC Simple Features.</p>
+</div>
+<div class="section" id="id5">
+<h3>Περισσότερα<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p><strong>Κεντρική Ιστοσελίδα:</strong>  <a class="reference external" href="http://www.gdal.org">http://www.gdal.org</a></p>
+<p><strong>Άδεια:</strong> <a class="reference external" href="http://trac.osgeo.org/gdal/wiki/FAQGeneral#WhatlicensedoesGDALOGRuse">X/MIT style Open Source license</a></p>
+<p><strong>Έκδοση Λογισμικού:</strong> 1.8.0</p>
+<p><strong>Υποστηριζόμενες Πλατφόρμες:</strong> Windows, Linux, Mac</p>
+<p><strong>Προγραμματιστικές Διεπαφές:</strong> C, C++, Python, Java, C#, Ruby, VB6 και Perl</p>
+<p><strong>Υποστήριξη:</strong> <a class="reference external" href="http://gdal.osgeo.org/#index_maillist">http://gdal.osgeo.org/#index_maillist</a>, <a class="reference external" href="http://www.osgeo.org/search_profile">http://www.osgeo.org/search_profile</a></p>
+</div>
+<div class="section" id="id6">
+<h3>Γρήγορη εκκίνηση<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/gdal_quickstart.html"><em>Εγχειρίδιο γρήγορης εκκίνησης</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

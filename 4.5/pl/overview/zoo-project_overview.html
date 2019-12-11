@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ZOO Project &mdash; OSGeo-Live v4.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://zoo-project.org/" id="zoo-overview"><img align="right" alt="project logo" class="align-right" src="../../_images/logo-Zoo.png" style="width: 175.0px; height: 60.0px;" /></a>
+<div class="section" id="zoo-project">
+<h1>ZOO Project<a class="headerlink" href="#zoo-project" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="serwer-wps">
+<h2>Serwer WPS<a class="headerlink" href="#serwer-wps" title="Permalink to this headline">¶</a></h2>
+<p>Projekt ZOO dostarcza przyjazny dla programisty framework do&nbsp;tworzenia łańcuchowych usług sieciowych WPS.
+WPS zapewnia dostęp sieciowy do funkcji wykonujących algorytmy przestrzenne.</p>
+<p>Projekt Zoo obsługuje wiele języków programowania i wydany jest z dwiema aplikacjami demo, które wykorzystują możliwości usługodawców narzędzi przestrzennych (współdzieloną bibliotekę C oraz moduł Pythona) bazujących na bibliotekach GEOS i OGR.</p>
+<p>ZOO składa się z trzech komponentów:</p>
+<a class="reference external image-reference" href="../../_images/zoo-project-demo-2.png"><img align="right" alt="screenshot" class="align-right" src="../../_images/zoo-project-demo-2.png" style="width: 483.6px; height: 224.4px;" /></a>
+<p><em>ZOO Kernel</em> : (Jądro ZOO) Jest to potężne jądro po stronie serwera, umożliwiające zarządzanie i łańcuchowanie usług sieciowych napisanych w różnych językach programistycznych.</p>
+<p><em>ZOO Services</em> : (Usługi ZOO) Rosnący zestaw przykładowych usług sieciowych bazujących na wielu wolnych bibliotekach.</p>
+<p><em>ZOO API</em> : JavaScript API po stronie serwera, umożliwiające wywoływanie i łączenie usług ZOO,  co pozwala na łatwiejsze programowanie i łączenie funkcji.</p>
+<p>ZOO bazuje na &#8216;Jądrze usługi WPS&#8217;, które tworzy rdzeń systemu ZOO (aka Jądro ZOO).
+To ostatnie służy do&nbsp;wczytywania dynamicznych bibliotek, by użyć ich jako usług
+WPS na żądanie. Jądro ZOO jest napisane w&nbsp;języku C, ale umożliwia tworzenie Usług ZOO w kilku popularnych językach programowania, aby można było połączyć wiele bibliotek i w konsekwencji
+uprościć pracę programisty usług sieciowych.</p>
+<p>Usługa ZOO jest linkiem składającym się z pliku metadanych ZOO (.zcfg) i kodu dla odpowiednich implementacji. Plik metadanych opisuje wszystkie dostępne funkcje, które mogą być wywołane przy pomocy żądania WPS Exec Request, jak również pożądany format wyjścia/wejścia. Usługi zawierają algorytmy i funkcje, i do tej pory mogą być implementowane w językach C/C++, Fortran, Java, Python, PHP i&nbsp;JavaScript.</p>
+<div class="section" id="glowne-funkcje">
+<h3>Główne funkcje<a class="headerlink" href="#glowne-funkcje" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Serwer WPS obsługujący wiele języków</li>
+<li>Prosta procedura tworzenia i wdrażania usług sieciowych</li>
+<li>Proste łączenie WPS z API ZOO</li>
+</ul>
+</div>
+<div class="section" id="zaimplementowane-standardy">
+<h3>Zaimplementowane standardy<a class="headerlink" href="#zaimplementowane-standardy" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>OGC WPS 1.0.0</li>
+</ul>
+</div>
+<div class="section" id="demo">
+<h3>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost/zoo-demo/spatialtools.html">Demo using simple C Services Provider based GEOS and OGR libraries</a></li>
+<li><a class="reference external" href="http://localhost/zoo-demo/spatialtools-py.html">Demo using simple Python Services Provider based GEOS and OGR libraries</a></li>
+<li><a class="reference external" href="http://localhost/zoo-demo/spatialtools.html">Simple html form to process your request to the ZOO Kernel</a></li>
+</ul>
+</div>
+<div class="section" id="szczegoly">
+<h3>Szczegóły<a class="headerlink" href="#szczegoly" title="Permalink to this headline">¶</a></h3>
+<p><strong>Strona internetowa:</strong> <a class="reference external" href="http://zoo-project.org">http://zoo-project.org</a></p>
+<p><strong>Licencja:</strong> MIT x/11</p>
+<p><strong>Wersja programu:</strong> 1.2.0</p>
+<p><strong>Systemy operacyjne:</strong> Windows, Linux, Mac</p>
+<p><strong>Języki programowania:</strong> C, Python, Java, PHP, Fortran, Javascript</p>
+<p><strong>Wsparcie:</strong> <a class="reference external" href="http://zoo-project.org/trac">http://zoo-project.org/trac</a></p>
+</div>
+<div class="section" id="szybkie-wprowadzenie">
+<h3>Szybkie wprowadzenie<a class="headerlink" href="#szybkie-wprowadzenie" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../quickstart/zoo-project_quickstart.html">Przejdź do wprowadzenia</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i>&copy; OSGeo Foundation and LISAsoft 2011... <a href="../disclaimer.html">Disclaimer</a></i></span>
+
+  </body>
+</html>

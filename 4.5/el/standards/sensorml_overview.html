@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sensor Model Language (SensorML) &mdash; OSGeo-Live v4.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <span class="target" id="sensorml-overview"></span><a class="reference external image-reference" href="../../_images/logo-OGC-left.png"><img align="right" alt="OGC logo" class="align-right" src="../../_images/logo-OGC-left.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference external image-reference" href="../../_images/logo-OGC-right.png"><img align="right" alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="sensor-model-language-sensorml">
+<h1>Sensor Model Language (SensorML)<a class="headerlink" href="#sensor-model-language-sensorml" title="Permalink to this headline">¶</a></h1>
+<p>Το πρότυπο κωδικοποίησης Sensor Model Language (SensorML) του OGC περιγράφει ένα πληροφοριακό μοντέλο και κωδικοποιήσεις XML που επιτρέπουν την αναζήτηση και χρήση αισθητήρων που συνδέονται με το διαδίκτυο καθώς επίσης και την περαιτέρω χρήση των παρατηρήσεων αυτών των δεκτών. Σε αυτή την κατέυθυνση, η SensorML επιτρέπει στους προγραμματιστές να ορίσουν μοντέλα και σχήματα XML για να εκφράσουν κάθε διαδικασία, περιλαμβανομένων και μετρήσεων από ένα σύστημα δεκτών,  καθώς και διαδικασίες επεξεργασίας μετά τις μετρήσεις. (<a class="reference external" href="http://www.opengeospatial.org/standards/sensorml">http://www.opengeospatial.org/standards/sensorml</a>)</p>
+<a class="reference external image-reference" href="../../_images/sensorml.jpg"><img alt="sensorML in Context" src="../../_images/sensorml.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>Πιο συγκεκριμένα, η SensorML μπορεί:</p>
+<ul class="simple">
+<li>Να παρέχει περιγραφές αισθητήρων και συστημάτων δεκτών για διαχείρηση καταλόγου. Να παρέχει πληροφορίες για δέκτες και διαδικασίες με στόχο την υποστήριξη αναζήτησης πόρων και παρατηρήσεων.</li>
+<li>Να παρέχει υποστήριξη για την επεξεργασία και ανάλυση των παρατηρήσεων δεκτών,</li>
+<li>Να παρέχει υποστήριξη για συμπερίληψη γεωγραφικής τοποθεσίας των παρατηρούμενων μετρήσεων,</li>
+<li>Να παρέχει χαρακτηριστικά σχετικά με επιδόσεις (π.χ. ακρίβειες, όρια κλπ),</li>
+<li>Να παρέχει περιγραφή της διαδικασίας με την οποία μια παρατήρηση/μέτρηση έχει ληφθεί (π.χ. την ιστορικότητά της),</li>
+<li>ΝΑ παρέχει μια εκτελέσιμη διαδικασία για αλυσίδες επεξεργασιών και παραγωγή νέων δεδομένων κατά απαίτηση,</li>
+<li>Καταγραφή βασικών ιδιοτήτων και υποθέσεων σχετικα&#8217;με συστήματα αισθητήρων και δεκτών.</li>
+</ul>
+<p>Μεμονομένα σχήματα SensorML περιγράφουν ένα συγκεκριμένο αισθητήρα ή μια συστοιχία από αισθητήρες και μπορούν να αποθηκευτούν σε ένα κατάλογο.</p>
+<p>Υπάρχουν πολλά παραδείγματα υλοποίησης SensorML, όπως το πρόγραμμα MSFC SMART της NASA (<a class="reference external" href="http://smartdev.itsc.uah.edu/casestudy/documents/paper_nstc_2007_A1P1.pdf">http://smartdev.itsc.uah.edu/casestudy/documents/paper_nstc_2007_A1P1.pdf</a>). Σε αυτό το πρόγραμμα, η ομάδα ανάπτυξης υλοποίησε μια ροή εργασίας επεξεργασιών ασθητήρων μέσω διαδικτύου με στόχο την ενσωμάτωση των μετρήσεων θερμοκρασίας και υγρασίας του δορυφόρου Atmospheric Infrared Sounder (AIRS) σε μια τοπική έκδοση του μοντέλου Weather Research and Forecast  στις νοτιοανατολικές ΗΠΑ.</p>
+<div class="section" id="id1">
+<h2>Δείτε επίσης<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="sos_overview.html"><em>Sensor Observation Service (SOS)</em></a></li>
+<li>Sensor Planning Service</li>
+<li>Observations and Measurements</li>
+<li>Transducer Markup Language</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i>&copy; OSGeo Foundation and LISAsoft 2011... <a href="../disclaimer.html">Disclaimer</a></i></span>
+
+  </body>
+</html>

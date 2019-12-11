@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Mapbender &mdash; OSGeo-Live v4.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.mapbender.org" id="mapbender-overview"><img align="right" alt="project logo" class="align-right" src="../../_images/logo-Mapbender.png" style="width: 99.0px; height: 99.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img align="right" alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 135.0px; height: 47.7px;" /></a>
+<div class="section" id="mapbender">
+<h1>Mapbender<a class="headerlink" href="#mapbender" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="geoportal-framework">
+<h2>Geoportal Framework<a class="headerlink" href="#geoportal-framework" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.mapbender.org">Mapbender</a> ist ein graduiertes OSGeo Projekt. Mapbender ist ein web-basiertes Geoportal Framework zum Veröffentlichen, Anzeigen und Überwachen von OGC Diensten, mit der Möglichkeit Dienste gesichert anzubieten.</p>
+<p>Mapbender ist die Spitze des Eisbergs, eine Software, die als Zwischenschicht für den Zugriff auf GIS Komponenten dient. Mapbender bietet eine einfache Möglichkeit, angepasste Client-Anwendungen aus einer Vielzahl von Komponenten zusammen zu stellen. Das Besondere ist, dass hierbei keiner bis minimaler Programmieraufwand notwendig ist. Für die Administration wird lediglich ein Browser benötigt.</p>
+<p>Mapbender ist das Werkzeug der Wahl für GIS Administratoren, die Karten- und Datendienste veröffentlichen, unterhalten, kategorisieren und überwachen müssen. Mapbender beitet eine Rechteverwaltung mit der Vergabe von Rechten für einzelne Benutzer und Gruppen. Mapbender bietet Komponenten mit Serverfunktionalität beispielsweise für den gesicherten Zugriff auf Dienste, Digitalisierung und mehr.</p>
+<p>Der Mapbender Client basiert auf HTML und JavaScript unter Verwendung der jQuery und jQuery UI Bibliotheken, die diverse Module bereitstellen. Der serverseitige Bereich verwendet PHP und eine PostgreSQL/PostGIS Datenbank.</p>
+<p>Mapbender gibt dem GDI Management durch die alleinige Nutzung eines Standard Web Browsers eine neue Perspektive.</p>
+<a class="reference external image-reference" href="../../_images/mapbender_demo.png"><img align="right" alt="Mapbender application" class="align-right" src="../../_images/mapbender_demo.png" style="width: 400.0px; height: 279.0px;" /></a>
+<div class="section" id="kernfunktionen">
+<h3>Kernfunktionen<a class="headerlink" href="#kernfunktionen" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>leichtes Erzeugen von Web Mapping Anwendungen über Anwendungsvorlagen<ul>
+<li>hinzufügen/entfernen/anpassen von jQuery Elementen</li>
+<li>Stilanpassung über den jQuery UI Themeroller</li>
+</ul>
+</li>
+<li>Laden und Verwalten von OGC WMS (Capabilities caching)<ul>
+<li>Überlagern von verschiedenen WMS</li>
+<li>Anpassung der Layersichtbarkeit</li>
+<li>Sortierung</li>
+<li>Formatauswahl</li>
+<li>Anpassung der Layertitel</li>
+<li>Erweiterung der Metadaten der Dienste des Capabilities-Dokuments (ISO Standard) zur Katalogsuche mit einer CS-W Anwendung</li>
+</ul>
+</li>
+<li>WFS laden und konfigurieren zum Suchen, Finden und Hervorheben von Geoobjekten</li>
+<li>Kopplung von transactionalen WFS an einen WMS, um eine webbasierte Digitalisierung zu ermöglichen. Diese Digitalisierung ermöglicht ein diensteübergreifendes snapping, Geometrieanpassungen wie Teilungen, Verschmelzung und Klonen</li>
+<li>Benutzerverwaltung: Anlegen von Benutzern und Gruppen. Dienste und modulbasierte Rechtezuweisung</li>
+<li>WMC Handling</li>
+<li>Verbidung mit entfernten Katalogdiensten und optional die Verbindung mit GeoNetwork opensource</li>
+<li>Beschränketen Benutzerzugriff mit dem OWS Security Proxy Modul über gesicherte Dienste</li>
+<li>Monitoring und Status Benachrichtigung sowie auto-update Service für OGC Services</li>
+<li>Ausgabe von OpenLayers Anwendungen aus dem Mapbender Dienste Repository</li>
+<li>Hochqualitativer Druck unter verwendung eigener PDF Vorlagen.</li>
+<li>... und mehr!</li>
+</ul>
+</div>
+<div class="section" id="unterstutzte-standards">
+<h3>Unterstützte Standards<a class="headerlink" href="#unterstutzte-standards" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>OGC Web Map Service (WMS) 1.0.0, 1.1.0, 1.1.1</li>
+<li>OGC Web Feature Service (WFS) 1.0.0, 1.1.0</li>
+<li>OGC Web Map Context (WMC) 1.1.0</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h3>
+<p><strong>Webseite:</strong> <a class="reference external" href="http://www.mapbender.org/">http://www.mapbender.org/</a></p>
+<dl class="docutils">
+<dt><strong>Lizenz:</strong> Mapbender verfügt über eine duale Linzenz und zwar über die GNU General Public Lizenz und die Simplified BSD Lizenz</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://svn.osgeo.org/mapbender/trunk/mapbender/license/gpl.txt">http://svn.osgeo.org/mapbender/trunk/mapbender/license/gpl.txt</a></li>
+<li><a class="reference external" href="http://svn.osgeo.org/mapbender/trunk/mapbender/license/simplified_bsd.txt">http://svn.osgeo.org/mapbender/trunk/mapbender/license/simplified_bsd.txt</a></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Software Version:</strong> 2.7</p>
+<p><strong>Unterstützte Betriebssysteme:</strong> Windows, Linux, Mac</p>
+<p><strong>Support:</strong> <a class="reference external" href="http://www.mapbender.org/Support">http://www.mapbender.org/Support</a></p>
+</div>
+<div class="section" id="schnellstart">
+<h3>Schnellstart<a class="headerlink" href="#schnellstart" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../quickstart/mapbender_quickstart.html">Schnellstart Dokumentation</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i>&copy; OSGeo Foundation and LISAsoft 2011... <a href="../disclaimer.html">Disclaimer</a></i></span>
+
+  </body>
+</html>

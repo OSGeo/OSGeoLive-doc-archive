@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//ABISOURCE//DTD XHTML plus AWML 2.2//EN" "http://www.abisource.com/2004/xhtml-awml/xhtml-awml.mod">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:awml="http://www.abisource.com/2004/xhtml-awml/">
+ <head><link href="../arramagong.css" type="text/css" rel="stylesheet"/>
+  <!-- ======================================================= -->
+  <!-- Created by AbiWord, a free, Open Source wordprocessor.  -->
+  <!-- For more information visit http://www.abisource.com.    -->
+  <!-- ======================================================= -->
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>gpsdrive_description.html</title>
+  <style type="text/css">
+   <!--
+#toc,
+.toc,
+.mw-warning {
+	border: 1px solid #aaa;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+#toc h2,
+.toc h2 {
+	display: inline;
+	border: none;
+	padding: 0;
+	font-size: 100%;
+	font-weight: bold;
+}
+#toc #toctitle,
+.toc #toctitle,
+#toc .toctitle,
+.toc .toctitle {
+	text-align: center;
+}
+#toc ul,
+.toc ul {
+	list-style-type: none;
+	list-style-image: none;
+	margin-left: 0;
+	padding-left: 0;
+	text-align: left;
+}
+#toc ul ul,
+.toc ul ul {
+	margin: 0 0 0 2em;
+}
+#toc .toctoggle,
+.toc .toctoggle {
+	font-size: 94%;
+}@media print, projection, embossed {
+	body {
+		padding-top:28.000000mm;
+		padding-bottom:28.000000mm;
+		padding-left:28.000000mm;
+		padding-right:28.000000mm;
+	}
+}
+body {
+	font-weight:normal;
+	font-family:'Liberation Serif';
+	widows:2;
+	text-indent:0in;
+	color:#000000;
+	font-size:12pt;
+	text-align:left;
+}
+table {
+}
+td {
+	border-collapse:collapse;
+	text-align:left;
+	vertical-align:top;
+}
+p, h1, h2, h3, li {
+	color:#000000;
+	font-family:'Liberation Serif';
+	font-size:12pt;
+	text-align:left;
+}
+h1 {
+	font-family:'Liberation Sans';
+	font-size:17pt;
+	font-weight:bold;
+	margin-bottom:3pt;
+	margin-top:22pt;
+	page-break-after:avoid;
+}
+h2 {
+	font-family:'Liberation Sans';
+	font-size:14pt;
+	font-weight:bold;
+	margin-bottom:3pt;
+	margin-top:22pt;
+	page-break-after:avoid;
+}
+h3 {
+	font-family:'Liberation Sans';
+	font-weight:bold;
+	margin-bottom:3pt;
+	margin-top:22pt;
+	page-break-after:avoid;
+}
+*.plain_text {
+	font-family:'Courier New';
+}
+     -->
+  </style>
+ </head>
+ <body> <div class="header"><div class="banner"><a href="http://www.arramagong.com/"><img src="../banner.png"></a></div><ul>  <li><a href="../index.html">Home</a></li> | <li><a href="../content.html">Contents</a></li> | <li><a href="../contact.html">Contact and Support</a></li> | <li><a href="../tests.html">Tests</a></li> | <li><a href="../sponsors.html">Sponsors</a></li></ul></div><br />
+  <div>
+   <h1>GpsDrive</h1>
+   <h2>About</h2>
+   <p><a href="http://www.gpsdrive.de/">GpsDrive</a> is a car (bike, ship, plane, foot) navigation system. GpsDrive displays your position provided from a GPS on a zoomable map, the map file is autoselected depending on your position and preferred map scale. All GPS receivers which support the NMEA protocol should be usable, as well as many USB GPSs using a binary protocol known to the <a href="http://gpsd.berlios.de/">Gpsd</a> daemon.</p>
+   <p>Homepage</p>
+   <p><a href="http://www.gpsdrive.de/">http://www.gpsdrive.de</a>&nbsp;</p>
+   <p>License</p>
+   <p>GNU General Public License (GPL) version 2 </p>
+   <h2>Running</h2>
+   <p>You will most likely want to install the <span style="font-family:'Courier'">gpsd</span> package so that you can talk to your GPS; without that GpsDrive is just a nice map viewer. </p>
+   <p>Speech output is supported if the "espeak" software is installed. To use live-maps from the OpenStreetMap project you need to install the openstreetmap-* packages as well. Static map tiles may be downloaded from the internet without any extra installation. <br /></p>
+   <h3>Setting up your GPS</h3>
+   <p>If you have a GPS connected you will want to start the gpsd service. To do that run: </p>
+   <p class="plain_text"><br /> &nbsp;sudo dpkg-reconfigure gpsd<br /></p>
+   <p>and </p>
+   <p class="plain_text"><br /> &nbsp;sudo /etc/init.d/gpsd start<br /></p>
+   <p>BlueTooth GPS users should take special care to read up about the no-probe option. (for this reason we have not started gpsd automatically) <br /><br />• 'xgps' is a good program to check that Gpsd can see your GPS ok. <br /></p>
+   <h3>Using without a GPS as a mapbook</h3>
+   <p>If you don't have a GPS connected you can turn on Explore Mode with the 'e' key and then use the arrow keys to move around. <br /></p>
+   <h3>Quick help</h3>
+   <p>For help type '<span style="font-family:'Courier'">man gpsdrive</span>' and '<span style="font-family:'Courier'">gpsdrive --help</span>' at a Terminal prompt. <br /></p>
+   <h3>Customizing the display</h3>
+   <p>Besides the options given in the Preferences menu and the different car/PDA/desktop modes offered from the command line, you can change the displayed dashboard meters. Just click on one of the three dashboard postions and select a new item. You can toggle on and off the dashboard and map controls with the '<span style="font-family:'Courier'">d</span>' and '<span style="font-family:'Courier'">m</span>' keys. </p>
+   <h3>Downloading maps</h3>
+   <p>Use the <span style="font-family:'Courier'">Options → Maps → Download</span> tool to preview and download new map tiles. Currently the OpenStreetMap web-tiles and NASA OnEarth WMS servers are available as sources. There are a few command line programs which come with GpsDrive which will let you bulk-download a set of tiles covering your local area. </p>
+   <h3>Mapnik rendering of OpenStreetMap data</h3>
+   <p>If you have a local PostGIS database running (for example the one that comes with the pgRouting software on this Live DVD) you can setup GpsDrive to render very pretty street maps on the fly from OpenStreetMap.org data using the Mapnik rendered. The PostgreSQL database it looks for by default should be named "gis". Bonus points go to PostGIS experts who manage to bend the pgRouting data thus enabling this option. (hint: comment out the world boundary shapefile references in the ~/.gpsdrive/osm.xml file) </p>
+   <h3>Keeping tabs on your friends</h3>
+   <p>In the Preferences menu you can turn on the Friendsd service. This transmits your position to a central server and lets your friends know where you are. It comes with a program to run a private server if you don't want the whole world seeing where you are. To enable this service go into the Preferences menu and select the Friends tab. Type in a name for yourself and click on the [Lookup] button to get the IP address of the default friendsd server. Finally tick the Enable friends service box and press [Close]. Icons showing where your friends are and where they are headed will be shown at scales less than 1:10 million. There seem to be a lot of friendly types in Europe. </p>
+   <h3>Verbal instructions</h3>
+   <p>GpsDrive can give you verbal warnings when you are nearing your destination, etc. To try this out you must start the eSpeak software which has been disabled by default on this Live-Disc to save memory. To switch it on you will have to edit (as root) the <span style="font-family:'Courier'">/etc/default/speech-dispatcher</span> file and set <span style="font-family:'Courier'">RUN_SPEECHD=yes</span>. Then launch the service with "<span style="font-family:'Courier'">sudo /etc/init.d/speech-dispatcher start</span>". GpsDrive will automatically find it at run time if it is switched on. </p>
+   <h2>Further reading</h2>
+   <ul>
+    <li style="text-align:left;margin-bottom:0pt;margin-top:0pt;margin-right:0pt">	&nbsp;&nbsp;<span style="font-weight:bold">GpsDrive</span>: <a href="http://www.gpsdrive.de/">http://www.gpsdrive.de</a>&nbsp;</li>
+    <li style="text-align:left;margin-bottom:0pt;margin-top:0pt;margin-right:0pt">	&nbsp;&nbsp;Help and support pages: <a href="http://gpsdrive.sf.net/">http://gpsdrive.sf.net</a>&nbsp;    </li>
+   </ul>
+   <p><span style="color:#404098">     </span><span style="font-size:24pt;color:#404098">↑</span><span style="font-style:italic;font-size:11pt;vertical-align:sub;color:#404098">N</span><span style="color:#404098">&nbsp;</span><span style="font-weight:bold;font-style:italic;color:#404098">Happy mapping!</span><span style="color:#404098">     </span><span style="font-style:italic;font-size:11pt;vertical-align:super;color:#404098">S</span><span style="font-size:32pt;vertical-align:sub;color:#404098">↓</span><span style="color:#404098">&nbsp;</span><br /><br /><br /></p>
+   <p></p>
+   <p></p>
+   <p></p>
+  </div>
+ <div class="footer"> <div class="copyright">&copy; The Open Source Geospatial Foundation and LISAsoft 2010</div> </body>
+</html>

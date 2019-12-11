@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PostGIS Quickstart &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://postgis.org/" id="postgis-quickstart"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS.png" style="width: 89.7px; height: 131.7px;" /></a>
+<div class="section" id="id1">
+<h1>PostGIS Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>PostGIS ist die räumliche Erweiterung der relationalen Datenbank PostgreSQL. PostGIS ermöglicht die Speicherung, Abfrage und Bearbeitung von räumlichen Daten. In diesem Zusammenhang werden wir &#8216;PostgreSQL&#8217; verwenden, wenn wir über generelle Datenbankfunktionen sprechen und &#8216;PostGIS&#8217;, wenn wir über die zusätzlichen Funktionalitäten, die die Erweiterung bereitstellt,  reden.</p>
+<div class="section" id="client-server-architektur">
+<h2>Client-Server Architektur<a class="headerlink" href="#client-server-architektur" title="Permalink to this headline">¶</a></h2>
+<p>PostgreSQL arbeitet wie viele Datenbanksysteme als Server in einem Client-Server-System.
+Dabei stellt der Client die Anfragen an den Server und bekommt vom Server eine Antwort zurück.
+Auf die selbe Art kommuniziert auch das Internet - der Browser ist der Client, der die Anfrage stellt, und ein WebServer sendet die angefragte Webseite zurück.
+PostgreSQL sendet die Anfragen in der Sprache SQL und die Antwort ist in der Regel eine Tabelle mit Daten aus der Datenbank.</p>
+<p>Es spricht nichts dagegen, den Server auf dem selben Computer wie den Client zu nutzen.
+Dies ermöglicht es Ihnen, PostgreSQL auf einer einzigen Maschine laufen zu lassen.
+Ihr Client verbindet sich mit dem Server über die interne &#8216;loopback&#8217; Network Verbindung und ist für andere Rechner nicht sichtbar
+außer Sie konfigurieren dies.</p>
+</div>
+<div class="section" id="erzeugen-einer-raumlichen-datenbank">
+<h2>Erzeugen einer Räumlichen Datenbank<a class="headerlink" href="#erzeugen-einer-raumlichen-datenbank" title="Permalink to this headline">¶</a></h2>
+<p>Ein einziger PostgreSQL Server ermöglicht es Ihnen, Ihre Arbeit in unterschiedlichen Datenbanken zu organisieren.
+Jede Datenbank ist dabei ein unabhängiges System, mit eigenen Tabellen, Sichten, Benutzern und so weiter.
+Wenn Sie sich mit einem PostgreSQL Server verbinden wollen, müssen Sie die gewünschte Datenbank angeben.</p>
+<p>Sie können eine Liste der Datenbanken des Datenbankservers über den Aufruf <tt class="docutils literal"><span class="pre">psql</span> <span class="pre">-l</span></tt> ausgeben lassen.
+Über den Aufruf sollten in unserem Fall diverse Datenbanken aufgelistet werden, die von den OSGeo-Live Projekten auf dem System verwendet werden.
+Wir werden in dieser Übung eine neue Datenbank anlegen.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Die Liste verwendet den Standard UNIX Pager - über die Leertaste gelangen Sie zur nächsten Seite, über b gehen Sie zurück, über q verlassen Sie die Liste, über h gelangen Sie zur Hilfe.</p>
+</div>
+<p>PostgreSQL verfügt über das Hilfprogramm <tt class="docutils literal"><span class="pre">createdb</span></tt> zum Erstellen von Datenbanken.
+Wir wollen eine Datenbank mit PostGIS Erweiterung erzeugen. Die PostGIS Erweiterung können wir aus der Vorlage  <tt class="docutils literal"><span class="pre">template_postgis</span></tt> laden. Beim Erzeugen der Datenbank geben wir die Vorlage über die Option <tt class="docutils literal"><span class="pre">-T</span></tt> an.
+Unsere Datenbank soll <tt class="docutils literal"><span class="pre">demo</span></tt> heißen. Der Aufruf zum Erstellen der Datenbank lautet:</p>
+<div class="highlight-python"><pre>createdb -T template_postgis demo</pre>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Eine Hilfe zu kommandozeilen basierten Programmen erhalten Sie in der Regel über die Option <tt class="docutils literal"><span class="pre">--help</span></tt>.</p>
+</div>
+<p>Wenn Sie nun wieder die Liste der Datenbanken über <tt class="docutils literal"><span class="pre">psql</span> <span class="pre">-l</span></tt> ausgeben, sollten Sie Ihre Datenbank <tt class="docutils literal"><span class="pre">demo</span></tt> in der Liste finden.</p>
+<p>Sie können PostGIS Datenbanken auch direkt über einen SQL Befehl erzeugen. Zuerst wollen wir die gerade angelegte Datenbank
+über das Hilfsprogramm <tt class="docutils literal"><span class="pre">dropdb</span></tt> löschen. Anschließend soll <tt class="docutils literal"><span class="pre">psql</span></tt> zur Ausführung von SQL-Befehlen verwendet werden:</p>
+<div class="highlight-python"><pre>dropdb demo
+psql -d postgres</pre>
+</div>
+<p>Der Aufruf stellt eine Verbindung zur Datenbank mit dem Namen <tt class="docutils literal"><span class="pre">postgres</span></tt> her. <tt class="docutils literal"><span class="pre">postgres</span></tt> ist eine Systemdatenbank, die auf jedem Datenbankserver vorliegen sollte. Setzen Sie nun das SQL ab, um eine Datenbank anzulegen:</p>
+<div class="highlight-python"><pre>postgres=# CREATE DATABASE demo TEMPLATE=template_postgis;</pre>
+</div>
+<p>Die Datenbank wurde angelegt und Sie können sich nun mit der Datenbank <tt class="docutils literal"><span class="pre">demo</span></tt> verbinden.
+Zukünftig können Sie sich direkt über <tt class="docutils literal"><span class="pre">psql</span> <span class="pre">-d</span> <span class="pre">demo</span></tt> mit Ihrer Datenbank verbinden, an dieser Stelle
+können Sie aber auch direkt innerhalb von <tt class="docutils literal"><span class="pre">psql</span></tt> eine Verbindung zu einer anderen Datenbank aufbauen:</p>
+<div class="highlight-python"><pre>postgres=# \c demo</pre>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Wenn die psql Eingabe auch nach dem Drücken der Return Taste erscheint, können Sie über Ctrl-C Ihre Eingabe löschen und von Neuem beginnen. Es kann sein, dass psql auf ein schließendes Anführungszeichen, ein Semikolon oder ein anderes Zeichen wartet.</p>
+</div>
+<p>Sie sollten eine Meldung sehen, die Eingabe wechselt und zeigt an, dass Sie mit der Datenbank <tt class="docutils literal"><span class="pre">demo</span></tt> verbunden sind.
+Über <tt class="docutils literal"><span class="pre">\dt</span></tt> können Sie dies prüfen und die Liste der Tabellen in der Datenbank ausgeben lassen.
+Es sollte diese Ausgabe erfolgen:</p>
+<div class="highlight-python"><pre>demo=# \dt
+             List of relations
+ Schema |       Name       | Type  | Owner
+--------+------------------+-------+-------
+ public | geometry_columns | table | user
+ public | spatial_ref_sys  | table | user
+(2 rows)</pre>
+</div>
+<p>Diese zwei Tabellen werden von PostGIS angelegt und verwendet. Die Tabelle <tt class="docutils literal"><span class="pre">spatial_ref_sys</span></tt> speichert Informationen zu den Koordinatenreferenzsystemen. Mit Hilfe von SQL können wir einen Blick in die Tabelle werfen:</p>
+<div class="highlight-python"><pre>demo=# SELECT srid, auth_name, proj4text FROM spatial_ref_sys LIMIT 10;
+
+ srid | auth_name |          proj4text
+------+-----------+--------------------------------------
+ 3819 | EPSG      | +proj=longlat +ellps=bessel +towgs...
+ 3821 | EPSG      | +proj=longlat +ellps=aust_SA +no_d...
+ 3824 | EPSG      | +proj=longlat +ellps=GRS80 +towgs8...
+ 3889 | EPSG      | +proj=longlat +ellps=GRS80 +towgs8...
+ 3906 | EPSG      | +proj=longlat +ellps=bessel +no_de...
+ 4001 | EPSG      | +proj=longlat +ellps=airy +no_defs...
+ 4002 | EPSG      | +proj=longlat +a=6377340.189 +b=63...
+ 4003 | EPSG      | +proj=longlat +ellps=aust_SA +no_d...
+ 4004 | EPSG      | +proj=longlat +ellps=bessel +no_de...
+ 4005 | EPSG      | +proj=longlat +a=6377492.018 +b=63...
+(10 rows)</pre>
+</div>
+<p>Die Ausgabe bestätigt, dass wir eine Datenbank mit räumlicher Erweiterung vorliegen haben. Die Tabelle <tt class="docutils literal"><span class="pre">geometry_columns</span></tt> ist eine Metadatentabelle und beinhaltet Informationen zu den Tabellen mit räumlicher Erweiterung. Hierzu erfahren Sie mehr im nächsten Abschnitt.</p>
+</div>
+<div class="section" id="erzeugen-einer-tabelle-mit-raumlicher-erweiterung-die-harte-tour">
+<h2>Erzeugen einer Tabelle mit räumlicher Erweiterung - die harte Tour<a class="headerlink" href="#erzeugen-einer-tabelle-mit-raumlicher-erweiterung-die-harte-tour" title="Permalink to this headline">¶</a></h2>
+<p>Wir haben nun eine Datenbank mit räumlicher Erweiterung vorliegen und können daher eine Tabelle mit räumlichen Daten erzeugen.</p>
+<p>Zuerst erzeugen wir eine gewöhnliche Tabelle, in der wir einige Daten über Städte speichern wollen.
+Diese Tabelle hat zwei Spalten - ein numerisches Feld id für die laufende Nummer und ein Feld für den Namen der Stadt:</p>
+<div class="highlight-python"><pre>demo=# CREATE TABLE cities ( id int4, name varchar(50) );</pre>
+</div>
+<p>Als Nächstes fügen wir eine Geometriespalte hinzu, um in dieser Spalte die Lage der Stadt zu speichern.
+In der Regel wird diese Spalte <tt class="docutils literal"><span class="pre">the_geom</span></tt> genannt.
+Der folgende Aufruf gibt an, welcher Geometrietyp angelegt werden soll (Punkte, Linien. Polygone etc), wie viele Dimensionen unterstützt werden sollen (in unserem Falls zwei) und welches Koordinatenreferenzsystem genutzt werden soll.
+Wir werden EPSG:4326 für unsere Städte verwenden.</p>
+<div class="highlight-python"><pre>demo=# SELECT AddGeometryColumn ( 'cities', 'the_geom', 4326, 'POINT', 2);</pre>
+</div>
+<p>Wenn Sie sich nun die Tabelle cities anschauen, sollten Sie die neue Spalte sehen. Sie sehen ebenfalls, dass die Tabelle derzeit leer ist.</p>
+<div class="highlight-python"><pre>demo=# SELECT * from cities;
+ id | name | the_geom
+----+------+----------
+(0 rows)</pre>
+</div>
+<p>Um die Tabelle zu füllen, nutzen wir einige SQL Aufrufe. Um die Geometrie in die Geometriespalte zu überführen, nutzen
+wir die PostGIS Funktion <tt class="docutils literal"><span class="pre">ST_GeomFromText</span></tt>. Diese Funktion benötigt zwei Paramter - die Geometrie als Text und als zweiten Parameter den EPSG-Code:</p>
+<div class="highlight-python"><pre>demo=# INSERT INTO cities (id, the_geom, name) VALUES (1,ST_GeomFromText('POINT(-0.1257 51.508)',4326),'London, England');
+demo=# INSERT INTO cities (id, the_geom, name) VALUES (2,ST_GeomFromText('POINT(-81.233 42.983)',4326),'London, Ontario');
+demo=# INSERT INTO cities (id, the_geom, name) VALUES (3,ST_GeomFromText('POINT(27.91162491 -33.01529)',4326),'East London,SA');</pre>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Verwenden Sie die Pfeiltaste, um den Befehl erneut aufzurufen und anzupassen.</p>
+</div>
+<p>Sie werden sehen, dass dieses Vorgehen der Dateneingabe schnell ermüdet. Zum Glück gibt es andere einfachere Wege, um Daten in PostGIS Tabellen zu bekommen. Aber nun haben wir erst einmal drei Städte in unserer Tabelle und können mit diesen arbeiten.</p>
+</div>
+<div class="section" id="einfache-abfragen">
+<h2>Einfache Abfragen<a class="headerlink" href="#einfache-abfragen" title="Permalink to this headline">¶</a></h2>
+<p>Alle üblichen SQL Operationen können angewendet werden, um Daten aus einer PostGIS Tabelle abzufragen.</p>
+<div class="highlight-python"><pre>demo=# SELECT * FROM cities;
+ id |      name       |                      the_geom
+----+-----------------+----------------------------------------------------
+  1 | London, England | 0101000020E6100000BBB88D06F016C0BF1B2FDD2406C14940
+  2 | London, Ontario | 0101000020E6100000F4FDD478E94E54C0E7FBA9F1D27D4540
+  3 | East London,SA  | 0101000020E610000040AB064060E93B4059FAD005F58140C0
+(3 rows)</pre>
+</div>
+<p>Diese Ausgabe gibt uns die hexadezimale Version der Koordinaten aus, die für uns schwer lesbar ist.</p>
+<p>Wenn Sie Ihre Geoemetrien wieder im WKT Format ausgeben möchten, können Sie die Funktionen
+ST_AsText(the_geom) oder ST_AsEwkt(the_geom) verwenden. Sie können außerdem die Funktionen ST_X(the_geom) und ST_Y(the_geom)
+verwenden, um die Koordinaten auszugeben:</p>
+<div class="highlight-python"><pre>demo=# SELECT id, ST_AsText(the_geom), ST_AsEwkt(the_geom), ST_X(the_geom), ST_Y(the_geom) FROM cities;
+ id |          st_astext           |               st_asewkt                |    st_x     |   st_y
+----+------------------------------+----------------------------------------+-------------+-----------
+  1 | POINT(-0.1257 51.508)        | SRID=4326;POINT(-0.1257 51.508)        |     -0.1257 |    51.508
+  2 | POINT(-81.233 42.983)        | SRID=4326;POINT(-81.233 42.983)        |     -81.233 |    42.983
+  3 | POINT(27.91162491 -33.01529) | SRID=4326;POINT(27.91162491 -33.01529) | 27.91162491 | -33.01529
+(3 rows)</pre>
+</div>
+</div>
+<div class="section" id="raumliche-abfragen">
+<h2>Räumliche Abfragen<a class="headerlink" href="#raumliche-abfragen" title="Permalink to this headline">¶</a></h2>
+<p>PostGIS erweitert PostgreSQL um zahlreiche räumliche Funktionen.
+Die Funktion ST_GeomFromText zur Konvertierung von WKT in eine Geometrie haben wir schon kennen gelernt.
+Die meisten Funktionen starten mit ST (Abkürzung für spatial type) und werden
+in der PostGIS Dokumentation sehr gut beschrieben.
+Wir werden nun eine PostGIS Funktion zur Beantwortung einer praktischen Frage verwenden.
+Wie weit sind diese 3 Londons voneinander entfernt? Die Ausgabe soll in Metern erfolgen und wir
+gehen von einer sphärischen Erde aus.</p>
+<div class="highlight-python"><pre>demo=# SELECT p1.name,p2.name,ST_Distance_Sphere(p1.the_geom,p2.the_geom) FROM cities AS p1, cities AS p2 WHERE p1.id &gt; p2.id;
+      name       |      name       | st_distance_sphere
+-----------------+-----------------+--------------------
+ London, Ontario | London, England |   5875766.85191657
+ East London,SA  | London, England |   9789646.96784908
+ East London,SA  | London, Ontario |   13892160.9525778
+ (3 rows)</pre>
+</div>
+<p>Die Abfrage gibt uns die Entfernung in Metern zwischen jedem Städtepaar aus.
+Schauen Sie sich die &#8216;WHERE&#8217;-Bedingung an. Diese verhindert, dass Städte die Entfernung zu sich selbst ausgeben (diese Entfernung würde 0 sein) oder dass die umgekehrte Distanzberechung ausgegeben wird (London, England nach London, Ontario ist die selbe Entfernung wie London, Ontario nach London, England). Lassen Sie die &#8216;WHERE&#8217;-Bedingung weg und schauen Sie sich die Ausgabe an.</p>
+<p>Wir können die Distanz unter Verwendung eines Sphäroids auch über eine andere Funktion berechnen und den
+Namen des Sphäroids, die große Halbachse und die inverse Abplattung angeben:</p>
+<div class="highlight-python"><pre>demo=# SELECT p1.name,p2.name,ST_Distance_Spheroid(
+        p1.the_geom,p2.the_geom, 'SPHEROID["GRS_1980",6378137,298.257222]'
+        )
+       FROM cities AS p1, cities AS p2 WHERE p1.id &gt; p2.id;
+      name       |      name       | st_distance_spheroid
+-----------------+-----------------+----------------------
+ London, Ontario | London, England |     5892413.63776489
+ East London,SA  | London, England |     9756842.65711931
+ East London,SA  | London, Ontario |     13884149.4140698
+(3 rows)</pre>
+</div>
+</div>
+<div class="section" id="mapping">
+<h2>Mapping<a class="headerlink" href="#mapping" title="Permalink to this headline">¶</a></h2>
+<p>Um eine Karte aus Ihren PostGIS Daten zu erzeugen, brauchen Sie einen Client, der auf die Daten zugreifen kann.
+Die meisten der Open Source Desktop GIS Programme unterstützen PostGIS - wie z. B. Quantum GIS, gvSIG, uDig.
+Wir werden unsere Karte mit Quantum GIS erzeugen.</p>
+<p>Starten Sie Quantum GIS und wählen Sie <tt class="docutils literal"><span class="pre">PostGIS-Layer</span> <span class="pre">hinzufügen</span></tt> aus dem Layer-Menü.
+Da Sie bisher noch keine Verbindung zu PostGIS aufgebaut haben, werden Sie eine leere Verbindungsliste vorliegen haben.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_add.png"><img alt="PostGIS-Layer hinzufügen" class="align-center" src="../../_images/postgis_add.png" style="width: 439.0px; height: 502.0px;" /></a>
+<p>Über &#8216;Neu&#8217; öffnen Sie den Dialog zur Eingabe der Verbindungsinformationen. Wir werden uns mit der Natural Earth Datenbank
+der DVD verbinden. Es muss kein Benutzername oder Passwort angegeben werden, da die Sicherheitseinstellungen dieser
+Installation jedem den Zugriff erlauben.
+Entfernen Sie den Haken unter &#8216;Auch geometrielose Tabellen anzeigen&#8217;, sofern dieser gesetzt ist.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_naturalearth.png"><img alt="Verbindungsinformationen zu Natural Earth Datenbank" class="align-center" src="../../_images/postgis_naturalearth.png" style="width: 364.0px; height: 442.0px;" /></a>
+<p>Klicken Sie den Button <tt class="docutils literal"><span class="pre">Verbindung</span> <span class="pre">testen</span></tt>. Wenn der Datenbankzugriff erfolgreich war, wird eine Erfolgsmeldung angezeigt.
+Klicken Sie <tt class="docutils literal"><span class="pre">OK</span></tt>, um Ihre Verbindungsinformationen zu speichern. Nun können Sie sich über den Button <tt class="docutils literal"><span class="pre">Verbinden</span></tt> mit der Datenbank verbinden und bekommen eine Liste der Tabellen mit Geometriespalten der Datenbank angezeigt:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_ne_layers.png"><img alt="Natural Earth Layer" class="align-center" src="../../_images/postgis_ne_layers.png" style="width: 444.0px; height: 506.0px;" /></a>
+<p>Wählen Sie das Thema lakes (Seen) und klicken Sie <tt class="docutils literal"><span class="pre">Hinzufügen</span></tt> (nicht <tt class="docutils literal"><span class="pre">Abfrage</span> <span class="pre">erstellen</span></tt>).
+Die Daten sollten nun in QGIS geladen werden:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_ne_lakes.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_ne_lakes.png" style="width: 400.0px; height: 275.5px;" /></a>
+<p>Sie sollten eine Karte der Seen sehen. QGIS weiß nicht, dass es sich um Seen handelt und zeigt die Flächen
+möglicherweise nicht blau an. Nutzen Sie die QGIS Dokumentation, um herauszufinden, wie die Farbe angepasst werden kann.
+Navigieren Sie in die bekannte Seengruppe von Kanada.</p>
+</div>
+<div class="section" id="erzeugen-einer-tabelle-mit-raumlicher-erweiterung-der-einfache-weg">
+<h2>Erzeugen einer Tabelle mit räumlicher Erweiterung - der einfache Weg<a class="headerlink" href="#erzeugen-einer-tabelle-mit-raumlicher-erweiterung-der-einfache-weg" title="Permalink to this headline">¶</a></h2>
+<p>Die meisten OSGeo Desktop GIS Tools bieten Schnittstellen zum Import von räumlichen Daten nach PostGIS, beispielsweise Shape Dateien. Wir wollen wieder Quantum GIS zur Demonstration nutzen.</p>
+<p>Der Import kann über das komfortable PostGIS Manager Plugin erfolgen. Das Plugin muss aktiviert werden. Dies erfolgt
+über <tt class="docutils literal"><span class="pre">Erweiterungen</span> <span class="pre">-</span> <span class="pre">Erweiterungen</span> <span class="pre">verwalten</span></tt>. Suchen Sie nach <tt class="docutils literal"><span class="pre">PostGIS</span> <span class="pre">Manager</span></tt>, wählen Sie das Plugin aus und klicken Sie ok. Sie sollten den PostGIS Manager nun im Menü finden und können ihn starten.</p>
+<p>Das Plugin verwendet die vorher eingegebenen Daten zur Verbindung mit der Natural Earth Datenbank. Lassen Sie das Passwort-Feld
+leer, falls Sie danach gefragt werden. Sie werden das Hauptfenster sehen.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_ne_manager.png"><img alt="PostGIS Manager Plugin" class="align-center" src="../../_images/postgis_ne_manager.png" style="width: 534.0px; height: 397.5px;" /></a>
+<p>Sie können die anderen Reiter im rechten Bereich nutzen, um die Attribute des Thema auszuwählen und erhalten eine
+einfache Karte mit Navigationsmöglichkeiten. Hier habe ich das Thema populated places ausgewählt und
+bin zu einer kleinen Insel, die ich kenne gezoomt:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_ne_preview.png"><img alt="PostGIS Manager Vorschau" class="align-center" src="../../_images/postgis_ne_preview.png" style="width: 536.25px; height: 397.5px;" /></a>
+<p>Nun wollen wir den PostGIS Manager zum Import von Shape in die Datenbank nutzen. Wir werden
+die Daten <cite>North Carolina sudden infant death syndrome (SIDS)</cite> nutzen, die in einem der R Statistikpakete enthalten sind.</p>
+<p>Wählen Sie über das Menü <tt class="docutils literal"><span class="pre">Data</span></tt> die Option <tt class="docutils literal"><span class="pre">Load</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">shapefile</span></tt>.
+Klicken Sie den Button <tt class="docutils literal"><span class="pre">...</span></tt> und wählen Sie die Shapedatei <tt class="docutils literal"><span class="pre">sids.shp</span></tt> in dem R <tt class="docutils literal"><span class="pre">Maptools</span></tt> Paket aus:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_find_shape.png"><img alt="Auswahl der Shapedatei" class="align-center" src="../../_images/postgis_find_shape.png" style="width: 483.75px; height: 333.75px;" /></a>
+<p>Belassen Sie die übrigen Angaben und klicken Sie <tt class="docutils literal"><span class="pre">Load</span></tt></p>
+<a class="reference internal image-reference" href="../../_images/postgis_ne_load.png"><img alt="Import der Shapedatei" class="align-center" src="../../_images/postgis_ne_load.png" style="width: 324.0px; height: 459.75px;" /></a>
+<p>Die Shapedatei sollte ohne Fehler nach PostGIS importiert worden sein. Schließen Sie den PostGIS Manager und
+gehen Sie zurück in das QGIS Hauptfenster.</p>
+<p>Laden Sie nun die SIDS Daten über &#8216;PostGIS-Layer hinzufügen&#8217; in Ihre Karte.
+Über ein paar Anpassungen der Ebenenreihenfolge und der Farbgebung sollten Sie eine thematische Karte zu SIDS in North Carolina erzeugen können;</p>
+<a class="reference internal image-reference" href="../../_images/postgis_ne_final.png"><img alt="thematische Karte zu SIDS" class="align-center" src="../../_images/postgis_ne_final.png" style="width: 487.5px; height: 381.0px;" /></a>
+</div>
+<div class="section" id="der-grafische-datenbankclient-pgadmin-iii">
+<h2>Der grafische Datenbankclient pgAdmin III<a class="headerlink" href="#der-grafische-datenbankclient-pgadmin-iii" title="Permalink to this headline">¶</a></h2>
+<p>Sie können den grafischen Datenbankclient <tt class="docutils literal"><span class="pre">pgAdmin</span> <span class="pre">III</span></tt> nutzen, um SQLs abzusetzen und um Ihre Daten zu verwalten.
+pgAdmin III verfügt außerdem über einen Plugin zum Shapeimport. pgAdmin III bietet ein komfortables Datenmanagement.</p>
+<a class="reference internal image-reference" href="../../_images/pgadmin.gif"><img alt="pgAdmin III" class="align-center" src="../../_images/pgadmin.gif" style="width: 403.0px; height: 288.5px;" /></a>
+</div>
+<div class="section" id="weitere-aufgaben">
+<h2>Weitere Aufgaben<a class="headerlink" href="#weitere-aufgaben" title="Permalink to this headline">¶</a></h2>
+<p>Hier sind ein paar weitere Aufgaben, die Sie lösen können.</p>
+<ol class="arabic simple">
+<li>Testen Sie weitere räumliche Funktionen beispielsweise <tt class="docutils literal"><span class="pre">st_buffer(the_geom)</span></tt>, <tt class="docutils literal"><span class="pre">st_transform(the_geom,25831)</span></tt>, <tt class="docutils literal"><span class="pre">x(the_geom)</span></tt>. Eine ausführliche Dokumentation finden Sie unter <a class="reference external" href="http://postgis.org/documentation/">http://postgis.org/documentation/</a></li>
+<li>Exportieren Sie Ihre Tabellen mit <tt class="docutils literal"><span class="pre">pgsql2shp</span></tt> in das Shape-Format</li>
+<li>Nutzen Sie <tt class="docutils literal"><span class="pre">ogr2ogr</span></tt>, um Daten in Ihre Datenbank zu importieren/exportieren</li>
+</ol>
+</div>
+<div class="section" id="der-nachste-schritt">
+<h2>Der nächste Schritt<a class="headerlink" href="#der-nachste-schritt" title="Permalink to this headline">¶</a></h2>
+<p>Dies war lediglich der erste Einstieg in PostGIS. Es gibt sehr viele weitere Funktionalitäten zu entdecken.</p>
+<p>PostGIS Projektseite</p>
+<blockquote>
+<a class="reference external" href="http://postgis.org">http://postgis.org</a></blockquote>
+<p>PostGIS Dokumentation</p>
+<p><a class="reference external" href="http://postgis.org/documentation/">http://postgis.org/documentation/</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

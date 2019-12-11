@@ -1,0 +1,111 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Web Feature Service (WFS) &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-OGC-left.png" id="wfs-overview"><img alt="OGC logo" class="align-right" id="wfs-overview" src="../../_images/logo-OGC-left.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/logo-OGC-right.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="web-feature-service-wfs">
+<h1>Web Feature Service (WFS)<a class="headerlink" href="#web-feature-service-wfs" title="Permalink to this headline">¶</a></h1>
+<p>Το πρότυπο Web Feature Service του OGC® ορίζει διαδικτυακές λειτουργίες για ανάκτηση και επεξεργασία διανυσματικών γεωγραφικών χαρακτηριστικών, όπως δρόμοι ή όρια λιμνών.  (<a class="reference external" href="http://www.opengeospatial.org/standards/wfs">http://www.opengeospatial.org/standards/wfs</a>)</p>
+<a class="reference internal image-reference" href="../../_images/wfs.jpg"><img alt="WFS in Context" src="../../_images/wfs.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>Το πρότυπο WFS ορίζει διαδικασίες που επιτρέπουν τους χρήστες του να:</p>
+<ul class="simple">
+<li>Ανακαλύψουν ποιά σύνολα χαρακτηριστικών είναι διαθέσιμα (GetCapabilities)</li>
+<li>Περιγράψουν τα περιγραφικά πεδία για τα χαρακτηριστικά (DescribeFeatureType)</li>
+<li>Ανακτήσουν μια συλλογή ή κομμάτι των δεδομένων μέσω κάποιου φίλτρου (GetFeature)</li>
+<li>Να προσθέσουν, διορθώσουν ή διαγράψουν χαρακτηριστικά (Transaction)</li>
+</ul>
+<p>Όλες οι υπηρεσίες WFS υποστηρίζουν είσοδο και έξοδο δεδομένων με τη χρήση του προτύπου Geography Markup Language (GML). Κάποιες υπηρεσίες WFS επιπλέον υποστηρίζουν άλλες κωδικοποιήσεις, όπως το GeoRSS ή τα αρχεία shapefiles.</p>
+<p>Οι χρήστες τυπικά αλληλεπιδρούν με τις υπηρεσίες WFS μέσω περιηγητών ή μέσω λογισμικών GIS, τα οποία τους επιτρέπουν να έχουν πρόσβαση σε επίπεδα δεδομένων από εξωτερικές πηγές μέσω διαδικτύου. Ένα εξαιρετικό παράδειγμα χρήσης μιας υπηρεσίας WFS για την παροχή ανοιχτής και διαλειτουργικής πρόσβασης σε τεράστια ποσά χωρικής πληροφορίας μέσω ενός κυβερνητικού ιστοχώρου είναι η υπηρεσία WFS της USGS που παρέχεται στα πλαίσια της ανάπτυξης της Εθνικής Υποδομής Χωρικών Δεδομένων των ΗΠΑ (NSDI) (<a class="reference external" href="http://frameworkwfs.usgs.gov/">http://frameworkwfs.usgs.gov/</a>). Επιλεγμένα επίπεδα χωρικής πληροφορίας προσφέρονται σαν επίπεδα πληροφορίας της υπηρεσίας WFS και μέσω διεπαφής με περιηγητή που προσφέρει η USGS.</p>
+<div class="section" id="id1">
+<h2>Δείτε επίσης<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="wms_overview.html"><em>Web Map Service (WMS)</em></a></li>
+<li><a class="reference internal" href="wcs_overview.html"><em>Web Coverage Service (WCS)</em></a></li>
+<li>Grid Coverage Service</li>
+<li><a class="reference internal" href="sos_overview.html"><em>Sensor Observation Service (SOS)</em></a></li>
+<li><a class="reference internal" href="gml_overview.html"><em>Geography Markup Language (GML)</em></a></li>
+<li><a class="reference internal" href="kml_overview.html"><em>KML Encoding Standard (KML)</em></a></li>
+<li><a class="reference internal" href="sld_overview.html"><em>Style Layer Descriptor (SLD)</em></a></li>
+<li>Symbology Encoding</li>
+<li><a class="reference internal" href="fe_overview.html"><em>Filter Encoding (FE)</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

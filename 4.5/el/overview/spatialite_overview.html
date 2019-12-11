@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SpatiaLite &mdash; OSGeo-Live v4.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.gaia-gis.it/spatialite/" id="spatialite-overview"><img align="right" alt="project logo" class="align-right" src="../../_images/logo-spatialite.png" style="width: 128.0px; height: 113.0px;" /></a>
+<div class="section" id="spatialite">
+<h1>SpatiaLite<a class="headerlink" href="#spatialite" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Χωρική Βάση Δεδομένων<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Η SpatiaLite είναι βασισμένη στην βάση δεδομένων <a class="reference external" href="http://www.sqlite.org/">SQLite</a> με την προσθήκη χωρικών λειτουργιών.</p>
+<p>Η SQLite είναι μια δημοφιλής βάση δεδομένων, απλή, δυνατή, εύκολη στη χρήση και πραγματικά ελαφριά (από πλευράς απαιτήσεων υπολογιστικών πόρων). Κάθε βάση δεδομένων SQLite είναι απλά ένα αρχείο; μπορείτε να το αντιγράψετε, να το συμπιέσετε, να το μεταφέρετε μέσω δικτύου χωρίς κανένα πρόβλημα.</p>
+<p>Τα αρχεία είναι φορητά, η ίδια βάση δεδομένων θα λειτουργήσει σε Windows, Linux, MacOs κλπ.</p>
+<a class="reference external image-reference" href="../../_images/spatialite.jpg"><img align="right" alt="screenshot" class="align-right" src="../../_images/spatialite.jpg" style="width: 513.5px; height: 386.5px;" /></a>
+<div class="section" id="id2">
+<h3>Βασικά Χαρακτηριστικά<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Η SpatiaLite ενεργοποιεί χωρικά την SQLite ώστε να υποστηρίζει χωρικά δεδομένα συμβατά με τις προδιαγραφές του OGC.</p>
+<ul class="simple">
+<li>Υποστηρίζει τα πρότυπα WKT and WKB</li>
+<li>Υλοποιεί χωρικές συναρτήσεις SQL όπως οι AsText(), GeomFromText(), Area(), PointN() και παρόμοιες</li>
+<li>Το πλήρες σύνολο των χωρικών συναρτήσεων OpenGis υποστηρίζεται μέσω GEOS, με συναρτήσεις όπως Overlaps(), Touches(), Union(), Buffer() ..</li>
+<li>Υποστηρίζει πλήρως τα χωρικά μεταδεδομένα από τις προδιαγραφές OpenGis</li>
+<li>Υποστηρίζει εισαγωγή και εξαγωγή, από και πρός shapefiles</li>
+<li>Υποστηρίζει αλλαγή προβολικού συστήματος μέσω PROJ.4 και των κωδικών EPSG</li>
+<li>Υποστηρίζει τοπικά συστήματα κωδικοποίησης χαρακτήρων μέσω του GNU libiconv</li>
+<li>Υποστηρίζει χωρικα ευρετήρια βασισμένα στην επέκταση της SQLite με το RTree</li>
+<li>Η επέκταση VirtualShape δίνει τη δυνατότητα στην SQLite να έχει πρόσβαση σε αρχεία shapefile σαν εικονικούς πίνακες</li>
+<li>Μπορούν οι χρήστες να εκτελούν ερωτήματα SQL σε εξωτερικά αρχεία shapefile, χωρίς την ανάγκη εισαγωγής ή μετατροπής τους</li>
+<li>Η επέκταση VirtualText δίνει τη δυνατότητα στην SQLite να έχει πρόσβαση σε αρχεία CSV/TxtTab σαν εικονικούς πίνακες</li>
+<li>Μπορούν οι χρήστες να εκτελούν ερωτήματα SQL σε εξωτερικά αρχεία CSV/TxtTab, χωρίς την ανάγκη εισαγωγής ή μετατροπής τους</li>
+<li>Το γραφικό περιβάλλον υποστηρίζει τις παραπάνω λειτουργίες με φιλικό προς τον χρήστη τρόπο</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Λεπτομέρειες<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><strong>Κεντρική Ιστοσελίδα:</strong> <a class="reference external" href="http://www.gaia-gis.it/spatialite/">http://www.gaia-gis.it/spatialite/</a></p>
+<p><strong>Άδεια:</strong> MPL v1.1 και GPL v3</p>
+<p><strong>Έκδοση Λογισμικού:</strong> 2.3.1 / 2.4 beta</p>
+<p><strong>Υποστηριζόμενες πλατφόρμες:</strong> Linux, Mac, Windows</p>
+<p><strong>Προγραμματιστική διεπαφή (API):</strong> C++</p>
+</div>
+<div class="section" id="id4">
+<h3>Γρήγορη εκκίνηση<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../quickstart/spatialite_quickstart.html">Εγχειρίδιο Γρήγορης Εκκίνησης</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i>&copy; OSGeo Foundation and LISAsoft 2011... <a href="../disclaimer.html">Disclaimer</a></i></span>
+
+  </body>
+</html>

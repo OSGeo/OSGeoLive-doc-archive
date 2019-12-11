@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MapGuide Quick Start &mdash; OSGeo-Live v4.0 documentation</title>
+    <link rel="stylesheet" href="_static/howto.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '#',
+        VERSION:     '4.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.0 documentation" href="index.html" />
+    <link rel="next" title="Mapnik Quickstart" href="mapnik_quickstart.html" />
+    <link rel="prev" title="MapFish Quickstart" href="mapfish_quickstart.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+      <ul id="breadcrumbs">
+            <li class="right" style="margin-right: 10px">
+              <a href="genindex.html" title="General Index"
+                 accesskey="I">index</a></li>
+            <li class="right" >
+              <a href="mapnik_quickstart.html" title="Mapnik Quickstart"
+                 accesskey="N">next</a> |</li>
+            <li class="right" >
+              <a href="mapfish_quickstart.html" title="MapFish Quickstart"
+                 accesskey="P">previous</a> |</li>
+        <li><a href="quickstart.html">OSGeo-Live v4.0 documentation</a> &raquo;</li>
+        <li><a href="#">MapGuide Quick Start</a></li>
+      </ul>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="_images/logo-MapGuideOS.png" id="mapguide-quickstart"><img align="right" alt="project logo" class="align-right" id="mapguide-quickstart" src="_images/logo-MapGuideOS.png" style="width: 203.0px; height: 60.0px;" /></a>
+<div class="section" id="mapguide-quick-start">
+<h1>MapGuide Quick Start<a class="headerlink" href="#mapguide-quick-start" title="Permalink to this headline">¶</a></h1>
+<p>This guide describes how to:</p>
+<ul class="simple">
+<li>Getting MapGuide Up and Running</li>
+<li>Stylization of spatial data using Maestro</li>
+<li>Extra note on 64-bit Ubuntu</li>
+</ul>
+<div class="section" id="getting-mapguide-up-and-running">
+<h2>Getting MapGuide Up and Running<a class="headerlink" href="#getting-mapguide-up-and-running" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Go to Desktop-&gt;Server, click icon Start MapGuide. This will start both MapGuide server and MapGuide Web server</li>
+</ol>
+<a class="reference external image-reference" href="_images/mapguide_desktopIcons.png"><div align="center" class="align-center"><img alt="mapguide desktop icons" class="align-center" src="_images/mapguide_desktopIcons.png" style="width: 480.0px; height: 317.0px;" /></div>
+</a>
+<ol class="arabic simple" start="2">
+<li>Open a browser to the address <a class="reference external" href="http://localhost:8008/mapguide/phpviewersample/ajaxtiledviewersample.php">http://localhost:8008/mapguide/phpviewersample/ajaxtiledviewersample.php</a> to view the sample application</li>
+</ol>
+<a class="reference external image-reference" href="_images/mapguide_viewer.png"><div align="center" class="align-center"><img alt="mapguide desktop icons" class="align-center" src="_images/mapguide_viewer.png" style="width: 511.5px; height: 357.0px;" /></div>
+</a>
+</div>
+<div class="section" id="mapguide-maestro">
+<h2>MapGuide Maestro<a class="headerlink" href="#mapguide-maestro" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To start Maestro, go to Desktop-&gt;Server, click icon MapGuide Maestro, this will open Maestro login GUI, as shown in following screenshot. Login to <a class="reference external" href="http://localhost:8008/mapguide/mapagent/mapagent.fcgi">http://localhost:8008/mapguide/mapagent/mapagent.fcgi</a> with username &#8220;Administrator&#8221; and password &#8220;admin&#8221;</li>
+</ol>
+<a class="reference external image-reference" href="_images/mapguide_maestroLogin.png"><div align="center" class="align-center"><img alt="screenshot" class="align-center" src="_images/mapguide_maestroLogin.png" style="width: 261.0px; height: 210.0px;" /></div>
+</a>
+<ol class="arabic simple" start="2">
+<li>Click Ok to go to Maestro main GUI, as shown in following screenshot.</li>
+</ol>
+<a class="reference external image-reference" href="_images/mapguide_maestroMain.png"><div align="center" class="align-center"><img alt="mapguide maestro main GUI" class="align-center" src="_images/mapguide_maestroMain.png" style="width: 450.5px; height: 332.5px;" /></div>
+</a>
+<ol class="arabic simple" start="3">
+<li>Expand tree view on left panel, go to Samples-&gt;Sheboygan-&gt;Layers, double click Buildings, the layer editor for Buildings will open in the right panel, as shown in the following screenshot:</li>
+</ol>
+<a class="reference external image-reference" href="_images/mapguide_maestroLayerFeatures.png"><div align="center" class="align-center"><img alt="mapguide maestro layer features" class="align-center" src="_images/mapguide_maestroLayerFeatures.png" style="width: 512.0px; height: 346.5px;" /></div>
+</a>
+<ol class="arabic simple" start="4">
+<li>Scroll down the right panel to show the Layer Style. On the Featurestyle column, click the ... cell to bring up the Style Editor, as shown in the following screenshot:</li>
+</ol>
+<a class="reference external image-reference" href="_images/mapguide_maestroLayerStyle.png"><div align="center" class="align-center"><img alt="mapguide maestro layer stype panel" class="align-center" src="_images/mapguide_maestroLayerStyle.png" style="width: 512.0px; height: 346.5px;" /></div>
+</a>
+<a class="reference external image-reference" href="_images/mapguide_maestroStyleEditor.png"><div align="center" class="align-center"><img alt="mapguide maestro color chooser" class="align-center" src="_images/mapguide_maestroStyleEditor.png" style="width: 174.0px; height: 278.0px;" /></div>
+</a>
+<ol class="arabic simple" start="5">
+<li>in Foreground Color dropdown list, select Green, click Ok to close Style Editor. In Maestro Main GUI, click the Disk icon to save.</li>
+</ol>
+<a class="reference external image-reference" href="_images/mapguide_maestroSaveIcon.png"><div align="center" class="align-center"><img alt="mapguide maestro Save icon" class="align-center" src="_images/mapguide_maestroSaveIcon.png" style="width: 512.0px; height: 346.5px;" /></div>
+</a>
+<ol class="arabic simple" start="6">
+<li>to preview the change, open a browser to address <a class="reference external" href="http://localhost:8008/mapguide/phpviewersample/ajaxtiledviewersample.php">http://localhost:8008/mapguide/phpviewersample/ajaxtiledviewersample.php</a> or click the Preview icon in the tool bar from Maestro main GUI), which will open a browser to the above address. In the browser map view, Zoom in to building level, the building color now is Green.</li>
+</ol>
+<a class="reference external image-reference" href="_images/mapguide_buildingColorBeforeChanging.png"><div align="center" class="align-center"><img alt="Building color is grey" class="align-center" src="_images/mapguide_buildingColorBeforeChanging.png" style="width: 512.0px; height: 359.0px;" /></div>
+</a>
+<a class="reference external image-reference" href="_images/mapguide_buildingColorAfterChanging.png"><div align="center" class="align-center"><img alt="Building color is green" class="align-center" src="_images/mapguide_buildingColorAfterChanging.png" style="width: 512.0px; height: 359.0px;" /></div>
+</a>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <ul id="breadcrumbs">
+            <li class="right" style="margin-right: 10px">
+              <a href="genindex.html" title="General Index"
+                 >index</a></li>
+            <li class="right" >
+              <a href="mapnik_quickstart.html" title="Mapnik Quickstart"
+                 >next</a> |</li>
+            <li class="right" >
+              <a href="mapfish_quickstart.html" title="MapFish Quickstart"
+                 >previous</a> |</li>
+        <li><a href="quickstart.html">OSGeo-Live v4.0 documentation</a> &raquo;</li>
+        <li><a href="#">MapGuide Quick Start</a></li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      &copy; Copyright 2010, OSGeo.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.4.
+    </div>
+  </body>
+</html>

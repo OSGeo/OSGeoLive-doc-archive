@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PostGIS Quickstart &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://postgis.org/" id="postgis-quickstart"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS.png" style="width: 89.7px; height: 131.7px;" /></a>
+<div class="section" id="id1">
+<h1>PostGIS Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>PostGIS adds spatial capabilities to the PostgreSQL relational database system. It gives
+PostgreSQL the ability to store, query, and manipulate spatial data. In this note we will
+use &#8216;PostgreSQL&#8217; when we talk about general database functions, and &#8216;PostGIS&#8217; when
+we talk about the additional functionality that it provides.</p>
+<div class="section" id="client-server-architecture">
+<h2>Client-server Architecture<a class="headerlink" href="#client-server-architecture" title="Permalink to this headline">¶</a></h2>
+<p>PostgreSQL, like many database systems, works as a server in a client-server system.
+The client makes a request to the server and gets back a response. This is the
+same way that the WWW works - your browser is the client and the web server sends
+back the web page. With PostgreSQL the requests are in the SQL language and the
+response is usually a table of data from the database.</p>
+<p>There is nothing to stop the server being on the same computer as the client, and this
+enables you to use PostgreSQL on a single machine. Your client connects to the server
+via the internal &#8216;loopback&#8217; network connection, and is not visible to other computers
+unless you configure it to be so.</p>
+</div>
+<div class="section" id="creating-a-spatially-enabled-database">
+<h2>Creating A Spatially-Enabled database<a class="headerlink" href="#creating-a-spatially-enabled-database" title="Permalink to this headline">¶</a></h2>
+<p>To handle spatial data you need a PostgreSQL database with PostGIS
+functionality. From the unix command line you can use <tt class="docutils literal"><span class="pre">createdb</span></tt>:</p>
+<div class="highlight-python"><pre>createdb -T template_postgis demo</pre>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Note that the command line tools provide help with &#8211;help for further information</p>
+</div>
+<p>or from the PostgreSQL command line tool <tt class="docutils literal"><span class="pre">psql</span></tt>, you can create it
+with SQL:</p>
+<p>First get a list of all databases with <tt class="docutils literal"><span class="pre">psql</span></tt> and the parameter -l. Connect with a database.</p>
+<div class="highlight-python"><pre>psql -l
+psql -d postgres</pre>
+</div>
+<p>Run the SQL to create a new database:</p>
+<div class="highlight-python"><pre>CREATE DATABASE demo TEMPLATE=template_postgis;</pre>
+</div>
+<p>To check this has worked, your database will have a lot of
+spatial functions and two tables: <tt class="docutils literal"><span class="pre">geometry_columns</span></tt> and <tt class="docutils literal"><span class="pre">spatial_ref_sys</span></tt>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Note that when you are connected a database with psql you will get help with h or ?. Leave the database with q.</p>
+</div>
+</div>
+<div class="section" id="creating-a-spatial-table-the-hard-way">
+<h2>Creating A Spatial Table The Hard Way<a class="headerlink" href="#creating-a-spatial-table-the-hard-way" title="Permalink to this headline">¶</a></h2>
+<p>Now we have a spatial database we can make spatial tables. Start the
+PostgreSQL command-line client by entering &#8216;psql&#8217; and your database name at a terminal
+prompt. This should connect to your database.</p>
+<div class="highlight-python"><pre>psql -d postgres</pre>
+</div>
+<p>First we create an ordinary database table to store some city data -
+this table has two fields - one for a numeric ID and one for the city
+name:</p>
+<div class="highlight-python"><pre>CREATE TABLE cities ( id int4, name varchar(50) );</pre>
+</div>
+<p>Next you have to add a geometry column. Conventionally this is called
+<tt class="docutils literal"><span class="pre">the_geom</span></tt> or <tt class="docutils literal"><span class="pre">geom</span></tt>. This tells PostGIS what kind of geometry
+each feature has (points, lines, polygons etc), how many dimensions
+(in this case two), and importantly the spatial reference
+system. We&#8217;ll create the geometry column using EPSG:4326 coordinates.</p>
+<div class="highlight-python"><pre>SELECT AddGeometryColumn ( 'cities', 'the_geom', 4326, 'POINT', 2);</pre>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Check the PostGIS table <tt class="docutils literal"><span class="pre">geometry_columns</span></tt>. YOu will find a new row with metadata for your table there.</p>
+</div>
+<p>Now we can add some data to our table. Adding the id and name values is standard SQL fare. Adding our
+point coordinates requires us to use a PostGIS function to convert WKT (Well Known Text) strings with a
+spatial reference system id.</p>
+<div class="highlight-python"><pre>INSERT INTO cities (id, the_geom, name) VALUES (1,ST_GeomFromText('POINT(-0.1257 51.508)',4326),'London, England');
+INSERT INTO cities (id, the_geom, name) VALUES (2,ST_GeomFromText('POINT(-81.233 42.983)',4326),'London, Ontario');
+INSERT INTO cities (id, the_geom, name) VALUES (3,ST_GeomFromText('POINT(27.91162491 -33.01529)',4326),'East London,SA');</pre>
+</div>
+<p>As you can see this gets increasingly tedious very quickly. Luckily there are other ways of getting
+data into PostGIS tables that are much easier. But now we have three cities in our database, and we
+can work with that.</p>
+</div>
+<div class="section" id="simple-queries">
+<h2>Simple Queries<a class="headerlink" href="#simple-queries" title="Permalink to this headline">¶</a></h2>
+<p>All the usual SQL operations can be applied to select data from a PostGIS table.</p>
+<div class="highlight-python"><pre># SELECT * FROM CITIES;
+ id |      name       |                      the_geom
+----+-----------------+----------------------------------------------------
+  1 | London, England | 0101000020E6100000BBB88D06F016C0BF1B2FDD2406C14940
+  2 | London, Ontario | 0101000020E6100000F4FDD478E94E54C0E7FBA9F1D27D4540
+  3 | East London,SA  | 0101000020E610000040AB064060E93B4059FAD005F58140C0
+(3 rows)</pre>
+</div>
+<p>If you want to have a look at your geometry in WKT format again, you can use the functions ST_AsText(the_geom) or ST_AsEwkt(the_geom). Or use ST_X(the_geom), ST_Y(the_geom) to get the coordinates</p>
+<div class="highlight-python"><pre># SELECT id, ST_AsText(the_geom), ST_AsEwkt(the_geom), ST_X(the_geom), ST_Y(the_geom) FROM CITIES;
+ id |          st_astext           |               st_asewkt                |    st_x     |   st_y
+----+------------------------------+----------------------------------------+-------------+-----------
+  1 | POINT(-0.1257 51.508)        | SRID=4326;POINT(-0.1257 51.508)        |     -0.1257 |    51.508
+  2 | POINT(-81.233 42.983)        | SRID=4326;POINT(-81.233 42.983)        |     -81.233 |    42.983
+  3 | POINT(27.91162491 -33.01529) | SRID=4326;POINT(27.91162491 -33.01529) | 27.91162491 | -33.01529
+(3 rows)</pre>
+</div>
+</div>
+<div class="section" id="spatial-queries">
+<h2>Spatial Queries<a class="headerlink" href="#spatial-queries" title="Permalink to this headline">¶</a></h2>
+<p>PostGIS adds many functions with spatial functionality to
+PostgreSQL. We&#8217;ve already seen ST_GeomFromText which converts WKT to
+geometry. Most of them start with ST (for spatial type) and are listed in a section of
+the PostGIS documentation. We&#8217;ll now use one to answer a practical
+question.</p>
+<p>How far are these three Londons away from each other, in metres,
+assuming a spherical earth? (I&#8217;d use ST_Distance_Spheroid but my
+version of PostGIS doesn&#8217;t have it)</p>
+<div class="highlight-python"><pre># SELECT p1.name,p2.name,ST_Distance_Sphere(p1.the_geom,p2.the_geom) from cities as p1, cities as p2 where p1.id &gt; p2.id;
+      name       |      name       | st_distance_sphere
+-----------------+-----------------+--------------------
+ London, Ontario | London, England |   5875766.85191657
+ East London,SA  | London, England |   9789646.96784908
+ East London,SA  | London, Ontario |   13892160.9525778
+ (3 rows)</pre>
+</div>
+<p>This gives is the distance, in metres, between each pair of
+cities. Notice how the &#8216;where&#8217; part of the line stops us getting back
+distances of a city to itself (which will all be zero) or the reverse
+distances to the ones in the table above (England to Ontario is the
+same distance as Ontario to London). Try it without the &#8216;where&#8217; part
+and see what happens.</p>
+</div>
+<div class="section" id="mapping">
+<h2>Mapping<a class="headerlink" href="#mapping" title="Permalink to this headline">¶</a></h2>
+<p>To produce a map from PostGIS data, you need a client that can get at the data. Most
+of the open source desktop GIS programs can do this - Quantum GIS, gvSIG, uDig for example. Now we&#8217;ll
+show you how to make a map from Quantum GIS.</p>
+<p>Start Quantum GIS and choose <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">PostGIS</span> <span class="pre">layer</span></tt> from the layer menu. Because you haven&#8217;t interacted
+with PostGIS from QGIS before, you&#8217;ll get an empty set of PostGIS connections.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_add.png"><img alt="Add a PostGIS layer" class="align-center" src="../../_images/postgis_add.png" style="width: 439.0px; height: 502.0px;" /></a>
+<p>Hit &#8216;new&#8217; and enter the parameters for the connection. We&#8217;ll use the Natural Earth database
+provided on the DVD system. There&#8217;s no username or password because the security is set up
+to allow you access.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_naturalearth.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_naturalearth.png" style="width: 364.0px; height: 442.0px;" /></a>
+<p>Hit the <tt class="docutils literal"><span class="pre">Test</span> <span class="pre">Connect</span></tt> button, and if all is well you&#8217;ll get a friendly
+message. Hit <tt class="docutils literal"><span class="pre">OK</span></tt> and your connection info is saved under the name in the drop-down box. Now you can
+hit <tt class="docutils literal"><span class="pre">Connect</span></tt> and get a list of the spatial tables in the database:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_ne_layers.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_ne_layers.png" style="width: 444.0px; height: 506.0px;" /></a>
+<p>Choose the lakes and hit <tt class="docutils literal"><span class="pre">Add</span></tt>, and it should be loaded into QGIS:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_ne_lakes.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_ne_lakes.png" style="width: 400.0px; height: 275.5px;" /></a>
+<p>You should now see a map of the lakes. QGIS doesn&#8217;t know they are lakes, so might not colour
+them blue for you. Use the QGIS documentation to work out how to change this! Zoom in to
+a famous group of lakes in Canada.</p>
+</div>
+<div class="section" id="creating-a-spatial-table-the-easy-way">
+<h2>Creating A Spatial Table The Easy Way<a class="headerlink" href="#creating-a-spatial-table-the-easy-way" title="Permalink to this headline">¶</a></h2>
+<p>Most of the OSgeo desktop tools have functions for importing spatial data in files, such as shapefiles,
+into PostGIS databases. Again we&#8217;ll use QGIS to show this.</p>
+<p>Importing shapefiles to QGIS can be done via a handy PostGIS Manager plugin. To set it up, go to the
+Plugins menu, select <tt class="docutils literal"><span class="pre">Manage</span> <span class="pre">Plugins</span></tt> and then find the <tt class="docutils literal"><span class="pre">PostGIS</span> <span class="pre">Manager</span></tt>. Check the box and OK
+it. Now on the Plugin menu you should have a PostGIS Manager entry which gives you an option
+to start the manager.</p>
+<p>It will then use your previously defined settings to connect to the Natural Earth database. Leave
+the password blank if it asks. You&#8217;ll see the main manager window.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_ne_manager.png"><img alt="PostGIS Manager Plugin" class="align-center" src="../../_images/postgis_ne_manager.png" style="width: 712.0px; height: 530.0px;" /></a>
+<p>You can use the other tabs in the right-side panel to check the attributes of the layer and even
+get a basic map with zoom and pan capabilities. Here I&#8217;ve selected the the populated places layer
+and zoomed in on a little island I know:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_ne_preview.png"><img alt="PostGIS Manager Preview" class="align-center" src="../../_images/postgis_ne_preview.png" style="width: 715.0px; height: 530.0px;" /></a>
+<p>Now to read in a shapefile. From the <tt class="docutils literal"><span class="pre">Data</span></tt> menu choose the <tt class="docutils literal"><span class="pre">Load</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">shapefile</span></tt> option.
+All you need to do here is browse to the world shapefile in the data directory of the osgearth
+folder, and give the table a name. Leave everything else. Hit <tt class="docutils literal"><span class="pre">Load</span></tt>.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_ne_load.png"><img alt="Import a shapefile" class="align-center" src="../../_images/postgis_ne_load.png" style="width: 432.0px; height: 613.0px;" /></a>
+<p>The shapefile should be imported into PostGIS with no errors.</p>
+<p>Now get back to the main QGIS window and load the world data into the map using the &#8216;Add PostGIS Layer&#8217;
+option. With a bit of rearranging of the layers and some colouring, you should be able to get something
+like this:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_ne_final.png"><img alt="Lakes and Countries" class="align-center" src="../../_images/postgis_ne_final.png" style="width: 325.0px; height: 254.0px;" /></a>
+</div>
+<div class="section" id="get-to-know-pgadmin-iii">
+<h2>Get to know pgAdmin III<a class="headerlink" href="#get-to-know-pgadmin-iii" title="Permalink to this headline">¶</a></h2>
+<p>You can use the graphical database client <tt class="docutils literal"><span class="pre">pgAdmin</span> <span class="pre">III</span></tt> to run you SQLs and handle your data.
+pgAdmin III also provides a plugin for shape import. This client provides a comfortable way to
+manage your data.</p>
+<a class="reference internal image-reference" href="../../_images/pgadmin.gif"><img alt="pgAdmin III" class="align-center" src="../../_images/pgadmin.gif" style="width: 806.0px; height: 577.0px;" /></a>
+</div>
+<div class="section" id="things-to-try">
+<h2>Things to try<a class="headerlink" href="#things-to-try" title="Permalink to this headline">¶</a></h2>
+<p>Here are some additional challenges for you to try:</p>
+<ol class="arabic simple">
+<li>Try some more spatial functions like st_buffer(the_geom), st_transform(the_geom,25831), x(the_geom) . You find a very good documentation at <a class="reference external" href="http://postgis.org/documentation/">http://postgis.org/documentation/</a></li>
+<li>Export your tables to shape with pgsql2shp</li>
+<li>Try ogr2ogr to import/export data to your database</li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2>What Next?<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<p>This is only the first step on the road to using PostGIS. There is a lot more functionality you can try.</p>
+<p>PostGIS Project home</p>
+<blockquote>
+<a class="reference external" href="http://postgis.org">http://postgis.org</a></blockquote>
+<p>PostGIS Documentation</p>
+<p><a class="reference external" href="http://postgis.org/documentation/">http://postgis.org/documentation/</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>rasdaman Quickstart &mdash; OSGeo-Live v4.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.rasdaman.org" id="rasdaman-quickstart"><img align="right" alt="project logo" class="align-right" src="../../_images/logo-rasdaman.png" style="width: 202.0px; height: 90.0px;" /></a>
+<div class="section" id="id1">
+<h1>rasdaman Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<a class="reference external image-reference" href="../../_images/rasdaman_apps_collage.jpg"><img align="right" alt="screenshot" class="align-right" src="../../_images/rasdaman_apps_collage.jpg" style="width: 300.0px; height: 349.0px;" /></a>
+<p>rasdaman is a raster database allowing queries on n-D raster data stored.</p>
+<p>This Quick Start describes how to try out queries on a sandbox of objects.</p>
+<div class="section" id="exploring-the-1-d-to-4-d-examples">
+<h2>Exploring the 1-D to 4-D examples<a class="headerlink" href="#exploring-the-1-d-to-4-d-examples" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<ul class="simple">
+<li>Go to the EarthLook <a class="reference external" href="http://localhost:8080/earthlook/index.php">Earthlook</a> demo to explore various demo data sets. The small ones are part of OSGeo-Live, those utilizing larger sets forward directly to the <a class="reference external" href="http://kahlua.eecs.jacobs-university.de/~earthlook/demos/index.php">Earthlook site</a> .</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="running-queries-locally">
+<h2>Running queries locally<a class="headerlink" href="#running-queries-locally" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<ul>
+<li><p class="first">Open a console and open the sample database installed locally</p>
+</li>
+<li><p class="first">use the rasql utility to send queries and receive results, for example:</p>
+<div class="highlight-python"><pre>$ rasql -q "select png(rgb.1 + rgb.2 ) from rgb" --out file</pre>
+</div>
+</li>
+<li><p class="first">use your favorite image inspection tool to open the file generated.</p>
+</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="create-your-own-database">
+<h2>Create your own database<a class="headerlink" href="#create-your-own-database" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<ul>
+<li><p class="first">Open a console</p>
+</li>
+<li><p class="first"><a class="reference external" href="http://kahlua.eecs.jacobs-university.de/trac/rasdaman/wiki/Download">Download and install rasdaman</a> and <a class="reference external" href="http://kahlua.eecs.jacobs-university.de/trac/rasdaman/wiki/RequiredPackages">its prerequisites</a></p>
+</li>
+<li><p class="first">run the demo ingestion script:</p>
+<div class="highlight-python"><pre>$ install_demo.sh</pre>
+</div>
+</li>
+<li><p class="first">use the rasql utility to send queries and receive results, for example:</p>
+<div class="highlight-python"><pre>$ rasql -q "select png( rgb.1 + rgb.2 ) from rgb" --out file</pre>
+</div>
+</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="things-to-try">
+<h2>Things to Try<a class="headerlink" href="#things-to-try" title="Permalink to this headline">¶</a></h2>
+<p>Here are some additional challenges for you to try:</p>
+<blockquote>
+<ul class="simple">
+<li>Explore the demo data sets by browsing the <a class="reference external" href="http://kahlua.eecs.jacobs-university.de/trac/rasdaman/browser/manuals_and_examples/manuals/pdf/ql-guide.pdf">rasql query language guide</a></li>
+<li>To learn more about the OGC  <a class="reference external" href="http://www.opengeospatial.org/standards/wcps">Web Coverage Processing Service</a> (WCPS) Language standard (which was heavily inspired by rasdaman), a starting point is the  <a class="reference external" href="http://kahlua.eecs.jacobs-university.de/~earthlook/tech/interface-wcps.php">documentation and tutorials page</a> .</li>
+</ul>
+</blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i>&copy; OSGeo Foundation and LISAsoft 2011... <a href="../disclaimer.html">Disclaimer</a></i></span>
+
+  </body>
+</html>

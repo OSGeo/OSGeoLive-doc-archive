@@ -1,0 +1,2711 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Test &mdash; OSGeo-Live 4.5 v4.1 documentation</title>
+    <link rel="stylesheet" href="../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '4.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 4.5 v4.1 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="overview/overview.html">Contents</a></li>
+              <li><a href="standards/standards.html">Standards</a></li>
+              <li><a href="download.html">Download</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../en/index.html">English</a> |
+		<a href="../el/index.html">Ελληνικά</a> |
+		<a href="../de/index.html">Deutsch</a> |
+		<a href="../es/index.html">Español</a> |
+		<a href="../ja/index.html">日本語</a> |
+		<a href="../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="test">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div>
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Live GIS Disc Testing</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From OSGeo Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p><i>This page describes how to test each application installed on the <a href="/wiki/Live_GIS_Disc" title="Live GIS Disc">Live GIS Disc</a>. Application test steps describe how an Ubuntu user who is unfamiliar an application can try it out and confirm that everything has been installed correctly within 5 minutes. Test Results document when the application was last verified to be working.</i>
+</p><p><i>This page is maintained at: <a href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Testing" class="external free" title="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Testing" rel="nofollow">http://wiki.osgeo.org/wiki/Live_GIS_Disc_Testing</a> and copied onto each release of the LiveDVD.</i>
+</p>
+<ul><li> <a href="/wiki/Live_GIS_Disc/Errata/4.0.0" title="Live GIS Disc/Errata/4.0.0">Live GIS Disc/Errata/4.0.0</a>
+</li></ul>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Package_testing_matrix"><span class="tocnumber">1</span> <span class="toctext">Package testing matrix</span></a></li>
+<li class="toclevel-1"><a href="#Template"><span class="tocnumber">2</span> <span class="toctext">Template</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Steps"><span class="tocnumber">2.1</span> <span class="toctext">Steps</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_.date."><span class="tocnumber">2.2</span> <span class="toctext">Results from .date.</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Boot_and_Installer"><span class="tocnumber">3</span> <span class="toctext">Boot and Installer</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Steps_2"><span class="tocnumber">3.1</span> <span class="toctext">Steps</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_August_6th"><span class="tocnumber">3.2</span> <span class="toctext">Results from August 6th</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_August_7th.2C_2010"><span class="tocnumber">3.3</span> <span class="toctext">Results from August 7th, 2010</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#deegree"><span class="tocnumber">4</span> <span class="toctext">deegree</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_August_6th_2"><span class="tocnumber">4.1</span> <span class="toctext">Results from August 6th</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_August_6th_3"><span class="tocnumber">4.2</span> <span class="toctext">Results from August 6th</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_August_7th.2C_2010_2"><span class="tocnumber">4.3</span> <span class="toctext">Results from August 7th, 2010</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#atlasstyler"><span class="tocnumber">5</span> <span class="toctext">atlasstyler</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_August_6th.2C_2010"><span class="tocnumber">5.1</span> <span class="toctext">Results from August 6th, 2010</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_August_19th.2C_2010"><span class="tocnumber">5.2</span> <span class="toctext">Results from August 19th, 2010</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#geopublisher"><span class="tocnumber">6</span> <span class="toctext">geopublisher</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_August_6th.2C_2010_2"><span class="tocnumber">6.1</span> <span class="toctext">Results from August 6th, 2010</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#geoserver"><span class="tocnumber">7</span> <span class="toctext">geoserver</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_August_6th.2C2010"><span class="tocnumber">7.1</span> <span class="toctext">Results from August 6th,2010</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_August_7th.2C_2010_3"><span class="tocnumber">7.2</span> <span class="toctext">Results from August 7th, 2010</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#gvSIG"><span class="tocnumber">8</span> <span class="toctext">gvSIG</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_6_Aug_2010"><span class="tocnumber">8.1</span> <span class="toctext">Results from 6 Aug 2010</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#gdal_.2F_ogr"><span class="tocnumber">9</span> <span class="toctext">gdal / ogr</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_August_7th.2C_2010_4"><span class="tocnumber">9.1</span> <span class="toctext">Results from August 7th, 2010</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-18"><span class="tocnumber">9.2</span> <span class="toctext">Results from 2010-08-18</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#geomajas"><span class="tocnumber">10</span> <span class="toctext">geomajas</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_9_March_2010"><span class="tocnumber">10.1</span> <span class="toctext">Results from 9 March 2010</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_6_Aug_2010_2"><span class="tocnumber">10.2</span> <span class="toctext">Results from 6 Aug 2010</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_August_8th.2C_2010"><span class="tocnumber">10.3</span> <span class="toctext">Results from August 8th, 2010</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_19_Aug_2010"><span class="tocnumber">10.4</span> <span class="toctext">Results from 19 Aug 2010</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#geonetwork"><span class="tocnumber">11</span> <span class="toctext">geonetwork</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_10_August_2010"><span class="tocnumber">11.1</span> <span class="toctext">Results from 10 August 2010</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_August_8th.2C_2010_2"><span class="tocnumber">11.2</span> <span class="toctext">Results from August 8th, 2010</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#gpsdrive"><span class="tocnumber">12</span> <span class="toctext">gpsdrive</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Testing"><span class="tocnumber">12.1</span> <span class="toctext">Testing</span></a>
+<ul>
+<li class="toclevel-3"><a href="#If_no_GPS_is_plugged_in"><span class="tocnumber">12.1.1</span> <span class="toctext">If no GPS is plugged in</span></a>
+<ul>
+<li class="toclevel-4"><a href="#Downloading_maps"><span class="tocnumber">12.1.1.1</span> <span class="toctext">Downloading maps</span></a></li>
+<li class="toclevel-4"><a href="#Overlay_a_GPX_track"><span class="tocnumber">12.1.1.2</span> <span class="toctext">Overlay a GPX track</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3"><a href="#If_a_GPS_is_plugged_in"><span class="tocnumber">12.1.2</span> <span class="toctext">If a GPS is plugged in</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Results_from_Aug_2010"><span class="tocnumber">12.2</span> <span class="toctext">Results from Aug 2010</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_18_Aug_2010"><span class="tocnumber">12.3</span> <span class="toctext">Results from 18 Aug 2010</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#geokettle"><span class="tocnumber">13</span> <span class="toctext">geokettle</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_August_8th.2C_2010_3"><span class="tocnumber">13.1</span> <span class="toctext">Results from August 8th, 2010</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#gmt"><span class="tocnumber">14</span> <span class="toctext">gmt</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06"><span class="tocnumber">14.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-18_2"><span class="tocnumber">14.2</span> <span class="toctext">Results from 2010-08-18</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#grass"><span class="tocnumber">15</span> <span class="toctext">grass</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_2"><span class="tocnumber">15.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-18_3"><span class="tocnumber">15.2</span> <span class="toctext">Results from 2010-08-18</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#kosmo"><span class="tocnumber">16</span> <span class="toctext">kosmo</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-10"><span class="tocnumber">16.1</span> <span class="toctext">Results from 2010-08-10</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#mapnik"><span class="tocnumber">17</span> <span class="toctext">mapnik</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_3"><span class="tocnumber">17.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#maptiler"><span class="tocnumber">18</span> <span class="toctext">maptiler</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-19"><span class="tocnumber">18.1</span> <span class="toctext">Results from 2010-08-19</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#marble"><span class="tocnumber">19</span> <span class="toctext">marble</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_4"><span class="tocnumber">19.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-18_4"><span class="tocnumber">19.2</span> <span class="toctext">Results from 2010-08-18</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#mapfish"><span class="tocnumber">20</span> <span class="toctext">mapfish</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_August_8th.2C_2010_4"><span class="tocnumber">20.1</span> <span class="toctext">Results from August 8th, 2010</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#MapGuide_Open_Source"><span class="tocnumber">21</span> <span class="toctext">MapGuide Open Source</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_August_5.2C_2010"><span class="tocnumber">21.1</span> <span class="toctext">Results from August 5, 2010</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_6_Aug_2010_3"><span class="tocnumber">21.2</span> <span class="toctext">Results from 6 Aug 2010</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Mapbender"><span class="tocnumber">22</span> <span class="toctext">Mapbender</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_5.7.2010"><span class="tocnumber">22.1</span> <span class="toctext">Results from 5.7.2010</span></a></li>
+<li class="toclevel-2"><a href="#test_results_from_23.7.2010"><span class="tocnumber">22.2</span> <span class="toctext">test results from 23.7.2010</span></a></li>
+<li class="toclevel-2"><a href="#test_results_from_8.8.2010"><span class="tocnumber">22.3</span> <span class="toctext">test results from 8.8.2010</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#mb-system"><span class="tocnumber">23</span> <span class="toctext">mb-system</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_5"><span class="tocnumber">23.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-18_5"><span class="tocnumber">23.2</span> <span class="toctext">Results from 2010-08-18</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#mapserver"><span class="tocnumber">24</span> <span class="toctext">mapserver</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_6"><span class="tocnumber">24.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_7"><span class="tocnumber">24.2</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_August_7th.2C_2010_5"><span class="tocnumber">24.3</span> <span class="toctext">Results from August 7th, 2010</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#octave"><span class="tocnumber">25</span> <span class="toctext">octave</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_8"><span class="tocnumber">25.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-18_6"><span class="tocnumber">25.2</span> <span class="toctext">Results from 2010-08-18</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#opencpn"><span class="tocnumber">26</span> <span class="toctext">opencpn</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_9"><span class="tocnumber">26.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-18_7"><span class="tocnumber">26.2</span> <span class="toctext">Results from 2010-08-18</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#osm"><span class="tocnumber">27</span> <span class="toctext">osm</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_10"><span class="tocnumber">27.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-18_8"><span class="tocnumber">27.2</span> <span class="toctext">Results from 2010-08-18</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#ossim"><span class="tocnumber">28</span> <span class="toctext">ossim</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_11"><span class="tocnumber">28.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-04"><span class="tocnumber">28.2</span> <span class="toctext">Results from 2010-08-04</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-19_2"><span class="tocnumber">28.3</span> <span class="toctext">Results from 2010-08-19</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#osgearth"><span class="tocnumber">29</span> <span class="toctext">osgearth</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_12"><span class="tocnumber">29.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-04_2"><span class="tocnumber">29.2</span> <span class="toctext">Results from 2010-08-04</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-19_3"><span class="tocnumber">29.3</span> <span class="toctext">Results from 2010-08-19</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#openjump"><span class="tocnumber">30</span> <span class="toctext">openjump</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_13"><span class="tocnumber">30.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-19_4"><span class="tocnumber">30.2</span> <span class="toctext">Results from 2010-08-19</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#postgis"><span class="tocnumber">31</span> <span class="toctext">postgis</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_14"><span class="tocnumber">31.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-19_5"><span class="tocnumber">31.2</span> <span class="toctext">Results from 2010-08-19</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#pgRouting"><span class="tocnumber">32</span> <span class="toctext">pgRouting</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_15"><span class="tocnumber">32.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#qgis"><span class="tocnumber">33</span> <span class="toctext">qgis</span></a>
+<ul>
+<li class="toclevel-2"><a href="#open_GeoTiff"><span class="tocnumber">33.1</span> <span class="toctext">open GeoTiff</span></a></li>
+<li class="toclevel-2"><a href="#open_Shapefile"><span class="tocnumber">33.2</span> <span class="toctext">open Shapefile</span></a></li>
+<li class="toclevel-2"><a href="#open_PostGIS_data_I"><span class="tocnumber">33.3</span> <span class="toctext">open PostGIS data I</span></a></li>
+<li class="toclevel-2"><a href="#open_PostGIS_data_II"><span class="tocnumber">33.4</span> <span class="toctext">open PostGIS data II</span></a></li>
+<li class="toclevel-2"><a href="#open_OSM_data"><span class="tocnumber">33.5</span> <span class="toctext">open OSM data</span></a></li>
+<li class="toclevel-2"><a href="#Test_the_GRASS_plugin"><span class="tocnumber">33.6</span> <span class="toctext">Test the GRASS plugin</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_16"><span class="tocnumber">33.7</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_August_8th.2C_2010_5"><span class="tocnumber">33.8</span> <span class="toctext">Results from August 8th, 2010</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-18_9"><span class="tocnumber">33.9</span> <span class="toctext">Results from 2010-08-18</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#QGIS_Mapserver"><span class="tocnumber">34</span> <span class="toctext">QGIS Mapserver</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Steps_3"><span class="tocnumber">34.1</span> <span class="toctext">Steps</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-04_3"><span class="tocnumber">34.2</span> <span class="toctext">Results from 2010-08-04</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#R"><span class="tocnumber">35</span> <span class="toctext">R</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_17"><span class="tocnumber">35.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-18_10"><span class="tocnumber">35.2</span> <span class="toctext">Results from 2010-08-18</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#SAGA"><span class="tocnumber">36</span> <span class="toctext">SAGA</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-05"><span class="tocnumber">36.1</span> <span class="toctext">Results from 2010-08-05</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Sahana"><span class="tocnumber">37</span> <span class="toctext">Sahana</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_18"><span class="tocnumber">37.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-18_11"><span class="tocnumber">37.2</span> <span class="toctext">Results from 2010-08-18</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#spatialite"><span class="tocnumber">38</span> <span class="toctext">spatialite</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_19"><span class="tocnumber">38.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#udig"><span class="tocnumber">39</span> <span class="toctext">udig</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_20"><span class="tocnumber">39.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_21"><span class="tocnumber">39.2</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Ushahidi"><span class="tocnumber">40</span> <span class="toctext">Ushahidi</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_22"><span class="tocnumber">40.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-18_12"><span class="tocnumber">40.2</span> <span class="toctext">Results from 2010-08-18</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Viking"><span class="tocnumber">41</span> <span class="toctext">Viking</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_23"><span class="tocnumber">41.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-18_13"><span class="tocnumber">41.2</span> <span class="toctext">Results from 2010-08-18</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#ZOO_Project"><span class="tocnumber">42</span> <span class="toctext">ZOO Project</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-03"><span class="tocnumber">42.1</span> <span class="toctext">Results from 2010-08-03</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-03_2"><span class="tocnumber">42.2</span> <span class="toctext">Results from 2010-08-03</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-18_14"><span class="tocnumber">42.3</span> <span class="toctext">Results from 2010-08-18</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#zyGrib"><span class="tocnumber">43</span> <span class="toctext">zyGrib</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_24"><span class="tocnumber">43.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+<li class="toclevel-2"><a href="#Results_from_2010-08-18_15"><span class="tocnumber">43.2</span> <span class="toctext">Results from 2010-08-18</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#main_documentation"><span class="tocnumber">44</span> <span class="toctext">main documentation</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_25"><span class="tocnumber">44.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Windows_Installers"><span class="tocnumber">45</span> <span class="toctext">Windows Installers</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-19_6"><span class="tocnumber">45.1</span> <span class="toctext">Results from 2010-08-19</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Mac_Installers"><span class="tocnumber">46</span> <span class="toctext">Mac Installers</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Results_from_2010-08-06_26"><span class="tocnumber">46.1</span> <span class="toctext">Results from 2010-08-06</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Media_tests"><span class="tocnumber">47</span> <span class="toctext">Media tests</span></a>
+<ul>
+<li class="toclevel-2"><a href="#DVD_testing"><span class="tocnumber">47.1</span> <span class="toctext">DVD testing</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Results_from_2010-08-19_7"><span class="tocnumber">47.1.1</span> <span class="toctext">Results from 2010-08-19</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#USB_testing"><span class="tocnumber">47.2</span> <span class="toctext">USB testing</span></a></li>
+<li class="toclevel-2"><a href="#VM_testing"><span class="tocnumber">47.3</span> <span class="toctext">VM testing</span></a>
+<ul>
+<li class="toclevel-3"><a href="#VirtualBox"><span class="tocnumber">47.3.1</span> <span class="toctext">VirtualBox</span></a></li>
+<li class="toclevel-3"><a href="#VMWare"><span class="tocnumber">47.3.2</span> <span class="toctext">VMWare</span></a></li>
+<li class="toclevel-3"><a href="#Qemu_.2B_KVM"><span class="tocnumber">47.3.3</span> <span class="toctext">Qemu + KVM</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Package_testing_matrix" id="Package_testing_matrix"></a><h1> <span class="mw-headline"> Package testing matrix  </span></h1>
+<table class="wikitable sortable" border="1" style="text-align:center">
+<caption> <font size="+2" color="darkgreen">Package testing status</font><br /><br />
+</caption>
+<tr>
+<th> Package Name
+</th><th> Latest Tested Against
+</th><th> Result
+</th><th> Notes
+</th></tr>
+<tr>
+<td> <a href="#Boot_and_Installer" title="">Boot and Installer</a>
+</td><td> 4.0rc6
+</td><td> &nbsp;&nbsp; <i><font color="darkorange">Pass with issues</font></i> &nbsp;&nbsp;
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#atlasstyler" title="">atlasstyler</a>
+</td><td> 4.0rc9
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#deegree" title="">deegree</a>
+</td><td> 4.0rc6
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#geopublisher" title="">geopublisher</a>
+</td><td> 4.0rc6
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#geoserver" title="">geoserver</a>
+</td><td> 4.0rc6
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#gvSIG" title="">gvSIG</a>
+</td><td> 4.0rc6
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#gdal_.2F_ogr" title="">GDAL / OGR</a>
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#geomajas" title="">geomajas</a>
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#geonetwork" title="">geonetwork</a>
+</td><td> 4.0rc6
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#gpsdrive" title="">gpsdrive</a>
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#geokettle" title="">geokettle</a>
+</td><td> 4.0rc6
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#gmt" title="">gmt</a>
+</td><td> 4.0rc9
+</td><td>  <b><font color="red">FAIL</font></b>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#grass" title="">GRASS</a>
+</td><td> 4.0rc9
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#kosmo" title="">kosmo</a>
+</td><td> 4.0rc6
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#mapnik" title="">mapnik</a>
+</td><td> 4.0rc6
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#maptiler" title="">maptiler</a>
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#marble" title="">marble</a>
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#mapfish" title="">mapfish</a>
+</td><td> 4.0rc6
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#MapGuide_Open_Source" title="">MapGuide</a>
+</td><td> 4.0rc6
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#Mapbender" title="">Mapbender</a>
+</td><td> &nbsp;? 8 Aug 2010
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#mb-system" title="">mb-system</a>
+</td><td> 4.0rc9
+</td><td>  <b><font color="red">FAIL</font></b>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#mapserver" title="">mapserver</a>
+</td><td> 4.0rc6
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#octave" title="">octave</a>
+</td><td> 4.0rc9
+</td><td> <i>disabled</i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#opencpn" title="">opencpn</a>
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#osm" title="">osm</a>
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#ossim" title="">ossim</a>
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#osgearth" title="">osgearth</a>
+</td><td> 4.0rc9
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#openjump" title="">openjump</a>
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#postgis" title="">postgis</a>
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#pgRouting" title="">pgRouting</a>
+</td><td> 4.0rc6
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#qgis" title="">qgis</a>
+</td><td> 4.0rc9
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#QGIS_Mapserver" title="">QGIS Mapserver</a>
+</td><td> 4.0rc6
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#R" title="">R</a>
+</td><td> 4.0rc9
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#SAGA" title="">SAGA</a>
+</td><td> 4.0rc6
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#Sahana" title="">Sahana</a>
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#spatialite" title="">spatialite</a>
+</td><td> 4.0rc6
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#udig" title="">uDig</a>
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#Ushahidi" title="">Ushahidi</a>
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#Viking" title="">Viking</a>
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#ZOO_Project" title="">ZOO Project</a>
+</td><td> 4.0rc9
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#zyGrib" title="">zyGrib</a>
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#main_documentation" title="">main documentation</a>
+</td><td> 4.0rc6
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#Windows_Installers" title="">Windows Installers</a>
+</td><td>
+</td><td> <i>none</i>
+</td><td>
+</td></tr>
+<tr>
+<td> <a href="#Mac_Installers" title="">Mac Installers</a>
+</td><td>
+</td><td> <i>none</i>
+</td><td>
+</td></tr>
+<tr>
+<td> DVD burn (full)
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font>
+</td><td>
+</td></tr>
+<tr>
+<td> DVD burn (mini)
+</td><td>
+</td><td> <i>none</i>
+</td><td>
+</td></tr>
+<tr>
+<td> USB stick install (full)
+</td><td> 4.0rc9
+</td><td> <i>mixed</i>
+</td><td>
+</td></tr>
+<tr>
+<td> USB stick install (mini)
+</td><td>
+</td><td> <i>none</i>
+</td><td>
+</td></tr>
+<tr>
+<td> VM:VirtualBox
+</td><td> 4.0rc9
+</td><td>  <font color="green">Pass</font> &nbsp;?
+</td><td>
+</td></tr>
+<tr>
+<td> VM:VMWare
+</td><td>
+</td><td> <i>none</i>
+</td><td>
+</td></tr>
+<tr>
+<td> VM:Qemu + KVM
+</td><td> 4.0rc9
+</td><td>  <i><font color="darkorange">Pass with issues</font></i>
+</td><td>
+</td></tr></table>
+<p><br />
+<font color="grey"></font>
+</p>
+<a name="Template" id="Template"></a><h1> <span class="mw-headline"> <font color="grey">Template</font> </span></h1>
+<dl><dt><font color="grey">Tests written for</font>
+</dt><dd><font color="grey">.package. [version], osgeo-live [version]</font>
+</dd><dt><font color="grey">Test Description last updated</font>
+</dt><dd><font color="grey">.date.</font>
+</dd></dl>
+<a name="Steps" id="Steps"></a><h2> <span class="mw-headline"> <font color="grey">Steps</font> </span></h2>
+<p><font color="grey"><i>Ideally, steps will mimic the Quick Start documentation, so both can be tested at once. Otherwise, use following:</i></font>
+<font color="grey">
+</p>
+<ol><li>.action.</font>
+</li></ol>
+<dl><dd><font color="grey">Verify that ...</font>
+</dd></dl>
+<p><font color="grey">
+</p>
+<ol><li>Eg: From menu, select GeoSpatial-&gt;Application-&gt;Start</font>
+</li></ol>
+<dl><dd><font color="grey">Eg: Verify that a browser opens at url: <a href="http://localhost" class="external free" title="http://localhost" rel="nofollow">http://localhost</a>:... and shows the application start page.</font>
+</dd></dl>
+<p><font color="grey">
+</p>
+<ol><li>Update the wiki with test results (after these test steps)</font>
+</li></ol>
+<hr />
+<a name="Results_from_.date." id="Results_from_.date."></a><h2> <span class="mw-headline"> <font color="grey">Results from .date.</font> </span></h2>
+<dl><dd><font color="grey">Run by: FirstName LastName</font>
+</dd><dd><font color="grey">System: VMWare Player, 2Gig RAM, on ubuntu 9.0 base</font>
+</dd><dd><font color="grey">Version: distribution version: eg: osgeo-live 4.0 rc6</font>
+</dd><dd><font color="grey">Results:  {{Pass}}, Pass with {{Issues}}, {{Fail}}  (use curly-bracket template)</font>
+</dd></dl>
+<p><font color="grey">
+</p>
+<ol><li>link to bug reports</font>
+</li></ol>
+<hr />
+<dl><dt><font color="grey">Add more test results below, most recent results at the top</font>
+</dt></dl>
+<p><font color="grey"><br /> </font>
+</p>
+<a name="Boot_and_Installer" id="Boot_and_Installer"></a><h1> <span class="mw-headline"> Boot and Installer  </span></h1>
+<a name="Steps_2" id="Steps_2"></a><h2> <span class="mw-headline"> Steps  </span></h2>
+<p><i>Ideally, steps will reference Quick Start documentation, otherwise use following:</i>
+</p>
+<ul><li>. Straight up Live DVD Disk
+</li><li>. Installer (into a VM if that is easier to clean up after)
+</li><li>. Testing is performed offline
+</li></ul>
+<dl><dd>Verify that ...
+</dd></dl>
+<ul><li>. You arrive at the desktop
+</li><li>. Help opens
+</li><li>. Firefox opens up
+</li></ul>
+<ul><li>Update the wiki with test results (after these test steps)
+</li></ul>
+<hr />
+<a name="Results_from_August_6th" id="Results_from_August_6th"></a><h2> <span class="mw-headline"> Results from August 6th  </span></h2>
+<dl><dd>Run by: Jody Garnett
+</dd><dd>System: Thinkpad T43, 2 GB, on live dvd
+</dd><dd>System: Macbook Pro, 4 GB, on live dvd
+</dd><dd>System: VirtualBox, 1 GB, 30GB HD image, on windows 7
+</dd><dd>Version: distribution version: eg: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<p>Bootloader
+</p>
+<ul><li>. shows version 3.0
+</li><li>. think pad boots fine
+</li><li>. mac needed to hit ENTER to get to the initial boot loading screen
+</li></ul>
+<p>Installer
+</p>
+<ul><li>. tried with vitural box vm
+</li><li>. install says "Arramagong live"
+</li><li>. obviously installing will allow you to enter a user name; will this break applications expecting "user"&nbsp;?
+</li><li>. my install failed; not enough space on the device. Need instructions indicating how much space is needed
+</li></ul>
+<p>Desktop
+</p>
+<ul><li>. think pad displays fine
+</li><li>. macbook pro - test OSGeo LIVE DVD Barcelona is cut off (and this one has higher resolution than many laptops)
+</li><li>. virtual box - could not adjust the screen resolution beyond the initial 800x600, instructions for open-vm-tools were fine, oh wait it wants a reboot - of a live dvd?
+</li><li>. never did get virtual box to have a different screen resolution even after adding the open-vm-tools
+</li></ul>
+<p>Suggestions from IRC:
+</p>
+<ul><li>. change background to not have text
+</li><li>. text at bottom of desktop being cut off is probably a function of screen aspect ratio
+</li><li>. indicate that "user" is the password in a box or make it more visible (good idea jasonbirch)
+</li></ul>
+<ul><li>link to bug reports
+</li></ul>
+<hr />
+<a name="Results_from_August_7th.2C_2010" id="Results_from_August_7th.2C_2010"></a><h2> <span class="mw-headline"> Results from August 7th, 2010  </span></h2>
+<dl><dd>Run by: Angelos Tzotsos
+</dd><dd>System: VirtualBox 3.2, 1Gig RAM, on OpenSUSE 11.2
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<ul><li>The DVD has label Arramagong Live 3.0
+</li><li>User name is asked for installation, but after first boot, automatic login can be selected.
+</li><li>Had to install vbox-additions in order to change screen resolution.
+</li></ul>
+<hr />
+<a name="deegree" id="deegree"></a><h1> <span class="mw-headline"> deegree  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>deegree 2.3 , osgeo-live 4.0
+</dd></dl>
+<p>Steps: Run the QuickStart.
+</p>
+<a name="Results_from_August_6th_2" id="Results_from_August_6th_2"></a><h2> <span class="mw-headline"> Results from August 6th  </span></h2>
+<p>Switch to running Quick Start over previous 3.0 test steps. Things working as expected.
+</p>
+<dl><dd>Run by: Cameron Shorter
+</dd><dd>System: Virtual Box on Ubuntu
+</dd><dd>Version: distribution version: eg: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="Results_from_August_6th_3" id="Results_from_August_6th_3"></a><h2> <span class="mw-headline"> Results from August 6th  </span></h2>
+<dl><dd>Run by: Jody Garnett
+</dd><dd>System: Thinkpad, 2 GB ram, live dvd
+</dd><dd>Version: distribution version: eg: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass with test script issues
+</dd></dl>
+<ul><li>start deegree not on desktop; has been moved \u2026 into Web Services
+</li><li>running start deegree opens firefox; firefox is in offline mode and can't browse <a href="http://localhost:8081/" class="external free" title="http://localhost:8081/" rel="nofollow">http://localhost:8081/</a>
+</li><li>services are there
+</li><li>test WMS, test WFS or test WCS links are not there
+</li><li>generic client works
+</li><li>deegree logo tries to take me to the website (and I am not online); I would like to return to the initial start page?
+</li><li>deegree iPortal does not exist
+</li><li>super hard to tell if the service stopped
+</li></ul>
+<hr />
+<a name="Results_from_August_7th.2C_2010_2" id="Results_from_August_7th.2C_2010_2"></a><h2> <span class="mw-headline"> Results from August 7th, 2010  </span></h2>
+<dl><dd>Run by: Angelos Tzotsos
+</dd><dd>System: VirtualBox 3.2, 1Gig RAM, on OpenSUSE 11.2
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<ul><li>Firefox starts before Tomcat + deegree are up, throwing a "not found" page. The user needs to refresh.
+</li><li>iPortal: When changing from Utah theme to Salt Lake City theme, the overview window is not redrawn.
+</li></ul>
+<hr />
+<a name="atlasstyler" id="atlasstyler"></a><h1> <span class="mw-headline"> atlasstyler  </span></h1>
+<ol><li> Go to Geospatial ‣ Desktop GIS ‣ AtlasStyler.
+</li><li> Use the import buttons to either add ESRI Shapefiles oder PostGIS datasources to your project.
+</li><li> Click the tool-icon in the layer legend and select style. The main AtlasStyler dialog will open. While you change the style, the ‘automatic preview’ option at the bottom will render your changes on the fly.
+</li></ol>
+<p><br />
+</p>
+<a name="Results_from_August_6th.2C_2010" id="Results_from_August_6th.2C_2010"></a><h2> <span class="mw-headline"> Results from August 6th, 2010  </span></h2>
+<dl><dd>Run by: Jody Garnett
+</dd><dd>System: Thinkpad T43, 2Gig RAM, on live dvd
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Atlas styler fail
+</dd></dl>
+<ul><li> Application is in "Education &gt; Atlasstyler" (Not Science &gt; Atlas Styler)
+</li><li> Quickstart is not specific enough; it is more a link to other docs
+</li><li> Application "window" is messed up; the window tilebar is folded up under the desktop bar; you can resise the window; but not move it.
+</li><li> Tried with natural_earth countries, a warning was provided that it would use the default style, progress bar is taking a long time
+</li><li> Oh wait the tutorials link to their website (I am offline); but the styling layers with SLD tutorials in french and english are actually included on the disk (verified both links work)
+</li><li> The application never came back to me; and the window issue result in a fail
+</li><li> darn I was looking forward to this one
+</li><li> figured out a workaround; clicking on task bar and asking the application to maximiz finally lets me get at the window tilebar
+</li><li> Whew was able to use "ps -ef | grep java" and "kill" to shut it down
+</li></ul>
+<a name="Results_from_August_19th.2C_2010" id="Results_from_August_19th.2C_2010"></a><h2> <span class="mw-headline"> Results from August 19th, 2010  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Qemu+KVM on Debian/lenny amd64 host
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <i><font color="darkorange">Pass with issues</font></i> 
+</dd></dl>
+<ul><li> worked fine for me with natural_earth countries, I had to lock the mouse within the VM window (ctrl-alt in Qemu-KVM) so I could alt-left-click-drag the Style window up enough to get at the Ok green check button in the bottom right. Otherwise very nice.
+</li></ul>
+<hr />
+<a name="geopublisher" id="geopublisher"></a><h1> <span class="mw-headline"> geopublisher  </span></h1>
+<p>Run quickstart:
+</p>
+<ul><li>. <a href="http://download.osgeo.org/livedvd/4.0-rc6/osgeolive-docs/quickstart/geopublisher_quickstart.html" class="external free" title="http://download.osgeo.org/livedvd/4.0-rc6/osgeolive-docs/quickstart/geopublisher_quickstart.html" rel="nofollow">http://download.osgeo.org/livedvd/4.0-rc6/osgeolive-docs/quickstart/geopublisher_quickstart.html</a>
+</li></ul>
+<ul><li>Go to applications-&gt;education-&gt; and open Geopublishing documentation
+<ul><li>Verify that the green page from file:///usr/share/doc/geopublishing/index.html open in a browser
+</li></ul>
+</li><li>Scroll to the bottom and click the demo atlas.
+</li><li>Unzip it do your Desktop
+</li><li>Go to applications-&gt;education-&gt; and start Geopublisher
+</li><li>Load the atlas.gpa from your Desktop/ChartDemoAtlas
+<ul><li>Verify that Geopublisher load the atlas. You should see a triparted GUI with a map-pool, data-pool and menu area.
+</li></ul>
+</li><li>Select File-&gt;Export and follow the wizard..
+<ul><li>export online and offline version of the atlas to a <i>new directory</i> Desktop/ChartAtlasExported
+</li><li>When the export has finished, click the "open folder" button
+</li><li>Close Geopublisher
+</li></ul>
+</li><li>Go into the Desktop/ChartAtlasExported/DISK folder and run <i>start.sh</i>
+<ul><li>Verify that an atlas opens
+</li><li>Verify that you see a "Charts available" button at the top right
+</li><li>Verify that clicking selecting the chart opens a chart window
+</li></ul>
+</li></ul>
+<p>Let that be the basic testing for Geopublisher now.
+</p>
+<hr />
+<a name="Results_from_August_6th.2C_2010_2" id="Results_from_August_6th.2C_2010_2"></a><h2> <span class="mw-headline"> Results from August 6th, 2010  </span></h2>
+<dl><dd>Run by: Jody Garnett
+</dd><dd>System: Thinkpad T43, 2Gig RAM, on live dvd
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: GeoPublisher pass with issues
+</dd></dl>
+<ul><li>. Application &gt; Education (not Science)
+</li><li>. You could just have the demo atlas link in the quickstart?
+</li><li>. I need a bit more advice no unzipping the demo atlas (firefox opened archive manager; but I think a picture is needed for those new to linux)
+</li><li>. Open Folder button did not work
+</li><li>. It is running and is very pretty
+</li></ul>
+<a name="geoserver" id="geoserver"></a><h1> <span class="mw-headline"> geoserver  </span></h1>
+<p>Run quickstart: - <a href="http://download.osgeo.org/livedvd/4.0-rc6/osgeolive-docs/quickstart/geoserver_quickstart.html" class="external free" title="http://download.osgeo.org/livedvd/4.0-rc6/osgeolive-docs/quickstart/geoserver_quickstart.html" rel="nofollow">http://download.osgeo.org/livedvd/4.0-rc6/osgeolive-docs/quickstart/geoserver_quickstart.html</a>
+</p><p>Previous test definition:
+</p>
+<ul><li>Select the "Start GeoServer" icon.
+</li><li>Wait ~ 60 seconds for GeoServer to start.
+</li></ul>
+<dl><dd>Verify the GeoServer web page opens at <a href="http://localhost:8082/geoserver/web" class="external free" title="http://localhost:8082/geoserver/web" rel="nofollow">http://localhost:8082/geoserver/web</a>
+</dd></dl>
+<ul><li>In the firefox browser, click on "Layer Preview", wait ~ 30 secs
+</li></ul>
+<dl><dd>Verify you get a list of map layers
+</dd></dl>
+<ul><li>Select the 'OpenLayers' link on one of the layers (say the TOPP:States)
+</li></ul>
+<dl><dd>Verify you should see a web page with sample data in an interactive map
+</dd></dl>
+<hr />
+<a name="Results_from_August_6th.2C2010" id="Results_from_August_6th.2C2010"></a><h2> <span class="mw-headline"> Results from August 6th,2010  </span></h2>
+<dl><dd>Run by: Jody garnett
+</dd><dd>System: Thinkpad T43, 2Gig RAM, on live dvd
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<ul><li>Quickstart document is not rendering correct; images rescale and text is pushed out of the way
+</li><li>Start GeoServer icon is not specific; it is in Web Services now; or in the Education menu (sigh!)
+</li><li>Nice progress bar as it starts up (who did that?)
+</li><li>Helpful having the start page link in the docs; but that new little progress bar opened the page for me
+</li><li>Suffers from the same "Firefox is in offline mode" error and cannot see local host (sent to email list)
+</li><li>No need to login if all you are doing is showing the layer preview
+</li><li>Warning is about the read-only file system; the live dvd provides this; so is this warning needed?
+</li><li>the directory needs to be /home/user/data/natural_earth (since the live dvd user name is "user" )
+</li><li>So adding a layer was fine; the sectino for adding the style to the layer is empty
+</li></ul>
+<hr />
+<a name="Results_from_August_7th.2C_2010_3" id="Results_from_August_7th.2C_2010_3"></a><h2> <span class="mw-headline"> Results from August 7th, 2010  </span></h2>
+<dl><dd>Run by: Angelos Tzotsos
+</dd><dd>System: VirtualBox 3.2, 1Gig RAM, on OpenSUSE 11.2
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<ul><li>Embeded GeoWebCache WMS TMS document throws an error.
+</li><li>Quickstart: the path to find the data is /usr/lib/geoserver-2.0.2/data_dir/data instead of /usr/lib/geotools-2.0.2/data_dir/data
+</li></ul>
+<hr />
+<a name="gvSIG" id="gvSIG"></a><h1> <span class="mw-headline"> gvSIG  </span></h1>
+<ul><li>Go to applications-&gt;education and start gvSIG
+</li></ul>
+<dl><dd>Verify that gvSIG starts correctly
+</dd></dl>
+<ul><li>Create a new view and add some shapefiles from <tt>/usr/local/share/mapserver/demos/itasca/data</tt>
+</li></ul>
+<dl><dd>Verify that the shapefiles are correctly added to the view
+</dd></dl>
+<ul><li>Create a new view and add any of the two TIFF files from <tt>/usr/local/share/mapserver/demos/itasca/data</tt>
+</li></ul>
+<dl><dd>Verify that the raster files are correctly loaded to the view
+</dd></dl>
+<ul><li>If you have Internet access, try to add a WMS layer from the combo list (i.e. the NASA JPL server)
+</li></ul>
+<dl><dd>Verify that a WMS layer can be accessed
+</dd></dl>
+<ul><li>Open the sample project included in the LiveDVD at <tt>/usr/local/share/gisvm/app-data/gvsig/sample-project.gvp</tt>
+</li></ul>
+<dl><dd>Verify the project loads all the data and layouts configured are available.
+</dd></dl>
+<ul><li>You can also try to access any of the other data available from the LiveDVD like the PostGIS Data, or WxS services by the map servers configured
+</li></ul>
+<dl><dd>This tests are related with the correct functioning of the other software installed on the LiveDVD
+</dd></dl>
+<ul><li>Update the wiki with test results (after these test steps)
+</li></ul>
+<hr />
+<a name="Results_from_6_Aug_2010" id="Results_from_6_Aug_2010"></a><h2> <span class="mw-headline"> Results from 6 Aug 2010  </span></h2>
+<dl><dd>Run by: Christian Willmes
+</dd><dd>System: Virtualbox 3.2, 2048MB RAM, on Ubuntu 10.4
+</dd><dd>Version: distribution version: OSGeoLive-v4-rc6.7z
+</dd><dd>Results: pass with path issues to sample project
+</dd></dl>
+<ul><li>Programm runs fine, but on opening the sample project from <tt>/usr/local/share/gisvm/app-data/gvsig/sample-project.gvp</tt>, a file not found / Invalid path to "/home/user/data/openjump/data/departement22.shp" and the same message to a lot of other files in that directory comes up.
+</li></ul>
+<a name="gdal_.2F_ogr" id="gdal_.2F_ogr"></a><h1> <span class="mw-headline"> gdal / ogr  </span></h1>
+<dl><dt>Steps
+</dt><dd><br />
+</dd></dl>
+<ul><li>Open a terminal
+</li></ul>
+<pre> ogrinfo --formats
+ gdalinfo --formats
+
+ ogrinfo data/natural_earth/10m_ocean.shp
+ gdalinfo /usr/share/osgearth/data/terrain/mt_rainier_90m.tif
+</pre>
+<a name="Results_from_August_7th.2C_2010_4" id="Results_from_August_7th.2C_2010_4"></a><h2> <span class="mw-headline"> Results from August 7th, 2010  </span></h2>
+<dl><dd>Run by: Angelos Tzotsos
+</dd><dd>System: VirtualBox 3.2, 1Gig RAM, on OpenSUSE 11.2
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="Results_from_2010-08-18" id="Results_from_2010-08-18"></a><h2> <span class="mw-headline"> Results from 2010-08-18  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Live DVD booted from ISO in a Qemu-KVM VM on Debian/Lenny amd64
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<hr />
+<p><br />
+</p>
+<a name="geomajas" id="geomajas"></a><h1> <span class="mw-headline"> geomajas  </span></h1>
+<ul><li>Click desktop icon "Browser Clients" &rarr; "Start Geomajas" which will start the Geomajas startup script. This will in turn start up a Tomcat server.
+</li></ul>
+<dl><dd>Verify that Firefox opens a new tab at the page <a href="http://localhost:3420/showcase/" class="external free" title="http://localhost:3420/showcase/" rel="nofollow">http://localhost:3420/showcase/</a>
+</dd></dl>
+<ul><li> <i>Test instructions are out of date</i> ...
+</li></ul>
+<p><strike>
+</p>
+<ul><li>Click on the "Start demo!" link for the Attributes &amp; Features demo.
+</li></ul>
+<dl><dd>Verify that a sample demo page has opened with an application, showing the provinces of Belgium.
+</dd></dl>
+<ul><li>Doubleclick on one of the rows in the attribute table bottom right.
+</li></ul>
+<dl><dd>Verify that a floating window appears, showing the rows' contents in more detail.
+</dd></dl>
+<p></strike>
+</p>
+<ul><li>Click on the desktop icon "Browser Clients" &rarr; "Stop Geomajas".
+</li></ul>
+<dl><dd>Verify that the Tomcat server that runs Geomajas has stopped.
+<ul><li>This can be done by refreshing the page. Firefox should give a warning that it is unable to connect.
+</li></ul>
+</dd></dl>
+<a name="Results_from_9_March_2010" id="Results_from_9_March_2010"></a><h2> <span class="mw-headline"> Results from 9 March 2010  </span></h2>
+<dl><dd>Run by: Pieter De Graef
+</dd><dd>System: Virtualbox, ~512MB RAM, on Windows XP
+</dd><dd>Version: distribution version: osgeo-live-3.0rc2
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="Results_from_6_Aug_2010_2" id="Results_from_6_Aug_2010_2"></a><h2> <span class="mw-headline"> Results from 6 Aug 2010  </span></h2>
+<dl><dd>Run by: Christian Willmes
+</dd><dd>System: Virtualbox 3.2, 2048MB RAM, on Ubuntu 10.4
+</dd><dd>Version: distribution version: OSGeoLive-v4-rc6.7z
+</dd><dd>Results: fail
+</dd></dl>
+<ul><li>After starting 'start Geomajas' in the Browser Clients folder Firefox opens URL "<a href="http://localhost:3420/showcase/" class="external free" title="http://localhost:3420/showcase/" rel="nofollow">http://localhost:3420/showcase/</a>", which is a 404 Page delivered by Jetty.
+</li></ul>
+<a name="Results_from_August_8th.2C_2010" id="Results_from_August_8th.2C_2010"></a><h2> <span class="mw-headline"> Results from August 8th, 2010  </span></h2>
+<dl><dd>Run by: Angelos Tzotsos
+</dd><dd>System: VirtualBox 3.2, 1Gig RAM, on OpenSUSE 11.2
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Fail
+</dd></dl>
+<ul><li>The link <a href="http://localhost:3420/geomajas-tutorial/applications/tutorial/html/" class="external free" title="http://localhost:3420/geomajas-tutorial/applications/tutorial/html/" rel="nofollow">http://localhost:3420/geomajas-tutorial/applications/tutorial/html/</a> does not work after start-up
+</li></ul>
+<a name="Results_from_19_Aug_2010" id="Results_from_19_Aug_2010"></a><h2> <span class="mw-headline"> Results from 19 Aug 2010  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Qemu+KVM on a Debian/Lenny amd64 host
+</dd><dd>Version: distribution version: osgeo-live-3.0rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<ul><li> Test instructions are all out of date, but playing around with the showcase/ all seems to work ok.
+</li></ul>
+<a name="geonetwork" id="geonetwork"></a><h1> <span class="mw-headline"> geonetwork  </span></h1>
+<ul><li>Click icon "Start Geonetwork" - wait until the server intializes (see load graph in the upper right hand corner)
+</li><li>open FireFox <a href="http://localhost:8880" class="external free" title="http://localhost:8880" rel="nofollow">http://localhost:8880</a>
+</li><li>you should see a list of active URLs, choose /geonetwork
+</li><li>Search for "river"
+</li></ul>
+<dl><dd>Verify a list of metadata records are returned
+</dd></dl>
+<a name="Results_from_10_August_2010" id="Results_from_10_August_2010"></a><h2> <span class="mw-headline"> Results from 10 August 2010  </span></h2>
+<dl><dd>Run by: Cameron Shorter
+</dd><dd>System: VirtualBox, 2Gig RAM, on ubuntu 10.04 base
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<ul><li>GeoNetwork doesn't have a script which opens up a web browser (like GeoServer)
+</li><li>GeoNetwork still calls the old Project Description file.
+</li></ul>
+<a name="Results_from_August_8th.2C_2010_2" id="Results_from_August_8th.2C_2010_2"></a><h2> <span class="mw-headline"> Results from August 8th, 2010  </span></h2>
+<dl><dd>Run by: Angelos Tzotsos
+</dd><dd>System: VirtualBox 3.2, 1Gig RAM, on OpenSUSE 11.2
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<hr />
+<a name="gpsdrive" id="gpsdrive"></a><h1> <span class="mw-headline"> gpsdrive  </span></h1>
+<ul><li>(<i>copied from install_gpsdrive.sh</i>)
+</li><li>More details in the <a href="http://svn.osgeo.org/osgeo/livedvd/gisvm/trunk/doc/descriptions/gpsdrive_description.html" class="external text" title="http://svn.osgeo.org/osgeo/livedvd/gisvm/trunk/doc/descriptions/gpsdrive_description.html" rel="nofollow">on-disc help page</a>
+</li></ul>
+<a name="Testing" id="Testing"></a><h3> <span class="mw-headline"> Testing  </span></h3>
+<a name="If_no_GPS_is_plugged_in" id="If_no_GPS_is_plugged_in"></a><h4> <span class="mw-headline"> If no GPS is plugged in  </span></h4>
+<ul><li>Double click on the GpsDrive desktop icon
+</li><li>You should see a map of downtown Barcelona, after about 10 seconds a waypoint marker for the Convention Centre should appear.
+</li><li>Set the map scale to 1:150,000 either by dragging the slider at the bottom or by using the +,- buttons (not magnifying glass). After a moment you should see all 3 FOSS4G 2010 venues.
+</li><li>Enter Explore Mode by pressing the "e" key or in the Map Control button.
+</li><li>Use the arrow keys or left mouse button to move off screen.
+</li><li>Try clicking on the Workshop venue and mouse-wheel to zoom in on it
+</li><li>Right click to set destination and leave Explore Mode
+</li></ul>
+<ul><li>Click on the "Find" button on the left
+</li><li>Set "maximum distance" to 1.0 km
+</li><li>Click the POI-Types drop down menu and select <i>Food \u2192 Restaurant \u2192 Restaurant</i>
+</li><li>Click the <i>Find</i> button in the top right
+</li><li>Click on the nearest restaurant, and "Select Target" in the bottom right
+</li><li>Make your way there and enjoy a nice meal
+</li></ul>
+<a name="Downloading_maps" id="Downloading_maps"></a><h5> <span class="mw-headline"> Downloading maps  </span></h5>
+<ul><li>Change the scale setting to 1:1,000,000 you should see the limits of the PostGIS/Mapnik/OpenStreetMaps road database for the conference area.
+</li><li>Click the "Map Control" button on the left hand side, and turn off Mapnik Mode.
+</li></ul>
+<dl><dd>You should now see a continental image
+</dd></dl>
+<ul><li>Enter Explore Mode again ("e") and left click on an island in the Med
+</li><li>In the top-left menu, pick <i>Options \u2192 Map \u2192 Download</i>
+<ul><li>Map source: NASA LANDSAT, Scale: 1:500,000, [Download Map]
+</li><li>When download is complete click [ok] then change the preferred scale slider to 1:500,000
+</li><li>This will be of more use in remote areas.
+</li></ul>
+</li><li>Explore to the coast, click on an airport, headland, or some other conspicuous feature. You might want to use the magnifying glass buttons to zoom in on it better. Use a right click set the target on some other conspicuous feature nearby then demagnify back out.
+</li><li>Options -&gt; Map -&gt; Download
+<ul><li>Map source: OpenStreetMap, Scale: 1:40,000, left-click on map to center the green preview over your target and what looks like a populated area.
+</li><li>[Download Map]
+</li><li>When download is complete click [ok] then change the preferred scale slider to 1:40,000 and you should see a road map. This will be more interesting in built up areas.
+</li></ul>
+</li></ul>
+<a name="Overlay_a_GPX_track" id="Overlay_a_GPX_track"></a><h5> <span class="mw-headline"> Overlay a GPX track </span></h5>
+<ul><li>If you have a GPX track file lying around ...
+</li><li>Options -&gt; Import -&gt; GPX track
+</li><li>Hidden folders are hidden in the file picker, but just start typing ~/.gpsdrive and hit enter. You should then see the tracks/ directory and be able to load 
+</li><li>A red trace should appear  
+</li></ul>
+<a name="If_a_GPS_is_plugged_in" id="If_a_GPS_is_plugged_in"></a><h4> <span class="mw-headline"> If a GPS is plugged in  </span></h4>
+<ul><li>Make sure gpsd is running by starting "xgps" from the command line.
+</li><li>The program will automatically detect gpsd and jump to your current position. This should bring up a continental map as you won't have any map tiles downloaded for your area yet. (you may want to switch out of <i>Mapnik Mode</i> in the <i>Map Control</i> window)
+</li><li>See the above "Downloading Maps" section to get some local tiles.
+</li><li>If you have a local GPX track of some roads try loading that and making sure everything lines up, as detailed in the above "Overlay a GPX track" section.
+</li></ul>
+<p>That's it.
+</p>
+<a name="Results_from_Aug_2010" id="Results_from_Aug_2010"></a><h2> <span class="mw-headline"> Results from Aug 2010  </span></h2>
+<dl><dd>Run by: Cameron Shorter
+</dd><dd>System: Virtual Box on Ubuntu 10.04
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="Results_from_18_Aug_2010" id="Results_from_18_Aug_2010"></a><h2> <span class="mw-headline"> Results from 18 Aug 2010  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Qemu-KVM on Debian Lenny
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<a name="geokettle" id="geokettle"></a><h1> <span class="mw-headline"> geokettle  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>geokettle 3.2.0-20090609, osgeo-live 4.0-rc6
+</dd><dt>Test Description last updated
+</dt><dd>August 8th, 2010
+</dd></dl>
+<dl><dt>Steps
+</dt></dl>
+<ul><li>Launch GeoKettle.
+</li></ul>
+<dl><dd>Verify you get a window prompting you to select a repository.
+</dd></dl>
+<ul><li>On the "Select a repository" dialog, choose "No repository".
+</li></ul>
+<dl><dd>Verify the GeoKettle application is opened.
+</dd></dl>
+<ul><li>Close any startup tips dialog.
+</li><li>Select File-&gt; Open
+</li><li>Select <tt>/opt/geokettle/samples/transformations/geokettle/intersection.ktr</tt>
+</li></ul>
+<dl><dd>Verify you see the "intersection" transformation in the work area, with a big yellow comment box and some step icons.
+</dd></dl>
+<ul><li>Run the transformation in preview mode
+<ul><li>Select Transformation menu -&gt; Preview
+</li><li>Choose the "Intersecting rows" step (to view the rows that are outputted by that step)
+</li><li>then click on Quick Launch.
+</li></ul>
+</li></ul>
+<dl><dd>Verify you see the result in the "Examine preview data" dialog (two rows with four columns: GEOM1_ID, geom1, GEOM2_ID, geom2. The geom1 and geom2 fields should contain MULTIPOLYGON WKT geometries).
+</dd></dl>
+<hr />
+<a name="Results_from_August_8th.2C_2010_3" id="Results_from_August_8th.2C_2010_3"></a><h2> <span class="mw-headline"> Results from August 8th, 2010  </span></h2>
+<dl><dd>Run by: Thierry Badard
+</dd><dd>System: VirtualBox 3.1, 2Gig RAM, on ubuntu 10.04 base
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="gmt" id="gmt"></a><h1> <span class="mw-headline"> gmt  </span></h1>
+<p>There are 29 example jobs built in, and a script to run them all:
+</p>
+<ul><li>Open a terminal
+</li></ul>
+<pre>cp -r /usr/share/doc/gmt-examples/examples/ gmt-examples
+cd gmt-examples/
+./do_examples.sh
+</pre>
+<p>[whiz .. bang .. whirl]
+</p><p>View results using ghostscript in the ex*/*ps directories
+</p><p>Eg:
+</p>
+<pre>gs ex02/example_02.ps
+</pre>
+<p><br />
+</p>
+<a name="Results_from_2010-08-06" id="Results_from_2010-08-06"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Cameron Shorter
+</dd><dd>System: Live DVD booted from ISO in a VM, 512Meg RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass (fixed test steps)
+</dd></dl>
+<p><br />
+</p>
+<a name="Results_from_2010-08-18_2" id="Results_from_2010-08-18_2"></a><h2> <span class="mw-headline"> Results from 2010-08-18  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Live DVD booted from ISO in a Qemu-KVM VM on Debian/Lenny
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <b><font color="red">FAIL</font></b>  (trac #627)
+</dd></dl>
+<a name="grass" id="grass"></a><h1> <span class="mw-headline"> grass  </span></h1>
+<ul><li>Double click on the GRASS desktop icon
+</li></ul>
+<dl><dd>Verify you see a slick "Welcome to GRASS" GUI
+</dd></dl>
+<ul><li>Select Spearfish60 for location, User1 for mapset
+</li><li>Click on [Start Grass]
+</li><li>In the Layer Manager GUI window add a raster layer
+<ul><li>On the toolbar click the icon with a + and a checkerboard
+</li><li>On map to be displayed pull down the list and select elevation.dem
+</li></ul>
+</li><li>from the PERMANENT mapset and click [ok]
+</li><li>In the Layer Manager GUI window add a vector layer
+<ul><li>On the toolbar click the icon with a + and a "V" line
+</li><li>For input map name pull down the list and select roads from the PERMANENT mapset and click [ok]
+</li></ul>
+</li><li>Over in the Map Display window toolbar click on the eyeball icon to render
+</li></ul>
+<dl><dd>Verify you see the maps displayed
+</dd></dl>
+<dl><dt>See also
+</dt></dl>
+<ul><li><a href="http://trac.osgeo.org/grass/wiki/HowToTestGrass6" class="external free" title="http://trac.osgeo.org/grass/wiki/HowToTestGrass6" rel="nofollow">http://trac.osgeo.org/grass/wiki/HowToTestGrass6</a>
+</li></ul>
+<dl><dd>(North Carolina dataset is already installed in grassdata/)
+</dd></dl>
+<ul><li>More details in the <a href="http://svn.osgeo.org/osgeo/livedvd/gisvm/trunk/doc/descriptions/grass_description.html" class="external text" title="http://svn.osgeo.org/osgeo/livedvd/gisvm/trunk/doc/descriptions/grass_description.html" rel="nofollow">on-disc help page</a>
+</li><li><a href="http://grass.osgeo.org/grass64/manuals/html64_user/helptext.html" class="external free" title="http://grass.osgeo.org/grass64/manuals/html64_user/helptext.html" rel="nofollow">http://grass.osgeo.org/grass64/manuals/html64_user/helptext.html</a>
+</li></ul>
+<hr />
+<a name="Results_from_2010-08-06_2" id="Results_from_2010-08-06_2"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="Results_from_2010-08-18_3" id="Results_from_2010-08-18_3"></a><h2> <span class="mw-headline"> Results from 2010-08-18  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Live DVD booted from ISO in a Qemu-KVM VM on Debian/Lenny
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <i><font color="darkorange">Pass with issues</font></i>  (OpenGL NVIZ wonky in a VM)
+</dd></dl>
+<a name="kosmo" id="kosmo"></a><h1> <span class="mw-headline"> kosmo  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>Kosmo Desktop 2.0, osgeo-live 4.0
+</dd><dd><br />
+</dd><dt>Test Description last updated
+</dt><dd>August 10th, 2010
+</dd></dl>
+<dl><dt>Steps
+</dt><dt>Theming layer with PostGIS backend<br />
+</dt></dl>
+<ul><li>Select <i>Desktop GIS &gt;&nbsp;Kosmo</i> from the desktop in order to start Kosmo Desktop<br />
+</li><li>In the welcome dialog, select the option "<i>With a new view</i>" inside the "<i>Create a new project</i>"&nbsp;panel and click <i>Ok</i><br />
+</li><li>In the "<i>Spatial Reference System selection</i>" dialog, press the "..." button in order to select the view SRS
+</li><li>Select "EPSG"&nbsp;as Type
+</li><li>Enter 4236 in the textfield and click "Search"&nbsp;button;&nbsp;select the CRS&nbsp;given and click the <i>Ok </i>button
+</li><li>Click Ok again to set EPSG:4236 as the current view projection<br />
+</li><li>In the main menu "<i>View</i>", select the option "<i>Load&nbsp;Dataset...</i>"
+</li><li>Select as Format -&gt;&nbsp;"<i>Database</i>" (at the top-left corner) and "<i>PostGIS</i>" as database type
+</li><li>Enter <b>Database Name'<i>: </i><span style="font-weight: bold;">osm_local</span><i><span style="font-weight: bold;"> </span></i></b><i>User Name'</i><b>Password</b>: <i>user </i>and click the "Connect" button<br />
+</li><li>Scroll down, check the box to the left of <b>public.planet_osm_roads</b> and click the <i>Ok </i>button
+</li><li>Select the 'planet_osm_roads' layer at left under 'Working' and click the checkbox to make it visible
+</li><li>Right-click on the 'planet_osm_roads' layer and choose <i>Simbology &gt;&nbsp;Change Styles...</i>
+</li><li>Select the "<i>Colour Theming</i>" tab; click the "<i>Enable colour theming</i>" checkbox
+</li><li>Choose Attribute =&gt; <i>highway </i>and click the Ok button to apply the changes<br />
+</li><li>You should see the local OSM roads coloured by attribute in the map<br />
+</li></ul>
+<p><b><br /></b>
+</p><p><b>Shapefile and image loading</b><br />
+</p>
+<ul><li>Select <i>Desktop GIS &gt; Kosmo </i>from the desktop in order to start Kosmo - Desktop<br />
+</li><li>In the welcome dialog, select the option "<i>With a new view</i>" inside the "<i>Create a new project</i>" panel and click Ok<br />
+</li><li>Repeat the steps described in the test "Layer&nbsp;Theme with PostGIS backend" to select the task projection<br />
+</li><li>In the main menu "<i>View</i>", select the option "<i>Load Dataset...</i>"<br />
+</li><li>Select as Format -&gt;&nbsp;"<i>Image file</i>" and navigate to <i>/home/user/data/natural_earth/</i> (or <i>data/natural_earth/</i> if it starts at the home/user directory)<br />
+</li><li>Select the directory "HYP_50M_SR_W" in order to load all the tiffs inside it as a mosaic and press the Ok button<br />
+</li><li>Select the HYP_50M_SR_W&nbsp;layer at left under 'Working' and click the checkbox to make it visible<br />
+</li><li>Select as Format -&gt;&nbsp;"<i>Shapefile</i>"<br />
+</li><li>Select the "10m_populated_places_simple.shp" and "10m_ocean.shp" files and press the Ok button in order to load them<br />
+</li><li>Check that both shapefiles have been loaded on the layer tree at the left. Make them visible by clicking on the checkbox of each one
+</li></ul>
+<p><br />
+</p>
+<hr />
+<a name="Results_from_2010-08-10" id="Results_from_2010-08-10"></a><h2> <span class="mw-headline"> Results from 2010-08-10  </span></h2>
+<dl><dd>Run by: Sergio Baños<br />
+</dd><dd>System: VMBox Player, 4Gig RAM, on Windows Vista<br />
+</dd><dd>Version: distribution version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<p><br /> <br />
+</p>
+<a name="mapnik" id="mapnik"></a><h1> <span class="mw-headline"> mapnik  </span></h1>
+<p>see file:///usr/local/share/livedvd-docs/doc/mapnik_description.html Mapnik Description
+</p>
+<ul><li><a href="http://live.osgeo.org/doc/mapnik_description.html" class="external free" title="http://live.osgeo.org/doc/mapnik_description.html" rel="nofollow">http://live.osgeo.org/doc/mapnik_description.html</a>
+</li></ul>
+<dl><dd><i>--this may be 6 months old, try the on-disk quickstart instead --HB</i>
+</dd></dl>
+<a name="Results_from_2010-08-06_3" id="Results_from_2010-08-06_3"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Cameron Shorter
+</dd><dd>System: Live DVD, in VirtualBox Virtual Machine
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="maptiler" id="maptiler"></a><h1> <span class="mw-headline"> maptiler  </span></h1>
+<ul><li>you need an GeoTIFF or other raster geodata to test the functionality. 
+</li></ul>
+<dl><dd> For example <tt>/usr/local/share/maptiler/utm.tif</tt>
+</dd></dl>
+<ul><li>start MapTiler: click on Geospatial &rarr; Spatial tools &rarr; "MapTiler"
+</li><li>in the MapTiler application select on the first page "Google Maps compatible" tiles and click "Continue"
+</li><li>in the second page of wizard add the tiff, it should be <tt>/usr/local/share/maptiler/utm.tif</tt> and click "Continue"
+</li><li>continue trough all other steps in the wizard (default options are fine) and then start "Render"
+</li><li>when the rendering is finished you will see a link to the directory with tiles, click to open it (it opens in Firefox as a directory)
+</li><li>open the "googlemaps.html", you should see a black&amp;white overlay displayed on top of Google Maps hybrid layer. You can also open "openlayers.html" to see another presentation of the results.
+</li></ul>
+<dl><dd>Verify that ...
+</dd></dl>
+<ul><li>MapTiler application starts without problems when clicked on the icon
+</li><li>When you press on "Render" applications starts the processing and does not report any error.
+</li></ul>
+<p>Alternative "real" geodata for testing are for example <a href="http://www.archive.org/details/maps_usgs" class="external text" title="http://www.archive.org/details/maps_usgs" rel="nofollow">USGS maps</a> or <a href="http://www.charts.noaa.gov/InteractiveCatalog/nrnc.shtml" class="external text" title="http://www.charts.noaa.gov/InteractiveCatalog/nrnc.shtml" rel="nofollow">NOAA RNCs</a>.
+</p><p>Another way to try it:
+</p>
+<ol><li>Start MapTiler by clicking the icon on the Desktop
+</li><li>Load in the second step example raster GEODATA (with georeference/srs)
+</li><li>Go through all the steps with 'Next' up to the Render
+</li><li>Once the render is finished you can click in the GUI to open a folder with tiles. When you open googlemaps.html or openlayers.html then you see your geodata warped to the overlay of popular interactive web maps as Google Maps.
+</li></ol>
+<p>The map tiles are displayed directly from your disk. To publish the map to Internet just upload the folder with tiles to any webserver or Amazon S3"
+</p>
+<a name="Results_from_2010-08-19" id="Results_from_2010-08-19"></a><h2> <span class="mw-headline"> Results from 2010-08-19  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Qemu+KVM on Debian/Lenny amd64 host
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<ul><li> updated test instructs to reference on-disc geotiff source
+</li></ul>
+<hr />
+<a name="marble" id="marble"></a><h1> <span class="mw-headline"> marble  </span></h1>
+<ul><li>Click on the desktop icon
+</li><li>If you have used Google Earth before you should be able to figure this one out without much difficulty.
+</li><li>In the Settings menu select full-screen mode
+</li><li>Explore ...
+</li><li>In the bottom-left corner of the program window there is a subtle tab called "Map View". Click on it.
+</li><li>Select another map (e.g. 'Precipitation (July)')
+</li><li>Explore some more ...
+</li></ul>
+<a name="Results_from_2010-08-06_4" id="Results_from_2010-08-06_4"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="Results_from_2010-08-18_4" id="Results_from_2010-08-18_4"></a><h2> <span class="mw-headline"> Results from 2010-08-18  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Live DVD booted from ISO in a Qemu-KVM VM on Debian/Lenny
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<a name="mapfish" id="mapfish"></a><h1> <span class="mw-headline"> mapfish  </span></h1>
+<dl><dt>Steps
+</dt><dd><br />
+</dd></dl>
+<ul><li>Make sure you have a working internet connection
+</li><li>Double click on the Mapfish icon on the desktop
+</li></ul>
+<dl><dd>Verify that a browser opens after a few seconds showing a map of the southwestern pacific
+</dd></dl>
+<ul><li>Click the magnifying glass just under the word "Map" at the top of the map.
+</li><li>Zoom in on Sydney
+</li><li>Explore
+</li></ul>
+<hr />
+<a name="Results_from_August_8th.2C_2010_4" id="Results_from_August_8th.2C_2010_4"></a><h2> <span class="mw-headline"> Results from August 8th, 2010  </span></h2>
+<dl><dd>Run by: Angelos Tzotsos
+</dd><dd>System: VirtualBox 3.2, 1Gig RAM, on OpenSUSE 11.2
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<ul><li>Mapfish start-up script fails to start.
+</li><li>Cameron Shorter: I can reproduce this problem when starting up with the Disc is not connected to the internet, and Firefox is in Offline mode. It starts up fine when connected to the internet.
+</li></ul>
+<a name="MapGuide_Open_Source" id="MapGuide_Open_Source"></a><h1> <span class="mw-headline"> MapGuide Open Source  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>MapGuide Open Source 2.2.0, LiveDVD 4.0
+</dd><dt>Test Description last updated
+</dt><dd>June 26, 2010
+</dd><dt>Steps
+</dt></dl>
+<ul><li>Start LiveDVD and log in as "user"
+</li></ul>
+<dl><dd>Verify presence of "Start MapGuide", "Stop MapGuide", and "MapGuide Maestro" desktop icons
+</dd></dl>
+<ul><li>Double click "Start MapGuide" desktop icon and enter "user" password if prompted
+</li></ul>
+<dl><dd>Verify that "Starting MapGuide" and "Starting Apache" messages appear
+</dd></dl>
+<ul><li>Open a browser window to <a href="http://localhost:8008/mapguide/phpviewersample/ajaxviewersample.php" class="external free" title="http://localhost:8008/mapguide/phpviewersample/ajaxviewersample.php" rel="nofollow">http://localhost:8008/mapguide/phpviewersample/ajaxviewersample.php</a>
+</li></ul>
+<dl><dd>Verify that a map is displayed in the center of the screen with a layer legend to the left of the map and an application "Overview" pane to the right of the map.
+</dd></dl>
+<ul><li>Zoom into street level detail and click the pointer icon. Select a parcel.
+</li></ul>
+<dl><dd>Verify that a parcel is selected in blue.
+</dd></dl>
+<ul><li>On the right hand side of the page, click "Tasks" then "Buffer". Set the distance to 20 meters and click "Done"
+</li></ul>
+<dl><dd>Verify that a red buffer zone appears around the parcel.
+</dd></dl>
+<ul><li>Close the browser and double click the "MapGuide Maestro" desktop icon. Login to "<a href="http://localhost:8008/mapguide/mapagent/mapagent.fcgi" class="external free" title="http://localhost:8008/mapguide/mapagent/mapagent.fcgi" rel="nofollow">http://localhost:8008/mapguide/mapagent/mapagent.fcgi</a>" as user "Administrator" and password "admin".
+</li></ul>
+<dl><dd>Verify that the tree view contains "Samples/Sheboygan".
+</dd></dl>
+<ul><li>Update the wiki with test results (after these test steps)
+</li></ul>
+<hr />
+<a name="Results_from_August_5.2C_2010" id="Results_from_August_5.2C_2010"></a><h2> <span class="mw-headline"> Results from August 5, 2010  </span></h2>
+<dl><dd>Run by: Trevor Wekel
+</dd><dd>System: VMware ESX 4.1, 16GB RAM
+</dd><dd>Version: LiveDVD 4.0 RC 6
+</dd><dd>Results: Pass with minor issue - the project overview is missing. Cameron has already fixed it.
+</dd></dl>
+<ul><li>link to bug reports
+</li></ul>
+<a name="Results_from_6_Aug_2010_3" id="Results_from_6_Aug_2010_3"></a><h2> <span class="mw-headline"> Results from 6 Aug 2010  </span></h2>
+<dl><dd>Run by: Christian Willmes
+</dd><dd>System: Virtualbox 3.2, 2048MB RAM, on Ubuntu 10.4
+</dd><dd>Version: distribution version: OSGeoLive-v4-rc6.7z
+</dd><dd>Results: pass with minor issue
+</dd></dl>
+<ul><li>The MapGuide Maestro points to the URL without the 8008 port after localhost, which results in an error, if the user does not fix this in the URL himself.
+</li></ul>
+<a name="Mapbender" id="Mapbender"></a><h1> <span class="mw-headline"> Mapbender  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>Mapbender 2.6.1, OSGeo LiveDVD 4.0
+</dd><dt>Test Description last updated
+</dt><dd>5. July 2010
+</dd><dt>Steps
+</dt></dl>
+<ul><li>make sure that you have a working internet connection
+</li><li>make sure that your Apache and PostgreSQL is running
+</li></ul>
+<ul><li>double click on the Mapbender icon on the desktop or browse to <a href="http://localhost/mapbender/" class="external free" title="http://localhost/mapbender/" rel="nofollow">http://localhost/mapbender/</a>
+</li></ul>
+<dl><dd>Verify that a browser opens after a few seconds showing the Mapbender login-page
+</dd></dl>
+<ul><li>login with user root / password root
+</li></ul>
+<dl><dd>Verify that the list of the available applications appears
+</dd></dl>
+<ul><li>choose application named "gui" with a click on the name
+</li></ul>
+<dl><dd>verify that the application "gui" opens and that you see a Mapbender application with the demis-world WMS, a germany WMS and a mapbender-user WMS
+</dd></dl>
+<ul><li>Update the wiki with test results (after these test steps)
+</li></ul>
+<hr />
+<a name="Results_from_5.7.2010" id="Results_from_5.7.2010"></a><h2> <span class="mw-headline"> Results from 5.7.2010  </span></h2>
+<dl><dd>Run by: Astrid Emde
+</dd><dd>System: VirtualBox, 2Gig RAM, on ubuntu 8.10
+</dd><dd>Version: Mapbender 2.6.1, just ran ./install_postgis.sh and ./install_mapbender.sh
+</dd><dd>Results: Fail
+</dd></dl>
+<ul><li>I ran ./install_postgis.sh and ./install_mapbender.sh - When I started Mapbender the ALIAS was not created. After restart the Mapbender could be used without problem, login succeded
+</li></ul>
+<dl><dt>Result
+</dt></dl>
+<ul><li>next test will be run with the osgeolive 4.0 rc
+</li></ul>
+<hr />
+<a name="test_results_from_23.7.2010" id="test_results_from_23.7.2010"></a><h2> <span class="mw-headline"> test results from 23.7.2010  </span></h2>
+<dl><dd>Run by: Marc Manns
+</dd><dd>System: VirtualBox, 2Gig RAM, on ubuntu 8.10
+</dd><dd>Version: OSGeoLIve beta2 Mapbender 2.6.1
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<ul><li>create user/group
+</li><li>create application
+</li><li>register new WMS
+</li><li>customize tree
+</li><li>add WMSFromFilteredList
+</li><li>change language in [Mapbender.conf] to german
+</li></ul>
+<ul><li>suggestion: There is a password.txt at the desktop. I think, we should add our root/root authentication to it. -&gt; <b>done --<a href="/wiki/User:Astrid_Emde" title="User:Astrid Emde">astroide</a> 09:28, 23 July 2010 (UTC) </b>
+</li></ul>
+<dl><dt>Result
+</dt></dl>
+<ul><li>the Mapbender applications handling worked fine
+</li></ul>
+<hr />
+<a name="test_results_from_8.8.2010" id="test_results_from_8.8.2010"></a><h2> <span class="mw-headline"> test results from 8.8.2010  </span></h2>
+<dl><dd>Run by: Astrid Emde
+</dd><dd>System: VirtualBox, 2Gig RAM, on ubuntu 8.10
+</dd><dd>Version: OSGeoLIve rc6 Mapbender 2.6.2
+</dd><dd>Results: Passed
+</dd></dl>
+<ul><li>create gui
+</li><li>create application
+</li><li>register new WMS
+</li><li>print
+</li></ul>
+<dl><dt>Result
+</dt></dl>
+<ul><li>the Mapbender applications handling worked fine
+</li></ul>
+<hr />
+<dl><dt>Add more test results below, most recent results at the top
+</dt></dl>
+<p><br />
+</p>
+<a name="mb-system" id="mb-system"></a><h1> <span class="mw-headline"> mb-system  </span></h1>
+<ul><li>Open a terminal
+</li></ul>
+<pre>cd /usr/local/mbsystem/examples/
+</pre>
+<p>List summary information about the contents of some bathymetric data files:
+</p>
+<pre>cd mbinfo/
+./mbinfo.cmd
+</pre>
+<p>Grid some sample data and then view it:
+</p>
+<pre>cd ../mbm_plot/
+./mbm_plot_5.cmd
+</pre>
+<pre># which creates this script:
+./mbm_plot_test5.cmd
+</pre>
+<p>You should now see a nice plot of the seafloor off Baja California.
+</p>
+<ul><li>(this also acts as a test of the GMT plotting package)
+</li></ul>
+<a name="Results_from_2010-08-06_5" id="Results_from_2010-08-06_5"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="Results_from_2010-08-18_5" id="Results_from_2010-08-18_5"></a><h2> <span class="mw-headline"> Results from 2010-08-18  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Live DVD booted from ISO in a Qemu-KVM VM on Debian/Lenny
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <b><font color="red">FAIL</font></b>  (trac #627)
+</dd></dl>
+<a name="mapserver" id="mapserver"></a><h1> <span class="mw-headline"> mapserver  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>MapServer 5.6.3, OSGeo LiveDVD 4.0
+</dd><dt>Test Description last updated
+</dt><dd>30 June 2010
+</dd><dt>Steps
+</dt></dl>
+<ul><li>Select the "MapServer" icon.
+</li><li>Wait a few seconds for FireFox to start.
+</li></ul>
+<dl><dd>Verify the MapServer web page opens at <tt>file:///usr/local/share/livedvd-docs/doc/mapserver_description.html</tt>
+</dd></dl>
+<ul><li>In the firefox browser, scroll down to "MapServer Demo" section and click on "Itasca".
+</li></ul>
+<dl><dd>Select "Basic Application" and click on "Initialize".
+</dd><dd>Verify you get a map.
+</dd></dl>
+<ul><li>Select the "Query multiple features" tool on the right of the page and click somewhere on the map.
+</li></ul>
+<dl><dd>Verify you get a list of features.
+</dd></dl>
+<ul><li><b>THE GMAP DEMO HAS BEEN REMOVE IN 4.0 ALPHA4, IT IS NOT YET COMPATIBLE WITH PHP 5.3</b> <strike>Return to the the initial MapServer web page, <tt>file:///usr/local/share/livedvd-docs/doc/mapserver_description.html</tt> , scroll down to "MapServer Demo" section and click on "GMap".</strike>
+</li></ul>
+<dl><dd><strike>Verify you get a map and a legend with icons rendered.</strike>
+</dd></dl>
+<ul><li>Return to the the initial MapServer web page, <tt>file:///usr/local/share/livedvd-docs/doc/mapserver_description.html</tt> on the initial MapServer web page, scroll down to "MapServer Documentation" section.
+</li></ul>
+<dl><dd>Verify that the documentation version is appropriate versus the MapServer version.
+</dd></dl>
+<hr />
+<a name="Results_from_2010-08-06_6" id="Results_from_2010-08-06_6"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<ul><li>All good, documentation link needs to be updated ( says 5.4.2 instead of 5.6, ) but docs themselves seem up to date
+</li></ul>
+<a name="Results_from_2010-08-06_7" id="Results_from_2010-08-06_7"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Daniel Morissette
+</dd><dd>System: Live DVD on Acer AST180 desktop (AMD Athlon X2 64, 3GB RAM)
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<ul><li>Itasca demo (and mapserv 5.6.5) work fine
+</li><li>Problems in mapserver_description.html
+<ul><li>Need to remove "GMap" demo link (since GMap itself has been removed)
+</li><li>Need to update Documentation link to read "MapServer 5.6 Documentation" or even better: "MapServer Documentation" (with no version number so we don't need to update it in the future)
+</li><li>The main page of the MapServer 5.6 Docs that's on the DVD is from 5.6.3, and the OSM map in that page does not work: the link to the tiles point to a dead server. This is a known issue and the current version of the docs on the MapServer website (v5.6.5) have the map disabled... so it may be a good idea to grab the latest version of the 5.6 docs for the DVD.
+</li></ul>
+</li></ul>
+<hr />
+<a name="Results_from_August_7th.2C_2010_5" id="Results_from_August_7th.2C_2010_5"></a><h2> <span class="mw-headline"> Results from August 7th, 2010  </span></h2>
+<dl><dd>Run by: Angelos Tzotsos
+</dd><dd>System: VirtualBox 3.2, 1Gig RAM, on OpenSUSE 11.2
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<ul><li>"GMap" demo link needs to be removed
+</li></ul>
+<hr />
+<a name="octave" id="octave"></a><h1> <span class="mw-headline"> octave  </span></h1>
+<ul><li>Open a terminal
+</li><li>Start program by typing "<tt>octave</tt>" at the prompt
+</li></ul>
+<pre>% Which way to Barcelona from Sydney?
+sydney = [-33.8750 151.2005]
+barcelona = [41+23/60 2+11/60]
+</pre>
+<pre>dirn = azimuth(sydney, barcelona);
+deg_symb = 176;
+disp(['Heading: ' num2str(dirn) deg_symb])
+</pre>
+<pre>% How far's the trip? (roughly!)
+system('proj -le')
+wgs84_a = 6378137.0 &nbsp;% major radius of the Earth, in meters
+dist_deg = distance(sydney, barcelona)
+dist_meters = pi * wgs84_a * (dist_deg / 360.0)
+disp(['Distance: ' num2str(dist_meters / 1000) ' km'])
+</pre>
+<p>Type "exit" to quit.
+</p>
+<a name="Results_from_2010-08-06_8" id="Results_from_2010-08-06_8"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="Results_from_2010-08-18_6" id="Results_from_2010-08-18_6"></a><h2> <span class="mw-headline"> Results from 2010-08-18  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results: <i><b>Script disabled to save space on the DVD</b></i>
+</dd></dl>
+<a name="opencpn" id="opencpn"></a><h1> <span class="mw-headline"> opencpn  </span></h1>
+<dl><dt>Activate data
+</dt></dl>
+<ul><li>Open a terminal
+</li><li>Type "<tt>opencpn_noaa_agreement.sh</tt>" at the prompt
+</li></ul>
+<dl><dt>Run program
+</dt></dl>
+<p>(assuming your GPS is not plugged in and <tt>gpsd</tt> is not running)
+</p>
+<ul><li>Double click the OpenCPN icon on the desktop or type "opencpn" at a terminal
+<ul><li>on startup it asks where to find the charts. in the preferences window click in the <i>Charts</i> tab, click on the charts directory, click on [Add Selection], and tick "Force Full Database Rebuild" at the bottom.
+</li></ul>
+</li><li>Left-click recenters the view
+</li><li>Left-click-drag pans the view
+</li><li>Mouse-wheel zooms in/out
+</li><li>The blue bars in the bottom show previews of overlapping raster maps and clicking on them switches to them. The green buttons switch to vectorial charts.
+</li><li>Right click on the map canvas to get a menu, select "Go to here".
+</li><li>At this point if you have your auto-pilot interfaced GPS plugged in you should feel your boat/airplane change course. If not, you'll see a red arrow and the destination target blinking anyway but will have make your own arrangements for getting there.
+</li></ul>
+<dl><dt>More details in the <a href="http://svn.osgeo.org/osgeo/livedvd/gisvm/trunk/doc/descriptions/opencpn_description.html" class="external text" title="http://svn.osgeo.org/osgeo/livedvd/gisvm/trunk/doc/descriptions/opencpn_description.html" rel="nofollow">on-disc help page</a>
+</dt><dd>and specifically the <a href="http://opencpn.cvs.sourceforge.net/viewvc/*checkout*/opencpn/opencpn/data/doc/tips.html#Getting_Started" class="external text" title="http://opencpn.cvs.sourceforge.net/viewvc/*checkout*/opencpn/opencpn/data/doc/tips.html#Getting_Started" rel="nofollow">Getting Started</a> help page.
+</dd></dl>
+<a name="Results_from_2010-08-06_9" id="Results_from_2010-08-06_9"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="Results_from_2010-08-18_7" id="Results_from_2010-08-18_7"></a><h2> <span class="mw-headline"> Results from 2010-08-18  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Live DVD booted from ISO in a Qemu-KVM VM on Debian/Lenny amd64
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<a name="osm" id="osm"></a><h1> <span class="mw-headline"> osm  </span></h1>
+<dl><dt>JOSM
+</dt></dl>
+<ul><li>File \u2192 Open \u2192 /home/user/data/osm/feature_city.osm.bz2
+</li><li>Left-click drag a box around some data
+</li><li>Type "<tt>3</tt>" to zoom to the box.
+</li><li>Rinse and repeat
+</li><li>Mouse wheel to zoom in further
+</li><li>Right-click drag to pan
+</li><li>Click on a road to see some info
+</li></ul>
+<dl><dt>Merkaartor
+</dt></dl>
+<ul><li>Start it up from the <i>Navigation and Maps</i> menu
+</li><li>Click the "Download" button at the top left
+</li><li>Zoom in on <i>Mataro</i> just to the north of Barcelona (or anywhere) until one zoom level past where you can read the street names, and click [ok] to start the download
+</li></ul>
+<dl><dd>(download map: <i>Left-click-drag to pan, mouse wheel to zoom</i>)
+</dd></dl>
+<ul><li>After it finishes, click on "Download more"
+</li></ul>
+<ul><li>Click on a road, see its attributes come up
+</li><li>now it's <i>Right-click-drag to pan, mouse wheel to zoom</i>
+</li><li>In the Layers list in the top-left right-click on "Map - None" and select "Yahoo!"
+</li><li>Click the little box to the left of "Map - Yahoo!" to enable the eyeball
+</li><li>Behold the satellite image underlay
+</li></ul>
+<dl><dt>Osmarender
+</dt></dl>
+<ul><li>Open up Merkaartor again
+</li><li>When satellite image comes up, click the "Download More" button
+</li><li>Once the streets come up do <i>File \u2192 Export \u2192 OSM (XML)</i>
+</li><li>Select "All visible", filename ~/test.osm
+</li><li>Quit Merkaartor
+</li><li>Open a terminal, then:
+</li></ul>
+<pre>osmarender test.osm
+</pre>
+<dl><dd>[<i>whiz-bang-whirl</i>]
+</dd></dl>
+<ul><li>After some time it should finish leaving a test.svg file behind
+</li><li>Open the test.svg file in Inkscape or Firefox to view
+</li></ul>
+<pre>inkscape test.svg
+</pre>
+<ul><li>In inkscape it's middle-click-drag to pan, "+" key to zoom in
+</li><li>In Firefox use Ctrl-+ to zoom in
+</li></ul>
+<dl><dt>Gosmore
+</dt></dl>
+<ul><li>Open a terminal
+</li><li>Import data with:
+</li></ul>
+<pre>bzip2 -dc /usr/local/share/osm/Barcelona.osm.bz2 | gosmore rebuild
+</pre>
+<ul><li>Click on the "-" in the bottom-right of the map canvas until you see the city, then left click to center on downtown, mouse wheel up to zoom in
+</li><li>That's about it!
+</li></ul>
+<a name="Results_from_2010-08-06_10" id="Results_from_2010-08-06_10"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<ul><li>Map didn't render to scale where I could find any roads. Probably because I'm not connected to network. Apps loaded up fine though
+</li></ul>
+<dl><dd><i>-- which app are you talking about? net connection should not be needed as we supply data in Barcelona.osm. for Merkaartor you need to un-bzip2 it first, see the quickstart for details. --HB</i>
+</dd></dl>
+<ul><li>Cameron Shorter: I ran Merkaartor with network connected, and the application was able to download date, and confirmed that when running Merkaartor offline, there was an error, the download of date timed out.
+</li></ul>
+<dl><dd><i>-- ... you can't download without somewhere to download from. De-bzip2 the sample data and play with that instead. --HB</i>
+</dd></dl>
+<p><br />
+</p>
+<a name="Results_from_2010-08-18_8" id="Results_from_2010-08-18_8"></a><h2> <span class="mw-headline"> Results from 2010-08-18  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Live DVD booted from ISO in a Qemu-KVM VM on Debian/Lenny amd64
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<a name="ossim" id="ossim"></a><h1> <span class="mw-headline"> ossim  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>ossim 1.8, osgeo-live 4.0
+</dd><dt>Test Description last updated
+</dt><dd>2010-08-08
+</dd></dl>
+<ul><li>Run the steps in the quickstart guide
+</li></ul>
+<dl><dd> <a href="http://download.osgeo.org/livedvd/4.0-rc7/osgeolive-docs/quickstart/ossim_quickstart.html" class="external free" title="http://download.osgeo.org/livedvd/4.0-rc7/osgeolive-docs/quickstart/ossim_quickstart.html" rel="nofollow">http://download.osgeo.org/livedvd/4.0-rc7/osgeolive-docs/quickstart/ossim_quickstart.html</a>
+</dd></dl>
+<p>Remark: OssimPlanet requires OpenGL support, which might not be available on virtualized environments.
+</p>
+<ul><li><i>Script replaced in 4.0rc8.</i>
+</li></ul>
+<p><strike></strike>
+</p>
+<a name="Results_from_2010-08-06_11" id="Results_from_2010-08-06_11"></a><h2> <span class="mw-headline"> <strike>Results from 2010-08-06</strike> </span></h2>
+<dl><dd><strike>Run by: Myles Kenihan</strike>
+</dd><dd><strike>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM</strike>
+</dd><dd><strike>Version: osgeo-live 4.0 rc6</strike>
+</dd><dd><strike>Results: Pass with issues</strike>
+</dd></dl>
+<ul><li>Data is stored in /home/user/ossim. It should be in /home/user/data/ossim directory.
+</li></ul>
+<ul><li><strike>The toolbar on ImageLinker flickers as if the toolbar is scrolling up/down/up/down as fast as it can. Possibly due to running in a small window 600x800.</strike>
+</li></ul>
+<a name="Results_from_2010-08-04" id="Results_from_2010-08-04"></a><h2> <span class="mw-headline"> <strike>Results from 2010-08-04</strike> </span></h2>
+<dl><dd><strike>Run by: Pirmin Kalberer</strike>
+</dd><dd><strike>System: KVM</strike>
+</dd><dd><strike>Version: osgeo-live 4.0 rc6</strike>
+</dd><dd><strike>Results: Pass</strike>
+</dd></dl>
+<p><br />
+</p>
+<a name="Results_from_2010-08-19_2" id="Results_from_2010-08-19_2"></a><h2> <span class="mw-headline"> Results from 2010-08-19 </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Qemu+KVM on amd64 Debian/Lenny, physical boot from LiveDVD burn
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<ul><li> OssimPlanet did not work on VM, as expected, as OpenGL is no-go. Worked fine from physical DVD boot though.
+</li></ul>
+<p><br />
+</p>
+<hr />
+<a name="osgearth" id="osgearth"></a><h1> <span class="mw-headline"> osgearth  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>osgearth 1.3, osgeo-live 4.0
+</dd><dt>Test Description last updated
+</dt><dd>2010-08-08
+</dd></dl>
+<ul><li>Run the steps in the quickstart guide <i><b>[LINK PLEASE]</b></i>
+</li></ul>
+<dl><dd> <a href="http://download.osgeo.org/livedvd/4.0-rc7/osgeolive-docs/quickstart/osgearth_quickstart.html" class="external free" title="http://download.osgeo.org/livedvd/4.0-rc7/osgeolive-docs/quickstart/osgearth_quickstart.html" rel="nofollow">http://download.osgeo.org/livedvd/4.0-rc7/osgeolive-docs/quickstart/osgearth_quickstart.html</a>
+</dd></dl>
+<dl><dt>Result
+</dt></dl>
+<p>You should see a globe with different overlays. Remark: OpenGL support is required, which might not be available on virtualized environments.
+</p><p><br />
+</p>
+<a name="Results_from_2010-08-06_12" id="Results_from_2010-08-06_12"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Fail
+</dd></dl>
+<ul><li>command failed. Directory share/osgearth/maps/ does not exist
+</li><li>Cameron Shorter: The following error message occurred:
+</li></ul>
+<pre>&gt; osgeoearth_simple 50 50 900 700
+[osgEarth::TMS] Error reading TileMap and no overrides set
+[osgEarth::MapLayer] Could not initialize TileSource for layer
+</pre>
+<a name="Results_from_2010-08-04_2" id="Results_from_2010-08-04_2"></a><h2> <span class="mw-headline"> Results from 2010-08-04  </span></h2>
+<dl><dd>Run by: Pirmin Kalberer
+</dd><dd>System: KVM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="Results_from_2010-08-19_3" id="Results_from_2010-08-19_3"></a><h2> <span class="mw-headline"> Results from 2010-08-19  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Qemu-KVM with X tunneled over ssh; physical LiveDVD
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <i><font color="darkorange">Pass with issues</font></i> 
+</dd></dl>
+<ul><li> KVM doesn't like OpenGL, so no luck there. Quickstart should mention that it may not like VMs.
+</li><li> On the LiveDVD burn it was good though, but of course a network connection was needed which should be mentioned in the quickstart 
+</li><li> A *.desktop file should be written for the simple Blue Marble example to help get folks started/help exposure. (bundle next to Marble)
+</li><li> All in all, a very nice app!
+</li></ul>
+<a name="openjump" id="openjump"></a><h1> <span class="mw-headline"> openjump  </span></h1>
+<dl><dt>Layer Theme with PostGIS backend
+</dt></dl>
+<ul><li>Open OpenJUMP
+</li><li>under the File menu select 'Open...'
+</li><li>select Data Store Layer
+</li><li>on the Connection line, click on the database icon (far right)
+</li><li>click on Add
+</li><li>enter <b>Name</b>: osm_local <b>Server</b>: localhost <b>Port</b>: 5432 <b>Instance</b>: osm_local <b>User</b>: user <b>Password</b>: user
+</li><li>click OK; click OK in the parent dialog box; you should be back in the Data Store Layer dialog
+</li><li>from the Dataset: menu choose 'planet_osm_roads'; click Finish
+</li><li>select the planet_osm_roads layer at left under 'Working'
+</li><li>click on the Palette Icon in the menu bar
+</li><li>select the 'Colour Theming' tab; click 'Enable colour theming' checkbox
+</li><li>choose Attribute &rarr; admin_level
+</li><li>choose a colour theme (e.g. Pastel 2 from Colorbrewer); click 'OK' to dismiss the dialog
+</li><li>you should see the roads in various colours
+</li></ul>
+<a name="Results_from_2010-08-06_13" id="Results_from_2010-08-06_13"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Fail
+</dd></dl>
+<ul><li>Open Jump started but database 'medford' doesn't exist
+</li></ul>
+<dl><dd><i>--test is out of date; run "psql -l" to list current installed PostGIS databases. --HB</i>
+</dd></dl>
+<p><br />
+</p>
+<a name="Results_from_2010-08-19_4" id="Results_from_2010-08-19_4"></a><h2> <span class="mw-headline"> Results from 2010-08-19  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Qemu+KVM, on debian/lenny amd64 host
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<ul><li> (testing method updated to not use OSM db instead of medford)
+</li></ul>
+<a name="postgis" id="postgis"></a><h1> <span class="mw-headline"> postgis  </span></h1>
+<dl><dt>Spatial Query with the Graphical Query Builder helper
+</dt></dl>
+<ul><li>Open PGAdmin III from the Development menu
+</li><li>double-click on 'local'
+</li><li>under Databases, double-click on <tt>natural_earth</tt>
+</li><li>open 'schemas'
+</li><li>open 'public'
+</li><li>select 'Tables', click on the 'Execute SQL' Icon above (it has a pencil in it)
+</li><li>expand the window and click on 'Graphical Query Builder'
+</li><li>open 'Schemas', double-click on 'public'
+</li><li><i>instructs out of date</i>
+</li></ul>
+<p><strike>
+</p>
+<ul><li>click and drag 'medford_wards' to the work area on the right
+</li><li>click and drag 'jacksonco_schools' to the work area on the right
+</li><li>choose 'jacksonco_schools' name, address, city and students
+</li><li>choose 'medford_wards' council_me (meaning council members)
+</li><li>click and drag from the_geom in 'medford_wards' to the_geom in 'jacksonco_schools' (you should see a solid line form with an '=' in it)
+</li><li>click on the 'SQL Editor' tab above, to navigate away from the Graphical Query Builder
+</li><li>edit the WHERE line to say
+</li></ul>
+<pre> ST_Contains( medford_wards.the_geom, jacksonco_schools.the_geom )
+</pre>
+<ul><li>add an additional line
+</li></ul>
+<pre> ORDER BY medford_wards.council_me, jacksonco_schools.students DESC;
+</pre>
+<ul><li>the entire query ends with one semicolon ';'
+</li><li>click on the 'execute query' icon above (a green triangle pointing to the right) you should see a list of council districts, schools, school sizes and the names of council members for each district as a result
+</li></ul>
+<p></strike>
+</p>
+<a name="Results_from_2010-08-06_14" id="Results_from_2010-08-06_14"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<ul><li>database 'medford' doesn't exist
+</li></ul>
+<dl><dd><i>--test docs are out of date. run "psql -l" to list currently installed databases. --HB</i>
+</dd><dd>Cameron Shorter: test steps need to be updated to use naturalearth dataset, but otherwise this application is working fine.
+</dd></dl>
+<a name="Results_from_2010-08-19_5" id="Results_from_2010-08-19_5"></a><h2> <span class="mw-headline"> Results from 2010-08-19  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Qemu+KVM on Debian/Lenny amd64 host
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<ul><li>database 'medford' used in test instructions doesn't exist, but plenty of evidence that all is ok via GpsDrive live rendering, QGIS browsing, etc.
+</li></ul>
+<a name="pgRouting" id="pgRouting"></a><h1> <span class="mw-headline"> pgRouting  </span></h1>
+<ul><li>Follow pgRouting Quick Start documentation, and confirm you get results described.
+</li></ul>
+<dl><dd><i><b>[link please]</b></i>
+</dd></dl>
+<a name="Results_from_2010-08-06_15" id="Results_from_2010-08-06_15"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="qgis" id="qgis"></a><h1> <span class="mw-headline"> qgis  </span></h1>
+<a name="open_GeoTiff" id="open_GeoTiff"></a><h2> <span class="mw-headline"> open GeoTiff </span></h2>
+<ul><li>Layer \u2192 Add raster layer
+</li><li>Select /home/user/data/natural_earth/HYP_50M_SR_W/HYP_50M_SR_W.tif
+</li><li>click [Open] and a world map should arrive
+</li><li>zoom, pan, etc
+</li></ul>
+<a name="open_Shapefile" id="open_Shapefile"></a><h2> <span class="mw-headline"> open Shapefile </span></h2>
+<ul><li>Layer \u2192 Add vector layer
+</li><li>Select [Browse] then /home/user/data/natural_earth/10m_land.shp
+</li><li>click [Open] and a world map should arrive
+</li><li>click the arrow with a blue "i" button (top middle) for query tool
+</li><li>click on a feature to identify it
+</li></ul>
+<ul><li>cleanup: File \u2192 New Project, then [discard]
+</li></ul>
+<a name="open_PostGIS_data_I" id="open_PostGIS_data_I"></a><h2> <span class="mw-headline"> open PostGIS data I </span></h2>
+<ul><li>From the menu: Layer \u2192 Add PostGIS Layer ...
+</li><li>PostgreSQL Connections: [New]
+</li></ul>
+<pre>    Name: natural_earth
+    Host: localhost
+    Database: natural_earth
+    Port: 5432
+    SSL Mode: allow
+    username: user
+    password: user
+</pre>
+<ul><li>[Test Connect] should show success
+</li><li>click [ok]
+</li><li>click [connect], a list of layers should appear
+</li><li>select 10m rivers, lakes, and land layers
+</li><li>click [Add]
+</li><li>view selected data, drag 10m_land to bottom of layer list so it does not obscure other layers
+</li></ul>
+<ul><li>cleanup: File \u2192 New Project, then [discard]
+</li></ul>
+<a name="open_PostGIS_data_II" id="open_PostGIS_data_II"></a><h2> <span class="mw-headline"> open PostGIS data II </span></h2>
+<dl><dd>(<i>run the PostGIS test first so that the osm_barcelona DB exists!</i>; if not, just set the database name as "osm_local" which is already there)
+</dd></dl>
+<ul><li>From the menu: Layer \u2192 Add PostGIS Layer ...
+</li><li>PostgreSQL Connections: [New]
+</li></ul>
+<pre>Name: ________ "OpenStreetMap Import"
+Database: ____ "osm_barcelona"
+</pre>
+<ul><li>Click on [Test Connect], with luck you will get a message that the connection to the database was successful.
+</li><li>Click [Ok] to close the New Database window.
+</li><li>Click on [Connect] in the top left of the Add PostGIS Table window. You should see a listing of tables come up.
+</li><li>Click on all of the table names to highlight them.
+</li><li>Click on [Add] at the bottom.
+</li><li>After some moments you should see the data displayed in the main map canvas.
+</li><li>Zoom, pan, query as you like. Drag layer names up and down in the left-pane list to change their position in the stack.
+</li></ul>
+<p>This should at least prove to you that the database is correctly populated and running.
+</p><p><br />
+</p>
+<a name="open_OSM_data" id="open_OSM_data"></a><h2> <span class="mw-headline"> open OSM data </span></h2>
+<ul><li>Plugins \u2192 Manage plugins
+</li><li>in the filter at the top type "openst"
+</li><li>tick the OSM plugin and click [ok], a set of new buttons should appear
+</li></ul>
+<ul><li>In a terminal shell you'll have to uncompress the .osm file
+</li></ul>
+<pre>cp data/osm/feature_city.osm.bz2 local.osm.bz2
+bzip2 -d local.osm.bz2
+</pre>
+<ul><li>Plugins \u2192 OpenStreetMap \u2192 Load OSM from file
+</li><li>Select the ~/local.osm file
+</li><li>Tick all boxes and click [ok], layers should appear in layer list on left
+</li><li>Right click on a layer in the layer list and Zoom to layer extent
+</li><li>zoom, pan, etc.
+</li><li>In the top-left of the right pane depress the blue-i Info button, move mouse over map
+</li></ul>
+<ul><li>cleanup: File \u2192 New Project, [discard]
+</li></ul>
+<p><br />
+</p>
+<a name="Test_the_GRASS_plugin" id="Test_the_GRASS_plugin"></a><h2> <span class="mw-headline"> Test the GRASS plugin </span></h2>
+<ul><li>Plugins \u2192 Manage plugins
+</li><li>in the filter at the top type "grass"
+</li><li>tick the GRASS plugin and click [ok], a set of new buttons should appear
+</li><li>Plugins \u2192 GRASS \u2192 Open Mapset
+</li></ul>
+<pre>gisdbase: /home/user/grassdata
+location: spearfish60
+mapset: user1
+</pre>
+<ul><li>Plugins \u2192 GRASS \u2192 Open GRASS tools
+</li></ul>
+<p><br />
+</p>
+<ul><li>Config \u2192 g.region.multiple.raster
+</li></ul>
+<dl><dd>mapname: elevation.dem [run]
+</dd></dl>
+<ul><li>Raster \u2192 Surface Management \u2192 Generate surface \u2192 r.surf.fractal
+</li><li>[Run]
+</li></ul>
+<p><font color="red"></font>
+</p>
+<dl><dt><font color="red">QGIS bug</font>
+</dt><dd><font color="red">wants user to own the PERMANENT mapset even if it isn't open!&nbsp;:-(</font>
+</dd></dl>
+<p><font color="red"></font> --- <font color="grey"></font>
+<font color="grey">
+</p>
+<ol><li>click "Add GRASS raster layer" button, select "elevation" map
+</li><li>click "Add GRASS raster layer" button, select "elevation_shade" map
+</li><li>click right mouse button in legend on "elevation_shade" map, move transparency to 40%
+</li><li>click "Add GRASS vector layer" button, select "roadsmajor" map, select layer "1-line" (level 1 is the topological level), OK</font>
+</li></ol>
+<p><font color="grey"></font>
+</p>
+<a name="Results_from_2010-08-06_16" id="Results_from_2010-08-06_16"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Fail
+</dd></dl>
+<ul><li>Problem with settings, says database medford does not exist
+</li></ul>
+<dl><dd><i>test docs are out of date. run "psql -l" to list currently installed PostGIS databases. --HB</i>
+</dd></dl>
+<a name="Results_from_August_8th.2C_2010_5" id="Results_from_August_8th.2C_2010_5"></a><h2> <span class="mw-headline"> Results from August 8th, 2010  </span></h2>
+<dl><dd>Run by: Angelos Tzotsos
+</dd><dd>System: VirtualBox 3.2, 1Gig RAM, on OpenSUSE 11.2
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<ul><li>The GRASS plugin could not load the data from the /hom/user/grassdata folder
+</li></ul>
+<a name="Results_from_2010-08-18_9" id="Results_from_2010-08-18_9"></a><h2> <span class="mw-headline"> Results from 2010-08-18  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Live DVD booted from ISO in a Qemu-KVM VM on Debian/Lenny amd64
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <i><font color="darkorange">Pass with issues</font></i>  (GRASS plugin is broken)
+</dd></dl>
+<a name="QGIS_Mapserver" id="QGIS_Mapserver"></a><h1> <span class="mw-headline"> QGIS Mapserver  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>QGIS Mapserver 1.0, osgeo-live 4.0
+</dd><dt>Test Description last updated
+</dt><dd>2010-08-08
+</dd></dl>
+<a name="Steps_3" id="Steps_3"></a><h2> <span class="mw-headline"> Steps  </span></h2>
+<ul><li>Start <i>QGIS Mapserver</i> from <i>Web Services</i>
+</li></ul>
+<dl><dd>Verify that a browser opens and shows a world map
+</dd></dl>
+<hr />
+<a name="Results_from_2010-08-04_3" id="Results_from_2010-08-04_3"></a><h2> <span class="mw-headline"> Results from 2010-08-04  </span></h2>
+<dl><dd>Run by: Pirmin Kalberer
+</dd><dd>System: KVM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="R" id="R"></a><h1> <span class="mw-headline"> R  </span></h1>
+<ul><li>double click on the R Icon
+</li><li>at the command line, type demo(graphics) and hit return
+</li><li>follow the prompt and watch the target window for examples
+</li></ul>
+<p><i>If it is possible please add steps here to test the included geostats packages, they are both more interesting and more likely to have problems in the build. tx</i>
+</p>
+<dl><dd><i>e.g. something with r-cran-maps(.deb), gstat, sp, rgdal, or spgrass6&nbsp;?</i>
+</dd></dl>
+<pre>#Load a library
+library(sp)
+#list the demos available
+demo()
+#Run the demo from the sp package
+#This will step you through several examples of code and the resulting plots
+demo(gallery)
+</pre>
+<p><br /> Some examples to try here:
+</p>
+<dl><dd><a href="http://r-spatial.sourceforge.net/xtra/xtra.RHnw.html" class="external free" title="http://r-spatial.sourceforge.net/xtra/xtra.RHnw.html" rel="nofollow">http://r-spatial.sourceforge.net/xtra/xtra.RHnw.html</a>
+</dd></dl>
+<a name="Results_from_2010-08-06_17" id="Results_from_2010-08-06_17"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="Results_from_2010-08-18_10" id="Results_from_2010-08-18_10"></a><h2> <span class="mw-headline"> Results from 2010-08-18  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Live DVD booted from ISO in a Qemu-KVM VM on Debian/Lenny amd64
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<a name="SAGA" id="SAGA"></a><h1> <span class="mw-headline"> SAGA  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>OSGeo LiveDVD 4.0
+</dd></dl>
+<ul><li>Start the program
+</li><li>Check if no errors occur during initialisation (messages text)
+</li><li>Run the steps in the quickstart guide
+</li></ul>
+<p>As an extra test, you could check whether saga_cmd works: run SAGA_MLB=/usr/lib/saga saga_cmd from a terminal. The list of modules should be given. There should be 45 modules.
+</p>
+<a name="Results_from_2010-08-05" id="Results_from_2010-08-05"></a><h2> <span class="mw-headline"> Results from 2010-08-05  </span></h2>
+<dl><dd>Run by: Johan VandeWauw
+</dd><dd>System: Virtualbox, 700Mb RAM, on xubuntu 10.4 base
+</dd><dd>Version: distribution version: eg: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="Sahana" id="Sahana"></a><h1> <span class="mw-headline"> Sahana  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>OSGeo LiveDVD 4.0
+</dd></dl>
+<dl><dt>Steps
+</dt></dl>
+<ul><li>The <b>4.0rc6</b> release installer broke. Please rerun the gisvm/trunk/install_sahana.sh script as root before testing.
+</li></ul>
+<ul><li>follow the steps in the <a href="http://svn.osgeo.org/osgeo/livedvd/gisvm/trunk/doc/descriptions/sahana_description.html" class="external text" title="http://svn.osgeo.org/osgeo/livedvd/gisvm/trunk/doc/descriptions/sahana_description.html" rel="nofollow"><b>on-disc help page</b></a>
+</li></ul>
+<hr />
+<a name="Results_from_2010-08-06_18" id="Results_from_2010-08-06_18"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Fail
+</dd></dl>
+<ul><li>Didn't have permission to run Sahana even when running under SUDO
+</li></ul>
+<dl><dd><i>--see above comment: it's not there because the installer failed. (now fixed) --HB</i>
+</dd></dl>
+<a name="Results_from_2010-08-18_11" id="Results_from_2010-08-18_11"></a><h2> <span class="mw-headline"> Results from 2010-08-18  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Live DVD booted from ISO in a Qemu-KVM VM on Debian/Lenny amd64
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<a name="spatialite" id="spatialite"></a><h1> <span class="mw-headline"> spatialite  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>spatialite 2.4, osgeo-live 4.0
+</dd><dt>Test Description last updated
+</dt><dd>2010-08-08
+</dd></dl>
+<ul><li>Run the steps in the quickstart guide
+</li></ul>
+<a name="Results_from_2010-08-06_19" id="Results_from_2010-08-06_19"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Mac Mini 2.0 Dual Core, 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<ul><li>should read user/data/spatialite/regions.sqlite
+</li><li>sql query doesn't work with 'order by' qualifier
+</li></ul>
+<a name="udig" id="udig"></a><h1> <span class="mw-headline"> udig  </span></h1>
+<dl><dt>Steps
+</dt></dl>
+<ul><li>open UDig
+</li></ul>
+<dl><dd>Verify you see a Welcome screen
+</dd></dl>
+<ul><li>Close the Welcome display. (Note if you don't close this display, then you can't load layers later on)
+</li><li>from the Layer menu, choose "Add..."
+</li><li>Choose <b>Files</b> from /home/user/data/udig-data/data-v1_2/
+</li><li>select bc_border.shp
+</li><li>you may also select others, for example all shp files starting with bc_
+</li><li>click OK
+</li></ul>
+<dl><dd>Verify you see Canadian British Columbia data
+</dd></dl>
+<hr />
+<a name="Results_from_2010-08-06_20" id="Results_from_2010-08-06_20"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base system Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Fail
+</dd></dl>
+<ul><li>uDig opened but test data directory was not present
+</li></ul>
+<p>Raised issues:
+</p>
+<ul><li><a href="http://trac.osgeo.org/osgeo/ticket/621" class="external free" title="http://trac.osgeo.org/osgeo/ticket/621" rel="nofollow">http://trac.osgeo.org/osgeo/ticket/621</a> fix symbolic link so udig-data is available
+</li><li><a href="http://trac.osgeo.org/osgeo/ticket/622" class="external free" title="http://trac.osgeo.org/osgeo/ticket/622" rel="nofollow">http://trac.osgeo.org/osgeo/ticket/622</a> fails to show geoserver wms
+</li></ul>
+<p><br />
+</p>
+<a name="Results_from_2010-08-06_21" id="Results_from_2010-08-06_21"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Qemu+KVM, host amd64 debian/lenny
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<ul><li> fixed path in test instructs
+</li></ul>
+<a name="Ushahidi" id="Ushahidi"></a><h1> <span class="mw-headline"> Ushahidi  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>OSGeo LiveDVD 4.0
+</dd></dl>
+<dl><dt>Steps
+</dt></dl>
+<ul><li>follow the steps in the <a href="http://svn.osgeo.org/osgeo/livedvd/gisvm/trunk/doc/descriptions/ushahidi_description.html" class="external text" title="http://svn.osgeo.org/osgeo/livedvd/gisvm/trunk/doc/descriptions/ushahidi_description.html" rel="nofollow"><b>on-disc help page</b></a>
+</li></ul>
+<hr />
+<dl><dt>Add more test results below, most recent results at the top
+</dt></dl>
+<p><br />
+</p>
+<a name="Results_from_2010-08-06_22" id="Results_from_2010-08-06_22"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core, 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="Results_from_2010-08-18_12" id="Results_from_2010-08-18_12"></a><h2> <span class="mw-headline"> Results from 2010-08-18  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Live DVD booted from ISO in a Qemu-KVM VM on Debian/Lenny amd64
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<a name="Viking" id="Viking"></a><h1> <span class="mw-headline"> Viking  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>OSGeo LiveDVD 4.0
+</dd><dt>Steps
+</dt></dl>
+<ul><li>Start it up from the <i>Navigation and Maps</i> menu
+</li><li>If you have a GPX file handy, File \u2192 Open
+</li><li>Layers \u2192 New Map Layer
+</li><li>pick OpenStreetMaps (Mapnik), [ok]
+</li><li>On the <i>Layer Name</i> list on the left side, right click on "Map" and <i>Download Onscreen Maps</i>
+</li><li>It should start to download street maps of lower Manhattan
+</li><li>Select <i>Tools \u2192 Ruler</i> from the menu
+</li><li>Click on the Brooklyn Bridge, then on Battery Park to get a distance and heading
+</li></ul>
+<a name="Results_from_2010-08-06_23" id="Results_from_2010-08-06_23"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2 Gig RAM
+</dd><dd>Version: Osgeo-live 4.0 rc6
+</dd><dd>Results: <s>Fail</s>
+</dd></dl>
+<ul><li>Viking opened but with no gpx 'handy' I could not verify that it worked
+</li></ul>
+<dl><dd><i>--that's not really a fail. --HB</i>
+</dd></dl>
+<a name="Results_from_2010-08-18_13" id="Results_from_2010-08-18_13"></a><h2> <span class="mw-headline"> Results from 2010-08-18  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Live DVD booted from ISO in a Qemu-KVM VM on Debian/Lenny amd64
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<a name="ZOO_Project" id="ZOO_Project"></a><h1> <span class="mw-headline"> ZOO Project  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>.ZOO Project. 1.0.0, OSGeo LiveDVD 4.0
+</dd><dt>Steps
+</dt></dl>
+<ul><li>make sure that your Apache and GeoServer are running
+</li></ul>
+<dl><dd><tt>Web Services \u2192 Start GeoServer</tt> (takes a few moments)
+</dd></dl>
+<ul><li>Click on "ZOO Project" icon from the bottom of the Web Services geospatial menu to have firefox load the Spatialtools demo page
+</li><li>select a feature from the displayed states then click on a spatialtools button to get the RawDataOutput result of processing displayed on the map
+</li></ul>
+<a name="Results_from_2010-08-03" id="Results_from_2010-08-03"></a><h2> <span class="mw-headline"> Results from 2010-08-03  </span></h2>
+<dl><dd>Run by: Gérald Fenoy
+</dd><dd>System: VMWare Fusion, instance with 2Gig RAM and 2CPU
+</dd><dd>Version: distribution version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass
+</dd></dl>
+<a name="Results_from_2010-08-03_2" id="Results_from_2010-08-03_2"></a><h2> <span class="mw-headline"> Results from 2010-08-03  </span></h2>
+<dl><dd>Run by: Johan VandeWauw
+</dd><dd>System: Virtualbox, instance with 700Mb RAM
+</dd><dd>Version: distribution version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass after manual install - *if* geoserver started
+</dd></dl>
+<a name="Results_from_2010-08-18_14" id="Results_from_2010-08-18_14"></a><h2> <span class="mw-headline"> Results from 2010-08-18  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Live DVD booted from ISO in a Qemu-KVM VM on Debian/Lenny amd64
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <i><font color="darkorange">Pass with issues</font></i>  (would be nice if it launched geoserver for you)
+</dd></dl>
+<a name="zyGrib" id="zyGrib"></a><h1> <span class="mw-headline"> zyGrib  </span></h1>
+<dl><dt>Tests written for
+</dt><dd>OSGeo LiveDVD 4.0
+</dd><dt>Steps
+</dt></dl>
+<ul><li>click the magnifying glass 1:1 button on the toolbar to go to the world map
+</li><li>left-click drag a box over Europe
+</li><li>click the [] zoom button to the left of the 1:1 zoom button to zoom in to that box
+</li><li>click the power plug button on the right to check the server status
+</li><li>left-click drag an area of interest again
+</li><li><i>File \u2192 Download GRIB</i>
+</li><li>click the [Download GRIB file] button in the lower-left, and save it.
+</li><li>You should now see a weather map
+</li><li>In the <i>Data</i> menu you can select different maps to look at (e.g. "cloud cover")
+</li><li>Click the rocketship button on the right end of the toolbar to see a 5 day animation of the forecast. Set speed, Play, etc.
+</li></ul>
+<a name="Results_from_2010-08-06_24" id="Results_from_2010-08-06_24"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 Dual Core 2Gig RAM
+</dd><dd>Version: Osgeo-live 4.0 rc6
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<ul><li>Could not connect to network so power plug failed. Could not retrieve network data
+</li></ul>
+<a name="Results_from_2010-08-18_15" id="Results_from_2010-08-18_15"></a><h2> <span class="mw-headline"> Results from 2010-08-18  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Live DVD booted from ISO in a Qemu-KVM VM on Debian/Lenny amd64
+</dd><dd>Version: osgeo-live 4.0 rc9
+</dd><dd>Results:  <font color="green">Pass</font> 
+</dd></dl>
+<a name="main_documentation" id="main_documentation"></a><h1> <span class="mw-headline"> main documentation  </span></h1>
+<dl><dt>Steps
+</dt></dl>
+<ul><li>Open Help by selecting he help icon (a yellow sign with a wombat)
+</li></ul>
+<dl><dd>Verify that the firefox web browser opens at file:///usr/local/share/livedvd-docs/index.thml
+</dd><dd>Verify that the browser opens with "Home", "Contents", "Contact and Support", "Tests", "Sponsors" tabs.
+</dd></dl>
+<ul><li>Click on the above tabs.
+</li></ul>
+<dl><dd>Verify the respective pages are opened.
+</dd></dl>
+<ul><li>Open the "Contents" tab
+</li></ul>
+<dl><dd>Verify that each project is mentioned.
+</dd><dd>Verify that the project version numbers matches version numbers here: <a href="http://spreadsheets.google.com/ccc?key=0Al9zh8DjmU_RdGIzd0VLLTBpQVJuNVlHMlBWSDhKLXc&amp;hl=en_GB" class="external free" title="http://spreadsheets.google.com/ccc?key=0Al9zh8DjmU_RdGIzd0VLLTBpQVJuNVlHMlBWSDhKLXc&amp;hl=en_GB" rel="nofollow">http://spreadsheets.google.com/ccc?key=0Al9zh8DjmU_RdGIzd0VLLTBpQVJuNVlHMlBWSDhKLXc&amp;hl=en_GB</a>
+</dd><dd>Verify that when clicking on each project title, a description page is opened.
+</dd></dl>
+<ul><li>Install a link checker
+</li></ul>
+<pre>sudo apt-get install linkchecker
+</pre>
+<ul><li>Run the linkchecker against the installed docs:
+</li></ul>
+<pre>linkchecker /usr/local/share/livedvd-docs/index.html 2&gt;&amp;1 | tee /var/log/osgeo-live/linkchecker.log
+</pre>
+<dl><dd>Verify there are not errors in the log file
+</dd></dl>
+<hr />
+<a name="Results_from_2010-08-06_25" id="Results_from_2010-08-06_25"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Live DVD, Base System Mac Mini 2.0 dual core, 2Gig RAM
+</dd><dd>Version: osgeo-live 4.0 rc6
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<p><br />
+</p>
+<ul><li>The following project listings had issues
+</li><li>52 degree North Web Processing Service not present in contents
+</li><li>Geopublisher should be listed as version 1.5 in contents ( it's 1.4 )
+</li><li>Geoserver 2.0.1 should read 2.0.2
+</li><li>Mapbender not present in contents
+</li><li>Octave mapping tools not present in contents
+</li></ul>
+<dl><dd><i>--disabled on purpose. --HB</i>
+</dd></dl>
+<ul><li>Open Jump 1.3 should read 1.3.1
+</li><li>R Geostatistics 2.10.1 should read 2.11.1
+</li><li>SAFA GIS not present in contents
+</li><li>uDIG 1.2rc1 should read 1.2rc3
+</li><li>Zoo Project not present in contents
+</li></ul>
+<p>The apt-get command failed because I was not connected to a network ( I'm not supposed to be connected to a network, apparently ) and also I was asked for a SUDO password which is not provided.
+</p>
+<dl><dd><i>--sudo password now in welcome message --HB</i>
+</dd></dl>
+<p>The linkchecker could thus not be run as I was unable to acquire it
+</p>
+<hr />
+<a name="Windows_Installers" id="Windows_Installers"></a><h1> <span class="mw-headline"> Windows Installers  </span></h1>
+<dl><dt>Steps
+</dt></dl>
+<ul><li>From a windows computer, or Virtual Machine, insert the LiveDVD.
+</li><li>Go to the WindowsInstallers directory on the LiveDVD
+</li></ul>
+<dl><dd>Verify the installers are the same version number as the rest of the DVD, as listed at <a href="http://spreadsheets.google.com/ccc?key=0Al9zh8DjmU_RdGIzd0VLLTBpQVJuNVlHMlBWSDhKLXc&amp;hl=en_GB" class="external free" title="http://spreadsheets.google.com/ccc?key=0Al9zh8DjmU_RdGIzd0VLLTBpQVJuNVlHMlBWSDhKLXc&amp;hl=en_GB" rel="nofollow">http://spreadsheets.google.com/ccc?key=0Al9zh8DjmU_RdGIzd0VLLTBpQVJuNVlHMlBWSDhKLXc&amp;hl=en_GB</a>
+</dd></dl>
+<ul><li>For each WindowsInstaller, run the installer, using all defaults
+</li></ul>
+<dl><dd>Verify the application installs without errors
+</dd></dl>
+<ul><li>If sufficient time, Open up the application and run the test steps above for the application.
+</li></ul>
+<hr />
+<a name="Results_from_2010-08-19_6" id="Results_from_2010-08-19_6"></a><h2> <span class="mw-headline"> Results from 2010-08-19  </span></h2>
+<dl><dd>Run by: H Bowman
+</dd><dd>System: Burned full DVD and Qemu-KVM
+</dd><dd>Version: 4.0rc9
+</dd><dd>Results:  <i><font color="darkorange">Pass with issues</font></i> 
+<dl><dd> /usr/local/share/ symlinks for both Mac and Windows installers are broken because /cdrom is a real file and not a symlink to /media/cdrom. Otherwise they seem to be correctly in place in the root dir of the DVD. This seems to be an Ubuntu 10.04 thing, only solution is to link to /cdrom instead of /media/cdrom in the install script.
+</dd></dl>
+</dd></dl>
+<p><br />
+</p>
+<a name="Mac_Installers" id="Mac_Installers"></a><h1> <span class="mw-headline"> Mac Installers  </span></h1>
+<dl><dt>Steps
+</dt></dl>
+<ul><li>From a Mac, or Virtual Machine, insert the LiveDVD.
+</li><li>Go to the MacInstallers directory on the LiveDVD
+</li></ul>
+<dl><dd>Verify the installers are the same version number as the rest of the DVD, as listed at <a href="http://spreadsheets.google.com/ccc?key=0Al9zh8DjmU_RdGIzd0VLLTBpQVJuNVlHMlBWSDhKLXc&amp;hl=en_GB" class="external free" title="http://spreadsheets.google.com/ccc?key=0Al9zh8DjmU_RdGIzd0VLLTBpQVJuNVlHMlBWSDhKLXc&amp;hl=en_GB" rel="nofollow">http://spreadsheets.google.com/ccc?key=0Al9zh8DjmU_RdGIzd0VLLTBpQVJuNVlHMlBWSDhKLXc&amp;hl=en_GB</a>
+</dd></dl>
+<ul><li>For each MacInstaller, run the installer, using all defaults
+</li></ul>
+<dl><dd>Verify the application installs without errors
+</dd></dl>
+<ul><li>If sufficient time, Open up the application and run the test steps above for the application.
+</li></ul>
+<hr />
+<a name="Results_from_2010-08-06_26" id="Results_from_2010-08-06_26"></a><h2> <span class="mw-headline"> Results from 2010-08-06  </span></h2>
+<dl><dd>Run by: Myles Kenihan
+</dd><dd>System: Booted from Disk. Base System Mac Mini 2.0 Dual Core, 2 Gig RAM
+</dd><dd>Version: Arramagong Live GIS 3.0
+</dd><dd>Results: Pass with issues
+</dd></dl>
+<p>Could not run directly from OSX Snow Leopard. Had to change system settings to boot from disk which worked fine.
+</p>
+<a name="Media_tests" id="Media_tests"></a><h1> <span class="mw-headline"> Media tests  </span></h1>
+<a name="DVD_testing" id="DVD_testing"></a><h2> <span class="mw-headline"> DVD testing  </span></h2>
+<p>Steps:
+</p>
+<ul><li>Download full 4.3gb ISO
+</li><li>Burn to a DVD
+</li><li>Boot and play
+</li></ul>
+<p>Results:
+</p>
+<a name="Results_from_2010-08-19_7" id="Results_from_2010-08-19_7"></a><h3> <span class="mw-headline"> Results from 2010-08-19 </span></h3>
+<ul><li> Run by: H Bowman
+</li><li> System: Quad-core PC amd64 4gb RAM
+</li><li> Version: 4.0rc9
+</li><li> Results:  <font color="green">Pass</font>  (First one came out as a coaster, second one was ok)
+</li></ul>
+<a name="USB_testing" id="USB_testing"></a><h2> <span class="mw-headline"> USB testing  </span></h2>
+<p>Steps:
+</p>
+<ul><li>Install a OSGeo Live image onto a USB as per: <a href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start#Install_to_a_Live_USB_Stick" class="external free" title="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start#Install_to_a_Live_USB_Stick" rel="nofollow">http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start#Install_to_a_Live_USB_Stick</a>
+</li><li>Boot the USB. Verify you can log into the OSGeo-Live Desktop
+</li><li>Open up one of the applications (preferably different to other USB testers), and verify it works fine as per test steps above.
+</li><li>Note any errors below. (<i><b>Please state what size USB stick you used (4gb, 8gb, etc.) and how much free space was left for user files (`df -h`)</b></i>)
+</li></ul>
+<p>Results:
+</p>
+<ul><li><font color="grey">Test 1: First Last</font>
+</li></ul>
+<dl><dd><font color="grey">Computer: Apple Mac ...</font>
+</dd><dd><font color="grey">Version: osgeo-live 4.0rc7</font>
+</dd><dd><font color="grey">Results: Pass, Fail, Pass with Issues</font>
+</dd><dd><font color="grey">Issues: note here.</font>
+</dd></dl>
+<ul><li>Test 2:
+</li></ul>
+<dl><dd>Computer: Gateway (Centrino) pretty old
+</dd><dd>Version: osgeo-live 4.0rc9
+</dd><dd>Results: Pass with Issues
+</dd><dd>Issues: hanging with "boot:" prompt, "live" and "debug" boot option end up with black screen, but "xforcevesa" works very well and resolution fits perfectly.
+</dd></dl>
+<ul><li>Test 3:
+</li></ul>
+<dl><dd>Computer: Acer Timeline
+</dd><dd>Version: osgeo-live 4.0rc9
+</dd><dd>Results: Pass
+</dd><dd>Issues: no issues
+</dd></dl>
+<ul><li>Test 4: Adrià Mercader
+</li></ul>
+<dl><dd>Computer: Dell Inspiron 1564 (Intel i5)
+</dd><dd>Version: osgeo-live 4.0rc9
+</dd><dd>Results: Pass
+</dd><dd>Issues: No issues
+</dd></dl>
+<ul><li>Test 5: Jody Garnett
+</li></ul>
+<dl><dd>Computer: Thinkpad T43
+</dd><dd>Version: osgeo-live 4.0rc9
+</dd><dd>Results: Pass
+</dd><dd>Issues: No issues (hold down F12 to get the bootlist to choose the usb)
+</dd><dd>Comment: Wow the experience is so much better - we have to do this&nbsp;:-)
+</dd></dl>
+<ul><li>Test 6: Jody Garnett
+</li></ul>
+<dl><dd>Computer: Macbook Pro
+</dd><dd>Version: osgeo-live 4.0rc9
+</dd><dd>Results: Fail
+</dd><dd>Issues: Unable to boot from usb, not formatted correctly for mac to boot from
+</dd><dd>Comment: Internet workarund says to use the DVD to boot the USB
+</dd></dl>
+<ul><li>Test 7: H Bowman
+</li></ul>
+<dl><dd>Computer: 4gb USB drive with full 4.3gb ISO
+</dd><dd>Version: osgeo-live 4.0rc9
+</dd><dd>Results:  <b><font color="red">FAIL</font></b> 
+</dd><dd>Issues: When formated as FAT32 the avail size of the USB goes down to 3.7gb.
+</dd><dd>Comment: Make startup disk: "<i>This device is not large enough to hold the image</i>"
+<dl><dd> still unknown if Installers would be copied over too.
+</dd></dl>
+</dd></dl>
+<a name="VM_testing" id="VM_testing"></a><h2> <span class="mw-headline"> VM testing  </span></h2>
+<p>Steps:
+</p>
+<ul><li>Download full or mini ISO
+</li><li>Create a VM (<i>exact method will depend on the VM software used, <a href="/wiki/Live_GIS_Build#Mounting_a_Virtual_Image" title="Live GIS Build">see elsewhere in this wiki</a></i>)
+</li><li>Boot and play
+</li></ul>
+<p>Results:
+</p>
+<a name="VirtualBox" id="VirtualBox"></a><h3> <span class="mw-headline"> VirtualBox  </span></h3>
+<ul><li> <i>Brian wrote:</i> " running rc9 physical DVD in vbox to type this note"
+</li></ul>
+<a name="VMWare" id="VMWare"></a><h3> <span class="mw-headline"> VMWare  </span></h3>
+<ul><li>-
+</li></ul>
+<a name="Qemu_.2B_KVM" id="Qemu_.2B_KVM"></a><h3> <span class="mw-headline"> Qemu + KVM  </span></h3>
+<ul><li>Test version 4.0rc9
+</li><li>Tested by: H Bowman
+</li><li> <i><font color="darkorange">Pass with issues</font></i> 
+</li><li>Host: Debian/Stable (Lenny) with qemu-kvm 0.12.3+dfsg-4~bpo50+2 from backports.org
+</li><li>Started with:
+</li></ul>
+<pre>   kvm -cdrom osgeolive-4.0rc9.iso -m 1024 -cpu phenom
+</pre>
+<dl><dd>- All seems to be working, except for <tt>/usr/local/share/*Installers</tt> symlinks, which are broken because /cdrom is a real dir and not a symlink to /media/cdrom. See also <tt>/etc/mtab</tt> vs. <tt>/etc/fstab</tt>.
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 337/1000000
+Post-expand include size: 2867/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key osgeo_wiki-osgeo_:pcache:idhash:5599-0!1!0!!en!2!edit=0 and timestamp 20110317122404 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Testing">http://wiki.osgeo.org/wiki/Live_GIS_Disc_Testing</a>"</div>
+			<div id="catlinks"><div id='catlinks' class='catlinks'><div id="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Category</a>:&#32;<span dir='ltr'><a href="/wiki/Category:Live-demo" title="Category:Live-demo">Live-demo</a></span></div></div></div>			<!-- end content -->
+			<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+					 <li id="ca-nstab-main" class="selected"><a href="/wiki/Live_GIS_Disc_Testing" title="View the content page [c]" accesskey="c">Page</a></li>
+					 <li id="ca-talk"><a href="/wiki/Talk:Live_GIS_Disc_Testing" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+					 <li id="ca-viewsource"><a href="/index.php?title=Live_GIS_Disc_Testing&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+					 <li id="ca-history"><a href="/index.php?title=Live_GIS_Disc_Testing&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:UserLogin&amp;returnto=Live_GIS_Disc_Testing" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/skins/common/images/osgeo2.png);" href="http://www.osgeo.org/" title="Go to OSGeo Main site"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+		<div class='portlet' id='p-navigation'>
+		<h5>Navigation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-mainpage-description"><a href="/wiki/Main_Page">Main Page</a></li>
+				<li id="n-portal"><a href="/wiki/OSGeo_Wiki:Community_Portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="/wiki/OSGeo_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/wiki/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+		<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" type="text" title="Search OSGeo Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Live_GIS_Disc_Testing" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Live_GIS_Disc_Testing" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/index.php?title=Live_GIS_Disc_Testing&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/index.php?title=Live_GIS_Disc_Testing&amp;oldid=50814" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://creativecommons.org/licenses/by-sa/2.5/legalcode"><img src="/skins/common/images/somerights20.png" alt='Creative Commons Legal Code' /></a></div>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified on 8 October 2010, at 21:08.</li>
+				<li id="viewcount">This page has been accessed 10,641 times.</li>
+				<li id="copyright">Content is available under the Creative Commons Attribution-ShareAlike License.</li>
+				<li id="privacy"><a href="/wiki/OSGeo_Wiki:Privacy_policy" title="OSGeo Wiki:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a href="/wiki/OSGeo_Wiki:About" title="OSGeo Wiki:About">About OSGeo Wiki</a></li>
+				<li id="disclaimer"><a href="/wiki/OSGeo_Wiki:General_disclaimer" title="OSGeo Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../en/index.html">English</a> |
+		<a href="../el/index.html">Ελληνικά</a> |
+		<a href="../de/index.html">Deutsch</a> |
+		<a href="../es/index.html">Español</a> |
+		<a href="../ja/index.html">日本語</a> |
+		<a href="../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i>&copy; OSGeo Foundation and LISAsoft 2011... <a href="disclaimer.html">Disclaimer</a></i></span>
+
+  </body>
+</html>

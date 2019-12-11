@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Mapbender Quickstart &mdash; OSGeo-Live v4.0 documentation</title>
+    <link rel="stylesheet" href="_static/howto.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '#',
+        VERSION:     '4.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.0 documentation" href="index.html" />
+    <link rel="next" title="MapFish Quickstart" href="mapfish_quickstart.html" />
+    <link rel="prev" title="GRASS GIS Quickstart" href="grass_quickstart.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+      <ul id="breadcrumbs">
+            <li class="right" style="margin-right: 10px">
+              <a href="genindex.html" title="General Index"
+                 accesskey="I">index</a></li>
+            <li class="right" >
+              <a href="mapfish_quickstart.html" title="MapFish Quickstart"
+                 accesskey="N">next</a> |</li>
+            <li class="right" >
+              <a href="grass_quickstart.html" title="GRASS GIS Quickstart"
+                 accesskey="P">previous</a> |</li>
+        <li><a href="quickstart.html">OSGeo-Live v4.0 documentation</a> &raquo;</li>
+        <li><a href="#">Mapbender Quickstart</a></li>
+      </ul>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <span class="target" id="mapbender-quickstart"></span><a class="reference external image-reference" href="_images/logo-Mapbender.png"><img align="right" alt="project logo" class="align-right" src="_images/logo-Mapbender.png" style="width: 99.0px; height: 99.0px;" /></a>
+<div class="section" id="id1">
+<h1>Mapbender Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Mapbender is a web based geoportal framework to publish, register, view, navigate, monitor and grant secure access to spatial data infrastructure services.</p>
+<p>Management interfaces empower administrators who need to maintain and categorize map and feature services and grant access to individuals, groups and other services.</p>
+<p>You will need nothing but a standard web browser for this quickstart.</p>
+<dl class="docutils">
+<dt>This Quick Start describes how to:</dt>
+<dd><ul class="first last simple">
+<li>create an application</li>
+<li>load a Web Map Service (OGC WMS)</li>
+<li>create a user and a group and assign applications to them</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="start-mapbender">
+<h2>Start Mapbender<a class="headerlink" href="#start-mapbender" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Choose  <em>Mapbender</em> from the start menu</li>
+<li>The application will take a few moments to start up</li>
+</ol>
+<p>If you have any difficulties running Mapbender, please check whether your Apache web server and your PostgreSQL database are running.</p>
+</div>
+<div class="section" id="welcome-page">
+<h2>Welcome page<a class="headerlink" href="#welcome-page" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Before you can work with Mapbender you have to login to get access to applications.</li>
+<li>The welcome page provides links to the most important pages related to Mapbender.</li>
+<li>You can login with the user <strong>root</strong> and password <strong>root</strong> (This is the default user and password that you get after installation of Mapbender. Please change the root password if you want to run a productive environment. Please don&#8217;t delete the user <strong>root</strong> as this user has access to the Mapbender template applications and is used on updates).</li>
+</ol>
+<blockquote>
+<a class="reference external image-reference" href="_images/mapbender_welcome.png"><img alt="_images/mapbender_welcome.png" src="_images/mapbender_welcome.png" style="width: 640.0px; height: 429.6px;" /></a>
+</blockquote>
+<p>After successful login you are directed to the <strong>application overview</strong>.</p>
+</div>
+<div class="section" id="application-overview">
+<h2>Application overview<a class="headerlink" href="#application-overview" title="Permalink to this headline">¶</a></h2>
+<p>After the login you are directed to the <strong>application overview</strong> with a list of applications you are allowed to access.
+In Mapbender you have template applications, that you can use to set up your own applications.</p>
+<blockquote>
+<a class="reference external image-reference" href="_images/mapbender_application_overview.png"><img alt="_images/mapbender_application_overview.png" src="_images/mapbender_application_overview.png" style="width: 640.0px; height: 431.2px;" /></a>
+</blockquote>
+<dl class="docutils">
+<dt>There are</dt>
+<dd><ul class="first last simple">
+<li>administration applications</li>
+<li>map applications</li>
+<li>container applications</li>
+</ul>
+</dd>
+</dl>
+<p>The applications are listed in <strong>categories</strong>. Later you can define your own category and add your applications to the category you want.</p>
+</div>
+<div class="section" id="administration-applications">
+<h2>Administration applications<a class="headerlink" href="#administration-applications" title="Permalink to this headline">¶</a></h2>
+<p><strong>Administration applications</strong> allow you f. e. to load services, create user, to set up new applications.</p>
+<p>Each <strong>administration application</strong> provides different functionality. Later on your can set up your own <strong>administration applications</strong> with the functionality you would like to provide.</p>
+<dl class="docutils">
+<dt>After installation user <strong>root</strong> has access to:</dt>
+<dd><blockquote class="first">
+<ul class="simple">
+<li>admin2_en - WMS, application, user/group handling</li>
+<li>admin_en_services - focus on WFS and metadata handling and owsproxy</li>
+<li>admin1 - template with all administration elements</li>
+</ul>
+</blockquote>
+<a class="last reference external image-reference" href="_images/mapbender_admin2_en.png"><img alt="_images/mapbender_admin2_en.png" src="_images/mapbender_admin2_en.png" style="width: 640.0px; height: 431.2px;" /></a>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You get back to the application overview with the <a class="reference external" href="_images/mapbender_home.png"><img alt="HOME" src="_images/mapbender_home.png" style="width: 24.0px; height: 24.0px;" /></a> button.</p>
+</div>
+</div>
+<div class="section" id="map-applications">
+<h2>Map applications<a class="headerlink" href="#map-applications" title="Permalink to this headline">¶</a></h2>
+<p>Map applications contain OGC WMS, one ore more maps, buttons, a geodata explorer, a legend element, your logo and more.</p>
+<ol class="arabic simple">
+<li>Choose a map application <strong>by click</strong> from the <strong>application overview</strong></li>
+<li>Get to know Mapbender and try the functionality the applications provide.<ul>
+<li>choose for example gui, gui_digitize</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<a class="reference external image-reference" href="_images/mapbender_gui_digitize.png"><img alt="_images/mapbender_gui_digitize.png" src="_images/mapbender_gui_digitize.png" style="width: 640.0px; height: 432.0px;" /></a>
+</blockquote>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If your browser supports tabs you can open the applications in tabs and easily switch between them.</p>
+</div>
+</div>
+<div class="section" id="wms-container-applications">
+<h2>WMS container applications<a class="headerlink" href="#wms-container-applications" title="Permalink to this headline">¶</a></h2>
+<p>You can create a container application to store your WMS. WMS container are not for display. With containers you can create a sophisticated service repository.</p>
+<blockquote>
+<a class="reference external image-reference" href="_images/mapbender_container.png"><img alt="_images/mapbender_container.png" src="_images/mapbender_container.png" style="width: 480.0px; height: 285.6px;" /></a>
+</blockquote>
+</div>
+<div class="section" id="create-an-individual-application">
+<h2>Create an individual application<a class="headerlink" href="#create-an-individual-application" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>go to the administration application <em>admin2_en</em></li>
+<li>choose <em>Application Management ‣ Create new application</em></li>
+<li>define a name and description for your application and hit the button <strong>new</strong> to create the application</li>
+<li>go to the link <em>Application Management ‣ Edit application elements</em> and select the new application</li>
+<li>in the selectbox at the top choose an application that you would like to take as a template and hit the button <strong>add all elements</strong>. This process will take all elements from the application you selected to your new application.</li>
+<li>you can also take a single element from another application to your new application. Choose the single element by activating the radiobutton at the element and hit the <strong>save</strong> Button to save this element in your new application.</li>
+<li>your application is set up. Now you need a WMS to be displayed in your application. This will be described in the next section.</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You also can create a new application by copying an existing application. Go to <em>Application Management ‣ Rename/copy application</em>, choose the application you want to copy and define a name for the new application.</p>
+</div>
+</div>
+<div class="section" id="loading-web-map-services">
+<h2>Loading Web Map Services<a class="headerlink" href="#loading-web-map-services" title="Permalink to this headline">¶</a></h2>
+<p>You can load OGC Web Map Services (WMS) to your application.</p>
+<ol class="arabic simple">
+<li>Go to <strong>admin2_en</strong> and choose <em>WMS Management ‣ Load WMS</em>. Choose the application which shall contain the WMS. Link to the WMS getCapabilities URL in the text field and hit <strong>Load</strong>.</li>
+<li>Here are some example WMS you can use to load to your appliction<ul>
+<li>Demis World Map <a class="reference external" href="http://www2.demis.nl/wms/wms.asp?wms=WorldMap&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS">http://www2.demis.nl/wms/wms.asp?wms=WorldMap&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS</a></li>
+<li>Bird Studies Canada <a class="reference external" href="http://www.bsc-eoc.org/cgi-bin/bsc_ows.asp?VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS">http://www.bsc-eoc.org/cgi-bin/bsc_ows.asp?VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS</a></li>
+<li>Germany demo <a class="reference external" href="http://wms.wheregroup.com/cgi-bin/mapserv?map=/data/umn/germany/germany.map&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS">http://wms.wheregroup.com/cgi-bin/mapserv?map=/data/umn/germany/germany.map&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS</a></li>
+<li>WhereGroup OSM WMS <a class="reference external" href="http://osm.wheregroup.com/cgi-bin/osm_basic.xml?REQUEST=GetCapabilities&amp;SERVICE=WMS&amp;VERSION=1.1.1">http://osm.wheregroup.com/cgi-bin/osm_basic.xml?REQUEST=GetCapabilities&amp;SERVICE=WMS&amp;VERSION=1.1.1</a></li>
+</ul>
+</li>
+</ol>
+<a class="reference external image-reference" href="_images/mapbender_wms_application_settings.png"><img alt="_images/mapbender_wms_application_settings.png" src="_images/mapbender_wms_application_settings.png" style="width: 640.0px; height: 390.4px;" /></a>
+</div>
+<div class="section" id="user-and-group-management">
+<h2>User and group management<a class="headerlink" href="#user-and-group-management" title="Permalink to this headline">¶</a></h2>
+<p>An access to Mapbender always requires authentication. This user has permissions to access one or a set of applications and the services (WMS, WFS) which are assigned to these applications.</p>
+<p>There is no inherent difference between roles like <strong>guest</strong>, <strong>operator</strong> or <strong>administrator</strong>. The <strong>role</strong> of a user depends on the functionality and services the user has access through his applications.</p>
+<p><strong>Create a user</strong></p>
+<ol class="arabic simple">
+<li>To create a user go to <strong>admin2_en</strong> and select <em>User Management ‣ Create and edit user</em></li>
+<li>Choose a name and a password for your user.</li>
+</ol>
+<a class="reference external image-reference" href="_images/mapbender_create_user.png"><img alt="_images/mapbender_create_user.png" src="_images/mapbender_create_user.png" style="width: 640.0px; height: 388.0px;" /></a>
+<p><strong>Create a group</strong></p>
+<ol class="arabic simple">
+<li>Create a group by <em>User Management ‣ Create and edit group</em>. Define a name and a description for your group.</li>
+</ol>
+<p><strong>Assign applications to user/group</strong></p>
+<ol class="arabic simple">
+<li>Assign a user to a group by <em>User Management ‣ Add one user to several groups</em> or by the link <em>User Management ‣ Add several users to one group</em></li>
+<li>Assign an application to a user by <em>User Management ‣ Allow one user to access several applications</em></li>
+<li>Assign an application to a group by <em>User Management ‣ Allow one group to access several applications</em></li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If you want to grant a user write access to an application you have to use <em>User Management ‣ Assign to edit an application to a user</em>.</p>
+</div>
+<ol class="arabic simple">
+<li>Logout from Mapbender with the <a class="reference external" href="_images/mapbender_logout.png"><img alt="LOGOUT" src="_images/mapbender_logout.png" style="width: 24.0px; height: 24.0px;" /></a> button.</li>
+<li>Login as the new user</li>
+<li>What happens when the user has access to one or more than one application?</li>
+</ol>
+<blockquote>
+</blockquote>
+</div>
+<div class="section" id="things-to-try">
+<h2>Things to try<a class="headerlink" href="#things-to-try" title="Permalink to this headline">¶</a></h2>
+<p>Here are some additional challenges for you to try:</p>
+<ol class="arabic simple">
+<li>Try to load some WMS in your application. Try to configure your WMS with <em>Configure WMS access ‣ WMS application settings</em>.</li>
+<li>Try to create an individual application - change the background-color, move the buttons, change the size of the map (element mapframe1). <em>Application Management ‣ Edit application elements</em>.</li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2>What next?<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<p>This is only the first step on the road to using Mapbender. There is a lot more functionality you can try.</p>
+<ul>
+<li><p class="first">Mapbender Project home</p>
+<p><a class="reference external" href="http://www.mapbender.org/">http://www.mapbender.org/</a></p>
+</li>
+<li><p class="first">You find tutorials at</p>
+<p><a class="reference external" href="http://www.mapbender.org/Tutorials">http://www.mapbender.org/Tutorials</a></p>
+</li>
+<li><p class="first">Try the tutorial in english language</p>
+<p><a class="reference external" href="http://www.mapbender.org/Mapbender_Tutorial_en">Mapbender tutorial (english)</a></p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <ul id="breadcrumbs">
+            <li class="right" style="margin-right: 10px">
+              <a href="genindex.html" title="General Index"
+                 >index</a></li>
+            <li class="right" >
+              <a href="mapfish_quickstart.html" title="MapFish Quickstart"
+                 >next</a> |</li>
+            <li class="right" >
+              <a href="grass_quickstart.html" title="GRASS GIS Quickstart"
+                 >previous</a> |</li>
+        <li><a href="quickstart.html">OSGeo-Live v4.0 documentation</a> &raquo;</li>
+        <li><a href="#">Mapbender Quickstart</a></li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      &copy; Copyright 2010, OSGeo.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.4.
+    </div>
+  </body>
+</html>

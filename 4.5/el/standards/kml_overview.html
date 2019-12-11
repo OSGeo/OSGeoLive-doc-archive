@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>KML Encoding Standard (KML) &mdash; OSGeo-Live v4.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <span class="target" id="kml-overview"></span><a class="reference external image-reference" href="../../_images/logo-OGC-left.png"><img align="right" alt="OGC logo" class="align-right" src="../../_images/logo-OGC-left.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference external image-reference" href="../../_images/logo-OGC-right.png"><img align="right" alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="kml-encoding-standard-kml">
+<h1>KML Encoding Standard (KML)<a class="headerlink" href="#kml-encoding-standard-kml" title="Permalink to this headline">¶</a></h1>
+<p>Το πρότυπο κωδικοποίησης KML του OGC είναι μια γλώσσα XML που επικεντρώνεται στην οπτικοποίηση γεωγραφικής πληροφορίας, συμπεριλαμβανομένων σημειώσεων πάνω στους χάρτες και τις εικόνες. Η γεωγραφική οπτικοποίηση περιλαμβάνει όχι μόνο την παρουσίαση γραφικών δεδομένων πάνω στην υδρόγειο, αλλά επίσης τον έλεγχο της πλοήγησης του χρήστη με την έννοια του που να πάει και που να κοιτάξει για ότι ψάχνει. (<a class="reference external" href="http://www.opengeospatial.org/standards/KML">http://www.opengeospatial.org/standards/KML</a>)</p>
+<a class="reference external image-reference" href="../../_images/kml.jpg"><img alt="KML in Context" src="../../_images/kml.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>Το 2006, η Google κατέθεσε την KML (παλιότερα γνωστή και ώς Keyhole Markup Language) στο OGC με την προοπτική να γίνει επίσημο πρότυπο. Η KML ήταν το πρώτο παράδειγμα ενός προτύπου που ήταν ήδη ολοκληρωμένο πριν κατατεθεί στην διαδικασία προτυποποίησης του OGC και γι αυτό το λόγο το OGC μετέτρεψε τους κανόνες έγκρισης προτύπων ώστε να μπορεί να στεγάσει και πρότυπα τα οποία έχουν δημιουργηθεί εξωτερικά του OGC και στη συνέχεια στέλνονται στο OGC για έγκριση. Για αυτό το πρότυπο υπήρχαν 4 στόχοι:</p>
+<p>Να υπάρχει ένα διεθνές πρότυπο γλώσσας για έκφραση γεωγραφικών σημειώσεων και οπτικοποίησης σε μελλοντικούς διαδικτυακούς χάρτες (2D) και περιηγητές της γης (3D).
+Η KML να εναρμονιστεί με τις καλύτερες διεθνείς πρακτικές και πρότυπα, και κατά συνέπεια να τύχει μεγαλύτερης αποδοχής και χρήσης σε διαδικτυακές εφαρμογές με στόχο τη διαλειτουργικότητα.
+Οτι η κοινότητα του OGC και της KML θα συνεργαστούν για να διασφαλίσουν οτι η κοινότητα ανάπτυξης της KML συμμετέχει ενεργά στη διαδικασία προτυποποίησης αλλά και ότι η κοινότητα της  KML θα ενημερώνεται για εξελήξεις και προβλήματα που προκύπτουν.
+Ότι οι διαδικασίες του OGC θα χρησιμοποιηθούν για να παρέχουν στη διαχείρηση κύκλου ζωής των μελοντικών προτύπων KML, εξασφαλίζοντας θέματα όπως η συμβατότητα με παλιότερες εκδόσεις.</p>
+<p>Η KML εγκριθηκε σαν πρότυπο του OGC το 2008 επειδή η επιτροπή πίστευε πως το πρότυπο αυτό θα βοηθούσε στην περαιτέρω βελτίωση της διαλειτουργικότητας και ανταλαγής πληροφορίας μέσω διαδικτυακών εφαρμογών σε περιηγητές γης και χάρτες.</p>
+<p>Η KML είναι συμπληρωματική στα περισσότερα πρότυπα του OGC συμπεριλαμβανομένης της GML (Geography Markup Language), του WFS (Web Feature Service) και του WMS (Web Map Service). Σήμερα, η KML (v2.1) ενσωματώνει στοιχεία γεωμετρίας της GML (έκδοση 2.1.2). Αυτά τα στοιχεία περιλαμβάνουν τα σημεία, τις σειρές γραμμών, τους γραμμικούς δακτυλίους και τα πολύγωνα.</p>
+<div class="section" id="id1">
+<h2>Δείτε επίσης<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="gml_overview.html"><em>Geography Markup Language (GML)</em></a></li>
+<li><a class="reference external" href="wfs_overview.html"><em>Web Feature Service (WFS)</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i>&copy; OSGeo Foundation and LISAsoft 2011... <a href="../disclaimer.html">Disclaimer</a></i></span>
+
+  </body>
+</html>

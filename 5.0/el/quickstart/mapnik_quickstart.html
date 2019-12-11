@@ -1,0 +1,155 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης Mapnik &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-mapnik.png" id="mapnik-quickstart"><img alt="project logo" class="align-right" id="mapnik-quickstart" src="../../_images/logo-mapnik.png" style="width: 192.0px; height: 56.0px;" /></a>
+<div class="section" id="mapnik">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης Mapnik<a class="headerlink" href="#mapnik" title="Permalink to this headline">¶</a></h1>
+<p>Το Mapnik είναι ένα πακέτο για την ανάπτυξη χαρτογραφικών εφαρμογών. Πάνω απ&#8217;όλα με το Mapnik φτιάχνουμε όμορφους χάρτες. Είναι εύκολα επεκτάσιμο και κυρίως βολικό τόσο για απλή όσο και δικτυακή χρήση.</p>
+<div class="section" id="mapnik-python">
+<h2>Το Mapnik και η Python<a class="headerlink" href="#mapnik-python" title="Permalink to this headline">¶</a></h2>
+<p>Το Mapnik και τα εργαλεία python είναι εγκατεστημένα και έτοιμα να χρησιμοποιηθούν για προγραμματισμό.</p>
+<p>Η δημιουργία χαρτών στην python με το Mapnik είναι πανεύκολη. Ενεργοποιείστε έναν μεταγλωτιστή της python και εκτελέστε τα ακόλουθα:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mapnik</span><span class="o">,</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">mapnik</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">style</span> <span class="o">=</span> <span class="s">&#39;/usr/local/share/mapnik/demo/population.xml&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapnik</span><span class="o">.</span><span class="n">load_map</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">style</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">zoom_all</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapnik</span><span class="o">.</span><span class="n">render_to_file</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="s">&#39;map.png&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;xdg-open map.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Στον παραπάνω κώδικα προϋποθέτεθ ένα XML stylesheet το οποίο να είναι αναγνώσιμο από το Mapnik,
+να ορίζει τα επίπεδα, να διαβάζει τα δεδομένα και επιπλέον να τα εφαρμόζει σε αυτά. Μπορείτε να
+φτιάξετε ένα από το περιβάλλον QGIS με το πρόσθετο Quantumnik: <a class="reference external" href="http://bitbucket.org/springmeyer/quantumnik/">http://bitbucket.org/springmeyer/quantumnik/</a></p>
+</div>
+</div>
+<div class="section" id="mapnik-openlayers">
+<h2>Το Mapnik και τα OpenLayers<a class="headerlink" href="#mapnik-openlayers" title="Permalink to this headline">¶</a></h2>
+<p>Είναι επιπρόσθετα διαθέσιμη μία εφαρμογή επίδειξης, η οποία παρουσιάζει την χρήση του Mapnik στην ανάρτηση υποχαρτών(tiles) σε έναν διαδυκτιακό χάρτη OpenLayers στην μορφή OSM/Google.</p>
+<p>Η εφαρμοφή αυτή χρησιμοποιεί την μηχανή &#8220;TileLite&#8221; η οποία είναι σχεδιασμένη για το Mapnik</p>
+<blockquote>
+<ul class="simple">
+<li>Περισσότερα για το TileLite στην διεύθυνση: <a class="reference external" href="http://bitbucket.org/springmeyer/tilelite/">http://bitbucket.org/springmeyer/tilelite/</a></li>
+</ul>
+</blockquote>
+<p>Για να εκτελέσετε την επίδειξη ακολουθείστε τα ακόλουθα βήματα:</p>
+<blockquote>
+<ol class="arabic simple">
+<li>Click <em class="menuselection">Desktop ‣ Spatial Tools ‣ Start Mapnik &amp; TileLite</em></li>
+</ol>
+<blockquote>
+<ul>
+<li><p class="first">Ο server θα ξεκινήσει σε ένα τερματικό το οποίο παραμένει ανοιχτό και εμφανίζει τυχόν μηνύματα εκσφαλμάτωσης.</p>
+</li>
+<li><p class="first">Αν δεν εμφανιστεί το τερματικό θα πρέπει να επαναεγκατασταθεί το TileLite και να εκκινηθεί ο sever από την γραμμή εντολών:</p>
+<div class="highlight-python"><pre>$ sudo easy_install tilelite
+$ liteserv.py /usr/local/share/mapnik/demo/population.xml</pre>
+</div>
+</li>
+</ul>
+</blockquote>
+<ol class="arabic simple">
+<li>Βεβαιωθείτε οτι ο server λειτουργεί επισκοπτόμενοι την σελίδα του TileLite στην διεύθυνση <a class="reference external" href="http://localhost:8000">http://localhost:8000</a></li>
+<li>Στην συνέχεια επικσεφτείτε το παράδειγμα του TileLite OpenLayers &#8220;World Population&#8221;:</li>
+</ol>
+<blockquote>
+<ul class="simple">
+<li>στο αρχείο:///usr/local/share/mapnik/demo/openlayers.html</li>
+</ul>
+</blockquote>
+</blockquote>
+</div>
+<div class="section" id="id1">
+<h2>Τεκμηρίωση<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Εγχειρίδια Mapnik</p>
+<p>Ακολουθείστε τον σύνδεσμο <a class="reference external" href="http://trac.mapnik.org/wiki/MapnikTutorials">tutorials</a> για να μάθετε περισσότερα για το Mapnik.</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">Εξερευνήστε τα αρχεία στο DVD</p>
+<p>Δείτε τα ακόλουθα αρχεία <a class="reference external" href="file:///usr/local/share/mapnik/">files</a> σε αυτό το DVD.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

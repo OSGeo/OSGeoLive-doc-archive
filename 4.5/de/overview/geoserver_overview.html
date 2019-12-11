@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GeoServer &mdash; OSGeo-Live v4.1 documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '4.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live v4.1 documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://geoserver.org/display/GEOS/Welcome" id="geoserver-overview"><img align="right" alt="project logo" class="align-right" src="../../_images/logo-GeoServer.png" style="width: 200.0px; height: 47.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org/incubator/process/principles.html"><img align="right" alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_incubation.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="geoserver">
+<h1>GeoServer<a class="headerlink" href="#geoserver" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="internet-dienste">
+<h2>Internet Dienste<a class="headerlink" href="#internet-dienste" title="Permalink to this headline">¶</a></h2>
+<p>GeoServer ist ein WebServer, der es ermöglicht Karten und Daten verschiedener Formate Standardanwendungen wie Web Browsern und Desktop GIS Anwendungen bereit zu stellen. D.h., dass Sie Ihre räumlichen Daten in nahezu jedem <a class="reference external" href="http://docs.geoserver.org/stable/en/user/data/index.html">Format</a> das sie bevorzugen vorhalten können. Ihre Anwender dagegen müssen keine Kenntnisse von Geodaten haben. Im einfachsten Fall benötigen die Anwender lediglich einen Browser, um Ihre Daten nach Ihren Wünschen anschauen zu können.</p>
+<p>GeoServer ist die Referenzimplementierung des <a class="reference external" href="http://www.opengeospatial.org">Open Geospatial
+Consortium</a> (OGC) <a class="reference external" href="http://www.opengeospatial.org/standards/wfs">Web Feature
+Service</a> (WFS) und <a class="reference external" href="http://www.opengeospatial.org/standards/wcs">Web
+Coverage Service</a> (WCS)
+Standards, außerdem als hoch performant zertifizierter <a class="reference external" href="http://www.opengeospatial.org/standards/wms">Web Map
+Service</a> (WMS).
+GeoServer stellt eine Kernkomponente räumlicher Webanwendungen dar.</p>
+<a class="reference external image-reference" href="../../_images/geoserver.gif"><img align="right" alt="Screen Shot of GeoServer" class="align-right" src="../../_images/geoserver.gif" style="width: 482.4px; height: 330.0px;" /></a>
+<div class="section" id="kernfunktionen">
+<h3>Kernfunktionen<a class="headerlink" href="#kernfunktionen" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><strong>Server Daten verschiedener Datenquellen:</strong></dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Vektor</dt>
+<dd><ul class="first last simple">
+<li>Shapes, externe WFS</li>
+<li>PostGIS, ArcSDE, DB2, Oracle Spatial, MySql, SQL Server</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Raster</dt>
+<dd><ul class="first last simple">
+<li>GeoTiff, JPG and PNG (mit world file), Bildpyramiden, GDAL Formate, Image Mosaic, Oracle GeoRaster</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt><strong>Daten werden als sichere und schnelle Bilder über das WMS Protokoll bereitgestellt:</strong></dt>
+<dd>Da die Daten als Bild ausgegeben werden, sind Ihre Daten absolut abgesichert und verborgen. Abgesehen davon, dass Ihre Daten abdigitalisiert werden könnten, gibt es keine Möglichkeit, Ihre Daten zu stehlen.
+Die Darstellung jeder Kartenebene kann über SLD kontrolliert werden. SLD erlaubt es, Objekte farblich differenziert darzustellen und zu beschriften. Durch Kombination dieser Darstellungsregeln mit OGC Filtern kann eine maßstabsabhängige Darstellung erfolgen, bei der beim Zoom in die Karte mehr Details angezeigt werden. Beschriftungsverdrängung, Gruppierung, Priorisierung sind ebenfalls implemetiert.</dd>
+<dt><strong>Über das WFS Protokoll können Vektordaten an den Client geschickt werden:</strong></dt>
+<dd>Ein WFS Client kann Daten anfordern und zur Anzeige, Datenanalyse und für andere Oberationen nutzen. Liegt eine Authorisierung vor so kann der Benutzer Daten modifizieren und zurück an den Server schicken und mit Hilfe des WFS-T Protokolls aktualisieren.
+Die Daten können als GML (compressed) sowie in anderen Standardformaten wie Shape und JSON weitergegeben werden.</dd>
+<dt><strong>Werte von Rasterdaten können an den Client über das WCS Protokoll geschickt werden:</strong></dt>
+<dd>Ein GIS CLient kann die aktuellen Rasterdaten für den Einsatz in räumlichen Analysen anfordern. This allows a user to create applications which can model the process described by your data.</dd>
+<dt><strong>On-the-fly Umprojektion:</strong></dt>
+<dd>GeoServer unterstützt die Mehrzahl der EPSG Projektionen und kann Daten in jedes dieser Projektionssysteme umprojezieren. Hierdurch können Anwendungen mit begrenzter Umprojektionsunterstützung die Last auf den Server verlagern.</dd>
+<dt><strong>WMS Kachelung</strong></dt>
+<dd><a class="reference external" href="http://geowebcache.org/">GeoWebCache</a> ist ein WMS Kachelungs-Client. GeoWebCache fungiert als Proxy Server zwischen einem Karten-Client und einem Karten-Server, wobei Karten beim Anfordern gespeichert werden, redundante Anfragen werden umgangen und es wird ein großer Anteil der Prozessierungszeit eingespart. GeoWebCache wurde in GeoServer integriert.</dd>
+</dl>
+</div>
+<div class="section" id="implementierte-standards">
+<h3>Implementierte Standards<a class="headerlink" href="#implementierte-standards" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Unterstützung zahlreicher Open Geospatial Consortium  (OGC) Standards</li>
+<li>WMS, transactional WFS, WCS, Filter Encoding, SLD, GML</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h3>
+<p><strong>Webseite:</strong> <a class="reference external" href="http://geoserver.org/display/GEOS/Welcome">http://geoserver.org/display/GEOS/Welcome</a></p>
+<p><strong>Lizenz:</strong> GNU General Public License (GPL) version 2</p>
+<p><strong>Software Version:</strong> 2.1</p>
+<p><strong>Unterstützte Betriebssysteme:</strong> Alle Java 1.5 Plattformen: - Windows, Linux, Mac</p>
+<p><strong>API Schnittstellen:</strong> WMS, WFS, WCS, REST</p>
+<p><strong>Support:</strong> <a class="reference external" href="http://geoserver.org/display/GEOS/Commercial+Support">http://geoserver.org/display/GEOS/Commercial+Support</a></p>
+</div>
+<div class="section" id="schnellstart">
+<h3>Schnellstart<a class="headerlink" href="#schnellstart" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../quickstart/geoserver_quickstart.html">Schnellstart Dokumentation</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i>&copy; OSGeo Foundation and LISAsoft 2011... <a href="../disclaimer.html">Disclaimer</a></i></span>
+
+  </body>
+</html>
