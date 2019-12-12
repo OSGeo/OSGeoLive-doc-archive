@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GeoServer Quickstart &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <img alt="project logo" class="align-right" id="geoserver-quickstart" src="../../_images/logo-GeoServer.png" />
+<div class="section" id="id1">
+<h1>GeoServer Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>GeoServer es un servidor de mapas (y datos) para su utilización en aplicaciones
+cliente, escrito en java.</p>
+<p>Esta guía de inicio rápido describe como:</p>
+<blockquote>
+<ul class="simple">
+<li>agregar origenes de datos vectoriales y raster a GeoServer</li>
+<li>aplicar color a las entidades gráficas usando estilos</li>
+<li>testear las capas en un mapa web simple</li>
+<li>aprender acerca de los clientes que pueden desplegar sus mapas</li>
+</ul>
+</blockquote>
+<div class="section" id="iniciar-gs">
+<h2>Iniciar GeoServer<a class="headerlink" href="#iniciar-gs" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Seleccione el ícono <em class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</em></li>
+<li>La aplicación tardará unos segundos en iniciar</li>
+<li>Vaya a la pagina web de GeoServer en <a class="reference external" href="http://localhost:8082/geoserver/web">http://localhost:8082/geoserver/web</a></li>
+</ol>
+<img alt="../../_images/geoserver-login.png" class="align-left" src="../../_images/geoserver-login.png" style="width: 90%;" />
+</div>
+<div class="section" id="primeras-vistas">
+<h2>Primeras Vistas<a class="headerlink" href="#primeras-vistas" title="Permalink to this headline">¶</a></h2>
+<p>Cuando abra por primera vez la pagina de GeoServer vera la pantalla de arriba,
+primero necesita loguearse usando el usuario admin y la password geoserver.
+Entonces verá la <em>página de administración</em></p>
+<img alt="../../_images/geoserver-welcome.png" class="align-left" src="../../_images/geoserver-welcome.png" style="width: 90%;" />
+<p>El enlace <strong>Previsualización de Capas</strong> en el menú de la izquierda le permite
+previsualizar los layer que están cargados en el servidor.</p>
+<img alt="../../_images/geoserver-layerpreview.png" class="align-left" src="../../_images/geoserver-layerpreview.png" style="width: 90%;" />
+<p>Desplacese hasta el final de la página y haga click en el enlace <strong>OpenLayers</strong>
+en la fila <strong>tiger-ny</strong>. Esto abrirá una nueva ventana con una previsualización
+de algunos de los datos de ejemplo.</p>
+<img alt="../../_images/geoserver-preview.png" class="align-left" src="../../_images/geoserver-preview.png" style="width: 90%;" />
+<p>Puede hacer zoom en el mapa de tres formas:</p>
+<blockquote>
+<ul class="simple">
+<li>haciendo click en la barra de zoom de la izquiera, cuanto mas arriba mayor sera la ampliación.</li>
+<li>usando la rueda de scroll del mouse (si tiene una), hacia arriba se acerca y hacia abajo se aleja.</li>
+<li>definiendo un rectangulo sobre el mapa mientras presiona la <tt class="kbd docutils literal"><span class="pre">tecla</span> <span class="pre">shift</span></tt> - esto hara zoom al rectangulo seleccionado (o lo mas aproximado que entre en la pantalla).</li>
+</ul>
+</blockquote>
+<ol class="arabic simple">
+<li>Experimente con esta vista y vea tambien la previsualización de las otras capas. Cuando se sienta cómodo visualizando datos puede continuar agregando nuevos datos.</li>
+</ol>
+</div>
+<div class="section" id="cargando-datos">
+<h2>Cargando Datos<a class="headerlink" href="#cargando-datos" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">No podrá realizar los siguientes pasos si esta ejecutando
+desde un sistema de archivos de <strong>solo lectura</strong> (como el DVD).
+Necesita instalar GeoServer desde el DVD en su disco rígido o crear
+un sistema basado en un pen drive USB.</p>
+</div>
+<p>En este ejemplo vamos a usar el conjunto de datos <a class="reference internal" href="../overview/naturalearth_overview.html"><em>Natural Earth</em></a>
+que está incluido en el Live-DVD (<tt class="file docutils literal"><span class="pre">/usr/local/share/data/natural_earth/</span></tt>).</p>
+<p>Primero necesitamos copiar los datos al directorio de datos de GeoServer
+(<tt class="file docutils literal"><span class="pre">/usr/lib/geotools-2.0.2/data_dir/data</span></tt>). Hemos creado un directorio
+llamado <tt class="file docutils literal"><span class="pre">naturalearth</span></tt> utilizando la linea de comandos, pero se puede
+hacer lo mismo desde el administrador de archivos si lo prefiere.</p>
+<div class="highlight-python"><pre>cd /usr/lib/geotools-2.0.2/data_dir/data
+mkdir naturalearth
+cp /usr/local/share/data/natural_earth/* naturalearth</pre>
+</div>
+<p>Ahora necesitamos crear un Almacén de datos para nuestros datos. En la página de
+administración de GeoServer vaya a  <em class="guilabel">Almacenes de datos</em> y haga click en
+<em class="guilabel">Agregar nuevo almacén</em>. Verá la siguiente página:</p>
+<div class="figure align-center">
+<img alt="../../_images/geoserver-newstore.png" src="../../_images/geoserver-newstore.png" style="width: 90%;" />
+<p class="caption"><em>La página Nuevo origen de datos</em></p>
+</div>
+<p>Seleccione <em class="guilabel">Directory of spatial files</em>, y verá lo siguiente:</p>
+<div class="figure align-center">
+<img alt="../../_images/geoserver-new-vector.png" src="../../_images/geoserver-new-vector.png" />
+<p class="caption"><em>Completando la página Nuevo origen de datos vectoriales</em></p>
+</div>
+<p>Escriba un nombre para el almacén de datos - Usamos <em>Natural Earth</em> y completamos
+la URL al conjunto de datos - en este caso <tt class="file docutils literal"><span class="pre">data/naturaleath</span></tt>. La URL es
+relativa al directorio de datos de GeoServer. Presione <em class="guilabel">Guardar</em>.</p>
+<div class="figure align-center">
+<img alt="../../_images/geoserver-naturalearth.png" src="../../_images/geoserver-naturalearth.png" style="width: 100%;" />
+<p class="caption"><em>El almacén de datos Natural Earth</em></p>
+</div>
+<p>Presione <em class="guilabel">publicar</em> en la fila de uno de las capas para finalizar la
+incorporación de datos. Esto lo llevará a la página <em>Capas</em>:</p>
+<div class="figure align-center">
+<img alt="../../_images/geoserver-publish.png" src="../../_images/geoserver-publish.png" style="width: 90%;" />
+<p class="caption"><em>La página de publicación de capas</em></p>
+</div>
+<p>A medida que baje por la pagina verá que GeoServer ha llenado varios campos por usted.
+Cuando llegue a <em class="guilabel">Coordinate Reference System</em>
+podrá ver que en el campo <em>Native SRS</em> dice UNKNOWN
+Necesitará completar el siguiente campo (<em>declared SRS</em>) para asegurarse que GeoServer
+sabe donde se localizan los datos. Por el momento confíe en nosotros y escriba
+epsg:4326 en ese campo, y si no confía vaya a <cite>http://prj2epsg.org/search</cite> y copie
+el texto que ve cuando hace click junto a &#8220;UNKNOWN&#8221;.
+Haga click en <em class="guilabel">Calcular desde los datos</em> y <em class="guilabel">Calcular a
+partir de los límites nativos</em> para completar los Bounding Boxes. Finalmente
+presione <em class="guilabel">Guardar</em> y habrá publicado su primera capa.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Si visualiza esta capa en la previsualización de capas, no se verá muy
+atractiva, pero es solo el estilo predeterminado. En la siguiente sección
+veremos como producir un estilo mejorado.</p>
+</div>
+<div class="section" id="aplicando-estilos">
+<h3>Aplicando estilos<a class="headerlink" href="#aplicando-estilos" title="Permalink to this headline">¶</a></h3>
+<p>Para aplicar un estilo a un conjunto de datos de una capa, GeoServer usa un estándar
+OGC llamado Descriptores de capas estilizadas - Styled Layer Descriptors (SLD).
+Estos descriptores se representan como archivos XML que describen las reglas que
+se utilizan para aplicar varios simbolizadores a los datos.</p>
+<p>Para empezar, estilizamos los conjuntos de datos Land y Ocean. Se puede crear un
+archivo SLD utilizando un sencillo editor de textos, pero es mejor usar un editor
+gráfico. Hay varias opciones para ello, pero nos gusta usar uDig (<a class="reference external" href="http://udig.refractions.net/">http://udig.refractions.net/</a>)
+ya que permite abrir los archivos shape directamente y aplicarles estilos simples
+utilizando una interfase gráfica, y también tiene un editor simple para modificar
+el XML si es necesario.</p>
+<div class="section" id="usando-ug-para-crear-estilos-simples">
+<h4>Usando uDig para crear estilos simples<a class="headerlink" href="#usando-ug-para-crear-estilos-simples" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Para mas detalles sobre como usar uDig ver <a class="reference internal" href="udig_quickstart.html"><em>Guía de inicio raṕido uDig</em></a></p>
+</div>
+<p>Una vez abierto uDig y agregados los archivos shape (usando el botón add data
+que está arriba a la izquierda). Arrastrar las tablas 10m_land y 10m_ocean
+en la ventana de mapas. uDig aplica automáticamente un estilo (para que se puedan visualizar los datos).</p>
+<div class="figure align-center">
+<img alt="../../_images/geoserver-udig_startup.png" src="../../_images/geoserver-udig_startup.png" style="width: 90%;" />
+<p class="caption"><em>Estilos predeterminados en UDig</em></p>
+</div>
+<p>Obviamente un océano anaranjado no se ve bien (aunque la tierra verde es aceptable). Asi que  en <a class="reference internal" href="#layer-list-es"><em>Layer list</em></a> seleccione el botón de estilos (se ve
+como la paleta de un artista).</p>
+<div class="figure align-center" id="layer-list-es">
+<img alt="../../_images/geoserver-layer-chooser.png" src="../../_images/geoserver-layer-chooser.png" />
+<p class="caption"><em>La ventana de lista de capas (Layer List)</em></p>
+</div>
+<p>Esto abrirá el panel de estilos <a class="reference internal" href="#style-pane-es"><em>Style Pane</em></a> - en la ventana se
+puede seleccionar fácilmente un buen azul para los oceanos haciendo click sobre
+el rectángulo de color junto a la etiqueta relleno (fill) y eligiendo de la paleta
+de colores que ofrece. También se puede incrementar la opacidad hasta el 100%
+para que el color se vea mejor.</p>
+<div class="figure align-center" id="style-pane-es">
+<img alt="../../_images/geoserver-style-pane.png" src="../../_images/geoserver-style-pane.png" />
+<p class="caption"><em>El panel de estilos (Style Pane)</em></p>
+</div>
+<p>Una vez listo, hacer click en <tt class="docutils literal"><span class="pre">OK</span></tt> y uDig mostrará los cambios.</p>
+<div class="figure align-center">
+<img alt="../../_images/geoserver-blue-ocean.png" src="../../_images/geoserver-blue-ocean.png" style="width: 90%;" />
+<p class="caption"><em>Océanos Azules</em></p>
+</div>
+<p>Finalmente preferimos un color mas significativo para la tierra que el verde
+de manera que repetimos los pasos explicados para cambiar el color de la capa land.
+Ninguno de los colores predeterminados nos parece adecuado, asi que vamos a la sección
+<tt class="docutils literal"><span class="pre">define</span> <span class="pre">custom</span> <span class="pre">colors</span></tt> para crear uno que nos guste.</p>
+<div class="figure align-center">
+<img alt="../../_images/geoserver-custom-colour.png" src="../../_images/geoserver-custom-colour.png" />
+<p class="caption"><em>Definiendo un color mas agradable para la tierra</em></p>
+</div>
+<p>Esto da como resultado un mapa básico del mundo que se ve bien</p>
+<div class="figure align-center">
+<img alt="../../_images/geoserver-basic-world.png" src="../../_images/geoserver-basic-world.png" style="width: 90%;" />
+<p class="caption"><em>Un mapa básico del mundo</em></p>
+</div>
+</div>
+<div class="section" id="agregando-el-estilo-a-gs">
+<h4>Agregando el estilo a GeoServer<a class="headerlink" href="#agregando-el-estilo-a-gs" title="Permalink to this headline">¶</a></h4>
+<p>Ahora necesitamos transferir estos estilos a GeoServer - en la ventana de estilos hay
+un botón de exportacion que permite guardar el archivo SLD que define nuestro
+estilo. Una vez que hemos guardado los dos estilos, podemos ir a la página de
+administración de GeoServer otra vez y seleccionar <tt class="docutils literal"><span class="pre">Estilos</span></tt> (al final de la sección
+<tt class="docutils literal"><span class="pre">Datos</span></tt>). Entonces seleccionamos el enlace <tt class="docutils literal"><span class="pre">Agregar</span> <span class="pre">nuevo</span> <span class="pre">estilo</span></tt>. Al final
+de la página hay un campo para ingresar el archivo y un botón para explorar.
+Haciendo click en esto nos permite buscar en el disco rígido los archivos que
+acabamos de guardar. Una vez que encontramos lo que queremos, hacemos click en el
+link para subir el archivo (junto al boton de explorar) y una copia de esos archivos aparece en el editor.</p>
+<div class="figure align-center">
+<img alt="../../_images/geoserver-add-style.png" src="../../_images/geoserver-add-style.png" style="width: 90%;" />
+<p class="caption"><em>Agregando un estilo a GeoServer</em></p>
+</div>
+</div>
+</div>
+<div class="section" id="agregando-el-estilo-a-la-capa">
+<h3>Agregando el estilo a la capa<a class="headerlink" href="#agregando-el-estilo-a-la-capa" title="Permalink to this headline">¶</a></h3>
+<p>Haga click en el enlace <em class="guilabel">Capas</em> en el menu de la izquierda de la ventana
+de GeoServer. Haga click en la capa (por ejemplo: <em>10m_land</em>), seleccione la pestaña
+<em class="guilabel">Publicar</em> y cambie el campo <em class="guilabel">Estilo Predeterminado</em>
+al nombre del estilo subido en la seccion anterior. Ahora puede ir a la pagina de
+previsualizacion para ver como se ve.</p>
+<p>Hay archivos de estilo de ejemplo para todas las capas del ejemplo Natural Earth
+en <tt class="file docutils literal"><span class="pre">/usr/local/share/geoserver</span></tt>.</p>
+</div>
+</div>
+<div class="section" id="clientes-para-capas-wms">
+<h2>Clientes para capas WMS<a class="headerlink" href="#clientes-para-capas-wms" title="Permalink to this headline">¶</a></h2>
+<p>Existe una gran variedad de clientes que pueden utilizar las capas WMS que está
+sirviendo desde GeoServer. Esta es una lista de algunos de ellos:</p>
+<blockquote>
+<ul class="simple">
+<li><a class="reference internal" href="../overview/udig_overview.html"><em>uDig</em></a></li>
+<li><a class="reference internal" href="../overview/openlayers_overview.html"><em>OpenLayers</em></a></li>
+<li><a class="reference internal" href="../overview/atlasstyler_overview.html"><em>Atlas Styler</em></a></li>
+<li><a class="reference internal" href="../overview/mapbender_overview.html"><em>MapBender</em></a></li>
+</ul>
+</blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

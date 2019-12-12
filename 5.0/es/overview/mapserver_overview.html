@@ -1,0 +1,156 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MapServer &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://mapserver.org/" id="mapguide-overview"><img alt="project logo" class="align-right" src="../../_images/logo-mapserver-new.png" style="width: 245.05px; height: 65.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="mapserver">
+<h1>MapServer<a class="headerlink" href="#mapserver" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="servicio-web">
+<h2>Servicio Web<a class="headerlink" href="#servicio-web" title="Permalink to this headline">¶</a></h2>
+<p>MapServer es un motor de renderización de datos geográficos <a class="reference external" href="http://www.opensource.org">Open Source</a> escrito en C. Más allá de la navegación por datos GIS, MapServer permite crear &#8220;mapas de imágenes geográficas&#8221;, es decir, mapas de contenidos para los usuarios. Por ejemplo, en Minnesota DNR <a class="reference external" href="http://www.dnr.state.mn.us/maps/compass.html">Recreation Compass</a> se proporciona a los usuarios más de 10.000 páginas Web, informes y mapas, a través de una única aplicación. La misma aplicación hace de &#8220;motor de mapas&#8221;, proporcionando los contenidos spaciales a otras partes del sitio Web que las necesitan.</p>
+<p>MapServer fué desarrollado inicialmente por el proyecto <em>ForNet</em> de la Universidad de Minnesota (UMN) en cooperación con la NASA, y el Departamento de Recursos Naturales de Minnesota, el MNDR (Minnesota Department of Natural Resources). Más tarde, se hosteó en el proyecto TerraSIP project, un proyecto esponsorizado por la NASA, entre la UMN y un consorcio de actores con intereses en gestión del territorio.</p>
+<p>MapServer es ahora un proyecto de <a class="reference external" href="http://www.osgeo.org">OSGeo</a>, y lo mantiene un grupo creciente de desarrolladores (cerca de 20) distribuidos por todo el mundo. Un diverso grupo de organizaciones dan soporte al proyecto, proporcionando mejoras y mantenimiento, y se administra dentro de OSGeo por el <em>MapServer Project Steering Committee</em>, formado por desarrolladores y otros contribuidores.</p>
+<div class="section" id="caracteristicas-clave">
+<h3>Características clave<a class="headerlink" href="#caracteristicas-clave" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/mapserver.png"><img alt="screenshot" class="align-right" src="../../_images/mapserver.png" style="width: 512.0px; height: 383.5px;" /></a>
+<ul class="simple">
+<li>Advanced cartographic output<ul>
+<li>Dibujado de <em>features</em> dependientes de la escala y ejecución de aplicación</li>
+<li>Etiquetación de <em>Features</em>,  incluyendo mediación de colisión de etiquetas</li>
+<li>Salida conducida por plantillas totalment customizables</li>
+</ul>
+</li>
+<li>Fuentes TrueType<ul>
+<li>Automatización de elementos de mapa (scalebar, reference map, and legend)</li>
+<li>Mapas temáticos utilizano clases basadas en lógica de programación o en expresiones regulares</li>
+</ul>
+</li>
+<li>Soporte para lenguajes de <em>scripting</em> y entornos de desarrollo populares<ul>
+<li>PHP, Python, Perl, Ruby, Java, y .NET</li>
+</ul>
+</li>
+<li>Soporte Multi-plataforma<ul>
+<li>Linux, Windows, Mac OS X, Solaris, y mas</li>
+</ul>
+</li>
+<li>Multitud de formatos raster y vectoriales<ul>
+<li>TIFF/GeoTIFF, EPPL7, y muchos otros vía GDAL</li>
+<li>ESRI shapefiles, PostGIS, ESRI ArcSDE, Oracle Spatial, MySQL y OGR</li>
+</ul>
+</li>
+<li>Soporte de proyecciones de Mapa<ul>
+<li>Proyecciones &#8216;al vuelo&#8217; con capacidad para más de 1000 proyecciones proporcionadas por la librería Proj.4</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="standares-implementados">
+<h3>Standares Implementados<a class="headerlink" href="#standares-implementados" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Soporta numerosos estándares  (OGC)<ul>
+<li>WMS (cliente/servidor), WFS no-transaccional (cliente/servidor), WMC, WCS, Filter Encoding, SLD, GML, SOS, OM</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="demo">
+<h3>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost/mapserver_demos/itasca/">Itasca</a></li>
+</ul>
+</div>
+<div class="section" id="documentacion">
+<h3>Documentación<a class="headerlink" href="#documentacion" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../../mapserver/doc/index.html">Documentación MapServer 5.6.5</a></li>
+</ul>
+</div>
+<div class="section" id="detalles">
+<h3>Detalles<a class="headerlink" href="#detalles" title="Permalink to this headline">¶</a></h3>
+<p><strong>Sitio Web:</strong> <a class="reference external" href="http://www.mapserver.org/">http://www.mapserver.org/</a></p>
+<p><strong>Licencia:</strong> <a class="reference external" href="http://mapserver.org/copyright.html#license">licencia estilo MIT</a></p>
+<p><strong>Versión Software:</strong> 5.6.5</p>
+<p><strong>Plataformas soportadas:</strong> Windows, Linux, Mac</p>
+<p><strong>Interfaces API:</strong> C, PHP, Python, Perl, Ruby, Java y .NET</p>
+<p><strong>Soporte:</strong> <a class="reference external" href="http://mapserver.org/community/">http://mapserver.org/community/</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

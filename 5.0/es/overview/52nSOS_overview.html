@@ -1,0 +1,142 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>52ºNorth SOS &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://52north.org/sos" id="nsos-overview"><img alt="project logo" class="align-right" src="../../_images/logo_52North_160.png" style="width: 200.0px; height: 68.0px;" /></a>
+<div class="section" id="onorth-sos">
+<h1>52ºNorth SOS<a class="headerlink" href="#onorth-sos" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="web-service">
+<h2>Web Service<a class="headerlink" href="#web-service" title="Permalink to this headline">¶</a></h2>
+<p>El <a class="reference external" href="../standards/sos_overview.html">Servicio de Observación de Sensores (SOS)</a>
+52ºNorth puede leer y guardar datos actuales o archivados de sensores remotos in-situ. Un sensor puede ser una cámara de un satélite o el medidor de caudal de un río.</p>
+<a class="reference internal image-reference" href="../../_images/52n_sos_test_client.png"><img alt="Pantallazos de un cliente de pruebas" class="align-right" src="../../_images/52n_sos_test_client.png" style="width: 541.0px; height: 543.0px;" /></a>
+<div class="section" id="caracteristicas">
+<h3>Características<a class="headerlink" href="#caracteristicas" title="Permalink to this headline">¶</a></h3>
+<p>La versión actual de 52ºNorth SOS (version 3.1.1) se rige por el núcleo, transacciones y partes del èrfil mejorjardo de la especificación SOS. La versión actual lleva el esquema más recieciente (versión 1.0.0) y las siguientes operaciones:</p>
+<p><strong>Operaciones del núcleo SOS</strong>:</p>
+<ul class="simple">
+<li>GetCapabilities, para hacer una petición que describa el servicio.</li>
+<li>GetObservation, para solicitar datos puros del sensor codificados en Observaciones y Medidas (O&amp;M)</li>
+<li>DescribeSensor, para solicitar metadatos sobre el sensor, codificados en un documento escrito en Lenguaje Modelo Sensor (SensorML) instance document.</li>
+</ul>
+<p><strong>Operaciones transaccionales SOS</strong>:</p>
+<ul class="simple">
+<li>RegisterSensor, para suscribirse a nuevos sensores.</li>
+<li>InsertObservation, para insertar nuevas observaciones de sensores registrados.</li>
+</ul>
+<p><strong>Operaciones SOS adicionales</strong>:</p>
+<ul class="simple">
+<li>GetResult, para facilitar consultas periódicas del sensor.</li>
+<li>GetObservationById, para obtener observaciones específicas.</li>
+<li>GetFeatureOfInterest, para solicitar el elemento final de la observación en formato GML.</li>
+<li>GetFeatureOfInterestTime, para determinar la disponibilidad temporal del sensor</li>
+</ul>
+<p><strong>Cliente</strong>:</p>
+<ul class="simple">
+<li>Un navegador proporciona consultas XML de todas las operaciones disponibles.</li>
+</ul>
+</div>
+<div class="section" id="estandares">
+<h3>Estándares<a class="headerlink" href="#estandares" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://www.ogcnetwork.net/SOS">Servicio Observación Sensor (SOS) OGC</a></li>
+</ul>
+</div>
+<div class="section" id="detalles">
+<h3>Detalles<a class="headerlink" href="#detalles" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Dirección electrónica:</strong> <a class="reference external" href="http://52north.org/communities/sensorweb/sos">http://52north.org/communities/sensorweb/sos</a></li>
+<li><strong>Licencia:</strong> GNU GPL v2.0</li>
+<li><strong>Versión del software:</strong> SOS 3.1.1</li>
+<li><strong>Plataformas en las que corre:</strong> Windows, Linux, Mac</li>
+<li><strong>Interfaces API:</strong> Java</li>
+<li><strong>Soporte Comercial:</strong> <a class="reference external" href="http://52north.org/">http://52north.org/</a></li>
+<li><strong>Comunidad:</strong> <a class="reference external" href="http://sensorweb.forum.52north.org/">http://sensorweb.forum.52north.org/</a></li>
+<li><strong>Página de la comunidad:</strong> <a class="reference external" href="http://52north.org/communities/sensorweb/">http://52north.org/communities/sensorweb/</a></li>
+</ul>
+</div>
+<div class="section" id="guia-rapida">
+<h3>Guía rápida<a class="headerlink" href="#guia-rapida" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../quickstart/52nSOS_quickstart.html">Documentación de la guía rápida</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

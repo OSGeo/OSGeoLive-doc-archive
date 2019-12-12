@@ -1,0 +1,125 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SpatiaLite &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.gaia-gis.it/spatialite/" id="spatialite-overview"><img alt="project logo" class="align-right" src="../../_images/logo-spatialite.png" style="width: 128.0px; height: 113.0px;" /></a>
+<div class="section" id="spatialite">
+<h1>SpatiaLite<a class="headerlink" href="#spatialite" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="base-de-datos-espaciales">
+<h2>Base de Datos Espaciales<a class="headerlink" href="#base-de-datos-espaciales" title="Permalink to this headline">¶</a></h2>
+<p>SpatiaLite es un motor de bases de datos <a class="reference external" href="http://www.sqlite.org/">SQLite</a> al que se han agregado funciones espaciales.</p>
+<p>SQLite es un motor muy popular, simple, robusto, fácil de usar y realmente liviano. Cada base de datos es simplemente un archivo, que puede ser copiado, comprimido, enviado a través de una red o la web sin ninguna complicación.</p>
+<p>Además, estos archivos son portables, la misma base de datos funcionará en Windows, Linux, MacOS, etc.</p>
+<a class="reference internal image-reference" href="../../_images/spatialite.jpg"><img alt="screenshot" class="align-right" src="../../_images/spatialite.jpg" style="width: 513.5px; height: 386.5px;" /></a>
+<div class="section" id="funcionalidades-principales">
+<h3>Funcionalidades Principales<a class="headerlink" href="#funcionalidades-principales" title="Permalink to this headline">¶</a></h3>
+<p>La extensión SpatialLite agrega a SQLite el soporte para datos espaciales según las especificaciones de la OGC.</p>
+<ul class="simple">
+<li>Soporta los formatos estándares WKT y WKB</li>
+<li>Implementa funciones SQL espaciales como AsText(), GeomFromText(), Area(), PointN() y alike</li>
+<li>El conjunto completo de funciones OpenGis es soportado a través de GEOS, esto incluye funciones de análisis espacial sofisticadas como Overlaps(), Touches(), Union(), Buffer() ..</li>
+<li>Tiene soporte completo para metadatos espaciales según las especificaciones OpenGis</li>
+<li>Soporta importación y exportación a archivos shape</li>
+<li>Soporta reproyección de coordenadas a través de PROJ.4 y el conjunto de parámetros geodésicos EPSG</li>
+<li>Soporta charsets locales a través de GNU libiconv</li>
+<li>Implementa un índice espacial real basado en la extensión RTree de SQLite</li>
+<li>La extensión VirtualShape permite a SQLite acceder archivos shape como tablas virtuales</li>
+<li>Por lo tanto, se pueden ejecutar consultas SQL estándar sobre archivos shape externos, sin necesidad de importarlos o convertilos</li>
+<li>La extensión VirtualText permite a SQLite acceder archivos CSV/TxtTab como tablas virtuales</li>
+<li>Por lo tanto, se pueden ejecutar consultas SQL estándar sobre archivos CSV/TxtTab externos, sin necesidad de importarlos o convertilos</li>
+<li>La interfaz gráfica permite utilizar todas estas funcionalidades de una manera amigable</li>
+</ul>
+</div>
+<div class="section" id="detalles">
+<h3>Detalles<a class="headerlink" href="#detalles" title="Permalink to this headline">¶</a></h3>
+<p><strong>Sitio Web:</strong> <a class="reference external" href="http://www.gaia-gis.it/spatialite/">http://www.gaia-gis.it/spatialite/</a></p>
+<p><strong>Licencia:</strong> MPL v1.1 and GPL v3</p>
+<p><strong>Versión del Software:</strong> 2.3.1 / 2.4 beta</p>
+<p><strong>Plataformas soportadas:</strong> Linux, Mac, Windows</p>
+<p><strong>Soporte a lenguajes de programación:</strong> C++</p>
+</div>
+<div class="section" id="guia-de-inicio-rapido">
+<h3>Guía de Inicio Rápido<a class="headerlink" href="#guia-de-inicio-rapido" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../quickstart/spatialite_quickstart.html">Guía de Inicio Rápido</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

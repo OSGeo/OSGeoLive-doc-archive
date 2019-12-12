@@ -1,0 +1,124 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SpatiaLite Quickstart &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-spatialite.png" id="spatialite-quickstart"><img alt="project logo" class="align-right" id="spatialite-quickstart" src="../../_images/logo-spatialite.png" style="width: 128.0px; height: 113.0px;" /></a>
+<div class="section" id="id1">
+<h1>SpatiaLite Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>SpatiaLite is an SQLite database engine with spatial functions added.</p>
+<p>This Quick Start describes how to open a database with the command line and the GUI application.</p>
+<div class="section" id="running-spatialite">
+<h2>Running spatialite<a class="headerlink" href="#running-spatialite" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Open a console and open a sample database with spatialite:</p>
+<div class="highlight-python"><pre>spatialite /home/user/data/spatialite/regions.sqlite
+select r.NOME_REG, a.Nome from Aeroporti a, reg2008_s r where CONTAINS( r.Geometry, a.Geometry ) order by r.NOME_REG;</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="create-a-new-database-with-spatialite-gui">
+<h2>Create a new database with spatialite-gui<a class="headerlink" href="#create-a-new-database-with-spatialite-gui" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Start spatialite-gui</li>
+<li>Select <em class="menuselection">File ‣ Creating a new SQLite DB</em></li>
+</ul>
+</div>
+<div class="section" id="running-spatialite-gis">
+<h2>Running spatialite-gis<a class="headerlink" href="#running-spatialite-gis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Run spatialite-gis</li>
+<li>Connect to /home/user/data/spatialite/regions.sqlite</li>
+</ul>
+<p>You should see a set of Airports in Italy</p>
+</div>
+<div class="section" id="things-to-try">
+<h2>Things to Try<a class="headerlink" href="#things-to-try" title="Permalink to this headline">¶</a></h2>
+<p>Here are some additional challenges for you to try:</p>
+<ul class="simple">
+<li>Inspect geometries with spatialite-gui</li>
+<li>Open and edit SpatiaLite layers in QGIS</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2>What Next?<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<p>To learn more about SpatiaLite, a starting point is the <a class="reference external" href="http://www.gaia-gis.it/spatialite/docs.html">Documentation and tutorials</a> page.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

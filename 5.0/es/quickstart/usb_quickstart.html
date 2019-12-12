@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Creating an OSGeo-Live Bootable USB flash drive &mdash; OSGeo-Live 5.0
+ Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '5.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 5.0
+ Documentation" href="../../index.html" /> 
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="creating-an-osgeo-live-bootable-usb-flash-drive">
+<span id="usb-quickstart"></span><h1>Creating an OSGeo-Live Bootable USB flash drive<a class="headerlink" href="#creating-an-osgeo-live-bootable-usb-flash-drive" title="Permalink to this headline">¶</a></h1>
+<p>Here we describe how to create a Bootable OSGeo-Live USB flash drive. Booting from a thumb drive is faster than from a DVD, and the USB drive can be configured to store data between sessions.</p>
+<p>We have only recently started testing USB drive Installers from OSGeo-Live 4.0. While we have received a lot of positive feedback, it has only had limited testing, and some people have reported not being able to boot from the USB drive.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>A 4 GB USB flash drive, if using osgeo-live-mini</li>
+<li>A 8 GB USB flash drive, if using osgeo-live</li>
+<li>An OSGeo-Live DVD or ISO image (downloaded from: <a class="reference external" href="http://live.osgeo.org/en/download.html">http://live.osgeo.org/en/download.html</a>)</li>
+</ul>
+</div>
+<div class="section" id="creating-bootable-usb-drive-from-ubuntu">
+<h2>Creating bootable USB drive from Ubuntu<a class="headerlink" href="#creating-bootable-usb-drive-from-ubuntu" title="Permalink to this headline">¶</a></h2>
+<p>Insert the USB flash drive into your computer.</p>
+<p>If using a DVD, then put the DVD into the DVD drive.</p>
+<blockquote>
+<a class="reference internal image-reference" href="../../_images/usb_select.png"><img alt="../../_images/usb_select.png" src="../../_images/usb_select.png" style="width: 302.4px; height: 420.0px;" /></a>
+</blockquote>
+<p>Select <em class="menuselection">System ‣ Administration ‣ Startup Disk Creator</em></p>
+<blockquote>
+<a class="reference internal image-reference" href="../../_images/usb_set_params.png"><img alt="../../_images/usb_set_params.png" src="../../_images/usb_set_params.png" style="width: 333.2px; height: 375.2px;" /></a>
+</blockquote>
+<p>Select the CD Drive or ISO Image.</p>
+<p>Select the USB flash drive.</p>
+<p>Select <em class="guilabel">Make Startup Disk</em></p>
+<blockquote>
+<a class="reference internal image-reference" href="../../_images/usb_installing.png"><img alt="../../_images/usb_installing.png" src="../../_images/usb_installing.png" style="width: 302.4px; height: 100.8px;" /></a>
+</blockquote>
+<p>Wait 20 minutes or so for the USB flash drive to be created.</p>
+</div>
+<div class="section" id="creating-bootable-usb-flash-drive-from-windows">
+<h2>Creating bootable USB flash drive from Windows<a class="headerlink" href="#creating-bootable-usb-flash-drive-from-windows" title="Permalink to this headline">¶</a></h2>
+<p>Insert the USB drive into your computer.</p>
+<p>Download and run the Universal USB Installer from: <a class="reference external" href="http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/">http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/</a></p>
+<blockquote>
+<img alt="../../_images/usb_penlinux_licence.gif" src="../../_images/usb_penlinux_licence.gif" />
+</blockquote>
+<p>Accept the licence terms.</p>
+<blockquote>
+<img alt="../../_images/usb_penlinux_selection.gif" src="../../_images/usb_penlinux_selection.gif" />
+</blockquote>
+<p>Step 1: Distribution: Select the xubuntu i386 distribution used for the osgeo-live image. (for OSGeo-Live 5.0, select xubuntu 10.04 Desktop i386)</p>
+<p>Step 2: Select the latest osgeo-live iso which you should have downloaded locally. Note: You will need to manually enter the path to the ISO file, as the <em class="guilabel">Browse</em> button only finds xubuntu iso files.</p>
+<p>Step 3: Select your USB flash drive</p>
+<p>Step 4: Select Persistence if you wish to remember state between sessions.</p>
+<p>Select <em class="guilabel">Create</em></p>
+<blockquote>
+<img alt="../../_images/usb_penlinux_installing.gif" src="../../_images/usb_penlinux_installing.gif" />
+</blockquote>
+<p>Wait 20 minutes or so for the OSGeo-Live USB flash drive to be created.</p>
+</div>
+<div class="section" id="set-bios-boot-order">
+<h2>Set BIOS boot order:<a class="headerlink" href="#set-bios-boot-order" title="Permalink to this headline">¶</a></h2>
+<p>Most computers are not set to boot from a USB drive by default.</p>
+<p>To achieve this, boot your computer, and hit the appropriate key when prompted to go into the BIOS (usually by pressing the &lt;Delete&gt; key or a &lt;Function Key&gt; or similar).</p>
+<p>Select to boot from the USB device.</p>
+<p>Note, that for some computers you will need to have the USB drive inserted into the computer in order to select it.</p>
+<p>Note also, the USB drive is often listed under hard drives rather than removable devices.</p>
+</div>
+<div class="section" id="run">
+<h2>Run:<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
+<p>Run as per: <a class="reference internal" href="osgeolive_quickstart.html"><em>Guía de inicio rápido OSGeo-Live</em></a></p>
+</div>
+<div class="section" id="known-issues">
+<h2>Known issues:<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Mac computers will not boot from this USB flash drive, please use the LiveDVD</li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2>See Also:<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<ul class="simple">
+<li><a class="reference internal" href="osgeolive_quickstart.html"><em>Guía de inicio rápido OSGeo-Live</em></a></li>
+<li><a class="reference internal" href="virtualbox_quickstart.html"><em>OSGeo-Live Quickstart for Virtual Box</em></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><em>Instalación de OSGeo-Live en disco duro</em></a></li>
+<li>If you have issues, please report them on this wiki page: <a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB</a> and discuss on our email list: <a class="reference external" href="http://lists.osgeo.org/mailman/listinfo/live-demo">http://lists.osgeo.org/mailman/listinfo/live-demo</a></li>
+<li>For further USB boot options, see <a class="reference external" href="http://pendrivelinux.com">http://pendrivelinux.com</a></li>
+</ul>
+</blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<div id="translations">
+		<a href="../../en/index.html">English</a> |
+		<a href="../../el/index.html">Ελληνικά</a> |
+		<a href="../../de/index.html">Deutsch</a> |
+		<a href="../../es/index.html">Español</a> |
+		<a href="../../ja/index.html">日本語</a> |
+		<a href="../../pl/index.html">Polski</a>
+	</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>
