@@ -1,0 +1,175 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <meta http-equiv="Content-Style-Type" content="text/css"/>
+        <meta http-equiv="pragma" content="no-cache"/>
+        <meta http-equiv="Expires" content="Thu, 01 Dec 1994 120000 GMT"/>
+        <title>pycsw Tester</title>
+        <style type="text/css">
+            body {
+                background-color: #ffffff;
+                font-family: arial, verdana, sans-serif;
+                text-align: left;
+                float: left;
+            }
+            .flat {
+                border: 0px;
+            }
+        </style>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.xml').change(function() {
+                    if ($(this).val() != 'none') {
+                        var arr = $(this).val().split(',');
+                        $.ajax({
+                            type: 'GET',
+                            url: arr[1],
+                            dataType: 'text',
+                            success: function(data) {
+                                $('.request').val(data);
+                                $('.server').val('../csw.py?config=' + arr[0]);
+                            }
+                        });
+                    }
+                });
+                $('.send').click(function() {
+                    $.ajax({
+                        type: 'POST',
+                        contentType: 'text/xml',
+                        url: $('.server').val(),
+                        data: $('.request').val(),
+                        dataType: 'text',
+                        success: function(data) {
+                            $('.response').val(data);
+                        },
+                        error: function(data1) {
+                            $('.response').val(data1.responseText);
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+
+
+    <body>
+        <h2 class="header">pycsw Tester</h2>
+        <hr/>
+        <h3 class="header">HTTP POST</h3>
+        <form action="#" id="tester">
+            <table>
+                <tr>
+                    <th>Request</th>
+                    <th>Response</th>
+                </tr>
+                <tr>
+                    <td>
+                        <select class="xml">
+                            <option value="none">Select a CSW Request</option>
+                            <option value="tester/suites/dif/default.cfg,suites/dif/post/GetRecords-filter-bbox.xml">suites/dif/post/GetRecords-filter-bbox.xml</option>
+                            <option value="tester/suites/dif/default.cfg,suites/dif/post/DescribeRecord.xml">suites/dif/post/DescribeRecord.xml</option>
+                            <option value="tester/suites/dif/default.cfg,suites/dif/post/GetCapabilities.xml">suites/dif/post/GetCapabilities.xml</option>
+                            <option value="tester/suites/atom/default.cfg,suites/atom/post/GetRecords-filter-bbox.xml">suites/atom/post/GetRecords-filter-bbox.xml</option>
+                            <option value="tester/suites/atom/default.cfg,suites/atom/post/DescribeRecord.xml">suites/atom/post/DescribeRecord.xml</option>
+                            <option value="tester/suites/atom/default.cfg,suites/atom/post/GetCapabilities.xml">suites/atom/post/GetCapabilities.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-elementname.xml">suites/default/post/GetRecords-elementname.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/Harvest-response-handler.xml">suites/default/post/Harvest-response-handler.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-filter-bbox.xml">suites/default/post/GetRecords-filter-bbox.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-all-json.xml">suites/default/post/GetRecords-all-json.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/Transaction-delete.xml">suites/default/post/Transaction-delete.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-all-resulttype-hits.xml">suites/default/post/GetRecords-all-resulttype-hits.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/Transaction-update-recordproperty.xml">suites/default/post/Transaction-update-recordproperty.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/Harvest-default.xml">suites/default/post/Harvest-default.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetCapabilities-updatesequence.xml">suites/default/post/GetCapabilities-updatesequence.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-cql-title.xml">suites/default/post/GetRecords-cql-title.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-distributedsearch.xml">suites/default/post/GetRecords-distributedsearch.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecordById.xml">suites/default/post/GetRecordById.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecordById-json.xml">suites/default/post/GetRecordById-json.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetDomain-property.xml">suites/default/post/GetDomain-property.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-all-resulttype-validate.xml">suites/default/post/GetRecords-all-resulttype-validate.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-filter-between.xml">suites/default/post/GetRecords-filter-between.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-filter-anytext.xml">suites/default/post/GetRecords-filter-anytext.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/DescribeRecord-json.xml">suites/default/post/DescribeRecord-json.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-filter-bbox-reproject.xml">suites/default/post/GetRecords-filter-bbox-reproject.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/Exception-GetRecords-elementname.xml">suites/default/post/Exception-GetRecords-elementname.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/Exception-GetRecords-invalid-xml.xml">suites/default/post/Exception-GetRecords-invalid-xml.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/Exception-GetRecords-badsrsname.xml">suites/default/post/Exception-GetRecords-badsrsname.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-filter-bbox-sortby.xml">suites/default/post/GetRecords-filter-bbox-sortby.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/Transaction-insert.xml">suites/default/post/Transaction-insert.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-filter-or-bbox-freetext.xml">suites/default/post/GetRecords-filter-or-bbox-freetext.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-filter-and-bbox-freetext.xml">suites/default/post/GetRecords-filter-and-bbox-freetext.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/Transaction-update-full.xml">suites/default/post/Transaction-update-full.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-filter-or-title-abstract.xml">suites/default/post/GetRecords-filter-or-title-abstract.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetDomain-parameter.xml">suites/default/post/GetDomain-parameter.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-filter-not-bbox.xml">suites/default/post/GetRecords-filter-not-bbox.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-all.xml">suites/default/post/GetRecords-all.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetCapabilities-SOAP.xml">suites/default/post/GetCapabilities-SOAP.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/DescribeRecord.xml">suites/default/post/DescribeRecord.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetCapabilities.xml">suites/default/post/GetCapabilities.xml</option>
+                            <option value="tester/suites/default/default.cfg,suites/default/post/GetRecords-filter-function.xml">suites/default/post/GetRecords-filter-function.xml</option>
+                            <option value="tester/suites/fgdc/default.cfg,suites/fgdc/post/GetRecords-filter-bbox.xml">suites/fgdc/post/GetRecords-filter-bbox.xml</option>
+                            <option value="tester/suites/fgdc/default.cfg,suites/fgdc/post/DescribeRecord.xml">suites/fgdc/post/DescribeRecord.xml</option>
+                            <option value="tester/suites/fgdc/default.cfg,suites/fgdc/post/GetCapabilities.xml">suites/fgdc/post/GetCapabilities.xml</option>
+                            <option value="tester/suites/ebrim/default.cfg,suites/ebrim/post/GetRecords-filter-bbox.xml">suites/ebrim/post/GetRecords-filter-bbox.xml</option>
+                            <option value="tester/suites/ebrim/default.cfg,suites/ebrim/post/DescribeRecord.xml">suites/ebrim/post/DescribeRecord.xml</option>
+                            <option value="tester/suites/ebrim/default.cfg,suites/ebrim/post/GetCapabilities.xml">suites/ebrim/post/GetCapabilities.xml</option>
+                            <option value="tester/suites/apiso/default.cfg,suites/apiso/post/GetRecords-elementname.xml">suites/apiso/post/GetRecords-elementname.xml</option>
+                            <option value="tester/suites/apiso/default.cfg,suites/apiso/post/GetRecords-filter-bbox.xml">suites/apiso/post/GetRecords-filter-bbox.xml</option>
+                            <option value="tester/suites/apiso/default.cfg,suites/apiso/post/GetRecordById-brief.xml">suites/apiso/post/GetRecordById-brief.xml</option>
+                            <option value="tester/suites/apiso/default.cfg,suites/apiso/post/GetRecords-all-csw-output.xml">suites/apiso/post/GetRecords-all-csw-output.xml</option>
+                            <option value="tester/suites/apiso/default.cfg,suites/apiso/post/GetRecordById-srv-brief.xml">suites/apiso/post/GetRecordById-srv-brief.xml</option>
+                            <option value="tester/suites/apiso/default.cfg,suites/apiso/post/GetRecords-cql-title.xml">suites/apiso/post/GetRecords-cql-title.xml</option>
+                            <option value="tester/suites/apiso/default.cfg,suites/apiso/post/GetDomain-property.xml">suites/apiso/post/GetDomain-property.xml</option>
+                            <option value="tester/suites/apiso/default.cfg,suites/apiso/post/GetRecords-filter-servicetype.xml">suites/apiso/post/GetRecords-filter-servicetype.xml</option>
+                            <option value="tester/suites/apiso/default.cfg,suites/apiso/post/GetRecords-filter-anytext.xml">suites/apiso/post/GetRecords-filter-anytext.xml</option>
+                            <option value="tester/suites/apiso/default.cfg,suites/apiso/post/GetRecords-filter-bbox-csw-output.xml">suites/apiso/post/GetRecords-filter-bbox-csw-output.xml</option>
+                            <option value="tester/suites/apiso/default.cfg,suites/apiso/post/GetRecordById-full.xml">suites/apiso/post/GetRecordById-full.xml</option>
+                            <option value="tester/suites/apiso/default.cfg,suites/apiso/post/GetRecords-all.xml">suites/apiso/post/GetRecords-all.xml</option>
+                            <option value="tester/suites/apiso/default.cfg,suites/apiso/post/DescribeRecord.xml">suites/apiso/post/DescribeRecord.xml</option>
+                            <option value="tester/suites/apiso/default.cfg,suites/apiso/post/GetCapabilities.xml">suites/apiso/post/GetCapabilities.xml</option>
+
+                        </select>
+                        <input type="button" class="send" value="Send"/>
+                    </td>
+                    <td>
+                        Server: <input type="text" size="40" class="server" value="../csw.py"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea rows="20" cols="70" class="request"></textarea>
+                    </td>
+                    <td>
+                        <textarea rows="20" cols="70" class="response"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <hr/>
+        <h3 class="header">HTTP GET</h3>
+            <ul>
+
+<li><a href="../csw.py?config=tester/suites/sru/default.cfg&mode=sru">explain</a></li>
+<li><a href="../csw.py?config=tester/suites/sru/default.cfg&mode=sru&version=1.1&operation=searchRetrieve&query=lor">search</a></li>
+<li><a href="../csw.py?config=tester/suites/sru/default.cfg&mode=sru&operation=searchRetrieve&query=lor&maximumRecords=2">search_maxrecords</a></li>
+<li><a href="../csw.py?config=tester/suites/sru/default.cfg&mode=sru&operation=searchRetrieve&query=lor&maximumRecords=2&startRecord=1">search_startrecord_maxrecords</a></li>
+<li><a href="../csw.py?config=tester/suites/sru/default.cfg&mode=sru&operation=searchRetrieve&query=dc:title%20like%20'%lor%'&maximumRecords=5">search_cql</a></li>
+<li><a href="../csw.py?config=tester/suites/atom/default.cfg&mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&typenames=csw:Record&resulttype=results&elementsetname=brief">opensearch</a></li>
+<li><a href="../csw.py?config=tester/suites/default/default.cfg&service=CSW&version=2.0.2&request=GetCapabilities">GetCapabilities</a></li>
+<li><a href="../csw.py?config=tester/suites/default/default.cfg&service=CSW&version=2.0.2&request=GetCapabilitiese">GetCapabilities-invalid-request</a></li>
+<li><a href="../csw.py?config=tester/suites/apiso-inspire/default.cfg&service=CSW&version=2.0.2&request=GetCapabilities">GetCapabilities</a></li>
+<li><a href="../csw.py?config=tester/suites/apiso-inspire/default.cfg&service=CSW&version=2.0.2&request=GetCapabilities&lang=gre">GetCapabilities-lang</a></li>
+
+            </ul>
+        <hr/>
+        <p>
+            <a href="http://validator.w3.org/check?verbose=1&amp;uri=referer" title="[ Valid XHTML 1.0! ]"><img class="flat" src="http://www.w3.org/Icons/valid-xhtml10-blue" alt="[ Valid XHTML 1.0! ]" height="31" width="88"/></a>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer" title="[ Valid CSS! ]"><img class="flat" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="[ Valid CSS! ]" height="31" width="88"/></a>
+        </p>
+    </body>
+</html>
+

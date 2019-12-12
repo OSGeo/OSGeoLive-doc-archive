@@ -1,0 +1,250 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Virtual Box 向け OSGeo-Live クイックスタート &mdash; OSGeo-Live 7.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 7.0 −Ｌｉｖｅへようこそ" href="../index.html" />
+    <link rel="next" title="OSGeo-Live Quickstart for Running in a Virtual Machine" href="virtualization_quickstart.html" />
+    <link rel="prev" title="Viking Quickstart" href="viking_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="virtual-box-osgeo-live">
+<span id="virtualbox-quickstart-en"></span><h1>Virtual Box 向け OSGeo-Live クイックスタート<a class="headerlink" href="#virtual-box-osgeo-live" title="Permalink to this headline">¶</a></h1>
+<p>ここでは、 OSGeo-Live DVD や ISO を <a class="reference external" href="http://www.virtualbox.org/">VirtualBox</a> の仮想マシンで動作させる方法について記載します。</p>
+<p>VirtualBox はオープンソースの仮想マシン環境です。 OSGeo-Live の多くの開発者、テスターが使用しています。</p>
+<div class="section" id="id1">
+<h2>動作環境<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>RAM: 1 GB - ほかにもアプリケーションを動作させたい場合は、2 GB あるとよいでしょう</li>
+<li>HDD 容量:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>ISO イメージから動作する場合 10 GB が必要になります</li>
+<li>ISO イメージからインストールするときには 17 GB が必要になります</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>仮想環境の作成<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.virtualbox.org/">Virtual Box</a> をダウンロードしてインストールしてください。Linux では以下のようにします。</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">virtualbox-ose</span></tt></div></blockquote>
+<p>Virtualboxを開きます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox8.png"><img alt="../../_images/virtualbox8.png" src="../../_images/virtualbox8.png" style="width: 544.6px; height: 404.6px;" /></a>
+</div></blockquote>
+<p>新しい仮想環境作成のため、 <em class="guilabel">New</em> を選択します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_create_vm8.png"><img alt="../../_images/virtualbox_create_vm8.png" src="../../_images/virtualbox_create_vm8.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p><em class="guilabel">Next</em> で次に進みます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_select_name8.png"><img alt="../../_images/virtualbox_select_name8.png" src="../../_images/virtualbox_select_name8.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>イメージに名前を付け、 &#8220;Linux&#8221;, &#8220;Ubuntu&#8221; を選択します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_memory8.png"><img alt="../../_images/virtualbox_memory8.png" src="../../_images/virtualbox_memory8.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>ベースメモリを 768 MB にします。Java ベースのアプリケーションを使用するには 1 GB 以上にするとよいでしょう。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_no_hard_disk8.png"><img alt="../../_images/virtualbox_no_hard_disk8.png" src="../../_images/virtualbox_no_hard_disk8.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>&#8220;Boot Hard Disk&#8221; のチェックを外すと、仮想マシンを常に DVD のイメージから起動する設定となります。</p>
+<p>より広い画面を使ったり、画面の解像度変更を保存する、ツールの設定保存など、仮想環境内に情報を保存したい場合には
+ハードディスクから起動するようにしてください。設定の方法は後述します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_warning_no_hard_disk8.png"><img alt="../../_images/virtualbox_warning_no_hard_disk8.png" src="../../_images/virtualbox_warning_no_hard_disk8.png" style="width: 253.4px; height: 164.5px;" /></a>
+</div></blockquote>
+<p><em class="guilabel">Continue</em> をクリックしてください。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_final_check8.png"><img alt="../../_images/virtualbox_final_check8.png" src="../../_images/virtualbox_final_check8.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p><em class="guilabel">Finish</em> をクリックしてください。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_select_settings8.png"><img alt="../../_images/virtualbox_select_settings8.png" src="../../_images/virtualbox_select_settings8.png" style="width: 544.6px; height: 404.6px;" /></a>
+</div></blockquote>
+<p>ここまでで仮想マシンのイメージは作成できています。ここで OSGeo-Live DVD を CD ドライブに挿入してください。</p>
+<p>&#8220;osgeo-live&#8221; のイメージを右クリックして <em class="guilabel">Settings</em> を選択してください。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_set_cd8.png"><img alt="../../_images/virtualbox_set_cd8.png" src="../../_images/virtualbox_set_cd8.png" style="width: 469.7px; height: 364.7px;" /></a>
+</div></blockquote>
+<p>&#8220;Storage&#8221; から CD/DVD Device を選択します</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_add_dvd8.png"><img alt="../../_images/virtualbox_add_dvd8.png" src="../../_images/virtualbox_add_dvd8.png" style="width: 439.6px; height: 341.6px;" /></a>
+</div></blockquote>
+<p>OSGeo-Live イメージを選択します</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_start_vm8.png"><img alt="../../_images/virtualbox_start_vm8.png" src="../../_images/virtualbox_start_vm8.png" style="width: 544.6px; height: 404.6px;" /></a>
+</div></blockquote>
+<p>以上で <a class="reference internal" href="osgeolive_quickstart.html"><em>OSGeo-Live クイックスタート</em></a> と同様に仮想マシンから使用できます。</p>
+</div>
+<div class="section" id="id3">
+<h2>持続的な仮想マシンのインストール<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>OSGeo-Live DVD を頻繁に使用する際には、持続的な仮想マシンとしてインストールし、さらに、 <a class="reference internal" href="osgeolive_install_quickstart.html"><em>ハードディスクに OSGeo-Live をインストールして使用する</em></a> のように仮想環境の HDD にインストールして使用することをお勧めします。</p>
+</div>
+<div class="section" id="id4">
+<h2>画面サイズの拡大<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>より高解像度に対応した仮想起動ツール、ゲストOSとホストOS間でのコピー、
+グラフィックアクセラレーションなど多くの機能を追加できます</p>
+<p>コンピューターをインターネットに接続した状態で次のようにします。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_synaptic_menu8.png"><img alt="../../_images/virtualbox_synaptic_menu8.png" src="../../_images/virtualbox_synaptic_menu8.png" style="width: 303.8px; height: 420.0px;" /></a>
+</div></blockquote>
+<p>synaptic package manager を起動します。</p>
+<p>パスワードは &#8220;user&#8221; としてください。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_synaptic_select_tools8.png"><img alt="../../_images/virtualbox_synaptic_select_tools8.png" src="../../_images/virtualbox_synaptic_select_tools8.png" style="width: 453.6px; height: 353.5px;" /></a>
+</div></blockquote>
+<p>インストールするため、&#8221;virtualbox-ose-guest-utils&#8221; をチェックしてください。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_synaptic_apply8.png"><img alt="../../_images/virtualbox_synaptic_apply8.png" src="../../_images/virtualbox_synaptic_apply8.png" style="width: 452.9px; height: 352.1px;" /></a>
+</div></blockquote>
+<p>変更を反映してください。</p>
+<p>仮想マシンを再起動すると画面サイズはホストマシンのディスプレイと近い物になっています。
+これは</p>
+<p>Select: <em class="menuselection">Applications ‣ Settings ‣ Xfce 4 Settings Manager ‣ Display</em></p>
+<p>から変更できます。</p>
+</div>
+<div class="section" id="id5">
+<h2>参照:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="osgeolive_quickstart.html"><em>OSGeo-Live クイックスタート</em></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><em>ハードディスクに OSGeo-Live をインストールして使用する</em></a></li>
+<li><a class="reference internal" href="usb_quickstart.html"><em>OSGeo-Live を起動できる ブータブル USB flash ドライブの作成</em></a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

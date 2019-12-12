@@ -1,0 +1,175 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>52°North WSS Inici ràpid &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Benvinguts a OSGeo-Live 6.5" href="../index.html" />
+    <link rel="next" title="R: Inici ràpid" href="R_quickstart.html" />
+    <link rel="prev" title="52°North WPS Quickstart" href="52nWPS_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://52north.org/security"><img alt="52°North - exploring horizons - logo" class="align-right" src="../../_images/logo_52North_1601.png" style="width: 200.0px; height: 68.0px;" /></a>
+<div class="section" id="north-wss-inici-rapid">
+<h1>52°North WSS Inici ràpid<a class="headerlink" href="#north-wss-inici-rapid" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="comencant">
+<h2>Començant<a class="headerlink" href="#comencant" title="Permalink to this headline">¶</a></h2>
+<p>El 52°North WSS és un servei web, que permet accedir a serveis web OGC amb polítiques d&#8217;accés, actuant com a proxy.</p>
+<p>A la distribució OSGeo-Live, el 52°North WSS ja és configurada per a protegir una instància de cada servei: WMS, WFS, WPS i SOS.</p>
+<p>Per a obtenir una llista de serveis protegits i provar l&#8217;accés al servei WMS, seguiu aquests passos:</p>
+<ol class="arabic simple">
+<li>Aneu a <em class="menuselection">Geospatial ‣ Web Services ‣ 52North ‣ Start 52North WSS</em> per a començar North WSS o feu servir el següent <a class="reference external" href="http://localhost:8080/wss/site/manage.html">enllaç directe</a>.</li>
+<li>La interfície de gestió de 52°North WSS s&#8217;obrirà a una finestra del navegador.</li>
+<li>Si és necessari, autentifiqueu-vos com a usuari user amb contrasenya user.</li>
+<li>Feu clic a <em>Manage WSS</em> per a rebre una llista dels serveis accessibles fent servir el WSS.</li>
+</ol>
+<p>Per a cada servei protegit, anomenat <em>Enforcement Point</em>, la taula conté els enllaços d&#8217;inici al servei segons el mètode d&#8217;autentificació (<em>httpauth</em>, <em>saml</em>, <em>WSS</em>, ...).</p>
+<p>Per a fer la petició d&#8217;opcions (capabilities) del WMS:</p>
+<ol class="arabic simple" start="5">
+<li>Feu la petició <a class="reference external" href="http://localhost:8080/wss/service/wms_demis/httpauth?SERVICE=WMS&amp;REQUEST=GetCapabilities">http://localhost:8080/wss/service/wms_demis/httpauth?SERVICE=WMS&amp;REQUEST=GetCapabilities</a> en un navegador.</li>
+<li>Autentifiqueu-vos com a <tt class="docutils literal"><span class="pre">alice</span></tt>/<tt class="docutils literal"><span class="pre">alice</span></tt> per a obtenir accés amb tots els permisos.</li>
+</ol>
+<p>o bé</p>
+<ol class="arabic simple" start="7">
+<li>Autentifiqueu-vos com a <tt class="docutils literal"><span class="pre">bob</span></tt>/<tt class="docutils literal"><span class="pre">bob</span></tt> per a accedir al servei amb permisos limitats. Algunes capes estaran amagades i no seran accessibles.</li>
+</ol>
+<p>Per a fer més proves amb el servei protegit, carregueu <a class="reference external" href="http://localhost:8080/wss/service/wms_demis/httpauth">http://localhost:8080/wss/service/wms_demis/httpauth</a> a qualsevol client d&#8217;escriptori que suporti autentificació bàsica d&#8217;HTTP, com ara <a class="reference internal" href="../overview/udig_overview.html"><em>uDig</em></a>, i feu la servir com faríeu amb qualsevol altre WMS.</p>
+</div>
+<div class="section" id="informacio-addicional">
+<h2>Informació addicional<a class="headerlink" href="#informacio-addicional" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="on-son-definits-els-usuaris">
+<h3>On són definits els usuaris?<a class="headerlink" href="#on-son-definits-els-usuaris" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">/var/lib/tomcat6/webapps/wss/WEB-INF/classes/users.xml</span></tt></p>
+</div>
+<div class="section" id="on-son-definits-els-permisos">
+<h3>On són definits els permisos?<a class="headerlink" href="#on-son-definits-els-permisos" title="Permalink to this headline">¶</a></h3>
+<p><tt class="docutils literal"><span class="pre">/var/lib/tomcat6/webapps/wss/WEB-INF/classes/permissions.xml</span></tt></p>
+</div>
+<div class="section" id="on-puc-obtenir-mes-informacio">
+<h3>On puc obtenir més informació?<a class="headerlink" href="#on-puc-obtenir-mes-informacio" title="Permalink to this headline">¶</a></h3>
+<p>Visiteu la <a class="reference external" href="http://52north.org/communities/security/general/user_guide_intro.html">Guia de l&#8217;usuari de 52°North</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,214 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Bootfähigen OSGeo-Live USB-Stick erstellen &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Willkommen OSGeo-Live 6.0" href="../index.html" />
+    <link rel="next" title="Ushahidi Quickstart" href="ushahidi_quickstart.html" />
+    <link rel="prev" title="uDig Quickstart" href="udig_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="bootfahigen-osgeo-live-usb-stick-erstellen">
+<h1>Bootfähigen OSGeo-Live USB-Stick erstellen<a class="headerlink" href="#bootfahigen-osgeo-live-usb-stick-erstellen" title="Permalink to this headline">¶</a></h1>
+<p>Hier beschreiben wir, wie ein bootbarer OSGeo-Live USB-Stick erstellt werden kann. Von einem USB-Stick zu starten ist schneller als von einer DVD zu starten und das USB-Laufwerk zusätzlich kann zur Sicherung der Daten zwischen Sessions genutzt werden.</p>
+<p>Die USB Installation ist noch ziemlich neu. Wir haben zwar bereits eine Menge an positiven Rückmeldungen erhalten, allerdings ist die Installation noch nicht ausgiebig getestet. Es wurde alles Dokumentiert, was bisher zu Schwierigkeiten geführt hat, darüber hinaus können Sie auch aktuelle Hinweise hier ansehen : <a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB</a></p>
+<div class="section" id="systemvoraussetzungen">
+<h2>Systemvoraussetzungen<a class="headerlink" href="#systemvoraussetzungen" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Einen 4 GB USB-Stick, wenn osgeo-live-mini genutzt wird (ohne Windows und Mac Installationsprogrammen).</li>
+<li>Einen 8 GB USB-Stick, wenn osgeo-live genutzt wird (mit Windows und Mac Installationsprogrammen).</li>
+<li>Eine OSGeo-Live DVD oder ein ISO Abbild (heruntergeladen von: <a class="reference external" href="http://live.osgeo.org/download.html">http://live.osgeo.org/download.html</a>)</li>
+</ul>
+</div>
+<div class="section" id="einen-startbaren-usb-stick-unter-ubuntu-erstellen">
+<h2>Einen startbaren USB-Stick unter Ubuntu erstellen<a class="headerlink" href="#einen-startbaren-usb-stick-unter-ubuntu-erstellen" title="Permalink to this headline">¶</a></h2>
+<p>(dies ist die empfohlene Vorgehensweise und kann auch für andere Ubuntu Distributionen, wie Xubuntu oder OSGeo-Live, angewendet werden)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Die eingesetzte Ubuntu-Version Ihres Systems muss der Version des Xubuntu, welches auf dem USB-Laufwerk installiert ist, entsprechen oder aktueller sein. Bei der Installation von OSGeo-Live in der Version 5.0/5.5 müssen Sie Ubuntu 11.04 oder höher verwenden.</p>
+</div>
+<p>Schließen Sie einen USB-Stick an Ihren Rechner an.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/usb_select1.png"><img alt="../../_images/usb_select1.png" src="../../_images/usb_select1.png" style="width: 302.4px; height: 420.0px;" /></a>
+</div></blockquote>
+<p>Wählen Sie <em class="menuselection">System ‣ Administration ‣ Startup Disk Creator</em> oder suchen Sie nach <cite>Startup Disk Creator</cite> vom Unity-Desktop.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/usb_set_params1.png"><img alt="../../_images/usb_set_params1.png" src="../../_images/usb_set_params1.png" style="width: 333.2px; height: 375.2px;" /></a>
+</div></blockquote>
+<p>Wählen Sie das ISO-Abbild osgeo-live oder osgeo-live-mini.</p>
+<p>Wählen Sie den USB-Stick.</p>
+<p>Wählen Sie <em class="guilabel">Make Startup Disk</em></p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/usb_installing1.png"><img alt="../../_images/usb_installing1.png" src="../../_images/usb_installing1.png" style="width: 302.4px; height: 100.8px;" /></a>
+</div></blockquote>
+<p>Warten Sie ca. 20 Minuten, während der USB-Stick bearbeitet wird.</p>
+</div>
+<div class="section" id="einen-startbaren-usb-stick-unter-windows-erstellen">
+<h2>Einen startbaren USB-Stick unter Windows erstellen<a class="headerlink" href="#einen-startbaren-usb-stick-unter-windows-erstellen" title="Permalink to this headline">¶</a></h2>
+<p>Schließen Sie einen USB-Stick an Ihren Rechner an.</p>
+<p>Laden Sie den Universal USB Installer von: <a class="reference external" href="http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/">http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/</a> und starten ihn.</p>
+<blockquote>
+<div><img alt="../../_images/usb_penlinux_licence1.gif" src="../../_images/usb_penlinux_licence1.gif" />
+</div></blockquote>
+<p>Akzeptieren Sie die Nutzungsbedingungen.</p>
+<blockquote>
+<div><img alt="../../_images/usb_penlinux_selection1.gif" src="../../_images/usb_penlinux_selection1.gif" />
+</div></blockquote>
+<p>Schritt 1: Distribution: Wählen Sie die Xubuntu i386 Distribution, die für das OSGeo-live Image benutzt wird. (Für OSGeo-Live 5.5 wählen Sie Xubuntu 10.04 Desktop i386)</p>
+<p>Schritt 2: Wählen Sie die aktuelle OSGeo-Live ISO-Datei, die Sie hoffentlich local abgespeichert haben. Achtung: Sie müssen den Pfad zur ISO-Datei manuell eingeben, da der <em class="guilabel">Browse</em>-Button nur Xubuntu ISO-Dateien anzeigt.</p>
+<p>Schritt 3: Wählen Sie Ihr USB-Laufwerk.</p>
+<p>Schritt 4: Wählen Sie &#8220;Persistence&#8221;, wenn Sie Daten zwischen Ihren Sessions abspeichern wollen.</p>
+<p>Wählen Sie <em class="guilabel">Create</em></p>
+<blockquote>
+<div><img alt="../../_images/usb_penlinux_installing1.gif" src="../../_images/usb_penlinux_installing1.gif" />
+</div></blockquote>
+<p>Warten Sie ca. 20 Minuten, während der USB-Stick bearbeitet wird.</p>
+</div>
+<div class="section" id="einstellen-der-startreihenfolge-im-bios">
+<h2>Einstellen der Startreihenfolge im BIOS:<a class="headerlink" href="#einstellen-der-startreihenfolge-im-bios" title="Permalink to this headline">¶</a></h2>
+<p>Die meisten Computer sind nicht so eingestellt, das sie von einem USB-Laufwerk starten.</p>
+<p>Um dies zu ändern starten Sie Ihren Rechner und drücken Sie die entsprechende Taste um ins BIOS zu gelangen (üblicherweise durch die &lt;Entf&gt;-Taste oder einen der F-Tasten.</p>
+<p>Ändern Sie die Bootreihenfolge, so dass der Rechner vom USB-Stick gestartet werden kann.</p>
+<p>Bei manchen Rechnern lässt sich die nur einstellen, wenn der USB-Stick währenddessen angeschlossen ist.</p>
+<p>Das USB-Laufwerk ist häufig unter Festplatten aufgeführt und nicht unter Wechselplatten.</p>
+</div>
+<div class="section" id="starten">
+<h2>Starten:<a class="headerlink" href="#starten" title="Permalink to this headline">¶</a></h2>
+<p>Starten Sie wie unter: <a class="reference internal" href="osgeolive_quickstart.html"><em>OSGeo-Live Quickstart</em></a> beschrieben.</p>
+</div>
+<div class="section" id="bekannte-probleme">
+<h2>Bekannte Probleme:<a class="headerlink" href="#bekannte-probleme" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Mac Computer starten nicht von diesen USB-Sticks, benutzen Sie stattdessen die LiveDVD.</li>
+</ul>
+</div>
+<div class="section" id="siehe-auch">
+<h2>Siehe auch:<a class="headerlink" href="#siehe-auch" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="osgeolive_quickstart.html"><em>OSGeo-Live Quickstart</em></a></li>
+<li><a class="reference internal" href="virtualbox_quickstart.html"><em>OSGeo-Live Quickstart für Virtual Box</em></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><em>OSGeo-Live auf einer Festplatte installieren</em></a></li>
+<li>Wenn Sie Probleme haben, tragen Sie diese bitte auf dieser Wiki-Seite ein: <a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB</a> und diskutieren Sie auf unserer Mailingliste: <a class="reference external" href="http://lists.osgeo.org/mailman/listinfo/live-demo">http://lists.osgeo.org/mailman/listinfo/live-demo</a></li>
+<li>Für weitere USB Startoptionen lesen Sie <a class="reference external" href="http://pendrivelinux.com">http://pendrivelinux.com</a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

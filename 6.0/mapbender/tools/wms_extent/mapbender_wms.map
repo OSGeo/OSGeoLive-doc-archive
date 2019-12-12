@@ -1,0 +1,111 @@
+MAP
+  NAME "mapbender_wms_extent"
+  STATUS ON
+  EXTENT -180 -90 180 90
+  
+  PROJECTION
+      "init=epsg:4326"
+  END
+   
+  SIZE 650 420
+
+  IMAGECOLOR 255 255 255
+  
+  UNITS dd 					
+  RESOLUTION 72				
+
+					
+  WEB
+    METADATA
+      "WMS_SRS"   "epsg:4326 epsg:31467 epsg:31466 epsg:31468 espg:31469"
+      "WMS_ONLINERESOURCE"    "http://wms1.ccgis.de/cgi-bin/mapserv?map=/data/mapbender_dev/http/tools/wms_extent/mapbender_wms.map"
+      "WMS_TITLE"    "WMS Extent"
+      "WMS_FEATURE_INFO_MIME_TYPE"    "text/html"
+      "WMS_ABSTRACT"    "Overview over the WMS loaded in Mapbender"
+
+      "ows_keywordlist" "Mapbender"
+      "ows_fees" "none"
+      "ows_accessconstraints" "none"
+              
+      "ows_addresstype" "postal"
+      "ows_address" "Siemensstr. 8"
+      "ows_city" "Bonn"
+      "ows_stateorprovince" "NRW"
+      "ows_postcode" "53121"
+      "ows_country" "Germany"
+            
+      "ows_contactperson" "A. Emde" 
+      "ows_contactinformation" "Wheregroup"
+      "ows_contactorganization" "WhereGroup"
+      "ows_contactposition" "WhereGroup"
+      "ows_contactelectronicmailaddress" "astrid.emde@whergroup.com"
+      "wms_contactfacsimiletelephone" "0228 90903811"
+      "wms_contactvoicetelephone" "0228 9090380"
+    END
+  END
+  
+  OUTPUTFORMAT
+    NAME 'png'
+    DRIVER 'GD/PNG'
+    MIMETYPE 'image/png'
+    EXTENSION PNG
+    IMAGEMODE PC256
+    TRANSPARENT ON
+  END
+  
+  LEGEND
+    STATUS ON 
+    KEYSIZE 20 10	
+    KEYSPACING 5 5    
+    LABEL
+       COLOR 0 0 0#120 120 120
+       TYPE TRUETYPE
+       FONT "arial"
+       SIZE 10
+    END 
+  END 
+
+#---------------------------------------------------------------
+LAYER
+   NAME "wms_extent"
+   STATUS ON
+   TYPE POLYGON  
+   CONNECTIONTYPE postgis  
+   CONNECTION   "dbname=mapbender user=mypassword port=5432 host=myserver"   
+   DATA "the_geom from (Select * from qry_wms_extent where NOT isempty(the_geom)) as foo using unique layer_id using SRID=4326" 
+ 
+
+   PROJECTION
+      "init=epsg:4326"
+   END
+   
+   METADATA
+	"WMS_SRS"    "epsg:4326"
+	"WMS_TITLE"    "WMS Extent"
+	"WMS_FEATURE_INFO_MIME_TYPE"    "text/html"
+	"ows_keywordlist" "WMS Extent"
+	"ows_abstract" "Extent,WMS"
+   END
+   
+   SYMBOLSCALE 100000
+   
+   TEMPLATE "info.html"
+    
+   #TRANSPARENCY 90
+   LABELITEM 'wms_title'
+   
+   CLASS
+      NAME "WMS Extent"
+      STYLE
+         SYMBOL 0
+         COLOR -1 -1 -1#255 204 255
+         OUTLINECOLOR 60 60 60
+      END
+	LABEL
+    	COLOR 60 60 60
+    END
+    
+   END
+    
+ END
+END

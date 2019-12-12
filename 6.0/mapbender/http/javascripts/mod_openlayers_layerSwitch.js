@@ -1,0 +1,1 @@
+ol_map.addControl(new OpenLayers.Control.LayerSwitcher());

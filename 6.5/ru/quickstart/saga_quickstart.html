@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы в ГИС SAGA &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.saga-gis.org"><img alt="логотип проекта" class="align-right" src="../../_images/logo-saga21.png" style="width: 103.0px; height: 100.0px;" /></a>
+<div class="section" id="saga">
+<h1>Начало работы в ГИС SAGA<a class="headerlink" href="#saga" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Запуск<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Для запуска ГИС SAGA с Live DVD кликните ярлык SAGA на рабочем столе.</p>
+<p>Открыв SAGA первый раз, вы увидите 3 главных элемента интерфейса: Рабочую область, Свойства объекта и Окно сообщений. Информация в Свойствах объекта будет изменяться в соответствии с вашим выбором в Рабочей области.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/saga_guioverview10.png"><img alt="../../_images/saga_guioverview10.png" src="../../_images/saga_guioverview10.png" style="width: 523.2px; height: 422.4px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>Добавление данных<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Откройте SAGA GUI и загрузите растр <cite>/home/user/saga/DGM_30m_Mt.St.Helens_SRTM.grd</cite> через меню <strong>File|Grid|Load Grid</strong>. На
+вкладке General Окна сообщений вы получите сообщение об успешном или
+неуспешном выполнении этой задачи. Вы должны увидеть что-то вроде <cite>Load Grid: DGM_30m_Mt.St.Helens_SRTM.grd...okay</cite>.
+После загрузки набора данных он появится на вкладке <em>Data</em> Рабочей области.
+Данные будут находиться в списке Grids в соответствии с системой координат файла.</p>
+<p>В данном случае информация о системе координат выглядит как <strong>30;312x 458y; 557970x 5108130y</strong>.
+Первое число это&nbsp;— размер ячейки (30 метров), следующие два показывают количество ячеек в направлениях
+<em>x</em> и <em>y</em> соответственно, а два последних - начало координат растра, которое в SAGA
+обычно находится  в нижнем левом  углу. Эта и другая полезная информация
+о наборе данных будет показана, если вы выберете вкладку <em>Description</em> окна Свойств объекта. После
+открытия вкладки вы увидите не только более подробную информацию о системе координат растра,
+но и тип его данных (здесь FLOAT), диапазон значений, некоторые статистические показатели
+и размер занимаемого дискового пространства.</p>
+</div>
+<div class="section" id="id3">
+<h2>Визуализация данных<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Для отображения данных в виде карты просто дважди кликните на соответствующем
+наборе данных вкладки Data Рабочей области. Появится окно новой карты с добавленным
+в него набором данных. Рамка отображает реальные координаты <em>x</em> и <em>y</em> на земной поверхности
+в единицах измерения проекции данных. Двигая указатель мыши по карте, вы можете видеть,
+как изменяются значения x-, y- и z-координат, отображающиеся на нижней панели SAGA.
+Значения z-координаты отвечают отметкам абсолютной высоты набора данных (имейте в виду,
+что отображающиеся значения всегда соответствуют тому набору данных, который выбран на
+вкладке Data или Maps).</p>
+<p>Теперь воспользуйтесь инструментами навигации для увеличения и передвижения карты.
+Инструмент <em>Zoom</em> выбран по умолчанию. Левый клик мыши по карте увеличивает масштаб отображения,
+а правый&nbsp;— уменьшает. Протягивание по диагонали карты курсора с удерживанием в нажатом состоянии
+левой кнопки мыши позволяет увеличить масштаб отображения определённого фрагмента. Если вы
+продолжите увеличивать масштаб отображения, то сможете увидеть отдельные ячейки растра. Для
+передвижения изображения воспользуйтесь инструментом <em>Pan</em>, нажав и протягивая указатель мыши
+вместе с изображением. Обратите внимание и на другие кнопки панели инструментов: они позволяют
+вам изменить масштаб отображения, например, до полного охвата&nbsp;— <em>Full Extent</em>.</p>
+<img alt="../../_images/saga_fullextent10.png" src="../../_images/saga_fullextent10.png" />
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">SAGA увеличивает масштаб отображения очень быстро, поэтому если вы растерялись, просматривая свои данные, просто кликните на панели инструментов кнопку <em>Zoom to Full Extent</em>.</p>
+</div>
+<div class="section" id="id4">
+<h3>Создание растра светотеневой отмывки рельефа<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Улучшим визуализацию данных, рассчитав карту теневой отмывки рельефа. Перейдите на
+вкладку <em>Modules</em> Рабочей области и кликните на символе плюса слева от
+библиотеки <strong>Terrain Analysis - Lightning, Visibility</strong>: появится
+список входящих в нее модулей. Теперь выберите модуль <em>Analytical Hillshading</em> и перейдите на
+вкладку <em>Settings</em> окна Свойств объекта. В ней отображаются параметры модуля (обратите также внимание на вкладку <em>Description</em>, которая содержит подробную информацию о модуле и его параметрах). Кликните в правой колонке параметра <em>Grid system</em> (там где отображается [not set]) и выберите систему координат набора данных <strong>Mt. St. Helens</strong>. Далее кликните в правой колонке параметра <em>Elevation</em> и выберите ваш набор данных. В правой колонке опции <em>Shading Method</em> выберите <em>Standard</em>. Теперь нажмите кнопку <em>Apply</em>, а затем&nbsp;— <em>Execute</em>. В результате будут рассчитаны значения теневой отмывки.</p>
+<p>Проверьте вкладку Рабочей области <em>Data</em>&nbsp;— вы увидите только что созданный набор данных. Дважды кликните по набору данных <em>Analytical Hillshading</em> и выберите <em>New</em> в диалоговом окне. Набор данных отобразится в окне новой карты. После изучения набора данных закройте окно карты, выбрав <em>Close</em> из меню <em>Window</em>.</p>
+<p>Теперь снова дважды кликните по набору данных с теневой отмывкой, но в открывшемся диалоговом окне выберите карту, уже содержащую высотные данные (Add layer to selected map). В результате растр теневой отмывки рельефа наложится на слой абсолютных высот.</p>
+<p>Перейдите на вкладку <em>Maps</em> Рабочей области. Вы увидите содержимое вашей карты и наборы данных, из которых она состоит, в порядке их отрисовки&nbsp;— снизу вверх. Кликните правой кнопкой мыши по набору данных <em>Analytical Hillshading</em> и выберите <em>Move To Bottom</em> из появившегося контекстного меню. Это изменит порядок отрисовки, переместив слой аналитической отмывки под слой абсолютных высот (который теперь снова станет видимым в окне карты). Выберите набор данных абсолютных высот (кликом левой кнопки мыши) и обратите внимание на вкладку <em>Settings</em> окна Свойств объекта. Перейдите к секции параметров Display и кликните в правой колонке опции <em>Transparency</em>. Введите значение <strong>30</strong> и нажмите кнопку <em>Apply</em>. Теперь вы можете увидеть значения абсолютной высоты, оттененные с помощью аналитической отмывки.</p>
+<p>Попробуйте другие настройки <em>Transparency</em> или же <em>Shading Methods</em> в модуле Analytical Hillshading (в случае, если вы не измените параметры результирующего набора данных, изменения будут записаны в уже созданный растр, т.е. вы сразу же увидите результат на карте).</p>
+<a class="reference internal image-reference" href="../../_images/saga_withhillshade10.png"><img alt="../../_images/saga_withhillshade10.png" src="../../_images/saga_withhillshade10.png" style="width: 768.8px; height: 562.4px;" /></a>
+</div>
+<div class="section" id="d">
+<h3>3D-визуализация<a class="headerlink" href="#d" title="Permalink to this headline">¶</a></h3>
+<p>Возможно, далее вы захотите визуализировать ваши данные в 3D. Проверьте, чтобы было выбрано окно соответствующей карты и нажмите на панели инструментов кнопку <em>Show 3D-View</em>. В появившемся диалоговом окне выберите систему координат, которая соответствует набору данных абсолютных высот и установите <em>Mt. St. Helens</em> в качестве параметра Elevation. После нажатия кнопки <em>Okay</em> появится 3D-вид вашей карты. Удерживайте нажатой левую кнопку мыши и двигайте указатель для вращения и наклона поверхности. Используйте правую кнопку мыши для увеличения/уменьшения масштаба отображения и движения поверхности. Обратите внимание на панель инструментов 3D-вида: кнопки повторяют функции мыши и дают дополнительные возможности. Для закрытия 3D-вида выберите <em>Close</em> в меню Window.</p>
+<a class="reference internal image-reference" href="../../_images/saga_3d10.png"><img alt="../../_images/saga_3d10.png" src="../../_images/saga_3d10.png" style="width: 768.8px; height: 562.4px;" /></a>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Построение изолиний<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>В качестве краткого знакомства с возможностями SAGA по работе с векторными данными построим
+горизонтали на основе цифровой модели рельефа. Это можно сделать с помощью
+<strong>Shapes - Grid | Contour Lines From Grid</strong>, если вы откроете вкладку модулей в рабочей области,
+или же с помощью меню <strong>Modules|Shapes|Grid|Vectorization</strong>. Установите систему координат вашего растра и собственно растр
+(это должна быт абсолютная высота). Дальнейшие установки можно оставить без изменений, однако лучше изменить высоту сечения рельефа на 50м вместо стандартных 10м.
+Несколько секунд спустя создастся слой изолиний, который можно увидеть, перейдя на вкладку данных Рабочей области. Откройте его в новой карте. Все горизонтали имеют один и тот же цвет, что не очень удобно. Если вы выберете свой набор данных (вкладка данных рабочей области) и посмотрите на вкладку <em>Settings</em> окна свойств объекта, то увидите раздел <em>Display: color classification</em>. Здесь можно изменить способ классификации &#8220;Unique symbol&#8221; на градуированный цвет. После этого необходимо указать высоту в качестве атрибута на основе которого будут изменяться цветовые значения. Нажмите применить, чтобы увидеть цветные горизонтали.</p>
+<div class="section" id="id6">
+<h3>Проверка истории<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Выбрав набор данных (например, изолинии) на вкладке Рабочей области, можно перейти на вкладку <em>history</em> окна Свойств объекта, чтобы увидеть какие модули и с какими настройками были использованы для создания этого набора данных. Эта информация также записывается во время сохранения файлов (в файлах с расширениями .hshp и .hgrd).</p>
+<a class="reference internal image-reference" href="../../_images/saga_contour_history10.png"><img alt="../../_images/saga_contour_history10.png" src="../../_images/saga_contour_history10.png" style="width: 772.8px; height: 517.6px;" /></a>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>Сохранение данных<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>Для того, чтобы сохранить результаты работы, перейдите на вкладку данных Рабочей области и кликните правой кнопкой мыши по файлу, который вы собираетесь сохранить. SAGA сохранит растровые файлы в собственном формате (*.sgrd) а векторные&nbsp;— в общепринятом ESRI shapefile (*.shp). Выбрав <strong>File|Project|Save Project</strong>, можно сохранить проект&nbsp;— это опция позволит сохранить все карты и настройки визуализации данных, а также предложит сохранить непосредственно все файлы данных.</p>
+</div>
+<div class="section" id="id8">
+<h2>Импорт/Экспорт данных<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>Для импорта и экспорта данных существуют различные модули. Наиболее полезный из них&nbsp;— <em>Import/Export GDAL/OGR</em>, который расположен в меню <strong>modules|file|GDAL/OGR</strong>. С использованием этого модуля можно импортировать большое число растровых форматов, в т.ч. GeoTIFF. Этот же модуль может быть использован и для экспорта данных в различные растровые форматы.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">формат растровых данных SAGA ГИС поддерживается GDAL, начиная с версии 1.7.0. Благодаря этому растровые файлы, сохраненные в SAGA, могут быть открыты и другими программами, использующими GDAL. Однако, для этого нужно открывать файл с расширением &#8216;*.sdat&#8217; а не &#8216;*.sgrd&#8217;.</p>
+</div>
+<p>В этом примере мы используем данные цифровой модели рельефа SRTM для территории неподалёку от г.&nbsp;Барселоны.</p>
+<p>Файл данных, который мы хотим использовать (<cite>SRTM_u03_n041e002.tif</cite>), находится
+в директории <cite>/home/user/data/raster</cite>. Его можно импортировать с помощью модуля <em>Import/Export GDAL/OGR</em>, расположенного в меню <strong>modules|file|GDAL/OGR</strong>.</p>
+<p>После импорта набора данных и открытия его в новом окне, вы, вероятно, будете разочарованы: он же весь серый! Проверим, что тому причиной: некоторые пиксели возле побережья имеют очень маленькие значения (-32768) (проверить значения пикселей можно с помощью Z: чисел на панели статуса, которые изменяются во время перемещения курсора мыши по карте).</p>
+<p>На самом деле эти пиксели не имеют значений, поэтому нам следует откорректировать параметры отсутствующих данных: в окне свойств объекта (после выбора набора данных в окне рабочей области), установите максимальное значения отсутствующих данных равным &#8220;-32768&#8221; и нажмите кнопку <em>Apply</em>.
+После этого мы можем установить цветовую шкалу в соответствии с диапазоном значений данных. Проще всего это сделать правым кликом мыши по растру в рабочей области, выбрав из контекстного меню &#8220;Classification|Set Range to minimum maximum&#8221;.</p>
+<p>Теперь вы готовы к тому чтобы повторить вышеописанные шаги по созданию карты теневой отмывки рельефа или же исследовать другие модули SAGA!</p>
+</div>
+<div class="section" id="id9">
+<h2>Дополнительная информация<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Дополнительную документацию можно найти на веб-сайте SAGA:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://www.saga-gis.org">http://www.saga-gis.org</a></li>
+</ul>
+</dd>
+<dt>особенно в архиве документации:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://www.saga-gis.org/en/about/references.html">http://www.saga-gis.org/en/about/references.html</a></li>
+<li><a class="reference external" href="http://sourceforge.net/projects/saga-gis/files/SAGA%20-%20Documentation/">http://sourceforge.net/projects/saga-gis/files/SAGA%20-%20Documentation/</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

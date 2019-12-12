@@ -1,0 +1,163 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>WCS (Web Coverage Service) &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-OGC-left10.png"><img alt="Логотип OGC" class="align-right" src="../../_images/logo-OGC-left10.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/logo-OGC-right10.png"><img alt="Логотип OGC" class="align-right" src="../../_images/logo-OGC-right10.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="wcs-web-coverage-service">
+<h1>WCS (Web Coverage Service)<a class="headerlink" href="#wcs-web-coverage-service" title="Permalink to this headline">¶</a></h1>
+<p>Стандарт <a class="reference external" href="http://www.opengeospatial.org/standards/wcs">WCS</a> (веб-сервис покрытий) определяет
+интерфейсы и операции, позволяющие взаимодействовать с пространственными данными, называемыми
+&#8220;покрытие&#8221;. Этим термином описываются спутниковые снимки, результаты аэрофотосъёмки, цифровые
+модели рельефа и другие данные, представленные значениями в каждой измеряемой точке.</p>
+<a class="reference internal image-reference" href="../../_images/wcs10.jpg"><img alt="Место WCS среди стандартов OGC" src="../../_images/wcs10.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>WCS является сервисом предоставления данных. Он позволяет загружать покрытия, например, цифровые
+модели рельефа, через HTTP-интерфейс. В ответ на запрос сервис вернёт метаданные и закодированные
+в определённый формат, например, GeoTIFF или NetCDF, данные пикселей покрытия.</p>
+<p>Как и для остальных стандартов OGC, для WCS cуществует много прекрасных примеров использования.
+<a class="reference external" href="http://hfradar.ndbc.noaa.gov/">Один из таких</a> — веб-сервис, предоставляющий данные с высокочастотного
+радара национального центра данных береговых бакенов (NDBC, США). Данный сервис был разработан в
+Национальном управлении океанических и атмосферных исследований (NOAA, США) и используется для
+мониторинга морских течений.
+<a class="reference external" href="http://idn.ceos.org/KeywordSearch/Metadata.do?Portal=webservices&amp;KeywordPath=[Project%3A+Short_Name%3D%27EOS%27]&amp;EntryId=NASA_GES_DISC_AIRS_Atmosphere_Data_Web_Coverage_Service&amp;MetadataView=Full&amp;MetadataType=1&amp;lbnode=mdlb1">Другой</a> пример&nbsp;—
+сервис предоставления данных с датчика Atmospheric Infrared Sounder (AIRS) Национального аэрокосмического
+агентства (NASA, США). Это один из сервисов веб-покрытий, развёрнутых в &#8220;Центре данных и информационных
+сервисов земных систем им. Годдарта&#8221; (GES DISC), предоставляющих информацию о наблюдении за атмосферой
+Земли с датчика AIRs, расположенного на спутнике NASA-Aqua.</p>
+<div class="section" id="id3">
+<h2>См. также<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="wms_overview.html"><em>WMS (Web Map Service)</em></a></li>
+<li><a class="reference internal" href="wfs_overview.html"><em>WFS (Web Feature Service)</em></a></li>
+<li>Grid Coverage Service</li>
+<li><a class="reference internal" href="sos_overview.html"><em>Сервис данных с датчиков (SOS)</em></a></li>
+<li><a class="reference internal" href="fe_overview.html"><em>Filter Encoding (FE)</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

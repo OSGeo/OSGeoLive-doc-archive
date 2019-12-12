@@ -1,0 +1,195 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MapProxy 快速入门文档 &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 6.5" href="../index.html" />
+    <link rel="next" title="MapServer 快速入门文档" href="mapserver_quickstart.html" />
+    <link rel="prev" title="Mapnik 快速入门文档" href="mapnik_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://mapproxy.org/"><img alt="project logo" class="align-right" src="../../_images/logo-mapproxy23.png" /></a>
+<div class="section" id="mapproxy">
+<h1>MapProxy 快速入门文档<a class="headerlink" href="#mapproxy" title="Permalink to this headline">¶</a></h1>
+<p>　　MapProxy 是 WMS 网页地图服务与切片服务提供者的瑞士军刀。它对已有服务的数据服务进行缓存、加速和转换，服务任何支持 OGC 标准的桌面与网页客户端。</p>
+<img alt="MapProxy diagram" class="align-center" src="../../_images/mapproxy23.png" />
+<p>　　除了切片缓存功能外，MapProxy 还包含了完整 WMS 客户端支持等特性。</p>
+<div class="section" id="id1">
+<h2>启动示例服务<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>　　MapProxy 开发方式灵活，易于同 Apache 环境等集成。MapProxy 也能作为一个独立服务使用。这是对于新用户而言最容易的方式。</p>
+<p>　　通过 <em class="menuselection">Geospatial ‣ Web Services ‣ MapProxy ‣ Start MapProxy</em> 可以以独立方式启动 MapProxy 。</p>
+</div>
+<div class="section" id="id2">
+<h2>查看 MapProxy 示例<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>　　MapProxy 示例为一个基本的 WMS 切片客户端。它显示了配置的各个图层。它不具备改变投影等复杂功能，但足以验证服务是否正常运行。</p>
+<p>　　示例位于 <a class="reference external" href="http://localhost:8011/demo">http://localhost:8011/demo</a> （Firefox 打开）</p>
+</div>
+<div class="section" id="gis">
+<h2>以桌面 GIS 使用服务<a class="headerlink" href="#gis" title="Permalink to this headline">¶</a></h2>
+<p>　　任何支持 WMS 的桌面 GIS ，例如 uDig ，QGIS 或 gvSIG 等，均可使用 MapProxy 服务。服务 URL 为 <a class="reference external" href="http://localhost:8011/service?">http://localhost:8011/service?</a> 。</p>
+<p>　　MapProxy 示例配置包含了若干不同的数据源。详见后述。</p>
+<div class="figure align-center">
+<img alt="MapProxy example in uDig" src="../../_images/mapproxy_udig11.png" />
+<p class="caption">单个 WMS 包含了层叠的两个图层，并显示了其中一个的 <cite>FeatureInformation</cite> 。</p>
+</div>
+</div>
+<div class="section" id="available-layers">
+<h2>Available layers<a class="headerlink" href="#available-layers" title="Permalink to this headline">¶</a></h2>
+<p><strong>mapnik</strong>:
+　　Mapnik　世界人口分布图示例。这里无需启动 Mapnik 服务，Mapnik 内建有相应支持。</p>
+<p><strong>tilelite</strong>:
+　　TileLite 是一个通过 Mapnik 世界人口图服务提供切片的简单服务。这个示例图层显示了将已有切片服务加入 MapProxy 的 WMS 服务的能力。
+　　在访问该图层前请通过 <em>Start Mapnik &amp; TileLite</em> 启动服务。</p>
+<p><strong>GeoServer</strong>:
+　　由 <a class="reference internal" href="../overview/geoserver_overview.html"><em>GeoServer</em></a> 实现的美国人口分布图的 WMS 。这个服务支持 <tt class="docutils literal"><span class="pre">GetFeatureInfo</span></tt> 请求，并叠加于 WMS 来源中。
+　　在访问该图层前请通过 <em class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</em> 启动 GeoServer 。</p>
+<p><strong>MapNik_Geoserver</strong>:
+　　演示将不同数据源整合为一个 MapProxy 图层。它包含 Mapnik 的世界人口图和 GeoServer 的美国人口图。对于 GeoServer 数据， <tt class="docutils literal"><span class="pre">GetFeatureInfo</span></tt> 请求依然有效。
+　　访问前请通过 <em class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</em> 启用服务。</p>
+<dl class="docutils">
+<dt><strong>MapServer</strong>:</dt>
+<dd>演示使用 Mapserver 的 Itasca 示例数据集。该数据集运用 <em>coverage</em> 特性，边界框对应意大利 Itasca 地区。</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h2>建立自己的配置<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>　　利用 <tt class="docutils literal"><span class="pre">mapproxy-util</span></tt> 可以建立新的配置与模板，建立服务。</p>
+<p>　　建立新配置：</p>
+<div class="highlight-python"><pre>mapproxy-util create -t base-config ~/mapproxy</pre>
+</div>
+<p>　　在 8011 端口以新配置启动服务：</p>
+<div class="highlight-python"><pre>mapproxy-util serve-develop ~/mapproxy/mapproxy.yaml -b 0.0.0.0:8011</pre>
+</div>
+<p>　　于 <a class="reference external" href="http://127.0.0.1:8011/demo/">http://127.0.0.1:8011/demo/</a> 访问新配置。MapProxy 在配置改变后会自动重新加载。</p>
+</div>
+<div class="section" id="id4">
+<h2>其它信息<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="../../mapproxy/index.html">MapProxy 文档</a></li>
+<li>示例配置 (<tt class="docutils literal"><span class="pre">/usr/local/share/mapproxy/mapproxy.yaml</span></tt>)</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

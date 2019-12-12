@@ -1,0 +1,162 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Catalogue Service for the Web (CS-W) &mdash; OSGeo-Live 7.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Estándares del Open GeoSPatial Consortium" href="standards.html" />
+    <link rel="next" title="Filter Encoding (FE)" href="fe_overview.html" />
+    <link rel="prev" title="Estándares del Open GeoSPatial Consortium" href="standards.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <span class="target" id="csw-overview-es"></span><a class="reference internal image-reference" href="../../_images/logo-OGC-left4.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-left4.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/logo-OGC-right4.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right4.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="catalogue-service-for-the-web-cs-w">
+<h1>Catalogue Service for the Web (CS-W)<a class="headerlink" href="#catalogue-service-for-the-web-cs-w" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="../../_images/csw4.jpg"><img alt="CS-W in Context" src="../../_images/csw4.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>El estandar de interface OGC Catalogue Service especifica un patrón de diseño para la definición de interfaces para la publicación y búsqueda de colecciones de información descriptiva (metadatos) sobre datos geoespaciales, servicios y objetos de informacion relacionada. Provedores de recursos, como por ejemplo los de contenidos, utilizan catálogos para registrar metadatos que se ajustan al modelo de información del proveedor; dichos modelos incluyen descripciones de referencias espaciales e información temática. De esta forma, las aplicaciones cliente puenden buscar datos y servicios geoespaciales de formas muy eficientes.</p>
+<p>Existen varios perfiles del modelo actual OGC CS-W. Estos incluyen:</p>
+<ul class="simple">
+<li>Perfil de metadatos ISO 19115/19139 (<a class="reference external" href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=32557">http://www.iso.org/iso/catalogue_detail.htm?csnumber=32557</a>). Este documento especifica un perfil de aplicación para metadatos ISO con soporte para codificación XML por ISO 19139 (<a class="reference external" href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=32557">http://www.iso.org/iso/catalogue_detail.htm?csnumber=32557</a>) y el protocolo de enlace HTTP. Este perfil CS-W ha sido implementado de forma generalizada en Europa, como por ejempo en la Infraestructura de Datos Espaciales de North Rhine Westphalia (estado federal de Alemania).</li>
+<li>Servicio de registro CSW-ebRIM. (<a class="reference external" href="http://portal.opengeospatial.org/files/?artifact_id=31137">http://portal.opengeospatial.org/files/?artifact_id=31137</a>) Este perfil aplica la interface CSW al modelo de información de registro OASIS ebXML (ebRIM 3.0) proporcinando una forma general y flexible de Servicios Web de registro que permite a los usuarios —agentes software o humanos— localizar, acceder y hacer uso de recursos en un sistema abierto y distribuido; proporcionando todos los artefactos para la extracción, almacenamiento y gestión de muchos tipos de descripciones de recurso. Un mecanismo de extensión permite adaptar contenidos de registro de dominios de aplicación más especializados.</li>
+<li>CSW 39.50: El protocolo de conexión Z39.50 utiliza una arquitectura cliente-servidor basada en mensajes implementada utilizando la Definición de Servicio de Aplicación y Especification3 de protocolo ANSI/NISO Z39.50. Este protocolo mapea cada una de las operaciones de modelo general con un servicio correspondiente especificado en el estandar ANSI/NISO/ISO <a class="reference external" href="http://lcweb.loc.gov/z3950/agency/document.html">http://lcweb.loc.gov/z3950/agency/document.html</a>.</li>
+</ul>
+<p>Mucho del trabajo actual en este estandar tiene que ver con la restructuración del estandar de catálogo, así que hay un núcleo bien definido y fácil de implementar acompañado de un mecanismo bien definido para expresar una variedad de extensiones (anteriormente conocidas como perfiles de aplicación).</p>
+<div class="section" id="ver-tambien">
+<h2>Ver también<a class="headerlink" href="#ver-tambien" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Cat: ebRIM App Profile: Earth Observation Products</li>
+<li>ISO 23950 (2003). &#8220;Information Retrieval (Z39.50): Application Service Definition and Protocol Specification&#8221;</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

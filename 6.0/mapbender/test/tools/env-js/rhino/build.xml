@@ -1,0 +1,102 @@
+
+<!--
+ * This file is a component of env.js,
+ *     http://github.com/gleneivey/env-js/commits/master/README
+ * a Pure JavaScript Browser Environment
+ * Copyright 2009 John Resig, licensed under the MIT License
+ *     http://www.opensource.org/licenses/mit-license.php
+  -->
+<project name="Env4Rhino" default="all" basedir=".">
+    <description>
+        Compiles rhino-specific extensions to support window-like
+        scope chains for iframes in env-js.  It also adds htmlcleaner
+        to support the parsing of malformed html.
+        
+        The repackaged js.jar is named env-js.jar to facilitate 
+        ease of use as a unified java environment for hosting
+        env.js browser environment emulation.
+        
+        Special thanks to Glen E. Ivey for the rhino extensions,
+        iframe implementations, among many other contributions.
+    </description>
+    <tstamp/>
+  
+    <property name="SRC_DIR"        
+            location="src"           
+            description="Source Folder"/>
+    <property name="BUILD_DIR"        
+            location="build"           
+            description="Build Folder"/>
+    <property name="CLASS_DIR"        
+            location="${BUILD_DIR}/classes"           
+            description="Compiled Classes Folder"/>
+    <property name="DIST_DIR"        
+            location="../dist"           
+            description="Distribution Folder"/>
+    
+    <property name="RHINO_JAR"      
+            location="js.jar"  
+            description="Rhino JS Engine"/>
+    <property name="JLINE_JAR"      
+            location="jline-0.9.94.jar"  
+            description="jLine Command Line"/>
+    <property name='JAVA_DEBUG' 
+              value='on'/>
+    <property name='JAVA_TARGET' 
+              value='1.5'/>
+    <property name='JAVA_SRC' 
+              value='1.5'/> 
+    <property name='JAR_COMPRESSION' 
+              value='on'/>     
+    
+    <property file="../build.properties"/>
+    
+    <property name="ENV_JAR_DIST"  
+              location="${DIST_DIR}/${BUILD}.jar" />
+    <property name="ENV_JAR_LATEST"  
+              location="${DIST_DIR}/${PROJECT}.jar" />
+    <!--
+        jar.jar: mainForEnvjs.jar
+        dist.name: mainforenvjs${version}
+        dist.dir: ${build.dir}/${dist.name}
+        
+        combined.jar: env.js.jar
+        rhino.jar: js.jar
+        combined.name: mainforenvjs${version}
+        combined.dir: ${build.dir}/${dist.name}
+        
+    -->
+    <target name='all' depends='jar'/>
+
+    <target name="init">
+        <mkdir dir="${BUILD_DIR}"/>
+        <mkdir dir="${CLASS_DIR}"/>
+        <mkdir dir="${DIST_DIR}"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${SRC_DIR}"
+               destdir="${CLASS_DIR}"
+               includes="**/*.java"
+               deprecation="on"
+               classpath="${RHINO_JAR}"
+               debug="${JAVA_DEBUG}"
+               target="${JAVA_TARGET}"
+               source="${JAVA_SRC}">
+            <compilerarg value="-Xlint:unchecked"/>
+        </javac>
+    </target>
+    
+    <target name="jar" depends="compile">
+        <copy file="${RHINO_JAR}" tofile="${ENV_JAR_DIST}"/>
+        <jar jarfile="${ENV_JAR_DIST}"
+             update="true"
+             basedir="${CLASS_DIR}"
+             manifest="${SRC_DIR}/META-INF/MANIFEST.MF"
+             compress="${JAR_COMPRESSION}">
+             <fileset dir="${CLASS_DIR}" includes="**/*.class"/>
+             <zipfileset src="${JLINE_JAR}" includes="**/*"/>
+         </jar>
+        <copy file="${ENV_JAR_DIST}" tofile="${ENV_JAR_LATEST}"/>
+    </target>
+</project>

@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OTB &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.orfeo-toolbox.org/"><img alt="Лого проекта" class="align-right" src="../../_images/logo-otb22.png" style="width: 171.0px; height: 135.0px;" /></a>
+<div class="section" id="otb">
+<h1>OTB<a class="headerlink" href="#otb" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Обработка изображений<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>ORFEO Toolbox (OTB) — это высокопроизводительная библиотека обработки изображений.
+В основном используется для обработки данных дистанционного зондирования,
+полученных при помощи радаров, спутников и аэрофотосъемки. OTB предоставляет
+инструменты для обработки оптических и радарных изображений (трёхмерная перспектива,
+сегментация, классификация, анализ изменений, анализ поверхности, поиск объектов,
+взаимодополнение оптического и радарного изображений).</p>
+<p>OTB был создан Французским Космическим Агентством (CNES) в рамках методологической
+части программы ORFEO и активно разрабатывается с 2006 года. Он основан на
+библиотеке анализа медицинских изображений ITK и имеет открытый код.</p>
+<div class="section" id="id2">
+<h3>Базовые функции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/otb-mapping11.jpg"><img alt="Скриншот" class="align-right" src="../../_images/otb-mapping11.jpg" style="width: 504.5px; height: 384.0px;" /></a>
+<ul class="simple">
+<li>доступ к данным: операции чтения/записи оптимизированны для большинства
+форматов используемых в ДЗЗ (включая Jpeg2000), предусмотрен доступ к
+метаданным и визуализация;</li>
+<li>орторектификация и перепроецирование;</li>
+<li>калибровка;</li>
+<li>сшивка изображений;</li>
+<li>фильтры: размытие, шумоподавление, улучшение контраста...;</li>
+<li>извлечение объектов;</li>
+<li>детектирование объектов;</li>
+<li>сегментация изображений;</li>
+<li>классификация: K-means, SVM, случайные поля Маркова;</li>
+<li>объектно-ориентированный анализ изображений;</li>
+<li>геопространственный анализ;</li>
+<li>создание стереопар;</li>
+<li>анализ данных SAR;</li>
+<li>анализ изменений.</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Дополнительная информация<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><strong>Веб-сайт:</strong> <a class="reference external" href="http://www.orfeo-toolbox.org/">http://www.orfeo-toolbox.org/</a></p>
+<dl class="docutils">
+<dt><strong>Лицензия:</strong> <a class="reference external" href="http://www.cecill.info/licences.en.html">CeCILL</a> (CeCILL совместима с GPL и учитывает особенности французского</dt>
+<dd>законодательства)</dd>
+</dl>
+<p><strong>Версия ПО:</strong> 3.14 (выпущена в июле 2012)</p>
+<p><strong>Поддерживаемые платформы:</strong> Linux, Mac, Windows</p>
+<p><strong>Интерфейсы API:</strong> C++ (доступны привязки к Java и Python)</p>
+<p><strong>Коммерческая поддержка:</strong> <a class="reference external" href="http://www.osgeo.org/search_profile">http://www.osgeo.org/search_profile</a></p>
+</div>
+<div class="section" id="id4">
+<h3>Начало работы<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/otb_quickstart.html"><em>Введение</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

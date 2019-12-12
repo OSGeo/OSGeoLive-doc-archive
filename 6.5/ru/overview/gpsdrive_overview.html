@@ -1,0 +1,168 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GpsDrive &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.gpsdrive.de"><img alt="Логотип проекта" class="align-right" src="../../_images/logo-gpsdrive20.png" style="width: 135.2px; height: 124.0px;" /></a>
+<div class="section" id="gpsdrive">
+<h1>GpsDrive<a class="headerlink" href="#gpsdrive" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gps">
+<h2>GPS-навигация<a class="headerlink" href="#gps" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.gpsdrive.de">GpsDrive</a> — это автомобильная (велосипедная, водная, воздушная, пешеходная) навигационная система. GpsDrive отображает ваше местоположение, полученное из GPS, на масштабируемой карте. Файл карты выбирается автоматически в зависимости от вашего расположения и указанного масштаба. Все GPS-приёмники, по идее, должны быть совместимы, поскольку обычно USB-GPS используют бинарный протокол, доступный для <a class="reference external" href="http://gpsd.berlios.de">gpsd</a> — GPS-сервиса и мультиплексора.</p>
+<div class="section" id="id2">
+<h3>Базовые функции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/gpsdrive-cyclemap10.png"><img alt="Внешний вид" class="align-right" src="../../_images/gpsdrive-cyclemap10.png" style="width: 512.0px; height: 384.0px;" /></a>
+<ul class="simple">
+<li>Загрузка из сети данных LANDSAT или OpenStreetMap, либо регистрация вашего собственного изображения</li>
+<li>Рендеринг &#8220;на лету&#8221; данных OpenStreetMap, записанных в базе данных PostGIS, с использованием Mapnik</li>
+<li>Рендеринг &#8220;на лету&#8221; из мозаики высокого разрешения NASA Blue Marble</li>
+<li>Голосовые сообщения посредством eSpeak</li>
+<li>Гибко настраиваемая информационная панель и графический интерфейс</li>
+<li>Поддержка GPX-треков и маршрутов, множество опций хранения путевых точек, включая SQLite и текстовый файл, совместимый с GpsBabel</li>
+<li>Поиск ближайших POI в заданном радиусе</li>
+<li>Планирование маршрута</li>
+<li>Наличие сервера, хранящего местоположения ваших друзей</li>
+<li>Интеграция с Kismet Wifi</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Дополнительная информация<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><strong>Веб-сайт:</strong> <a class="reference external" href="http://www.gpsdrive.de">http://www.gpsdrive.de</a></p>
+<p><strong>Лицензия:</strong> <a class="reference external" href="http://www.gnu.org/licenses/gpl-2.0.html">GPL версия 2</a></p>
+<p><strong>Версия ПО:</strong> 2.12svn</p>
+<p><strong>Поддерживаемые платформы:</strong> GNU/Linux, MacOS X</p>
+<p><strong>Поддержка:</strong> <a class="reference external" href="http://gpsdrive.de/support.shtml">http://gpsdrive.de/support.shtml</a></p>
+</div>
+<div class="section" id="id4">
+<h3>Начало работы<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/gpsdrive_quickstart.html"><em>Введение</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

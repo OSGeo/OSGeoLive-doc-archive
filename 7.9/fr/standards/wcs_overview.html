@@ -1,0 +1,160 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Web Coverage Service (WCS) &mdash; OSGeo-Live 7.9
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.9
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.9
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Standards de l’Open Geospatial Consortium (OGC)" href="standards.html" />
+    <link rel="next" title="Web Feature Service (WFS)" href="wfs_overview.html" />
+    <link rel="prev" title="Sensor Observation Service (SOS)" href="sos_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-OGC-left5.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-left5.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/logo-OGC-right5.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right5.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="web-coverage-service-wcs">
+<h1>Web Coverage Service (WCS)<a class="headerlink" href="#web-coverage-service-wcs" title="Permalink to this headline">¶</a></h1>
+<p>The OGC® Web Coverage Service Interface Standard (WCS) defines a standard interface and operations that enable interoperable access to geospatial &#8220;coverages&#8221;. The term &#8220;grid coverages&#8221; typically refers to content such as satellite images, digital aerial photos, digital elevation data, and other phenomena represented by values at each measurement point. (<a class="reference external" href="http://www.opengeospatial.org/standards/wcs">http://www.opengeospatial.org/standards/wcs</a>)</p>
+<a class="reference internal image-reference" href="../../_images/wcs5.jpg"><img alt="WCS in Context" src="../../_images/wcs5.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>The OGC Web Coverage Service (WCS) Interface Standard is a data service. The WCS standard defines a data access service that enables coverages, such as digital elevation models, to be queried using an HTTP based interface. The response to a WCS request includes coverage metadata and an output coverage whose pixels are encoded in a specified binary image format, such as GeoTIFF or NetCDF.</p>
+<p>As with other OGC standards, there are numerous excellent examples of deployed WCS implementations. One example is NDBC High Frequency (HF) Radar Web Coverage Service (WCS) developed and deployed by the US National Ocean and Atmospheric Administration (NOAA) (<a class="reference external" href="http://hfradar.ndbc.noaa.gov/">http://hfradar.ndbc.noaa.gov/</a>). HF Radar is used to remotely measure ocean surface currents. Another is the National Aeronautical and Space Administration (NASA) WCS for accessing Atmospheric Infrared Sounder (AIRS) Data (<a class="reference external" href="http://idn.ceos.org/KeywordSearch/Metadata.do?Portal=webservices&amp;KeywordPath=[Project%3A+Short_Name%3D%27EOS%27]&amp;EntryId=NASA_GES_DISC_AIRS_Atmosphere_Data_Web_Coverage_Service&amp;MetadataView=Full&amp;MetadataType=1&amp;lbnode=mdlb1">http://idn.ceos.org/KeywordSearch/Metadata.do?Portal=webservices&amp;KeywordPath=[Project%3A+Short_Name%3D%27EOS%27]&amp;EntryId=NASA_GES_DISC_AIRS_Atmosphere_Data_Web_Coverage_Service&amp;MetadataView=Full&amp;MetadataType=1&amp;lbnode=mdlb1</a>). This is one of the Goddard Earth Systems Data and Information Service Center&#8217;s OGC WCS instances that provides Level 3 Gridded atmospheric data products derived from AIRS data as generated on board NASA&#8217;s Aqua spacecraft.</p>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="wms_overview.html"><em>Web Map Service (WMS)</em></a></li>
+<li><a class="reference internal" href="wfs_overview.html"><em>Web Feature Service (WFS)</em></a></li>
+<li>Grid Coverage Service</li>
+<li><a class="reference internal" href="sos_overview.html"><em>Sensor Observation Service (SOS)</em></a></li>
+<li><a class="reference internal" href="fe_overview.html"><em>Filter Encoding (FE)</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

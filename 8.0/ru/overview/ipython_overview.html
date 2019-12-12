@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>IPython &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://ipython.org/"><img alt="project logo" class="align-center" src="../../_images/logo-ipython22.png" style="width: 468.0px; height: 60.3px;" /></a>
+<div class="section" id="ipython">
+<h1>IPython<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h1>
+<p>IPython provides a rich architecture for interactive computing with:</p>
+<ul class="simple">
+<li>Powerful interactive shells (terminal and Qt-based).</li>
+<li>A browser-based notebook with support for code, text, mathematical expressions, inline plots and other rich media.</li>
+<li>Support for interactive data visualization and use of GUI toolkits.</li>
+<li>Flexible, embeddable interpreters to load into your own projects.</li>
+<li>Easy to use, high performance tools for parallel computing.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/ipython-notebook111.png"><img alt="screenshot" class="align-right" src="../../_images/ipython-notebook111.png" style="width: 600.0px; height: 340.0px;" /></a>
+<p>While the focus of the project is Python, the IPython architecture is designed in a language-agnostic way to facilitate interactive computing in any language. An interactive kernel speaks to clients such as the terminal or web notebook via a well-specified <a class="reference external" href="http://ipython.org/ipython-doc/stable/development/messaging.html">protocol</a>, and all features of a kernel are available to all clients. We ship the official IPython kernel, but kernels for other languages are being currently developed, with prototypes in Ruby and JavaScript already existing. Additionally, the IPython kernel supports multi-language integration, letting you for example mix Python code with Cython, R, Octave, and scripting in <a class="reference external" href="http://nbviewer.ipython.org/github/ipython/ipython/blob/master/examples/notebooks/Script%20Magics.ipynb">bash-perl-or-ruby</a>.</p>
+<p>To get started with the IPython Notebook, see the <a class="reference external" href="https://github.com/ipython/ipython/tree/master/examples/notebooks#a-collection-of-notebooks-for-using-ipython-effectively">official-example-collection</a>. The <a class="reference external" href="https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks">notebook-gallery</a> is an excellent way to see the many things can be done with IPython while learning about a variety of topics, from basic programming to advanced statistics or quantum mechanics.</p>
+<p>To learn more about IPython, there are <a class="reference external" href="http://ipython.org/videos.html#videos">videos-and-screencasts</a> available or download <a class="reference external" href="http://ipython.org/presentation.html">talks-and-presentations</a>, or read the <a class="reference external" href="http://ipython.org/documentation.html">extensive-documentation</a>. IPython is open source (BSD license), and is used by a range of <a class="reference external" href="https://github.com/ipython/ipython/wiki/Projects-using-IPython">other-projects</a>; add your project to that list if it uses IPython as a library, and please don’t forget to cite the project.</p>
+<p>IPython supports Python 2.6 to 2.7 and 3.2 or newer. Our older 0.10 series supports Python 2.5, and can be used with Python 2.4.</p>
+<div class="section" id="core-features">
+<h2>Core Features<a class="headerlink" href="#core-features" title="Permalink to this headline">¶</a></h2>
+<p>The IPython Notebook is a web-based interactive computational environment where you can combine code execution, text, mathematics, plots and rich media into a single document:</p>
+<p>These notebooks are normal files that can be shared with colleagues, converted to other formats such as HTML or PDF, etc. You can share any publicly available notebook by using the IPython Notebook Viewer service which will render it as a static web page. This makes it easy to give your colleagues a document they can read immediately without having to install anything.</p>
+<p>To learn more about using the IPython Notebook, you can visit our example collection, and you can read the documentation for all the details on how to use and configure the system. The Notebook Gallery showcases many interesting notebooks covering a variety of topics, from basic programming to advanced scientific computing.</p>
+</div>
+<div class="section" id="geospatial-data-analysis-and-ipython">
+<h2>Geospatial Data Analysis and IPython<a class="headerlink" href="#geospatial-data-analysis-and-ipython" title="Permalink to this headline">¶</a></h2>
+<p>On OSGeoLive a number of python libraries and command line tools are installed (GDAL, GRASS, )and ready to be used, IPython provides a rich interface for such kind of tools, example usage can be found in the <a class="reference external" href="https://github.com/OSGeo/IPython_notebooks">geo-notebook</a> git repository other examples are available online on the IPython notebook gallery see : <a class="reference external" href="http://tw.rpi.edu/media/2013/09/25/a48/The_Perfect_Storm_1991.html">Data_and_Visualization_Integration_Via_Web-based_Resources</a> and <a class="reference external" href="http://nbviewer.ipython.org/gist/epifanio/7598354">Exploring_seafloor_habitats_geographic_analysis_using_IPython_Notebook_with_GRASS_and_R</a> , and an IPython Notebook can be also rendered as a <a class="reference external" href="http://orion.tw.rpi.edu/~epifanio/AGU-2013/AGU-2013-H52E02-MDS.slides.html">slideshow</a></p>
+</div>
+<div class="section" id="details">
+<h2>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<p>IPython <a class="reference external" href="http://ipython.org/">Website</a></p>
+<p><strong>Licence:</strong> BSD license</p>
+<p><strong>Software Version:</strong> 1.2.1</p>
+<p><strong>Supported Platforms:</strong> Linux, Mac, Windows</p>
+<p><strong>API Interfaces:</strong> Python</p>
+</div>
+<div class="section" id="community">
+<h2>COMMUNITY<a class="headerlink" href="#community" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.hipchat.com/ghSp7E1uY">Help-Chat-Room</a></p>
+<p><a class="reference external" href="http://stackoverflow.com/questions/tagged/ipython">Stack-Overflow</a></p>
+<p><a class="reference external" href="http://projects.scipy.org/mailman/listinfo/ipython-dev">Mailing-list</a></p>
+<p><a class="reference external" href="https://github.com/ipython/ipython/wiki">Wiki</a></p>
+<p><a class="reference external" href="http://www.reddit.com/r/IPython">Reddit</a></p>
+<p><a class="reference external" href="https://github.com/ipython/ipython/issues">File_a_bug</a></p>
+</div>
+<div class="section" id="quickstart">
+<h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/ipython_quickstart.html"><em>Quickstart documentation</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

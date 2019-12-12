@@ -1,0 +1,1 @@
+mb_registerSubFunctions("window.frames['treeConfGDE'].checkLayer()");

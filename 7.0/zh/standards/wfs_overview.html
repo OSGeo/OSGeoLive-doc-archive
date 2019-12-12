@@ -1,0 +1,171 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Web Feature Service (WFS) 网络地理要素服务 &mdash; OSGeo-Live 7.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Open Geospatial Consortium 开放地理空间信息联盟标准" href="standards.html" />
+    <link rel="next" title="Web Map Service (WMS) 网络地图服务" href="wms_overview.html" />
+    <link rel="prev" title="Web Coverage Service (WCS) 网络地理场数据服务" href="wcs_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-OGC-left12.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-left12.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/logo-OGC-right12.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right12.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="web-feature-service-wfs">
+<h1>Web Feature Service (WFS) 网络地理要素服务<a class="headerlink" href="#web-feature-service-wfs" title="Permalink to this headline">¶</a></h1>
+<p>　　OGC® Web Feature Service Interface Standard (WFS) 定义了一套接口用于传输矢量地理要素数据，比如道路和湖泊等(<a class="reference external" href="http://www.opengeospatial.org/standards/wfs">http://www.opengeospatial.org/standards/wfs</a>)。</p>
+<a class="reference internal image-reference" href="../../_images/wfs12.jpg"><img alt="WFS in Context" src="../../_images/wfs12.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>　　WFS 标准使用户可以：</p>
+<ul class="simple">
+<li>发现存储的要素类型(GetCapabilities)</li>
+<li>获得其属性描述(DescribeFeatureType)</li>
+<li>以一定的过滤器获得一部分要素(GetFeature)</li>
+<li>添加、编辑和删除要素(Transaction)</li>
+</ul>
+<p>　　所有 WFS 系统都支持 Geography Markup Language (GML) 地理主机语言。某些 WFS 也支持 GeoRSS 或 shp 等。</p>
+<p>　　用户通常使用网页客户端或桌面 GIS 系统使用 WFS 服务，通过网络获取来自其它机构的数据。例如，美国地质调查局使用 WFS 作为其 National Spatial Data Infrastructure (NSDI) (<a class="reference external" href="http://frameworkwfs.usgs.gov/">http://frameworkwfs.usgs.gov/</a>) 地理数据基础服务工程的一部分。其数据以 WFS 图层和网页客户端两种形式提供。</p>
+<div class="section" id="id1">
+<h2>其它信息<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="wms_overview.html"><em>Web Map Service (WMS) 网络地图服务</em></a></li>
+<li><a class="reference internal" href="wcs_overview.html"><em>Web Coverage Service (WCS) 网络地理场数据服务</em></a></li>
+<li>Grid Coverage Service</li>
+<li><a class="reference internal" href="sos_overview.html"><em>Sensor Observation Service (SOS) 传感器数据传输标准</em></a></li>
+<li><a class="reference internal" href="gml_overview.html"><em>Geography Markup Language (GML) 地理注记</em></a></li>
+<li><a class="reference internal" href="kml_overview.html"><em>KML Encoding Standard (KML) 地理注记</em></a></li>
+<li><a class="reference internal" href="sld_overview.html"><em>Style Layer Descriptor (SLD) 图层样式注记</em></a></li>
+<li>Symbology Encoding</li>
+<li><a class="reference internal" href="fe_overview.html"><em>Filter Encoding (FE) 过滤器编码</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

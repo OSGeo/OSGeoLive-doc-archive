@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OSGeo-Live 启动指南 &mdash; OSGeo-Live 7.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 7.0" href="../index.html" />
+    <link rel="next" title="OpenStreetMap Quickstart" href="osm_quickstart.html" />
+    <link rel="prev" title="在硬盘安装 OSGeo-Live" href="osgeolive_install_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="osgeo-live">
+<h1>OSGeo-Live 启动指南<a class="headerlink" href="#osgeo-live" title="Permalink to this headline">¶</a></h1>
+<p>　　本文介绍如何从 DVD 或 USB 启动 OSGeo-Live 系统。</p>
+<div class="section" id="id1">
+<h2>系统要求<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>　　对硬件的最低要求是：</p>
+<ul class="simple">
+<li>内存：1 GB</li>
+<li>CPU：1 GHz i686 兼容（Intel/AMD）</li>
+<li>硬盘：</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>直接从 DVD/USB 启动时不需要；</li>
+<li>在硬盘安装需要 10 GB 的空间。</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>鼠标：建议使用三键鼠标操作（特别是苹果用户）</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>运行：<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>　　从 <a class="reference external" href="http://download.osgeo.org/livedvd">http://download.osgeo.org/livedvd</a> 可以下载 OSGeo-Live DVD 的 ISO 镜像。将光盘或 U 盘插入并重启。</p>
+<p>　　通常的系统会设置为默认从 CD 启动。这样应当载入 Xubuntu 操作系统和各款地理信息软件。如果不能直接载入，则需要调整 BIOS 设置或选择临时启动项。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/osgeolive_boot12.png"><img alt="boot" src="../../_images/osgeolive_boot12.png" style="width: 504.0px; height: 280.0px;" /></a>
+</div></blockquote>
+<p>　　点击 <tt class="kbd docutils literal"><span class="pre">回车</span></tt> 继续。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/osgeolive_boot_select12.png"><img alt="boot select" src="../../_images/osgeolive_boot_select12.png" style="width: 448.0px; height: 336.0px;" /></a>
+</div></blockquote>
+<p>　　选择 <em class="guilabel">live - boot the Live System</em> 。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/osgeolive_login5.png"><img alt="boot select" src="../../_images/osgeolive_login5.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+<p>　　直接点击 <tt class="kbd docutils literal"><span class="pre">回车</span></tt> 即可登录默认账户。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/osgeolive_menu25.png"><img alt="boot select" src="../../_images/osgeolive_menu25.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+<p>　　从 <em class="menuselection">Geospatial</em> 菜单可以选择众多的软件。</p>
+<p>　　Xfce 图形界面环境教程（英语）： <a class="reference external" href="http://docs.xfce.org/start">http://docs.xfce.org/start</a></p>
+<p>　　Ubuntu 操作系统教程（PDF 电子书，英语）： <a class="reference external" href="/usr/local/share/doc/Getting_Started_with_Ubuntu_10.10.pdf">/usr/local/share/doc/Getting_Started_with_Ubuntu_10.10.pdf</a> 。</p>
+<p>　　线上的 Ubuntu 帮助（我们使用的传统的 Xfce 界面，而非带有平板风格的 Unity）：</p>
+<blockquote>
+<div><p><a class="reference external" href="https://help.ubuntu.com/11.04/">https://help.ubuntu.com/11.04/</a></p>
+<p><a class="reference external" href="https://help.ubuntu.com/11.04/ubuntu-classic/gnome-classic-index/C/">https://help.ubuntu.com/11.04/ubuntu-classic/gnome-classic-index/C/</a></p>
+<p><a class="reference external" href="https://help.ubuntu.com/11.04/serverguide/C/">https://help.ubuntu.com/11.04/serverguide/C/</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>相关信息：<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="virtualbox_quickstart.html"><em>OSGeo-Live Virtual Box 虚拟机运行指南</em></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><em>在硬盘安装 OSGeo-Live</em></a></li>
+<li><a class="reference internal" href="usb_quickstart.html"><em>创建自启动 OSGeo-Live USB 盘</em></a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

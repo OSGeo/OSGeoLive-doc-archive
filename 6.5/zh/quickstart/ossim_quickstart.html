@@ -1,0 +1,184 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Ossim 快速入门 &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 6.5" href="../index.html" />
+    <link rel="next" title="OTB 快速入门" href="otb_quickstart.html" />
+    <link rel="prev" title="OpenStreetMap Quickstart" href="osm_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-ossim23.png"><img alt="project logo" class="align-right" src="../../_images/logo-ossim23.png" style="width: 180.8px; height: 73.6px;" /></a>
+<div class="section" id="ossim">
+<h1>Ossim 快速入门<a class="headerlink" href="#ossim" title="Permalink to this headline">¶</a></h1>
+<p>　　Open Source Software Image Map (OOSIM) 是一款高性能的图像引擎，适用于遥感、图像处理、地理信息系统和摄影测量领域。</p>
+<p>　　本文介绍：</p>
+<blockquote>
+<div><ul class="simple">
+<li>在 imagelinker 子系统中查看栅格数据；</li>
+<li>运行 ossimPlanet 虚拟地球。</li>
+</ul>
+</div></blockquote>
+<div class="section" id="imagelinker">
+<h2>Imagelinker<a class="headerlink" href="#imagelinker" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">从 &#8220;Spatial Tools&#8221; 目录启动 Imagelinker ；</p>
+</li>
+<li><p class="first">通过 <em class="menuselection">File ‣ Open Project ‣ /home/user/ossim/landsatrgb.prj</em> 开启示例工程；</p>
+</li>
+<li><p class="first">点击 <em class="menuselection">menu bar ‣ window ‣ tile</em> 选择平铺窗口；</p>
+</li>
+<li><p class="first">选择 <em class="menuselection">image window ‣ pan 图标 ‣ 点击影像 ‣ 点击 &#8220;propagate&#8221;</em> ；</p>
+</li>
+<li><p class="first">窗口中应出现三幅灰阶影像。</p>
+<a class="reference internal image-reference" href="../../_images/ossim_imagelinker25.jpg"><img alt="../../_images/ossim_imagelinker25.jpg" src="../../_images/ossim_imagelinker25.jpg" style="width: 564.0px; height: 450.0px;" /></a>
+</li>
+</ul>
+<p>　　更多内容请看相关 <a class="reference external" href="http://www.geofemengineering.it/GeofemEngineering/Blog/Voci/2010/3/15_OSGEO_-_Live_-_DVD_-_%22running_imagelinker%22.html">博文</a> 。</p>
+</div>
+<div class="section" id="ossimplanet">
+<h2>OssimPlanet<a class="headerlink" href="#ossimplanet" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>从 &#8220;Desktop-GIS&#8221; 目录启动 OssimPlanet ；</li>
+<li>选择 <em class="menuselection">File ‣ Open Image ‣ /home/user/data/raster/band1.tiff</em> 文件；</li>
+<li>在 <em class="menuselection">menu ‣ Open kml ‣ /home/user/data/kml/*.kml</em> 选择 xml 文件；</li>
+<li>通过 <em class="menuselection">legend tree ‣ Image Layers ‣ open the trees ‣ 双击 band1 影象</em> 移动视角至影像；</li>
+<li>浏览影像。</li>
+</ul>
+<p>　　取消 <em class="menuselection">File ‣ Preferences ‣ Environment ‣ Enable Ephemeris</em> 的勾选可以关闭光影渲染。</p>
+</div>
+<div class="section" id="id2">
+<h2>更多内容<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Ossim 教程</li>
+</ul>
+<p>　　通过 <a class="reference external" href="http://download.osgeo.org/ossim/tutorials/pdfs/">教程</a> 学习 Ossim 的更多操作。</p>
+<ul class="simple">
+<li>Live 本地文档</li>
+</ul>
+<p>　　本地 <a class="reference external" href="../../ossim/">文档</a> 也包含了更多的操作指南。</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

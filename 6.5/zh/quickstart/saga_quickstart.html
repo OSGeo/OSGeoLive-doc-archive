@@ -1,0 +1,216 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SAGA GIS 快速入门 &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 6.5" href="../index.html" />
+    <link rel="next" title="Sahana 快速入门" href="sahana_quickstart.html" />
+    <link rel="prev" title="rasdaman 快速入门" href="rasdaman_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.saga-gis.org"><img alt="project logo" class="align-right" src="../../_images/logo-saga23.png" style="width: 103.0px; height: 100.0px;" /></a>
+<div class="section" id="saga-gis">
+<h1>SAGA GIS 快速入门<a class="headerlink" href="#saga-gis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>启动<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>　　在 OSGeo Live 中运行 SAGA GIS，点击桌面的 SAGA 图标即可。</p>
+<p>　　启动后 SAGA 将显示三个窗口，分别是主窗口、对象属性窗口和信息窗口。对象属性窗口中的信息会根据选择对象的不同而变化。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/saga_guioverview11.png"><img alt="../../_images/saga_guioverview11.png" src="../../_images/saga_guioverview11.png" style="width: 523.2px; height: 422.4px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>读取数据<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>　　在 SAGA 界面的 <strong>File|Grid|Load Grid</strong> 菜单可以选择读取 <cite>/home/user/saga/DGM_30m_Mt.St.Helens_SRTM.grd</cite> 栅格文件。信息窗口将显示操作的结果，例如 <cite>Load Grid: DGM_30m_Mt.St.Helens_SRTM.grd...okay</cite> 表示操作成功。读取后该数据会出现在主窗口的数据（data）选项卡，位列对应栅格系统之下。</p>
+<p>　　本例的栅格系统信息为 <strong>30;312x 458y; 557970x 5108130y</strong> 。第一个数字意为栅格分辨率 30m 后两个为行列数，最后两个为原点坐标，以左下角为准。在属性窗口的描述（description）选项卡显示了进一步的信息，包括数值类型（此处为 FLOAT 浮点）、数值范围、基本统计信息、内存占用等。</p>
+</div>
+<div class="section" id="id3">
+<h2>显示数据<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>　　双击数据集即可开启一个新的地图窗口渲染显示该数据集。窗口将显示左上角的地理坐标，右侧及下侧有以地图单位标注的标尺。光标位置的地理信息显示在界面底部。此处 Z 值显示所选栅格表达的高程数据。</p>
+<p>　　使用工具栏的导航选择工具可以平移和缩放。默认选择的为缩放（zoom），左键放大，右键缩小，拖拽放大至选择区域。放大到一定程度会显示像元数值。选择平移工具（pan）可以推拽平移。另有缩小至全局视图（Zoom to Full Extent）等操作。</p>
+<img alt="../../_images/saga_fullextent11.png" src="../../_images/saga_fullextent11.png" />
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">若缩放尺寸太大以致难以判断位置，点击缩小至全局视图即可。</p>
+</div>
+<div class="section" id="id4">
+<h3>创建坡面阴影图<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>　　通过阴影图运算可以增强地形显示的效果。在主窗口 Modules 选项卡打开 <strong>Terrain Analysis - Lightning, Visibility</strong> 并选择 Analytical Hillshading 模块，在设置（settings）选项卡设置参数。（说明/description 选项卡显示了该模块的功能和配置信息）在 Grid system 选择载入的 Mt. St. Helens 数据，在 Elevation 选择该数据集，在 Shading Method 选择 Standard 并点击 Apply 执行。</p>
+<p>　　完成后，主窗口将显示操作形成的新数据集。双击 &#8216;Analytical Hillshading&#8217; 并选择“New”将以新窗口显示数据。查看后关闭。</p>
+<p>　　重新双击该数据集，但选择 &#8216;Add layer to selected map&#8217; 可以在原窗口中叠加新数据集。</p>
+<p>　　在主窗口的 Maps 选项卡列举了地图窗口及其数据集，渲染顺序是从下到上。右击 &#8216;Analytical Hillshading&#8217; 数据集并选择 Move To Bottom 移动到底部，使得原始的高程图暴露出来。在原始高程数据集的设置（settings）选项卡设置透明度（transparency）为 30 。这样的显示效果为有坡向阴影叠加的高程。</p>
+<p>　　请尝试不同的透明度与渲染方式设定。若不改变输出设置，输出数据集会被覆盖，因此输出结果将会立刻显现。</p>
+<a class="reference internal image-reference" href="../../_images/saga_withhillshade11.png"><img alt="../../_images/saga_withhillshade11.png" src="../../_images/saga_withhillshade11.png" style="width: 768.8px; height: 562.4px;" /></a>
+</div>
+<div class="section" id="d">
+<h3>3D 可视化<a class="headerlink" href="#d" title="Permalink to this headline">¶</a></h3>
+<p>　　下面对高程数据进行三维显示。选中地图视图并点击工具栏中的 3D-View ，选中栅格系统中的原始高程数据集为高程（elevation）。点击 OK 即可。三维视图中按住鼠标左键拖拽可以旋转，右键用于缩放。工具栏中还提供了更多控制。</p>
+<a class="reference internal image-reference" href="../../_images/saga_3d11.png"><img alt="../../_images/saga_3d11.png" src="../../_images/saga_3d11.png" style="width: 768.8px; height: 562.4px;" /></a>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>创建等高线<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>　　作为 SAGA 矢量功能的示例，这里以高程数据创建等高线。在主窗口的 modules 选项卡选择 <strong>Shapes - Grid | Contour Lines From Grid</strong> 或者在菜单选择 <strong>Modules|Shapes|Grid|Vectorization</strong> 可以启动这一功能。选择栅格系统及其下的高程数据集，在等高线间距（equidistance）输入所需的值（此处建议 50m）。执行后，新的矢量数据将显示在主界面中。在一个地图视图中打开它。默认状态下所有等高线具有相同的颜色。打开这一数据集的选项并选择 Display: color classification ，将分类（classification）方式改为渐变色阶（graduated color），选择一个配色方案并确认。</p>
+<div class="section" id="id6">
+<h3>查看历史记录<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>　　选择一个数据集，例如此处的等高线，在属性窗口选择历史（history）选项卡可以查看其创建和编辑的过程记录。在存储文件时，*.hshp 和 <a href="#id7"><span class="problematic" id="id8">*</span></a>.hgrd 格式的记录中也包含了这些信息。</p>
+<a class="reference internal image-reference" href="../../_images/saga_contour_history11.png"><img alt="../../_images/saga_contour_history11.png" src="../../_images/saga_contour_history11.png" style="width: 772.8px; height: 517.6px;" /></a>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>保存数据<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>　　在主界面打开数据（data）选项卡，右击需要保存的数据集可以将其保存。SAGA 默认将栅格系统保存为自有的 <em>.sgrd ，shp 则为标准的 ESRI *.shp 。选择 **File|Project|Save Project*</em> 将保存工程文件，以记录所有视图和设置，并提供保存数据集的选项。</p>
+</div>
+<div class="section" id="id10">
+<h2>输入/输出数据<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>　　一些列不同的模块可以用于输入和输出数据。其中最为常用的是 Import/Export GDAL/OGR（**modules|file|GDAL/OGR menu**）。包括 geotiff 在内的众多栅格数据均由其支持。同样它可以用于对这些格式输出。</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">从 1.7.0 版开始，SAGA GIS 栅格系统文件就获得了 GDAL 的支持。因此可以在其它使用 GDAL 的系统中打开。请注意打开这一文件时对象应选择 <a href="#id11"><span class="problematic" id="id12">*</span></a>.sdat 文件而非 <a href="#id13"><span class="problematic" id="id14">*</span></a>.sgrd 。</p>
+</div>
+<p>　　本例使用的是 SRTM 数字高程模型靠近巴塞罗那的一份切片。</p>
+<p>　　待导入的文件是 <cite>/home/user/data/raster</cite> 目录下的 <cite>SRTM_u03_n041e002.tif</cite> 。使用 <strong>modules|file|GDAL/OGR menu</strong> 的 Import/Export GDAL/OGR 模块选择该文件可以实现导入。</p>
+<p>　　导入后在新视图打开该数据集。此时渲染的结果是一片灰色。将光标移动到海岸线上的某些像素，可以在状态栏看到其值很低（-32768）。</p>
+<p>　　这些像素是空值像素。在属性窗口中的空值（nodata）设定空值上限（maximum no data value）为 -32768 。在主窗口右击该数据集并选择 &#8216;Classification|Set Range to minimum maximum&#8217; 可以重置其色阶。</p>
+<p>　　接下来可以同前述一样创建等高线图。您也可以继续探索 SAGA 的其它功能。</p>
+</div>
+<div class="section" id="id15">
+<h2>其它信息<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>　　SAGA 官网：</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://www.saga-gis.org">http://www.saga-gis.org</a></li>
+</ul>
+</dd>
+<dt>　　官方文档：</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://www.saga-gis.org/en/about/references.html">http://www.saga-gis.org/en/about/references.html</a></li>
+<li><a class="reference external" href="http://sourceforge.net/projects/saga-gis/files/SAGA%20-%20Documentation/">http://sourceforge.net/projects/saga-gis/files/SAGA%20-%20Documentation/</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

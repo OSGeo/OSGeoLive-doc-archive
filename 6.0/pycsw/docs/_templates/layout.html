@@ -1,0 +1,51 @@
+{% extends "!layout.html" %}
+
+{% block relbar1 %}
+
+<style type="text/css">
+  .header a:link{color: white;}
+  .header a:visited{color: white;}
+</style>
+
+<table class="header" width="100%" style="width: 100%;">
+  <tr>
+    <td class="left" style="padding: 10px 10px 0px 0px; text-align: left; vertical-align: top;"><a href="/index.html" title="pycsw">pycsw</a></td>
+    <td class="right" style="padding: 10px 10px 0px 0px; text-align: right; vertical-align: top;">
+      <a href="/index.html" title="Home">Home</a> |
+      <a href="/demos.html" title="Demos">Demos</a> |
+      <a href="/docs/index.html" title="Docs">Docs</a> |
+      <a href="http://sourceforge.net/apps/trac/pycsw" title="Issue Tracker">Issue Tracker</a> |
+      <a href="/faq.html" title="FAQ">FAQ</a> |
+      <a href="/download.html" title="Download">Download </a>
+    </td>
+  </tr>
+</table>
+
+{{ super() }}
+{% endblock %}
+
+{% block footer %}
+
+{{ super() }}
+
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://sourceforge.net/apps/piwik/pycsw/" : "http://sourceforge.net/apps/piwik/pycsw/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  <script type="text/javascript">
+    try {
+      var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
+      piwikTracker.trackPageView();
+      piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+  </script>
+  <noscript>
+    <p>
+      <img src="http://sourceforge.net/apps/piwik/pycsw/piwik.php?idsite=3" style="border:0" alt=""/>
+    </p>
+  </noscript>
+  <!-- End Piwik Tag -->
+
+{% endblock %}

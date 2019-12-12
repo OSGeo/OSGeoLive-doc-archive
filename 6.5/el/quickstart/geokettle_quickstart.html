@@ -1,0 +1,224 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης GeoKettle &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Καλώς ήρθατε στο OSGeo-Live" href="../index.html" />
+    <link rel="next" title="Εγχειρίδιο Γρήγορης Εκκίνησης Geomajas" href="geomajas_quickstart.html" />
+    <link rel="prev" title="Εγχειρίδιο Γρήγορης Εκκίνησης GDAL/OGR" href="gdal_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.geokettle.org/"><img alt="project logo" class="align-right" src="../../_images/logo-geokettle5.png" style="width: 80.0px; height: 80.0px;" /></a>
+<div class="section" id="geokettle">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης GeoKettle<a class="headerlink" href="#geokettle" title="Permalink to this headline">¶</a></h1>
+<p>Το GeoKettle είναι ένα ισχυρό εργαλείο εξαγωγής, μετατροπής και ανάθεσης χωρικών μεταδεδομένων. Στοχεύει στην ολοκλήρωση διαφορετικών πηγών για την ανάπτυξη και ενημέρωση χωρικών βάσεων δεδομένων. Επιτρέπει την εξαγωγή δεδομένων από τα αρχεία τους, τον μετασχηματισμό των δεδομένων ώστε να διορθώνονται λάθη, να διαγράφονται περιττές εγγραφές, να αλλάζει την δομή τους, να τα προσαρμόζει σε ορισμένες γνωστές τυποποιήσεις και τέλος την ανάθεση (loading) των νέων δεδομένων σε μια σύγχρονη βάση δεδομένων, αρχεία GIS ή γεωχωρικές διαδικτυακές υπηρεσίες.</p>
+<p>Αυτό το εγχειρίδιο περιγράφει πως:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Φορτώσεις έναν δεδομένο μετασχηματισμό ή να</li>
+<li>Δημιουργήσεις έναν νέο μετασχηματισμό.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="id1">
+<h2>Εκκίνηση GeoKettle<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Επιλέξτε <em class="menuselection">Spatial Tools ‣ GeoKettle</em> από το Geospatial start menu</li>
+<li>Περιμένετε... η εφαρμογή χρειάζεται λίγο χρόνο να ξεκινήσει</li>
+<li>Θα ερωτηθείτε εαν θα δώσετε πληροφορίες για αποθετήριο ή απλά πατήστε το κουμπί &#8220;No repository&#8221; για να μπείτε στο χώρο εργασίας του GeoKettle.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_welcome2.png"><img alt="../../_images/geokettle_welcome2.png" src="../../_images/geokettle_welcome2.png" style="width: 649.6px; height: 480.0px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>Χώρος εργασίας<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Όπως βλέπετε στην ακόλουθη εικόνα ο χώρος εργασίας αποτελείται από διαφορετικά πεδία.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_workbench2.png"><img alt="../../_images/geokettle_workbench2.png" src="../../_images/geokettle_workbench2.png" style="width: 819.2px; height: 572.0px;" /></a>
+</div></blockquote>
+<p>Αριστερά υπάρχει ένας κατάλογος ο οποίος περιέχει όλα τα βήματα τα οποία αποτελεούν έναν μετασχηματισμό. Το δεξί μέρος του χώρου εργασίας είναι η περιοχή όπου ο μετασχηματισμός θα σχεδιαστεί και θα τρέξει / αποσφαλματωθεί.</p>
+<p>Τα περιεχόμενα αυτών των περιοχών θα παρουσιαστούν στην συνέχεια όπως θα εμφανίζεται η χρήση τους.</p>
+</div>
+<div class="section" id="id3">
+<h2>Φορτώνοντας έναν υπάρχοντα μετασχηματισμό<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Για να φορτώσετε έναν μετασχηματισμό επιλέξτε <em class="menuselection">File ‣ Open</em>. Πλοηγηθείτε στον φάκελο με τα δείγματα μετασχηματισμών <tt class="file docutils literal"><span class="pre">samples/transformations/geokettle</span></tt>, στην συνέχεια επιλέξτε έναν από τα διαθέσιμα δείγματα και κάντε κλικ στο <em class="guilabel">OK</em>. Οι μετασχηματισμοί του GeoKettle αποθηκεύονται σε αρχεία με την επέκταση <cite>*.ktr</cite>.</p>
+<p>Στην ακόλουθη εικόνα βλέπετε τον μετασχηματισμό «τομής». Θα παρατηρήσετε ότι τα περιεχόμενα των δύο υποπεριοχών του χώρου εργασίας έχουν αλλάξει.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_intersection_transformation2.png"><img alt="../../_images/geokettle_intersection_transformation2.png" src="../../_images/geokettle_intersection_transformation2.png" style="width: 819.2px; height: 504.0px;" /></a>
+</div></blockquote>
+<p>Μια περιγραφή του μετασχηματισμού και ενδεχόμενες οδηγίες βρίσκονται στην κίτρινη περιοχή των υποδείξεων.</p>
+<p>Πριν ξεκινήσετε τον μετασχηματισμό, θα χρειαστεί να ορίσετε ποιο αρχείο τύπου shapefile θα χρησιμοποιείστε. Για να το κάνετε αυτό διπλοτατήστε σε κάθε ένα από τα βήματα «&nbsp;GIS file input&nbsp;» για να εμφανιστεί ο ακόλουθος διάλογος.</p>
+<blockquote>
+<div><img alt="../../_images/geokettle_shapefile_input_step2.png" src="../../_images/geokettle_shapefile_input_step2.png" />
+</div></blockquote>
+<p>Δώστε το όνομα του αρχείου shapefile συμπεριλαμβάνοντας την επέκταση <cite>*.shp</cite> ή αφήστε το όπως είναι και επιλέξτε <em class="guilabel">OK</em>.</p>
+<p>Τώρα είστε έτοιμοι να ξεκινήσετε τον μετασχηματισμό. Για να το κάνετε αυτό απλά πατήστε τον κουμπί εκκίνησης (play) στην γραμμή εργαλείων πάνω από τον μετασχηματισμό.</p>
+</div>
+<div class="section" id="id4">
+<h2>Δημιουργώντας έναν νέο μετασχηματισμό<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Εκκινείστε το GeoKettle και ανοίξτε την επιφάνεια εργασίας όπως κάνατε στο προηγούμενο εδάφιο.</p>
+<p>Για να δημιουργήσετε έναν μετασχηματισμό επιλέξτε <em class="menuselection">File ‣ New ‣ Transformation</em>. Μπορείτε να αλλάξετε το όνομά του αποθηκεύοντάς το ως νέο επιλέγοντας&nbsp;<em class="menuselection">File ‣ Save as...</em>.</p>
+<p>Όπως φαίνεται στην ακόλουθη εικόνα όλα τα απαραίτητα βήματα είναι κατηγοριοποιημένα αριστερά στον χώρο εργασίας. Επεκτείνεται κάθε κατηγορία να δείτε τα περιεχόμενά της βήματα.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_your_transformation2.png"><img alt="../../_images/geokettle_your_transformation2.png" src="../../_images/geokettle_your_transformation2.png" style="width: 640.0px; height: 489.6px;" /></a>
+</div></blockquote>
+<p>Για να προσθέσετε ένα νέο βήμα στον μετασχηματισμό, κυλίστε από την περιοχή <strong>Steps</strong> στην περιοχή <strong>transformation</strong>. Στην συνέχεια μπορείτε να προσαρμόσετε το νέο βήμα στον μετασχηματισμό σας με διπλό κλικ.</p>
+<p><strong>Σύνδεσμοι (Hops)</strong></p>
+<p>Οι σύνδεσμοι αναπαριστώνται ως βέλος μεταξύ δύο βημάτων και ορίζουν την ροή των δεδομένων μεταξύ τους. Ώπως φαίνεται στην ακόλουθη εικόνα προσθέτω έναν σύνδεσμο από το <strong>Table Input</strong> στο <strong>Add sequence</strong> σημαίνει πως το αποτέλεσμα του <strong>Table Input</strong> θα διοχετευτεί στο βήμα <strong>Add sequence</strong> κτλ.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_hop2.png"><img alt="../../_images/geokettle_hop2.png" src="../../_images/geokettle_hop2.png" style="width: 480.0px; height: 139.8px;" /></a>
+</div></blockquote>
+<p>Για να δημιουργήστε ένα νέο σύνδεσμο επιλέξτε δύο βήματα, κάντε δεξί κλικ σε ένα απ&#8217; αυτά και επιλέξτε <em class="menuselection">New hop</em>. Ένας τρόπος να το κάνετε αυτό είναι να πατήσετε <tt class="kbd docutils literal"><span class="pre">Ctrl</span></tt> όπως επιλέγετε τα δύο βήματα.</p>
+<p>Κάθε σύνδεσμος μπορεί να διορθωθεί με διπλό κλίκ ή με δεξί κλικ και στην συνέχεια επιλογή <em class="menuselection">Edit hop</em> στο αναδυόμενο μενού επιλογών.</p>
+<p><strong>Ρυθμίζοντας τον μετασχηματισμό</strong></p>
+<p>Τα περισσότερα από τα βήματα σε ένα μετασχηματισμό απαιτούν πρόσθετη παραμετροποίηση πριν χρησιμοποιηθούν. Διπλοεπιλέξτε οποιοδήποτε βήμα και θα παρουστιαστεί μια οθόνη διαλόγου με τις απαραίτητες ρυθμίσεις.</p>
+<p><strong>Εκτελώντας τον μετασχηματισμό</strong></p>
+<p>Όταν εκτελείτε έναν μετασχηματισμό, εμφανίζεται μια νέα επιφάνεια κάτω απ&#8217; αυτήν  στην οποία σχεδιάστηκε ο μετασχηματισμός. Αυτή η περιοχή ονομάζεται <strong>Execution Results</strong> και περιέχει πληροφορίες για την ροή δεδομένων όλων των βημάτων του μετασχηματισμού.</p>
+<p>Θα εμφανιστεί αρχικά η καρτέλα <strong>Step Metrics</strong> (εμφανίζεται στην ακόλουθη εικόνα). Θα δείτε εδώ γενικές πληροφορίες σχετικά με την ροή των δεδομένων όπως το πλήθος των εγγραφών που διαβάστηκαν, γράφτηκαν, στην είσοδο και την έξοδο κάθε βήματος. Η στήλη <strong>Active</strong> σας πληροφορεί σχετικά με την κατάσταση του βήματος: Εκκίνηση, εκτέλεση, ολοκλήρωση, διακοπή κτλ. Στην στήλη <strong>Time</strong> εμφανίζεται ο χρόνος που έχει χρειαστεί από την έναρξη του βήματος ενώ στην στήλη <strong>Speed</strong> η ταχύτητα σε εγγραφές ανά δευτερόλεπτο.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_running_transformation2.png"><img alt="../../_images/geokettle_running_transformation2.png" src="../../_images/geokettle_running_transformation2.png" style="width: 716.8px; height: 461.3px;" /></a>
+</div></blockquote>
+<p><strong>Επιβλέποντας έναν μετασχηματισμό</strong></p>
+<p>Η προσπάθεια εκτέλεσης ενός μετασχηματισμού ίσως δώσει λάθη στην περιοχή <strong>Execution Results</strong> όπως εμφανίζεται στην επόμενη εικόνα. Σε αυτή την περίπτωση θα πρέπει να δείτε τα περιεχόμενα της καρτέλας <strong>Logging</strong>. Εκεί υπάρχουν πλήθος πληροφοριών οι οποίες αναφέρονται στην πηγή και την αιτία των λαθών. Αλλάξτε τις παραμέτρους του βήματος που εμφανίζει τα μηνύματα λαθών και επανεκκινείστε τον μετασχηματισμό.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_transformation_fail2.png"><img alt="../../_images/geokettle_transformation_fail2.png" src="../../_images/geokettle_transformation_fail2.png" style="width: 716.8px; height: 442.4px;" /></a>
+</div></blockquote>
+<p>Για να βοηθηθείτε στην εύρεση της πηγής ενός σφάλματος, μπορείτε επίσης να δείτε τα αποτελέσματα του προηγούμενου στην ροή εκτέλεσης, βήματος. Για να το κάνετε αυτό, επιλέξτε το βήμα με διπλό κλικ, και στην συνέχεια <em class="menuselection">Preview</em> στο αναδυόμενο παράθυρο. Με αυτόν το τρόπο θα δείτε σε μια πινακοποιημένη χαρτογραφική εικόνα πως εμφανίζονται τα δεδομένα μέχρι εδώ χωρίς να έχει ολοκληρωθεί ο μετασχηματισμός.</p>
+</div>
+<div class="section" id="id5">
+<h2>Δοκιμάστε επίσης<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Ορίστε μερικές προκλήσεις για να δοκιμάσετε:</p>
+<ol class="arabic simple">
+<li>Διερευνείστε την ποικιλία των βημάτων που περιλαμβάνει το GeoKettle.</li>
+<li>Δοκιμάστε τον αποσφαλματιστή του GeoKettle για να διορθώσετε έναν μετασχηματισμό.</li>
+<li>Δομικάστε έναν μετασχηματισμό με τα δικά σας δεδομένα.</li>
+</ol>
+</div>
+<div class="section" id="id6">
+<h2>Τι ακολουθεί;<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Ρίξτε μια ματιά στην τεκμηρίωση χρήστη και στα άλλα εγχειρίδια στην διεύθυνση του εγχειρήματος <a class="reference external" href="http://wiki.spatialytics.org">wiki</a> . Μην διστάσετε να αναζητήσετε βοήθεια στο Spatialytics <a class="reference external" href="http://www.spatialytics.com/forum">forum</a>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

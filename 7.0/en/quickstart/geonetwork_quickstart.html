@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GeoNetwork Quickstart &mdash; OSGeo-Live 7.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 7.0 Contents" href="../overview/overview.html" />
+    <link rel="next" title="Geonode Quickstart" href="geonode_quickstart.html" />
+    <link rel="prev" title="GeoMoose Quickstart" href="geomoose_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="figure align-right">
+<img alt="project logo" src="../../_images/logo-GeoNetwork7.png" />
+</div>
+<div class="section" id="geonetwork-quickstart">
+<h1>GeoNetwork Quickstart<a class="headerlink" href="#geonetwork-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>GeoNetwork opensource is a standards based, distributed spatial information
+management system. It is designed to enable access to spatial data from a variety of data providers through descriptive metadata.</p>
+<p>Apart from how to start GeoNetwork, this Quick Start describes:</p>
+<ul class="simple">
+<li>some of the different ways you can search for spatial data</li>
+<li>how to download and display data from the search results</li>
+<li>the system of privileges, roles and user groups that GeoNetwork uses.</li>
+</ul>
+<p>Detailed documentation can be found in <a class="reference external" href="http://localhost:8880/geonetwork/docs/eng/users/index.html">http://localhost:8880/geonetwork/docs/eng/users/index.html</a> or by clicking on the &#8216;Help&#8217; link on the GeoNetwork home page.</p>
+<div class="section" id="start-gn">
+<h2>Start GeoNetwork<a class="headerlink" href="#start-gn" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>In case you use OSGeoLive with 1GB RAM or less it is recommended to stop default Tomcat service before launching GN</li>
+</ul>
+<div class="highlight-python"><pre>sudo service tomcat6 stop</pre>
+</div>
+<ul class="simple">
+<li>Select the &#8220;Start GeoNetwork&#8221; icon.</li>
+<li>The application will take a few moments to start up</li>
+<li>Go to the GeoNetwork home page at <a class="reference external" href="http://localhost:8880/geonetwork">http://localhost:8880/geonetwork</a>. Your first view of GeoNetwork should look like the screenshot below.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-firstviews3.png" src="../../_images/geonetwork-firstviews3.png" />
+</div>
+<ul class="simple">
+<li>To get to know GeoNetwork we are going to load the sample metadata. Log in to GeoNetwork using the username <em>admin</em> and password <em>admin</em> in the dedicated fields on the top right corner, then click the login button.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-login3.png" src="../../_images/geonetwork-login3.png" />
+</div>
+<ul class="simple">
+<li>You should now see an <em>Administration</em> link in the banner. Click on it.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-administration-banner3.png" src="../../_images/geonetwork-administration-banner3.png" />
+</div>
+<ul class="simple">
+<li>When the <em>Administration</em> page appears, scroll to the bottom of the page and load the sample data by clicking on the &#8216;Add sample metadata&#8217; button.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-addsampledatabutton3.png" src="../../_images/geonetwork-addsampledatabutton3.png" />
+</div>
+<ul class="simple">
+<li>Return to the &#8216;Home&#8217; page after the sample metadata has been loaded to continue the rest of the quick start guide. When you return to the homepage your screen should look something like the one shown below.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-returntohomepage3.png" src="../../_images/geonetwork-returntohomepage3.png" />
+</div>
+</div>
+<div class="section" id="searching">
+<h2>Searching<a class="headerlink" href="#searching" title="Permalink to this headline">¶</a></h2>
+<p>There are many different ways to search the catalogue for maps and other geographic data. This guide will introduce you to the most popular search methods: default, advanced and by category. Whichever search you choose, remember that you will see results based on your privileges and assigned work group (more on this later).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The term <em>data</em> refers to datasets, maps, tables, documents, etc, in fact anything that can be linked to the metadata record that describes it.</p>
+</div>
+</div>
+<div class="section" id="default-search">
+<h2>Default Search<a class="headerlink" href="#default-search" title="Permalink to this headline">¶</a></h2>
+<p>The default search allows you to search text within the entire record, such as
+keywords of the metadata and/or geographic location.</p>
+<p><strong>Free text search.</strong> <em>Type</em> a search term in the <em>What?</em> field. You can type anything here
+(free text). You can use quotes around text to find exact combinations of words.</p>
+<p>Text and operators (and, or, not) are not case sensitive.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-what3.png" src="../../_images/geonetwork-what3.png" />
+<p class="caption"><em>The free text field.</em></p>
+</div>
+<p><strong>Geographic search.</strong> For the geographic search, two options are available for selecting a particular
+region to limit the search:</p>
+<p>You can select a <strong>region</strong> from a predefined list;</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-where13.png" src="../../_images/geonetwork-where13.png" />
+<p class="caption"><em>The region field</em></p>
+</div>
+<p>You can select your own <em>area of interest</em> in a more interactive way. A small global map is shown on the screen from which you can drag and drop the frame of your location area. Just click on the button on the upper right of the map screen.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-where23.png" src="../../_images/geonetwork-where23.png" />
+<p class="caption"><em>Interactive Area Of Interest map</em></p>
+</div>
+<p><strong>Perform search.</strong> Both types of search, free text search and geographic search can be combined to
+restrict the query further.</p>
+<p>Click the <em>Search</em> button to proceed and show the results.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-search_button3.png" src="../../_images/geonetwork-search_button3.png" />
+<p class="caption"><em>The Search button</em></p>
+</div>
+</div>
+<div class="section" id="searching-by-categories">
+<h2>Searching by Categories<a class="headerlink" href="#searching-by-categories" title="Permalink to this headline">¶</a></h2>
+<p>An additional way to search data within the GeoNetwork database, from the home page, is searching by <strong>Category</strong>. A list of categories is provided to the user to identify data at a more generic level: <strong>Applications</strong>, <strong>Audio/Video</strong>, <strong>Case study and best practises</strong>, <strong>Conference proceedings</strong>, <strong>Datasets</strong>, <strong>Directories</strong>, <strong>Interactive resources</strong>, <strong>Maps and graphics</strong>, <strong>Other information resources</strong>, <strong>Photo</strong>.</p>
+<p>To search only for maps, click on <strong>Maps and Graphics</strong>. A list of maps will be displayed from which you
+may view details of every single map; just clicking on the <strong>Metadata</strong> button of the map you wish to review.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-Categories3.png" src="../../_images/geonetwork-Categories3.png" />
+<p class="caption"><em>Search by Category</em></p>
+</div>
+</div>
+<div class="section" id="advanced-search">
+<h2>Advanced Search<a class="headerlink" href="#advanced-search" title="Permalink to this headline">¶</a></h2>
+<p>The advanced search option works similarly to the default search. However, you can be more specific in your search criteria as it offers different elements to look for data, each of them focusing one of the following aspects: <em>What?, Where?, When?</em></p>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search13.png" src="../../_images/geonetwork-advanced_search13.png" />
+<p class="caption"><em>Advanced search options</em></p>
+</div>
+<p>To perform an <strong>advanced search</strong>, from the home page <strong>click Advanced</strong> just below the search bottom.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_button3.png" src="../../_images/geonetwork-advanced_search_button3.png" />
+<p class="caption"><em>Show advanced search options</em></p>
+</div>
+<p>In the <strong>WHAT?</strong> section the elements are all related to the data content. Through them, in addition to searching only free keywords in the entire metadata content, you can also search directly in the title or abstract fields and add more keywords to customise your search further. You can also specify the level of accuracy you wish to reach in performing your search.</p>
+<ul class="simple">
+<li>To search by <strong>Title, Abstract, Free Text, or Keyword(s)</strong> type any text into the respective field. You can enter information in one or multiple field(s). If you do not want to search by a given field, simply leave it blank;</li>
+<li>You can choose the <strong>accuracy of your search</strong>, in terms of spelling words, from <strong>Precise</strong> = 1 to <strong>Imprecise</strong> = 0.2, through 3 more consecutive steps which are equal to 0.8, 0.6, 0.4.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_what3.png" src="../../_images/geonetwork-advanced_search_what3.png" />
+<p class="caption"><em>&#8220;What&#8221; section in the Advanced search</em></p>
+</div>
+<p>The <strong>WHERE?</strong> parameters, which are related to the spatial extent, allow you, as in the default search, either to select your own area of interest or to select a predefined region from the drop-down list. In this section you can also type the geographic coordinates of a specific location that is not available from the above list.</p>
+<ul class="simple">
+<li>To select <strong>your own area of interest</strong>, drag and drop the frame of your area on the global map using the appropriate tool on the bottom left of the map screen;</li>
+<li>To use <strong>free coordinates</strong>, type the lat-long geographic references in the appropriate fields around the map screen, without any limitation of decimal figures;</li>
+<li>To use the coordinates of a <strong>predefined region</strong>, select the region from the drop-down list.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_where3.png" src="../../_images/geonetwork-advanced_search_where3.png" />
+<p class="caption"><em>&#8220;Where&#8221; section in the Advanced search</em></p>
+</div>
+<p>Whatever type of geographic search you decide to perform, in the <strong>Spatial search type</strong> field, you can choose from different options: <strong>is</strong>, <strong>overlaps</strong>, <strong>encloses</strong>, <strong>is fully outside of</strong>. If you use this field, be cautious as this limits your output data as follows:</p>
+<ul class="simple">
+<li>If you choose <strong>Spatial search type</strong> <em>is</em> “Country”, only maps for the selected country will be displayed. In other words, a city map within that country will not show in the output results.</li>
+<li>If you choose <strong>Spatial search type</strong> <em>overlaps</em> “Country”, all maps with the bounding box overlapping that country will be displayed in the results, i.e. the neighbouring countries, the continent of which that country is part of and the global maps.</li>
+<li>If you choose <strong>Spatial search type</strong> <em>encloses</em> “Country” you will get, in the output results, maps of that country first and then all maps within its bounding box.</li>
+<li>Similarly, if you choose <strong>Spatial search type</strong> <em>is fully outside of</em> a selected region, only maps that follow that exact criteria will show in the output results.</li>
+</ul>
+<p>The <strong>WHEN?</strong> section gives you the possibility to restrict your search in terms of temporal extent, indicating a specific range of time referred to the data creation or publication date.</p>
+<ul class="simple">
+<li>To specify a range of time, click on the date selector button next to <strong>From – To</strong> fields. Make use of the symbols <strong>&gt;</strong> and <strong>&gt;&gt;</strong> on top of the calendar to select the month and the year first and then click on the exact day; a complete date will be filled in using the following standard order: YY-MM-DD.</li>
+<li>To clean the time fields, simply click on the white cross on their right; the box <strong>Any</strong> will be automatically selected and the search will be performed without any restriction on the time period.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_when3.png" src="../../_images/geonetwork-advanced_search_when3.png" />
+<p class="caption"><em>&#8220;When&#8221; section in the Advanced search</em></p>
+</div>
+<p>Finally, the advanced search allows you to apply further restrictions on the basis
+of additional parameters as data source, data categories and data format.</p>
+<ul class="simple">
+<li>To limit your queries to only one <strong>Catalogue</strong> out of those made available by the installation through the harvesting process, highlight the catalogue of preference or just keep <strong>Any</strong> selected to search all sites.</li>
+<li>To search for data organised by <strong>Category</strong>, such as Applications, Datasets, etc., simply highlight the category you wish to search in from the related drop-down list, otherwise we suggest to leave this field in <strong>Any</strong> Category.</li>
+<li>You can search for <strong>Digital</strong> or <strong>Hard Copy</strong> maps. To search in one or the other, simply check the box next to the one you wish to search. If no box is checked, all content will be searched.</li>
+</ul>
+<p>At last, you can customise the number of output results per page in the <em>Hits Per Page</em> field. Simply highlight the number of records to be displayed or leave the field set on the default number (10).</p>
+<ul class="simple">
+<li>Click the <strong>Search</strong> button.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_morerest3.png" src="../../_images/geonetwork-advanced_search_morerest3.png" />
+<p class="caption"><em>Other options in the Advanced search</em></p>
+</div>
+</div>
+<div class="section" id="search-results">
+<h2>Search Results<a class="headerlink" href="#search-results" title="Permalink to this headline">¶</a></h2>
+<p>The output of a search provides you a list of the metadata records that should fit
+your request. For each record, the result page shows the title, an abstract and the
+keywords. According to the privileges that have been set for each metadata, a
+maximum of four sections can be consulted, as shown below.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-search_output23.png" src="../../_images/geonetwork-search_output23.png" />
+<p class="caption"><em>Search results</em></p>
+</div>
+<ol class="arabic simple">
+<li><strong>Metadata</strong>: The metadata section describes the dataset (e.g.: citation, data owner, temporal/spatial/methodological information) and could contain links to other web sites that could provide further information about the dataset.</li>
+<li><strong>Download</strong>: Depending on the privileges that have been set for each record, when this button is present, the dataset is available and downloadable. The process for retrieving data is simple and quick by  just clicking the download button or by using the proper link in the specific metadata section for distribution info in the full metadata view.</li>
+</ol>
+<div class="figure">
+<img alt="../../_images/geonetwork-search_output13.png" src="../../_images/geonetwork-search_output13.png" />
+<p class="caption"><em>A single search result</em></p>
+</div>
+<div class="figure">
+<img alt="../../_images/geonetwork-download3.png" src="../../_images/geonetwork-download3.png" />
+<p class="caption"><em>Available services related to the resource</em></p>
+</div>
+<ol class="arabic simple">
+<li><strong>Interactive Map</strong>: The map service is also optional. When this button is shown, an interactive map for this layer is available and, by default, it will be displayed on the map screen of the simple search. To better visualise the map through the map viewer, <strong>click</strong> on <strong>Show Map</strong> on the top of search results panel.</li>
+</ol>
+<div class="figure">
+<img alt="../../_images/geonetwork-interactive_map3.png" src="../../_images/geonetwork-interactive_map3.png" />
+<p class="caption"><em>The interactive map viewer</em></p>
+</div>
+<ol class="arabic simple">
+<li><strong>Graphic Overviews</strong>: There are small and large overviews of the map used to properly evaluate usefulness of the data, especially if the interactive map is not available. Simply click on the small figure to enlarge it.</li>
+</ol>
+<div class="figure">
+<img alt="../../_images/geonetwork-thumbnail3.png" src="../../_images/geonetwork-thumbnail3.png" />
+<p class="caption"><em>Large figure (graphic overview)</em></p>
+</div>
+</div>
+<div class="section" id="privileges-roles-and-user-groups">
+<h2>Privileges, roles and user groups<a class="headerlink" href="#privileges-roles-and-user-groups" title="Permalink to this headline">¶</a></h2>
+<p>GeoNetwork uses a system of <em>Privileges</em>, <em>Roles</em> and <em>User groups</em>.</p>
+<p>There are no restrictions for users to search and access <strong>public information</strong> in a GeoNetwork opensource based catalogue. To get access to <strong>restricted information</strong> or advanced functionality, an account to log in is required. This should be provided by the GeoNetwork administrator.</p>
+<p>To log in, simply go to the home page and enter your username and password in the dedicated fields on the top right corner, then click the login button.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-login3.png" src="../../_images/geonetwork-login3.png" />
+<p class="caption"><em>Login</em></p>
+</div>
+<p><strong>Privileges.</strong> Depending on the privileges set on a metadata record and on your role as an authenticated user, you will be able to read about a resource and download or interactively browse data related to that resource.</p>
+<p><strong>Roles.</strong> Users with an <em>Editor</em> role can create, import and edit metadata records. They can also upload data and configure links to interactive map services.</p>
+<p><strong>User groups.</strong> Every authenticated user is assigned to a particular work group and is able to view data within that work group.</p>
+</div>
+<div class="section" id="more-information">
+<h2>More information<a class="headerlink" href="#more-information" title="Permalink to this headline">¶</a></h2>
+<p>Click on the &#8216;Help&#8217; link in the banner of the GeoNetwork home page or go there directly by clicking on this link: <a class="reference external" href="http://localhost:8880/geonetwork/docs/eng/users/index.html">http://localhost:8880/geonetwork/docs/eng/users/index.html</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

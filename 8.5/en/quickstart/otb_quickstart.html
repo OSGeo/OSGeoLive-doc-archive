@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OTB Quickstart &mdash; OSGeo-Live 8.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 8.5 Contents" href="../overview/overview.html" />
+    <link rel="next" title="pgRouting Quickstart" href="pgrouting_quickstart.html" />
+    <link rel="prev" title="Ossim Quickstart" href="ossim_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-otb7.png"><img alt="project logo" class="align-right" src="../../_images/logo-otb7.png" style="width: 131.2px; height: 100.0px;" /></a>
+<div class="section" id="otb-quickstart">
+<h1>OTB Quickstart<a class="headerlink" href="#otb-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>ORFEO Toolbox library (OTB) is a high performance library for image processing targeted on remote sensing.</p>
+<p>This Quick Start describes how to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Get metadata informations in an image</li>
+<li>Perform mathematical operations between image bands</li>
+<li>Open raster images with the application monteverdi, perform segmentation (mean-shift clustering) and visualize the result</li>
+<li>Perform supervised classification based on Support Vector Machine algorithm</li>
+</ul>
+</div></blockquote>
+<p>The OTB applications provide lot&#8217;s of interesting tools which facilitate the manipulation of images. All these tools are available through:</p>
+<blockquote>
+<div><ul class="simple">
+<li>CLI : command line interface</li>
+<li>GUI : in a standalone graphical user interface (in Qt)</li>
+<li>QGIS plugin : available through Sextante</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>Sample data used in this quickstart can be found here:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://www.orfeo-toolbox.org/packages/OTB-Data-Examples.tgz">http://www.orfeo-toolbox.org/packages/OTB-Data-Examples.tgz</a></li>
+</ul>
+</dd>
+</dl>
+<p>Please download the data and extract them in the folder <cite>/home/user/otb/</cite>.</p>
+<div class="section" id="display-metadata-informations-in-an-image">
+<h2>Display metadata informations in an image<a class="headerlink" href="#display-metadata-informations-in-an-image" title="Permalink to this headline">¶</a></h2>
+<p>You can get all the metadata informations contained in an image with the command : <cite>otbcli_ReadImageInfo</cite>
+The unique parameter is the Input image file name, for example : <cite>otbcli_ReadImageInfo -in qb_RoadExtract.tif</cite></p>
+</div>
+<div class="section" id="calculator-on-image-bands">
+<h2>Calculator on image bands<a class="headerlink" href="#calculator-on-image-bands" title="Permalink to this headline">¶</a></h2>
+<p>The <cite>otbcli_otbBandMath</cite> provides an efficient way to perform mathematical operation on monoband images.
+The syntax is quite simple, for example substrating two bands to study the image differences on the images SpotBefore.tif and SpotAfter.tif, just use the command : <cite>otbcli_BandMath -il SpotBefore.tif SpotAfter.tif -out difference.tif -exp &#8220;im1b1-im2b1&#8221;</cite>
+The application is able to perform complex mathematical operations over images (threshold, logarithmic rescaling...).
+This homebrewed digital calculator is also bundled with custom functions allowing to compute a full expression. For example, as remote sensing images measure physical values, it is possible to extract several indices with physical meaning like the NDVI (Normalized Difference Vegetation Index) for the vegetation. With the calculator you&#8217;re able to compute the NDVI on a multispectral sensors images by doing:
+<cite>otbcli_BandMath -il qb_RoadExtract.tif -out ndvi.tif -exp &#8220;ndvi(im1b3,im1b4)&#8221;</cite></p>
+</div>
+<div class="section" id="pixel-based-classification">
+<h2>Pixel based classification<a class="headerlink" href="#pixel-based-classification" title="Permalink to this headline">¶</a></h2>
+<p>The classification in the application framework provides a supervised pixel-wise
+classification chain based on learning from multiple images, and using one
+specified machine learning method like SVM, Bayes, KNN, Random Forests, Artificial
+Neural Network, and others...(see application help of
+<cite>TrainImagesClassifier</cite> for further details about all the available
+classifiers).
+It supports huge images through streaming and multi-threading. The
+classification chain performs a training step based on the intensities of each
+pixel as features. Please note that all the input images must have the same number
+of bands to be comparable.</p>
+</div>
+<div class="section" id="perform-segmentation-with-monteverdi">
+<h2>Perform segmentation with Monteverdi<a class="headerlink" href="#perform-segmentation-with-monteverdi" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Start Monteverdi from its icon from the Spatial Tools folder on the desktop</p>
+</li>
+<li><p class="first">Select an raster image, using <em class="menuselection">File ‣ Open Dataset ‣ /home/user/otb/qb_RoadExtract.tif</em></p>
+</li>
+<li><p class="first">Go to the <em class="menuselection">Filtering ‣ Mean Shift clustering</em></p>
+</li>
+<li><p class="first">Select the input raster image (Reader0) from the input window selection</p>
+</li>
+<li><p class="first">Verify you can tune parameters of the segmentation and see the result on the region of interest by clicking on &#8220;Run&#8221;</p>
+</li>
+<li><p class="first">Select &#8220;Close&#8221; when you are satisfied by the result.</p>
+</li>
+<li><p class="first">In the main window, right click on the &#8220;Clustered Image&#8221; in the resulting dataset &#8220;MeanShift0&#8221; and select &#8220;Display in viewer&#8221;</p>
+<a class="reference internal image-reference" href="../../_images/otb-mean_shift3.jpg"><img alt="../../_images/otb-mean_shift3.jpg" src="../../_images/otb-mean_shift3.jpg" style="width: 800.0px; height: 600.0px;" /></a>
+</li>
+</ul>
+</div>
+<div class="section" id="perform-supervised-classification-based-on-svm-with-monteverdi">
+<h2>Perform supervised classification based on SVM  with Monteverdi<a class="headerlink" href="#perform-supervised-classification-based-on-svm-with-monteverdi" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Start Monteverdi from its icon from the Spatial Tools folder on the desktop</p>
+</li>
+<li><p class="first">Select an raster image, using <em class="menuselection">File ‣ Open Dataset ‣ /home/user/otb/qb_RoadExtract.tif</em></p>
+</li>
+<li><p class="first">Go to the <em class="menuselection">Learning ‣ SVM classification</em></p>
+</li>
+<li><p class="first">Select the input raster image (Reader0) from the input window selection</p>
+</li>
+<li><p class="first">You can add classes (<cite>Add Class</cite> button), select learning samples by drawing polygons</p>
+</li>
+<li><p class="first">Go to the <em class="menuselection">Setup ‣ SVM</em> to set the classification algorithm parameters</p>
+</li>
+<li><p class="first">Click on the <cite>Learn</cite> button to create a classification model from the input learning classes</p>
+</li>
+<li><p class="first">Click on the <cite>Display</cite> button to show the result of the supervised classification on the entire image</p>
+<a class="reference internal image-reference" href="../../_images/otb-svm3.jpg"><img alt="../../_images/otb-svm3.jpg" src="../../_images/otb-svm3.jpg" style="width: 800.0px; height: 600.0px;" /></a>
+</li>
+</ul>
+<p>For the full tutorial see the  <a class="reference external" href="http://www.orfeo-toolbox.org/otb/monteverdi.html">article</a>.</p>
+</div>
+<div class="section" id="what-next">
+<h2>What Next?<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">OTB Software Guide</p>
+<p>The main source of information is the OTB Software Guide. This is a
+comprehensive guide which comprises about 600 pages, detailing the
+steps to install OTB and use it. Most of the classes available are
+heavily illustrated with results from real remote sensing
+processing.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://orfeo-toolbox.org/packages/OTBSoftwareGuide.pdf">OTBSoftwareGuide.pdf</a></li>
+<li><a class="reference external" href="http://orfeo-toolbox.org/SoftwareGuide/">Online html version</a></li>
+</ul>
+</li>
+<li><p class="first">OTB CookBook</p>
+<p>A guide for OTB-Applications and Monteverdi dedicated for
+non-developers is also available.This guide is composed of a brief
+tour of of OTB-Applications and Monteverdi, followed by a set of
+recipes to perform usual remote sensing tasks with both tools.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://orfeo-toolbox.org/packages/OTBCookBook.pdf">OTBCookBook.pdf</a></li>
+</ul>
+</li>
+<li><p class="first">OTB Tutorials</p>
+<p>Follow the <a class="reference external" href="http://www.orfeo-toolbox.org/SoftwareGuide/SoftwareGuidepa2.html#x17-49000II">tutorials</a> to learn more about OTB.</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">OTB Applications documentation</p>
+<p>See also detailed documentation about OTB <a class="reference external" href="http://orfeo-toolbox.org/Applications/">applications</a></p>
+</li>
+</ul>
+<ul>
+<li><p class="first">OTB courses with Pleiades images</p>
+<p>Follow the <a class="reference external" href="http://blog.orfeo-toolbox.org/news/new-courses-on-pleiades-images-analysis-with-the-orfeo-toolbox">courses</a> to learn more about OTB.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

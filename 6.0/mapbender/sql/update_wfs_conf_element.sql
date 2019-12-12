@@ -1,0 +1,21 @@
+UPDATE wfs_conf_element SET 
+f_geom = $1,
+f_search = $2,
+f_pos = $3,
+f_style_id = $4,
+f_toupper = $5,
+f_label = $6,
+f_label_id = $7,
+f_show = $8,
+f_respos = $9,
+f_form_element_html = $10,
+f_edit = $11,
+f_mandatory = $12,
+f_auth_varname = $13,
+f_operator = $14,
+f_show_detail = $15,
+f_detailpos = $16,
+f_min_input = $17,
+f_helptext = $18,
+f_category_name = $19
+WHERE f_id = $20 AND fkey_wfs_conf_id = $21

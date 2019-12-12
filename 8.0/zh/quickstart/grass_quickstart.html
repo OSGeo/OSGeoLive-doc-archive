@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GRASS GIS 快速入门文档 &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 8.0" href="../index.html" />
+    <link rel="next" title="gvSIG 快速入门文档" href="gvsig_quickstart.html" />
+    <link rel="prev" title="GPSPrune 快速入门文档" href="gpsprune_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://grass.osgeo.org"><img alt="project logo" class="align-right" src="../../_images/logo-GRASS25.png" style="width: 110.0px; height: 123.0px;" /></a>
+<div class="section" id="grass-gis">
+<h1>GRASS GIS 快速入门文档<a class="headerlink" href="#grass-gis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>启动<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>　　在 Live 系统中，点击桌面上的 GRASS 图标，即可启动 GRASS GIS 。在“Welcome to GRASS”页面可以选择 Spearfish 或 simplified North Carolina (nc_basic_spm) 数据集，“user1”工程，并点击 [Start Grass] 启动。本文档中使用的示例数据集是 Spearfish 。</p>
+<a class="reference internal image-reference" href="../../_images/grass-startup12.png"><img alt="screenshot" class="align-right" src="../../_images/grass-startup12.png" style="width: 248.0px; height: 258.0px;" /></a>
+<p>　　这将启动 GRASS GIS 。本版本的 GRASS 使用了 <a class="reference external" href="../../grass/wxGUI.html">基于 wxPython 的新界面</a> 。</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">　　若屏幕分辨率很小（例如 800x600），界面可能过于拥挤，以至于 [Start GRASS] 可能被覆盖。此时按住 Alt 将窗口部分拖出屏幕，并将窗口边框拖拽扩大可以解决问题。</p>
+</div>
+<div class="section" id="id2">
+<h3>地图显示<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/grass-layerman12.png"><img alt="screenshot" class="align-left" src="../../_images/grass-layerman12.png" style="width: 389.0px; height: 298.0px;" /></a>
+<p>　　根据所选择的数据集位置，从 PERMANENT mapset 添加 <cite>elevation.10m</cite> 或 <cite>elevation</cite> 数据集。在 Layer Manager 图层管理器点击显示一个格网和加号的图标，并从 &#8220;<em>map to be displayed</em>&#8221; 下拉菜单，点击 [Ok] 。</p>
+<p>　　同样，点击 V 型折线和加号图标可以添加 <cite>roads</cite> 或 <cite>roadsmajor</cite> 等矢量线图层。</p>
+<p>　　右键单击一个图层选择 <cite>Zoom to selected map(s)</cite> 可以缩放至全局。</p>
+</div>
+<div class="section" id="id3">
+<h3>绘制地形剖面<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/grass-profile12.png"><img alt="screenshot" class="align-right" src="../../_images/grass-profile12.png" style="width: 344.0px; height: 219.5px;" /></a>
+<p>　　在 Layer Manager 图层管理窗口，选中 <cite>elevation</cite> 图层，点击工具栏中的折线图图标，并选择 <strong>Profile surface map</strong> 。若没有自动选中，在对话框中选中所需图层亦可。点击 [Ok] 。选择左侧第二个图标可以创建剖面线。</p>
+</div>
+<div class="section" id="id4">
+<h3>生成随机表面<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>　　首先，在 <em class="menuselection">Settings ‣ Region ‣ Set region</em> 选择 <cite>Set from default region</cite> 设定默认区域，点击 [Run] ，然后使用 <em class="menuselection">Raster ‣ Generate surfaces ‣ Fractal surface</em> 创建一个基于分形算法的随机表面。在 <cite>Optional</cite> 可以进一步调整设置。点击 [Run] 执行。点击 [Close] 可以关闭 <em>r.surf.fractal</em> 模块的界面。</p>
+<a class="reference internal image-reference" href="../../_images/grass-fractal12.png"><img alt="screenshot" class="align-right" src="../../_images/grass-fractal12.png" style="width: 341.0px; height: 302.0px;" /></a>
+</div>
+<div class="section" id="id5">
+<h3>颜色设置<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>　　执行前述步骤后，在 <cite>user1</cite> 地图集下应当存在两个栅格数据图层。取消勾选 <cite>elevation</cite> 可以关闭该图层的显示。若需要，点击眼睛图标刷新显示。</p>
+<p>　　这里要改变分形图层的渲染颜色设置。选中该图层，在 <cite>Raster</cite> 菜单选择 <em class="menuselection">Manage colors ‣ Color tables</em> 。在 <cite>Colors</cite> 选项卡的下拉菜单 <cite>Type of color table</cite> 中选择一个。示例截图中选择的是 <cite>srtm</cite> 。完成后点击 [Run] 并关闭 <em>r.colors</em> 窗口。</p>
+<p>　　显示将自动刷新。通过改动图层的元数据设置也可以强制刷新显示缓存。工具栏上的刷新按钮（第二个）亦可用于刷新。</p>
+</div>
+<div class="section" id="id6">
+<h3>地形阴影图<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/grass-shadedrelief12.png"><img alt="screenshot" class="align-right" src="../../_images/grass-shadedrelief12.png" style="width: 341.0px; height: 302.0px;" /></a>
+<p>　　这里使用 <cite>elevation</cite> 高程模型生成地形阴影图。首先，在主图层列表中右键单击 <cite>elevation</cite> 图层，选择 <cite>Set computation region
+from selected map(s)</cite> ，然后在 <cite>raster</cite> 目录选择 <em class="menuselection">Terrain
+analysis ‣ Shaded relief</em> （位于菜单中部），参数面板将会显示。</p>
+<p>　　确认输入数据选择无误后点击 [Run] 。完成后将生成的 <cite>elevation.shade &#64;user1</cite> 加入显示，关闭其它的图层。</p>
+</div>
+<div class="section" id="id7">
+<h3>河流和汇水区分析。<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>　　同样选择 <cite>elevation</cite> &#64;PERMANENT 图层，在 <cite>Raster</cite> 菜单选择 <em class="menuselection">Hydrologic modeling ‣ Watershed analysis</em> 。 <tt class="docutils literal"><span class="pre">r.watershed</span></tt> 模块将启动。设置 <cite>elevation</cite> 图层为输入，在 &#8216;Input options&#8217; 设置 <em>threshold 最小汇水区面积</em> 为 10000 像元，在 &#8216;Output options&#8217; 的 <cite>watershed basin</cite> 设置 &#8220;elev.basins&#8221; ，<cite>stream segments</cite> 设置 &#8220;elev.streams&#8221; 。点击 [Run] 执行。</p>
+<p>　　在图层列表窗口选中新生成的两个图层，右击 &#8220;elev.basins&#8221; 选择 &#8220;Change opacity level 设置透明度&#8221; ，设为 50% 左右。若有需要，鼠标拖拽可以改变图层顺序，从而将该图层至于上方。</p>
+<a class="reference internal image-reference" href="../../_images/grass-watersheds12.png"><img alt="screenshot" class="align-left" src="../../_images/grass-watersheds12.png" style="width: 341.0px; height: 302.0px;" /></a>
+<p>　　在图层窗口点击右侧第二个图标，选择 <cite>Add a grid layer</cite> 。在 <cite>size of grid</cite> 输入 0:03（0 度 3 分，格式为 D:M:S），在 &#8220;Optional&#8221; 选项卡勾选 <cite>Draw geographic
+grid</cite>，点击 [Ok] 并刷新。</p>
+<p>　　下面添加比例尺。点击工具栏右侧的 <cite>Add map elements</cite> 按钮，选择 &#8220;Add scalebar and north arrow&#8221; 并勾选 <tt class="docutils literal"><span class="pre">show</span></tt> ，点击 [Ok] 。比例尺默认将出现在地图的左上角。拖拽可以改变其位置。同样，选择 &#8220;Add legend&#8221; ，点击 &#8220;Set Options&#8221; 并选中 &#8220;elev.basins&#8221; 并点击 [Ok] 可以生成其图例。</p>
+<p>　　目前显示使用的是默认的字体。在图层管理窗口打开 <em class="menuselection">Settings ‣ Preferences</em> ，在 &#8220;Map Display&#8221; 选项卡点击 [Set font] ，选择偏好的字体，点击 [Apply] 。完成后刷新显示。</p>
+</div>
+<div class="section" id="id8">
+<h3>矢量处理模块<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>　　以上演示均为栅格数据操作。另一方面，作为一套完善的 GIS 系统，GRASS 同样具有强大的矢量数据处理能力，具备完备的拓扑构建和分析功能。</p>
+<a class="reference internal image-reference" href="../../_images/grass-vectattrib23.png"><img alt="screenshot" class="align-right" src="../../_images/grass-vectattrib23.png" style="width: 307.2px; height: 230.4px;" /></a>
+<p>　　以上使用栅格方法生成了汇水区模型，这里要将其转换为矢量数据。在 <cite>Raster</cite> 菜单选择 <em class="menuselection">Map type conversions ‣ Raster to vector</em> 在 <cite>r.to.vect</cite> 对话框中，选中 <tt class="docutils literal"><span class="pre">basins</span> <span class="pre">&#64;user1</span></tt> 作为 <cite>input 输入</cite> ，设置一饿该输出名称（例如 <tt class="docutils literal"><span class="pre">basins_areas</span></tt>，应当满足 SQL 语言的格式要求）， <cite>feature type</cite> 设为 <cite>area</cite> 。在 <cite>Attributes</cite> 选项卡选择 “raster values as category numbers”，使用之前创建的栅格数据的参数作为多边形号。点击 [Run] 运行即可。矢量数据生成并显示后，建议调整其透明度。右击 <tt class="docutils literal"><span class="pre">basins_areas</span></tt> 图层，在 <cite>Properties</cite> 的 <cite>Selection</cite> 选项卡可以取消 <cite>rendering of area centroids</cite> 以关闭中心点显示。</p>
+<p>　　下一步将要为新的多边形添加属性数据。这里输入的是各个汇水区的平均高程。在 <cite>Vector</cite> 选择 :menuselection:` Update attributes &#8211;&gt; Update area attributes from raster` 启动 <tt class="docutils literal"><span class="pre">v.rast.stats</span></tt> 模块。使用 <tt class="docutils literal"><span class="pre">basin_areas</span></tt> 作为多边形图层，使用 <cite>elevation</cite> 作为栅格输入，输入栏目名称的前缀如 <tt class="docutils literal"><span class="pre">ele</span></tt> ，点击 [Run] 运行。在地图显示窗口，点击工具栏第五个图标可以查询任意位置对应多边形的属性。</p>
+<p>　　使用 <tt class="docutils literal"><span class="pre">v.colors</span></tt> 模块可以依据属性改变多边形的颜色显示。在 <cite>Vector</cite> 选择 :menuselection:` Manage colors &#8211;&gt; Color tables` ，以 <tt class="docutils literal"><span class="pre">basin_areas</span></tt> 作为  &#8220;input vector map&#8221; ，以 <tt class="docutils literal"><span class="pre">ele_mean</span></tt> 标注上一项生成的统计参数栏，并在 <cite>Colors</cite> 选项卡中复制 <cite>elevation</cite> 栅格的颜色数据。运行后，在图层列表点击 <tt class="docutils literal"><span class="pre">basin_areas</span></tt> 选择 <cite>Properties</cite> ，在 <cite>Colors</cite> 勾选 &#8220;getting colors from the map table column&#8221; ，点击 [Apply] ，显示将刷新。</p>
+<p>　　以下演示属性表和 SQL 工具的操作。在图层表点击形似表格的图标（底部第二个），将显示当前连接的数据表。这里仅就前述汇水盆地进行简单的标准差查询。在 <tt class="docutils literal"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">basin_areas</span> <span class="pre">WHERE</span></tt> 的下拉菜单选择 <tt class="docutils literal"><span class="pre">ele_stddev</span></tt> （标准差）作为查询对象，输入 <tt class="docutils literal"><span class="pre">&lt;</span> <span class="pre">50</span></tt> 并点击 [Apply] 确认。执行后，显示的数据项目将会减少，高程标准差较大的对象被排除了。右击表格选择 <tt class="docutils literal"><span class="pre">Select</span> <span class="pre">all</span></tt> 选中全部，再次右击选择 <tt class="docutils literal"><span class="pre">Highlight</span> <span class="pre">selected</span> <span class="pre">features</span></tt> 。选中的要素将会高亮显示。</p>
+</div>
+<div class="section" id="d">
+<h3>3D 可视化<a class="headerlink" href="#d" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/grass-nviz12.png"><img alt="screenshot" class="align-right" src="../../_images/grass-nviz12.png" style="width: 310.2px; height: 233.4px;" /></a>
+<p>　　在 <em class="menuselection">File ‣ NVIZ</em> 开启 3D 可视化工具。选择 <cite>elevation</cite> 作为 &#8220;raster elevation&#8221; 。在开启的界面中，选择 <em class="menuselection">Visualize ‣ Raster Surfaces</em> ，设置 <cite>fine resolution</cite> 为 &#8220;1&#8221;。调节视角控制滚动条尝试不同的视角。</p>
+<p>　　为在 DEM 上叠加影象，在 <strong>Raster Surfaces</strong> 选择 <strong>Surface Attributes</strong> 菜单，在 &#8220;color&#8221; 项目中创建 &#8220;New Map&#8221; 。在前述 Spearfish 数据集选择 <cite>spot.image</cite> 是较好的选择。在 North Carolina 数据集可用 <cite>lsat7_2002_50</cite> 。点击 &#8220;Accept&#8221; 并在主窗口点击 &#8220;Draw&#8221;（左上角）。</p>
+</div>
+<div class="section" id="id9">
+<h3>其它操作<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>　　很多用户可能想尝试 Cartographic Composer 制图工具和 object-oriented Graphical Modeling 面向对象的影象建模系统。其启动图标位于主界面底部工具栏。有关说明位于 <a class="reference external" href="../../grass/wxGUI.html">wxGUI</a> 。</p>
+<p>　　新图形界面系统是使用 Python 语言编写的。对于 Python 开发人员，以下工具可能会很有用：
+　　在图层窗口底部点击 <cite>Python shell</cite> ，使用 <tt class="docutils literal"><span class="pre">help(grass.core)</span></tt> 可以查看全部的核心 Python GIS 组件。此外，<cite>array</cite> (NumPy)、<cite>db</cite> (database)、<cite>raster</cite> 和 <cite>vector</cite> 都是重要的组件。为使用 GRASS 丰富的 C 函数库，可使用 <cite>Pythons CTypes</cite> 。</p>
+</div>
+<div class="section" id="id10">
+<h3>命令行和关闭<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>　　使用 <em class="menuselection">File ‣ Exit GUI</em> 关闭图形界面。在关闭 GRASS 命令行之前，尝试使用 <tt class="docutils literal"><span class="pre">g.manual</span> <span class="pre">--help</span></tt> 获取帮助信息。GRASS 是一套倾向于丰富的命令行函数库功能而非图形界面开发的 GIS 系统，适用于通过脚本实现批处理。脚本语言支持 Bourne Shell 和 Python ，两者均有良好的开发环境。应用这些工具，一个包含语法分析器、图形界面和文档模板的 GRASS 模块框架只需 5 分钟左右即可完成。</p>
+<p>　　使用 <tt class="docutils literal"><span class="pre">g.manual</span> <span class="pre">-i</span></tt> 可以于浏览器中开启帮助文档。</p>
+<p>　　输入 <tt class="docutils literal"><span class="pre">exit</span></tt> 关闭 GRASS 系统。</p>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>其它信息<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>GRASS 官方网站 <a class="reference external" href="http://grass.osgeo.org">http://grass.osgeo.org</a></li>
+<li>GRASS Wiki <a class="reference external" href="http://grass.osgeo.org/wiki">http://grass.osgeo.org/wiki</a></li>
+<li>更多介绍与教程 <a class="reference external" href="http://grass.osgeo.org/wiki/GRASS_Help#Getting_Started">here</a>.</li>
+<li>GRASS 功能模块详解 &lt;<a class="reference external" href="http://grass.osgeo.org/gdp/grassmanuals/grass64_module_list.pdf">http://grass.osgeo.org/gdp/grassmanuals/grass64_module_list.pdf</a>&gt;`_, including
+图形界面选项位置参考 (<a class="reference external" href="http://grass.osgeo.org/gdp/grassmanuals/grass64_module_list.html">HTML 版本</a>)</li>
+<li>除了内建的约 400 个模块，GRASS 还提供大量用户制作的附加模块 <a class="reference external" href="http://grass.osgeo.org/wiki/AddOns">http://grass.osgeo.org/wiki/AddOns</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

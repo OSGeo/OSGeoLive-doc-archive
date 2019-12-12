@@ -1,0 +1,197 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guia ràpida de TinyOWS &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Benvinguts a OSGeo-Live 6.0" href="../index.html" />
+    <link rel="next" title="uDig Quickstart" href="udig_quickstart.html" />
+    <link rel="prev" title="SpatiaLite Quickstart" href="spatialite_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.tinyows.org/"><img alt="project logo" class="align-right" src="../../_images/logo-TinyOWS1.png" style="width: 40.0px; height: 40.0px;" /></a>
+<div class="section" id="guia-rapida-de-tinyows">
+<h1>Guia ràpida de TinyOWS<a class="headerlink" href="#guia-rapida-de-tinyows" title="Permalink to this headline">¶</a></h1>
+<p>TinyOWS és un Transactional Web Feature Service (WFS-T) d&#8217;alt rendiment, que
+alhora és lleuger i fàcil d&#8217;implementar, emprant una interfície CGI o FastCGI i
+usant <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a> per a l&#8217;emmagatzematge de
+dades.</p>
+<p>Aquesta guia ràpida descriu com:</p>
+<blockquote>
+<div><ul class="simple">
+<li>mostrar una capa WFS en un projecte de QGIS</li>
+<li>editar una capa WFS emprant WFS-T des de QGIS</li>
+</ul>
+</div></blockquote>
+<div class="section" id="mostrar-una-capa-wfs-en-un-projecte-de-qgis">
+<h2>Mostrar una capa WFS en un projecte de QGIS<a class="headerlink" href="#mostrar-una-capa-wfs-en-un-projecte-de-qgis" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Clic <em class="menuselection">Desktop ‣ Desktop GIS ‣ Quantum GIS</em>.</li>
+<li>Clic <em class="menuselection">Layer ‣ Add PostGIS Layer...</em>.<ul>
+<li>Primer mostrem la capa PostGIS original</li>
+</ul>
+</li>
+<li>Prémer <em class="guilabel">New</em>.</li>
+<li>Posar <strong>pgrouting</strong> com a nom de la Connexió i de la base de dades</li>
+<li>Prémer <em class="guilabel">OK</em>.</li>
+<li>Prémer <em class="guilabel">Connect</em>.</li>
+<li>Escollir <strong>ways</strong> a la llista de la taula</li>
+<li>Prémer <em class="guilabel">Add</em>.</li>
+<li>Zoom in</li>
+<li>Escollir <em class="menuselection">Plugins -&gt; Manage Plugins -&gt; WFS Plugin -&gt; OK</em><ul>
+<li>Habilita el plugin WFS Layer.</li>
+</ul>
+</li>
+<li>Clic <em class="menuselection">Layer ‣ Add WFS Layer...</em>.<ul>
+<li>Ara afegim una capa WFS basada en la mateixa taula</li>
+</ul>
+</li>
+<li>Prémer <em class="guilabel">New</em>.</li>
+<li>Posar <strong>tinyows</strong> com a nom i <strong>http://localhost/cgi-bin/tinyows</strong> com URL</li>
+<li>Prémer <em class="guilabel">OK</em>.</li>
+<li>Prémer <em class="guilabel">Connect</em>.</li>
+<li>Escollilr <strong>ows:ways</strong> a la llista de capes</li>
+<li>Marcar <em class="guilabel">Only request features overlapping the current view extent</em>.</li>
+<li>Prémer <em class="guilabel">OK</em>.<ul>
+<li>Ara es mostra la capa WFS:</li>
+</ul>
+</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/tinyows_wfs_layer.png"><img alt="../../_images/tinyows_wfs_layer.png" src="../../_images/tinyows_wfs_layer.png" style="width: 640.0px; height: 425.6px;" /></a>
+</div>
+<div class="section" id="editar-la-capa-amb-wfs-t">
+<h2>Editar la capa amb WFS-T<a class="headerlink" href="#editar-la-capa-amb-wfs-t" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Clic <em class="menuselection">Layer ‣ Toggle Editing</em>.</li>
+<li>Clic <em class="menuselection">Edit ‣ Node Tool</em>.</li>
+<li>Mou un vértex (creu) a una posició diferent</li>
+<li>Clic <em class="menuselection">Layer ‣ Save edits</em>.</li>
+<li>Amaga la capa desmarcant <strong>tows:ways</strong> a la llista de capes<ul>
+<li>Ara hauries de veure el vial editat en un color diferent, tret directament
+de PostGIS.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="i-ara-que">
+<h2>I ara què?<a class="headerlink" href="#i-ara-que" title="Permalink to this headline">¶</a></h2>
+<p>Per obtenir més informació sobre TinyOWS, un punt de partida és la <a class="reference external" href="http://tinyows.org/trac/wiki/UserDocumentation">User
+Documentation</a> a la pàgina d&#8217;inici de TinyOWS.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

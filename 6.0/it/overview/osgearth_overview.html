@@ -1,0 +1,186 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>osgEarth &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 6.0 Contents" href="overview.html" />
+    <link rel="next" title="OpenStreetMap" href="osm_dataset_overview.html" />
+    <link rel="prev" title="OpenLayers" href="openlayers_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://osgearth.org/"><img alt="project logo" class="align-right" src="../../_images/logo-osgearth12.gif" style="width: 190.0px; height: 28.0px;" /></a>
+<div class="section" id="osgearth">
+<h1>osgEarth<a class="headerlink" href="#osgearth" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="terrain-rendering-toolkit">
+<h2>Terrain rendering toolkit<a class="headerlink" href="#terrain-rendering-toolkit" title="Permalink to this headline">¶</a></h2>
+<p>osgEarth è una serie di strumenti scalabili per restituzione grafica del terreno
+per <a class="reference external" href="http://www.openscenegraph.org/">OpenSceneGraph</a> (OSG), uno applicazione open source, altamente performante,
+per grafica 3D.  Basta creare un semplice file XML, puntarlo verso le vostre
+immagini, mappe di elevazione, e dati vettoriali, caricarlo nella vostra applicazione
+OSG preferita, e via!
+osgEarth supporta tutti i tipi di dati e viene fornito con un sacco di esempi
+per aiutarvi a iniziare a lavorare velocemente e facilmente.</p>
+<a class="reference internal image-reference" href="../../_images/osgearth6.jpg"><img alt="screenshot" class="align-right" src="../../_images/osgearth6.jpg" style="width: 512.0px; height: 384.0px;" /></a>
+<div class="section" id="caratteristiche-principali">
+<h3>Caratteristiche principali<a class="headerlink" href="#caratteristiche-principali" title="Permalink to this headline">¶</a></h3>
+<p>osgEarth rende semplice di creare modelli del terreno scalabili:</p>
+<ul class="simple">
+<li>Crea modelli di terreno - sia offline, si dinamicamente al volo</li>
+<li>Caricare il terreno dell&#8217;intero pianeta senza scrivere alcun codice</li>
+<li>Immagini per produrre riquadri ad alta risoluzione</li>
+<li>Combina diverse sorgenti diti di immagini, mappe dell&#8217;elevazione, e vettoriali al volo</li>
+<li>Impostare cache per le tile per massimizzare le prestazioni</li>
+<li>Regolare l&#8217;opacità del livello per effetti multi-texturing</li>
+</ul>
+<p>Ma osgEarth fa molto più che restituire terreni:</p>
+<ul class="simple">
+<li>Drape vector (GIS) data on the terrain</li>
+<li>Reproiettare dati attraverso differenti sistemi di coordinate</li>
+<li>Place external models on the terrain with lat/long coordinates</li>
+<li>Fare un veloce test dell&#8217;intersezione</li>
+<li>Incorporare nuovi dati nei database VPB esistenti (senza ricostruirli)</li>
+<li>Access terrain tiles directly for non-visual processes</li>
+</ul>
+<p>Elementi che potete vedere:</p>
+<ul class="simple">
+<li>Immagini GeoTIFF e Modelli Digitali del Terremo (DEM) (più molti altri formati)</li>
+<li>Dati vettoriali come ESRI shapefiles</li>
+<li>Dati web conformi ad OGC (come <a class="reference external" href="http://www.opengeospatial.org">WMS</a>)</li>
+<li>Layer GIS pubblicati con <a class="reference external" href="http://mapserver.org">MapServer</a> o <a class="reference external" href="http://www.esri.com/software/arcgis/arcgisserver/">ESRI ArcGIS Server</a></li>
+<li>Mappe online come <a class="reference external" href="http://openstreetmap.org">OpenStreetMap</a>, <a class="reference external" href="http://resources.esri.com/arcgisonlineservices/">ArcGIS Online</a>, o <a class="reference external" href="http://onearth.jpl.nasa.gov">NASA OnEarth</a></li>
+</ul>
+</div>
+<div class="section" id="dettagli">
+<h3>Dettagli<a class="headerlink" href="#dettagli" title="Permalink to this headline">¶</a></h3>
+<p><strong>Sito Web:</strong> <a class="reference external" href="http://osgearth.org/">http://osgearth.org/</a></p>
+<p><strong>Licenza:</strong> GNU Lesser General Public License (LGPL)</p>
+<p><strong>Versione Software:</strong> 2.0</p>
+<p><strong>Piattaforme Supportate:</strong> Linux, Mac, Windows</p>
+<p><strong>Interfacce API:</strong> C++</p>
+<p><strong>Supporto Commerciale:</strong> <a class="reference external" href="http://osgearth.org/#ProfessionalServices">http://osgearth.org/#ProfessionalServices</a></p>
+</div>
+<div class="section" id="presentazione-veloce">
+<h3>Presentazione Veloce<a class="headerlink" href="#presentazione-veloce" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/osgearth_quickstart.html"><em>Documentazione introduttiva</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

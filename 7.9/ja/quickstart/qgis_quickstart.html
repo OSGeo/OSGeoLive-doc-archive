@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>QGIS クイックスタート &mdash; OSGeo-Live 7.9
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.9
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.9
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 7.9 コンテンツ" href="../overview/overview.html" />
+    <link rel="next" title="rasdaman Quickstart" href="rasdaman_quickstart.html" />
+    <link rel="prev" title="QGIS Server Quickstart" href="qgis_mapserver_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.qgis.org" id="qgis-quickstart-ja"><img alt="project logo" class="align-right" src="../../_images/logo-QGIS17.png" style="width: 60.0px; height: 60.0px;" /></a>
+<div class="section" id="qgis">
+<h1>QGIS クイックスタート<a class="headerlink" href="#qgis" title="Permalink to this headline">¶</a></h1>
+<p>Quantum GIS (QGIS) は視覚化、管理、編集、データ解析、印刷できる地図作製に使える
+ユーザーフレンドリーなデスクトップ GIS クライアントです。</p>
+<p>このクイックスタートでは以下の手順を記載しています:</p>
+<blockquote>
+<div><ul class="simple">
+<li>既存の QGIS プロジェクトを更新する</li>
+<li>単純なベクタレイヤをもつ新規の QGIS プロジェクトを作成する</li>
+</ul>
+</div></blockquote>
+<div class="section" id="id1">
+<h2>QGIS プロジェクトを編集する<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">メニューから <em class="menuselection">Desktop ‣ Desktop GIS ‣ Quantum GIS</em> をクリックしてください</p>
+</li>
+<li><p class="first">メニューバーから <em class="menuselection">File ‣ Open Project...</em> を選択してください</p>
+</li>
+<li><p class="first">ファイル <tt class="file docutils literal"><span class="pre">QGIS-NaturalEarth-Example.qgs</span></tt> を選択し、 <em class="guilabel">Open</em> をクリックしてください</p>
+<ul class="simple">
+<li>世界地図が表示されるはずです</li>
+</ul>
+</li>
+<li><p class="first">レイヤーツリーから <strong>10m_populated_places_simple</strong> を選択してください</p>
+<ul>
+<li><p class="first">人口の多い地域が以下のように表示されます:</p>
+<a class="reference internal image-reference" href="../../_images/qgis17.png"><img alt="../../_images/qgis17.png" src="../../_images/qgis17.png" style="width: 512.0px; height: 315.5px;" /></a>
+</li>
+</ul>
+</li>
+<li><p class="first">レイヤーツリーで <strong>10m_rivers_lake_centerlines</strong> をダブルクリックしてください</p>
+</li>
+<li><p class="first">アウトラインオプションで異なる青のトーンに変更してください</p>
+</li>
+<li><p class="first"><em class="guilabel">OK</em> を押してください</p>
+<ul class="simple">
+<li>川が選択した色で表示されます</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>新規の QGIS プロジェクトを作成する<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>メニューから <em class="menuselection">File ‣ New Project</em> を選択してください</li>
+<li><em class="menuselection">Layer ‣ Add Vector Layer...</em> をクリックしてください</li>
+<li>データセット <tt class="file docutils literal"><span class="pre">/home/user/data/natural_earth/10m_admin_0_countries.shp</span></tt> を選択してください</li>
+<li><em class="guilabel">Open</em> を押してください<ul>
+<li>世界の国が表示されます</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>参照情報<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>より進んだ QGIS のチュートリアルを <a class="reference external" href="../../qgis/tutorials/en/">OSGeo-Live QGIS tutorials</a> に集めてあります。</p>
+<p>QGIS について詳細の開始ページは QGIS ホームページの <a class="reference external" href="http://www.qgis.org/en/documentation.html">Documentation page</a> になります。</p>
+<p>OSGeo-Live については <a class="reference external" href="../../qgis/qgis-1.0.0_a-gentle-gis-introduction_en.pdf">A Gentle Introduction to GIS</a> と <a class="reference external" href="../../qgis/QGIS-1.8-UserGuide-en.pdf">QGIS User Guide</a> をご覧下さい</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,152 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Filter Encoding (FE) &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Πρότυπα Open Geospatial Consortium" href="standards.html" />
+    <link rel="next" title="Geography Markup Language (GML)" href="gml_overview.html" />
+    <link rel="prev" title="Catalogue Service for the Web (CSW)" href="csw_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-OGC-left2.png" id="fe-overview-el"><img alt="OGC logo" class="align-right" id="fe-overview-el" src="../../_images/logo-OGC-left2.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/logo-OGC-right2.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right2.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="filter-encoding-fe">
+<h1>Filter Encoding (FE)<a class="headerlink" href="#filter-encoding-fe" title="Permalink to this headline">¶</a></h1>
+<p>Το πρότυπο Filter Encoding (FE) του OGC® ορίζει την κωδικοποίηση XML για την έκφραση φίλτρων για χωρικά ερωτήματα με στόχο την επιλογή μέρους από γεωγραφικά χαρακτηριστικά με βάση συγκεκριμένες τους ιδιότητες.
+(<a class="reference external" href="http://www.opengeospatial.org/standards/filter">http://www.opengeospatial.org/standards/filter</a>)</p>
+<a class="reference internal image-reference" href="../../_images/fe2.jpg"><img alt="FE in Context" src="../../_images/fe2.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>Ένα υποσύνολο χαρακτηριστικών μπορεί να αναγνωριστεί και να οπτικοποιηθεί με συγκεκριμένο χρώμα ή να μετατραπεί σε συγκεκριμένο ψηφιακό πρότυπο που επιλέγει ο χρήστης. Μια γενικευμένη κωδικοποίηση φίλτρων XML επιτρέπει την εύκολη ανάγνωση και επικαιροποίηση από έναν εξυπηρετητή που υλοποιεί το πρότυπο WFS πρωτού η έκφραση του φίλτρου μετατραπεί στην εγγενή γλώσσα της βάσης δεδομένων στην οποία είναι αποθηκευμένα τα δεδομένα και η οποία καλείται να απαντήσει στο ερώτημα. Αυτό το πρότυπο χρησιμοποιείται από ένα πλήθος διαδικτυακών υπηρεσιών του OGC, περιλαμβανομένου του WFS, της υπηρεσίας καταλόγου (CSW) και του προτύπου SLD.</p>
+<p>Οι εκφράσεις περιορισμού μπορούν να οριστούν σαν τιμές σε χωρικές, χρονικές και περιγραφικές ιδιότητες. Ένα παράδειγμα χωρικού φίλτρου είναι: “Βρές όλες τα χαρακτηριστικά στην περιοχή Omstead County που ιδιοκτήτης είναι ο Peter Vretanos.” Ένα παράδειγμα χρονικού φίλτρου είναι: “Βρές όλα τα φράγματα στην Μασαχουσέτη που χτίστηκαν πριν το 1900.” Ένα παράδειγμα περιγραφικού φίλτρου είναι: “Βρές όλους τους αισθητήρες θερμοκρασίας στο Παρίσι που αναφέρουν μέτρηση θερμοκρασίας μεταξύ 20 και 40 βαθμών C.”</p>
+<div class="section" id="id1">
+<h2>Δείτε επίσης<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="sld_overview.html"><em>Style Layer Descriptor (SLD)</em></a></li>
+<li><a class="reference internal" href="csw_overview.html"><em>Catalogue Service for the Web (CSW)</em></a></li>
+<li><a class="reference internal" href="wfs_overview.html"><em>Web Feature Service (WFS)</em></a></li>
+<li><a class="reference internal" href="wms_overview.html"><em>Web Map Service (WMS)</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>创建自启动 OSGeo-Live USB 盘 &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 8.0" href="../index.html" />
+    <link rel="next" title="Ushahidi 快速入门" href="ushahidi_quickstart.html" />
+    <link rel="prev" title="uDig 快速入门" href="udig_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="osgeo-live-usb">
+<h1>创建自启动 OSGeo-Live USB 盘<a class="headerlink" href="#osgeo-live-usb" title="Permalink to this headline">¶</a></h1>
+<p>　　本文叙述如何从 OSGeo-Live 映象创建 USB 启动盘。相比使用 DVD ，该方法性能更好，且可以在盘中保存操作留下的数据。</p>
+<p>　　本文涉及了 OSGeo 团队所发现的较为常见的 USB 启动盘创建技巧和错误。更为详尽的列表请见 <a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">wiki 页面</a> 。</p>
+<div class="section" id="id1">
+<h2>系统要求<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>USB 盘，至少 4 GB ，推荐 8 GB 。</li>
+<li>OSGeo-Live ISO 影响，可从 <a class="reference external" href="http://live.osgeo.org/en/download.html">http://live.osgeo.org/en/download.html</a> 下载或从 DVD 读取。</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>对于 4 GB USB 盘，请使用没有 Windows/Mac 安装程序的 osgeo-live-mini ISO 版本。</li>
+<li>对于 8 GB USB 盘，可以使用有安装程序的 osgeo-live ISO 完整版本。</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="ubuntu">
+<h2>从 Ubuntu 创建启动盘<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
+<p>　　这是 Ubuntu 推荐的启动盘制作方法，适用于 Ubuntu 及其衍生版本，包括 Lubuntu 等以及 OSGeo-Live 。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">创建启动盘的 Ubuntu 环境不能比被配置的版本老。对于 OSGeo-Live 6.5 ，要求使用 12.04 或以后的版本。</p>
+</div>
+<p>　　在此 <a class="reference external" href="http://live.osgeo.org/en/download.html">下载</a> osgeo-live 或 osgeo-live-mini 影响至硬盘。</p>
+<p>　　启动到一个 Ubuntu/Xbuntu 环境中。已有的 OSGeo-Live 启动盘也可以使用。详见 <a class="reference internal" href="osgeolive_quickstart.html"><em>OSGeo-Live 启动指南</em></a> 。</p>
+<p>　　将待写入的 USB 盘插入计算机。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/usb_select12.png"><img alt="../../_images/usb_select12.png" src="../../_images/usb_select12.png" style="width: 305.2px; height: 294.0px;" /></a>
+</div></blockquote>
+<p>　　选择 <em class="menuselection">Applications ‣ System ‣ Startup Disk Creator</em> 或搜索 <cite>Startup Disk Creator</cite> 。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/usb_set_params12.png"><img alt="../../_images/usb_set_params12.png" src="../../_images/usb_set_params12.png" style="width: 333.2px; height: 375.2px;" /></a>
+</div></blockquote>
+<p>　　选择使用的 OSGeo Live 映象。</p>
+<p>　　选择目标盘。调整 persistent storage 配置允许在盘上保存多少生成的数据。</p>
+<p>Select <em class="guilabel">Make Startup Disk</em></p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/usb_installing12.png"><img alt="../../_images/usb_installing12.png" src="../../_images/usb_installing12.png" style="width: 302.4px; height: 100.8px;" /></a>
+</div></blockquote>
+<p>　　等待写入过程完成。</p>
+</div>
+<div class="section" id="usb">
+<h2>从 USB 盘启动。<a class="headerlink" href="#usb" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>关闭计算机。</li>
+<li>插入启动盘。</li>
+<li>启动计算机并选择 USB 启动。<ul>
+<li>多数计算机默认不会优先从 USB 启动。</li>
+<li>启动时查看启动信息中显示的启动菜单按键，F12 最为常见。</li>
+<li>若没有启动菜单可选，进入 BIOS 设置。查看 <a class="reference external" href="http://www.mydigitallife.info/comprehensive-list-of-how-key-to-press-to-access-bios-for-various-oem-and-computer-systems/">这个网站</a> 可以了解常见品牌设备的 BIOS 设置启动方法。</li>
+</ul>
+</li>
+<li>在启动顺序（boot order）设置中选择 USB 。<ul>
+<li>有些系统中 USB 启动选项只有在启动盘已经插入时才会显示。</li>
+<li>有时 USB 会被错位地列为硬盘（hard drive）。</li>
+<li><a class="reference external" href="http://www.youtube.com/watch?v=eQBdVO-n6Mg">该视频</a> 演示了从 USB 启动的一个实例。</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h2>运行<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>　　详见 <a class="reference internal" href="osgeolive_quickstart.html"><em>OSGeo-Live 启动指南</em></a></p>
+</div>
+<div class="section" id="id6">
+<h2>其它信息<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="osgeolive_quickstart.html"><em>OSGeo-Live 启动指南</em></a></li>
+<li><a class="reference internal" href="virtualization_quickstart.html"><em>OSGeo-Live Quickstart for Running in a Virtual Machine</em></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><em>在硬盘安装 OSGeo-Live</em></a></li>
+<li>其它启动盘制作方法 <a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">wiki 页面</a></li>
+<li>有相关问题可访问我们的邮件列表 <a class="reference external" href="http://lists.osgeo.org/mailman/listinfo/live-demo">http://lists.osgeo.org/mailman/listinfo/live-demo</a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

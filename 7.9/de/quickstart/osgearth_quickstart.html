@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>osgEarth Quickstart &mdash; OSGeo-Live 7.9
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.9
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.9
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 7.9 Inhaltsverzeichnis" href="../overview/overview.html" />
+    <link rel="next" title="OSGeo-Live auf einer Festplatte installieren" href="osgeolive_install_quickstart.html" />
+    <link rel="prev" title="OpenLayers Quickstart" href="openlayers_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-osgearth3.png"><img alt="project logo" class="align-right" src="../../_images/logo-osgearth3.png" style="width: 190.0px; height: 28.0px;" /></a>
+<div class="section" id="osgearth-quickstart">
+<h1>osgEarth Quickstart<a class="headerlink" href="#osgearth-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>osgEarth ist eine skalierbares Terrain-Rendering-Toolkit für <a class="reference external" href="http://www.openscenegraph.org/">OpenSceneGraph</a>.
+Diese Kurzanleitung beschreibt, wie ein 3D-Globus mit verschiedenen Overlays gestartet werden kann.</p>
+<div class="section" id="running-osgearth-viewer">
+<h2>Running osgearth_viewer<a class="headerlink" href="#running-osgearth-viewer" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Öffnen Sie die Konsole und starten Sie den osgearth Viewer:</p>
+<div class="highlight-python"><pre>export OSG_FILE_PATH=/usr/share/osgearth
+osgearth_viewer --window 50 50 900 700 /usr/share/osgearth/maps/srtm.earth</pre>
+</div>
+</li>
+</ul>
+<p>Sie sollten im Anschluss einen Globus mit Satellitenbildern sehen.</p>
+<ul class="simple">
+<li>Drücken Sie die Tasten <tt class="kbd docutils literal"><span class="pre">1</span></tt> - <tt class="kbd docutils literal"><span class="pre">5</span></tt> für die vorgegebenen Winkel</li>
+<li>Durch klick mit der linken Maustaste, für <tt class="docutils literal"><span class="pre">Zoom</span> <span class="pre">In</span></tt></li>
+<li>Verwenden Sie die rechte Maustaste, für <tt class="docutils literal"><span class="pre">Zoom</span> <span class="pre">Out</span></tt>,</li>
+<li>mit dem Mausrad können sie ebenso hinein- bzw. herauszuzoomen.</li>
+<li>Kippen : Ziehen Sie die Maus, wenn Sie die rechte und linke Maustaste gedrückt halten.</li>
+<li>Drücken Sie <tt class="kbd docutils literal"><span class="pre">h</span></tt> für die Hilfe.</li>
+<li>Drücken Sie <tt class="kbd docutils literal"><span class="pre">ESCAPE</span></tt>, um die Anwendung zu beenden.</li>
+</ul>
+</div>
+<div class="section" id="osgviewer-mit-einem-openstreetmap-overlay-starten">
+<h2>osgviewer mit einem OpenStreetMap Overlay starten<a class="headerlink" href="#osgviewer-mit-einem-openstreetmap-overlay-starten" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Geben Sie in der Konsole Folgendes ein:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">osgviewer</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">osgearth</span><span class="o">/</span><span class="n">maps</span><span class="o">/</span><span class="n">openstreetmap</span><span class="o">.</span><span class="n">earth</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Drücken Sie <tt class="kbd docutils literal"><span class="pre">h</span></tt> für die Hilfe. Weiter Hilfeinformationen finden Sie unter <a class="reference external" href="http://www.openscenegraph.org/projects/osg/wiki/Support/UserGuides/osgviewer">openscenegraph.org</a>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="wie-geht-es-weiter">
+<h2>Wie geht es weiter?<a class="headerlink" href="#wie-geht-es-weiter" title="Permalink to this headline">¶</a></h2>
+<p>Um mehr über osgEarth zu erfahren, empfielht sich die <a class="reference external" href="http://osgearth.org/wiki/Documentation">Dokumentationsseite</a> im Wiki.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

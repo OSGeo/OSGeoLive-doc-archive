@@ -1,0 +1,252 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OTB 快速入门 &mdash; OSGeo-Live 7.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 7.0" href="../index.html" />
+    <link rel="next" title="pgRouting 快速入门" href="pgrouting_quickstart.html" />
+    <link rel="prev" title="Ossim 快速入门" href="ossim_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-otb25.png"><img alt="project logo" class="align-right" src="../../_images/logo-otb25.png" style="width: 136.8px; height: 108.0px;" /></a>
+<div class="section" id="otb">
+<h1>OTB 快速入门<a class="headerlink" href="#otb" title="Permalink to this headline">¶</a></h1>
+<p>　　ORFEO Toolbox library (OTB) 工具箱是一套用于遥感领域的高性能图像处理系统。</p>
+<p>　　本文包含的内容有：</p>
+<blockquote>
+<div><ul class="simple">
+<li>从影像获取元数据；</li>
+<li>组合不同波段进行代数运算；</li>
+<li>使用 Monteverdi 程序对影像进行中心偏移聚类法分割和 SVM 监督分类，并可视化输出结果。</li>
+</ul>
+</div></blockquote>
+<p>　　OTB 系统提供了一系列工具用于影像处理。这些工具可以通过以下方法使用：</p>
+<blockquote>
+<div><ul class="simple">
+<li>命令行界面</li>
+<li>QT GUI 图形界面</li>
+<li>Quantum GIS 插件</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>　　以下使用的示例数据位于：</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://www.orfeo-toolbox.org/packages/OTB-Data-Examples.tgz">http://www.orfeo-toolbox.org/packages/OTB-Data-Examples.tgz</a></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="id1">
+<h2>显示影像元数据<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>　　通过 <cite>otbReadImageInfo-cli</cite> 命令可以显示元数据。主要输入参数为目标文件名，例如： <cite>otbReadImageInfo-cli -in qb_RoadExtract.tif</cite> 。</p>
+</div>
+<div class="section" id="id2">
+<h2>波段运算<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>　　通过 <cite>otbBandMath-cli</cite> 可以方便地执行波段代数运算。该命令的语法并不复杂。例如，对 SpotBefore.tif 和 SpotAfter.tif 作差的命令为： <cite>otbBandMath-cli -ims SpotBefore.tif SpotAfter.tif -out difference.tif -exp &#8220;im1b1-im2b1&#8221;</cite> 。通过 -exp 可以进行复杂的运算，包括阀值、对数转换等。该程序也支持自定义函数运算以提取信息。例如，对于 NDVI 标差植被指数的运算： <cite>otbBandMath-cli -ims qb_RoadExtract.tif -out ndvi.tif -exp &#8220;ndvi(im1b3,im1b4)&#8221;</cite> 。</p>
+</div>
+<div class="section" id="monteverdi">
+<h2>Monteverdi 影象分割<a class="headerlink" href="#monteverdi" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">从桌面 Spatial Tools 菜单启动 Monteverdi；</p>
+</li>
+<li><p class="first">通过 <em class="menuselection">File ‣ Open Dataset ‣ /home/user/otb/qb_RoadExtract.tif</em> 选择示例影像；</p>
+</li>
+<li><p class="first">选择 <em class="menuselection">Filtering ‣ Mean Shift clustering</em> 聚类算法；</p>
+</li>
+<li><p class="first">选择输入影像（Reader0）；</p>
+</li>
+<li><p class="first">调节分割参数，点击 &#8220;Run&#8221; 测试效果；</p>
+</li>
+<li><p class="first">点击 &#8220;Close&#8221; 完成；</p>
+</li>
+<li><p class="first">在主界面中对生成的 &#8220;MeanShift0&#8221; 右击 &#8220;Clustered Image&#8221; 并选择 &#8220;Display in viewer&#8221; 显示。</p>
+<a class="reference internal image-reference" href="../../_images/otb-mean_shift12.jpg"><img alt="../../_images/otb-mean_shift12.jpg" src="../../_images/otb-mean_shift12.jpg" style="width: 800.0px; height: 600.0px;" /></a>
+</li>
+</ul>
+</div>
+<div class="section" id="monteverdi-svm">
+<h2>Monteverdi SVM 监督分类<a class="headerlink" href="#monteverdi-svm" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">从桌面 Spatial Tools 菜单启动 Monteverdi；</p>
+</li>
+<li><p class="first">通过 <em class="menuselection">File ‣ Open Dataset ‣ /home/user/otb/qb_RoadExtract.tif</em> 选择示例影像；</p>
+</li>
+<li><p class="first">选择 <em class="menuselection">Learning ‣ SVM classification</em> 开始分类；</p>
+</li>
+<li><p class="first">选择输入数据（Reader0）；</p>
+</li>
+<li><p class="first">点击 <cite>Add Class</cite> 按钮并绘制多边形添加分类；</p>
+</li>
+<li><p class="first">在 <em class="menuselection">Setup ‣ SVM</em> 设定参数；</p>
+</li>
+<li><p class="first">点击 <cite>Learn</cite> 学习；</p>
+</li>
+<li><p class="first">点击 <cite>Display</cite> 执行分类。</p>
+<a class="reference internal image-reference" href="../../_images/otb-svm12.jpg"><img alt="../../_images/otb-svm12.jpg" src="../../_images/otb-svm12.jpg" style="width: 800.0px; height: 600.0px;" /></a>
+</li>
+</ul>
+<p>　　完整的教程见 <a class="reference external" href="http://www.orfeo-toolbox.org/otb/monteverdi.html">该网页</a> 。</p>
+</div>
+<div class="section" id="id4">
+<h2>其它信息<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>OTB 软件指南</li>
+</ul>
+<p>　　OTB 软件指南是一份约 600 页的完整手册，详细叙述了 OTB 的安装与使用。其中的操作均有详尽的图示。</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://orfeo-toolbox.org/packages/OTBSoftwareGuide.pdf">OTBSoftwareGuide.pdf</a></li>
+<li><a class="reference external" href="http://orfeo-toolbox.org/SoftwareGuide/">线上版本</a></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>OTB 操作手册</li>
+</ul>
+<p>　　这是一套针对非开发人员的简明的 OTB/Monteverdi 操作说明，包含了常见遥感处理流程的教学。</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://orfeo-toolbox.org/packages/OTBCookBook.pdf">OTBCookBook.pdf</a></li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p class="first">OTB 实例教学</p>
+<p>通过这些 <a class="reference external" href="http://www.orfeo-toolbox.org/SoftwareGuide/SoftwareGuidepa2.html#x17-49000II">教学</a> 可以掌握 OTB 的更多内容。</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">Live 本地教程</p>
+<p>本地教程位于：</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

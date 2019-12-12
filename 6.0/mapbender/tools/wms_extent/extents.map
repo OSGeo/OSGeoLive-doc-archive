@@ -1,0 +1,99 @@
+MAP
+	NAME "extents"
+	STATUS ON
+	MAXSIZE 5000
+	UNITS METERS
+	EXTENT -180 -90 180 90
+	SYMBOLSET  "symbolset_mapbender.sym"
+
+	PROJECTION
+		"init=epsg:4326"
+	END
+
+	WEB	
+		IMAGEPATH "/tmp/"
+		METADATA
+			WMS_TITLE "Layer Extent"
+			WMS_ABSTRACT "Layer Extent"
+			WMS_ONLINERESOURCE "http://localhost/cgi-bin/mapserv?map=/var/www/mapbender/tools/wms_extent/extents.map"
+			WMS_FEATURE_INFO_MIME_TYPE    "text/html"	
+			WMS_SRS "epsg:4326 epsg:31467 epsg:31466 epsg:31468 epsg:31469 epsg:31462 epsg:31463 epsg:31492 epsg:31493"
+			wms_extent "-180 -90 180 90"
+			include "include_metadata_wms.map"
+		END
+	END
+
+	SYMBOL
+		NAME 'my_hatch'
+		TYPE hatch
+	END
+
+	OUTPUTFORMAT
+		NAME 'png'
+		DRIVER 'GD/PNG'
+		MIMETYPE 'image/png'
+		EXTENSION PNG
+		IMAGEMODE PC256
+		TRANSPARENT ON
+	END
+
+#-------- use this to have a global map background
+#-------- please set the right IMAGEPATH in the WEB-Section above
+
+LAYER
+	NAME "demis"
+	TYPE RASTER
+	CONNECTION "http://www2.demis.nl/wms/wms.asp?wms=WorldMap&"
+	CONNECTIONTYPE WMS
+	METADATA
+		"wms_srs"             "EPSG:4326"
+		"wms_name"            "Bathymetry,Countries,Topography,Hillshading,Coastlines,Waterbodies,Rivers,Streams,Railroads,Highways,Roads,Borders,Cities,Settlements,Airports"
+		"wms_connectiontimeout" "2"
+		"wms_server_version"  "1.1.1"
+		"wms_format"          "image/png"
+	END
+END
+
+#---------------------------------------------------
+LAYER
+	NAME "extent"
+	STATUS ON
+	TYPE POLYGON
+	CONNECTIONTYPE postgis 
+	CONNECTION   "dbname=mapbender user=user port=5432 host=localhost password=user"
+	DATA "the_geom from (select GeomFromText('POLYGON((%minx% %miny%,%minx% %maxy%,%maxx% %maxy%,%maxx% %miny%, %minx% %miny%))',4326) as the_geom,area2d(GeomFromText('POLYGON((%minx% %miny%,%minx% %maxy%,%maxx% %maxy%,%maxx% %miny%, %minx% %miny%))',4326)) as area, 1 as oid ) as foo USING UNIQUE oid USING SRID=4326"
+
+	METADATA
+		WMS_TITLE "Service Extent"
+		WMS_SRS "EPSG:4326"
+		WMS_ABSTRACT "Bounding Box Rectangles of OWS Services registered"
+		include "include_metadata_layer.map"
+	END
+
+	PROJECTION
+		"init=epsg:4326"
+	END
+
+	CLASSITEM 'area'
+
+	CLASS
+		EXPRESSION ([area] > 0.005)
+		NAME "WMS Extent"
+		STYLE
+			OUTLINECOLOR 135 30 50 
+			WIDTH 2 
+		END 
+	END
+
+	CLASS
+		EXPRESSION /./
+		STYLE
+			GEOMTRANSFORM 'centroid'
+			SYMBOL 'target'
+		END 
+	END
+END
+
+#-------------------------------------
+
+END

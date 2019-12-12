@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation &mdash; Documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Documentation" href="../index.html" />
+    <link rel="next" title="Configuration" href="configuration.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+  </head>
+  <body>
+
+<style type="text/css">
+  .header a:link{color: white;}
+  .header a:visited{color: white;}
+</style>
+
+<table class="header" width="100%" style="width: 100%;">
+  <tr>
+    <td class="left" style="padding: 10px 10px 0px 0px; text-align: left; vertical-align: top;"><a href="/index.html" title="pycsw">pycsw</a></td>
+    <td class="right" style="padding: 10px 10px 0px 0px; text-align: right; vertical-align: top;">
+      <a href="/index.html" title="Home">Home</a> |
+      <a href="/demos.html" title="Demos">Demos</a> |
+      <a href="/docs/index.html" title="Docs">Docs</a> |
+      <a href="http://sourceforge.net/apps/trac/pycsw" title="Issue Tracker">Issue Tracker</a> |
+      <a href="/faq.html" title="FAQ">FAQ</a> |
+      <a href="/download.html" title="Download">Download </a>
+    </td>
+  </tr>
+</table>
+
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="configuration.html" title="Configuration"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li><a href="documentation.html">Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installation">
+<span id="id1"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<p>pycsw requires the following supporting libraries:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://lxml.de/">lxml</a> (version &gt;= 2.2.3) for XML support</li>
+<li><a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy</a> (version &gt;= 0.0.5) for database bindings</li>
+<li><a class="reference external" href="http://toblerity.github.com/shapely/">Shapely</a> (version &gt;= 1.2.8) for spatial query / geometry support</li>
+<li><a class="reference external" href="http://code.google.com/p/pyproj/">pyproj</a> (version &gt;= 1.8.9) for coordinate transformations</li>
+</ul>
+</div>
+<div class="section" id="installing-from-source">
+<h2>Installing from Source<a class="headerlink" href="#installing-from-source" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../download.html#download"><em>Download</em></a> the latest version or fetch svn trunk:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>svn co https://pycsw.svn.sourceforge.net/svnroot/pycsw pycsw
+</pre></div>
+</div>
+<p>Ensure that CGI is enabled for your install directory.  For example, on Apache, if you setup pycsw in <tt class="docutils literal"><span class="pre">/srv/www/htdocs/pycsw</span></tt> (where your URL will be <tt class="docutils literal"><span class="pre">http://host/pycsw/csw.py</span></tt>), add the following to <tt class="docutils literal"><span class="pre">httpd.conf</span></tt>:</p>
+<div class="highlight-none"><div class="highlight"><pre>&lt;Location /pycsw/&gt;
+ Options FollowSymLinks +ExecCGI
+ Allow from all
+ AddHandler cgi-script .py
+&lt;/Location&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you install pycsw in <tt class="docutils literal"><span class="pre">cgi-bin</span></tt>, this should work as expected.  In this case, the <a class="reference internal" href="testing.html#tester"><em>tester</em></a> application must be moved to a normal location to serve static HTML documents.</p>
+</div>
+</div>
+<div class="section" id="installing-from-opensuse-build-service">
+<span id="opensuse"></span><h2>Installing from OpenSUSE Build Service<a class="headerlink" href="#installing-from-opensuse-build-service" title="Permalink to this headline">¶</a></h2>
+<p>In order to install the OBS package in openSUSE 12.1, one can run the following commands as user <tt class="docutils literal"><span class="pre">root</span></tt>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># zypper -ar http://download.opensuse.org/repositories/Application:/Geo/openSUSE_12.1/ GEO</span>
+<span class="c"># zypper -ar http://download.opensuse.org/repositories/devel:/languages:/python/openSUSE_12.1/ python</span>
+<span class="c"># zypper refresh</span>
+<span class="c"># zypper install pycsw</span>
+</pre></div>
+</div>
+<p>For earlier openSUSE versions change <tt class="docutils literal"><span class="pre">12.1</span></tt> with <tt class="docutils literal"><span class="pre">11.4</span></tt>. For future openSUSE version use <tt class="docutils literal"><span class="pre">Factory</span></tt>.</p>
+<p>An alternative method is to use the <a class="reference external" href="http://software.opensuse.org/search?q=pycsw&amp;baseproject=openSUSE%3A12.1&amp;lang=en&amp;include_home=true&amp;exclude_debug=true">One-Click Installer</a>.</p>
+</div>
+<div class="section" id="installing-on-ubuntu-xubuntu-kubuntu">
+<h2>Installing on Ubuntu/Xubuntu/Kubuntu<a class="headerlink" href="#installing-on-ubuntu-xubuntu-kubuntu" title="Permalink to this headline">¶</a></h2>
+<p>In order to install pycsw to an Ubuntu based distribution, one can use the OSGeoLive installation script located in <tt class="docutils literal"><span class="pre">pycsw/etc/dist</span></tt>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># cd pycsw/etc/dist</span>
+<span class="c"># sudo ./install_pycsw.sh</span>
+</pre></div>
+</div>
+<p>The script installs the dependencies (Apache, lxml, sqlalchemy, shapely, pyproj) and then pycsw to <tt class="docutils literal"><span class="pre">/var/www</span></tt>.</p>
+</div>
+<div class="section" id="running-on-windows">
+<h2>Running on Windows<a class="headerlink" href="#running-on-windows" title="Permalink to this headline">¶</a></h2>
+<p>For Windows installs, change the first line of <tt class="docutils literal"><span class="pre">csw.py</span></tt> to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#!/Python27/python -u</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The use of <tt class="docutils literal"><span class="pre">-u</span></tt> is required to properly output gzip-compressed responses.</p>
+</div>
+</div>
+<div class="section" id="security">
+<h2>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
+<p>By default, <tt class="docutils literal"><span class="pre">default.cfg</span></tt> is at the root of the pycsw install.  If you have setup pycsw outside your HTTP server&#8217;s <tt class="docutils literal"><span class="pre">cgi-bin</span></tt> area, this file could be read.  To protect the configuration, you have a couple of options:</p>
+<ul class="simple">
+<li>move <tt class="docutils literal"><span class="pre">default.cfg</span></tt> to a non HTTP accessible area, and modify <tt class="docutils literal"><span class="pre">csw.py</span></tt> to point to the updated location</li>
+<li>set your web server to deny access to the configuration.  For example, in Apache, add the following to <tt class="docutils literal"><span class="pre">httpd.conf</span></tt>:</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre>&lt;Files ~ &quot;\.(cfg)$&quot;&gt;
+ order allow,deny
+ deny from all
+&lt;/Files&gt;
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="documentation.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#system-requirements">System Requirements</a></li>
+<li><a class="reference internal" href="#installing-from-source">Installing from Source</a></li>
+<li><a class="reference internal" href="#installing-from-opensuse-build-service">Installing from OpenSUSE Build Service</a></li>
+<li><a class="reference internal" href="#installing-on-ubuntu-xubuntu-kubuntu">Installing on Ubuntu/Xubuntu/Kubuntu</a></li>
+<li><a class="reference internal" href="#running-on-windows">Running on Windows</a></li>
+<li><a class="reference internal" href="#security">Security</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="introduction.html"
+                        title="previous chapter">Introduction</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="configuration.html"
+                        title="next chapter">Configuration</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/docs/installation.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul><p>
+   <script type="text/javascript" src="http://www.ohloh.net/p/488022/widgets/project_thin_badge.js"></script> 
+</p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="configuration.html" title="Configuration"
+             >next</a></li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >previous</a> |</li>
+        <li><a href="documentation.html">Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+
+    <div class="footer">
+        &copy; Copyright 2010-2011, Tom Kralidis.
+      Last updated on 2012-04-08T21:06:15Z.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://sourceforge.net/apps/piwik/pycsw/" : "http://sourceforge.net/apps/piwik/pycsw/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  <script type="text/javascript">
+    try {
+      var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
+      piwikTracker.trackPageView();
+      piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+  </script>
+  <noscript>
+    <p>
+      <img src="http://sourceforge.net/apps/piwik/pycsw/piwik.php?idsite=3" style="border:0" alt=""/>
+    </p>
+  </noscript>
+  <!-- End Piwik Tag -->
+
+
+  </body>
+</html>

@@ -1,0 +1,163 @@
+html,body
+{
+  background-color: #f0f0f0;
+  height: 100%;
+  padding: 0px;
+}
+
+#log
+{
+  display: block;
+  position: fixed;  
+  top: 500px;
+  left:100px;
+  color:red;
+}
+
+h1.mbLogo
+{
+  font-size: larger;
+  font-stretch: extra-expanded;
+  font-weight: bold;
+}
+
+.mbFrame
+{
+  border: 1px solid black;
+  /* fugly
+  -moz-border-radius: 1em;
+  */
+  background-color: white;
+}
+
+ul
+{
+  list-style-type: none;
+}
+
+/*  top menu */
+.tabList > li
+{
+  display: inline;
+  background-color: #aaaaaa;
+  margin: 0em;
+  padding: 0em;
+  cursor: pointer;
+}
+.tabList > li:after
+{
+/*   content: " - "; */
+}
+.tabList > li:last-child:after
+{
+  /* content: ""; */
+}
+
+.tabList li.active
+{
+  background-color: transparent;
+  border: 1px gray solid;
+}
+
+
+/* left menu */
+
+.mbList
+{
+  margin-left: 0px;
+  padding-left: 1em;
+  padding-top: 1em;
+  width: 15em;
+  margin-top: 0.5em;
+  float: left;
+  /*FIXME: position: absolute*/;
+  top: 1em;
+  left: 1em;
+
+  min-height: 20em;
+}
+
+.mbList li
+{
+  cursor: pointer;
+}
+
+.mbList li.listCommand
+{
+  font-style: italic;
+}
+
+.mbList li#listFilter
+{
+  margin-bottom: 1em;
+}
+
+/* content area */
+
+div.formContainer
+{
+  margin-left: 16.5em;
+  padding-top: 1em;
+  margin-top: 0.5em;
+  min-height: 30em;
+  float:left;
+}
+
+div.formContainer ul
+{
+  margin-right: auto;
+}
+div.formContainer form ul li
+{
+  padding-top: 0.2em;
+  border-bottom: 1px dotted gray;
+  vertical-align: top;
+}
+
+div.formContainer form ul > li>label
+{
+  width: 11em;
+  display: block;
+  float: left;
+
+}
+div.formContainer form ul > li>label:after
+{
+  content: ' : ';
+}
+
+div.formContainer form ul > li>select, div.formContainer form >ul>li>input
+{
+  width: 12em;
+}
+div.formContainer form ul > li>select
+{
+  border: none;
+  margin-top: 0px;
+  margin-bottom: auto;
+}
+
+div.formContainer form input[type=submit]
+{
+  margin-left: 26em;
+}
+
+
+.hidden
+{
+  display: none;
+}
+
+
+input[type="checkbox"]
+{
+  border: none;
+}
+
+.ConfEditor
+{
+  position: relative;
+  top: 1em;
+  width: 40em;
+
+}

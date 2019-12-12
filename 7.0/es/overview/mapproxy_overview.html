@@ -1,0 +1,254 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MapProxy &mdash; OSGeo-Live 7.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Contenidos OSGeo-Live 7.0" href="overview.html" />
+    <link rel="next" title="MapServer" href="mapserver_overview.html" />
+    <link rel="prev" title="Mapnik" href="mapnik_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://mapproxy.org/"><img alt="project logo" class="align-right" src="../../_images/logo-mapproxy8.png" /></a>
+<div class="section" id="mapproxy">
+<h1>MapProxy<a class="headerlink" href="#mapproxy" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="servicio-de-teselas-y-proxy-wms">
+<h2>Servicio de teselas y Proxy WMS<a class="headerlink" href="#servicio-de-teselas-y-proxy-wms" title="Permalink to this headline">¶</a></h2>
+<img alt="MapProxy diagram" class="align-right" src="../../_images/mapproxy8.png" />
+<p>MapProxy acelera las aplicaciones de mapas a través de la pregeneración de teselas integrando múltiples fuentes de datos y almacenándolos en una caché local.
+Las capas pueden hacerse transparentes, se pueden cambiar las proyecciones, se pueden convertir múltiples capas en una sola, se pueden agregar marcas de agua, y más!</p>
+<p>MapProxy es flexible y soluciona casos de uso tanto simples como complejos:
+desde una simple caché para una aplicación web con <cite>OpenLayers
+&lt;openlayers_overview&gt;</cite>, hasta un nodo central de IDE que combina, unifica y
+acelera docenas de servicios WMS distribuidos.</p>
+<p>Algunos ejemplos del mundo real: MapProxy es usado por el atlas de banda ancha alemán para proveer mapas a miles de usuarios lo más rápido posible y la Agencia Federal Alemana de Cartografía y Geodesia usa MapProxy para incorporar servicios WMS de los 16 estados.</p>
+<div class="section" id="funcionalidades-de-mapproxy">
+<h3>Funcionalidades de MapProxy<a class="headerlink" href="#funcionalidades-de-mapproxy" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/mapproxy_demo4.png"><img alt="MapProxy demo" class="align-right" src="../../_images/mapproxy_demo4.png" style="width: 557.2px; height: 566.3px;" /></a>
+<dl class="docutils">
+<dt>Fuentes de entrada:</dt>
+<dd><ul class="first last simple">
+<li>WMS 1.0.0–1.3.0 (<a class="reference internal" href="mapserver_overview.html"><em>MapServer</em></a>, <a class="reference internal" href="geoserver_overview.html"><em>GeoServer</em></a>, etc.)</li>
+<li>TMS, WMTS (TileCache, GeoWebcache, etc.)</li>
+<li>Mapserver y Mapnik (directamente, sin WMS)</li>
+<li>Cualquier fuente de datos compatible con TileCache, Google Maps o Bing</li>
+</ul>
+</dd>
+<dt>Servicios:</dt>
+<dd><ul class="first last simple">
+<li>WMS (1.0.0-1.3.0)</li>
+<li>TMS</li>
+<li>WMTS</li>
+<li>KML SuperOverlays</li>
+</ul>
+</dd>
+<dt>Caché de teselas:</dt>
+<dd><ul class="first last simple">
+<li>Las imágenes idénticas son almacenadas sólo una vez (ej: teselas del océano)</li>
+<li>Las teselas son almacenadas en el sistema de archivos, ficheros MBTile o CouchDB</li>
+<li>Agrega marcas de agua a las teselas</li>
+</ul>
+</dd>
+<dt>Opciones de fuente:</dt>
+<dd><ul class="first last simple">
+<li>Limita las fuentes a geometrías (por ejemplo desde archivos Shape)</li>
+<li>Agrega transparencia a capas opacas</li>
+<li>Une múltiples fuentes</li>
+<li>Reproyecta a otro SRS</li>
+</ul>
+</dd>
+<dt>Funcionalidades WMS:</dt>
+<dd><ul class="first last simple">
+<li>Construye árboles de capas desde diferentes fuentes</li>
+<li>Crea respuestas <tt class="docutils literal"><span class="pre">GetMap</span></tt> desde caché con soporte de zoom libre y cualquier proyección (para cualquier SIG de escritorio)</li>
+<li>Acelera servicios de WMS existentes de 10 a 100 veces</li>
+<li>Responde a consultas <tt class="docutils literal"><span class="pre">GetLegendGraphic</span></tt></li>
+<li>Responde a consultas <tt class="docutils literal"><span class="pre">GetFeatureInfo</span></tt> en cascada con transformaciones XSL opcionales</li>
+<li>Reproyección al vuelo</li>
+<li>Convierte versiones de WMS y formatos de imagen</li>
+</ul>
+</dd>
+<dt>Seguridad:</dt>
+<dd><ul class="first last simple">
+<li>Una API de autorización flexible y potente</li>
+<li>Soporta autorización personalizada con control de alta granularidad sobre servicios y capas.</li>
+<li>Acceso restringido a áreas (para WMS y servicios de teselas)</li>
+<li>Integración con bases de datos de usuarios y métodos de autenticación ya existentes</li>
+</ul>
+</dd>
+<dt>Potentes herramientas:</dt>
+<dd><ul class="first last simple">
+<li>Herramienta del tipo semilla para llenar la cache que puede iniciar polígonos de áreas</li>
+<li>Exportar la cache de las teselas a otros formatos</li>
+<li>Calcular escalas y mostrar configuraciones de rejillas</li>
+</ul>
+</dd>
+<dt>Otras funcionalidades:</dt>
+<dd><ul class="first last simple">
+<li>Formato de configuración simple pero poderos (YAML/JSON)</li>
+<li>Demo de cliente basado en OpenLayers</li>
+<li>Corre múltiples servicios WMS en una instancia de MapProxy</li>
+<li>Agrega texto de atribución a las imágenes</li>
+<li>Soporta datos raster que no son imágenes como MDEs (Modelos Digitales de Elevación)</li>
+<li>Mucho más...</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="estandares-implementados">
+<h3>Estándares Implementados<a class="headerlink" href="#estandares-implementados" title="Permalink to this headline">¶</a></h3>
+<p>MapProxy implementa las siguientes especificaciones abiertas:</p>
+<ul class="simple">
+<li>OGC WMS 1.0.0, 1.1.0, 1.1.1, 1.3.0</li>
+<li>OGC WMTS 1.0.0 (KVP y RESTful)</li>
+<li>OSGeo TMS 1.0.0</li>
+<li>OGC KML 2.2 SuperOverlays</li>
+</ul>
+</div>
+<div class="section" id="detalles">
+<h3>Detalles<a class="headerlink" href="#detalles" title="Permalink to this headline">¶</a></h3>
+<p><strong>Sitio web:</strong> <a class="reference external" href="http://mapproxy.org/">http://mapproxy.org/</a></p>
+<p><strong>Licencia:</strong> <a class="reference external" href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</a></p>
+<p><strong>Versión del software:</strong> 1.5.0</p>
+<p><strong>Platformas soportadas:</strong> Linux, Mac, Windows</p>
+<p><strong>Soporte:</strong> <a class="reference external" href="http://mapproxy.org/support.html">http://mapproxy.org/support.html</a></p>
+<p><strong>Documentación</strong> <a class="reference external" href="../../mapproxy/index.html">../../mapproxy/index.html</a></p>
+</div>
+<div class="section" id="guia-rapida">
+<h3>Guía rápida<a class="headerlink" href="#guia-rapida" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/mapproxy_quickstart.html"><em>Guía de inicio rápido</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

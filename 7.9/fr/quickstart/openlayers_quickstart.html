@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guide de démarrage rapide OpenLayers &mdash; OSGeo-Live 7.9
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.9
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.9
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Bienvenue sur OSGeo-Live 7.9" href="../index.html" />
+    <link rel="next" title="osgEarth Quickstart" href="osgearth_quickstart.html" />
+    <link rel="prev" title="OpenJUMP Quickstart" href="openjump_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="guide-de-demarrage-rapide-openlayers">
+<h1>Guide de démarrage rapide OpenLayers<a class="headerlink" href="#guide-de-demarrage-rapide-openlayers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="exemples-openlayers">
+<h2>Exemples OpenLayers<a class="headerlink" href="#exemples-openlayers" title="Permalink to this headline">¶</a></h2>
+<p>Parfois, le meilleur moyen de comprendre comment OpenLayers fonctionne est de regarder les
+exemples qui sont situés à: <a class="reference external" href="../../openlayers/examples">http://localhost/openlayers/examples</a>.</p>
+</div>
+<div class="section" id="creer-votre-premiere-carte">
+<h2>Créer votre première carte<a class="headerlink" href="#creer-votre-premiere-carte" title="Permalink to this headline">¶</a></h2>
+<p>L&#8217;API OpenLayers a deux concepts qui sont importants de comprendre afin de construire votre
+première carte : «Map», et «Layer». La balise «Map» d&#8217;OpenLayers stocke des informations sur
+la projection par défaut, l&#8217;étendue de la map, les unités, et d&#8217;autres informations sur la
+map. À l&#8217;intérieur de la map, les données sont affichées via la balise «Layer». Un layer
+comprend une source de données, l&#8217;information sur la façon qu&#8217;OpenLayers doit interroger les
+données et comment il doit les afficher.</p>
+<div class="section" id="page-html">
+<h3>Page HTML<a class="headerlink" href="#page-html" title="Permalink to this headline">¶</a></h3>
+<p>La mise en place d&#8217;un visualiseur OpenLayers nécessite une page HTML. Le visualiseur OpenLayers
+se place à l&#8217;intérieur de n&#8217;importe quel bloc d&#8217;éléments, ce qui signifie qu&#8217;il peut être utilisé
+pour mettre une carte dans la plupart des éléments HTML de votre page.</p>
+<p>En plus du bloc unique, il est également nécessaire d&#8217;inclure à la page HTML une balise script
+qui comprend la bibliothèque OpenLayers.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>OpenLayers Example<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://localhost/openlayers/OpenLayers.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;width:100%; height:100%&quot;</span> <span class="na">id=</span><span class="s">&quot;map&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p><strong>Ex. 1</strong>: Création de votre première page HTML</p>
+</div>
+<div class="section" id="creation-du-visualiseur-de-cartes">
+<h3>Creation du visualiseur de cartes<a class="headerlink" href="#creation-du-visualiseur-de-cartes" title="Permalink to this headline">¶</a></h3>
+<p>Afin de créer le visualiseur, vous devez d&#8217;abord créer une carte. Le constructeur OpenLayers.Map
+nécessite un argument: Cet argument doit être soit un élément HTML, ou l&#8217;ID d&#8217;un élément HTML.
+C&#8217;est l&#8217;élément dans lequel la carte sera placée.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OpenLayers</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="s1">&#39;map&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Ex. 2:</strong> Constructeur Map</p>
+<p>La prochaine étape pour la création d&#8217;un visualiseur est d&#8217;ajouter un layer à la carte. OpenLayers
+supporte de nombreuses sources de données différentes, à partir de WMS à Yahoo! Maps en passant
+par WorldWind. Dans cet exemple, une couche WMS est utilisée. La couche WMS est un exemple fourni
+par MetaCarta.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">wms</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OpenLayers</span><span class="p">.</span><span class="nx">Layer</span><span class="p">.</span><span class="nx">WMS</span><span class="p">(</span>
+  <span class="s2">&quot;WMS&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;http://localhost/cgi-bin/qgis_mapserv.fcgi&quot;</span><span class="p">,</span>
+  <span class="p">{</span>
+  <span class="s1">&#39;map&#39;</span><span class="o">:</span> <span class="s1">&#39;/usr/local/share/qgis/QGIS-NaturalEarth-Example.qgs&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;layers&#39;</span><span class="o">:</span><span class="s1">&#39;HYP_50M_SR_W,10m_lakes,10m_rivers_lake_centerline&#39;</span><span class="p">}</span> <span class="p">);</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">wms</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Ex. 3:</strong> Constructeur Layer</p>
+<p>Le premier paramètre de ce constructeur est le nom de la couche, qui est utilisé lors de l&#8217;affichage.
+Le deuxième argument est l&#8217;URL du serveur WMS. Le troisième argument est un objet contenant les
+paramètres à être jointe à la requête WMS.</p>
+<p>Finallement, afin d&#8217;afficher la carte, vous devez définir le centre et le niveau de zoom. Pour ajuster
+le zoom de la carte à la fenêtre, vous pouvez utiliser la fonction zoomToMaxExtent, qui fera un zoom
+aussi proche que possible tout en s&#8217;assurant que l&#8217;étendue complète de la carte soit au sein de la fenêtre.</p>
+</div>
+<div class="section" id="assembler-tous-les-elements">
+<h3>Assembler tous les éléments<a class="headerlink" href="#assembler-tous-les-elements" title="Permalink to this headline">¶</a></h3>
+<p>Le bloc de code suivant met tous les morceaux ensemble pour créer un visualiseur OpenLayers.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>OpenLayers Example<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://localhost/openlayers/OpenLayers.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;width:100%; height:100%&quot;</span> <span class="na">id=</span><span class="s">&quot;map&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;script </span><span class="na">defer=</span><span class="s">&quot;defer&quot;</span> <span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+        <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OpenLayers</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="s1">&#39;map&#39;</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">wms</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OpenLayers</span><span class="p">.</span><span class="nx">Layer</span><span class="p">.</span><span class="nx">WMS</span><span class="p">(</span>
+          <span class="s2">&quot;WMS&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;http://localhost/cgi-bin/qgis_mapserv.fcgi&quot;</span><span class="p">,</span>
+          <span class="p">{</span>
+          <span class="s1">&#39;map&#39;</span><span class="o">:</span> <span class="s1">&#39;/usr/local/share/qgis/QGIS-NaturalEarth-Example.qgs&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;layers&#39;</span><span class="o">:</span><span class="s1">&#39;HYP_50M_SR_W,10m_lakes,10m_rivers_lake_centerline&#39;</span><span class="p">}</span> <span class="p">);</span>
+        <span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">wms</span><span class="p">);</span>
+        <span class="nx">map</span><span class="p">.</span><span class="nx">zoomToMaxExtent</span><span class="p">();</span>
+      <span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p><strong>Ex. 4:</strong> Remplir les fichiers HTML et Javascript pour un simple visualiseur WMS</p>
+</div>
+</div>
+<div class="section" id="ajouter-une-supperpositon-de-wms">
+<h2>Ajouter une supperpositon de WMS<a class="headerlink" href="#ajouter-une-supperpositon-de-wms" title="Permalink to this headline">¶</a></h2>
+<p>Les couches WMS ont la possibilité de se superposer au-dessus de d&#8217;autres couches WMS ayant la même
+projection. Il ya plusieurs façons d&#8217;indiquer une couche comme étant une superposition, plutôt que
+d&#8217;une couche de base. Avec WMS, la meilleure façon de faire est de fixer le paramètre «transparent»
+à &#8216;true&#8217;. L&#8217;exemple ici utilise un WMS des frontières politiques pour démontrer la superposition
+d&#8217;une couche WMS transparente.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">twms</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">OpenLayers</span><span class="p">.</span><span class="nx">Layer</span><span class="p">.</span><span class="nx">WMS</span><span class="p">(</span> <span class="s2">&quot;World Map&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;http://world.freemap.in/cgi-bin/mapserv?&quot;</span><span class="p">,</span>
+    <span class="p">{</span> <span class="nx">map</span><span class="o">:</span> <span class="s1">&#39;/www/freemap.in/world/map/factbooktrans.map&#39;</span><span class="p">,</span>
+      <span class="nx">transparent</span><span class="o">:</span> <span class="s1">&#39;true&#39;</span><span class="p">,</span> <span class="nx">layers</span><span class="o">:</span> <span class="s1">&#39;factbook&#39;</span><span class="p">}</span>
+    <span class="p">);</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">twms</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Ex. 5:</strong> Comment ajouter un WMS transparent à votre map.</p>
+<p>Using the transparent: &#8216;true&#8217; parameter sets two flags automatically:</p>
+<p>Utilisation de la transparence: le paramètre &#8216;true&#8217; définit deux drapeaux automatiquement:</p>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>Le paramètre &#8220;format&#8221;. Le format de la couche WMS est fixé à image/png si le navigateur prend en</dt>
+<dd><p class="first last">charge les images PNG transparentes. (C&#8217;est pour tous les navigateurs sauf Internet Explorer 6.)
+Dans Internet Explorer 6, ce sera plutôt mis à image/gif.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>l&#8217;option isBaseLayer. L&#8217;option isBaseLayer contrôle si la couche peut être affichée en même temps</dt>
+<dd><p class="first last">que les autres couches. Cette option par défaut est fixée à &#8220;TRUE&#8221; pour la couche WMS, mais la mise
+en transparence d&#8217;une couche change ce paramètre à &#8220;TRUE&#8221; par défaut.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="ajout-d-un-marqueur-a-la-carte">
+<h2>Ajout d&#8217;un marqueur à la carte<a class="headerlink" href="#ajout-d-un-marqueur-a-la-carte" title="Permalink to this headline">¶</a></h2>
+<p>Pour ajouter un seul marqueur à une latitude et longitude, vous pouvez utiliser une couche vectorielle
+et la superposer à la carte.</p>
+<div class="highlight-html"><div class="highlight"><pre>var vectorLayer = new OpenLayers.Layer.Vector(&quot;Overlay&quot;);
+var feature = new OpenLayers.Feature.Vector(
+ new OpenLayers.Geometry.Point(-71, 42),
+ {some:&#39;data&#39;},
+ {externalGraphic: &#39;img/marker.png&#39;, graphicHeight: 21, graphicWidth: 16});
+vectorLayer.addFeatures(feature);
+map.addLayer(vectorLayer);
+</pre></div>
+</div>
+<p>Il s&#8217;agit d&#8217;une simple démonstration, de plus amples renseignements sont disponibles sur les superpositions,
+la façon d&#8217;interagir avec eux, de les contrôler et sur le changement de style dans la documentation de
+OpenLayers sur openlayers.org.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

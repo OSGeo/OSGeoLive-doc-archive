@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>1. Εισαγωγή &mdash; OSGeo-Live 8.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Καλώς ήρθατε στο OSGeo-Live" href="../index.html" />
+    <link rel="next" title="Εγχείρίδιο Γρήγορης Εκκίνησης Marble" href="marble_quickstart.html" />
+    <link rel="prev" title="Εγχειρίδιο Γρήγορης Εκκίνησης MapSlicer" href="mapslicer_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.mapwindow.org"><img alt="MapWindow GIS" class="align-right" src="../../_images/logo-MapWindow5.png" style="width: 220px; height: 38px;" /></a>
+<div class="section" id="id1">
+<h1>1. Εισαγωγή<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Αυτό το εγχειρίδιο είναι μια εισαγωγή σε ένα υποσύνολο της λειτουργικότητας του λογισμικού MapWindow GIS v4.8.6 παρέχοντας τις οδηγίες για να εκτελέσετε βασικές λειτουργίες GIS. Στόχος μας είναι να παρέχουμε έναν εύκολο οδηγό ώστε οι χρήστες που ενδιαφέρονται στην αναπαράσταση δεδομένων GIS, στην εκτέλεση απλών αναζητήσεων και στην παραγωγή υψηλής ποιότητας χαρτών για δημοσιεύσεις. Με βάση αυτό δεν καλύπτεται εδώ όλη η λειτουργικότητα του λογισμικού: ειδικότερα περιέχονται λειτουργίες του βασικού προγράμματος κορμού και όχι των πρόσθετων (plugins) (με εξαίρεση των διορθωτή αρχείων τύπου shapefile).</p>
+<p>Το λογισμικό MapWindow είναι διαθέσιμο για ελεύθερη μεταφόρτωση ως ένα έτοιμο προς εγκατάσταση εκτελέσιμο αρχείο τύπου exe από τον ιστοχώρο www.mapwindow.org. Είναι μια εφαρμογή στο λειτουργικό σύστημα Windows η οποία απαιτεί επιπρόσθετα την εγκατάσταση του πλαισίου .ΝΕΤ της Microsoft. Εκτελείται σε εξπι, βήστα και εφτάρια και τρέχει μια χαρά σε ΚΜΕ 64b. Το λογισμικό είναι αρκετά εύκολο στην χρήση και οι νέοι χρήστες θα προσαρμοστούν σε αυτό ταχύτατα. Με δυο-τρεις μόνο εξαιρέσεις, οι λειτουργίες που θα παρουσιάσουμε, θα παρέχουν στον χρήστη εμπειρίες ανάλογες του ArcMap.</p>
+<p>Το πρόγραμμα MapWindow είναι σε αυτό το εγχειρίδιο λενα τμήμα ενός ευρύτερου πρότζεκτ ανοιχτού λογισμικού. Το λογισμικό κορμός είναι επίσης διαθέσιμο ως συστατικό ActiveX επιτρέποντας στους προγραμματιστές να αναπτύσσουν πρόσθετες εφαρμογές GIS με βάση τις ανάγκες τους. Παράλληλα είναι δυνατή η τροποποίηση και επέκταση του προγράμματος ώστε να καλύψει τις ανάγκες έμπειρων χρηστών. Περισσότερες πληροφορίες για το πρότζεκτ και τα διάφορα πρόσθετα μπορείτε να πάρετε από τον ιστοχώρο του MapWindow.</p>
+<p>Το λογισμικό είναι σε συνεχή ανάπτυξη και έτσι είναι πιθανό λειτουργίες που περιγράφονται σε αυτό το εγχειρίδιο να έχουν βελτιωθεί ή/και τροποποιηθεί αν εκτελείτε νεώτερη έκδοση του. Παράλληλα βρίσκεται σε ανάπτυξη ένα διαδικτυακό εγχειρίδιο και έτσι ανατρέξτε εκεί αν εντοπίσετε προβλήματα ή θέλετε περισσότερες πληροφορίες τις οποίες δεν βρίσκετε εδώ.</p>
+</div>
+<div class="section" id="id2">
+<h1>2. Ξεκινώντας<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id3">
+<h2>2.1 Εργασίες<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Το αρχείο εργασιών περιέχει μια εγγραφή των διαφορετικών επιπέδων, τίτλων, χρωμμάτων και τύπων τα οποία έχετε ορίσει στον χάρτη σας. Όταν ξεκινάει το λογισμικό θεωρεί ένα νέο αρχείο εργασιών/πρότζεκτ. Μπορείτε να δημιουργήσετε ένα νέο πρότζεκτ πατώντας το κουμπί <strong>New</strong> στην εργαλειοθήκη. Οι αλλαγές που θα κάνετε δεν θα αποθηκευτούν αν δεν πατήσετε το κουμπί <strong>Save</strong> ή σε περίπτωση εξόδου από το λογισμικό επιλέξετε αποθήκευση. Παλαιότερα αποθηκευμένα αρχεία εργασιών είναι διαθέσιμα με το κουμπί <strong>Open</strong> ή επιλέγοντας <strong>File</strong> και στην συνέχεια τα πρόσφατα πρότζεκτ από την επιλογή <strong>Recent Projects</strong>. Παράλληλα μπορείτε με διπλο κλικ να ανοίξετε το αρχείο από τον διαχειριστή αρχείων του συστήματός σας. Τα αρχεία αυτά έχουν επέκταση .mwprj.</p>
+<p>Πέρα από την αποθήκευση των επιπέδων και τους ανάλογους συμβολισμούς το αρχείο εργασιών περιέχει και πρόσθετες ρυθμίσεις όπως μονάδες, προβολές και πολλά άλλα. Και αυτά είναι διαθέσιμα με την επιλογή <strong>File</strong> και στην συνέχεια κλικ στο <strong>Settings</strong>. Οι χρήστες γενικά δεν μεταβάλουν αυτές τις ρυθμίσεις οπότε δεν θα επεκταθούμε περισσότερο εδώ.</p>
+</div>
+<div class="section" id="plug-ins">
+<h2>2.2 Πρόσθετα (Plug-Ins)<a class="headerlink" href="#plug-ins" title="Permalink to this headline">¶</a></h2>
+<p>Το πρόγραμμα εγκατάστασης εγκαθιστά ένα σύνολο από βασικά πρόσθετα όπως τον διορθωτή αρχείων <strong>Shapefile Editor</strong> ο οποίος παρέχει πρόσθετη λειτουργικότητα στο βασικό πρόγραμμα. Πρόσθετα θα βρείτε στον ιστοχώρο του λογισμικού MapWindow. Για να εγκαταστήσετε ένα νέο πρόσθετο κατεβάστε το αρχείο zip και αποσυμπιέστε το στον υποφάκελο προσθέτων του MapWindow συνήθως είναι ο C:\Program
+Files\MapWindow\Plugins. Μερικές φορές ένα πρόσθετο είναι απλά ένα αρχείο τύπου dll αλλά άλλες φορές είναι ολόκληρος υποφάκελος και πολλά αρχεία. Και σε αυτή την περίπτωση ο νέος υποφάκελος πάει στην ίδια θέση \MapWindow\Plugins.</p>
+<p>Πριν χρησιμοποιήσετε κάποιο πρόσθετο θα πρέπει να το ενεργοποιήσετε μέσα στο MapWindow. Για να συμβεί αυτό επιλέξτε <strong>Plug-ins</strong> από το κεντρικό μενού επιλογών και στην συνέχεια κάντε κλικ πάνω στο πρόσθετο που θέλετε να ενεργοποιήσετε. Θα παραμείνει ενεργό, ακόμη και σε νέα πρότζεκτ, μέχρι να κάνετε κλικ ξανά. Με την ενεργοποίηση ενός πρόσθετου θα είναι διαθέσιμη στην επιφάνεια εργασίας και η εργαλειοθήκη του επιτρέποντάς σας να την χρησιμοποιήσετε.</p>
+</div>
+<div class="section" id="id4">
+<h2>2.3 Προσθέτοντας νέα επίπεδα<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Οι χάρτες που θα παράγετε περιέχουν πολλά επίπεδα δεδομένων GIS. Αυτά τα επίπεδα μπορείτε να τα προσθέσετε είτε με επιλογή και σύρσιμο στην επιφάνεια απεικόνισης, αρχείων από τον διαχειριστή αρχείων του συστήματός σας είτε με το κουμπί <strong>Add</strong> της εργαλειοθήκης. Κάθε επίπεδο που προσθέτετε αναγράφεται στο παράθυρο τίτλων (επιλέξτε <strong>View -&gt; Panels -&gt; Show Legend</strong> σε περίπτωση που δεν είναι ορατό). Με διπλό κλικ στον τίτλο ή με το κουμπί <strong>Properties</strong> θα ενεργοποιήσετε τον διάλογο <strong>Layer properties</strong> ο οποίος διαθέτει πληθώρα επιλογών για τις ρυθμίσεις των επιπέδων. Για παράδειγμα, για να αλλάξετε ένα όνομα στο παράθυρο τίτλων επιλέξτε την καρτέλα <strong>General</strong> και αλλάξτε το όνομα στο κουτί <strong>Name</strong>. Ανάλογα τροποποιείτε εφόσον το θέλετε κι άλλες ιδιότητες. Για να σβήσετε ένα επίπεδο πατήστε το κουμπί <strong>Remove</strong>. Πατώντας το κουμπί <strong>Clear</strong> σβήνετε όλα τα επίπεδα.</p>
+<p>Τα χρωματιστά εικονίδια επιδεικνύουν τον τύπο δεδομένων στο επίπεδο (πολύγωνο, γραμμή ή σημείο) και τον τρέχοντα συμβολισμό. Η σειρά τίτλων των επιπέδων καθορίζει και την σειρά επικάλυψης στον χάρτη: επίπεδα τα οποία είναι υψηλότερα στην λίστα καλύπτουν τα επίπεδα που βρίσκονται χαμηλότερα. Εάν ένα επίπεδο δεν απεικονίζεται είναι διότι έχει καλυφθεί από τα υπόλοιπα. Για να αλλάξετε αυτήν την σειρά απλά σύρτε ένα επίπεδο στην νέα επιθυμητή θέση του. Ένα κουτί ενεργοποίησης δίπλα σε κάθε τίτλο επιτρέπει να ενεργοποιείτε ή όχι ένα επίπεδο.</p>
+<p>Το λογισμικό MapWindow μπορεί να απεικονίσει διάφορους τύπους δεδομένων όπως διανυσματικά (πολύγωνα, γραμμές και σημεία), πινακοποιημένα (γραφικές απεικονίσεις ράστερ) και εικόνες. Υποστηρίζονται πολλοί και διαφορετικοί τύποι αρχείων όπως .shp, .asc, .aux, .bgd, .bil, .dem, dt1, .hdr, .img, .jpg, .sid, .std, .tif και πολλοί άλλοι. Ο τύπος ESRI shapefile (.shp) είναι ο διανυσματικός τύπος που χρησιμοποιείται από το λογισμικό. Για αρχεία τύπου ράστερ χρησιμοποιεί αρχεία GeoTiff και .bgd.</p>
+<p>Για να δώσετε κλίμακα στον χάρτη σας ανοίξτε το μενού <strong>View</strong> και επιλέξτε <strong>Show Floating Scale Bar</strong>.</p>
+</div>
+<div class="section" id="id5">
+<h2>2.4 Προβολές<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Ως προβολή εννοούμε τον μαθηματικό μετασχηματισμό για την αναπαράσταση της 3-διάστατης γης στις 2-διαστάσεις της οθόνης του Η/Υ. Υπάρχουν πολλές διαφορετικές προβολές η κάθε μία με τα πλεονεκτήματα, τα μειονεκτήματά και τς χρήσεις της. Δεν θα μπούμε σε αναλυτική περιγραφή των προβολών απλά θα αναφέρουμε μερικά σημαντικά θέματα. Το κυριότερο είναι ότι κατά την απεικόνιση των διαφορετικών επιπέδω θα πρέπει όλα να βρίσκονται στην ίδια προβολή διαφορετικά δεν θα συμπίπτουν γεωδαιτικά. Στο λογισμικό MapWindow η προβολή κάθε πειπέδου ορίζεται από ένα αρχείο με επέκταση .prj. Αυτό το είδος αρχείων είναι διαδεδομένο και στο λογισμικό ArcMap. Μπορούμε να δούμε την προβολή ενός επιπέδου από την καρτέλα <strong>General</strong> στον διάλογο <strong>Layer Properties**ο οποίος ανοίγει με διπλό κλικ στον τίτλο του επιπέδου ή με την επιλογή **Properties</strong> στην εργαλειοθήκη.</p>
+<p>Ο πρώτος χάρτης ο οποίος προστίθεται σε ένα πρότζεκτ ορίζει και την προβολή που θα χρησιμοποιηθεί στην συνέχεια. κάθε νέο επίπεδο πρέπει να έχει την ίδια προβολή διαφορετικά θα εμφανιστεί κατάλληλη ειδοποίηση. Αυτό μας επιτρέπει είτε να ρυθμίσουμε το νέο επίπεδο είτε να προβληθεί ως έχει χωρίς γεωδαιτική σύμπτωση. Σημειώστε εδώ ότι η επαναπροβολή ενός επιπέδου δεν είναι απλά μια ρύθμιση στα περιεχόμενα του αρχείου .prj, αλλά θα πρέπει να γίνουν αλλαγές στο σχήμα των πολυγώνων. Γιαυτό είναι καλή πρακτική να επαναπροβάλουμε δεδομένα σε νέα αρχεία και να μην καταργούμε τα παλιά.</p>
+</div>
+<div class="section" id="id6">
+<h2>2.5 Βασικές λειτουργίες της γραμμής εργαλείων<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Οι βασικές χαρτογραφικές λειτουργίες είναι προσβάσιμες από την γραμμή εργαλείων. Η χρήση τους είναι εξαιρετικά απλή κι έτσι εδώ θα δώσουμε μόνο μια σύντομη περιγραφή. Σημειώστε ότι μερικές από αυτές προϋποθέτουν πριν την εκτέλεσή τους την επιλογή ενός επιπέδου απλά με κλικ στον τίτλο του. Μπορείτε να μετακινήσετε την εργαλειοθήκη ενώ τα ονόματα των εργαλείων μπορείτε να τα ανοιγο-κλείσετε με δεξί κλικ.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">&nbsp;</th>
+<th class="head">&nbsp;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><img alt="../../_images/mapwindow-toolbar-zoomin2.png" class="first last" src="../../_images/mapwindow-toolbar-zoomin2.png" />
+</td>
+<td>Μεγέθυνση: είτε κάντε κλικ στην περιοχή ενδιαφέροντος είτε σωγαρφίστε ένα περιβάλον ορθογώνιο. Μπορείτε επίσης να χρησιμοποιήσετε το ροδάκι του ποντικιού.</td>
+</tr>
+<tr class="row-odd"><td><img alt="../../_images/mapwindow-toolbar-zoomout2.png" class="first last" src="../../_images/mapwindow-toolbar-zoomout2.png" />
+</td>
+<td>Σμίκρυνση.</td>
+</tr>
+<tr class="row-even"><td><img alt="../../_images/mapwindow-toolbar-zoomfullextent2.png" class="first last" src="../../_images/mapwindow-toolbar-zoomfullextent2.png" />
+</td>
+<td>Απεικόνιση του συνόλου της έκτασης όλων των επιπέδων.</td>
+</tr>
+<tr class="row-odd"><td><img alt="../../_images/mapwindow-toolbar-zoomselected.png" class="first last" src="../../_images/mapwindow-toolbar-zoomselected.png" />
+</td>
+<td>Απεικόνιση της έκτασης των επιλεγμένων σχημάτων στο επίπεδο.</td>
+</tr>
+<tr class="row-even"><td><img alt="../../_images/mapwindow-toolbar-zoomprevious.png" class="first last" src="../../_images/mapwindow-toolbar-zoomprevious.png" />
+</td>
+<td>Επιλογή προηγούμενης απεικόνισης.</td>
+</tr>
+<tr class="row-odd"><td><img alt="../../_images/mapwindow-toolbar-zoomnext.png" class="first last" src="../../_images/mapwindow-toolbar-zoomnext.png" />
+</td>
+<td>Επιλογή επόμενης απεικόνισης.</td>
+</tr>
+<tr class="row-even"><td><img alt="../../_images/mapwindow-toolbar-zoomlayer2.png" class="first last" src="../../_images/mapwindow-toolbar-zoomlayer2.png" />
+</td>
+<td>Απεικόνιση της έκτασης του ενεργού επιπέδου.</td>
+</tr>
+<tr class="row-odd"><td><img alt="../../_images/mapwindow-toolbar-pan2.png" class="first last" src="../../_images/mapwindow-toolbar-pan2.png" />
+</td>
+<td>Αλλαγή της απεικονιζόμενης επιφάνειας με κύλιση.</td>
+</tr>
+<tr class="row-even"><td><img alt="../../_images/mapwindow-toolbar-select2.png" class="first last" src="../../_images/mapwindow-toolbar-select2.png" />
+</td>
+<td>Επιλογή σχημάτων από το ενεργό επίπεδο. Χρησιμοποιείστε παράλληλα το πλήκτρο Ctrl για να επιλέξετε περισσότερα του ενός ή σχηματίστε τον περιβάλλον τους ορθογώνιο.</td>
+</tr>
+<tr class="row-odd"><td><img alt="../../_images/mapwindow-toolbar-measure2.png" class="first last" src="../../_images/mapwindow-toolbar-measure2.png" />
+</td>
+<td>Εμφανίζει ένα [παράθυρο διαλόγου με την περίμετρο και το εμβαδό των σχημάτων που έχουν επιλεγεί ή ζωγραφιστεί με το ποντίκι.</td>
+</tr>
+<tr class="row-even"><td><img alt="../../_images/mapwindow-toolbar-identify2.png" class="first last" src="../../_images/mapwindow-toolbar-identify2.png" />
+</td>
+<td>Εμφανίζει τα χαρακτηριστικά των σχημάτων στο επιλεγμένο επίπεδο.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

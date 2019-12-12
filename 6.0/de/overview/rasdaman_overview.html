@@ -1,0 +1,174 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Rasdaman &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 6.0 Inhaltsverzeichnis" href="overview.html" />
+    <link rel="next" title="SAGA" href="saga_overview.html" />
+    <link rel="prev" title="Quantum GIS (QGIS)" href="qgis_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-rasdaman2.png"><img alt="project logo :align: right :target: http://rasdaman.org" src="../../_images/logo-rasdaman2.png" style="width: 202.0px; height: 90.0px;" /></a>
+<div class="section" id="rasdaman">
+<h1>Rasdaman<a class="headerlink" href="#rasdaman" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="multi-dimensionale-raster-datenbank">
+<h2>Multi-Dimensionale Raster-Datenbank<a class="headerlink" href="#multi-dimensionale-raster-datenbank" title="Permalink to this headline">¶</a></h2>
+<p>Rasdaman erweitert relationale Standard-Datenbanken um Speicherung und Retrieval von multi-dimensionalen Rasterdatan (also &#8220;Arrays&#8221;) unbegrenzeter Größe unter Verwendung einer SQL-artigen Raster-Anfragesprache mit hocheffektiver server-seitiger Optimierung. Die Daten werden in einer PostgreSQL-Datenbank abgelegt, sodass sich eine enge Informationsintegration ergibt. Ein rasdaman-Treiber ist Bestandteil von GDAL (Geospatial Data Abstraction Library) für Geodatenformate, eine MapServer-Anbindung ist in beta verfügbar.
+Zugriffsschnittstellen umfassen - neben der rasdaman Raster-Anfragesprache - OGC WCS, WCPS und WPS sowie C++ und Java APIs.
+Version 8.2 ist mit IQL (Integrated Query Language) um eine SQL-Integration erweitert, welche gemischte Meta-, Vektor- und Rasteranfragen erlaubt (in Beta).</p>
+<p>Somit stellt rasdaman eine flexible, schnelle und skalierbare Rasterdatenbank dar, welche Navigation, Extraktion, Aggregation und ad-hoc raum-zeitlicheAnalysen auf Sensor-, Bild- und Statistikdaten erlaubt.</p>
+<p>Die rasdaman-Technologie ist stabil und ausgereift, sie ist seit mehr als 10 Jahren im praktischen Einsatz. Das französische Nationale Geographische Institut betreibt rasdaman auf einem Dutzend-Terabyte blattschnittfreien Luftbild. Auf der ACM &#8220;Principles of Database Systems&#8221; Konferenz 2007 hat die Rasterdatenbank-Expertin Rona Machlin rasdaman als &#8220;die umfassendste Implementierung eines solchen Systems&#8221; charakterisiert.</p>
+<a class="reference internal image-reference" href="../../_images/rasdaman-collage1.png"><img alt="../../_images/rasdaman-collage1.png" class="align-right" src="../../_images/rasdaman-collage1.png" style="width: 512.0px; height: 383.0px;" /></a>
+<div class="section" id="wichtigste-merkmale">
+<h3>Wichtigste Merkmale<a class="headerlink" href="#wichtigste-merkmale" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>echte Multi-Dimensionalität - von 1D über 2D, 3D, 4D und darüber hinaus</li>
+<li>mächtige, flexible Anfragesprache für Aufgaben wie Visualisierung, Klassifikation, Konvolutionen/Kernel, Aggregation und viele weitere Geo-Funktionen</li>
+<li>räumliche Indexierung und adaptive Kachelung für schnellen Datenzugriff</li>
+<li>&#8220;tile streaming&#8221; für Skalierbarkeit und hohe Performance auch auf moderater Hardware</li>
+<li>Mehrbenutzer-Zugriff durch Server-Multiplexing</li>
+<li>volle Informationsintegration der Rasterdaten mit allen anderen Geodaten in ein und derselben PostgreSQL-Datenbank</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="implementierte-standards">
+<h3>Implementierte Standards<a class="headerlink" href="#implementierte-standards" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>OGC WCS 2.0, WCS-T 1.4, WCPS 1.0, WPS 1.0</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="details">
+<h3>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h3>
+<p><strong>Webseite:</strong> www.rasdaman.org</p>
+<p><strong>Lizenz:</strong></p>
+<ul class="simple">
+<li>Clients und Petascope: GNU Lesser General Public License (LGPL) version 3</li>
+<li>Server-Engine: GNU General Public License (GPL) version 3</li>
+</ul>
+<p><strong>Software Version:</strong> 8.3 (<a class="reference external" href="http://rasdaman.eecs.jacobs-university.de/trac/rasdaman/wiki/Versions#Version8.3">release notes</a>)</p>
+<p><strong>Unterstützte Plattformen:</strong> Linux, Mac, Solaris</p>
+<p><strong>API Schnittstellens:</strong> rasql, C++, Java</p>
+<p><strong>Support:</strong>  www.rasdaman.com</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,167 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>libLAS &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 6.0 Contents" href="overview.html" />
+    <link rel="next" title="52°North SOS Quickstart" href="../quickstart/52nSOS_quickstart.html" />
+    <link rel="prev" title="MetaCRS" href="metacrs_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://liblas.org/"><img alt="Logo del progetto" class="align-right" src="../../_images/logo-libLAS12.png" /></a>
+<div class="section" id="liblas">
+<h1>libLAS<a class="headerlink" href="#liblas" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="lidar-data-access">
+<h2>LiDAR Data Access<a class="headerlink" href="#lidar-data-access" title="Permalink to this headline">¶</a></h2>
+<p>libLAS è una libreria C/C++ per leggere e scrivere il formato comune <cite>LAS</cite>
+<a class="reference external" href="http://en.wikipedia.org/wiki/LIDAR">LiDAR</a> . Il <a class="reference external" href="http://www.asprs.org/society/committees/standards/lidar_exchange_format.html">formato ASPRS LAS</a> è un formato binario sequenziale usato per
+archiviare dati da sensori LiDAR e da software di processamento LiDAR per
+archiviazione e interscambio dei dati.</p>
+<a class="reference internal image-reference" href="../../_images/liblas5.jpg"><img alt="LiDAR Acquisition" class="align-right" src="../../_images/liblas5.jpg" style="width: 491.2px; height: 516.8px;" /></a>
+<p>LiDAR (Light Detection and Ranging) is a form of high precision range detection much like a radar system that
+uses laser light as the electromagnetic emission. Uno dei prodotti del sistema LIDAR
+è una &#8220;nuvola di punti&#8221; che può essere concettualizzata come un
+serie di misurazioni puntuali che rappresentano la distanza dal sensore ad un ritorno
+emissione. Un formato comune di archiviazione di quasta nuvola di dati puntuale è il ASPRS LAS.</p>
+<div class="section" id="caratteristiche-principali">
+<h3>Caratteristiche principali<a class="headerlink" href="#caratteristiche-principali" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>API C/C++/Python per leggere, scrivere, e gestire dati LAS</li>
+<li><a class="reference external" href="http://liblas.org/utilities/index.html">Strumenti da linea di comando</a> per gestire dati LAS basati su <a class="reference external" href="http://www.cs.unc.edu/~isenburg/lastools/">LAStools</a></li>
+<li>Riproiezione di coordinate attraverso <a class="reference external" href="http://gdal.org">GDAL</a></li>
+</ul>
+</div>
+<div class="section" id="dettagli">
+<h3>Dettagli<a class="headerlink" href="#dettagli" title="Permalink to this headline">¶</a></h3>
+<p><strong>Sito Web:</strong> <a class="reference external" href="http://liblas.org">http://liblas.org</a></p>
+<p><strong>Licenza:</strong> BSD</p>
+<p><strong>Versione Software:</strong> 1.7.0</p>
+<p><strong>Piattaforme Supportate:</strong> Cross Platform C++ &#8211; Mac OS X, Windows (via <a class="reference external" href="http://trac.osgeo.org/osgeo4w/">OSGeo4W</a>), and Linux</p>
+<p><strong>Interfacce API:</strong> C, C++, Python</p>
+<p><strong>Supporto:</strong> <a class="reference external" href="http://liblas.org/community.html">Comunicazione and Supporto</a></p>
+</div>
+<div class="section" id="guida-rapida">
+<h3>Guida rapida<a class="headerlink" href="#guida-rapida" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/liblas_quickstart.html"><em>Documentazione introduttiva</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

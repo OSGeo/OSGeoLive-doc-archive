@@ -1,0 +1,157 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Web Feature Service (WFS) &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Estándares del Open GeoSPatial Consortium" href="standards.html" />
+    <link rel="next" title="Web Map Service (WMS)" href="wms_overview.html" />
+    <link rel="prev" title="Web Coverage Service (WCS)" href="wcs_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <span class="target" id="wfs-overview-es"></span><a class="reference internal image-reference" href="../../_images/logo-OGC-left4.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-left4.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/logo-OGC-right4.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right4.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="web-feature-service-wfs">
+<h1>Web Feature Service (WFS)<a class="headerlink" href="#web-feature-service-wfs" title="Permalink to this headline">¶</a></h1>
+<p>El estandar de interface OGC® Web Feature Service (WFS)  define operaciones Web de interface para la consulta y edición de entidades geográficas (en inglés <em>features</em>) vectoriales, como por ejemplo carreteras o líneas de contorno de lagos.  (<a class="reference external" href="http://www.opengeospatial.org/standards/wfs">http://www.opengeospatial.org/standards/wfs</a>)</p>
+<a class="reference internal image-reference" href="../../_images/wfs4.jpg"><img alt="WFS en contexto" src="../../_images/wfs4.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>El estandar WFS permite lo siguiente a los clientes:</p>
+<ul class="simple">
+<li>Descubrir las colecciones de entidades disponibles (GetCapabilities)</li>
+<li>Describir los campos de atributos disponibles por entidades (DescribeFeatureType)</li>
+<li>Consultar una colección para un subconjunto de entidades basado en un filtro proporcionado (GetFeature)</li>
+<li>Añadir, editar o borrar entidades (Transaction)</li>
+</ul>
+<p>Todoas losl WFSs soportan entrada y salida de datos utilizando lenguaje <em>Geography Markup Language (GML)</em>. Algunos WFSs también soportan otras codificaciones, como por ejemplo GeoRSS o ficheros <em>shape</em>.</p>
+<p>Normalmente los usuarios interactúan con WFSs a través de clientes geoespaciales Web o Desktop, que permiten acceder a capas de mapas vectoriales desde agencias externas, sobre Internet. Un ejemplo excelente de utilización de un Servicio WFS para proprcionar acceso abierto e interoperable a una gran cantidad de datos espaciales a trvés de un portal gubernamental es el Servicio WFS del <em>Framwork USGS</em> ofrecido como soporte al desarrollo de las Infraestructura de Datos Espaciels Nacional de Estados Unidos (NSDI) (<a class="reference external" href="http://frameworkwfs.usgs.gov/">http://frameworkwfs.usgs.gov/</a>). Las capas de mapas seleccionadas a través de este framework estadounidense estan disponibles como capas WFS y también a través de un interface de búsqueda proporcionado por el USGS.</p>
+<div class="section" id="ver-tambien">
+<h2>Ver también<a class="headerlink" href="#ver-tambien" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="wms_overview.html"><em>Web Map Service (WMS)</em></a></li>
+<li><a class="reference internal" href="wcs_overview.html"><em>Web Coverage Service (WCS)</em></a></li>
+<li>Grid Coverage Service</li>
+<li><a class="reference internal" href="sos_overview.html"><em>Sensor Observation Service (SOS)</em></a></li>
+<li><a class="reference internal" href="gml_overview.html"><em>Geography Markup Language (GML)</em></a></li>
+<li><a class="reference internal" href="kml_overview.html"><em>KML Encoding Standard (KML)</em></a></li>
+<li><a class="reference internal" href="sld_overview.html"><em>Style Layer Descriptor (SLD)</em></a></li>
+<li>Symbology Encoding</li>
+<li><a class="reference internal" href="fe_overview.html"><em>Filter Encoding (FE)</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guía de inicio rápido de GeoKettle &mdash; OSGeo-Live 7.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Bienvenido a OSGeo-Live 7.0" href="../index.html" />
+    <link rel="next" title="Guía de inicio rápida de Geomajas" href="geomajas_quickstart.html" />
+    <link rel="prev" title="Guía de incio rápido GDAL/OGR" href="gdal_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.geokettle.org/"><img alt="project logo" class="align-right" src="../../_images/logo-geokettle9.png" style="width: 80.0px; height: 80.0px;" /></a>
+<div class="section" id="guia-de-inicio-rapido-de-geokettle">
+<h1>Guía de inicio rápido de GeoKettle<a class="headerlink" href="#guia-de-inicio-rapido-de-geokettle" title="Permalink to this headline">¶</a></h1>
+<p>GeoKettle es una potente herramienta dirigida por metadatos de ETL (Extracción, Transformación y Carga, <em>Extract, Transform and Load</em>). Está enfocada en la integración de diferentes orígenes de datos para la construcción y actualización de bases de datos y almacenes de datos geoespaciales. Permite la extracción de datos desde diferentes orígenes, la transformación de los datos para la corrección de errores, limpia los datos, cambia su estructura, hace que cumplan estándares definidos, y carga estos datos transformados en Sistemas Gestores de Bases de Datos (SGBD), ficheros SIG o servicios web geoespaciales.</p>
+<p>Esta guía de inicio rápido describe cómo:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Cargar y transforma datos existentes</li>
+<li>Crear una transformación de datos nueva</li>
+</ul>
+</div></blockquote>
+<div class="section" id="iniciar-geokettle">
+<h2>Iniciar GeoKettle<a class="headerlink" href="#iniciar-geokettle" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Elegir <em class="menuselection">Spatial Tools ‣ GeoKettle</em> desde el menú de inicio <em>Geospatial</em></li>
+<li>Por favor espere, la aplicación tardará unos momentos en arrancar</li>
+<li>A continuación se requerirá tu atención en el siguiente diálogo. Completa la información de repositorio o simplemente haga clic en el botón &#8220;No repository&#8221; para entrar en el espacio de trabajo de GeoKettle.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_welcome4.png"><img alt="../../_images/geokettle_welcome4.png" src="../../_images/geokettle_welcome4.png" style="width: 652.8px; height: 477.6px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="espacio-de-trabajo-workbench">
+<h2>Espacio de trabajo (<em>Workbench</em>)<a class="headerlink" href="#espacio-de-trabajo-workbench" title="Permalink to this headline">¶</a></h2>
+<p>Tal y como se muestra en la captura de pantalla siguiente, el espacio de trabajo es una ventana compuesta por diferentes paneles.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_workbench4.png"><img alt="../../_images/geokettle_workbench4.png" src="../../_images/geokettle_workbench4.png" style="width: 819.2px; height: 572.0px;" /></a>
+</div></blockquote>
+<p>La parte izquierda actúa como un catálogo que contiene todos los pasos que pueden formar parte de una transformación de datos. La parte derecha del espacio de trabajo es el área donde la transformación propiamente dicha será diseñada y ejecutada/inspeccionada</p>
+<p>Más adelante se describirá los contenidos de estos paneles conforme se demuestre su uso.</p>
+</div>
+<div class="section" id="cargando-una-transformacion-previa">
+<h2>Cargando una transformación previa<a class="headerlink" href="#cargando-una-transformacion-previa" title="Permalink to this headline">¶</a></h2>
+<p>Para cargar una transformación previa, seleccione <em class="menuselection">File ‣ Open</em>. Navegue a la carpeta de ejemplos de transformaciones <tt class="file docutils literal"><span class="pre">samples/transformations/geokettle</span></tt>, selecciona una de las transformaciones disponibles y haga clic en <em class="guilabel">OK</em>. Las transformaciones de GeoKettle se almacenan en ficheros de extensión <cite>*.ktr</cite>.</p>
+<p>La siguiente figura muestra la transformación  «intersection». Puede observar que el contenido de las dos partes principales de las que se compone el espacio de trabajo han cambiado.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_intersection_transformation4.png"><img alt="../../_images/geokettle_intersection_transformation4.png" src="../../_images/geokettle_intersection_transformation4.png" style="width: 819.2px; height: 539.2px;" /></a>
+</div></blockquote>
+<p>Se puede ver una descripción de la transformación así como algunas directivas opcionales en la zona amarilla de anotaciones.</p>
+<p>Antes de arrancar la transformación deberá especificar qué <em>shapefile</em> se va a usar. Para hacerlo, haz doble clic en cada uno de los pasos «&nbsp;GIS file input&nbsp;» para que aparezca el siguiente diálogo.</p>
+<blockquote>
+<div><img alt="../../_images/geokettle_shapefile_input_step4.png" src="../../_images/geokettle_shapefile_input_step4.png" />
+</div></blockquote>
+<p>Introduce el nombre de tu <em>shapefile</em> incluyendo la extensión <cite>*.shp</cite> o déjalo como está para usar el juego de datos de ejemplo y haz clic en <em class="guilabel">OK</em>.</p>
+<p>Ya estás listo para arrancar la transformación. Para hacerlo, simplemente pulsa el botón de inicio (<em>play</em>) de la barra de herramientas, en la parte superior de la transformación.</p>
+</div>
+<div class="section" id="creando-una-nueva-transformacion-de-datos">
+<h2>Creando una nueva transformación de datos<a class="headerlink" href="#creando-una-nueva-transformacion-de-datos" title="Permalink to this headline">¶</a></h2>
+<p>Arranca GeoKettle y accede al espacio de trabajo de la misma forma que lo harías al cargar una transformación existente (ver sección anterior).</p>
+<p>Para crear una transformación nueva selecciona <em class="menuselection">File ‣ New ‣ Transformation</em>. Puedes especificar el nombre de la transformación salvándola con un nombre diferente (selecciona &nbsp;<em class="menuselection">File ‣ Save as...</em>).</p>
+<p>Tal y como se muestra en la figura siguiente, todos los pasos disponibles se listan por categorías en el área izquierda del espacio de trabajo. Expande cada categoría para ver los pasos disponibles.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_your_transformation4.png"><img alt="../../_images/geokettle_your_transformation4.png" src="../../_images/geokettle_your_transformation4.png" style="width: 640.0px; height: 489.6px;" /></a>
+</div></blockquote>
+<p>Para añadir un nuevo paso a la transformación, arrástralo desde el panel <strong>Steps</strong> al panel <strong>Transformation</strong>. Entonces puedes personalizar ese nuevo paso de tu transformación haciendo doble clic en él.</p>
+<p><strong>Saltos</strong> (<em>Hops</em>)</p>
+<p>Un salto, representado como una flecha entre dos pasos, define un flujo de datos entre dos pasos. Tal y como se ve en la figura siguiente, añadiendo un salto desde <strong>Table Input</strong> a <strong>Add sequence</strong> significa que a la salida resultante de <strong>Table Input</strong> se enviará al paso <strong>Add sequence</strong> para posterior procesado, etc.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_hop4.png"><img alt="../../_images/geokettle_hop4.png" src="../../_images/geokettle_hop4.png" style="width: 480.0px; height: 139.8px;" /></a>
+</div></blockquote>
+<p>Para crear un nuevo salto, seleccione dos pasos, haga clic con el botón derecho en uno de ellos y seleccione <em class="menuselection">New hop</em>. Otra forma de hacerlo es pulsar y mantener la tecla <tt class="kbd docutils literal"><span class="pre">Ctrl</span></tt> mientras se seleccionan dos pasos.</p>
+<p>Cualquier salto se puede editar en todo momento haciendo doble clic o haciendo clic con el botón derecho y seleccionando menuselection:<cite>Edit hop</cite> en el menú contextual.</p>
+<p><strong>Configurando la transformación</strong></p>
+<p>Muchos de los pasos de una transformación necesitarán una parametrización personalizada antes de ser utilizable. Haz doble clic en cualquier paso para mostrar la interfaz en la que puedes ver y especificar cada uno de los parámetros requeridos.</p>
+<p><strong>Ejecutando una transformación</strong></p>
+<p>Cuando se ejecuta una transformación aparece un nuevo panel debajo del panel en el que se diseña la transformación. Este panel (también conocido como panel de <strong>Resultados de la Ejecución</strong>) contiene información sobre flujo de datos en todos los pasos que intervienen en la transformación.</p>
+<p>Inicialmente se muestra la pestaña <strong>Step Metrics</strong> (siguiente figura). En esta pestaña se puede ver información general sobre el flujo de datos en la transformación como el número de filas leídos y escritos en las entradas y salidas de cada paso. La columna <strong>Active</strong> informa al usuario si el paso ha arrancado, está en marcha, ha acabado o se ha abortado, etc. En la columna <strong>Time</strong> se muestra el tiempo empleado desde que el paso arrancó, así como la velocidad media del paso (columna <strong>Speed</strong>) en filas por segundo.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_running_transformation4.png"><img alt="../../_images/geokettle_running_transformation4.png" src="../../_images/geokettle_running_transformation4.png" style="width: 716.8px; height: 461.3px;" /></a>
+</div></blockquote>
+<p><strong>Previsualizando la transformación</strong></p>
+<p>Tal vez la ejecución de una transformación termine con errores en el panel <strong>Execution Results</strong> (ver figura siguiente). Por favor, revisa el contenido de la pestaña <strong>Logging</strong>. En ella hay siempre mucha información útil acerca del origen y la razón del error. Modifica los parámetros del paso erróneo y reinicia la transformación.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_transformation_fail4.png"><img alt="../../_images/geokettle_transformation_fail4.png" src="../../_images/geokettle_transformation_fail4.png" style="width: 716.8px; height: 442.4px;" /></a>
+</div></blockquote>
+<p>Para ayudarte a encontrar el origen del error, puedes previsualizar los resultados de una transformación de un paso anterior en el flujo de trabajo. Para hacerlo, haz doble clic en el paso y selecciona <em class="menuselection">Preview</em> en el menú contextual. De esta forma, puedes ver el aspecto de los datos de forma alfanumérica y espacial en este punto del proceso en el contexto de la transformación sin tener que ejecutarla por completo.</p>
+</div>
+<div class="section" id="cosas-que-se-pueden-probar">
+<h2>Cosas que se pueden probar:<a class="headerlink" href="#cosas-que-se-pueden-probar" title="Permalink to this headline">¶</a></h2>
+<p>Aquí hay algunos retos adicionales que puedes probar:</p>
+<ol class="arabic simple">
+<li>Explora la diversidad de pasos que GeoKettle proporciona</li>
+<li>Prueba el inspector (<em>debugger</em>) de GeoKettle para evaluar una transformación errónea</li>
+<li>Intenta crear una transformación nueva con tus propios datos</li>
+</ol>
+</div>
+<div class="section" id="que-es-lo-siguiente">
+<h2>¿Qué es lo siguiente?<a class="headerlink" href="#que-es-lo-siguiente" title="Permalink to this headline">¶</a></h2>
+<p>Echa un vistazo a la documentación de usuario y desarrollo de GeoKettle, así como los tutoriales disponibles en el <a class="reference external" href="http://wiki.spatialytics.org">wiki</a> del proyecto. No dudes también en preguntar por ayuda en el <a class="reference external" href="http://www.spatialytics.com/forum">foro</a> de Spatialytics.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

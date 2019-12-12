@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TileMill &mdash; OSGeo-Live 7.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 7.0 Contents" href="overview.html" />
+    <link rel="next" title="TinyOWS" href="tinyows_overview.html" />
+    <link rel="prev" title="SpatiaLite" href="spatialite_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.tilemill.com"><img alt="TileMill" class="align-right" src="../../_images/logo-tilemill12.png" style="width: 125.0px; height: 100.0px;" /></a>
+<div class="section" id="tilemill">
+<h1>TileMill<a class="headerlink" href="#tilemill" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="design-studio-for-web-maps">
+<h2>Design studio for Web Maps<a class="headerlink" href="#design-studio-for-web-maps" title="Permalink to this headline">¶</a></h2>
+<p>TileMill is a design studio for creating beautiful, web based, interactive maps from a wide range of existing spatial data sources.</p>
+<p>Generated webmaps can use hover tooltips, clickable pop ups, interactive graphs and images, SVG markers, rich textures, and multiple layers.  Customized maps can be exported to different formats like: .png, .pdf, .svg and MBTiles. The MBTiles spec defines how to store tiles as a single file, as a SQLite database.</p>
+<p>Data can be sourced from vector data (CSV, shapefile, KML, GeoJSON), raster (GeoTiff), as well as large data sources like OpenStreetMap, Postgres and SQLite.</p>
+<p>Tilemill makes use of the <a class="reference internal" href="mapnik_overview.html"><em>Mapnik</em></a> map rendering library (as used by OpenStreeMap) and uses the CartoCSS as a stylesheet language.</p>
+<p>TileMill is typically used in conjunction with a desktop GIS (like QuantumGIS) for preparing data, and a graphics editor (like GIMP) for creating icons, patterns and textures.</p>
+<a class="reference internal image-reference" href="../../_images/tilemill_interface25.png"><img alt="TilleMill user interface" class="align-right" src="../../_images/tilemill_interface25.png" style="width: 575.0px; height: 337.5px;" /></a>
+<div class="section" id="core-features">
+<h3>Core Features<a class="headerlink" href="#core-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Load data from a wide range of sources<ul>
+<li>ESRI Shapefile</li>
+<li>KML</li>
+<li>GeoJSON</li>
+<li>GeoTiff</li>
+<li>CSV spreadsheet</li>
+<li>OpenStreetMap</li>
+</ul>
+</li>
+<li>Connecting to Geospatial databases<ul>
+<li>PostgreSQL + PostGIS</li>
+<li>SQLite</li>
+</ul>
+</li>
+<li>Manage custom layers</li>
+<li>Data Styling<ul>
+<li>Style using presets or custom colors</li>
+<li>Conditional styles</li>
+</ul>
+</li>
+<li>Add tooltips and legends</li>
+<li>Publish<ul>
+<li>Image Files: .png, .pdf, .svg, MBTiles.</li>
+<li>Publish as webpage</li>
+<li>Embed map in a webpage or Content Management System (WordPress, Drupal)</li>
+</ul>
+</li>
+<li>JavaScript API</li>
+</ul>
+</div>
+<div class="section" id="implemented-standards">
+<h3>Implemented Standards<a class="headerlink" href="#implemented-standards" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>TileMill does not support OGC standards, like WMS or WFS. Rather it adheres to the widespread practices of z/x/y tile schemes used by Google and OSM and is based on the MBTiles and UTFGrid specifications.</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Details<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h3>
+<p><strong>Website:</strong> <a class="reference external" href="http://tilemill.com">http://tilemill.com</a></p>
+<p><strong>Licence:</strong> BSD</p>
+<p><strong>Software Version:</strong> 0.10.1</p>
+<p><strong>Supported Platforms:</strong> Windows, Linux, Mac</p>
+<p><strong>API Interfaces:</strong> JavaScript</p>
+<p><strong>Support:</strong> <a class="reference external" href="http://www.tilemill.com">http://www.tilemill.com</a></p>
+</div>
+<div class="section" id="quickstart">
+<h3>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/tilemill_quickstart.html"><em>Quickstart documentation</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

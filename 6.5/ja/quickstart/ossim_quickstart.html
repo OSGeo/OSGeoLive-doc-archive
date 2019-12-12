@@ -1,0 +1,217 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Ossim Quickstart &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 6.5 −Ｌｉｖｅへようこそ" href="../index.html" />
+    <link rel="next" title="OTB Quickstart" href="otb_quickstart.html" />
+    <link rel="prev" title="OpenStreetMap Quickstart" href="osm_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-ossim15.png"><img alt="project logo" class="align-right" src="../../_images/logo-ossim15.png" style="width: 180.8px; height: 73.6px;" /></a>
+<div class="section" id="ossim-quickstart">
+<h1>Ossim Quickstart<a class="headerlink" href="#ossim-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>Open Source Software Image Map (OSSIM) is a high performance engine for
+remote sensing, image processing, geographical information system (GIS)
+tasks and photogrammetry.</p>
+<p>This Quick Start describes how to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Multi-view multiband raster satellite images with Imagelinker</li>
+<li>Drape a georeferenced raster map on a 3D globe with ossimPlanet</li>
+</ul>
+</div></blockquote>
+<div class="section" id="imagelinker">
+<h2>Imagelinker<a class="headerlink" href="#imagelinker" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Start Imagelinker from its icon from the &#8220;Spatial Tools&#8221; folder on
+the desktop</p>
+</li>
+<li><p class="first">Open an image file, using <em class="menuselection">File ‣ Open Image ‣ /home/user/data/raster/cape_cod/p011r031_7t19990918_z19_nn10.tif</em></p>
+</li>
+<li><p class="first">Repeat the previous operation for the files : <cite>p011r031_7t19990918_z19_nn20.tif</cite>
+and <cite>p011r031_7t19990918_z19_nn30.tif</cite></p>
+<a class="reference internal image-reference" href="../../_images/ossim_imagelinker33.jpg"><img alt="../../_images/ossim_imagelinker33.jpg" class="align-right" src="../../_images/ossim_imagelinker33.jpg" style="width: 614.4px; height: 445.8px;" /></a>
+</li>
+<li><p class="first">Another way to load all the images at once is to simply drag and drop
+them into the Imagelinker main window</p>
+</li>
+<li><p class="first">To tidy up the windows, maximize the main window, then in the top menu
+bar go to <em class="menuselection">Window ‣ Tile</em></p>
+</li>
+<li><p class="first">You can keep all the satellite band views in sync by clicking <em class="guilabel">Fit</em> in
+one of the smaller windows, then <em class="guilabel">Propagate</em> in that same window.
+Try doing the same in the larger window.</p>
+</li>
+<li><p class="first">Again in the large image window make sure the zoom button (magnifying
+glass) is depressed and click in middle of the Cape (that&#8217;s Wellfleet Harbor).
+Then click again for a closer view, and again click the <em class="guilabel">Propagate</em>
+button in the large image window to sync that view with the other band windows.
+In a similar way you can press the pan button (hand icon) and then click on
+the end of the Cape, and then the <em class="guilabel">Propagate</em> button to align the
+other windows.</p>
+</li>
+</ul>
+<p>A more in depth tutorial covering merging bands into an RGB composite
+is <a class="reference external" href="http://www.geofemengineering.it/GeofemEngineering/Blog/Voci/2010/3/15_OSGEO_-_Live_-_DVD_-_%22running_imagelinker%22.html">available online</a>.</p>
+</div>
+<div class="section" id="ossimplanet">
+<h2>OssimPlanet<a class="headerlink" href="#ossimplanet" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Launch OssimPlanet from its icon in the &#8220;Desktop GIS&#8221; folder on the
+desktop</li>
+<li>Select <em class="menuselection">File ‣ Open Image ‣ /home/user/data/raster/cape_cod/cape_cod/p011r031_7t19990918_z19_nn10.tif</em>
+to load a LANDSAT image (or simply drag and drop the image into the main window).</li>
+<li>In the <cite>Layer</cite> tree panel on the left side, click on the small triangle to
+the left of <em>Image Layers</em> to expand it. Next double-click on <tt class="docutils literal"><span class="pre">p011r031_7t19990918_z19_nn10.tif</span></tt>.
+You should now see the scene zoom to the image&#8217;s location.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To turn off the daylight auto-shading, <cite>un</cite>-check <em class="menuselection">File ‣ Preferences ‣ Environment ‣ Enable Ephemeris</em></p>
+</div>
+<ul class="simple">
+<li>Experiment with navigating the scene using the mouse. Dragging the left
+mouse button pans; dragging the middle mouse button rolls; and dragging
+the right mouse button zooms in and out.</li>
+<li>Try loading the supplied North Carolina LANDSAT image
+from <tt class="docutils literal"><span class="pre">/home/user/data/north_carolina/rast_geotiff/lsat7_2002_10.tif</span></tt>.
+Again, double click on it&#8217;s name from the Layer tree panel to zoom over to it.</li>
+<li>If you get lost, double clicking on the Blue Marble image in the Layer
+tree will zoom back out to a view of the whole planet, resetting the view.</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2>What Next?<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>We have prepared a number of <a class="reference external" href="http://download.osgeo.org/ossim/tutorials/pdfs/">tutorials</a> demonstrating more of
+Ossim&#8217;s capabilities.</li>
+</ul>
+<ul class="simple">
+<li>See also the included <a class="reference external" href="../../ossim/">documentation</a> on this Live DVD.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

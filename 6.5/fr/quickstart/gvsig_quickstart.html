@@ -1,0 +1,525 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>gvSIG Quickstart &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Bienvenue sur OSGeo-Live 6.5" href="../index.html" />
+    <link rel="next" title="OSGeo-Live Internationalisation Quickstart" href="internationalisation_quickstart.html" />
+    <link rel="prev" title="GRASS GIS Quickstart" href="grass_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-gvSIG11.png"><img alt="../../_images/logo-gvSIG11.png" class="align-right" src="../../_images/logo-gvSIG11.png" style="width: 75.0px; height: 75.5px;" /></a>
+<div class="section" id="gvsig-quickstart">
+<h1><a class="toc-backref" href="#id1">gvSIG Quickstart</a><a class="headerlink" href="#gvsig-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>gvSIG is a Geographic Information System (GIS), that is, a desktop application
+designed for capturing, storing, handling, analyzing and deploying any kind of
+referenced geographic information in order to solve complex management and
+planning problems. gvSIG is known for having a user-friendly interface, being
+able to access the most common formats, both vector and raster ones. It
+features a wide range of tools for working with geographic-like information
+(query tools, layout creation, geoprocessing, networks, etc.), which turns
+gvSIG into the ideal tool for users working in the land realm.</p>
+<p>This quickstart describes how to...</p>
+<ul class="simple">
+<li>Add projection, raster and vector data to a view;</li>
+<li>Navigate around;</li>
+<li>Change layers;</li>
+<li>Select features;</li>
+<li>Create a map with a graticule;</li>
+</ul>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#gvsig-quickstart" id="id1">gvSIG Quickstart</a><ul>
+<li><a class="reference internal" href="#start-gvsig-and-create-a-view" id="id2">Start gvSIG and create a view</a></li>
+<li><a class="reference internal" href="#define-the-projection-of-your-view" id="id3">Define the projection of your view</a><ul>
+<li><a class="reference internal" href="#open-the-view-properties-dialog" id="id4">Open the view properties dialog</a></li>
+<li><a class="reference internal" href="#defining-your-coordinate-reference-system" id="id5">Defining your Coordinate Reference System</a></li>
+<li><a class="reference internal" href="#saving-the-view-properties" id="id6">Saving the view properties</a></li>
+<li><a class="reference internal" href="#open-the-view" id="id7">Open the view</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-view-adding-raster-and-vector-data" id="id8">The View - adding raster and vector data</a><ul>
+<li><a class="reference internal" href="#open-the-add-layer-dialog" id="id9">Open the add layer dialog</a></li>
+<li><a class="reference internal" href="#selecting-a-raster-file" id="id10">Selecting a raster file</a></li>
+<li><a class="reference internal" href="#selecting-vector-files" id="id11">Selecting vector files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-view-basic-navigation" id="id12">The View - basic navigation</a><ul>
+<li><a class="reference internal" href="#zoom-into-a-region" id="id13">Zoom into a region</a></li>
+<li><a class="reference internal" href="#fine-scale-navigation" id="id14">Fine-scale navigation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-view-changing-how-layers-look" id="id15">The View - changing how layers look</a><ul>
+<li><a class="reference internal" href="#making-a-polygon-transparent" id="id16">Making a polygon transparent</a></li>
+<li><a class="reference internal" href="#changing-the-symbology-of-a-vector-layer" id="id17">Changing the symbology of a vector layer</a></li>
+<li><a class="reference internal" href="#changing-the-labelling-of-a-vector-layer" id="id18">Changing the labelling of a vector layer</a></li>
+<li><a class="reference internal" href="#the-result" id="id19">The result</a></li>
+<li><a class="reference internal" href="#a-user-exercise-change-the-symbology-and-labelling-of-the-point-and-line-layers" id="id20">A user exercise - change the symbology and labelling of the point and line layers</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#simple-analysis-select-towns-within-a-region" id="id21">Simple analysis - select towns within a region</a><ul>
+<li><a class="reference internal" href="#selecting-the-region" id="id22">Selecting the region</a></li>
+<li><a class="reference internal" href="#selecting-the-towns-contained-within-a-region" id="id23">Selecting the towns contained within a region</a></li>
+<li><a class="reference internal" href="#unselect-the-polygon-so-you-can-see-what-has-happened" id="id24">Unselect the polygon so you can see what has happened</a></li>
+<li><a class="reference internal" href="#export-the-selected-towns-to-a-new-shapefile" id="id25">Export the selected towns to a new shapefile</a></li>
+<li><a class="reference internal" href="#showing-only-towns-within-a-region" id="id26">Showing only towns within a region</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#how-to-create-a-map" id="id27">How to create a map</a><ul>
+<li><a class="reference internal" href="#create-a-new-map-and-open-it" id="id28">Create a new map and open it</a></li>
+<li><a class="reference internal" href="#insert-a-view-with-a-grid-graticule" id="id29">Insert a view with a grid/graticule</a></li>
+<li><a class="reference internal" href="#what-else-can-you-do-to-a-map" id="id30">What else can you do to a map?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#saving-your-project-or-exiting-gvsig" id="id31">Saving your project or exiting gvSIG</a></li>
+<li><a class="reference internal" href="#where-to-from-here" id="id32">Where to from here...</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="start-gvsig-and-create-a-view">
+<h2><a class="toc-backref" href="#id2">Start gvSIG and create a view</a><a class="headerlink" href="#start-gvsig-and-create-a-view" title="Permalink to this headline">¶</a></h2>
+<p>Select gvSIG from the application menu,
+<em class="menuselection">Geospatial-&gt;Desktop GIS-&gt;gvSIG</em>. The application usually takes
+about a minute to startup.</p>
+<ol class="arabic simple">
+<li>By default gvSIG opens with an empty project file with the &#8216;View&#8217; document
+type selected. However, on OSGeo-Live, gvSIG has been configured to
+start with a default project. Click on the <em class="guilabel">New Project</em> button or go to
+<em class="menuselection">File ‣ New Project</em>. When prompted, you can select
+<em class="menuselection">Discard Changes</em> as we won&#8217;t be using the last project.</li>
+<li>Click on the <em class="guilabel">New</em> button to create a view.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0015.png"><img alt="../../_images/gvsig_qs_0015.png" src="../../_images/gvsig_qs_0015.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="define-the-projection-of-your-view">
+<h2><a class="toc-backref" href="#id3">Define the projection of your view</a><a class="headerlink" href="#define-the-projection-of-your-view" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="open-the-view-properties-dialog">
+<h3><a class="toc-backref" href="#id4">Open the view properties dialog</a><a class="headerlink" href="#open-the-view-properties-dialog" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Select the newly created view. By default it is titled <tt class="docutils literal"><span class="pre">Untitled</span> <span class="pre">-</span> <span class="pre">0</span></tt> but
+may be <tt class="docutils literal"><span class="pre">Untitled</span> <span class="pre">-</span> <span class="pre">1</span></tt> if you created then deleted a view already.</li>
+<li>Click on the <em class="guilabel">Properties</em> button to open the <strong>View properties</strong> dialog.</li>
+<li>Click on the <em class="guilabel">...</em> button following the <em class="guilabel">Current projection</em>.
+This will open the <strong>New CRS</strong> dialog.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0025.png"><img alt="../../_images/gvsig_qs_0025.png" src="../../_images/gvsig_qs_0025.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="defining-your-coordinate-reference-system">
+<h3><a class="toc-backref" href="#id5">Defining your Coordinate Reference System</a><a class="headerlink" href="#defining-your-coordinate-reference-system" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Using the dropdown list for <em class="guilabel">Type</em>, select EPSG.</li>
+<li>Enter the EPSG code for the Coordinate Reference System. For this example
+we are using EPSG=4326, which is the WGS84 2D Geographic Projection. Then
+click on the <em class="guilabel">Search</em> button. This will list the selected CRS in the table
+below the search input field.</li>
+<li>Select <em class="guilabel">OK</em> to return to the <strong>View Properties</strong> dialog.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0035.png"><img alt="../../_images/gvsig_qs_0035.png" src="../../_images/gvsig_qs_0035.png" style="width: 330.0px; height: 236.5px;" /></a>
+</div>
+<div class="section" id="saving-the-view-properties">
+<h3><a class="toc-backref" href="#id6">Saving the view properties</a><a class="headerlink" href="#saving-the-view-properties" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Note that the EPSG code is now 4326 and that the map units have changed to
+degrees.</li>
+<li>Select <em class="guilabel">OK</em> to return to the <strong>Project Manager</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0045.png"><img alt="../../_images/gvsig_qs_0045.png" src="../../_images/gvsig_qs_0045.png" style="width: 213.4px; height: 248.6px;" /></a>
+</div>
+<div class="section" id="open-the-view">
+<h3><a class="toc-backref" href="#id7">Open the view</a><a class="headerlink" href="#open-the-view" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Select the newly created view.</li>
+<li>Click on the <em class="guilabel">Open</em> button to open the <em>View</em>.</li>
+<li>The view window consists of three zones.</li>
+<li>The top-left cell contains a list of vector or raster layers being used in
+the view (i.e. Table-of-Contents).</li>
+<li>The bottom-left cell displays the extent of the main view over a selected
+vector file.</li>
+<li>The right cell is the main display area where raster and vector data is
+rendered.</li>
+<li>Select the <em class="guilabel">Maximise window</em> icon to have the view occupy the entire screen.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0055.png"><img alt="../../_images/gvsig_qs_0055.png" src="../../_images/gvsig_qs_0055.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+</div>
+<div class="section" id="the-view-adding-raster-and-vector-data">
+<h2><a class="toc-backref" href="#id8">The View - adding raster and vector data</a><a class="headerlink" href="#the-view-adding-raster-and-vector-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="open-the-add-layer-dialog">
+<h3><a class="toc-backref" href="#id9">Open the add layer dialog</a><a class="headerlink" href="#open-the-add-layer-dialog" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Click on the <em class="guilabel">Add layer</em> icon in the main toolbar to open the <strong>Add layer</strong> dialog.</li>
+<li>Select <em class="guilabel">Add</em> in the <strong>Add layer</strong> dialog. By default the first tab is <em>File</em>
+so the <strong>Open</strong> file dialog will appear.</li>
+<li>Drill down to the <tt class="docutils literal"><span class="pre">/usr/local/share/data/natural_earth2/</span></tt> directory.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0065.png"><img alt="../../_images/gvsig_qs_0065.png" src="../../_images/gvsig_qs_0065.png" style="width: 563.2px; height: 422.95px;" /></a>
+</div>
+<div class="section" id="selecting-a-raster-file">
+<h3><a class="toc-backref" href="#id10">Selecting a raster file</a><a class="headerlink" href="#selecting-a-raster-file" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Select <em>gvSIG Raster Driver</em> from the file type dropdown list. By default
+the shapefile driver is used so the directory may appear empty.</li>
+<li>Select <tt class="docutils literal"><span class="pre">HYP_50M_SR_W.tif</span></tt>.</li>
+<li>Click on the <em class="guilabel">OK</em> button to return to the <strong>Add layer</strong> dialog.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0075.png"><img alt="../../_images/gvsig_qs_0075.png" src="../../_images/gvsig_qs_0075.png" style="width: 281.6px; height: 193.6px;" /></a>
+</div>
+<div class="section" id="selecting-vector-files">
+<h3><a class="toc-backref" href="#id11">Selecting vector files</a><a class="headerlink" href="#selecting-vector-files" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>The <strong>Add layer</strong> dialog now has the raster file listed.</li>
+<li>Select the <em class="guilabel">Add</em> button to add some vector files. The <strong>Open</strong> files dialog
+will appear.</li>
+<li>Select the <em class="guilabel">Up one level</em> button in the menu to change the directory to the
+<tt class="docutils literal"><span class="pre">/usr/local/share/data/natural_earth2/</span></tt> directory.</li>
+<li>Select <em class="guilabel">gvSIG shp driver</em> from the file type dropdown list.</li>
+<li>Select the <tt class="docutils literal"><span class="pre">ne_10m_admin_1_states_provinces.shp</span></tt>, <tt class="docutils literal"><span class="pre">ne_10m_populated_places.shp</span></tt> and
+<tt class="docutils literal"><span class="pre">ne_10m_rivers_lake_centerlines.shp</span></tt> shapefiles from the list. Hold down the control
+key to select multiple files.</li>
+<li>Click on the <em class="guilabel">OK</em> button to return to the <strong>Add layer</strong> dialog.</li>
+<li>Click on the <em class="guilabel">OK</em> button on the <strong>Add layer</strong> dialog to return to the view.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0085.png"><img alt="../../_images/gvsig_qs_0085.png" src="../../_images/gvsig_qs_0085.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+</div>
+<div class="section" id="the-view-basic-navigation">
+<h2><a class="toc-backref" href="#id12">The View - basic navigation</a><a class="headerlink" href="#the-view-basic-navigation" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If gvSIG user interface becomes unresponsive, try <tt class="kbd docutils literal"><span class="pre">Alt+f</span></tt> to open
+the file menu for example. User interface should work again, then.</p>
+</div>
+<div class="section" id="zoom-into-a-region">
+<h3><a class="toc-backref" href="#id13">Zoom into a region</a><a class="headerlink" href="#zoom-into-a-region" title="Permalink to this headline">¶</a></h3>
+<p>Once back at the main view you&#8217;ll see the vector files super-imposed over
+the raster file. The colours shown in this screen shot may differ from yours
+depending on the user preferences.</p>
+<ol class="arabic simple">
+<li>By default the <em>Zoom in</em> tool is selected on the main toolbar.</li>
+<li>Use the mouse pointer to draw a bounding box around South-east Australia.
+Do this by selecting the top-left corner of the bounding box, holding
+down the left-mouse-button, and dragging the bottom-right corner of
+the bounding box over the selected area. Release the left-mouse button once
+you have the approximate area defined.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0095.png"><img alt="../../_images/gvsig_qs_0095.png" src="../../_images/gvsig_qs_0095.png" style="width: 563.75px; height: 423.5px;" /></a>
+</div>
+<div class="section" id="fine-scale-navigation">
+<h3><a class="toc-backref" href="#id14">Fine-scale navigation</a><a class="headerlink" href="#fine-scale-navigation" title="Permalink to this headline">¶</a></h3>
+<p>The view will automatically change to show the area within the selected bounding box.</p>
+<ol class="arabic simple">
+<li>The size of the Table-of-Contents column can be adjusted using the mouse to
+help see long file names.</li>
+<li>Adjust what is shown in the view by using the highlighted tools, so that
+Victoria is central.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0105.png"><img alt="../../_images/gvsig_qs_0105.png" src="../../_images/gvsig_qs_0105.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+</div>
+<div class="section" id="the-view-changing-how-layers-look">
+<h2><a class="toc-backref" href="#id15">The View - changing how layers look</a><a class="headerlink" href="#the-view-changing-how-layers-look" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="making-a-polygon-transparent">
+<h3><a class="toc-backref" href="#id16">Making a polygon transparent</a><a class="headerlink" href="#making-a-polygon-transparent" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Select the <tt class="docutils literal"><span class="pre">ne_10m_admin_1_states_provinces.shp</span></tt> layer using the
+left-mouse-button and click again with the right-mouse-button.</li>
+<li>Select the <em class="menuselection">Properties</em> submenu.</li>
+<li>The <strong>Layer properties</strong> dialog box will appear.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0115.png"><img alt="../../_images/gvsig_qs_0115.png" src="../../_images/gvsig_qs_0115.png" style="width: 563.2px; height: 423.5px;" /></a>
+</div>
+<div class="section" id="changing-the-symbology-of-a-vector-layer">
+<h3><a class="toc-backref" href="#id17">Changing the symbology of a vector layer</a><a class="headerlink" href="#changing-the-symbology-of-a-vector-layer" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Select the <em class="guilabel">Symbols</em> tab at the top of the <strong>Layers properties</strong> dialog.</li>
+<li>Select <em class="guilabel">Choose symbol</em> button so the <strong>Symbol selector</strong> dialog appears.</li>
+<li>Uncheck the <em class="guilabel">Fill color</em> box so the polygons are transparent.</li>
+<li>Click on the <em class="guilabel">OK</em> button to return to the <strong>Layers properties</strong> dialog.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0125.png"><img alt="../../_images/gvsig_qs_0125.png" src="../../_images/gvsig_qs_0125.png" style="width: 563.2px; height: 422.4px;" /></a>
+</div>
+<div class="section" id="changing-the-labelling-of-a-vector-layer">
+<h3><a class="toc-backref" href="#id18">Changing the labelling of a vector layer</a><a class="headerlink" href="#changing-the-labelling-of-a-vector-layer" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Select the <em class="guilabel">Labelling</em> tab at the top of the <strong>Layers properties</strong> dialog.</li>
+<li>Change the text attributes to those shown on the image, then click on the
+<em class="guilabel">Accept</em> button.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0135.png"><img alt="../../_images/gvsig_qs_0135.png" src="../../_images/gvsig_qs_0135.png" style="width: 431.75px; height: 317.35px;" /></a>
+</div>
+<div class="section" id="the-result">
+<h3><a class="toc-backref" href="#id19">The result</a><a class="headerlink" href="#the-result" title="Permalink to this headline">¶</a></h3>
+<p>Note that this is a very basic view showing a point, a line and a polygon vector
+file superimposed over a raster file. It is just as easy to have an aerial
+photograph or Digital Terrain Model as a backdrop to your vector data, or
+to show other vector data stored in different formats.</p>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0145.png"><img alt="../../_images/gvsig_qs_0145.png" src="../../_images/gvsig_qs_0145.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="a-user-exercise-change-the-symbology-and-labelling-of-the-point-and-line-layers">
+<h3><a class="toc-backref" href="#id20">A user exercise - change the symbology and labelling of the point and line layers</a><a class="headerlink" href="#a-user-exercise-change-the-symbology-and-labelling-of-the-point-and-line-layers" title="Permalink to this headline">¶</a></h3>
+<p>Following the previous few steps change the symbols, colour and labelling
+of the rivers and towns to generally match the following screen shot.</p>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0155.png"><img alt="../../_images/gvsig_qs_0155.png" src="../../_images/gvsig_qs_0155.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+</div>
+<div class="section" id="simple-analysis-select-towns-within-a-region">
+<h2><a class="toc-backref" href="#id21">Simple analysis - select towns within a region</a><a class="headerlink" href="#simple-analysis-select-towns-within-a-region" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="selecting-the-region">
+<h3><a class="toc-backref" href="#id22">Selecting the region</a><a class="headerlink" href="#selecting-the-region" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Select the <tt class="docutils literal"><span class="pre">ne_10m_admin_1_states_provinces.shp</span></tt> layer using the
+left-mouse-button.</li>
+<li>Select the <em class="guilabel">Select by point</em> icon in the main toolbar.</li>
+<li>Click the polygon representing the State of Victoria. The polygon will
+go yellow or some other colour depending on your user preferences.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0165.png"><img alt="../../_images/gvsig_qs_0165.png" src="../../_images/gvsig_qs_0165.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="selecting-the-towns-contained-within-a-region">
+<h3><a class="toc-backref" href="#id23">Selecting the towns contained within a region</a><a class="headerlink" href="#selecting-the-towns-contained-within-a-region" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Select the <tt class="docutils literal"><span class="pre">ne_10m_populated_places.shp</span></tt> layer using the left-mouse-button.</li>
+<li>Select <em class="menuselection">View ‣ Selection ‣ Selection by layer</em> to open the <strong>Selection by Layer</strong> dialog</li>
+<li>Change the two selection criteria using the dropdown boxes on the left-hand
+side of the <strong>Selection by Layer</strong> dialog. Click the <em class="guilabel">New set</em> button to
+select towns within the selected polygon.</li>
+<li>Select the <em class="guilabel">Cancel</em> button in the <strong>Selection by Layer</strong> dialog to return
+to the view.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0175.png"><img alt="../../_images/gvsig_qs_0175.png" src="../../_images/gvsig_qs_0175.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="unselect-the-polygon-so-you-can-see-what-has-happened">
+<h3><a class="toc-backref" href="#id24">Unselect the polygon so you can see what has happened</a><a class="headerlink" href="#unselect-the-polygon-so-you-can-see-what-has-happened" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Select the <tt class="docutils literal"><span class="pre">ne_10m_admin_1_states_provinces.shp</span></tt> layer using the left-mouse-button.</li>
+<li>Select the &#8216;Clear selection&#8217; icon in the main toolbar.</li>
+<li>You can now see that the only those towns within Victoria are selected.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0185.png"><img alt="../../_images/gvsig_qs_0185.png" src="../../_images/gvsig_qs_0185.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="export-the-selected-towns-to-a-new-shapefile">
+<h3><a class="toc-backref" href="#id25">Export the selected towns to a new shapefile</a><a class="headerlink" href="#export-the-selected-towns-to-a-new-shapefile" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Select the <tt class="docutils literal"><span class="pre">ne_10m_populated_places.shp</span></tt> layer using the left-mouse-button.</li>
+<li>Select <em class="menuselection">Layer ‣ Export to... ‣ Shapefile</em> to start the export.</li>
+<li>The <strong>Export to...</strong> dialog appears. gvSIG recognises that only 26 features
+are selected so warns you that only a subset of the shapefile will be
+exported. Select the <em class="guilabel">Yes</em> button to continue.</li>
+<li>The <strong>Save</strong> dialog appears. Give the file a name and save in a
+directory of choice. Select the <em class="guilabel">Save</em> button to continue.
+Note that if you already have a file by the name chosen a warning message
+will be shown.</li>
+<li>The <strong>Add layer</strong> dialog appears. Select the <em class="guilabel">Yes</em> button to add the new
+shapefile to the Table-of-Contents.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0195.png"><img alt="../../_images/gvsig_qs_0195.png" src="../../_images/gvsig_qs_0195.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="showing-only-towns-within-a-region">
+<h3><a class="toc-backref" href="#id26">Showing only towns within a region</a><a class="headerlink" href="#showing-only-towns-within-a-region" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Once you return to the view, uncheck <tt class="docutils literal"><span class="pre">ne_10m_populated_places.shp</span></tt> in
+the Table-of-Contents.</li>
+<li>Change the symbology and labelling of <tt class="docutils literal"><span class="pre">test.shp</span></tt> to match the screenshot
+below.</li>
+<li>Now the view only includes towns and that occur within the State of Victoria.</li>
+<li>Select the <em class="guilabel">Close window</em> icon to return to the <strong>Project manager</strong> so we
+can create a map using this view.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0205.png"><img alt="../../_images/gvsig_qs_0205.png" src="../../_images/gvsig_qs_0205.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+</div>
+<div class="section" id="how-to-create-a-map">
+<h2><a class="toc-backref" href="#id27">How to create a map</a><a class="headerlink" href="#how-to-create-a-map" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-a-new-map-and-open-it">
+<h3><a class="toc-backref" href="#id28">Create a new map and open it</a><a class="headerlink" href="#create-a-new-map-and-open-it" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Select the <em>Map</em> document type in the <strong>Project Manager</strong>.</li>
+<li>Click on the <em class="guilabel">New</em> button to create a map.</li>
+<li>Select the newly created map. By default it is titled <tt class="docutils literal"><span class="pre">Untitled</span> <span class="pre">-</span> <span class="pre">0</span></tt>.</li>
+<li>Click on the <em class="guilabel">Open</em> button.</li>
+<li>An empty map will appear in its own window titled <tt class="docutils literal"><span class="pre">Map:</span> <span class="pre">Untitled</span> <span class="pre">-</span> <span class="pre">0</span></tt>.
+Note that a series of points are placed over the page. This is called a
+grid or guides and are used to snap elements to while formatting your
+map.</li>
+<li>Select the <em class="guilabel">Maximise window</em> icon to have the map occupy the entire
+screen.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0215.png"><img alt="../../_images/gvsig_qs_0215.png" src="../../_images/gvsig_qs_0215.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="insert-a-view-with-a-grid-graticule">
+<h3><a class="toc-backref" href="#id29">Insert a view with a grid/graticule</a><a class="headerlink" href="#insert-a-view-with-a-grid-graticule" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Click on the <em class="guilabel">Insert view</em> icon in the main menu</li>
+<li>Create a bounding box representing the extent of the map on the page by
+clicking on the empty map while holding down the left-mouse-button and
+dragging out the box, only letting go once the the area to be used is
+complete. This opens the <strong>Properties of view framework</strong> dialog.</li>
+<li>Select the <em>view</em> created earlier.</li>
+<li>Check the <em class="guilabel">Show Grid</em> option (this actually creates a graticule).</li>
+<li>Click on the <em class="guilabel">Configure</em> grid button to open the <strong>Grid settings</strong> dialog.</li>
+<li>In the <strong>Grid settings</strong> dialog change the grid interval to 1.0, that is
+1 degree between lines representing latitude and longitude.</li>
+<li>Select the grid format (use lines rather than points for ease of viewing).</li>
+<li>Increase the font size to 14.</li>
+<li>Select the <em class="guilabel">Ok</em> button to return to the <strong>Properties of view framework</strong> dialog then
+select the <em class="guilabel">Accept</em> button to exit and return to your map.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0225.png"><img alt="../../_images/gvsig_qs_0225.png" src="../../_images/gvsig_qs_0225.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="what-else-can-you-do-to-a-map">
+<h3><a class="toc-backref" href="#id30">What else can you do to a map?</a><a class="headerlink" href="#what-else-can-you-do-to-a-map" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Select <em class="menuselection">Map ‣ Properties</em> from the main menu to open the
+<strong>Map Properties</strong> dialog box. Unselect the <em>Visualise Grid</em> checkbox then
+select the <em class="guilabel">OK</em> button. The &#8216;snap-to&#8217; guides/grid used while formatting
+should now be removed from the page and the image should match what is
+shown below.</li>
+<li>Additional elements like a scale and north arrow can be added to the map
+using the icons in the main toolbar or with the submenus in the <em class="menuselection">Map</em> menu.</li>
+<li>The map can be printed or exported to PDF or Postscript for incorporation
+into other works.</li>
+<li>Select the <em class="guilabel">Close window</em> icon to return to the <strong>Project manager</strong></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0235.png"><img alt="../../_images/gvsig_qs_0235.png" src="../../_images/gvsig_qs_0235.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+</div>
+<div class="section" id="saving-your-project-or-exiting-gvsig">
+<h2><a class="toc-backref" href="#id31">Saving your project or exiting gvSIG</a><a class="headerlink" href="#saving-your-project-or-exiting-gvsig" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Projects can be saved for use later by using the <em class="menuselection">File ‣ Save as...</em>
+menu option, or</li>
+<li>Projects can be exited or closed by using the <em class="menuselection">File ‣ Exit</em> menu option.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0245.png"><img alt="../../_images/gvsig_qs_0245.png" src="../../_images/gvsig_qs_0245.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="where-to-from-here">
+<h2><a class="toc-backref" href="#id32">Where to from here...</a><a class="headerlink" href="#where-to-from-here" title="Permalink to this headline">¶</a></h2>
+<p>Some English help and tutorials are available on the
+<a class="reference external" href="http://www.gvsig.org/web/docusr/learning/">gvSIG</a> website.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

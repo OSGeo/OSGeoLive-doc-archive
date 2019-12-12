@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Administration &mdash; Documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Documentation" href="../index.html" />
+    <link rel="next" title="Distributed Searching" href="distributedsearching.html" />
+    <link rel="prev" title="Configuration" href="configuration.html" /> 
+  </head>
+  <body>
+
+<style type="text/css">
+  .header a:link{color: white;}
+  .header a:visited{color: white;}
+</style>
+
+<table class="header" width="100%" style="width: 100%;">
+  <tr>
+    <td class="left" style="padding: 10px 10px 0px 0px; text-align: left; vertical-align: top;"><a href="/index.html" title="pycsw">pycsw</a></td>
+    <td class="right" style="padding: 10px 10px 0px 0px; text-align: right; vertical-align: top;">
+      <a href="/index.html" title="Home">Home</a> |
+      <a href="/demos.html" title="Demos">Demos</a> |
+      <a href="/docs/index.html" title="Docs">Docs</a> |
+      <a href="http://sourceforge.net/apps/trac/pycsw" title="Issue Tracker">Issue Tracker</a> |
+      <a href="/faq.html" title="FAQ">FAQ</a> |
+      <a href="/download.html" title="Download">Download </a>
+    </td>
+  </tr>
+</table>
+
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="distributedsearching.html" title="Distributed Searching"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="configuration.html" title="Configuration"
+             accesskey="P">previous</a> |</li>
+        <li><a href="documentation.html">Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="administration">
+<span id="id1"></span><h1>Administration<a class="headerlink" href="#administration" title="Permalink to this headline">¶</a></h1>
+<p>pycsw administration is handled by <tt class="docutils literal"><span class="pre">sbin/pycsw-admin.py</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Run <tt class="docutils literal"><span class="pre">sbin/pycsw-admin.py</span> <span class="pre">-h</span></tt> to see all administration operations and parameters</p>
+</div>
+<div class="section" id="metadata-repository-setup">
+<h2>Metadata Repository Setup<a class="headerlink" href="#metadata-repository-setup" title="Permalink to this headline">¶</a></h2>
+<p>pycsw supports the following databases:</p>
+<ul class="simple">
+<li>SQLite3</li>
+<li>PostgreSQL</li>
+<li>MySQL</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The easiest and fastest way to deploy pycsw is to use SQLite3 as the backend.</p>
+</div>
+<p>To expose your geospatial metadata via pycsw, perform the following actions:</p>
+<ul class="simple">
+<li>setup the database</li>
+<li>import metadata</li>
+<li>publish the repository</li>
+</ul>
+</div>
+<div class="section" id="supported-information-models">
+<h2>Supported Information Models<a class="headerlink" href="#supported-information-models" title="Permalink to this headline">¶</a></h2>
+<p>By default, pycsw supports the <tt class="docutils literal"><span class="pre">csw:Record</span></tt> information model.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">See <a class="reference internal" href="profiles.html#profiles"><em>Profile Plugins</em></a> for information on enabling profiles</p>
+</div>
+</div>
+<div class="section" id="setting-up-the-database">
+<h2>Setting up the Database<a class="headerlink" href="#setting-up-the-database" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /path/to/pycsw
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">PYTHONPATH</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nv">$ </span>python ./sbin/pycsw-admin.py -c setup_db -f default.cfg
+</pre></div>
+</div>
+<p>This will create the necessary tables and values for the repository.</p>
+<p>The database created is an <a class="reference external" href="http://www.opengeospatial.org/standards/sfs">OGC SFSQL</a> compliant database, and can be used with any implementing software.  For example, to use with <a class="reference external" href="http://www.gdal.org/ogr">OGR</a>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ogrinfo /path/to/records.db
+INFO: Open of <span class="s1">&#39;records.db&#39;</span>
+using driver <span class="s1">&#39;SQLite&#39;</span> successful.
+1: records <span class="o">(</span>Polygon<span class="o">)</span>
+<span class="nv">$ </span>ogrinfo -al /path/to/records.db
+<span class="c"># lots of output</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-records">
+<h2>Loading Records<a class="headerlink" href="#loading-records" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>python ./sbin/pycsw-admin.py -c load_records -f default.cfg -p /path/to/records
+</pre></div>
+</div>
+<p>This will import all <tt class="docutils literal"><span class="pre">*.xml</span></tt> records from <tt class="docutils literal"><span class="pre">/path/to/records</span></tt> into the database specified in <tt class="docutils literal"><span class="pre">default.cfg</span></tt> (<tt class="docutils literal"><span class="pre">repository.database</span></tt>).  Passing <tt class="docutils literal"><span class="pre">-r</span></tt> to the script will process <tt class="docutils literal"><span class="pre">/path/to/records</span></tt> recursively.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Records can also be imported using CSW-T (see <a class="reference internal" href="transactions.html#transactions"><em>Transactions</em></a>).</p>
+</div>
+</div>
+<div class="section" id="exporting-the-repository">
+<h2>Exporting the Repository<a class="headerlink" href="#exporting-the-repository" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>python ./sbin/pycsw-admin.py -c export_records -f default.cfg -p /path/to/output_dir
+</pre></div>
+</div>
+<p>This will write each record in the database specified in <tt class="docutils literal"><span class="pre">default.cfg</span></tt> (<tt class="docutils literal"><span class="pre">repository.database</span></tt>) to an XML document on disk, in directory <tt class="docutils literal"><span class="pre">/path/to/output_dir</span></tt>.</p>
+</div>
+<div class="section" id="optimizing-the-database">
+<h2>Optimizing the Database<a class="headerlink" href="#optimizing-the-database" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>python ./sbin/pycsw-admin.py -c optimize_db -f default.cfg
+</pre></div>
+</div>
+</div>
+<div class="section" id="database-specific-notes">
+<h2>Database Specific Notes<a class="headerlink" href="#database-specific-notes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="postgresql">
+<h3>PostgreSQL<a class="headerlink" href="#postgresql" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>pycsw makes uses of PL/Python functions.  To enable PostgreSQL support, the database user must be able to create functions within the database.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="mapping-to-an-existing-repository">
+<span id="custom-repository"></span><h2>Mapping to an Existing Repository<a class="headerlink" href="#mapping-to-an-existing-repository" title="Permalink to this headline">¶</a></h2>
+<p>pycsw supports publishing metadata from an existing repository.  To enable this functionality, the default database mappings must be modified to represent the existing database columns mapping to the abstract core model (the default mappings are in <tt class="docutils literal"><span class="pre">server/config.py:MD_CORE_MODEL</span></tt>).</p>
+<p>To override the default settings:</p>
+<ul class="simple">
+<li>define a custom database mapping based on <tt class="docutils literal"><span class="pre">etc/mappings.py</span></tt></li>
+<li>in <tt class="docutils literal"><span class="pre">default.cfg</span></tt>, set <tt class="docutils literal"><span class="pre">repository.mappings</span></tt> to the location of the mappings.py file:</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre>[repository]
+...
+mappings=path/to/mappings.py
+</pre></div>
+</div>
+<div class="section" id="existing-repository-requirements">
+<h3>Existing Repository Requirements<a class="headerlink" href="#existing-repository-requirements" title="Permalink to this headline">¶</a></h3>
+<p>pycsw requires certain repository attributes and semantics to exist in any repository to operate as follows:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">pycsw:Identifier</span></tt>: unique identifier</li>
+<li><tt class="docutils literal"><span class="pre">pycsw:Typename</span></tt>: typename for the metadata; typically the value of the root element tag (e.g. <tt class="docutils literal"><span class="pre">csw:Record</span></tt>, <tt class="docutils literal"><span class="pre">gmd:MD_Metadata</span></tt>)</li>
+<li><tt class="docutils literal"><span class="pre">pycsw:Schema</span></tt>: schema for the metadata; typically the target namespace (e.g. <tt class="docutils literal"><span class="pre">http://www.opengis.net/cat/csw/2.0.2</span></tt>, <tt class="docutils literal"><span class="pre">http://www.isotc211.org/2005/gmd</span></tt>)</li>
+<li><tt class="docutils literal"><span class="pre">pycsw:InsertDate</span></tt>: date of insertion</li>
+<li><tt class="docutils literal"><span class="pre">pycsw:XML</span></tt>: full XML representation</li>
+<li><tt class="docutils literal"><span class="pre">pycsw:AnyText</span></tt>: bag of XML element text values, used for full text search.  Realized with the following design pattern:<ul>
+<li>capture all XML element and attribute values</li>
+<li>store in repository</li>
+</ul>
+</li>
+<li><tt class="docutils literal"><span class="pre">pycsw:BoundingBox</span></tt>: string of WKT or EWKT geometry</li>
+</ul>
+<p>The following repository semantics exist if the attributes are specified:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">pycsw:Keywords</span></tt>: comma delimited list of keywords</li>
+<li><tt class="docutils literal"><span class="pre">pycsw:Links</span></tt>: structure of links in the format &#8220;name,description,protocol,url[^,,,[^,,,]]&#8221;</li>
+</ul>
+<p>Values of mappings can be derived from the following mechanisms:</p>
+<ul class="simple">
+<li>text fields</li>
+<li>Python datetime objects</li>
+<li>Python functions</li>
+</ul>
+<p>Further information is provided in <tt class="docutils literal"><span class="pre">server/config.py:MD_CORE_MODEL</span></tt>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="documentation.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Administration</a><ul>
+<li><a class="reference internal" href="#metadata-repository-setup">Metadata Repository Setup</a></li>
+<li><a class="reference internal" href="#supported-information-models">Supported Information Models</a></li>
+<li><a class="reference internal" href="#setting-up-the-database">Setting up the Database</a></li>
+<li><a class="reference internal" href="#loading-records">Loading Records</a></li>
+<li><a class="reference internal" href="#exporting-the-repository">Exporting the Repository</a></li>
+<li><a class="reference internal" href="#optimizing-the-database">Optimizing the Database</a></li>
+<li><a class="reference internal" href="#database-specific-notes">Database Specific Notes</a><ul>
+<li><a class="reference internal" href="#postgresql">PostgreSQL</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mapping-to-an-existing-repository">Mapping to an Existing Repository</a><ul>
+<li><a class="reference internal" href="#existing-repository-requirements">Existing Repository Requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="configuration.html"
+                        title="previous chapter">Configuration</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="distributedsearching.html"
+                        title="next chapter">Distributed Searching</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/docs/administration.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul><p>
+   <script type="text/javascript" src="http://www.ohloh.net/p/488022/widgets/project_thin_badge.js"></script> 
+</p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="distributedsearching.html" title="Distributed Searching"
+             >next</a></li>
+        <li class="right" >
+          <a href="configuration.html" title="Configuration"
+             >previous</a> |</li>
+        <li><a href="documentation.html">Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+
+    <div class="footer">
+        &copy; Copyright 2010-2011, Tom Kralidis.
+      Last updated on 2012-04-08T21:06:15Z.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://sourceforge.net/apps/piwik/pycsw/" : "http://sourceforge.net/apps/piwik/pycsw/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  <script type="text/javascript">
+    try {
+      var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
+      piwikTracker.trackPageView();
+      piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+  </script>
+  <noscript>
+    <p>
+      <img src="http://sourceforge.net/apps/piwik/pycsw/piwik.php?idsite=3" style="border:0" alt=""/>
+    </p>
+  </noscript>
+  <!-- End Piwik Tag -->
+
+
+  </body>
+</html>

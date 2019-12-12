@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Web Processing Service (WPS) &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Πρότυπα Open Geospatial Consortium" href="standards.html" />
+    <link rel="next" title="Επικοινωνία" href="../contact.html" />
+    <link rel="prev" title="Web Map Service (WMS)" href="wms_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-OGC-left2.png" id="wps-overview-el"><img alt="OGC logo" class="align-right" id="wps-overview-el" src="../../_images/logo-OGC-left2.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/logo-OGC-right2.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right2.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="web-processing-service-wps">
+<h1>Web Processing Service (WPS)<a class="headerlink" href="#web-processing-service-wps" title="Permalink to this headline">¶</a></h1>
+<p>Το πρότυπο WPS παρέχει κανόνες για την προτυποποίηση δεδομένων εισόδου και εξόδου (αιτήματα και απαντήσεις) για υπηρεσίες χωρικής επεξεργασίας, όπως την επίθεση πολυγώνων και τα δεδομένα εισόδου και εξόδου της.</p>
+<a class="reference internal image-reference" href="../../_images/wps2.jpg"><img alt="WPS in Context" src="../../_images/wps2.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>Το πρότυπο Web Processing Service (WPS) του OGC® περιγράφει την πρόσβαση σε χωρικές λειτουργίες επεξεργασίας μέσω διαδικτύου.
+Οι επεξεργασίες αυτές περιλαμβάνουν κάθε αλγόριθμο, υπολογισμό ή μοντέλο που λειτουργεί πάνω σε χωρικά δεδομένα (διανυσματικά ή εικονιστικά). Μια υπηρεσία WPS μπορεί να προσφέρει υπολογισμούς απλούς όσο η αφαίρεση ενός συνόλου χωρικά κατανεμημένων αριθμών από άλλους (π.χ., ο προσδιορισμός της διαφοράς των κρουσμάτων γρίπης μεταξύ δύο χρονικών στιγμών), ή τόσο πολύπλοκους όσο ένα μοντέλο παγκόσμιας αλλαγής κλίματος.  (<a class="reference external" href="http://www.opengeospatial.org/standards/wps">http://www.opengeospatial.org/standards/wps</a>)</p>
+<p>Μια υπηρεσία WPS είναι ιδιαιτέρως χρήσιμη για:</p>
+<ul class="simple">
+<li>Μείωση πολυπλοκότητας στην επεξεργασία δεδομένων παρέχοντας αλγορίθμους σε αρθρώματα (plug &amp; play).</li>
+<li>Επιτρέπει την δημιουργία αλυσίδων από επεξεργασίες.</li>
+<li>Επιτρέπει μια επεξεργασία να υλοποιηθεί μια φορά και να μπορεί να χρησιμοποιηθεί στη συνέχεια παντού.</li>
+<li>Κεντρική διαχείριση. Επεξεργασίες/μοντέλα συντηρούνται σε κεντρικό σημείο από αυτούς που τις δημιούργησαν.</li>
+<li>Την αξιοποίηση ισχυρών υπολογιστικών συστημάτων σε κεντρικούς εξυπηρετητές.</li>
+<li>Εύκολη και διαλειτουργική πρόσβαση σε επεξεργασίες μεγάλης πολυπλοκότητας, όπως μοντέλα παγκόσμιας κλιματικής αλλαγής.</li>
+</ul>
+<div class="section" id="id1">
+<h2>Δείτε επίσης<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Άλλα πρότυπα υπηρεσιών δεδομένων OGC:</p>
+<ul class="simple">
+<li>Web Coverage Processing Service</li>
+<li>Sensor Planning Service</li>
+<li><a class="reference internal" href="wcs_overview.html"><em>Web Coverage Service (WCS)</em></a></li>
+<li><a class="reference internal" href="wms_overview.html"><em>Web Map Service (WMS)</em></a></li>
+<li><a class="reference internal" href="wfs_overview.html"><em>Web Feature Service (WFS)</em></a></li>
+<li>Grid Coverage Service</li>
+<li><a class="reference internal" href="sos_overview.html"><em>Sensor Observation Service (SOS)</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

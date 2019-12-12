@@ -1,0 +1,173 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Natural Earth &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 6.5 包含内容一览" href="overview.html" />
+    <link rel="next" title="OSGeo 美国北卡洛莱娜州教育用数据集" href="nc_dataset_overview.html" />
+    <link rel="prev" title="Meta CRS" href="metacrs_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.naturalearthdata.com/"><img alt="project logo" class="align-right" src="../../_images/logo-naturalearth11.png" style="width: 125.0px; height: 42.0px;" /></a>
+<div class="section" id="natural-earth">
+<h1>Natural Earth<a class="headerlink" href="#natural-earth" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Natural Earth 地图数据<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>　　Natural Earth 为制图人员提供了方便快捷的数据支持用于制作 1:1000万 至 1:1亿 小比例尺的全球、区域及国家尺度地图。数据中包含了政治界限和自然地理对象，并提供叠合严密的矢量和栅格数据。</p>
+<p>　　Natural Earth 为众多制图人员解决了一个常见的问题：即获得出版所需质量的数据用于制作小比例尺地图，并就所用比例尺选取合适的数据量。</p>
+<a class="reference internal image-reference" href="../../_images/naturalearth11.png"><img alt="natural earth screenshot" class="align-right" src="../../_images/naturalearth11.png" style="width: 563.2px; height: 422.4px;" /></a>
+<div class="section" id="id2">
+<h3>核心特性<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>矢量要素伴有名称和其它信息</li>
+<li>大尺寸的多边形被切分以提高处理效率</li>
+<li>具备投影适应性的多边形在 180º 经度切分除严密重合，且边界线段内含有适当密度的插入点，在圆锥投影等造成的变形下依然能够圆滑显示，但又不至于严重影响渲染速度。</li>
+<li>栅格数据包括来自最新 NASA SRTM Plus 高程模型的信息，以灰度和彩色色阶显示，并与矢量图严密配合</li>
+<li>为如 Google 或 Yahoo 地图的网络地图服务专门优化，地理要素含有比例尺范围注记用于在合适的缩放尺度下显示</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>数据内容<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>人文类矢量数据：
+　　包含国家、争议地区、州/邦/省界（第一级行政区划）、较大型城镇、公路、铁路、城市界限、公园和保护区，太平洋群岛邦联，水体边界</p>
+<dl class="docutils">
+<dt>自然类矢量数据：</dt>
+<dd>包含海岸线、陆地、海洋、岛屿、礁石、自然地物边界与点位、河流、湖泊、冰川、冰盖、海底地形、其它地理边界、坐标参考线</dd>
+</dl>
+<p>栅格数据：
+　　灰阶与色阶表示的地形（包括海底地形）、地形阴影渲染、卫星遥感提取的地表覆盖类型、理想环境模型、海洋水体、流域</p>
+</div>
+<div class="section" id="id4">
+<h3>详细信息<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><strong>官方网站：</strong> <a class="reference external" href="http://naturalearthdata.com">http://naturalearthdata.com</a></p>
+<p><strong>开源协议：</strong> 无特定协议</p>
+<p><strong>数据版本：</strong> 2.0</p>
+<p><strong>数据格式：</strong> SHP 和 TIF+TFW</p>
+<p><strong>坐标系统：</strong> WGS84</p>
+<p><strong>技术支持：</strong> <a class="reference external" href="http://naturalearthdata.com/forums/">http://naturalearthdata.com/forums/</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

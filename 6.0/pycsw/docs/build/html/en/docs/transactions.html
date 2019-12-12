@@ -1,0 +1,195 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Transactions &mdash; Documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Documentation" href="../index.html" />
+    <link rel="next" title="Profile Plugins" href="profiles.html" />
+    <link rel="prev" title="XML Sitemaps" href="sitemaps.html" /> 
+  </head>
+  <body>
+
+<style type="text/css">
+  .header a:link{color: white;}
+  .header a:visited{color: white;}
+</style>
+
+<table class="header" width="100%" style="width: 100%;">
+  <tr>
+    <td class="left" style="padding: 10px 10px 0px 0px; text-align: left; vertical-align: top;"><a href="/index.html" title="pycsw">pycsw</a></td>
+    <td class="right" style="padding: 10px 10px 0px 0px; text-align: right; vertical-align: top;">
+      <a href="/index.html" title="Home">Home</a> |
+      <a href="/demos.html" title="Demos">Demos</a> |
+      <a href="/docs/index.html" title="Docs">Docs</a> |
+      <a href="http://sourceforge.net/apps/trac/pycsw" title="Issue Tracker">Issue Tracker</a> |
+      <a href="/faq.html" title="FAQ">FAQ</a> |
+      <a href="/download.html" title="Download">Download </a>
+    </td>
+  </tr>
+</table>
+
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="profiles.html" title="Profile Plugins"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="sitemaps.html" title="XML Sitemaps"
+             accesskey="P">previous</a> |</li>
+        <li><a href="documentation.html">Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="transactions">
+<span id="id1"></span><h1>Transactions<a class="headerlink" href="#transactions" title="Permalink to this headline">¶</a></h1>
+<p>pycsw has the ability to process CSW Harvest and Transaction requests (CSW-T).  Transactions are disabled by default; to enable, <tt class="docutils literal"><span class="pre">manager.transactions</span></tt> must be set to <tt class="docutils literal"><span class="pre">true</span></tt>.  Access to transactional functionality is limited to IP addresses which must be set in <tt class="docutils literal"><span class="pre">manager.allowed_ips</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For transactions to be functional when using SQLite3, the SQLite3 database file (<strong>and it&#8217;s parent directory</strong>) must be fully writable.  For example:</p>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir /path/data
+<span class="nv">$ </span>chmod 777 /path/data
+<span class="nv">$ </span>chmod 666 test.db
+<span class="nv">$ </span>mv test.db /path/data
+</pre></div>
+</div>
+<p>For CSW-T deployments, it is strongly advised that this directory reside in an area that is not accessible by HTTP.</p>
+<div class="section" id="harvesting">
+<h2>Harvesting<a class="headerlink" href="#harvesting" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Your server must be able to make outgoing HTTP requests for this functionality.</p>
+</div>
+<p>pycsw supports the CSW-T <tt class="docutils literal"><span class="pre">Harvest</span></tt> operation.  Records which are harvested require to setup a cronjob to periodically refresh records in the local repository.  A sample cronjob is available in <tt class="docutils literal"><span class="pre">etc/harvest-all.cron</span></tt> which points to <tt class="docutils literal"><span class="pre">sbin/pycsw-admin.py</span></tt> (you must specify the correct path to your configuration).  Harvest operation results can be sent by email (via <tt class="docutils literal"><span class="pre">mailto:</span></tt>) or ftp (via <tt class="docutils literal"><span class="pre">ftp://</span></tt>) if the Harvest request specifies <tt class="docutils literal"><span class="pre">csw:ResponseHandler</span></tt>.</p>
+</div>
+<div class="section" id="id2">
+<h2>Transactions<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>pycsw support 3 modes of the <tt class="docutils literal"><span class="pre">Transaction</span></tt> operation (<tt class="docutils literal"><span class="pre">Insert</span></tt>, <tt class="docutils literal"><span class="pre">Update</span></tt>, <tt class="docutils literal"><span class="pre">Delete</span></tt>):</p>
+<ul class="simple">
+<li><strong>Insert</strong>: full XML documents can be inserted as per CSW-T</li>
+<li><strong>Update</strong>: updates can be made as full record updates or record properties against a <tt class="docutils literal"><span class="pre">csw:Constraint</span></tt></li>
+<li><strong>Delete</strong>: deletes can be made against a <tt class="docutils literal"><span class="pre">csw:Constraint</span></tt></li>
+</ul>
+<p>The <a class="reference internal" href="testing.html#tester"><em>Tester</em></a> contains CSW-T request examples.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="documentation.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Transactions</a><ul>
+<li><a class="reference internal" href="#harvesting">Harvesting</a></li>
+<li><a class="reference internal" href="#id2">Transactions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sitemaps.html"
+                        title="previous chapter">XML Sitemaps</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="profiles.html"
+                        title="next chapter">Profile Plugins</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/docs/transactions.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul><p>
+   <script type="text/javascript" src="http://www.ohloh.net/p/488022/widgets/project_thin_badge.js"></script> 
+</p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="profiles.html" title="Profile Plugins"
+             >next</a></li>
+        <li class="right" >
+          <a href="sitemaps.html" title="XML Sitemaps"
+             >previous</a> |</li>
+        <li><a href="documentation.html">Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+
+    <div class="footer">
+        &copy; Copyright 2010-2011, Tom Kralidis.
+      Last updated on 2012-04-08T21:06:15Z.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://sourceforge.net/apps/piwik/pycsw/" : "http://sourceforge.net/apps/piwik/pycsw/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  <script type="text/javascript">
+    try {
+      var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
+      piwikTracker.trackPageView();
+      piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+  </script>
+  <noscript>
+    <p>
+      <img src="http://sourceforge.net/apps/piwik/pycsw/piwik.php?idsite=3" style="border:0" alt=""/>
+    </p>
+  </noscript>
+  <!-- End Piwik Tag -->
+
+
+  </body>
+</html>

@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης uDig &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Καλώς ήρθατε στο OSGeo-Live" href="../index.html" />
+    <link rel="next" title="Δημιουργώντας ένα εκκινήσιμο USB με το OSGeo-Live" href="usb_quickstart.html" />
+    <link rel="prev" title="Εγχειρίδιο Γρήγορης Εκκίνησης TinyOWS" href="tinyows_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-uDig5.png"><img alt="project logo" class="align-right" src="../../_images/logo-uDig5.png" style="width: 76.8px; height: 79.2px;" /></a>
+<div class="section" id="udig">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης uDig<a class="headerlink" href="#udig" title="Permalink to this headline">¶</a></h1>
+<p>Το uDig (User Friendly Internet Desktop GIS), είναι ένα λογισμικό GIS για
+επεξεργασία και θέαση χωρικών δεδομένων.</p>
+<p>Οι συγκεκριμένες οδηγίες περιγράφουν πώς:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Φορτώνουμε επίπεδα χαρτών από αρχεία shapefile και υπηρεσίες Web Map Service (WMS)</li>
+<li>Χρησιμοποιούμε βασικά εργαλεία χαρτογραφίας</li>
+<li>Εφαρμόζουμε στύλ σε χάρτες δίνοντάς τους χρώμα</li>
+</ul>
+</div></blockquote>
+<div class="section" id="id1">
+<h2>Εκκίνηση uDig<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Επιλέξτε <em class="menuselection">Geospatial ‣ Desktop GIS ‣ uDig</em> από το μενού των εφαρμογών</li>
+<li>Η εφαρμογή χρειάζεται λίγο χρόνο για να ξεκινήσει</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_Quickstart1Splash2.png"><img alt="../../_images/udig_Quickstart1Splash2.png" src="../../_images/udig_Quickstart1Splash2.png" style="width: 350.0px; height: 224.0px;" /></a>
+</div></blockquote>
+<p>Εαν αντιμετωπίσετε δυσκολίες, ή αν εκτελείτε ήδη το uDig, παρακαλούμε ανατρέξτε στην σελίδα αναφοράς Running uDig.</p>
+</div>
+<div class="section" id="id2">
+<h2>Εικόνα καλωσορίσματος<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Όταν ξεκινάτε το uDig για πρώτη φορά, η εικόνα καλωσορίσματος καταλαμβάνει ολόκληρη την οθόνη. Η οθόνη αυτή
+έχει συνδέσεις με βοηθήματα, έγγραφα και την ιστοσελίδα του έργου.</li>
+<li>Κάντε κλίκ στο βέλος που έχει τίτλο Workbench στο πάνω δεξί άκρο της οθόνης, για να φανερωθούν τα περιεχόμενα της επιφάνειας εργασίας του uDig.</li>
+</ol>
+<blockquote>
+<div><img alt="../../_images/udig_welcome2.png" src="../../_images/udig_welcome2.png" />
+</div></blockquote>
+<p>Μπορείτε να επιστρέψετε στην αρχική οθόνη όποια στιγμή επιλέξετε από το μενού <em class="menuselection">Help ‣ Welcome</em>.</p>
+</div>
+<div class="section" id="id3">
+<h2>Επιφάνεια Εργασίας<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Το παράθυρο της επιφάνειας εργασίας προσφέρει πολλούς επεξεργαστές (ο καθένας δείχνει έναν χάρτη) και υποστηρίζει Όψεις (προσφέροντας πληροφορίες για τον εκάστoτε ενεργό χάρτη).</p>
+<blockquote>
+<div><img alt="../../_images/udig_workbench2.png" src="../../_images/udig_workbench2.png" />
+</div></blockquote>
+<p>Παραπάνω φαίνεται μια τυπική συνεδρία uDig με τον επεξεργαστή χάρτη, την όψη εργασιών (Projects view), τα θεματικά επίπεδα (Layers view) και τον κατάλογο (Catalog
+view). Αυτές οι όψεις περιγράφονται στη συνέχεια όπου και αναφέρουμε την λειτουργία τους.</p>
+</div>
+<div class="section" id="id4">
+<h2>Αρχεία<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Ξεκινώντας θα φορτώσουμε μερικά από τα δοκιμαστικά δεδομένα που περιλαμβάνονται στο DVD.</p>
+<ol class="arabic simple">
+<li>Επιλέξτε <em class="menuselection">Layer ‣ Add</em> από το μενού για να ανοίξετε τον βοηθό <strong>Add Data</strong></li>
+<li>Επιλέξτε <strong>Files</strong> από τη λίστα των πηγών δεδομένων</li>
+<li>Επιλέξτε <em class="guilabel">Next</em> για να ανοίξει το παράθυρο επιλογής αρχείου</li>
+<li>Το OSGeo-Live DVD περιλαμβάνει δοκιμαστικά δεδομένα στο:<ul>
+<li><tt class="file docutils literal"><span class="pre">~/data</span></tt> (a short cut to <tt class="file docutils literal"><span class="pre">/usr/local/share/data</span></tt>)</li>
+<li><tt class="file docutils literal"><span class="pre">/usr/local/share/udig/udig/udig-data/</span></tt></li>
+</ul>
+</li>
+<li>Επιλέξτε το παρακάτω αρχείο από τον φάκελο δεδομένων του udig:<ul>
+<li><tt class="file docutils literal"><span class="pre">countries.shp</span></tt></li>
+</ul>
+</li>
+<li>Επιλέξτε <em class="guilabel">Open</em><ul>
+<li>Ένας νέος επεξεργαστής χάρτη θα ανοίξει με βάση τα περιεχόμενα του αρχείου shapefile. Το βασικό όνομα και
+το σύστημα προβολής του χάρτη επιλέχθηκε με βάση τα περιεχόμενα του shapefile.</li>
+<li>Στο παράθυρο  <strong>Καταλόγου</strong> έχει προστεθεί μια εγγραφή για το  <tt class="file docutils literal"><span class="pre">countries.shp</span></tt>. Αυτό
+το παράθυρο χρησιμοποιείται για να καταγράψει το ιστορικό δεδομένων του χρήστη στο uDig.</li>
+<li>Το παράθυρο <strong>Επιπέδων (Layers)</strong> δείχνει ενα μοναδικό επίπεδο που φαίνεται στον χάρτη. Αυτό το παράθυρο χρησιμοποιείται για να αλλάξει
+τη σειρά και εμφάνιση των επιπέδων πληροφορίας του χάρτη.</li>
+<li>Η όψη <strong>Εργασιών (Projects)</strong> έχει ενημερωθεί δείχνοντας ότι ο χάρτης σας είναι αποθηκευμένος στο projects &gt; countries.
+Μπορούμε να έχουμε πολλές εργασίες (projects) ανοιχτές ταυτόχρονα και κάθε εργασία πολλούς χάρτες.</li>
+</ul>
+</li>
+<li>Ανοίγουμε τον φάκελο δεδομένων στην επιφάνεια εργασίας</li>
+<li>Σέρνουμε το αρχείο <tt class="file docutils literal"><span class="pre">clouds.jpg</span></tt> στον επεξεργαστή χάρτη (Map Editor), και ένα νέο επίπεδο προστίθεται στο χάρτη.</li>
+<li>Μπορούμε να δούμε τη σειρά με την οποία εμφανίζονται τα επίπεδα στη όψη επιπέδων. Αυτή τη στιγμή το αρχείο clouds.jpg εμφανίζεται
+πάνω από το επίπεδο των χωρών.</li>
+<li>Επιλέγουμε το επίπεδο clouds.jpg στον κατάλογο και στο σέρνουμε στο τέλος της λίστας</li>
+</ol>
+<blockquote>
+<div><img alt="../../_images/udig_QuickstartCountriesMap2.jpg" src="../../_images/udig_QuickstartCountriesMap2.jpg" />
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Ένα από τα πρώτα ερωτήματα που συναντάμε όταν το uDig είναι υποψήφιο για χρήση από κάποιον οργανισμό είναι πόση μνήμη
+χρησιμοποιεί η εφαρμογή. Σε αντίθεση με άλλες εφαρμογές GIS το uDig μπορεί να χρησιμοποιήσει συγκεκριμένη ποσότητα μνήμης. Το
+παραπάνω shapefile δεν φορτώνεται στη μνήμη, έχουμε πολιτική να κρατάμε τα δεδομένα στο δίσκο και να εμφανίζουμε δεδομένα
+όπως αυτό το shapefile στην οθόνη όταν αυτό χρειάζεται.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Μπορείτε επίσης να σύρετε αρχεία shapefile απευθείας στην εφαρμογή uDig!</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Χάρτης<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Μπορείτε να ελέγξετε σε ποιό μέρος του κόσμου δείχνει ο επεξεργαστής χάρτη με τη χρήση των εργαλείων πλοήγησης στη μπάρα εργαλείων στο πάνω μέρος της οθόνης.</p>
+<ol class="arabic simple">
+<li>Το <img alt="ZOOM" src="../../_images/udig_zoom_mode2.gif" /> εργαλείο μεγέθυνσης (Zoom tool) είναι διαθέσιμο σαν προεπιλογή<ul>
+<li>Χρησιμοποιούμε το εργαλείο μεγέθυνσης σχεδιάζοντας ένα παραλληλόγραμμο στο χάρτη με τη χρήση του αριστερού πλήκτρου του ποντικιού γύρω από την περιοχή που μας ενδιαφέρει
+να δούμε.</li>
+<li>Για να απομακρυνθούμε σχεδιάζουμε παραλληλόγραμμο με το δεξί κουμπί του ποντικιού. Τα όρια του χάρτη θα τοποθετηθούν
+στο παραλληλόγραμμο που σχεδιάζουμε.</li>
+</ul>
+</li>
+<li>Το <img alt="PAN" src="../../_images/udig_pan_mode2.gif" /> εργαλείο μετάθεσης (Pan) μπορεί να χρησιμοποιηθεί για να μετακινηθούμε γύρω στο χάρτη μας χωρίς να αλλάξουμε την κλίμακα εμφάνισης.</li>
+<li>Επιπλέον υπάρχουν διάφορα διαθέσιμα κουμπιά που μπορούν να χρησιμοποιηθούν ανα πάσα στιγμή:<ul>
+<li><img alt="SHOWALL" src="../../_images/udig_zoom_extent_co2.gif" /> Εμφάνιση όλων (Show All), μπορεί να επαναφέρει το χάρτη σε πλήρη έκταση οποιαδήποτε στιγμή</li>
+<li><img alt="ZOOM_IN" src="../../_images/udig_zoom_in_co2.gif" /> Μεγέθυνση (Zoom In) και <img alt="ZOOM_OUT" src="../../_images/udig_zoom_out_co2.gif" /> σμίκρυνση (Zoom Out) μπορούν να χρησιμοποιηθούν για να αλλάξουν την κλίμακα κατά ένα προκαθορισμένο ποσό.</li>
+<li>Μπορούμε να χρησιμοποιήσουμε τα Navigation Back <img alt="BNAV" src="../../_images/udig_backward_nav2.gif" /> και Forward <img alt="FNAV" src="../../_images/udig_forward_nav2.gif" /> από το μενού εντολών για να επισκεφθούμε
+σημεία που είχαμε δει προηγουμένως.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Τα περισσότερα εργαλεία επιτρέπουν τη μετάθεση κρατώντας το κεντρικό πλήκτρο του ποντικιού και τον ελέγχο της κλίμακας με
+τη ροδέλα του ποντικιού.</p>
+</div>
+</div>
+<div class="section" id="web-map-server">
+<h2>Web Map Server<a class="headerlink" href="#web-map-server" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Εαν δεν υπάρχει σύνδεση στο διαδίκτυο, εκτελέστε <em class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</em> για ένα τοπικό WMS. Το script
+θα ανοίξει μια σελίδα με ένα σύνδεσμο &#8220;wms capabilities&#8221; το οποίο μπορούμε να σύρουμε στον άδειο μας χάρτη.</p>
+</div>
+<p>Ένας από τους λόγους να χρησιμοποιούμε την εφαρμογή uDig είναι να έχουμε πρόσβαση σε όλα τα δωρεάν και ελεύθερα χωρικά δεδομένα που είναι διαθέσιμα στο διαδίκτυο. Αυτό το κεφάλαιο καλύπτει τη χρήση του προτύπου WMS το οποίο καθιστά διαθέσιμα
+επίπεδα πληροφορίας που μπορούμε να προσθέσουμε στους χάρτες μας.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Μπορούμε να συνδεθούμε σε εξυπηρετητές WMS με τη χρήση του βοηθού εισαγωγής δεδομένων (Add Data Wizard)
+με λειτουργία συρσίματος.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Επιλέξτε <em class="menuselection">File ‣ New ‣ New Map</em> από το μενού εντολών</p>
+</li>
+<li><p class="first">Εναλλάξτε την όψη <strong>Web</strong>, κάνοντας κλίκ στη σελίδα δίπλα από τον <strong>Κατάλογο</strong> για να ενεργοποιηθεί η όψη <em>Web</em>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_WebViewClick2.png"><img alt="../../_images/udig_WebViewClick2.png" src="../../_images/udig_WebViewClick2.png" style="width: 415.5px; height: 177.0px;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">Κάντε κλίκ στο σύνδεσμο <a class="reference external" href="http://www2.dmsolutions.ca/cgi-bin/mswms_gmap?Service=WMS&amp;VERSION=1.1.0&amp;REQUEST=GetCapabilities">WMS:dm solution</a></p>
+</li>
+<li><p class="first">Από την σελίδα πηγών δεδομένων επιλέγουμε τα παρακάτω επίπεδα:</p>
+<ul>
+<li><p class="first">Υψομετρία/Βαθυμετρία (Elevation/Bathymetry)</p>
+</li>
+<li><p class="first">Πάρκα (Parks)</p>
+</li>
+<li><p class="first">Πόλεις (Cities)</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_AddWMSLayers2.png"><img alt="../../_images/udig_AddWMSLayers2.png" src="../../_images/udig_AddWMSLayers2.png" style="width: 367.5px; height: 410.2px;" /></a>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p class="first">Επιλέξτε <em class="guilabel">Finish</em> για να προσθέσετε αυτά τα επίπεδα στο χάρτη</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_WMSMap2.png"><img alt="../../_images/udig_WMSMap2.png" src="../../_images/udig_WMSMap2.png" style="width: 714.0px; height: 517.3px;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">Χρησιμοποιήστε το <img alt="ZOOM" src="../../_images/udig_zoom_mode2.gif" /> εργαλείο μεγέθυνσης για να μετακινηθείτε πιο κοντά σε ένα από τα πάρκα</p>
+</li>
+<li><p class="first">Αλλάξτε το ποντίκι στο <img alt="INFO" src="../../_images/udig_info_mode2.gif" /> εργαλείο πληροφοριών (Info Tool) και κάντε κλίκ σε ένα πάρκο για να μάθετε περισσότερα για αυτό</p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Μπορείτε να εναλλάξετε τα προηγούμενα εργαλεία (zoom και info) με την χρήση των πλήκτρων Z και I στο πληκτρολόγιο.</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Στύλ<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Επιλέξτε το project &gt; countries, μπορείτε να κάνετε διπλό κλίκ για να ανοίξετε το χάρτη, ή δεξί κλίκ και επιλογή Open Map</p>
+</li>
+<li><p class="first">Επιλέξτε το επίπεδο των χωρών στην όψη επιπέδων</p>
+</li>
+<li><p class="first">Ανοίξτε τον επεξεργαστή στύλ (Style Editor) με δεξί κλίκ στο επίπεδο των χωρών και την επιλογή Change Style</p>
+</li>
+<li><p class="first">Θα κάνουμε ορισμένες αλλαγές στο πως εμφανίζονται οι χώρες</p>
+<ul class="simple">
+<li>Γραμμή (Line): Κάντε κλίκ στο Color και αλλατε την τιμή σε BLACK</li>
+<li>Γέμισμα (Fill): απενεργοποιήστε το πλαίσιο για να απενεργοποιηθεί το γέμισμα με χρώμα</li>
+<li>Λεζάντα (Label): ενεργοποιήστε το πλαίσιο, και επιλέξτε CNTRY_NAME από τη λίστα των περιγραφικών χαρακτηριστικών</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/udig_StyleEditor2.png"><img alt="../../_images/udig_StyleEditor2.png" src="../../_images/udig_StyleEditor2.png" style="width: 716.8px; height: 498.4px;" /></a>
+</li>
+<li><p class="first">Πιέστε <em class="guilabel">Apply</em> για να δείτε πως φαίνονται οι αλλαγές στο χάρτη. Η όψη επιπέδων επίσης θα αλλάξει
+για να αντιστοιχεί στο νέο στύλ</p>
+</li>
+<li><p class="first">Όταν είστε ευχαριστημένοι με το αποτέλεσμα μπορείτε να επιλέξετε <em class="guilabel">Close</em> για να κλείσει το παράθυρο</p>
+</li>
+<li><p class="first">Ορισμένα αρχεία περιλαμβάνουν ρυθμίσεις στύλ, επιλέξτε <em class="menuselection">Layer ‣ Add</em> από το μενού εντολών</p>
+</li>
+<li><p class="first">Επιλέξτε <strong>Files</strong> από τη λίστα πηγών δεδομένων και στη συνέχεια επιλέξτε <em class="guilabel">Next</em></p>
+</li>
+<li><p class="first">Χρησιμοποιώντας το παράθυρο επιλογής αρχείων ανοίξτε το <strong>timezone.shp</strong> και πιέστε <em class="guilabel">Open</em></p>
+</li>
+<li><p class="first">Είναι δύσκολο να διακρίνουμε τι συμβαίνει με το επίπεδο clouds.jpg που παρέχει τόσες λεπτομέρειες.
+Επιλέξτε <em class="menuselection">Map ‣ Mylar</em> από το μενού εντολών για να επικεντρωθείτε στο επιλεγμένο επίπεδο</p>
+</li>
+<li><p class="first">Χρησιμοποιώντας την όψη  <em>επιπέδων (Layer)</em> επιλέξτε ζώνη ώρας, χώρες και το clouds.jpg με τη σειρά για να παρατηρήσετε το αποτέλεσμα</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_MapMylar2.jpg"><img alt="../../_images/udig_MapMylar2.jpg" src="../../_images/udig_MapMylar2.jpg" style="width: 714.0px; height: 517.3px;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">Μπορείτε να απενεργοποιήσετε αυτό το εφέ ανα πάσα στιγμή επιλέγοντας <em class="menuselection">Map ‣ Mylar</em> από το μενού εντολών</p>
+</li>
+</ol>
+</div>
+<div class="section" id="id7">
+<h2>Πράγματα για δοκιμή<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>Μπορείτε να δοκιμάσετε τα παρακάτω:</p>
+<ol class="arabic simple">
+<li>Δοκιμάστε να δείτε τα δικά σας επίπεδα GIS, ή δοκιμάστε να εισάγετε ένα επίπεδο δεδομένων από μια υπηρεσία Web Feature Service (WFS).</li>
+<li>Δοκιμάστε να αλλάξετε το στύλ σε ένα επίπεδο WFS.</li>
+</ol>
+</div>
+<div class="section" id="id8">
+<h2>Τί αναμένεται στη συνέχεια?<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>Αυτό είναι το πρώτο βήμα στο δρόμο για τη χρήση του uDig. Υπάρχει πολύ καλό υλικό ακόμα να ανακαλύψετε στις οδηγίες εκμάθησης του λογισμικού.</p>
+<ul>
+<li><p class="first">Οδηγίες εκμάθησης 1</p>
+<p>Δοκιμάστε τη χρήση βάσης δεδομένων PostGIS, εξάγοντας δεδομένα από μια υπηρεσία WFS και εξερευνήστε
+τη χρήση θεμάτων (Themes) με την ανεπτυγμένη τεχνολογία σύνθεσης χρωμάτων.</p>
+<p><tt class="file docutils literal"><span class="pre">/usr/data/udig/udig-docs/uDigWalkthrough</span> <span class="pre">1.pdf</span></tt></p>
+</li>
+<li><p class="first">Οδηγίες εκμάθησης 2 - Μάθετε πως να δημιουργείτε shapefiles και να χρησιμοποιείτε τα εργαλεία επεξεργασίας (Edit tools) για να αλλάζετε
+τα δεδομένα. Καλύπτει οδηγίες για εγκατάσταση του <a class="reference internal" href="../overview/geoserver_overview.html"><em>GeoServer</em></a> και επεξεργασίας με χρήση υπηρεσιών WFS
+Εξυπηρετητής.</p>
+<p>Διαθέσιμο στο <a class="reference external" href="http://udig.refractions.net/">http://udig.refractions.net/</a></p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы с GeoNetwork &mdash; OSGeo-Live 7.9
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.9
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.9
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="figure align-right">
+<img alt="Логотип проекта" src="../../_images/logo-GeoNetwork23.png" />
+</div>
+<div class="section" id="geonetwork">
+<h1>Начало работы с GeoNetwork<a class="headerlink" href="#geonetwork" title="Permalink to this headline">¶</a></h1>
+<p>GeoNetwork — это система управления распредёленной пространственной информацией,
+основанная на стандартах. Она создана для доступа к пространственным
+данным из множества различных источников посредством метаданных.</p>
+<p>Помимо того, как запустить GeoNetwork, данное руководство описывает:</p>
+<ul class="simple">
+<li>ряд разнообразных способов поиска пространственных данных;</li>
+<li>как загружать и отображать данные из результатов поиска;</li>
+<li>систему привилегий, ролей и групп пользователей, используемой в GeoNetwork.</li>
+</ul>
+<p>Подробную документацию можно найти на
+<a class="reference external" href="http://localhost:8880/geonetwork/docs/eng/users/index.html">http://localhost:8880/geonetwork/docs/eng/users/index.html</a> или по щелчку
+на ссылке &#8216;Help&#8217; домашней страницы GeoNetwork.</p>
+<div class="section" id="gn">
+<h2>Запуск GeoNetwork<a class="headerlink" href="#gn" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Щёлкните на иконке &#8220;Start GeoNetwork&#8221;.</li>
+<li>Запуск займет пару секунд</li>
+<li>Перейдите на домашнюю страницу GeoNetwork <a class="reference external" href="http://localhost:8880/geonetwork">http://localhost:8880/geonetwork</a>. Вы увидите первую страницу GeoNetwork, которая выглядит, как на скриншоте ниже.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-firstviews11.png" src="../../_images/geonetwork-firstviews11.png" />
+</div>
+<ul class="simple">
+<li>Для ознакомления с GeoNetwork мы загрузим пробный набор метаданных. Войдите в GeoNetwork, введя имя <em>admin</em> и пароль <em>admin</em> в соответствующих полях в верхнем правом углу и нажав кнопку &#8216;login&#8217;.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-login11.png" src="../../_images/geonetwork-login11.png" />
+</div>
+<ul class="simple">
+<li>Вы должны увидеть ссылку <em>Administration</em> на баннере. Щёлкните по ней.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-administration-banner11.png" src="../../_images/geonetwork-administration-banner11.png" />
+</div>
+<ul class="simple">
+<li>Когда появится страница <em>Administration</em>, прокрутите её до самого низа и загрузите пробные данные, нажав кнопку &#8216;Add sample metadata&#8217;.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-addsampledatabutton11.png" src="../../_images/geonetwork-addsampledatabutton11.png" />
+</div>
+<ul class="simple">
+<li>После того, как пробные метаданные загрузятся, вернитесь на домашнюю страницу (&#8220;Home&#8221; ) для продолжения. Когда вы вернётесь на домашнюю страницу, ваш экран будет выглядеть примерно так, как показано ниже.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-returntohomepage11.png" src="../../_images/geonetwork-returntohomepage11.png" />
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Поиск<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Для поиска карт и других геоданных в каталоге существует много разнообразных
+способов. Данное руководство познакомит вас с наиболее популярными методами:
+простым, расширенным и по категориям. Какой бы вид поиска вы не выбрали, помните,
+что вы увидите результаты, ограниченные вашими привилегиями и сопоставленной
+рабочей группой (об этом позже).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Термин <em>данные</em> относится к наборам данных, картам, таблицам, документам
+и так далее. Фактически всё, что может быть связано с метаданными,
+которые их описывают.</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Простой поиск<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Простой поиск позволяет искать текст среди всех записей по ключевым словам
+в метаданных и/или географическом положении.</p>
+<p><strong>Поиск произвольного текста.</strong> <em>Тип</em> условия поиска
+в поле <em>What? (Что?)</em>. Вы можете набрать здесь что-нибудь (любой текст).
+Можно заключать текст в кавычки для поиска конкретных словосочетаний.</p>
+<p>Текст и операторы (and, or, not) нечувствительны к регистру.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-what11.png" src="../../_images/geonetwork-what11.png" />
+<p class="caption"><em>Поле произвольного текста.</em></p>
+</div>
+<p>В <strong>географическом поиске</strong> доступны две опции для ограничения результатов определённым регионом.</p>
+<p>Вы можете выбрать <strong>регион</strong> из списка:</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-where111.png" src="../../_images/geonetwork-where111.png" />
+<p class="caption"><em>Поле региона</em></p>
+</div>
+<p>Есть более интерактивный способ — <em>выделение интересующей области</em>.
+На экране присутствует уменьшенная карта мира, где вы можете растянуть
+рамку, охватывающую нужную область. Просто нажмите кнопку в правом
+верхнем углу карты.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-where211.png" src="../../_images/geonetwork-where211.png" />
+<p class="caption"><em>Интерактивное выделение интересующей области</em></p>
+</div>
+<p><strong>Выполнение поиска.</strong> Оба типа поиска (текстовый и географический)
+можно комбинировать для более конкретного запроса.</p>
+<p>Нажмите кнопку <em>Search (Поиск)</em> для отображения результатов.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-search_button11.png" src="../../_images/geonetwork-search_button11.png" />
+<p class="caption"><em>Кнопка Search</em></p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Поиск по категориям<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Ещё один вариант поиска данных на домашней странице GeoNetwork - поиск по
+<strong>Категориям</strong>. Список категорий позволяет пользователю
+идентифицировать данные на обобщённом уровне: <strong>Applications (Приложения)</strong>,
+Audio/Video (Аудио/Видео), Case study and best practises (Разборы примеров и опыт использования),
+Conference proceedings (Материалы конференций), Datasets (Наборы данных),
+Directories (Справочники), Interactive resources (Интерактивные ресурсы),
+Maps and graphics (Карты и графика),
+Other information resources (Другие информационные ресурсы), Photo (Фотографии).</p>
+<p>Для поиска только карт, щелкните <strong>Maps and Graphics</strong>. Отобразится список,
+где вы сможете увидеть подробную информацию по каждой карте, просто нажимая
+кнопку <strong>Metadata</strong> у интересующей карты.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-Categories11.png" src="../../_images/geonetwork-Categories11.png" />
+<p class="caption"><em>Поиск по категориям</em></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Расширенный поиск<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Расширенный поиск работает подобно простому поиску. Однако здесь вы
+можете указать более точные критерии искомых данных. Каждый критерий
+фокусируется на одном из следующих аспектов:
+<em>What? (Что?), Where? (Где?), When? (Когда?)</em></p>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search111.png" src="../../_images/geonetwork-advanced_search111.png" />
+<p class="caption"><em>Параметры расширенного поиска</em></p>
+</div>
+<p>Для выполнения <strong>Расширенного поиска (advanced search)</strong> на домашней
+странице щелкните <strong>Advanced</strong> сразу под формой поиска.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_button11.png" src="../../_images/geonetwork-advanced_search_button11.png" />
+<p class="caption"><em>Переход к расширенным параметрам поиска</em></p>
+</div>
+<p>В секции <strong>WHAT?</strong> собраны элементы, относящиеся к содержимому данных.
+С их помощью, в дополнение к поиску любых слов по всем метаданным,
+вы сможете искать напрямую в названиях или в абстрактных полях
+и добавлять дополнительные ключевые слова. Можно указать уровень
+точности, который вы желаете достичь при поиске.</p>
+<ul class="simple">
+<li>Для поиска по Названию (Title), Краткому описанию (Abstract), Произвольному тексту (Free Text) или Ключевым словам (Keywords) введите текст в соответствующее поле. Вы можете заполнять одно или несколько полей. Если вам не нужен поиск по какому-то полю, просто оставьте его пустым.</li>
+<li>Вы можете указать <strong>точность поиска</strong>, в условиях разбора слов, от <strong>Precise (Точно)</strong> = 1 до <strong>Imprecise (Грубо)</strong> = 0.2, через 3 шага, равных 0.8, 0.6, 0.4.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_what11.png" src="../../_images/geonetwork-advanced_search_what11.png" />
+<p class="caption"><em>Секция &#8220;What&#8221; в расширенном поиске</em></p>
+</div>
+<p>Параметры секции <strong>WHERE?</strong> относятся к пространственным границам.
+Как и в простом поиске, они позволяют указать собственную интересующую
+область или выбрать предопределённую из выпадающего списка. Также в
+данной секции можно указать координаты места, которого в списке нет.</p>
+<ul class="simple">
+<li>Для выбора <strong>интересующей вас области</strong> протяните рамку, используя соответствующий инструмент в нижнем правом углу карты.</li>
+<li>Для использования <strong>произвольных координат</strong>, укажите широту и долготу в соответствующих полях с любым количеством знаков после запятой.</li>
+<li>Для использования координат <strong>предустановленного региона</strong>, выберите регион из выпадающего списка.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_where11.png" src="../../_images/geonetwork-advanced_search_where11.png" />
+<p class="caption"><em>Секция &#8220;Where&#8221; в расширенном поиске</em></p>
+</div>
+<p>Независимо от выбранного типа географического поиска, вы можете выбрать
+различные варианты Типа (Type) пространственного поиска: is (есть), overlaps
+(пересекается), encloses (целиком внутри), is fully outside of (целиком за пределами).
+При использовании данного поля помните, что оно ограничивает результаты
+поиска следующим образом:</p>
+<ul class="simple">
+<li>Если вы укажете <strong>Type</strong> <em>is</em> &#8220;Страна&#8221;, отобразятся только карты указанной страны. Иными словами, карты городов этой страны в результатах поиска не появятся.</li>
+<li>Если вы укажете <strong>Type</strong> <em>overlaps</em> &#8220;Страна&#8221;, отобразятся все карты, границы которых пересекаются с границами указанной страны. Сюда же попадут соседние страны, континент, частью которого является страна и глобальные карты.</li>
+<li>Если вы укажете <strong>Type</strong> <em>encloses</em> &#8220;Страна&#8221;, то получите сперва карты данной страны, а затем карты в границах тех карт.</li>
+<li>Аналогично, если вы укажете <strong>Type</strong> <em>is fully outside of (целиком за пределами)</em> выбранной области, то в результатах поиска получите исключительно карты, удовлетворяющие данному критерию.</li>
+</ul>
+<p>Секция <strong>WHEN?</strong> позволяет вам ограничить поиск временным промежутком,
+в который попадает дата создания или публикации.</p>
+<ul class="simple">
+<li>Для указания диапазона времени, нажмите кнопку выбора дат после полей <strong>From – To (От - До)</strong>. Сначала воспользуйтесь символами <strong>&gt;</strong> и <strong>&gt;&gt;</strong> в верхней части календаря для выбора месяца и года, а затем щёлкните нужный день; готовая дата появится в формате ГГ-ММ-ДД.</li>
+<li>Для очистки полей с датами просто щёлкните по белому крестику справа от них; автоматически отметится пункт <strong>Anytime</strong>, и поиск выполнится без учета периода времени.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_when11.png" src="../../_images/geonetwork-advanced_search_when11.png" />
+<p class="caption"><em>Секция &#8220;When&#8221; в расширенном поиске</em></p>
+</div>
+<p>Наконец, расширенный поиск позволяет вам применить дополнительные
+ограничения следующими параметрами: источник данных, категория данных
+и формат данных.</p>
+<ul class="simple">
+<li>Для ограничения запросов каким-то одним из доступных при установке <strong>каталогом</strong>, выделите его, либо оставьте кариант <strong>Any</strong> для поиска во всех местах.</li>
+<li>Для поиска данных, организованных по <strong>Категориям</strong>, таким, как Приложения, Наборы данных и т.д., просто отметьте желаемую в выпадающем списке, или оставьте категорию <strong>Any</strong>.</li>
+<li>Вы можете искать <strong>Digital (Цифровые)</strong> или <strong>Hard Copy (Напечатанные)</strong> карты. Для поиска тех или иных, просто поставьте флажок рядом с нужным типом. Если ни один вариант не отмечен, выполнится поиск по всему содержимому.</li>
+</ul>
+<p>Можно настроить количество результатов на странице в поле <em>Hits Per Page</em>.
+Просто выберите количество записей для отображения, либо оставьте число
+по-умолчанию (10).</p>
+<ul class="simple">
+<li>Нажмите кнопку <strong>Search</strong>.</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_morerest11.png" src="../../_images/geonetwork-advanced_search_morerest11.png" />
+<p class="caption"><em>Прочие опции в расширенном поиске</em></p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Результаты поиска<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Результаты поиска предоставляют собой список записей метаданных,
+удовлетворяющих вашему запросу. Для каждой записи отображается название,
+краткое описание и ключевые слова. В соответствии с привилегиями, которые
+могут быть назначены для любых метаданных, могут быть доступны максимум
+четыре секции.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-search_output211.png" src="../../_images/geonetwork-search_output211.png" />
+<p class="caption"><em>Результаты поиска</em></p>
+</div>
+<p>#. <strong>Metadata (Метаданные)</strong>: Секция метаданных описывает набор данных
+(например: ссылка, владелец данных, временная/пространственная/методологическая
+информация) и может содержать ссылки на другие веб-сайты, которые предоставляют
+дополнительную информацию об этом наборе данных.</p>
+<p>#. <strong>Download (Загрузка)</strong>: В зависимости от привилегий, которые
+установлены для каждой записи, когда данная кнопка присутствует, набор данных
+доступен для просмотра и загрузки. Процесс получения данных прост и
+сводится к простому нажатию на кнопку загрузки, либо щелчку по ссылке
+в специальной секции метаданных в режиме полного просмотра.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-search_output111.png" src="../../_images/geonetwork-search_output111.png" />
+<p class="caption"><em>Отдельно взятый результат поиска</em></p>
+</div>
+<div class="figure">
+<img alt="../../_images/geonetwork-download11.png" src="../../_images/geonetwork-download11.png" />
+<p class="caption"><em>Доступные сервисы, относящиеся к ресурсу</em></p>
+</div>
+<p>#. <strong>Interactive Map (Интерактивная карта)</strong>: Карта также опциональна.
+Когда соответствующая кнопка присутствует, она доступна, и по-умолчанию
+отображается в простом поиске. Для лучшей визуализации, <strong>щёлкните</strong> по
+<strong>Show Map (Показать карту)</strong> в верхней части панели результатов.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-interactive_map11.png" src="../../_images/geonetwork-interactive_map11.png" />
+<p class="caption"><em>Просмотр интерактивной карты</em></p>
+</div>
+<p>#. <strong>Graphic Overviews (Обзор)</strong>: Для удобной оценки полезности карт
+(особенно если интерактивная карта не доступна), существует малый и
+увеличенный обзор. Просто щёлкните по маленькой картинке для увеличения.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-thumbnail11.png" src="../../_images/geonetwork-thumbnail11.png" />
+<p class="caption"><em>Увеличенный обзор</em></p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Привилегии, роли и группы пользователей<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>GeoNetwork использует систему <em>Privileges (Привилегий)</em>, <em>Roles (Ролей)</em> и
+<em>User groups (Групп пользователей)</em>.</p>
+<p>Для поиска <strong>публичной информации</strong> в каталоге GeoNetwork у пользователей
+нет ограничений. Для доступа к <strong>ограниченной информации</strong>
+или расширенному функционалу требуется аккаунт для входа. Аккаунт должен
+предоставить администратор GeoNetwork.</p>
+<p>Для входа в аккаунт зайдите на домашнюю страницу и введите имя
+пользователя и пароль в соответствующие поля в правом верхнем углу,
+затем нажмите кнопку login.</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-login11.png" src="../../_images/geonetwork-login11.png" />
+<p class="caption"><em>Вход</em></p>
+</div>
+<p><strong>Привилегии.</strong> В зависимости от привилегий, установленных для записи
+метаданных вашей роли как аутентифицированного пользователя, вы можете
+читать информацию о данном ресурсе и загружать, либо интерактивно
+просматривать данные, относящиеся к этому ресурсу.</p>
+<p><strong>Роли.</strong> Пользователи с ролью <em>Editor (Редактор)</em> могут создавать,
+импортировать и редактировать записи метаданных. Также они могут
+выгружать данные и конфигурировать ссылки на сервисы интерактивных
+карт.</p>
+<p><strong>Группы пользователей.</strong> Каждый аутентифицированный пользователь
+включён в определенную рабочую группу и может видеть данные, доступные
+этой группе.</p>
+</div>
+<div class="section" id="id7">
+<h2>Дополнительная информация<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>Щелкните по ссылке &#8216;Help&#8217; на баннере домашней страницы
+GeoNetwork или перейдите туда по этой ссылке:
+<a class="reference external" href="http://localhost:8880/geonetwork/docs/eng/users/index.html">http://localhost:8880/geonetwork/docs/eng/users/index.html</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

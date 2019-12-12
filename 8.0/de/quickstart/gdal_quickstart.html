@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GDAL/OGR Quickstart &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 8.0 Inhaltsverzeichnis" href="../overview/overview.html" />
+    <link rel="next" title="GeoKettle Quickstart" href="geokettle_quickstart.html" />
+    <link rel="prev" title="EOxServer Quickstart" href="eoxserver_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL3.png" style="width: 81.0px; height: 89.4px;" /></a>
+<div class="section" id="gdal-ogr-quickstart">
+<h1>GDAL/OGR Quickstart<a class="headerlink" href="#gdal-ogr-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>Sie brauchen lediglich ein Terminal für die Übungen. Zur Visualisierung der Ergebnisse
+können Sie ein Desktop GIS von OSGeo-Live wie beispielsweise <a class="reference internal" href="../overview/qgis_overview.html"><em>QGIS</em></a> verwenden.</p>
+<p>Dieses Quickstart besteht aus zwei Teilen - GDAL (Rasterdaten) und OGR (Vektordaten).
+Wir werden mit der Betrachtung von GDAL beginnen.</p>
+<p>Das Quickstart beschreibt Folgendes:</p>
+<dl class="docutils">
+<dt>GDAL</dt>
+<dd><ul class="first last simple">
+<li>Untersuchen von Rasterdaten mit gdalinfo</li>
+<li>Formatumwandlung mit gdal_translate</li>
+<li>Transformieren von Daten mit gdalwarp</li>
+<li>Zusammenfassen von Daten mit gdal_warp oder gdal_merge.py</li>
+<li>Erzeugen eines Bildkatalogs in Form einer Shapedatei mit gdaltindex</li>
+</ul>
+</dd>
+<dt>OGR</dt>
+<dd><ul class="first last simple">
+<li>Untersuchen von Vektordaten mit ogrinfo</li>
+<li>Verwendung von ogr2ogr zur Umwandlung von Vektordaten in andere Formate</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="lernen-sie-gdal-kennen">
+<h2>Lernen Sie GDAL kennen<a class="headerlink" href="#lernen-sie-gdal-kennen" title="Permalink to this headline">¶</a></h2>
+<p>Sie finden die Demodaten unter <tt class="file docutils literal"><span class="pre">/usr/local/share/data</span></tt>. Für die folgenden Übungen werden
+die <a class="reference internal" href="../overview/naturalearth_overview.html"><em>Natural Earth Daten</em></a> verwendet. Wir werden mit einer Kopie der Daten arbeiten.
+Daher ist der erste Schritte, die Daten in Ihr home-Verzeichnis zu kopieren.</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /home/user
+cp -R /usr/local/share/data/natural_earth2/ ./gdal_natural_earth
+</pre></div>
+</div>
+<p>Unter dem folgenden Pfad finden Sie eine Natural Earth Rasterdatei und die dazugehörige tfw-Datei:</p>
+<div class="highlight-python"><div class="highlight"><pre>ls /home/user/gdal_natural_earth/HYP_50M_SR_W.*
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Schauen Sie sich die Datei mit einem Desktop GIS beispielsweise QGIS an.</p>
+</div>
+</div>
+<div class="section" id="gdalinfo-zum-untersuchen-von-rasterdaten">
+<h2>gdalinfo - zum Untersuchen von Rasterdaten<a class="headerlink" href="#gdalinfo-zum-untersuchen-von-rasterdaten" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>gdalinfo HYP_50M_SR_W.tif
+  Driver: GTiff/GeoTIFF
+  Files: HYP_50M_SR_W.tif
+         HYP_50M_SR_W.tfw
+  Size is 10800, 5400
+  Coordinate System is `&#39;
+  Origin = (-179.999999999999972,90.000000000000000)
+  Pixel Size = (0.033333333333330,-0.033333333333330)
+  Metadata:
+    TIFFTAG_SOFTWARE=Adobe Photoshop CS3 Macintosh
+    TIFFTAG_DATETIME=2009:09:19 10:13:17
+    TIFFTAG_XRESOLUTION=342.85699
+    TIFFTAG_YRESOLUTION=342.85699
+    TIFFTAG_RESOLUTIONUNIT=2 (pixels/inch)
+  Image Structure Metadata:
+    INTERLEAVE=PIXEL
+  Corner Coordinates:
+  Upper Left  (-180.0000000,  90.0000000)
+  Lower Left  (-180.0000000, -90.0000000)
+  Upper Right ( 180.0000000,  90.0000000)
+  Lower Right ( 180.0000000, -90.0000000)
+  Center      (  -0.0000000,   0.0000000)
+  Band 1 Block=10800x1 Type=Byte, ColorInterp=Red
+  Band 2 Block=10800x1 Type=Byte, ColorInterp=Green
+  Band 3 Block=10800x1 Type=Byte, ColorInterp=Blue
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Hinweis:</dt>
+<dd><ul class="first last simple">
+<li>Treiber (Driver) : &#8220;GTiff/GeoTIFF&#8221;</li>
+<li>Größe (Size) ist 10800x5400</li>
+<li>3 Bands (1-3) vom Typ Byte.</li>
+<li>Ausgabe der Koordinaten</li>
+<li>es liegt keine Angabe zum Koordinatenreferenzsystem vor</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="gdal-translate-zur-einfachen-formatumwandlung">
+<h2>gdal_translate zur einfachen Formatumwandlung<a class="headerlink" href="#gdal-translate-zur-einfachen-formatumwandlung" title="Permalink to this headline">¶</a></h2>
+<p>Als Erstes lassen wir uns die verfügbaren Treiber ausgeben. Über die Angabe des zusätzlichen Parameters <cite>&#8211;formats</cite> gibt gdal_translate die Liste der verfügbaren Formate aus.</p>
+<dl class="docutils">
+<dt>Zu jedem Format wird ausgegeben, welche Operationen verfügbar sind:</dt>
+<dd><ul class="first last simple">
+<li>read only (ro) - nur lesend,</li>
+<li>read/write (rw) - lesend/schreibend oder</li>
+<li>read/write/update (rw+) - lesend/schreibend/Aktualisierung.</li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">gdal_translate</span> <span class="o">--</span><span class="n">formats</span>
+</pre></div>
+</div>
+<p>Die Angabe <cite>&#8211;format</cite> kann auch verwendet werden, um Details zu einem bestimmten Treiber
+auszugeben, diese Details beinhalten Angaben zur Erzeugung und zu erlaubten Datentypen.</p>
+<div class="highlight-python"><div class="highlight"><pre>gdalinfo --format jpeg
+gdal_translate --format png
+</pre></div>
+</div>
+</div>
+<div class="section" id="formatumwandlung">
+<h2>Formatumwandlung<a class="headerlink" href="#formatumwandlung" title="Permalink to this headline">¶</a></h2>
+<p>Formatumwandlungen erfolgen mit gdal_translate. Das Standardausgabeformat ist
+GeoTIFF. Über die Angabe <cite>-of</cite> kann ein Ausgabeformat angegeben werden. Über <cite>-co</cite> können weitere Optionen für die Erzeugung gesetzt werden.</p>
+<div class="highlight-python"><div class="highlight"><pre>gdal_translate -of JPEG -co QUALITY=40 HYP_50M_SR_W.tif HYP_50M_SR_W.jpg
+</pre></div>
+</div>
+<p>Der Parameter <cite>-ot</cite> kann zur Veränderung des Ausgabedatentyps verwendet werden.</p>
+<div class="highlight-python"><div class="highlight"><pre>gdal_translate -ot Int16 HYP_50M_SR_W.tif HYP_50M_SR_W_Int16.tif
+</pre></div>
+</div>
+<p>Verwenden Sie gdalinfo zur Prüfung des Datentyps.</p>
+</div>
+<div class="section" id="groszenanpassung">
+<h2>Größenanpassung<a class="headerlink" href="#groszenanpassung" title="Permalink to this headline">¶</a></h2>
+<p>Der <cite>-outsize</cite> Parameter wird zur Steuerung der Größe der Ausgabedatei verwendet.</p>
+<div class="highlight-python"><div class="highlight"><pre>gdal_translate -outsize 50% 50% HYP_50M_SR_W.tif  HYP_50M_SR_W_small.tif
+</pre></div>
+</div>
+<p>Verwenden Sie gdalinfo zur Prüfung der Bildgröße.</p>
+<p>Der Parameter <cite>-scale</cite> wird zur Skalierung verwendet. Eine explizite Kontrolle der
+Eingabe- und Ausgabegröße ist ebenfalls möglich. Über gdalinfo mit der Parameterübergabe <cite>-mm</cite>
+können die Pixel min/max-Werte ausgegeben werden.</p>
+<p>Lassen Sie unser Bild in zwei Bilder über <cite>-srcwin</cite> aufsplitten, das eine Kopie
+auf Grundlage Pixel/line location (xoff yoff xsize ysize) erzeugt. Sie können auch <cite>-projwin</cite> verwenden
+und die Eckkoordinaten in Georeferenzierten Koordinaten (ulx uly lrx lry) angeben.</p>
+<div class="highlight-python"><div class="highlight"><pre>gdalinfo -mm HYP_50M_SR_W.tif
+gdal_translate -srcwin 0 0 5400 5400 HYP_50M_SR_W.tif  west.tif
+gdal_translate -srcwin 5400 0 5400 5400 HYP_50M_SR_W.tif  east.tif
+</pre></div>
+</div>
+</div>
+<div class="section" id="bildkatalog-tileindex-mit-gdaltindex-erzeugen">
+<h2>Bildkatalog (tileindex) mit gdaltindex erzeugen<a class="headerlink" href="#bildkatalog-tileindex-mit-gdaltindex-erzeugen" title="Permalink to this headline">¶</a></h2>
+<p>Sie können eine Shapedatei als Rasterbildkatalog erzeugen. Für jedes Bild
+wird ein Polygon mit dem Umring der Rasterdatei und dem Pfad zur Rasterdatei erzeugt.</p>
+<div class="highlight-python"><div class="highlight"><pre>gdaltindex index_natural_earth.shp *st.tif
+</pre></div>
+</div>
+<p>Schauen Sie sich Ihre Ausgabe-Shapedatei mit QGIS und ogrinfo an (später werden Sie
+noch mehr über ogrinfo erfahren).</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex1.png"><img alt="../../_images/gdal_gdaltindex1.png" src="../../_images/gdal_gdaltindex1.png" style="width: 416.0px; height: 212.0px;" /></a>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre>ogrinfo ../HYP_50M_SR_W/ index
+INFO: Open of `../HYP_50M_SR_W/&#39;
+    using driver `ESRI Shapefile&#39; successful.
+
+Layer name: index
+Geometry: Polygon
+Feature Count: 2
+Extent: (-180.000000, -90.000000) - (180.000000, 90.000000)
+Layer SRS WKT: (unknown)
+location: String (255.0)
+OGRFeature(index):0
+  location (String) = east.tif
+  POLYGON ((-0.00000000001796 90.0,179.999999999964047 90.0,179.999999999964047 -89.999999999982009,-0.00000000001796 -89.999999999982009,-0.00000000001796 90.0))
+
+OGRFeature(index):1
+  location (String) = west.tif
+  POLYGON ((-179.999999999999972 90.0,-0.00000000001796 90.0,-0.00000000001796 -89.999999999982009,-179.999999999999972 -89.999999999982009,-179.999999999999972 90.0))
+</pre></div>
+</div>
+</div>
+<div class="section" id="umprojektion">
+<h2>Umprojektion<a class="headerlink" href="#umprojektion" title="Permalink to this headline">¶</a></h2>
+<p>Für diese Operation gehen wir davon aus, dass HYP_50M_SR_W.tif mit korrekten
+Grenzen angelegt wurde.
+Wir haben zu Beginn gesehen, dass die Datei über keine Angaben zum Koordinatenreferenzsystem verfügt.
+Der erste Schritt ist nun, dem Bild WGS84 als Koordinatenreferenzsystem zu zu weisen.</p>
+<div class="highlight-python"><div class="highlight"><pre>gdal_translate -a_srs WGS84 HYP_50M_SR_W.tif HYP_50M_SR_W_4326.tif
+</pre></div>
+</div>
+<p>gdalwarp kann zur Umprojektion von Daten verwendet werden. Wir werden unser Bild nun von der
+Geographischen Projektion WGS84 in die Mercator Projektion umwandeln:</p>
+<div class="highlight-python"><div class="highlight"><pre>gdalwarp -t_srs &#39;+proj=merc +datum=WGS84&#39; HYP_50M_SR_W_4326.tif mercator.tif
+</pre></div>
+</div>
+<p>Verwenden Sie gdalinfo, um sich die Veränderung anzuschauen. Schauen Sie sich das Bild auch mit QGIS an.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/gdal_mercator1.png"><img alt="../../_images/gdal_mercator1.png" src="../../_images/gdal_mercator1.png" style="width: 405.6px; height: 327.2px;" /></a>
+</div></blockquote>
+<p>Nun projizieren wir in die Orthoprojektion.</p>
+<div class="highlight-python"><div class="highlight"><pre>gdalwarp -t_srs &#39;+proj=ortho +datum=WGS84&#39; HYP_50M_SR_W_4326.tif ortho.tif
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/gdal_ortho1.png"><img alt="../../_images/gdal_ortho1.png" src="../../_images/gdal_ortho1.png" style="width: 294.4px; height: 296.8px;" /></a>
+<p>Beachten Sie, wie die Pole abgeschnitten werden. Weil die Ecken an den Polen nicht umprojiziert werden können, kann gdalwarp nicht alle Daten lesen. Als Lösung können wir gdalwarp zwingen, ein wenig zusätzliche Daten zu lesen. Zu diesem Thema erfahren Sie mehr im Raster-Tutorial <a class="reference external" href="http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial">http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial</a>.</p>
+</div>
+<div class="section" id="zusammenfassen-von-daten">
+<h2>Zusammenfassen von Daten<a class="headerlink" href="#zusammenfassen-von-daten" title="Permalink to this headline">¶</a></h2>
+<p>gdal_merge.py ist ein Python Skript, das für einfache Zusammenfassungen verwendet werden kann.
+Fassen Sie die Dateien east.tif und west.tif in eine Datei zusammen.</p>
+<div class="highlight-python"><div class="highlight"><pre>gdal_merge.py  east.tif west.tif -o merged.tif
+</pre></div>
+</div>
+<p>Diese Aufgabe kann auch mit gdalwarp gelöst werden. gdalwarp hat einige
+Vorteile gegenüber gdal_merge, kann aber langsam sein, wenn es darum geht, viele Dateien zusammen zu fassen:</p>
+<div class="highlight-python"><div class="highlight"><pre>gdalwarp east.tif west.tif warpmerged.tif
+</pre></div>
+</div>
+</div>
+<div class="section" id="lernen-sie-ogr-kennen">
+<h2>Lernen Sie OGR kennen<a class="headerlink" href="#lernen-sie-ogr-kennen" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>cd /home/usr/gdal_natural_earth/
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Schauen Sie sich die Shapedatei mit einem Desktop GIS wie QGIS an.</p>
+</div>
+</div>
+<div class="section" id="nutzen-sie-ogrinfo-zur-ausgabe-von-informationen-uber-vektordaten">
+<h2>Nutzen Sie ogrinfo zur Ausgabe von Informationen über Vektordaten<a class="headerlink" href="#nutzen-sie-ogrinfo-zur-ausgabe-von-informationen-uber-vektordaten" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>ogrinfo -ro /home/user/gdal_natural_earth
+INFO: Open of `/home/user/gdal_natural_earth&#39;
+      using driver `ESRI Shapefile&#39; successful.
+  1: ne_10m_populated_places (3D Point)
+  2: ne_10m_geography_regions_polys (3D Polygon)
+  3: ne_10m_admin_1_states_provinces_shp (3D Polygon)
+  4: ne_10m_urban_areas (3D Polygon)
+  5: ne_10m_geography_marine_polys (3D Polygon)
+  6: ne_10m_land (3D Polygon)
+  7: ne_10m_geography_regions_elevation_points (3D Point)
+  8: ne_10m_admin_0_countries (3D Polygon)
+  9: ne_10m_rivers_lake_centerlines (3D Line String)
+  10: ne_10m_lakes (3D Polygon)
+  11: ne_10m_geography_regions_points (3D Point)
+  12: ne_10m_ocean (3D Polygon)
+</pre></div>
+</div>
+<p>Lassen Sie sich eine Zusammenfassung zu Ihren Daten mit ogrinfo und <cite>-so</cite> ausgeben.</p>
+<div class="highlight-python"><div class="highlight"><pre>ogrinfo -ro -so ne_10m_admin_0_countries.shp ne_10m_admin_0_countries
+INFO: Open of `ne_10m_admin_0_countries.shp&#39;
+      using driver `ESRI Shapefile&#39; successful.
+
+Layer name: ne_10m_admin_0_countries
+Geometry: 3D Polygon
+Feature Count: 254
+Extent: (-180.000000, -90.000000) - (180.000000, 83.634101)
+Layer SRS WKT:
+GEOGCS[&quot;GCS_WGS_1984&quot;,
+    DATUM[&quot;WGS_1984&quot;,
+        SPHEROID[&quot;WGS_84&quot;,6378137.0,298.257223563]],
+    PRIMEM[&quot;Greenwich&quot;,0.0],
+    UNIT[&quot;Degree&quot;,0.0174532925199433]]
+scalerank: Integer (4.0)
+featurecla: String (30.0)
+labelrank: Real (16.6)
+sovereignt: String (254.0)
+sov_a3: String (254.0)
+adm0_dif: Real (16.6)
+level: Real (16.6)
+type: String (254.0)
+admin: String (254.0)
+adm0_a3: String (254.0)
+geou_dif: Real (16.6)
+geounit: String (254.0)
+gu_a3: String (254.0)
+su_dif: Real (16.6)
+subunit: String (254.0)
+su_a3: String (254.0)
+brk_diff: Real (16.6)
+name: String (254.0)
+name_long: String (254.0)
+brk_a3: String (254.0)
+brk_name: String (254.0)
+brk_group: String (254.0)
+abbrev: String (254.0)
+postal: String (254.0)
+formal_en: String (254.0)
+formal_fr: String (254.0)
+note_adm0: String (254.0)
+note_brk: String (254.0)
+name_sort: String (254.0)
+name_alt: String (254.0)
+mapcolor7: Real (16.6)
+mapcolor8: Real (16.6)
+mapcolor9: Real (16.6)
+mapcolor13: Real (16.6)
+pop_est: Real (16.6)
+gdp_md_est: Real (16.6)
+pop_year: Real (16.6)
+lastcensus: Real (16.6)
+gdp_year: Real (16.6)
+economy: String (254.0)
+income_grp: String (254.0)
+wikipedia: Real (16.6)
+fips_10: String (254.0)
+iso_a2: String (254.0)
+iso_a3: String (254.0)
+iso_n3: String (254.0)
+un_a3: String (254.0)
+wb_a2: String (254.0)
+wb_a3: String (254.0)
+woe_id: Real (16.6)
+adm0_a3_is: String (254.0)
+adm0_a3_us: String (254.0)
+adm0_a3_un: Real (16.6)
+adm0_a3_wb: Real (16.6)
+continent: String (254.0)
+region_un: String (254.0)
+subregion: String (254.0)
+region_wb: String (254.0)
+name_len: Real (16.6)
+long_len: Real (16.6)
+abbrev_len: Real (16.6)
+tiny: Real (16.6)
+homepart: Real (16.6)
+</pre></div>
+</div>
+<p>Wenn Sie ogrinfo ohne einen zusätzlichen Parameter aufrufen, erhalten Sie zuerst die Zusammenfassung
+der Daten gefolgt von einer Sektion für jeden einzelnen Datensatzes.</p>
+<div class="highlight-python"><div class="highlight"><pre>ogrinfo -ro ne_10m_admin_0_countries.shp ne_10m_admin_0_countries
+</pre></div>
+</div>
+<p>Sie können die Ergebnisse von ogrinfo an grep weitergeben, um die Daten zu filtern
+und so beispielsweise nur das Attribut admin auszugeben.</p>
+<div class="highlight-python"><div class="highlight"><pre>ogrinfo ne_10m_admin_0_countries.shp ne_10m_admin_0_countries | grep &#39;admin &#39;
+
+  admin (String) = Aruba
+  admin (String) = Afghanistan
+  admin (String) = Angola
+  admin (String) = Anguilla
+  admin (String) = Albania
+  admin (String) = Aland
+  admin (String) = Andorra
+etc.
+</pre></div>
+</div>
+<p>Sie können Ihre Daten in andere Formate konvertieren. Über <cite>&#8211;formats</cite> erhalten Sie die Liste der
+unterstützten Formate.</p>
+</div>
+<div class="section" id="nutzen-sie-ogr2ogr-um-vektordaten-in-verschiedene-formate-zu-konvertieren">
+<h2>Nutzen Sie ogr2ogr um Vektordaten in verschiedene Formate zu konvertieren<a class="headerlink" href="#nutzen-sie-ogr2ogr-um-vektordaten-in-verschiedene-formate-zu-konvertieren" title="Permalink to this headline">¶</a></h2>
+<p>Sie können ogr2ogr nutzen, um Daten aus einem Format in ein anderes Format zu konvertieren.
+Eine Liste der unterstützen Formate mit der Information, ob auf diese nur lesend bzw. auch schreibend
+zugegriffen werden kann, wenn die Option <cite>&#8211;formats</cite> ohne weitere Paramater verwendet wird.</p>
+<p>Konvertieren Sie die Länder in das GML-Format.</p>
+<div class="highlight-python"><div class="highlight"><pre>ogr2ogr --formats
+ogr2ogr -f GML countries.xml ne_10m_admin_0_countries.shp
+</pre></div>
+</div>
+</div>
+<div class="section" id="weitere-aufgaben">
+<h2>Weitere Aufgaben<a class="headerlink" href="#weitere-aufgaben" title="Permalink to this headline">¶</a></h2>
+<p>Hier sind ein paar weitere Aufgaben, die Sie lösen können.</p>
+<ol class="arabic simple">
+<li>Verwenden Sie gdalwarp oder gdal_merge.py, um Ihr Daten zu kacheln</li>
+<li>Verwenden Sie gdaladdo, um interne Übersichten aufzubauen</li>
+<li>QGIS verwendet GDAL/OGR als Datenschnittstelle für die unterstützten Formate. Es steht auch ein GdalTools Plugin für die Verarbeitung von Rasterdaten zur Verfügung. Dieses ist auch in QGIS integriert.</li>
+<li>Verwenden Sie ogr2ogr für den Import/Export von Vektordaten in andere Formate, wie z.B. <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a>. Schauen Sie sich auch die anderen Optionen von ogr2ogr an.</li>
+<li>Testen Sie das QGIS Plugin <strong>OGR-Layer-Konverter</strong>.</li>
+</ol>
+</div>
+<div class="section" id="der-nachste-schritt">
+<h2>Der nächste Schritt<a class="headerlink" href="#der-nachste-schritt" title="Permalink to this headline">¶</a></h2>
+<p>Dies war lediglich der erste Einstieg in GDAL und OGR. Es gibt sehr viele weitere Funktionalitäten zu entdecken.</p>
+<p>GDAL Projektseite</p>
+<blockquote>
+<div><a class="reference external" href="http://www.gdal.org">http://www.gdal.org</a></div></blockquote>
+<p>Alles über OGR</p>
+<blockquote>
+<div><a class="reference external" href="http://gdal.org/ogr/index.html">http://gdal.org/ogr/index.html</a></div></blockquote>
+<p>GDAL Tutorial</p>
+<blockquote>
+<div><a class="reference external" href="http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial">http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial</a></div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,65 @@
+{
+    "type" : "templatePDF", 					# define the PDF type: "templatePDF", "dynamicPDF"
+    "orientation" : "L",
+    "units" : "mm",
+    "format" : "a4",
+    "controls" : [								# the controls object defines additional form elements
+    	{										# that should be displayed in the application
+    		"id" : "title",						# the id of the form element 
+    		"label" : "Titel",					# the label of the form element
+    		"type" : "text",					# the form elements type: text, select, ...
+    		"size" : 20,						# a size value, where applicable ...
+    		"pageElementsLink" : "title:value"	# this links the form element value to a page element 
+    	},										# in the pdf, the syntax is still work in progress
+    	{
+    		"id" : "dpi",
+    		"label" : "DPI",
+    		"type" : "select",
+    		"size" : 20,
+    		"pageElementsLink" : "map:res_dpi",
+    		"options" : [
+    			{
+    			"value" : "56",
+    			"label" : "niedrig (56)"
+    			},{
+    			"value" : "72",
+    			"label" : "normal (72)"
+    			},{
+    			"value" : "144",
+    			"label" : "hoch (dpi)"
+    			}
+    		]
+    	},
+    	{
+    		"id" : "comment",
+    		"label" : "Kommentar",
+    		"type" : "textarea",
+    		"size" : 5,
+    		"pageElementsLink" : "comment:value"
+    	}    	    		
+    ],
+    "pages" : [									# the pages elements defines a list of page configurations
+    	{
+    	 "tpl" : "mbtemplate1.pdf",				# which template to use
+    	 "useTplPage" : 1,						# which page of the template to use
+    	 "elements" : {							# the elements object defines which elements are placed on this page
+	    	 "map" : {
+    			"show" : true,
+    			"res_dpi" : 72, 
+    			"x_ul" : 10.1,
+	    		"y_ul" : 15.2,
+	    		"width" : 280,
+    			"height" : 185
+	   			},
+	   		"overview" : {
+    			"show" : true,
+    			"res_dpi" : 72, 
+    			"x_ul" : 10.1,
+	    		"y_ul" : 15.2,
+	    		"width" : 50,
+    			"height" : 50
+	   			}
+	   		}
+	   	}
+	]
+}

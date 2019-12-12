@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guia d’inici ràpid de PostGIS &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Benvinguts a OSGeo-Live 8.0" href="../index.html" />
+    <link rel="next" title="pycsw Quickstart" href="pycsw_quickstart.html" />
+    <link rel="prev" title="Guia d’inici ràpid per pgRouting" href="pgrouting_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://postgis.org/"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS1.png" style="width: 89.7px; height: 131.7px;" /></a>
+<div class="section" id="guia-d-inici-rapid-de-postgis">
+<h1>Guia d&#8217;inici ràpid de PostGIS<a class="headerlink" href="#guia-d-inici-rapid-de-postgis" title="Permalink to this headline">¶</a></h1>
+<p>PostGIS afegeix suport espacial a la base de dades relacional PostgreSQL.
+Li dóna a PostgreSQL la capacitat per emmagatzemar, consultar i manipular dades espacials.
+En aquesta guia d&#8217;inici ràpid s&#8217;utilitza &#8216;PostgreSQL&#8217; per referir-se a les funcions generals de la base de dades,
+i &#8216;PostGIS&#8217; quan es descriu la funcionalitat espacial addicional que li proporciona aquesta extensió.</p>
+<div class="section" id="arquitectura-client-servidor">
+<h2>Arquitectura client-servidor<a class="headerlink" href="#arquitectura-client-servidor" title="Permalink to this headline">¶</a></h2>
+<p>PostgreSQL, igual que moltes altres bases de dades, funciona com un servidor en un sistema client-servidor.
+El client realitza una petició al servidor i rep una resposta. Treballa de la
+mateixa manera que Internet - el navegador web de l&#8217;usuari és el client i el servidor web li envia
+la pàgina web que ha sol·licitat. Amb PostgreSQL les peticions es realitzen en llenguatge SQL i la
+resposta és generalment una taula procedent de la base de dades.</p>
+<p>No hi ha res que impedeixi que el servidor estigui en el mateix equip que el client,
+de manera que l&#8217;usuari pot usar PostgreSQL en una sola màquina. El client es connecta amb el servidor
+a través de la connexió a la xarxa interna &#8220;loopback&#8221;, i no és visible per altres equips
+llevat que es configuri així.</p>
+</div>
+<div class="section" id="creacio-d-una-base-de-dades-espacial">
+<h2>Creació d&#8217;una base de dades espacial<a class="headerlink" href="#creacio-d-una-base-de-dades-espacial" title="Permalink to this headline">¶</a></h2>
+<p>Un únic servidor PostgreSQL permet organitzar el treball en bases de dades diferents.
+Cada base de dades actua de manera independent, amb les seves pròpies taules, vistes, usuaris, etc.
+Per tant, quan s&#8217;estableix una connexió a un servidor PostgreSQL el primer que s&#8217;ha de fer és especificar la base de dades.</p>
+<p>Es pot obtenir un llistat de les bases de dades disponibles en el servidor amb la comanda <tt class="docutils literal"><span class="pre">psql</span> <span class="pre">-l</span></tt>.
+Per defecte, es poden veure diverses bases de dades creades durant la instal·lació.
+A continuació, seguint aquesta guia d&#8217;inici ràpid, crearem una nova base de dades.</p>
+<p>PostgreSQL proporciona una utilitat per a la creació de bases de dades, <tt class="docutils literal"><span class="pre">createdb</span></tt>.
+Atès que cal crear una base de dades espacial farem servir l&#8217;extensió PostGIS, per aquest motiu cal
+indicar quina és la plantilla per crear la base de dades.
+Anomenarem <tt class="docutils literal"><span class="pre">demo</span></tt> a la nova base de dades que anem a crear. La comanda per fer-ho és la següent:</p>
+<div class="highlight-python"><div class="highlight"><pre>createdb -T template_postgis demo
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Generalment es pot accedir a l&#8217;ajuda per a les eines en línia de comandes fent servir <tt class="docutils literal"><span class="pre">--help</span></tt>.</p>
+</div>
+<p>Si ara s&#8217;executa <tt class="docutils literal"><span class="pre">psql-l</span></tt>, la nova base de dades <tt class="docutils literal"><span class="pre">demo</span></tt> hauria d&#8217;aparèixer a la llista.</p>
+<p>També es poden crear bases de dades PostGIS fent servir el llenguatge SQL. En primer lloc anem a eliminar
+la base de dades que acabem de crear amb la comanda <tt class="docutils literal"><span class="pre">dropdb</span></tt>. A continuació, utilitzarem l&#8217;ordre <tt class="docutils literal"><span class="pre">psql</span></tt>
+per obtenir un intèrpret de comandes SQL:</p>
+<div class="highlight-python"><div class="highlight"><pre>dropdb demo
+psql -d postgres
+</pre></div>
+</div>
+<p>D&#8217;aquesta manera es connectarà a la base de dades anomenada <tt class="docutils literal"><span class="pre">postgres</span></tt>, que és una base de dades del sistema que
+tots els servidors haurien de tenir. A continuació, caldrà introduir el següent codi SQL per crear la nova base de dades:</p>
+<div class="highlight-python"><div class="highlight"><pre>postgres=# CREATE DATABASE demo TEMPLATE=template_postgis;
+</pre></div>
+</div>
+<p>Ara canviarem la connexió de la base de dades <tt class="docutils literal"><span class="pre">postgres</span></tt> a la nova base de dades <tt class="docutils literal"><span class="pre">demo</span></tt>.
+En el futur es pot connectar directament escrivint <tt class="docutils literal"><span class="pre">psql-d</span> <span class="pre">demo</span></tt>. Altrament es pot fer de
+manera directa dintre de la línia de comandes <tt class="docutils literal"><span class="pre">psql</span></tt> amb la següent ordre:</p>
+<div class="highlight-python"><div class="highlight"><pre>postgres=# \c demo
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Premeu Ctrl-C, si l&#8217;indicador de psql segueix apareixent després de prémer la tecla return. D&#8217;aquesta manera netejarà la seva entrada i tornarà a començar. És probable que el sistema estigui esperant que introdueixi un signe de tancar cometes, punt i coma o algun altre signe.</p>
+</div>
+<p>A continuació veureu un missatge informatiu, i el prompt canviarà per mostrar-li que ja està connectat a la base de dades <tt class="docutils literal"><span class="pre">demo</span></tt>.
+Per comprovar que el procés s&#8217;ha realitzat correctament, escriviu <tt class="docutils literal"><span class="pre">\dt</span></tt> per poder veure un llistat de les taules que té la base
+de dades. S&#8217;hauria de veure alguna cosa d&#8217;aquest estil:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# \dt
+             List of relations
+ Schema |       Name       | Type  | Owner
+--------+------------------+-------+-------
+ public | geometry_columns | table | user
+ public | spatial_ref_sys  | table | user
+(2 rows)
+</pre></div>
+</div>
+<p>PostGIS utilitza aquestes dues taules. La taula <tt class="docutils literal"><span class="pre">spatial_ref_sys</span></tt> emmagatzema informació de sistemes de referència espacials vàlids,
+i pot usar algunes ordres de SQL per poder veure el seu contingut:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT srid,auth_name,proj4text FROM spatial_ref_sys LIMIT 10;
+
+ srid | auth_name |          proj4text
+------+-----------+--------------------------------------
+ 3819 | EPSG      | +proj=longlat +ellps=bessel +towgs...
+ 3821 | EPSG      | +proj=longlat +ellps=aust_SA +no_d...
+ 3824 | EPSG      | +proj=longlat +ellps=GRS80 +towgs8...
+ 3889 | EPSG      | +proj=longlat +ellps=GRS80 +towgs8...
+ 3906 | EPSG      | +proj=longlat +ellps=bessel +no_de...
+ 4001 | EPSG      | +proj=longlat +ellps=airy +no_defs...
+ 4002 | EPSG      | +proj=longlat +a=6377340.189 +b=63...
+ 4003 | EPSG      | +proj=longlat +ellps=aust_SA +no_d...
+ 4004 | EPSG      | +proj=longlat +ellps=bessel +no_de...
+ 4005 | EPSG      | +proj=longlat +a=6377492.018 +b=63...
+(10 rows)
+</pre></div>
+</div>
+<p>Això confirma que tenim una base de dades habilitada per a operacions espacials. El  taula <tt class="docutils literal"><span class="pre">geometry_columns</span></tt>
+s&#8217;encarrega de dir-li a PostGIS les taules que estan habilitades per a operacions espacials. Aquest és el següent pas.</p>
+</div>
+<div class="section" id="creacio-d-una-taula-espacial-usuaris-avancats">
+<h2>Creació d&#8217;una taula espacial (usuaris avançats)<a class="headerlink" href="#creacio-d-una-taula-espacial-usuaris-avancats" title="Permalink to this headline">¶</a></h2>
+<p>Ara tenim una base de dades espacials on es poden crear taules espacials.</p>
+<p>En primer lloc, crearem una taula de base de dades ordinària per emmagatzemar algunes dades de ciutats.
+Aquesta taula té dos camps - un per l&#8217;ID numèric i un altre per al nom de la ciutat:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# CREATE TABLE cities ( id int4, name varchar(50) );
+</pre></div>
+</div>
+<p>A continuació, afegirem una columna de geometria per emmagatzemar les localitzacions de les ciutats.
+Convencionalment aquesta columna s&#8217;anomena <tt class="docutils literal"><span class="pre">the_geom</span></tt>. D&#8217;aquesta manera es diu a PostGIS quin tipus
+de geometria té cada entitat (punts, línies, polígons, etc), quantes dimensions
+(en aquest cas dos), i el sistema de referència espacial de les dades.
+En aquest cas la localització de les ciutats es marcarà usant coordenades en el sistema de referència EPSG:4326.</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT AddGeometryColumn ( &#39;cities&#39;, &#39;the_geom&#39;, 4326, &#39;POINT&#39;, 2);
+</pre></div>
+</div>
+<p>Si es comprova la taula de les ciutats en aquest moment hauria de veure la nova columna,
+i que la taula no conté cap fila.</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT * from cities;
+ id | name | the_geom
+----+------+----------
+(0 rows)
+</pre></div>
+</div>
+<p>Per afegir files a la taula s&#8217;usen algunes sentències SQL. Per introduir la geometria
+dins de la columna de geometries farem servir la funció de PostGIS <tt class="docutils literal"><span class="pre">ST_GeomFromText</span></tt>,
+que converteix a partir d&#8217;un format de text les coordenades i l&#8217;identificador del sistema de referència espacial:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# INSERT INTO cities (id, the_geom, name) VALUES (1,ST_GeomFromText(&#39;POINT(-0.1257 51.508)&#39;,4326),&#39;London, England&#39;);
+demo=# INSERT INTO cities (id, the_geom, name) VALUES (2,ST_GeomFromText(&#39;POINT(-81.233 42.983)&#39;,4326),&#39;London, Ontario&#39;);
+demo=# INSERT INTO cities (id, the_geom, name) VALUES (3,ST_GeomFromText(&#39;POINT(27.91162491 -33.01529)&#39;,4326),&#39;East London,SA&#39;);
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Utilitzeu les tecles de fletxa per recuperar i editar línies de comandes.</p>
+</div>
+<p>Com es pot veure, si es fa la introducció de dades d&#8217;aquesta manera es converteix ràpidament en un procés molt tediós.
+Per sort hi ha altres maneres molt més senzilles per afegir dades en taules PostGIS. Ara però, ja tenim tres ciutats
+en la nostra base de dades, i ja podem treballar amb això.</p>
+</div>
+<div class="section" id="consultes-simples">
+<h2>Consultes simples<a class="headerlink" href="#consultes-simples" title="Permalink to this headline">¶</a></h2>
+<p>Per seleccionar dades d&#8217;una taula PostGIS es poden aplicar totes les operacions SQL comunes.</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT * FROM cities;
+ id |      name       |                      the_geom
+----+-----------------+----------------------------------------------------
+  1 | London, England | 0101000020E6100000BBB88D06F016C0BF1B2FDD2406C14940
+  2 | London, Ontario | 0101000020E6100000F4FDD478E94E54C0E7FBA9F1D27D4540
+  3 | East London,SA  | 0101000020E610000040AB064060E93B4059FAD005F58140C0
+(3 rows)
+</pre></div>
+</div>
+<p>D&#8217;aquesta manera s&#8217;obté una versió hexadecimal del camp geometria difícil d&#8217;interpretar.</p>
+<p>Si es vol tornar a fer una ullada a la geometria en format WKT, es poden utilitzar les
+funcions ST_AsText(the_geom) o ST_AsEwkt(the_geom). També es pot utilitzar ST_X(the_geom),
+ST_Y(the_geom) per obtenir el valor numèric de les coordenades:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT id, ST_AsText(the_geom), ST_AsEwkt(the_geom), ST_X(the_geom), ST_Y(the_geom) FROM cities;
+ id |          st_astext           |               st_asewkt                |    st_x     |   st_y
+----+------------------------------+----------------------------------------+-------------+-----------
+  1 | POINT(-0.1257 51.508)        | SRID=4326;POINT(-0.1257 51.508)        |     -0.1257 |    51.508
+  2 | POINT(-81.233 42.983)        | SRID=4326;POINT(-81.233 42.983)        |     -81.233 |    42.983
+  3 | POINT(27.91162491 -33.01529) | SRID=4326;POINT(27.91162491 -33.01529) | 27.91162491 | -33.01529
+(3 rows)
+</pre></div>
+</div>
+</div>
+<div class="section" id="consultes-espacials">
+<h2>Consultes espacials<a class="headerlink" href="#consultes-espacials" title="Permalink to this headline">¶</a></h2>
+<p>PostGIS afegeix a PostgreSQL moltes funcions amb funcionalitat espacial.
+Una d&#8217;elles, que ja s&#8217;ha vist, és ST_GeomFromText que transforma WKT a geometria.
+La major part de les funcions comencen amb ST (per tipus espacial, Spatial Type), i s&#8217;enumeren en una secció de
+la documentació de PostGIS. Ara farem servir una d&#8217;elles per respondre a una qüestió pràctica -
+assumint que la terra és esfèrica, quina distància (en metres) hi ha entre aquestes tres ciutats anomenades Londres?</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT p1.name,p2.name,ST_Distance_Sphere(p1.the_geom,p2.the_geom) FROM cities AS p1, cities AS p2 WHERE p1.id &gt; p2.id;
+      name       |      name       | st_distance_sphere
+-----------------+-----------------+--------------------
+ London, Ontario | London, England |   5875766.85191657
+ East London,SA  | London, England |   9789646.96784908
+ East London,SA  | London, Ontario |   13892160.9525778
+ (3 rows)
+</pre></div>
+</div>
+<p>Això ens dóna la distància, en metres, entre cada parell de ciutats.
+Observeu com el &#8216;WHERE&#8217; de la consulta evita que s&#8217;obtingui la distància entre una ciutat i si mateixa (que en tots els casos serà zero)
+o les distàncies inverses entre les ciutats que apareixen a la taula de dalt (la distància entre Londres d&#8217;Anglaterra i Londres d&#8217;Ontario
+és la mateixa que de Londres d&#8217;Ontario a Londres d&#8217;Anglaterra).
+Intenti fer la mateixa consulta sense incloure la part del &#8216;WHERE&#8217; i miri el resultat que obté.</p>
+<p>També podem calcular la distància amb un esferoide fent servir una altra funció, especificant el
+nom de l&#8217;el·lipsoide, el semieix major i l&#8217;invers del aplanament:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT p1.name,p2.name,ST_Distance_Spheroid(
+        p1.the_geom,p2.the_geom, &#39;SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222]&#39;
+        )
+       FROM cities AS p1, cities AS p2 WHERE p1.id &gt; p2.id;
+      name       |      name       | st_distance_spheroid
+-----------------+-----------------+----------------------
+ London, Ontario | London, England |     5892413.63776489
+ East London,SA  | London, England |     9756842.65711931
+ East London,SA  | London, Ontario |     13884149.4140698
+(3 rows)
+</pre></div>
+</div>
+</div>
+<div class="section" id="generar-un-mapa">
+<h2>Generar un mapa<a class="headerlink" href="#generar-un-mapa" title="Permalink to this headline">¶</a></h2>
+<p>Per produir un mapa a partir de dades PostGIS, es necessita un client que pugui obtenir les dades.
+La majoria dels programes SIG d&#8217;escriptori de codi obert poden fer-ho - per exemple, Quantum GIS, gvSIG o uDIg.
+A continuació veurà com generar un mapa amb Quantum GIS.</p>
+<p>Inicieu Quantum GIS i escolliu <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">PostGIS</span> <span class="pre">layer</span></tt> en el menú Layer.
+Com que no s&#8217;ha usat PostGIS des de QGIS abans, obtindrà una llista buida de connexions PostGIS.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_addlayers.png"><img alt="Afegir capa PostGIS" class="align-center" src="../../_images/postgis_addlayers.png" style="width: 300.0px; height: 252.0px;" /></a>
+<p>Premi &#8216;new&#8217; i introdueixi els paràmetres per a la connexió. Utilitzarem la base de dades Natural Earth continguda al DVD.
+No cal donar nom d&#8217;usuari ni contrasenya, ja que la seguretat està configurada per permetre l&#8217;accés.
+En cas que estigués activada, desactiveu l&#8217;opció de comprovació sobre les taules sense geometria - permetrà fer
+les coses una mica més senzilles.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_naturalearth.png"><img alt="Connexió a Natural Earth" class="align-center" src="../../_images/postgis_naturalearth.png" style="width: 360.0px; height: 439.0px;" /></a>
+<p>Punxi el botó <tt class="docutils literal"><span class="pre">Test</span> <span class="pre">Connect</span></tt>, i si tot està correcte obtindrà un missatge afirmatiu.
+Premeu <tt class="docutils literal"><span class="pre">OK</span></tt> i la seva informació de connexió es guardarà amb el nom en la llista de connexions.
+Ara ja pot punxar <tt class="docutils literal"><span class="pre">Connect</span></tt> i obtenir un llistat de les taules espacials de la base de dades:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_listtables.png"><img alt="Capes de dades de Natural Earth" class="align-center" src="../../_images/postgis_listtables.png" style="width: 300.0px; height: 252.0px;" /></a>
+<p>Trieu la taula de llacs i premi <tt class="docutils literal"><span class="pre">Add</span></tt> (no <tt class="docutils literal"><span class="pre">Load</span></tt> - que guarda les consultes), i s&#8217;hauria de carregar en QGIS:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_lakesmap.png"><img alt="La meva primera capa de dades en PostGIS" class="align-center" src="../../_images/postgis_lakesmap.png" style="width: 512.0px; height: 371.5px;" /></a>
+<p>Ara hauríeu de veure un mapa dels llacs. QGIS no sap que aquesta informació són llacs, de manera
+que potser no els representa de color blau - podeu consultar la documentació de QGIS per saber com canviar-ho.
+Llavors podeu fer zoom a un famós grup de llacs de Canadà.</p>
+</div>
+<div class="section" id="creacio-d-una-taula-espacial-forma-facil">
+<h2>Creació d&#8217;una taula espacial (forma fàcil)<a class="headerlink" href="#creacio-d-una-taula-espacial-forma-facil" title="Permalink to this headline">¶</a></h2>
+<p>La majoria de les eines d&#8217;escriptori d&#8217;OSGeo té funcions d&#8217;importació de dades espacials des d&#8217;arxius, com per exemple shapefiles,
+dintre de bases de dades PostGIS. Un cop més farem servir QGIS per mostrar com es fa això.</p>
+<p>La importació d&#8217;arxius shapefile a QGIS es pot fer a través del plugin PostGIS Manager.
+Per instal·lar-lo, aneu al menú Plugins, seleccioneu <tt class="docutils literal"><span class="pre">Manage</span> <span class="pre">Plugins</span></tt> i busqueu <tt class="docutils literal"><span class="pre">PostGIS</span> <span class="pre">Manager</span></tt>.
+Marqueu aquesta opció i feu click a OK. Al menú de complements hauria d&#8217;aparèixer un accés a PostGIS Manager
+per tal de poder iniciar el gestor.</p>
+<p>A continuació, PostGIS Manager farà servir la configuració que vostè ha definit prèviament per poder-se connectar a la base de dades Natural Earth.
+Si li demana la contrasenya deixi-la en blanc. Veureu la finestra principal del gestor.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_getmanager.png"><img alt="Plugin de PostGIS Manager" class="align-center" src="../../_images/postgis_getmanager.png" style="width: 403.5px; height: 215.0px;" /></a>
+<p>Podeu utilitzar les altres pestanyes del panell del costat dret per comprovar els atributs de la capa i fins i tot
+obtenir un mapa bàsic amb capacitat de zoom i panoràmica. En aquest cas hem seleccionat la capa de poblacions
+i hem fet zoom a una petita illa que coneixem:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_managerpreview.png"><img alt="Visualització prévia de PostGIS Manager" class="align-center" src="../../_images/postgis_managerpreview.png" style="width: 354.0px; height: 264.0px;" /></a>
+<p>Ara utilitzarem l&#8217;Administrador de PostGIS per importar un shapefile a la base de dades.
+Usarem les dades de la síndrome de mort sobtada infantil (SIDS, per les seves sigles en anglès) de
+Carolina del Nord que s&#8217;inclouen en un dels add-ons del paquet estadístic R.</p>
+<p>Triar l&#8217;opció <tt class="docutils literal"><span class="pre">Load</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">shapefile</span></tt> al menú <tt class="docutils literal"><span class="pre">Data</span></tt>.
+Premi el botó <tt class="docutils literal"><span class="pre">...</span></tt> i busqui el shapefile <tt class="docutils literal"><span class="pre">sids.shp</span></tt> en el paquet <tt class="docutils literal"><span class="pre">maptools</span></tt> de R:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_browsedata.png"><img alt="Buscar el shapefile" class="align-center" src="../../_images/postgis_browsedata.png" style="width: 394.0px; height: 306.5px;" /></a>
+<p>Deixi tota la resta com està i premi <tt class="docutils literal"><span class="pre">Load</span></tt></p>
+<a class="reference internal image-reference" href="../../_images/postgis_importsids.png"><img alt="Importar un shapefile" class="align-center" src="../../_images/postgis_importsids.png" style="width: 217.0px; height: 320.0px;" /></a>
+<p>El shapefile s&#8217;hauria d&#8217;haver importat en PostGIS sense errors.
+Tanqui el PostGIS Manager i torni a la finestra principal de QGIS.</p>
+<p>A continuació carregarem les dades SIDS al mapa fent ús de l&#8217;opció &#8216;Add PostGIS Layer&#8217;.
+Reorganitzant algunes capes i aplicant color, hauria de ser capaç de produir
+un mapa de coropletes dels comptes de síndrome de mort sobtada infantil a Carolina del Nord:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_sidsmap.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap.png" style="width: 512.0px; height: 371.5px;" /></a>
+</div>
+<div class="section" id="conegui-pgadmin-iii">
+<h2>Conegui pgAdmin III<a class="headerlink" href="#conegui-pgadmin-iii" title="Permalink to this headline">¶</a></h2>
+<p>Podeu utilitzar el client gràfic de la base de dades <tt class="docutils literal"><span class="pre">pgAdmin</span> <span class="pre">III</span></tt> per consultar i modificar una base de dades sense component espacial.
+Aquest és el client oficial de PostgreSQL, i li permet manipular les taules de dades mitjançant SQL.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_adminscreen1.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_adminscreen1.png" style="width: 512.0px; height: 371.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_adminscreen2.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_adminscreen2.png" style="width: 512.0px; height: 371.5px;" /></a>
+</div>
+<div class="section" id="coses-que-cal-provar">
+<h2>Coses que cal provar<a class="headerlink" href="#coses-que-cal-provar" title="Permalink to this headline">¶</a></h2>
+<p>A continuació teniu algunes propostes addicionals perquè intenteu fer pel vostre compte:</p>
+<ol class="arabic simple">
+<li>Provar altres funcions espacials com <tt class="docutils literal"><span class="pre">st_buffer(the_geom)</span></tt>, <tt class="docutils literal"><span class="pre">st_transform(the_geom,25831)</span></tt>, <tt class="docutils literal"><span class="pre">x(the_geom)</span></tt> - trobareu la documentació completa en <a class="reference external" href="http://postgis.org/documentation">http://postgis.org/documentation</a> /</li>
+<li>Exportar les taules a shapefiles amb la comanda <tt class="docutils literal"><span class="pre">pgsql2shp</span></tt>.</li>
+<li>Provar la comanda <tt class="docutils literal"><span class="pre">ogr2ogr</span></tt> per importar i exportar dades a la base de dades.</li>
+</ol>
+</div>
+<div class="section" id="i-ara-que">
+<h2>I ara què?<a class="headerlink" href="#i-ara-que" title="Permalink to this headline">¶</a></h2>
+<p>Això que hem vist són els primers passos per aprendre a usar PostGIS. Hi ha un munt de funcionalitat addicional que es pot provar.</p>
+<p>Pàgina Web del Projecte PostGIS</p>
+<blockquote>
+<div><a class="reference external" href="http://postgis.org">http://postgis.org</a></div></blockquote>
+<p>Documentació de PostGIS</p>
+<blockquote>
+<div><a class="reference external" href="http://postgis.org/documentation/">http://postgis.org/documentation/</a></div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

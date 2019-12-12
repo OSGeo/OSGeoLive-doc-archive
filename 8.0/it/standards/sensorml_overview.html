@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sensor Model Language (SensorML) &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Open Geospatial Consortium Standards" href="standards.html" />
+    <link rel="next" title="Style Layer Descriptor (SLD)" href="sld_overview.html" />
+    <link rel="prev" title="KML Encoding Standard (KML)" href="kml_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-OGC-left7.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-left7.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/logo-OGC-right7.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right7.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="sensor-model-language-sensorml">
+<h1>Sensor Model Language (SensorML)<a class="headerlink" href="#sensor-model-language-sensorml" title="Permalink to this headline">¶</a></h1>
+<p>Lo standard di codifica OGC Sensor Model Language (SensorML) descrive un modello di informazione e codifiche XML che permettono la scoperta e la programmazione dei sensori integrati nel Web (Web-resident sensors), nonche` lo sfruttamento delle osservazioni dei sensori. In questo contesto, SensorML consente allo sviluppatore di definire modelli e schemi XML per descrivere qualsiasi processo, compresa la misurazione attraverso un sistema di sensori, nonche` l&#8217;elaborazione post-misurazione. (<a class="reference external" href="http://www.opengeospatial.org/standards/sensorml">http://www.opengeospatial.org/standards/sensorml</a>)</p>
+<a class="reference internal image-reference" href="../../_images/sensorml7.jpg"><img alt="sensorML in Context" src="../../_images/sensorml7.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>Più specificamente, SensorML puo`:</p>
+<ul class="simple">
+<li>Fornire descrizioni di sensori e sistemi di sensori per la gestione dell&#8217;inventario;</li>
+<li>Fornire informazioni di processo e sensore a sostegno della scoperta della risorsa e dell&#8217;osservazione;</li>
+<li>Favorire l&#8217;elaborazione e l&#8217;analisi delle osservazioni del sensore;</li>
+<li>Favorire la geolocalizzazione dei valori osservati (dati misurati);</li>
+<li>Fornire le caratteristiche di prestazione (per es. precisione, soglia, ecc.);</li>
+<li>Fornire una descrizione esplicita dei processi tramite cui e` stata ottenuta una osservazione;</li>
+<li>Fornire una catena di processo eseguibile per derivare nuovi prodotti di dati a richiesta (per es. osservazione derivabile);</li>
+<li>Archiviare le proprieta` fondamentali e le assunzioni riguardanti i sistemi di sensori.</li>
+</ul>
+<p>Lo schema individuale SensorML descrive uno specifico sensore o un vettore di sensori e puo` essere conservato in un registro.</p>
+<p>Ci sono numerosi esempi di implementazioni di SensorML, come il programma NASA MSFC SMART (<a class="reference external" href="http://smartdev.itsc.uah.edu/casestudy/documents/paper_nstc_2007_A1P1.pdf">http://smartdev.itsc.uah.edu/casestudy/documents/paper_nstc_2007_A1P1.pdf</a>). In tale progetto il gruppo ha sviluppato un flusso (workflow) di processo di sensori Web per assimilare intelligentemente la temperatura e l&#8217;umidita` dalla Sonda Infrarossa Atmosferica (Atmospheric Infrared Sounder) AIRS in una configurazione regionale del modello di ricerca e osservazione climatica sul sud est degli Stati Uniti.</p>
+<div class="section" id="vedi-anche">
+<h2>Vedi anche<a class="headerlink" href="#vedi-anche" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="sos_overview.html"><em>Sensor Observation Service (SOS)</em></a></li>
+<li>Sensor Planning Service</li>
+<li>Observations and Measurements</li>
+<li>Transducer Markup Language</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

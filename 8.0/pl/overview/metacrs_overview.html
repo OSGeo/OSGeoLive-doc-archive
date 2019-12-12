@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MetaCRS &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Zawartość OSGeo-Live 8.0" href="overview.html" />
+    <link rel="next" title="Natural Earth" href="naturalearth_overview.html" />
+    <link rel="prev" title="MB-System" href="mb-system_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.osgeo.org/incubator/process/principles.html"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_incubation19.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="metacrs">
+<h1>MetaCRS<a class="headerlink" href="#metacrs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="transformacje-pomiedzy-ukladami-wspolrzednych">
+<h2>Transformacje pomiędzy układami współrzędnych<a class="headerlink" href="#transformacje-pomiedzy-ukladami-wspolrzednych" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="http://trac.osgeo.org/metacrs/wiki"><img alt="map projection example" class="align-right" src="../../_images/logo-metacrs10.png" style="width: 479.0px; height: 239.0px;" /></a>
+<p><a class="reference external" href="http://trac.osgeo.org/metacrs/wiki">The group of MetaCRS projects</a> provide
+libraries of methods to transform between different coordinate reference
+systems. A geographic coordinate reference systems allows all points on the
+earth to be described as set of coordinates (such as latitude, longitude and
+elevation). Different systems are used to represent the 3 dimensional earth
+on a flat, 2 dimensional map.</p>
+<p>The MetaCRS libraries are included in other projects and some are also
+available via a command line interface.</p>
+<p>The sub-projects that make up MetaCRS include:</p>
+<ul class="simple">
+<li>PROJ.4 (C++) - używany w <a class="reference internal" href="mapserver_overview.html"><em>MapServer</em></a>, <a class="reference internal" href="grass_overview.html"><em>GRASS GIS</em></a>, <a class="reference internal" href="postgis_overview.html"><em>PostGIS</em></a>, <a class="reference internal" href="mapnik_overview.html"><em>Mapnik</em></a>, Thuban, OGDI, TopoCad, OGRCoordinateTransformation i wielu innych.</li>
+<li>Proj4js (JavaScript) - używany w <a class="reference internal" href="openlayers_overview.html"><em>OpenLayers</em></a>.</li>
+<li>CS-Map (C++) - używany w MapGuide.</li>
+<li>GeoTIFF/libgeotiff (C++).</li>
+<li>Proj4J (Java).</li>
+<li><a class="reference external" href="http://spatialreference.org/">SpatialReference.org</a>  - Strona internetowa to retrieve coordinate system definitions.</li>
+</ul>
+<div class="section" id="glowne-funkcje">
+<h3>Główne funkcje<a class="headerlink" href="#glowne-funkcje" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Provides point transformation from one coordinate reference system to another.</li>
+<li>Includes transformation between datums.</li>
+<li>Large number of projection classes supported.</li>
+</ul>
+</div>
+<div class="section" id="zaimplementowane-standardy">
+<h3>Zaimplementowane standardy<a class="headerlink" href="#zaimplementowane-standardy" title="Permalink to this headline">¶</a></h3>
+<p>The projects typically use coordinate system definitions as defined by the
+<a class="reference external" href="http://www.epsg.org/">European Petroleum Survey Group (EPSG)</a> and defined in
+Well Known Text (WKT) format.</p>
+</div>
+<div class="section" id="proj-4">
+<h3>PROJ.4<a class="headerlink" href="#proj-4" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Strona internetowa:</strong>  <a class="reference external" href="http://trac.osgeo.org/proj/">http://trac.osgeo.org/proj/</a></p>
+<p><strong>Licencja:</strong> <a class="reference external" href="http://trac.osgeo.org/proj/wiki/WikiStart#License">X/MIT style Open Source license</a></p>
+<p><strong>Wersja programu:</strong> 4.7.0</p>
+<p><strong>Systemy operacyjne:</strong> Windows, Linux, Mac</p>
+<p><strong>Interfejsy API:</strong> C, C++, Python, Java, Ruby</p>
+<p><strong>Wsparcie:</strong> <a class="reference external" href="http://lists.maptools.org/mailman/listinfo/proj">http://lists.maptools.org/mailman/listinfo/proj</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="proj4js">
+<h3>Proj4js<a class="headerlink" href="#proj4js" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Strona internetowa:</strong>  <a class="reference external" href="http://proj4js.org">http://proj4js.org</a></p>
+<p><strong>Licencja:</strong> <a class="reference external" href="http://trac.osgeo.org/proj/wiki/WikiStart#License">X/MIT style Open Source license</a></p>
+<p><strong>Wersja programu:</strong> 1.1.0</p>
+<p><strong>Systemy operacyjne:</strong> Windows, Linux, Mac</p>
+<p><strong>Interfejsy API:</strong> JavaScript</p>
+<p><strong>Wsparcie:</strong> <a class="reference external" href="http://lists.osgeo.org/mailman/listinfo/MetaCRS">http://lists.osgeo.org/mailman/listinfo/MetaCRS</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="cs-map">
+<h3>CS-Map<a class="headerlink" href="#cs-map" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Strona internetowa:</strong>  <a class="reference external" href="http://trac.osgeo.org/csmap/">http://trac.osgeo.org/csmap/</a></p>
+<p><strong>Licencja:</strong> <a class="reference external" href="http://svn.osgeo.org/metacrs/csmap/trunk/CsMapDev/license.txt">custom</a></p>
+<p><strong>Wersja programu:</strong> 13.0</p>
+<p><strong>Systemy operacyjne:</strong> Windows, Linux, Mac</p>
+<p><strong>Interfejsy API:</strong> C, C++</p>
+<p><strong>Wsparcie:</strong> <a class="reference external" href="http://lists.osgeo.org/mailman/listinfo/MetaCRS">http://lists.osgeo.org/mailman/listinfo/MetaCRS</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="geotiff-libgeotiff">
+<h3>GeoTIFF/libgeotiff<a class="headerlink" href="#geotiff-libgeotiff" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Strona internetowa:</strong>  <a class="reference external" href="http://trac.osgeo.org/geotiff/">http://trac.osgeo.org/geotiff/</a></p>
+<p><strong>Licencja:</strong> <a class="reference external" href="http://trac.osgeo.org/proj/wiki/WikiStart#License">X/MIT style Open Source license</a></p>
+<p><strong>Wersja programu:</strong> 1.4.0</p>
+<p><strong>Wsparcie:</strong> <a class="reference external" href="http://lists.maptools.org/mailman/listinfo/geotiff">http://lists.maptools.org/mailman/listinfo/geotiff</a></p>
+</div></blockquote>
+</div>
+<div class="section" id="proj4j">
+<h3>Proj4J<a class="headerlink" href="#proj4j" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Strona internetowa:</strong>  <a class="reference external" href="http://trac.osgeo.org/proj4j/">http://trac.osgeo.org/proj4j/</a></p>
+<p><strong>Licencja:</strong> <a class="reference external" href="http://www.apache.org/licenses/LICENSE-2.0">Licencja Apache, wersja 2.0</a></p>
+<p><strong>Wersja programu:</strong></p>
+<p><strong>Systemy operacyjne:</strong> Windows, Linux, Mac</p>
+<p><strong>Interfejsy API:</strong> Java</p>
+<p><strong>Wsparcie:</strong> <a class="reference external" href="http://lists.osgeo.org/mailman/listinfo/proj4j">http://lists.osgeo.org/mailman/listinfo/proj4j</a></p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,85 @@
+{
+    "type" : "templatePDF",
+    "orientation" : "P",
+    "units" : "mm",
+    "format" : "a3",
+    "controls" : [
+    	{
+    		"id" : "dpi",
+    		"label" : "DPI",
+    		"type" : "select",
+    		"size" : 20,
+    		"pageElementsLink" : {
+    			"karte" : "res_dpi"
+    		},
+    		"options" : [
+    			{
+    			"value" : "288",
+    			"label" : "hoch (288 dpi)"
+    			},{
+    			"value" : "72",
+    			"label" : "normal (72 dpi)"
+    			}
+    		]
+    	},
+        {
+            "id" : "angle",
+            "label" : "Winkel",
+            "type" : "text",
+            "pageElementsLink" : {
+                "nordpfeil" : "angle",
+                "karte" : "angle",
+                "minikarte" : "angle"
+            }
+        },
+        {
+            "id" : "coordinates",
+            "type" : "hidden"
+        },
+		{
+    		"id" : "scale",
+    		"label" : "Maßstab",
+    		"type" : "text",
+    		"pageElementsLink" : {
+    			"scale" : "value"
+    		}
+    	}
+    ],
+    "pages" : [
+        {
+            "tpl" : "../print/A3_portrait_template_pure_map.pdf",
+            "useTplPage" : 1,
+            "elements" : {
+                "karte" : {
+                    "type" : "map",
+                    "res_dpi" : 72,
+                    "x_ul" : 5.2,
+                    "y_ul" : 5.2,
+                    "width" : 286.6,
+                    "height" : 409.5,
+                    "coords" : 0,
+                    "coords_font_family" : "Arial",
+                    "coords_font_size" : 8
+                },
+				"messung" : {
+					"type" : "measure",
+					"do_fill" : 0,
+					"fill_color" : {
+						"r" : 255,
+						"g" : 0,
+						"b" : 0
+						},
+					"do_stroke" : 0,
+					"stroke_color" : {
+						"r" : 0,
+						"g" : 0,
+						"b" : 0
+						},
+					"line_style" : {
+						"width" : 1.0
+    				}
+	   			}
+			}
+		}
+    ]
+}

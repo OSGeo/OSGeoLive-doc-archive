@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OSGeo-Live Quickstart for Running in a Virtual Machine &mdash; OSGeo-Live 7.9
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.9
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.9
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Zawartość OSGeo-Live 7.9" href="../overview/overview.html" />
+    <link rel="next" title="OSGeo-Live Quickstart for VMWare Player" href="vmware_quickstart.html" />
+    <link rel="prev" title="Wprowadzenie do OSGeo-Live Virtual Box" href="virtualbox_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="osgeo-live-quickstart-for-running-in-a-virtual-machine">
+<h1>OSGeo-Live Quickstart for Running in a Virtual Machine<a class="headerlink" href="#osgeo-live-quickstart-for-running-in-a-virtual-machine" title="Permalink to this headline">¶</a></h1>
+<p>This Quick Start describes one way to run OSGeo-Live within a VirtualBox virtual machine. For other methods, follow links from the &#8220;See Also&#8221; section below.</p>
+<div class="section" id="virtual-machine-advantages">
+<h2>Virtual Machine Advantages<a class="headerlink" href="#virtual-machine-advantages" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Response speed of a VM is much faster than on the DVD, and typically comparable with installing directly on the host machine.</li>
+<li>All configuration changes, software updates, and saved files are permanent, just like on any &#8220;regular&#8221; computer. So</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>You can customize and update the system</li>
+<li>You can save your work within the VM</li>
+<li>You can install additional software</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>You can backup your virtual machine installation.</li>
+</ul>
+</div>
+<div class="section" id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>RAM: 2 GB at least. The Xubuntu system runs well with 1 GB of RAM, and you&#8217;ll need to keep at least the same amount of memory for your host system. So a total of 2 GB will be needed for smooth operation.</li>
+<li>Spare Hard Disk Space: The virtual disk file (vmdk) from:  <a class="reference external" href="http://live.osgeo.org/en/download.html">live.osgeo.org</a>  unzips to almost 10 GB. And you&#8217;ll want more space to allow some room to work on the virtual machine. So 20 GB is a good recommendation.</li>
+<li>CPU: Any CPU will do, but a processor which supports &#8220;Virtualization Technology&#8221; will be faster. You can check your computer CPU <a class="reference external" href="http://www.intel.com/support/processors/sb/cs-030729.htm">here</a>.</li>
+</ul>
+<p>Most machines produced in the last 4-5 years will meet these requirements.</p>
+</div>
+<div class="section" id="howto">
+<h2>Howto<a class="headerlink" href="#howto" title="Permalink to this headline">¶</a></h2>
+<p><strong>Downloads</strong></p>
+<p>Download <a class="reference external" href="http://www.virtualbox.org/">Virtual Box</a>  for your platform, and install the software. On windows run the installer, or on Ubuntu-like linux systems do the following:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">virtualbox-ose</span></tt></div></blockquote>
+<p>In addition download the OSGeo Virtual disk file (vmdk) from <a class="reference external" href="http://live.osgeo.org/en/download.html">live.osgeo.org</a>
+. Click on the &#8220;Download virtual machine&#8221; button. Then unzip the downloaded file (using <a class="reference external" href="http://www.7-zip.org">7zip</a> ).</p>
+<p><strong>Create a Virtual Machine</strong></p>
+<p>Start the VirtualBox application and click on the New button to create a new VM, and then Next.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox10.png"><img alt="../../_images/virtualbox10.png" src="../../_images/virtualbox10.png" style="width: 389.0px; height: 289.0px;" /></a>
+</div></blockquote>
+<p>Enter a name such as OSGeo-Live, and choose Linux as the &#8220;Operating system&#8221;, and Ubuntu as the &#8220;Version&#8221;.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_select_name10.png"><img alt="../../_images/virtualbox_select_name10.png" src="../../_images/virtualbox_select_name10.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>In the next screen set the memory to 1024 MB (or more if your host computer has more than 4GB).</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_memory10.jpg"><img alt="../../_images/vmdk_memory10.jpg" src="../../_images/vmdk_memory10.jpg" style="width: 416.0px; height: 274.95px;" /></a>
+</div></blockquote>
+<p>Continue to the next screen and choose &#8220;Use existing hard disk&#8221; . Now click on the button (a folder icon) to browse to where you saved the osgeo-live-vm-6.0.vmdk file. Select this file, press Next and Create.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_disk10.jpg"><img alt="../../_images/vmdk_disk10.jpg" src="../../_images/vmdk_disk10.jpg" style="width: 416.0px; height: 274.95px;" /></a>
+</div></blockquote>
+<p>Once the VM is created, click on the Settings button. In the &#8220;General&#8221; section, go to the Advanced tab, and click to select &#8220;Show at top of screen&#8221; for the Mini toolbar.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_general_advanced10.jpg"><img alt="../../_images/vmdk_general_advanced10.jpg" src="../../_images/vmdk_general_advanced10.jpg" style="width: 416.0px; height: 341.25px;" /></a>
+</div></blockquote>
+<p>Go to the &#8220;Display&#8221; section and increase video memory to 32 or 64 MB.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_display10.jpg"><img alt="../../_images/vmdk_display10.jpg" src="../../_images/vmdk_display10.jpg" style="width: 416.0px; height: 341.25px;" /></a>
+</div></blockquote>
+<p>In addition, move to the &#8220;Shared Folders&#8221; section, and click the &#8220;Add folder&#8221; (green + icon on the right) to find a directory on your host computer that you wish to share inside the VM.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_shared_folders10.jpg"><img alt="../../_images/vmdk_shared_folders10.jpg" src="../../_images/vmdk_shared_folders10.jpg" style="width: 416.0px; height: 343.85px;" /></a>
+</div></blockquote>
+<p>Once the &#8220;Folder path&#8221; and &#8220;Folder name&#8221; are defined, click OK, and again OK to finish and close the settings window.</p>
+<p><strong>Running the Virtual Machine</strong></p>
+<p>Now bootup the VM by clicking the Start (green arrow) button.</p>
+<p>Once the OSGeo system comes up, you have the option to add the VirtualBox &#8220;Guest Additions&#8221; to improve video performance, and enable the shared folders option that was defined above. The guest addition installations are supplied as an ISO file togther with the VirtualBox application from Oracle, and are not licensed as Free and Open Source Software. This ISO is mounted within the VM as a CD, and the installation is run from there. Here&#8217;s how it&#8217;s done:</p>
+<p>In the VirtualBox window, open the <em class="menuselection">Devices</em> menu and click <em class="menuselection">Install Guest Additions</em>. This will mount the Guest Additions as a CD drive in your OSGeo Live VM.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_guest_additions10.jpg"><img alt="../../_images/vmdk_guest_additions10.jpg" src="../../_images/vmdk_guest_additions10.jpg" style="width: 512.0px; height: 418.4px;" /></a>
+</div></blockquote>
+<p>Once the CD folder appears, open a terminal and run the following commands:</p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">build-essential</span> <span class="pre">linux-headers-generic</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">cd</span> <span class="pre">/media/VBOXADDITIONS_4.1.18_78361/</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:/media/VBOXADDITIONS_4.1.18_78361$</span> <span class="pre">sudo</span> <span class="pre">./VBoxLinuxAdditions.run</span></tt></p>
+<p>This will complete after a few moments. Reboot your VM, and you will now be able to run in full screen mode, and mount your shared folders. In the above example, we defined a Shared Folder path on the host system and named it &#8220;GIS&#8221; in the VM Settings. To mount it within the VM, open a terminal window and run:</p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">mkdir</span> <span class="pre">GIS</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">mount</span> <span class="pre">-t</span> <span class="pre">vboxsf</span> <span class="pre">-o</span> <span class="pre">uid=user,rw</span> <span class="pre">GIS</span> <span class="pre">/home/user/GIS</span></tt></p>
+<p>Now files on your host machine in the chosen folder will also be available in the VM in the &#8220;GIS&#8221; folder in user&#8217;s home directory.</p>
+</div>
+<div class="section" id="see-also">
+<h2>See Also:<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>OSGeo wiki pages:</dt>
+<dd><p class="first last"><a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine">Other ways to create a Virtual Machine</a></p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><a class="reference internal" href="osgeolive_quickstart.html"><em>Wprowadzenie do OSGeo-Live</em></a></p>
+</li>
+<li><p class="first"><a class="reference internal" href="osgeolive_install_quickstart.html"><em>Zainstaluj OSGeo-Live na twardym dysku</em></a></p>
+</li>
+<li><p class="first"><a class="reference internal" href="usb_quickstart.html"><em>Tworzenie rozruchowego PenDrive USB z OSGeo-Live</em></a></p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

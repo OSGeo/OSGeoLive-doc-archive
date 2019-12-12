@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Breve introduzione all’uso di QGIS &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live Quick Starts" href="quickstart.html" />
+    <link rel="next" title="rasdaman Quickstart" href="rasdaman_quickstart.html" />
+    <link rel="prev" title="Breve introduzione all’uso di QGIS Server" href="qgis_mapserver_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.qgis.org"><img alt="project logo" class="align-right" src="../../_images/logo-QGIS13.png" style="width: 60.0px; height: 60.0px;" /></a>
+<div class="section" id="breve-introduzione-all-uso-di-qgis">
+<h1>Breve introduzione all&#8217;uso di QGIS<a class="headerlink" href="#breve-introduzione-all-uso-di-qgis" title="Permalink to this headline">¶</a></h1>
+<p>Quantum GIS (QGIS) è un client GIS Desktop user friendly ed open-source per la
+gestione, visualizzazione, modifica, analisi di dati geografici
+e per la composizione di mappe per la stampa.</p>
+<p>Questa breve introduzione all&#8217;uso descrive come:</p>
+<blockquote>
+<div><ul class="simple">
+<li>aggiornare un progetto QGIS esistente</li>
+<li>creare un nuovo progetto QGIS con un semplice layer vettoriale</li>
+</ul>
+</div></blockquote>
+<div class="section" id="modificare-un-progetto-qgis">
+<h2>Modificare un progetto QGIS<a class="headerlink" href="#modificare-un-progetto-qgis" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Cliccare <em class="menuselection">Desktop ‣ Desktop GIS ‣ Quantum GIS</em>.</p>
+</li>
+<li><p class="first">Selezionare <em class="menuselection">File ‣ Apri progetto...</em> dalla barra del menu.</p>
+</li>
+<li><p class="first">Selezionare <tt class="file docutils literal"><span class="pre">QGIS-NaturalEarth-Example.qgs</span></tt> e cliccare press <em class="guilabel">Open</em>.</p>
+<ul class="simple">
+<li>Dovreste vedere una mappa del mondo.</li>
+</ul>
+</li>
+<li><p class="first">Attivare <strong>10m_populated_places_simple</strong> nella legenda dei layer</p>
+<ul>
+<li><p class="first">Il layer &#8220;Populated places&#8221; viene visualizzato:</p>
+<a class="reference internal image-reference" href="../../_images/qgis13.png"><img alt="../../_images/qgis13.png" src="../../_images/qgis13.png" style="width: 512.0px; height: 315.5px;" /></a>
+</li>
+</ul>
+</li>
+<li><p class="first">Doppio click su <strong>10m_rivers_lake_centerlines</strong> nella legenda.</p>
+</li>
+<li><p class="first">Cambiare il colore in un tono diverso di blu.</p>
+</li>
+<li><p class="first">Cliccare <em class="guilabel">OK</em>.</p>
+<ul class="simple">
+<li>Ora i fiumi sono visualizzati con un nuovo colore.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="creare-un-nuovo-progetto-qgis">
+<h2>Creare un nuovo progetto QGIS<a class="headerlink" href="#creare-un-nuovo-progetto-qgis" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Selezionare <em class="menuselection">File ‣ Nuovo progetto</em>.</li>
+<li>Selezionare <em class="menuselection">Layer ‣ Aggiungi vettore...</em>.</li>
+<li>Selezionare il file <tt class="file docutils literal"><span class="pre">/home/user/data/natural_earth/10m_admin_0_countries.shp</span></tt>.</li>
+<li>Cliccare <em class="guilabel">Open</em>.<ul>
+<li>Dovreste vedere le nazioni del mondo.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="connettersi-ad-un-database-spaziale-postgis">
+<h2>Connettersi ad un database spaziale PostGIS<a class="headerlink" href="#connettersi-ad-un-database-spaziale-postgis" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Selezionare <em class="menuselection">File ‣ Nuovo progetto</em>.</li>
+<li>Selezionare <em class="menuselection">Layer ‣ Aggiungi vettore PostGIS ...</em>.<ul>
+<li>Sono disponibili i database Natural Earth e OpenStreetMap.</li>
+</ul>
+</li>
+<li>Selezionare OpenStreetMap e cliccare <em class="guilabel">Connetti</em>.<ul>
+<li>Apparirà una lista di tabelle del database.</li>
+</ul>
+</li>
+<li>Selezionare <tt class="docutils literal"><span class="pre">planet_osm_roads</span></tt> e cliccare su <em class="guilabel">Aggiungi</em>.<ul>
+<li>Riferirsi a <a class="reference internal" href="postgis_quickstart.html"><em>PostGIS Quickstart</em></a> per informazioni più dettagliate.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="usare-gli-strumenti-grass">
+<h2>Usare gli strumenti GRASS<a class="headerlink" href="#usare-gli-strumenti-grass" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Selezionare <em class="menuselection">File ‣ Nuovo progetto</em>.</li>
+<li>Selezionare <em class="menuselection">Plugins ‣ Gestione plugins...</em>.</li>
+<li>Scrivere <tt class="docutils literal"><span class="pre">grass</span></tt> nella casella Filtro e selezionare il plugin <cite>GRASS</cite>, quindi cliccare su <em class="guilabel">Ok</em>.<ul>
+<li>Appariranno una nuovo menu <cite>GRASS</cite> nel menu <cite>Plugins</cite> ed una nuova barra degli strumenti.</li>
+</ul>
+</li>
+<li>Selezionare <em class="menuselection">Plugins ‣ GRASS ‣ Apri mapset</em>.<ul>
+<li>Il database GRASS viene automaticamente impostato sul percorso <cite>~/grassdata</cite>.</li>
+</ul>
+</li>
+<li>Selezionare the <cite>nc_basic_smp</cite> come Location e <cite>user1</cite> come mapset, quindi cliccare su <em class="guilabel">Ok</em>.</li>
+<li>Selezionare <em class="menuselection">Plugins ‣ GRASS ‣ Aggiungi raster GRASS</em>.<ul>
+<li>Selezionare dal mapset PERMANENT la mappa <cite>elevation_shade</cite> e cliccare su <em class="guilabel">Ok</em>.</li>
+</ul>
+</li>
+<li>Selezionare <em class="menuselection">Plugins ‣ GRASS ‣ Aggiungi vettore GRASS</em>.<ul>
+<li>Selezionare dal mapset PERMANENT la mappa <cite>elevation</cite> e cliccare su <em class="guilabel">Ok</em>.</li>
+<li>Doppio click su <cite>elevation</cite> nella legenda ed impostare la trasparenza su 65%.</li>
+</ul>
+</li>
+<li>Selezionare <em class="menuselection">Plugins ‣ GRASS ‣ Aggiungi vettore GRASS</em>.<ul>
+<li>Selezionare dal mapset PERMANENT la mappa <cite>roadsmajor</cite> e cliccare su <em class="guilabel">Ok</em>.</li>
+</ul>
+</li>
+</ol>
+<p>E&#8217; possibile, inoltre, accedere ai potenti moduli GRASS per l&#8217;analisi spaziale.</p>
+<ol class="arabic simple">
+<li>Selezionare <em class="menuselection">Plugins ‣ GRASS ‣ Apri strumenti GRASS</em>.<ul>
+<li>Apparirà una lunga lista di strumenti di analisi.</li>
+</ul>
+</li>
+<li>Scrivere <tt class="docutils literal"><span class="pre">nviz</span></tt> nella casella Filtro e selezionare <cite>nviz - Visualizzatore 3D (NVIZ)</cite>.</li>
+<li>Nella scheda del modulo NVIZ, selezionare <cite>elevation</cite> come nome del raster per l&#8217;elevazione e <cite>roadsmajor</cite> come vettore di overlay, quindi cliccare su <em class="guilabel">Run</em>.</li>
+<li>Si aprirà una nuova finestra NVIZ. Massimizzarla, impostare <cite>z-exag</cite> a 10.0, <cite>perspective</cite> a 15.0, <cite>height</cite> a 3500 e trascinare verso sinistra il punto di vista.</li>
+<li>Selezionare <em class="menuselection">Visualize ‣ Raster surfaces</em> ed impostare la risoluzione <cite>fine</cite> ad 1.</li>
+</ol>
+</div>
+<div class="section" id="usare-la-barra-degli-strumenti-sextante">
+<h2>Usare la barra degli strumenti Sextante<a class="headerlink" href="#usare-la-barra-degli-strumenti-sextante" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Selezionare <em class="menuselection">Plugins ‣ Gestione plugins...</em>.</li>
+<li>Scrivere <tt class="docutils literal"><span class="pre">sextante</span></tt> nella casella Filtro e selezionare il plugin <cite>SEXTANTE</cite>. Cliccare su <em class="guilabel">Ok</em>.<ul>
+<li>Apparirà un nuovo menu ed una nuova barra deglistrumenti.</li>
+</ul>
+</li>
+<li>Selezionare <em class="menuselection">SEXTANTE ‣ SEXTANTE Toolbox</em>.<ul>
+<li>Apparirà a destra una nuova barra ricca di strumenti di analisi.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="usare-il-plugin-openstreetmap">
+<h2>Usare il plugin OpenStreetMap<a class="headerlink" href="#usare-il-plugin-openstreetmap" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Aprire un terminale dal menu Xubuntu <em class="menuselection">Applicazioni ‣ Accessori</em>.<ul>
+<li>Fare una copia dei dati OSM nella cartella <cite>home</cite>:</li>
+</ul>
+</li>
+</ol>
+<div class="highlight-python"><pre>cp data/osm/feature_city_CBD.osm.bz2 .
+bzip2 -d feature_city_CBD.osm.bz2</pre>
+</div>
+<ol class="arabic simple">
+<li>In QGIS, selezionare <em class="menuselection">File ‣ Nuovo progetto</em>.</li>
+<li>Selezionare <em class="menuselection">Plugins ‣ Gestione plugins...</em>.</li>
+<li>Scrivere <tt class="docutils literal"><span class="pre">open</span></tt> nella casella Filtro e selezionare il plugin  <cite>OpenStreetMap</cite>. Cliccare su <em class="guilabel">Ok</em>.<ul>
+<li>Apparirà un nuovo menu <cite>Web</cite> ed una nuova barra di strumenti.</li>
+</ul>
+</li>
+<li>Selezionare <em class="menuselection">Web ‣ OpenStreetMap ‣ Carica OSM da file</em>.</li>
+<li>Selezionare il file <cite>feature_city_CBD.osm</cite> appena copiato nella cartella <cite>home</cite>.</li>
+<li>Attivare le caselle <cite>name</cite>, <cite>highway</cite>, e <cite>amenity</cite>.</li>
+<li>Selezionare il visualizzatore <em class="guilabel">Medium scale</em> e cliccare su <em class="guilabel">Ok</em>.</li>
+</ol>
+</div>
+<div class="section" id="per-proseguire">
+<h2>Per proseguire<a class="headerlink" href="#per-proseguire" title="Permalink to this headline">¶</a></h2>
+<p>Nella collezione <a class="reference external" href="../../qgis/tutorials/">OSGeo-Live QGIS tutorials</a> sono disponibili tutorial sulle funzionalità più avanzate di QGIS.</p>
+<p>Per approfondire la conoscenza di QGIS, visitare la pagina di <a class="reference external" href="http://www.qgis.org/en/documentation.htmlhttp://qgis.org/documentazione.html?lang=it">Documentazione</a> sul sito del progetto.</p>
+<p>OSGeo-Live contiene <a class="reference external" href="../../qgis/qgis-1.0.0_a-gentle-gis-introduction_en.pdf">A Gentle Introduction to GIS</a>  e la <a class="reference external" href="../../qgis/qgis-1.7.0_user_guide_it.pdf">Guida Utente QGIS</a>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

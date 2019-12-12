@@ -1,0 +1,238 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guía de inicio rápido de OTB &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Guías de inicio rápido de OSGeo-Live" href="quickstart.html" />
+    <link rel="next" title="Guía de inicio rápido para pgRouting" href="pgrouting_quickstart.html" />
+    <link rel="prev" title="Guía de inicio rápido de Ossim" href="ossim_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-otb9.png"><img alt="project logo" class="align-right" src="../../_images/logo-otb9.png" style="width: 136.8px; height: 108.0px;" /></a>
+<div class="section" id="guia-de-inicio-rapido-de-otb">
+<h1>Guía de inicio rápido de OTB<a class="headerlink" href="#guia-de-inicio-rapido-de-otb" title="Permalink to this headline">¶</a></h1>
+<p>La Biblioteca de Herramientas OTB (por sus siglas en inglés <em>ORFEO Toolbox library</em>) es una biblioteca de alto rendimiento para el procesamiento de imágenes orientada a la teledetección.</p>
+<p>Esta guía de inicio rápido describe cómo:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Conseguir información de los metadatos de una imagen.</li>
+<li>Desarrollar operaciones matemáticas entre las bandas de una imagen.</li>
+<li>Abrir imágenes <em>raster</em> con la aplicación monteverdi, desarrollar segmentación (<em>mean-shift clustering</em>) y visualizar el resultado.</li>
+</ul>
+</div></blockquote>
+<p>El paquete de Aplicaciones OTB proporciona muchas aplicaciones interesantes que facilitan la manipulación de imágenes. Todas estas herramientas están disponibles a través de:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Interfaz de línea de comandos (CLI, por sus siglas en inglés: <em>command line interface</em>).</li>
+<li>QT GUI: una interfaz de usuario autónoma.</li>
+<li>extensión para QGIS: una extensión que se usa directamente desde Quantum GIS .</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>Los datos de ejemplo usados en esta guía se pueden descargar en:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://www.orfeo-toolbox.org/packages/OTB-Data-Examples.tgz">http://www.orfeo-toolbox.org/packages/OTB-Data-Examples.tgz</a></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="mostrar-la-informacion-de-los-metadatos-de-una-imagen">
+<h2>Mostrar la información de los metadatos de una imagen<a class="headerlink" href="#mostrar-la-informacion-de-los-metadatos-de-una-imagen" title="Permalink to this headline">¶</a></h2>
+<p>Se puede obtener toda la información contenida en los metadatos de una imagen mediante el comando:  <cite>otbReadImageInfo-cli</cite>
+El único parámetro necesario es el nombre de archivo de la imagen de entrada, por ejemplo:  <cite>otbReadImageInfo-cli -in qb_RoadExtract.tif</cite></p>
+</div>
+<div class="section" id="calculadora-de-bandas-de-imagen">
+<h2>Calculadora de bandas de imagen<a class="headerlink" href="#calculadora-de-bandas-de-imagen" title="Permalink to this headline">¶</a></h2>
+<p>La aplicación`otbBandMath-cli` proporciona un método eficiente para desarrollar operaciones matemáticas con imágenes monobanda.
+La sintaxis es muy simple. Por ejemplo, para restar dos bandas para estudiar las diferencias entre las imágenes SpotBefore.tif y SpotAfter.tif, sólo hay que usar el comando: <cite>otbBandMath-cli -ims SpotBefore.png SpotAfter.png -out difference.tif -exp &#8220;im1b1-im2b1&#8221;</cite>
+La aplicación es capaz de desarrollar operaciones matemáticas complejas sobre imágenes tales como cálculo de umbrales, reescalado logarítmico,...
+Esta calculadora digital &#8220;casera&#8221; incluye funciones personalizadas que permiten procesar una expresión compleja. Por ejemplo, dado que las imágenes de teledetección miden magnitudes físicas, es posible extraer varios índices como el NDVI (<em>Normalized Difference Vegetation Index</em>, Índice de vegetación de diferencia normalizada) para la vegetación. Con la calculadora se puede procesar el NDVI de una imagen de un sensor multispectral escribiendo:
+<cite>otbBandMath-cli -ims qb_RoadExtract.tif -out ndvi.tif -exp &#8220;ndvi(im1b3,im1b4)&#8221;</cite></p>
+</div>
+<div class="section" id="realizar-segmentacion-con-monteverdi">
+<h2>Realizar segmentación con Monteverdi<a class="headerlink" href="#realizar-segmentacion-con-monteverdi" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Arrancar Monteverdi desde el menú de inicio en <em>Geospatial&gt;Spatial Tools&gt;Monteverdi</em></p>
+</li>
+<li><p class="first">Seleccionar una imagen <em>raster</em> usando: <em class="menuselection">File ‣ Open Dataset ‣ /home/user/otb/qb_RoadExtract.tif</em> en el directorio donde se hayan descargado los datos.</p>
+</li>
+<li><p class="first">Ir al menú <em class="menuselection">Filtering ‣ Mean Shift clustering</em>.</p>
+</li>
+<li><p class="first">Seleccionar la imagen <em>raster</em> de entrada (Reader0) en el desplegable de entrada. En &#8220;Instance Label&#8221;, seleccionar el nombre de salida (por defecto &#8220;MeanShift0&#8221;).</p>
+</li>
+<li><p class="first">Comprobar que se pueden modificar los parámetros de la segmentación y ver el resultado sobre la región de interés haciendo click en &#8220;Run&#8221;</p>
+</li>
+<li><p class="first">Seleccionar &#8220;Close&#8221; una vez el resultado sea satisfactorio.</p>
+</li>
+<li><p class="first">En la ventana principal, click derecho en la imagen segmentada (&#8220;Clustered Image&#8221;) en el juego de datos de resultado &#8220;MeanShift0&#8221; (o el nombre que se le haya asignado) y seleccionar &#8220;Display in viewer&#8221; para visualizarlo.</p>
+<a class="reference internal image-reference" href="../../_images/otb-mean_shift4.jpg"><img alt="../../_images/otb-mean_shift4.jpg" src="../../_images/otb-mean_shift4.jpg" style="width: 800.0px; height: 600.0px;" /></a>
+</li>
+</ul>
+</div>
+<div class="section" id="ejecutar-clasificacion-supervisada-basada-en-svm-con-monteverdi">
+<h2>Ejecutar clasificación supervisada basada en SVM con Monteverdi<a class="headerlink" href="#ejecutar-clasificacion-supervisada-basada-en-svm-con-monteverdi" title="Permalink to this headline">¶</a></h2>
+<p>(SVM = <em>Support Vector Machines</em>, Máquinas de Soporte Vectorial)</p>
+<ul>
+<li><p class="first">Arrancar Monteverdi desde el menú de inicio.</p>
+</li>
+<li><p class="first">Seleccionar una imagen <em>raster</em>, usando <em class="menuselection">File ‣ Open Dataset ‣ /home/user/otb/qb_RoadExtract.tif</em>.</p>
+</li>
+<li><p class="first">Ir a <em class="menuselection">Learning ‣ SVM classification</em></p>
+</li>
+<li><p class="first">Seleccionar la imagen <em>raster</em> de entrada (Reader0) en la ventana de selección.</p>
+</li>
+<li><p class="first">Se pueden añadir clases con el botón <cite>Add</cite> dentro del menú <cite>Edit Classes</cite>. Para seleccionar las áreas de entrenamiento se dibujan polígonos cliqueando en los vértices y pulsando &#8220;End Polygon&#8221; en el menú &#8220;Regions of Interest&#8221; cuando esté terminado.</p>
+</li>
+<li><p class="first">Ir a <em class="menuselection">Setup ‣ SVM</em> para establecer los parámetros del algoritmo de clasificación.</p>
+</li>
+<li><p class="first">Cliquear en el botón de <cite>Learn</cite> para crear un modelo de clasificación a partir de las clases de aprendizaje.</p>
+</li>
+<li><p class="first">Cliquear en el botón de <cite>Display</cite> para mostrar el resultado de la clasificación supervisada en la imagen completa.</p>
+<a class="reference internal image-reference" href="../../_images/otb-svm4.jpg"><img alt="../../_images/otb-svm4.jpg" src="../../_images/otb-svm4.jpg" style="width: 800.0px; height: 600.0px;" /></a>
+</li>
+</ul>
+<p>Para leer el tutorial completo, leer el <a class="reference external" href="http://www.orfeo-toolbox.org/otb/monteverdi.html">artículo</a>.</p>
+</div>
+<div class="section" id="y-despues">
+<h2>¿Y después?<a class="headerlink" href="#y-despues" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Guía de Software OTB  (en inglés)</p>
+<p>La principal fuente de información es la Guía de Software OTB. Esta es una guía exhaustiva que comprende cerca de 600 páginas, detallando los pasos para instalar y usar OTB. La mayoría de los temas están profusamente ilustradas con resultados de procesos reales de teledetección.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://orfeo-toolbox.org/packages/OTBSoftwareGuide.pdf">OTBSoftwareGuide.pdf</a></li>
+<li><a class="reference external" href="http://orfeo-toolbox.org/SoftwareGuide/">Versión Online html</a></li>
+</ul>
+</li>
+<li><p class="first">OTB CookBook</p>
+<p>También está disponible una guía para las Aplicaciones-OTB y Monteverdi orientada a no-desarrolladores. Esta guía está compuesta por un breve tour por las Aplicaciones-OTB y Monteverdi, seguida de un conjunto de recetas para ejecutar tareas habituales de teledetección con ambas herramientas.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://orfeo-toolbox.org/packages/OTBCookBook.pdf">OTBCookBook.pdf</a></li>
+</ul>
+</li>
+<li><p class="first">Tutoriales OTB</p>
+<p><a class="reference external" href="http://www.orfeo-toolbox.org/SoftwareGuide/SoftwareGuidepa2.html#x17-49000II">Tutoriales</a> para aprender más sobre OTB.</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">Documentación en el DVD</p>
+<p>Ver también la <a class="reference external" href="../../otb/">documentación</a> incluida en este DVD.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

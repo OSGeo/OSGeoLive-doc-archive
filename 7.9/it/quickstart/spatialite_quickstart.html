@@ -1,0 +1,233 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guida rapida su SpatiaLite &mdash; OSGeo-Live 7.9
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.9
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.9
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 7.9 Contents" href="../overview/overview.html" />
+    <link rel="next" title="TileMill Quickstart" href="tilemill_quickstart.html" />
+    <link rel="prev" title="Guida rapida su Sahana" href="sahana_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-spatialite15.png"><img alt="project logo" class="align-right" src="../../_images/logo-spatialite15.png" style="width: 128.0px; height: 113.0px;" /></a>
+<div class="section" id="guida-rapida-su-spatialite">
+<h1>Guida rapida su SpatiaLite<a class="headerlink" href="#guida-rapida-su-spatialite" title="Permalink to this headline">¶</a></h1>
+<p>SpatiaLite rappresenta l&#8217;estensione Spatial per il motore di database SQLite.</p>
+<p>Questa presentazione veloce descrive come aprire un database sia usando il tool a riga di comando che l&#8217;applicazione GUI.</p>
+<div class="section" id="eseguire-spatialite">
+<h2>Eseguire spatialite<a class="headerlink" href="#eseguire-spatialite" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Aprite una console e quindi aprite un database campione con <strong>spatialite</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">spatialite</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">spatialite</span><span class="o">/</span><span class="n">trento</span><span class="o">.</span><span class="n">sqlite</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Comandi utili per l&#8217;interfaccia a riga di comando:</p>
+<div class="highlight-python"><pre>.help
+.tables
+.quit</pre>
+</div>
+</li>
+<li><p class="first">Alcuni esempi di interrogazioni spaziali:</p>
+<div class="highlight-python"><pre>SELECT lc.NOME, lc.NOME_PROV, lc.COM, mh.Perimeter
+     FROM LocalCouncils AS lc, MunicipalHalls AS mh
+     WHERE CONTAINS(lc.Geometry,mh.Geometry) AND lc.NOME LIKE 'VILLA%'
+     ORDER BY lc.NOME;
+.headers ON
+SELECT COMUNE, LOCALITA, Area(Geometry)/1000000 AS "Area Sq.km."
+     FROM PopulatedPlaces ORDER BY "Area Sq.km." DESC LIMIT 10 ;
+SELECT lc.NOME AS "Provence Name", X(mh.Geometry) AS X_COORD, Y(mh.Geometry) AS Y_COORD
+     FROM LocalCouncils AS lc, MunicipalHalls AS mh
+     WHERE mh.COMU=lc.COM ORDER BY "Provence Name" LIMIT 10;</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="come-creare-un-nuovo-database-con-spatialite-gui">
+<h2>Come creare un nuovo database con <strong>spatialite-gui</strong><a class="headerlink" href="#come-creare-un-nuovo-database-con-spatialite-gui" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Lanciare <strong>spatialite_gui</strong> dalla cartella Databases sul Desktop</li>
+<li>Selezionare <em class="menuselection">File ‣ Creating a new SQLite DB</em></li>
+<li>Da <cite>Esplora altre cartelle</cite> posizionarsi sulla cartella /home/user/data/spatialite/. Digitare un nome come &#8220;Test.sqlite&#8221; e premere Salva.</li>
+</ul>
+</div>
+<div class="section" id="come-aprire-un-database-gia-esistente-con-spatialite-gui">
+<h2>Come aprire un database già esistente con <strong>spatialite-gui</strong><a class="headerlink" href="#come-aprire-un-database-gia-esistente-con-spatialite-gui" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Premere il bottone &#8220;Disconnecting current SQLite DB&#8221;</p>
+</li>
+<li><p class="first">Premere il bottone &#8220;Connect existing SQLite DB&#8221;</p>
+</li>
+<li><p class="first">Posizionarsi sulla cartella /home/user/data/spatialite e selezionare trento.sqlite</p>
+</li>
+<li><p class="first">Premere il tasto destro del mouse sulla tavola MunicipalHallsView e selezionare &#8220;Show Columns&#8221;</p>
+</li>
+<li><p class="first">Premere il tasto destro del mouse sulla tavola PopulatedPlaces e selezionare &#8220;Edit table rows&#8221;</p>
+</li>
+<li><p class="first">Digitare nel pannello superiore SQL:</p>
+<div class="highlight-python"><pre>SELECT NOME, X(Geometry) AS Longitude, Y(Geometry) AS Latitude
+     FROM "MunicipalHallsView"
+     WHERE NOME_PROV LIKE "BRESCIA";</pre>
+</div>
+<p>e quindi premere il bottone &#8220;Execute SQL&#8221; sulla destra</p>
+</li>
+</ul>
+</div>
+<div class="section" id="eseguire-spatialite-gis">
+<h2>Eseguire spatialite-gis<a class="headerlink" href="#eseguire-spatialite-gis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Lanciare spatialite-gis dalla cartella Desktop GIS sul Desktop</li>
+<li>Premere il bottone &#8220;Connecting existing SQLite DB&#8221; e connetersi a /home/user/data/spatialite/trento.sqlite</li>
+</ul>
+<p>Dovrebbe apparire una mappa della Provincia di Trento</p>
+<ul class="simple">
+<li>Premere il tasto destro del mouse sul layer Highways e selezionare <em class="menuselection">Hide</em></li>
+<li>Premere il tasto destro del mouse sul layer LocalCouncilsTrento e selezionare <em class="menuselection">Layer Configuration-&gt;Classify</em> poi scegliere &#8220;Shape Area&#8221; per la colonna. Impostare 4 Classi e premere i bottoni Min e Max per selezionare un colore chiaro ed uno scuro. Apparirà una mappa tematica per le varie aree provinciali.</li>
+<li>Per modificare il colore del contorno premere il tasto destro del mouse su LocalCouncils e selezionare <em class="menuselection">Layer configuration-&gt;Graphics</em> quindi impostare un colore differente per Border Graphics.</li>
+<li>Ingrandire leggermente la mappa. Premere il bottone destro del mouse sul layer PopulatedPlaces e selezioanre <em class="menuselection">Indentify on</em>. Ora battete un click su una qualsiasi Località Abitata per consultare gli attributi corrispondenti.</li>
+</ul>
+</div>
+<div class="section" id="altre-cose-da-provare">
+<h2>Altre cose da provare<a class="headerlink" href="#altre-cose-da-provare" title="Permalink to this headline">¶</a></h2>
+<p>Ecco alcuni esercizi aggiuntivi che puoi provare da solo:</p>
+<ul class="simple">
+<li>Ispazionare le geometrie con spatialite-gui</li>
+<li>Aprire ed editare qualche layer SpatiaLite tramite QGIS</li>
+</ul>
+</div>
+<div class="section" id="prossimo-passo">
+<h2>Prossimo passo ?<a class="headerlink" href="#prossimo-passo" title="Permalink to this headline">¶</a></h2>
+<p>Per imparare di più su SpatiaLite, un punto di inizio è  <a class="reference external" href="https://www.gaia-gis.it/fossil/libspatialite/index">SpatiaLite project page</a>.</p>
+<p>assicuratevi di leggere il tutorial <a class="reference external" href="http://www.gaia-gis.it/gaia-sins/spatialite-cookbook/index.html">Spatialite cookbook</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

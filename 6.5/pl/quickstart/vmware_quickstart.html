@@ -1,0 +1,198 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OSGeo-Live Quickstart for VMWare Player &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="osgeo-live-quickstart-for-vmware-player">
+<h1>OSGeo-Live Quickstart for VMWare Player<a class="headerlink" href="#osgeo-live-quickstart-for-vmware-player" title="Permalink to this headline">¶</a></h1>
+<p>OSGeo-Live can be installed and run as a &#8220;guest&#8221; virtual machine on a host computer. The host can be either Windows or Linux. The host machine will have software (such as VMWare Player) installed to run the virtual machine. Following are instructions for setting up OSGeo-Live as a Virtual Machine.</p>
+<div class="section" id="why-run-osgeo-live-in-a-virtual-machine">
+<h2>Why run OSGeo-Live in a Virtual Machine?<a class="headerlink" href="#why-run-osgeo-live-in-a-virtual-machine" title="Permalink to this headline">¶</a></h2>
+<p>Running OSGeo-Live in a VM enhances the LiveDVD experience by allowing the user to save his work, update the Live system and add additional software. In addition, the virtual computer is much more responsive than when running off the original DVD. The OSGeo virtual machine creates a full, natural computer environment. Unlike the LiveDVD, data and files are saved, configurations are persistant, as if you had a second computer inside your main &#8220;host&#8221; machine. This platform extends OSGeo-Live usability beyond the basics of presentation and training, and into the realm of real world GIS work.</p>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hardware">
+<h3>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h3>
+<p>Your host computer should have at least 2GB of RAM memory. You will allocate 1GB to the virtual machine, and leave 1GB for the host. More memory is always better, so depending on performance, you can readjust the amount of memory for the guest VM later.
+Regarding disk space, you&#8217;ll need at least 25GB free. Creating an even larger virtual hard disk will leave you with more room for your work.
+In addition the CPU in your computer should support virtual machines. (Most computers produced in the last five years have a CPU that includes VT=Virtualization Technology).</p>
+</div>
+<div class="section" id="software">
+<h3>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h3>
+<p>Download the VM version of OSGeo-Live. You will need the 7-zip compression program to unzip this file. And of course the VMWare Player software for running the virtual machine. Note that VMWare Player, while offered as a cost-free download, is not open source. You must register on the VMWare website, and agree to their licence in order to use the software.:</p>
+<p><a class="reference external" href="http://download.osgeo.org/livedvd/release/5.5/osgeo-live-vm-5.5.7z">The OSGeo virtual machine</a></p>
+<p><a class="reference external" href="http://www.7-zip.org/download.html">7 zip download page</a></p>
+<p><a class="reference external" href="https://www.vmware.com/tryvmware/?p=player&amp;lp=1">VMWare Player registration:</a></p>
+<p>Unzip the osgeo-live-vm using the command</p>
+<div class="highlight-python"><pre>7z e osgeo-live-vm-5.5.7z</pre>
+</div>
+<p>or using the 7-zip GUI program. Also install the VMWare Player software.</p>
+</div>
+</div>
+<div class="section" id="setting-up-the-vm">
+<h2>Setting up the VM<a class="headerlink" href="#setting-up-the-vm" title="Permalink to this headline">¶</a></h2>
+<p>In order to run the OSGeo virtual machine, we first need to create a virtual machine configuration file <strong>vmx</strong>. The quick way is to browse to:</p>
+<p><a class="reference external" href="http://www.easyvmx.com/easyvmx.shtml">EasyVMX web site:</a></p>
+<dl class="docutils">
+<dt>Click on the easyvmx button and enter these configuration options in the form:</dt>
+<dd><ul class="first last simple">
+<li>Virtual Machine Name: osgeolive-5.5 (choose same name as the vmdk file)</li>
+<li>Select GuestOS: Ubuntu</li>
+<li>Memory Size: 1024 MB (at least)</li>
+<li>Virtual Machine Description: OSGeo-Live 5.5</li>
+<li>Network Interface Card: (leave at default)</li>
+<li>Hardisk Drives: Disk#1 Disk Size 20GB (at least) and check SCSI</li>
+<li>Sound and IO: uncheck all</li>
+</ul>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_form9.png"><img alt="../../_images/vmware_easyvmx_form9.png" src="../../_images/vmware_easyvmx_form9.png" style="width: 600.0px; height: 498.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_disk9.png"><img alt="../../_images/vmware_easyvmx_disk9.png" src="../../_images/vmware_easyvmx_disk9.png" style="width: 600.0px; height: 498.0px;" /></a>
+<p>Click the button at bottom &#8220;Create Experimental Virtual Machine&#8221;. The website creates a properly formated <strong>vmx</strong> file containing all the above configurations. You need to place this file into the directory on your computer where the OSGeo vmdk file is located. So in the next screen, copy all lines from <tt class="docutils literal"><span class="pre">#!/usr/bin/vmplayer</span></tt> to <tt class="docutils literal"><span class="pre">#</span> <span class="pre">END</span> <span class="pre">OF</span> <span class="pre">EasyVMX!</span> <span class="pre">CONFIG</span></tt> and paste into a new file named osgeolive-5.5.vmx.</p>
+<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_output9.png"><img alt="../../_images/vmware_easyvmx_output9.png" src="../../_images/vmware_easyvmx_output9.png" style="width: 600.0px; height: 498.0px;" /></a>
+<p>The file basename (without the vmx extension) should match the file basename of the OSGeo vmdk file. Also double check the line in the vmx file that refers to <tt class="docutils literal"><span class="pre">scsi0:0.fileName</span> <span class="pre">=</span></tt>. Make sure that this also <strong>exactly matches the downloaded vmdk</strong> file name.
+Save this new vmx file into the same directory as your downloaded OSGeo vmdk.</p>
+<p>Now fire up VMWare Player and click the <strong>Open a Virtual Machine</strong> button. Browse to the directory where both the downloaded vmdk and the newly created vmx are located. Point to the vmx and the new virtual machine should be added to the list in the Player window. Click the <strong>Play Virtual Machine</strong> button and the OSGeo VM should boot up.</p>
+<a class="reference internal image-reference" href="../../_images/vmware_open9.png"><img alt="../../_images/vmware_open9.png" src="../../_images/vmware_open9.png" style="width: 540.0px; height: 474.3px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_play9.png"><img alt="../../_images/vmware_play9.png" src="../../_images/vmware_play9.png" style="width: 540.0px; height: 474.3px;" /></a>
+</div>
+<div class="section" id="once-the-vm-is-running">
+<h2>Once the VM is running<a class="headerlink" href="#once-the-vm-is-running" title="Permalink to this headline">¶</a></h2>
+<p>The first thing you&#8217;ll want to do is install the VMWare-tools packages. Once these are installed, you can improve the display resolution, and <strong>share folders</strong> between your host computer and the OSGeo-Live VM. Run this command in a command terminal to install the VMWare tools:</p>
+<div class="highlight-python"><pre>sudo apt-get install open-vm-dkms open-vm-toolbox</pre>
+</div>
+<p>In the Virtual Machine window, select <em class="menuselection">Virtual Machine ‣ Virtual Machine Settings</em> menu, shift over to the Options tab, and click the Shared Folders setting. Now you can click the &#8220;+&#8221; button to add a directory from your host computer to be shared inside the virtual OSGeo-Live system. Suppose you want to share the directory <cite>C:\Users\your_name\Downloads</cite>. Click the browse button to find the directory, give it a name such as &#8220;Downloads&#8221;, and click &#8220;Save&#8221;.</p>
+<a class="reference internal image-reference" href="../../_images/vmware_shared9.png"><img alt="../../_images/vmware_shared9.png" src="../../_images/vmware_shared9.png" style="width: 640.0px; height: 527.2px;" /></a>
+<p>Now run two additional commands in the terminal to mount the shared folder:</p>
+<div class="highlight-python"><pre>sudo mkdir /mnt/Downloads
+sudo mount -t vmhgfs .host:/Downloads /mnt/Downloads</pre>
+</div>
+<p>And enjoy...</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

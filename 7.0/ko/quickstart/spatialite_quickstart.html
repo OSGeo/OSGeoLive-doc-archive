@@ -1,0 +1,235 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SpatiaLite Quickstart &mdash; OSGeo-Live 7.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 7.0 의 이용을 환영합니다 ." href="../index.html" />
+    <link rel="next" title="TileMill Quickstart" href="tilemill_quickstart.html" />
+    <link rel="prev" title="Sahana Quickstart" href="sahana_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-spatialite19.png"><img alt="project logo" class="align-right" src="../../_images/logo-spatialite19.png" style="width: 128.0px; height: 113.0px;" /></a>
+<div class="section" id="spatialite-quickstart">
+<h1>SpatiaLite Quickstart<a class="headerlink" href="#spatialite-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>SpatiaLite는 공간적 기능이 추가된 SQLite 데이터 베이스 엔진입니다.</p>
+<p>이 Quick Start 페이지는 커맨드 라인과 GUI 어플리케이션으로 데이터 베이스에 접근하는 방법을 설명합니다.</p>
+<div class="section" id="spatialite">
+<h2>spatialite 실행<a class="headerlink" href="#spatialite" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">콘솔을 열어 <strong>spatialite</strong> 로 견본 데이터 베이스를 엽니다:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">spatialite</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">spatialite</span><span class="o">/</span><span class="n">trento</span><span class="o">.</span><span class="n">sqlite</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">CLI 인터페이스에서 도움이 되는 커맨드입니다:</p>
+<div class="highlight-python"><pre>.help
+.tables
+.quit</pre>
+</div>
+</li>
+<li><p class="first">공간적 질의문의 예시입니다:</p>
+<div class="highlight-python"><pre>SELECT lc.NOME, lc.NOME_PROV, lc.COM, mh.Perimeter
+     FROM LocalCouncils AS lc, MunicipalHalls AS mh
+     WHERE CONTAINS(lc.Geometry,mh.Geometry) AND lc.NOME LIKE 'VILLA%'
+     ORDER BY lc.NOME;
+.headers ON
+SELECT COMUNE, LOCALITA, Area(Geometry)/1000000 AS "Area Sq.km."
+     FROM PopulatedPlaces ORDER BY "Area Sq.km." DESC LIMIT 10 ;
+SELECT lc.NOME AS "Provence Name", X(mh.Geometry) AS X_COORD, Y(mh.Geometry) AS Y_COORD
+     FROM LocalCouncils AS lc, MunicipalHalls AS mh
+     WHERE mh.COMU=lc.COM ORDER BY "Provence Name" LIMIT 10;</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="spatialite-gui">
+<h2><strong>spatialite-gui</strong> 로 새로운 데이터 베이스 만들기<a class="headerlink" href="#spatialite-gui" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>데스크탑의 Databases 폴더에서 <strong>spatialite_gui</strong> 를 실행합니다.</li>
+<li><em class="menuselection">File ‣ Creating a new SQLite DB</em></li>
+<li>Browse를 클릭하고 /home/user/data/spatialite/ directory 로 갑니다. &#8220;Test.sqlite&#8221;와 같은 이름을 입력하고 Save를 클릭하십시오.</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><strong>spatialite-gui</strong> 로 기존 데이터 베이스 열기<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">&#8220;Disconnecting current SQLite DB&#8221; 버튼을 클릭합니다.</p>
+</li>
+<li><p class="first">&#8220;Connect existing SQLite DB&#8221; 버튼을 클릭합니다.</p>
+</li>
+<li><p class="first">/home/user/data/spatialite 를 열어 trento.sqlite를 선택합니다.</p>
+</li>
+<li><p class="first">MunicipalHallsView 테이블 위에서 마우스 오른쪽 버튼을 클릭하고 &#8220;Show Columns&#8221; 를 선택합니다.</p>
+</li>
+<li><p class="first">PopulatedPlaces 테이블 위에서 마우스 오른쪽 버튼을 클릭하고 &#8220;Edit table rows&#8221; 를 선택합니다.</p>
+</li>
+<li><p class="first">윗쪽 SQL pane에 다음을 입력하십시오:</p>
+<div class="highlight-python"><pre>SELECT NOME, X(Geometry) AS Longitude, Y(Geometry) AS Latitude
+     FROM "MunicipalHallsView"
+     WHERE NOME_PROV LIKE "BRESCIA";</pre>
+</div>
+<p>그 후에 오른쪽의 &#8220;Execute SQL&#8221; 버튼을 클릭하십시오.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="spatialite-gis">
+<h2>spatialite-gis 실행<a class="headerlink" href="#spatialite-gis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>데스크탑 GIS 폴더에서 spatialite-gis를 실행합니다.</li>
+<li>&#8220;Connecting existing SQLite DB&#8221; 버튼을 클릭해서 /home/user/data/spatialite/trento.sqlite로 연결합니다.</li>
+</ul>
+<p>그러면 이탈리아의 Trento 지역 지도를 볼 수 있습니다.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Highways 레이어 위에서 마우스 오른쪽 버튼을 클릭하고 <em class="menuselection">Hide</em> 를 선택하십시오.</li>
+<li>LocalCouncilsTrento 레이어 위에서 마우스 오른쪽 버튼을 클릭하고 <em class="menuselection">Layer Configuration ‣ Classify</em> 를 선택한 후에 &#8220;Shape Area&#8221;를 선택하십시오. 4 Classes를 선택하고 dark and light color를 선택하기 위해서 Min and Max color patches를 선택하십시오. 이 지역의 Choropleth display를 볼 수 있습니다.</li>
+<li>LocalCouncils 위에서 마우스 오른쪽 버튼을 누르고 <em class="menuselection">Layer configuration ‣ Graphics</em> 로 가서 경계의 색을 바꿀 수 있습니다. Border Graphics 아래에서 다른 색을 선택하십시오.</li>
+<li>약간 지도를 확대해 보십시오. PopulatedPlaces 레이어 위에서 마우스 오른쪽 버튼을 클릭하고 <em class="menuselection">Indentify on</em> 을 선택하십시오. Populated Places의 한 곳을 선택해서 속성을 볼 수 있습니다.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>시도해 보기<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>추가적으로 다음도 실행해 보십시오:</p>
+<ul class="simple">
+<li>spatialite-gui로 기하 정보 점검</li>
+<li>QGIS에서 SpatiaLite 레이어를 열어 편집하기</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>다음은?<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>SpatiaLite에 대해 더 알기 위해서 다음 페이지에 가보십시오 : <a class="reference external" href="https://www.gaia-gis.it/fossil/libspatialite/index">SpatiaLite project page</a>.</p>
+<p>사용 지침서도 확인해 보십시오 : <a class="reference external" href="http://www.gaia-gis.it/gaia-sins/spatialite-cookbook/index.html">Spatialite cookbook</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

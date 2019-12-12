@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης GDAL/OGR &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Καλώς ήρθατε στο OSGeo-Live" href="../index.html" />
+    <link rel="next" title="Εγχειρίδιο Γρήγορης Εκκίνησης GeoKettle" href="geokettle_quickstart.html" />
+    <link rel="prev" title="Εγχειρίδιο Γρήγορης Εκκίνησης EOxServer" href="eoxserver_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL5.png" style="width: 81.0px; height: 89.4px;" /></a>
+<div class="section" id="gdal-ogr">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης GDAL/OGR<a class="headerlink" href="#gdal-ogr" title="Permalink to this headline">¶</a></h1>
+<p>Δεν θα χρειαστείτε τίποτα άλλο από ένα τερματικό για αυτή την γρήγορη εκκίνηση. Εαν θέλετε να οπτικοποιήσετε το αποτέλεσμα μπορείτε να χρησιμοποιήσετε ένα από τα λογισμικά GIS που περιέχει το OSGeo-Live π.χ. QuantumGIS.</p>
+<p>Αυτό το Εγχειρίδιο γρήγορης εκκίνησης χωρίζεται σε δύο μέρη το GDAL (εικονιστικά δεδομένα) και το OGR (διανυσματικά δεδομένα). Θα αρχίσουμε με την GDAL.</p>
+<p>Αυτό το Εγχειρίδιο γρήγορης εκκίνησης περιγράφει πως:</p>
+<dl class="docutils">
+<dt>GDAL</dt>
+<dd><ul class="first last simple">
+<li>Να εξερευνήσετε τα δεδομένα των εικόνων σας με την gdalinfo</li>
+<li>Να τυποποιήσετε μεταφράσεις με την gdal_translate</li>
+<li>Να προβάλετε τα δεδομένα σας με την gdalwarp</li>
+<li>Να ενώσετε τα δεδομένα σας με την gdal_warp ή την gdal_merge.py</li>
+<li>Να δημιουργήσετε ένα αρχείο shapefile που θα είναι κατάλογος τετραγωνιδίων, μέσω της εφαρμογης gdalindex</li>
+</ul>
+</dd>
+<dt>OGR</dt>
+<dd><ul class="first last simple">
+<li>Να αποκτήσετε πληροφορίες για τα δεδομένα σας με την orginfo</li>
+<li>Να χρησιμοποιήσετε την org2org για να μεταφέρετε τα δεδομένα σας σε άλλα πρότυπα</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="gdal">
+<h2>Γνωρίζοντας την GDAL<a class="headerlink" href="#gdal" title="Permalink to this headline">¶</a></h2>
+<p>Μπορείτε να βρείτε δοκιμαστικά δεδομένα στο /usr/local/share/data. Θέλουμε να περιηγηθούμε στα δεδομένα NaturalEarth σε αυτό το εγχειρίδιο. Θέλουμε να δουλέψουμε με ένα αντίγραφο των δεδομένων. Έτσι το πρώτο βήμα είναι να δημιουργήσουμε ένα αντίγραφο των δεδομένων στον αντίστοιχο φάκελό μας.</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /home/user
+cp /usr/local/share/data/natural_earth/ /gdal_natural_earth
+</pre></div>
+</div>
+<p>Μπορείτε να βρείτε ένα NaturalEarth εικονιστικό αρχείο και ένα αρχείο tfw στο:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">gdal_natural_earth</span><span class="o">/</span><span class="n">HYP_50M_SR_W</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Ανοίξτε το αρχείο με ένα πρόγραμμα εφαρμογών όπως το Quantum GIS και ρίξτε μια ματιά.</p>
+</div>
+</div>
+<div class="section" id="gdalinfo">
+<h2>Βρείτε πληροφορίες για τα εικονιστικά δεδομένα με την gdalinfo<a class="headerlink" href="#gdalinfo" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>gdalinfo HYP_50M_SR_W.tif
+  Driver: GTiff/GeoTIFF
+  Files: HYP_50M_SR_W.tif
+         HYP_50M_SR_W.tfw
+  Size is 10800, 5400
+  Coordinate System is `&#39;
+  Origin = (-179.999999999999972,90.000000000000000)
+  Pixel Size = (0.033333333333330,-0.033333333333330)
+  Metadata:
+    TIFFTAG_SOFTWARE=Adobe Photoshop CS3 Macintosh
+    TIFFTAG_DATETIME=2009:09:19 10:13:17
+    TIFFTAG_XRESOLUTION=342.85699
+    TIFFTAG_YRESOLUTION=342.85699
+    TIFFTAG_RESOLUTIONUNIT=2 (pixels/inch)
+  Image Structure Metadata:
+    INTERLEAVE=PIXEL
+  Corner Coordinates:
+  Upper Left  (-180.0000000,  90.0000000)
+  Lower Left  (-180.0000000, -90.0000000)
+  Upper Right ( 180.0000000,  90.0000000)
+  Lower Right ( 180.0000000, -90.0000000)
+  Center      (  -0.0000000,   0.0000000)
+  Band 1 Block=10800x1 Type=Byte, ColorInterp=Red
+  Band 2 Block=10800x1 Type=Byte, ColorInterp=Green
+  Band 3 Block=10800x1 Type=Byte, ColorInterp=Blue
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>Σημείωση:</dt>
+<dd><ul class="first last simple">
+<li>Ο οδηγός είναι &#8220;GTiff/GeoTIFF&#8221;</li>
+<li>Το μέγεθος είναι 10800x5400</li>
+<li>3 κανάλια του τύπου Byte</li>
+<li>Συντεταγμένες</li>
+<li>Κανένα σύστημα συντεταγμένων</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id1">
+<h2>Απλή Μετάφραση των προτύπων<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Αρχικά αναγνωρίστε τους οδηγούς σας. Η παράμετρος &#8211;formats της γραμμής εντολών αλλάζουν από την gdal_translate ώστε να μπορούν να εντοπίσουν μια λίστα από παρεχόμενα πρότυπα οδηγών.</p>
+<dl class="docutils">
+<dt>Κάθε πρότυπο αναφέρει εάν είναι:</dt>
+<dd><ul class="first last simple">
+<li>μόνο για ανάγνωση (ro),</li>
+<li>για ανάγνωση/εγγραφη (rw) ή</li>
+<li>για ανάγνωση/εγγραφή/ενημέρωση (rw+).</li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">gdal_translate</span> <span class="o">--</span><span class="n">format</span>
+</pre></div>
+</div>
+<p>Τα &#8211;format της γραμμής εντολών μπορεί να αλλάζουν για να μπορούν να αναζητήσουν λεπτομέρειες για ένα συγκεκριμένο οδηγό, συμπεριλαμβανομένων των επιλογών δημιουργίας και τα επιτρεπτά είδη δεδομένων</p>
+<div class="highlight-python"><div class="highlight"><pre>gdalinfo --format jpeg
+gdal_translate --format png
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Μετατροπές<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Οι μετατροπές γίνονται με την εντολή gdal_translate. Το προεπιλεγμένο πρότυπο του αποτελέσματος είναι GeoTIFF:</p>
+<div class="highlight-python"><div class="highlight"><pre>gdal_translate HYP_50M_SR_W.tif HYP_50M_SR_W.png
+</pre></div>
+</div>
+<p>Το πρόθεμα -of χρησιμοποιείται για την επιλογή ενός προτύπου αποτελέσματος και το πρόθεμα -co χρησιμοποιείται για να ορίσει την επιλογή δημιουργίας:</p>
+<div class="highlight-python"><div class="highlight"><pre>gdal_translate -of JPEG -co QUALITY=40 HYP_50M_SR_W.tif HYP_50M_SR_W.jpg
+</pre></div>
+</div>
+<p>Το -ot μπορεί να χρησιμοποιηθεί για να αλλάξει τον τύπο δεδομένου εξόδου.</p>
+<div class="highlight-python"><div class="highlight"><pre>gdal_translate -ot Int16 HYP_50M_SR_W.tif HYP_50M_SR_W_Int16.tif
+</pre></div>
+</div>
+<p>Χρησιμοποιείστε την gdalinfo για να επιβεβαιώσετε τον τύπο των δεδομένων.</p>
+</div>
+<div class="section" id="id3">
+<h2>Αλλαγή κλίμακας<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Η επιλογή -outsize μπορεί να χρησιμοποιηθεί για να ορίσει το μέγεθος του αρχείου εξόδου.</p>
+<div class="highlight-python"><div class="highlight"><pre>gdal_translate -outsize 50% 50% HYP_50M_SR_W.tif  HYP_50M_SR_W_small.tif
+</pre></div>
+</div>
+<p>Χρησιμοποιήστε την gdalinfo για να επιβεβαιώσετε το μέγεθος.</p>
+<p>Η επιλογή -scale μπορεί να χρησιμοποιηθεί για αλλαγή της κλίμακας των δεδομένων. Σαφής έλεγχος των ορίων εισόδου και εξόδου είναι επίσης διαθέσιμος. Η επιλογή της gdalinfo -mm μπορεί να χρησιμοποιηθεί για να εμφανιστούν οι τιμές του ελάχιστου και μέγιστου εικονοστοιχείου.</p>
+<p>Ας χωρίσουμε την εικόνα μας στα δύο με την επιλογή -srcwin η οποία δημιουργεί ένα αντίγραφο με βάση την θέση του εικονοστοιχείου/γραμμής (xoff yoff xsize ysize). Μπορείτε επίσης να χρησιμοποιήσετε το -projwin και να ορίσετε τα όρια στις γεωδαιτικές εικονοσυντεταγμένες (ulx uly lrx lry).</p>
+<div class="highlight-python"><div class="highlight"><pre>gdalinfo -mm HYP_50M_SR_W.tif
+gdal_translate -srcwin 0 0 5400 5400 HYP_50M_SR_W.tif  west.tif
+gdal_translate -srcwin 5400 0 5400 5400 HYP_50M_SR_W.tif  east.tif
+</pre></div>
+</div>
+</div>
+<div class="section" id="gdaltindex">
+<h2>Τετραγωνίδια εικονιδίων με το gdaltindex<a class="headerlink" href="#gdaltindex" title="Permalink to this headline">¶</a></h2>
+<p>Μπορείτε να δημιουργήσετε ένα αρχείο shapefile σαν τετραγωνίδια εικονιδίων. Για κάθε εικόνα δημιουργείται ένα πολύγωνο που περιέχει τα όρια της έκτασης του πολυγώνου και τη διεύθυνση του αρχείου στο δίσκο.</p>
+<div class="highlight-python"><div class="highlight"><pre>gdaltindex index_natural_earth.shp *st.tif
+</pre></div>
+</div>
+<p>Ρίξτε μια ματιά στο αρχείο εξόδου shapefile με το Quantum GIS και το ogrinfo (θα μάθετε μερισσότερα για το ogrinfo αργότερα σε αυτόν τον οδηγό)</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex2.png"><img alt="../../_images/gdal_gdaltindex2.png" src="../../_images/gdal_gdaltindex2.png" style="width: 416.0px; height: 212.0px;" /></a>
+</div></blockquote>
+<div class="highlight-python"><div class="highlight"><pre>ogrinfo ../HYP_50M_SR_W/ index
+INFO: Open of `../HYP_50M_SR_W/&#39;
+    using driver `ESRI Shapefile&#39; successful.
+
+Layer name: index
+Geometry: Polygon
+Feature Count: 2
+Extent: (-180.000000, -90.000000) - (180.000000, 90.000000)
+Layer SRS WKT: (unknown)
+location: String (255.0)
+OGRFeature(index):0
+  location (String) = east.tif
+  POLYGON ((-0.00000000001796 90.0,179.999999999964047 90.0,179.999999999964047 -89.999999999982009,-0.00000000001796 -89.999999999982009,-0.00000000001796 90.0))
+
+OGRFeature(index):1
+  location (String) = west.tif
+  POLYGON ((-179.999999999999972 90.0,-0.00000000001796 90.0,-0.00000000001796 -89.999999999982009,-179.999999999999972 -89.999999999982009,-179.999999999999972 90.0))
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Προβολή<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Για αυτή την διαδικασία υποθέτουμε πως το HYP_50M_SR_W.tif έχει δημιουργηθεί σωστά με
+όρια. Όπως είδαμε νωρίτερα με την gdainfo δεν έχει οριστεί κανένα σύστημα συντεταγμένων. Έτσι ορίζουμε σε αρχικό στάδιο το WGS84 ως σύστημα συντεταγμένων για την εικόνα.</p>
+<div class="highlight-python"><div class="highlight"><pre>gdal_translate -a_srs WGS84 HYP_50M_SR_W.tif HYP_50M_SR_W_4326.tif
+</pre></div>
+</div>
+<p>Η εντολή gdalwarp μπορεί να χρησιμοποιηθεί για να προβάλει εικόνες. Εδώ προβάλαμε
+την εικόνα με γεωαναφορά στο WGS84, στο σύστημα προβολής Mercator:</p>
+<div class="highlight-python"><div class="highlight"><pre>gdalwarp -t_srs &#39;+proj=merc +datum=WGS84&#39; HYP_50M_SR_W_4326.tif mercator.tif
+</pre></div>
+</div>
+<p>Χρησιμοποιείστε την gdalinfo για να επιβεβαιώσετε τις αλλαγές και να ρίξετε μια ματιά στην εικόνα.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/gdal_mercator2.png"><img alt="../../_images/gdal_mercator2.png" src="../../_images/gdal_mercator2.png" style="width: 405.6px; height: 327.2px;" /></a>
+</div></blockquote>
+<p>Εδώ προβάλαμε στην Ορθή προβολή.</p>
+<div class="highlight-python"><div class="highlight"><pre>gdalwarp -t_srs &#39;+proj=ortho +datum=WGS84&#39; HYP_50M_SR_W_4326.tif ortho.tif
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/gdal_ortho2.png"><img alt="../../_images/gdal_ortho2.png" src="../../_images/gdal_ortho2.png" style="width: 294.4px; height: 296.8px;" /></a>
+<p>Παρατηρείτε πως οι πόλοι είναι κομμένοι; Αυτό συμβαίενι επειδή οι ακμές στους πόλους
+δεν μπορούν να προβληθούν και η gdalwarp δεν μπορεί να διαβάσει όλα τα δεδομένα. Μπορούμε να αναγκάσουμε
+την gdalwarp να διαβάσει ένα πλήθος δεδομένων σε μεγάλα κομμάτια, ως ένας τρόπος να
+λύσουμε το πρόβλημα. Διαβάστε περισσότερα για αυτό στο RasterTutorial <a class="reference external" href="http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial">http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial</a>.</p>
+</div>
+<div class="section" id="id5">
+<h2>Συνένωση<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>gdal_merge.py είναι ένα αρχείο script python το οποίο μπορεί να χρησιμοποιηθεί ως ένα απλό εργαλείο συνένωσης. Συνένωση της east.tif και της west.tif σε ένα απλό αρχείο.</p>
+<div class="highlight-python"><div class="highlight"><pre>gdal_merge.py  east.tif west.tif -o merged.tif
+</pre></div>
+</div>
+<p>Η ίδια εφαρμογή μπορεί να γίνει με την gdalwarp. Η gdalwarp έχει μια ποικιλία πλεονεκτημάτων σε σχέση με την gdal_merge, αλλά μπορεί να είναι πολύ αργή στην ένωση πολλών αρχείων:</p>
+<div class="highlight-python"><div class="highlight"><pre>gdalwarp east.tif west.tif warpmerged.tif
+</pre></div>
+</div>
+</div>
+<div class="section" id="ogr">
+<h2>Γνωρίζοντας την OGR<a class="headerlink" href="#ogr" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>cd /home/usr/gdal_natural_earth/
+</pre></div>
+</div>
+<p>..tip:: Ανοίξτε ένα αρχείο shape file με μια εφαρμογή GIS όπως το Quantum GIS και ρίξτε μια ματιά.</p>
+</div>
+<div class="section" id="ogrinfo">
+<h2>Πληροφορηθείτε για τα διανυσματικά δεδομένα με την ogrinfo<a class="headerlink" href="#ogrinfo" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>ogrinfo ./natural_earth
+INFO: Open of `../natural_earth/&#39;
+    using driver `ESRI Shapefile&#39; successful.
+1: 10m_lakes (Polygon)
+2: 10m_land (Polygon)
+3: 10m_rivers_lake_centerlines (Line String)
+4: 10m-admin-0-countries (Polygon)
+5: 10m_ocean (Polygon)
+6: 10m-urban-area (Polygon)
+7: 10m_populated_places_simple (Point)
+</pre></div>
+</div>
+<p>Μπορείτε να πάρετε μια σύνοψη για τα δεδομένα σας με την ogrinfo με χρήση του -so.</p>
+<div class="highlight-python"><div class="highlight"><pre>ogrinfo -so ../natural_earth/ 10m-admin-0-countries
+INFO: Open of `../natural_earth/&#39;
+      using driver `ESRI Shapefile&#39; successful.
+
+Layer name: 10m-admin-0-countries
+Geometry: Polygon
+Feature Count: 251
+Extent: (-179.999783, -89.999828) - (180.000258, 83.633811)
+Layer SRS WKT:
+GEOGCS[&quot;GCS_WGS_1984&quot;,
+    DATUM[&quot;WGS_1984&quot;,
+        SPHEROID[&quot;WGS_1984&quot;,6378137.0,298.257223563]],
+    PRIMEM[&quot;Greenwich&quot;,0.0],
+    UNIT[&quot;Degree&quot;,0.0174532925199433]]
+OBJECTID: Integer (9.0)
+COUNTRY: String (100.0)
+FEATURECLA: String (32.0)
+SOV: String (100.0)
+SHAPE_LENG: Real (19.11)
+SHAPE_AREA: Real (19.11)
+</pre></div>
+</div>
+<p>Εάν χρησιμοποιήσετε την orginfo χωρίς παράμετρο, θα πάρετε μια σύνοψη που αφορά τα δεδομένα σας και στην συνέχεια ένα τμήμα από κάθε σύνολο δεδομένων.</p>
+<div class="highlight-python"><div class="highlight"><pre>ogrinfo ../natural_earth/ 10m-admin-0-countries
+</pre></div>
+</div>
+<p>Μπορείτε να προωθήσετε το αποτέλεσμα από την ogrinfo για να χρησιμοποιήσετε το φίλτρο για να πάρετε την απόδοση για την χώρα σας.</p>
+<div class="highlight-python"><div class="highlight"><pre>ogrinfo ../natural_earth/ 10m-admin-0-countries | grep COUNTRY
+
+COUNTRY: String (100.0)
+COUNTRY (String) = Afghanistan
+COUNTRY (String) = Akrotiri Sovereign Base Area
+COUNTRY (String) = Aland
+COUNTRY (String) = Albania
+COUNTRY (String) = Algeria
+COUNTRY (String) = American Samoa
+COUNTRY (String) = Andorra
+....
+</pre></div>
+</div>
+<p>Μπορείτε να μετατρέψετε τα δεδομένα σας σε άλλα πρότυπα. Μπορείτε να δείτε την λίστα με τα πρότυπα που υποστηρίζονται με την εντολή &#8211;formats.</p>
+</div>
+<div class="section" id="ogr2ogr">
+<h2>Χρήση της ogr2ogr για μετατροπή δεδομένων μεταξύ αρχείων προτύπων<a class="headerlink" href="#ogr2ogr" title="Permalink to this headline">¶</a></h2>
+<p>Μπορείτε να χρησιμοποιήσετε το ugr2ogr για να μετατρέψετε τα απλά αντικείμενα των δεδομένων σε διάφορα αρχεία προτύπων. Μπορείτε να χρησιμοποιήσετε την εντολή &#8211;format για να δείτε την λίστα με τα πρότυπα που υποστηρίζονται με την ανάγνωση/εγγραφή πληροφοριών.</p>
+<p>Μετατροπή των χωρών σε GML.</p>
+<div class="highlight-python"><div class="highlight"><pre>ogr2ogr --formats
+ogr2ogr -f GML countries.xml 10m-admin-0-countries.shp
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Πράγματα να προσπαθήσετε<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Εδώ υπάρχουν κάποιες πρόσθετες προκλήσεις για να προσπαθήσετε:</p>
+<ol class="arabic simple">
+<li>Χρησιμοποιήστε την gdalwarp ή την gdal_merge.py για να ενώσετε τα δεδομένα σας</li>
+<li>Χρησιμοποιήστε την gdaladdo για να δημιουργήσετε διάφορες επισκοπήσεις</li>
+<li>Το QGIS χρησιμοποιεί τις GDAL/OGR προκειμένου να υποστηρίξει διάφορους τύπους. Παρέχει επίσης και το GdalTools Plugin για πρόσβαση σε εικονιστικά δεδομένα. Αυτή η εφαρμογή ενσωματώνει τα εργαλεία της gdal στο QGIS.</li>
+<li>Χρησιμοποιήστε την ogr2ogr για να εισάγετε/εξάγετε τα διανυσματικά σας δεδομένα σε άλλους τύπους δεδομένων όπως την PostGIS. Ρίξτε μια ματια τις επιλογές που παρέχει το ogr2ogr.</li>
+<li>Χρησιμοποιήστε το QGIS plugin OGR-Layer-Konverter.</li>
+</ol>
+</div>
+<div class="section" id="id7">
+<h2>Τι ακολουθεί;<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>Αυτό είναι μόνο το πρώτο βήμα για την χρήση της GDAL και του OGR. Υπάρχουν πολλές ακόμα λειτουργίες που μπορούμε να χρησιμοποιήσουμε.</p>
+<p>Κεντρική ιστοσελίδα GDAL</p>
+<blockquote>
+<div><a class="reference external" href="http://www.gdal.org">http://www.gdal.org</a></div></blockquote>
+<p>Όλα για το OGR</p>
+<blockquote>
+<div><a class="reference external" href="http://gdal.org/ogr/index.html">http://gdal.org/ogr/index.html</a></div></blockquote>
+<p>Εκμάθηση GDAL</p>
+<blockquote>
+<div><a class="reference external" href="http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial">http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial</a></div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

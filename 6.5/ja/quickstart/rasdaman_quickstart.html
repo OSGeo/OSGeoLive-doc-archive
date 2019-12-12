@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>rasdaman Quickstart &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 6.5 −Ｌｉｖｅへようこそ" href="../index.html" />
+    <link rel="next" title="SAGA GIS Quickstart" href="saga_quickstart.html" />
+    <link rel="prev" title="QGIS クイックスタート" href="qgis_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.rasdaman.org"><img alt="project logo" class="align-right" src="../../_images/logo-rasdaman15.png" style="width: 202.0px; height: 90.0px;" /></a>
+<div class="section" id="rasdaman-quickstart">
+<h1>rasdaman Quickstart<a class="headerlink" href="#rasdaman-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>rasdaman is a raster server allowing queries on n-D raster data stored in a standard relational database.</p>
+<p>This Quick Start describes how to try out queries on a sandbox of raster objects. Before trying these examples, the rasdaman server has to be started (<em class="menuselection">Geospatial ‣ Databases ‣ Rasdaman ‣ Start Rasdaman Server</em>).</p>
+<div class="section" id="exploring-the-1-d-to-4-d-examples">
+<h2>Exploring the 1-D to 4-D examples<a class="headerlink" href="#exploring-the-1-d-to-4-d-examples" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>You can access the local rasdaman <a class="reference external" href="http://localhost/rasdaman-demo/index-osgeolive.php">demonstrator</a> to explore various demo data sets. The small ones are part of OSGeo-Live, those utilizing larger sets forward directly to the <a class="reference external" href="http://kahlua.eecs.jacobs-university.de/~earthlook/index-osgeolive.php">Earthlook site</a> (requires active network connection).</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="running-queries-locally">
+<h2>Running queries locally<a class="headerlink" href="#running-queries-locally" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first">Open a console and open the sample database installed locally</p>
+</li>
+<li><p class="first">use the <strong class="command">rasql</strong> utility to send queries and receive results, for example:</p>
+<div class="highlight-python"><pre>$ rasql -q "select png((char)(c.red / (c.red + c.green) - c.green / (c.red + c.green)) &gt; 0.6 * 255) from rgb AS c" --out file</pre>
+</div>
+</li>
+<li><p class="first">use your favorite image inspection tool to open the file generated.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="create-your-own-database">
+<h2>Create your own database<a class="headerlink" href="#create-your-own-database" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first">Open a console</p>
+</li>
+<li><p class="first"><a class="reference external" href="http://kahlua.eecs.jacobs-university.de/trac/rasdaman/wiki/Download">Download and install rasdaman</a> and <a class="reference external" href="http://kahlua.eecs.jacobs-university.de/trac/rasdaman/wiki/RequiredPackages">its prerequisites</a></p>
+</li>
+<li><p class="first">run the demo ingestion script:</p>
+<div class="highlight-python"><pre>$ install_demo.sh</pre>
+</div>
+</li>
+<li><p class="first">use the <strong class="command">rasql</strong> utility to send queries and receive results, for example:</p>
+<div class="highlight-python"><pre>$ rasql -q "select png( NIR ) from NIR" --out file</pre>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="things-to-try">
+<h2>Things to Try:<a class="headerlink" href="#things-to-try" title="Permalink to this headline">¶</a></h2>
+<p>Here are some additional challenges for you to try:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Explore the demo data sets by browsing the <a class="reference external" href="http://kahlua.eecs.jacobs-university.de/trac/rasdaman/browser/manuals_and_examples/manuals/pdf/ql-guide.pdf">rasql query language guide</a></li>
+<li>To learn more about the OGC  <a class="reference external" href="http://www.opengeospatial.org/standards/wcps">Web Coverage Processing Service</a> (WCPS) Language standard (which was heavily inspired by rasdaman), a starting point is the  <a class="reference external" href="http://kahlua.eecs.jacobs-university.de/~earthlook/tech/interface-wcps.php">documentation and tutorials page</a> .</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

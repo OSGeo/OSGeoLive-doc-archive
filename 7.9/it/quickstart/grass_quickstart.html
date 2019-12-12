@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guida veloce a GRASS GIS &mdash; OSGeo-Live 7.9
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.9
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.9
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 7.9 Contents" href="../overview/overview.html" />
+    <link rel="next" title="gvSIG Quickstart" href="gvsig_quickstart.html" />
+    <link rel="prev" title="Guida rapida su GpsPrune" href="gpsprune_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://grass.osgeo.org"><img alt="project logo" class="align-right" src="../../_images/logo-GRASS15.png" style="width: 110.0px; height: 123.0px;" /></a>
+<div class="section" id="guida-veloce-a-grass-gis">
+<h1>Guida veloce a GRASS GIS<a class="headerlink" href="#guida-veloce-a-grass-gis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="avvio">
+<h2>Avvio<a class="headerlink" href="#avvio" title="Permalink to this headline">¶</a></h2>
+<p>Per avviare GRASS nel Live DVD, fare click sul link di GRASS tramite il menù
+<em class="menuselection">Geospatial ‣ Desktop GIS</em>.
+Dalla finestra &#8220;Benvenuto in GRASS&#8221; selezionare il dataset Spearfish come
+location, e &#8220;user1&#8221; come mapset, poi fare click su [<em>Start Grass</em>].</p>
+<a class="reference internal image-reference" href="../../_images/grass-startup7.png"><img alt="screenshot" class="align-right" src="../../_images/grass-startup7.png" style="width: 372.0px; height: 387.0px;" /></a>
+<p>Questo avvierà GRASS con la <a class="reference external" href="../../grass/wxGUI.html">updated GUI written in wxPython</a>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Se stai lavorando in un netbook con un display molto piccolo
+(risoluzione 800x600) la schermata di avvio potrebbe essere un po&#8217; deformata
+e il bottone [<em>Start GRASS</em>] potrebbe essere nascosto deitro alla lista delle
+location e dei mapset. Se ti succede la soluzione è di trascinare l&#8217;angolo
+della finestra per renderla un po&#8217; più grande. Potresti dover muovere la finesta
+verso l&#8217;alto oltrepassando un po&#8217; il confine dello schermo per avere spazio
+(tieni premuto il tasto Alt e trascina con il tasto sinistro la finestra per
+muoverla).</p>
+</div>
+<p>Nel Disco è stata fornita anche una versione semplificata del dataset di esempio
+espanso North Carolina (nc_basic_spm), se si sceglie di utilizzarla si dovranno
+fare dei piccoli aggiustamenti dato che i nomi delle mappe utilizzati in questo
+rapido tutorial sono stati scritti per il dataset Spearfish. Indifferentemente
+dal dataset che si sceglierà si raccomanda di utilizzare sempre un mapset <cite>user</cite>
+per il lavoro di tutti i giorni e non il mapset speciale PERMANENT.</p>
+<div class="section" id="visualizzare-le-mappe">
+<h3>Visualizzare le mappe<a class="headerlink" href="#visualizzare-le-mappe" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/grass-layerman7.png"><img alt="screenshot" class="align-left" src="../../_images/grass-layerman7.png" style="width: 389.0px; height: 298.0px;" /></a>
+<p>Una volta dentro, aggiungere un layer raster come &#8220;<cite>elevation.10m</cite>&#8221; dal
+mapset PERMANENT. Per fare questo andare nella finestra GIS Layer Manager e
+cliccare sull&#8217;icona con una scacchiera e un &#8220;+&#8221; nella toolbar. Poi selezionare
+il nome della mappa che desideri dal menù a tendina &#8220;<em>map to be displayed</em>&#8221;,
+e cliccare [Ok].</p>
+<p>Allo stesso modo aggiungere il layer vettoriale &#8220;<cite>roads</cite>&#8221; dal mapset PERMANENT
+cliccando sull&#8217;icona nella toolbar con un &#8220;+&#8221; e una polilinea che sembra un po&#8217;
+una &#8220;V&#8221;.</p>
+<p>Se necessario, cliccare con il tasto destro sul layer raster e scegliere &#8220;Zoom
+to selected map(s)&#8221;.</p>
+<p>Ora si dovrebbero vedere le mappe visualizzate nel display.</p>
+</div>
+<div class="section" id="rappresentare-un-profilo-altitudinale">
+<h3>Rappresentare un profilo altitudinale<a class="headerlink" href="#rappresentare-un-profilo-altitudinale" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/grass-profile7.png"><img alt="screenshot" class="align-right" src="../../_images/grass-profile7.png" style="width: 344.0px; height: 219.5px;" /></a>
+<p>Tornando nella finestra GIS Layer Manager clicca sul nome della tua mappa raster
+<cite>elevation.10m</cite> per selezionarla. Poi nella finestra Map Display, nella toolbar
+a destra delle icone zoom c&#8217;è un&#8217;icona con un grafico lineare e una scacchiera.
+Cliccarla e selezionare <strong>Profile surface map</strong>. Viene automaticamente ricercata
+all&#8217;interno del mapset <cite>&#64;PERMANENT</cite>, quindi si può rimuovere il qualificatore.
+Se non viene automaticamente elencata, prendere nuovamente la mappa
+<cite>elevation.10m</cite> come raster layer e premere [<em>Ok</em>]. Il secondo bottone da
+sinistra permette di settare la linea lungo la quale calcolare il profilo,
+cliccarla e marcare alcuni punti nel foglio del <cite>Map Display</cite>. Una volta fatto,
+tornare alla finestra Profile e cliccare sull&#8217;icona a occhio per creare il
+grafico. Cliccare sul bottone I/O all&#8217;estrema destra per chiudere la finestra
+del profilo.</p>
+</div>
+<div class="section" id="creare-una-superficie-random">
+<h3>Creare una superficie random<a class="headerlink" href="#creare-una-superficie-random" title="Permalink to this headline">¶</a></h3>
+<p>Ora andiamo a creare una nuova mappa. Per prima cosa settare la <em>regione
+computazionale</em> come i confini di default mediante <em class="menuselection">Settings ‣
+Region ‣ Set region</em>, selezionando &#8220;<em>Set from default region</em>&#8221;, e cliccando
+[<em>Run</em>]. Poi selezionare <em class="menuselection">Raster ‣ Generate surfaces ‣ Fractal
+surface</em> dal menù (è quasi in fondo); dare un nome alla nuova mappa; e
+riaggiustare le opzioni desiderate nella tab &#8220;Optional&#8221; (quelle di default
+vanno bene); e cliccare [<em>Run</em>]. Poi si può chiudere [<em>Close</em>] la finestra
+di dialogo del modulo <em>r.surf.fractal</em>.</p>
+<a class="reference internal image-reference" href="../../_images/grass-fractal7.png"><img alt="screenshot" class="align-right" src="../../_images/grass-fractal7.png" style="width: 341.0px; height: 302.0px;" /></a>
+</div>
+<div class="section" id="regolare-i-colori">
+<h3>Regolare i colori<a class="headerlink" href="#regolare-i-colori" title="Permalink to this headline">¶</a></h3>
+<p>Ora si vedrà il nuovo raster aggiunto alla lista subito dopo la mapa raster
+dell&#8217;altimetria, ad eccezione che sarà nel mapset di lavoro &#8220;user1&#8221;.
+Ora si può deselezionare la check-box della visibilità del layer <cite>elevation.10m</cite>
+in modo tale che i due layer non si coprano l&#8217;un l&#8217;altro. Cliccare sull&#8217;occhio
+per vedere la nuova mappa se non viene visualizzata automaticamente.
+I colori potrebbero non essere come desiderati, quindi si vanno a cambiare.
+Con il DEM frattale selezionato nella lista dei layer, selezionare nel menù
+<cite>Raster</cite> <em class="menuselection">Manage colors ‣ Color tables</em>.
+Nel tab &#8220;Colors&#8221; cliccare nel menù a tendina per l&#8217;opzione &#8220;Type of color
+table&#8221;, e prenderne una dalla lista. &#8220;srtm&#8221; è una buona scelta. Una volta
+fatto, cliccare sul bottone [<em>Run</em>] e chiudere la finestra di dialogo
+<em>r.colors</em>. A questo punto i colori dovrebbero aggiornarsi automaticamente.</p>
+</div>
+<div class="section" id="creare-una-mappa-del-rilievo-ombreggiato">
+<h3>Creare una mappa del rilievo ombreggiato<a class="headerlink" href="#creare-una-mappa-del-rilievo-ombreggiato" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/grass-shadedrelief7.png"><img alt="screenshot" class="align-right" src="../../_images/grass-shadedrelief7.png" style="width: 341.0px; height: 302.0px;" /></a>
+<p>Come prossimo passo si realizzerà una mappa di rilievo ombreggiato a partire dal
+layer dell&#8217;altimetria visto prima. Si inizia verificando che la <em>regione
+computazionale</em> settata corrisponda alla mappa raster di interesse,
+&#8220;<cite>elevation.10m</cite>&#8221; nel mapset PERMANENT. Per fare questo, assicurarsi che sia
+caricata nella lista dei layer nella finestra principale del <cite>GIS Layer Manager</cite>,
+cliccare sul suo nome e selezionare &#8220;Imposta la regione computazionale dalla/e
+mappa/e selezionata/e&#8221;. Si noterà che il tab Layer Manager cambierà in una
+console di testo per visualizzare le nuove impostazioni. Cliccare sul tab &#8220;<em>Map
+layers</em>&#8221; in basso per tornare alla lista dei layer.</p>
+<p>Nel menù <cite>Raster</cite> selezionare <em class="menuselection">Terrain analysis ‣ Shaded relief</em>
+(Terrain analysis è cica a metà del menù), apparità la finestra di dialogo di
+controllo del modulo. Con il nome della mappa di altimetria selezionato come
+mappa di input cliccare [<em>Run</em>]. Ora aggiungere la nuova mappa <cite>elevation.shade</cite>
+<em>&#64;user1</em> nella lista dei layer come fatto in precedenza per la mappa
+<cite>elevation.10m</cite>, e deselezionare gli altri strati raster.</p>
+</div>
+<div class="section" id="bacini-idrografici-e-fiumi">
+<h3>Bacini idrografici e fiumi<a class="headerlink" href="#bacini-idrografici-e-fiumi" title="Permalink to this headline">¶</a></h3>
+<p>Ancora una volta selezionare la mappa <cite>elevation.10m</cite> <em>&#64;PERMANENT</em>. Se avete cambiato
+la regione dall&#8217;ultimo passaggio, cliccate col tasto destro del mouse di nuovo sul
+nome del layer e cliccate su <em class="menuselection">Set computational region from selected map(s)</em>
+dal menu.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">La visualizzazione e lo zoom del map display nella WxGUI sono indipendenti
+e non interessano i processi di calcolo. Controllare la regione computazionale
+con <em class="menuselection">Settings ‣ Region ‣ Display Region</em>; questo è di
+fondamentale importanza per ogni operazione sui raster. La mappe raster di
+diversa estensione e risoluzione saranno risemplificate all&#8217;attuale regione
+computazionale al volo.</p>
+</div>
+<p>Dopo, nel menù <cite>Raster</cite> scegliere <em class="menuselection">Hydrologic modeling ‣ Watershed analysis</em>.
+Questo aprirà il modulo <tt class="docutils literal"><span class="pre">r.watershed</span></tt>. Impostare il layer <cite>elevation.10m</cite> come
+mappa di input, nel tab &#8216;Input options&#8217; impostare come dimensione minima del
+bacino idrografico esterno <em>threshold</em> 10000 celle, poi nelle &#8216;Output options&#8217;
+inserire &#8220;elev.basins&#8221; come opzione del bacino idrografico e &#8220;elev.streams&#8221; come
+opzione della rete idrografica, subito sotto. Poi cliccare [<em>Run</em>].</p>
+<p>Tornando nella finestra <cite>GIS Layer Manager</cite> verificare che queste due nuove mappe
+raster siano nella lista dei layer e assicurarsi che la mappa dei bacini abbia il
+tick nel quadrato a sinistra del nome del layer. Per ora bisogna deselezionare la
+mappa dei fiumi. Poi, cliccare con il destro sul nome della mappa raster
+&#8220;<cite>elev.basins</cite>&#8221; e selezionare &#8220;<cite>Change opacity level</cite>&#8221;. Impostarlo a circa 50%,
+ciò farà aggiornare il Map Display. Nella lista dei layer trascinare verso il
+basso una mappa (come ad esempio la mappa del rilievo ombreggiato
+creata prima) se si desidera che venga disegnata dietro agli altri strati, e
+assicurarsi di selezionare il box per la visibilità per vederla come sfondo.</p>
+<a class="reference internal image-reference" href="../../_images/grass-watersheds7.png"><img alt="screenshot" class="align-left" src="../../_images/grass-watersheds7.png" style="width: 341.0px; height: 302.0px;" /></a>
+<p>Nella finestra <cite>GIS Layer Manager</cite> cliccare nel secondo pulsante partendo da
+destra nella riga in cima e <cite>Add a grid layer</cite>. Come dimensione della griglia
+mettere 0:03 0 per i gradi e 3 per i minuti (il formato è G:M:S), poi nel tab
+&#8220;Optional&#8221; selezionare Disegna una griglia geografica e premere [<em>Ok</em>] e
+aggiornare. Potrebbe essere necessario trascinare il layer di griglia più in
+alto nella lista dei layer per vederlo.</p>
+<p>Per aggiungere uno scalimetro andare nella finestra Map Display e premere il
+bottone &#8220;Add map elements&#8221; a destra di dove precedentemente è stato
+selezionato lo strumento per il Profilo e selezionare &#8220;Add scalebar and north
+arrow&#8221; e cliccare [<em>Ok</em>]. Uno scalimetro apparirà in alto a sinistra del
+foglio. Trascinarlo in basso a sinistra. Dallo stesso menù della barra degli
+strumenti selezionare &#8220;Add legend&#8221; e nella finestra delle istruzioni cliccare
+il pulsante <cite>Set Options</cite> per impostare il nome della mappa raster per cui si
+desidera creare la legenda. Se si prende la mappa <cite>elev.basins</cite> si dovrà
+impostare il <em>Thinning factor</em> a 10 nel tab <cite>Advanced</cite>, e la posizione
+<em>Placement</em> come <cite>5,95,2,5</cite> nel tab <cite>Optional</cite>. Una volta fatto cliccare [<em>Ok</em>]
+e di nuovo [<em>Ok</em>]. Trascinare la nuova legenda in alto nella porzione destra
+del foglio.</p>
+<p>Ora si potrebbe pensare che questo font è un po&#8217; brutto.
+A ciò si può facilmente porre rimedio andando nel menù del <cite>GIS Layer Manager</cite>
+e aprendo <em class="menuselection">Settings ‣ Preferences</em> e cliccando nel tab Map
+Display  il bottone [<em>Set font</em>] e scegliendone uno (per esempio DroidSans), e
+poi [<em>Apply</em>] nella finestra delle Preferenze. Si dovrà fare un aggiornamento
+completo per vedere il cambiamento, per fare ciò, cliccare il bottone aggiorna
+vicino all&#8217;occhio nella finestra <cite>Map Display</cite>. Ora le scritte saranno molto
+più carine.</p>
+</div>
+<div class="section" id="moduli-vettoriali">
+<h3>Moduli vettoriali<a class="headerlink" href="#moduli-vettoriali" title="Permalink to this headline">¶</a></h3>
+<p>Gli argomenti trattati in precedenza hanno trattato solo alcuni moduli raster.
+Non bisogna lasciare che questo faccia pensare che GRASS sia solo per mappe
+raster &#8211; il meccanismo vettoriale e i moduli sono completi e sviluppati
+come i raster in ogni bit. GRASS conserva un meccanismo vettoriale completamente
+topologico che permette ogni genere di analisi molto potente.</p>
+<a class="reference internal image-reference" href="../../_images/grass-vectattrib13.png"><img alt="screenshot" class="align-right" src="../../_images/grass-vectattrib13.png" style="width: 307.2px; height: 230.4px;" /></a>
+<p>Continuando con i bacini idrografici creati in precedenza, come prossimo passo
+verranno convertiti in poligoni vettoriali. Nel menù Raster selezionare
+<em class="menuselection">Map type conversions ‣ Raster to vector</em>.
+Nella finestra di dialogo che si apre <cite>r.to.vect</cite> assicurarsi che
+<tt class="docutils literal"><span class="pre">elev.basins</span> <span class="pre">&#64;user1</span></tt> sia selezionata come mappa di input, inserire un nome per
+la mappa di output come <tt class="docutils literal"><span class="pre">basins_areas</span></tt> (i nomi delle mappe vettoriali devono
+essere SQL compatibili), e cambiare il tipo di elemento in <cite>area</cite>.
+Nel tab <cite>Attributes</cite> selezionare il box per usare i valori raster come valori di
+categoria, in modo tale che questi corrisponderanno ai valori nella mappa della
+rete idrografica creata in precedenza. Poi cliccare su [<em>Run</em>]. Una volta che la
+mappa vettoriale è visualizzata, ci si potrebbe cliccare sopra con il tasto
+destro nella lista del <cite>Layer Manager</cite> e cambiare il suo livello di opacità.
+Anche se si clicca con il destro sulla mappa vettoriale <tt class="docutils literal"><span class="pre">basins_areas</span></tt> nella
+<cite>Layer List</cite> si può spegnere la visualizzazione dei centroidi delle aree andando
+in <cite>Properties</cite> e deselezionandoli nel tab <cite>Selection</cite>.</p>
+<p>Come prossimo passo aggiungeremo alcuni attributi a queste nuove aree, contenenti
+l&#8217;altitudine media di ogni bacino. Nel menù Vector selezionare :menuselection:
+<cite>Update attributes &#8211;&gt; Update area attributes from raster</cite> per lanciare il modulo
+<em>v.rast.stats</em>. Utilizzare <tt class="docutils literal"><span class="pre">basin_areas</span></tt> come mappa vettoriale di poligoni, il
+raster <tt class="docutils literal"><span class="pre">elevation.10m</span></tt> da cui calcolare le statistiche, mettere come prefisso
+della colonna <tt class="docutils literal"><span class="pre">ele</span></tt>, e cliccare [<em>Run</em>] poi chiudere la finestra di dialogo una
+volta finito. Si possono interrogare i valori nella finestra <cite>Map Display</cite>
+utilizzando la quinta icona da sinistra, dopo aver verificato che sia selezionata
+la mappa vettoriale delle aree nella <cite>Layer List</cite>, e cliccando in un&#8217;area
+vettoriale nel foglio del display.</p>
+<p>Si possono colorare le aree basandosi sui valori di altitudine media utilizzando
+il modulo <tt class="docutils literal"><span class="pre">v.colors</span></tt>. Nel menù Vector selezionare <em class="menuselection">Manage colors
+‣ Color tables</em>. Selezionare <tt class="docutils literal"><span class="pre">basin_areas</span></tt> come mappa vettoriale di input,
+la colonna dell&#8217;attributo <tt class="docutils literal"><span class="pre">ele_mean</span></tt> come colonna contenente l&#8217;intervallo
+numerico, e nel tab <cite>Colors</cite> mettere <cite>elevation.10m</cite> come mappa raster da cui
+copiare la tavola dei colori. Dopo aver avviato il comando, fare click con il
+destro sulla mappa <tt class="docutils literal"><span class="pre">basin_areas</span></tt> nel <cite>Layer List</cite> e selezionare <cite>Properties</cite>.
+Nel tab <cite>Colors</cite> selezionare il box per ottenere i colori da una colonna della
+tabella della mappa.
+Una volta cliccato [<em>Apply</em>] si dovrebbe vedere il cambiamento di colori nella
+finestra <cite>Map Display</cite>.</p>
+<p>Ora si va a guardare più in dettaglio la tabella degli attributi e il generatore
+SQL. Nel <cite>Layer Manager</cite> cliccare l&#8217;icona della tabella, è la seconda da
+sinistra nella riga di sotto. Questo aprirà una vista della tabella database
+collegata. Per ora si farà solo una <em>Semplice</em> interrogazione del database per
+cercare i bacini idrografici senza troppa variabilità al loro interno. Dove
+dice <tt class="docutils literal"><span class="pre">SELECT</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">basin_areas</span> <span class="pre">WHERE</span></tt> prendere <tt class="docutils literal"><span class="pre">ele_stddev</span></tt> dalla lista a
+tendina come statistica della deviazione standard, poi nel box di testo alla sua
+destra inserire <tt class="docutils literal"><span class="pre">&lt;</span> <span class="pre">50</span></tt> e cliccare [<em>Apply</em>]. Si noterà che il numero di righe
+caricate nella barra di informazione in fondo alla finestra sarà compattato, e
+che tutte le righe con un valore alto di dev. std. se ne sono andate dalla
+tabella visualizzata. Cliccare con il tasto destro sui dati della tabella e
+scegliere <tt class="docutils literal"><span class="pre">Select</span> <span class="pre">all</span></tt>. Ri-cliccare con il tasto destro sui dati della tabella
+e questa volta scegliere <tt class="docutils literal"><span class="pre">Highlight</span> <span class="pre">selected</span> <span class="pre">features</span></tt>. Si dovrebbe vedere
+per esempio i bacini alluvionali e le zone pianeggianti evidenziati nel
+<tt class="docutils literal"><span class="pre">Map</span> <span class="pre">Display</span></tt>.</p>
+</div>
+<div class="section" id="visualizzazione-3d">
+<h3>Visualizzazione 3D<a class="headerlink" href="#visualizzazione-3d" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/grass-nviz7.png"><img alt="screenshot" class="align-right" src="../../_images/grass-nviz7.png" style="width: 310.2px; height: 233.4px;" /></a>
+<p>Avviare il pacchetto di visualizzazione 3D dal comando nel menù :menuselection:
+<cite>File &#8211;&gt; NVIZ</cite>. Selezionare la mappa <cite>elevation.10m</cite> come raster di altitudine
+e cliccare [<em>Run</em>].
+Una volta che si è caricata l&#8217;interfaccia del display 3D, massimizzare la
+finestra. Poi selezionare <em class="menuselection">Visualize ‣ Raster Surfaces</em> dal menù
+in cima, e impostare la risoluzione a &#8220;1&#8221;, poi muovere il puntatore di posizione
+e lo scorrimento di altezza per avere diverse viste.</p>
+<p>Per sovrapporre le immagini satellitari o aeree al DEM, nei controlli <strong>Raster
+Surfaces</strong> cliccare sul menù a tendina <strong>Surface Attributes</strong> e selezionare
+&#8220;color&#8221;. Slezionare &#8220;New Map&#8221; per scegliere l&#8217;immagine da sovrapporre;
+&#8220;<cite>spot.image</cite>&#8221; nel mapset PERMANENT è una buona scelta.
+In fine, cliccare &#8220;<em>Accept</em>&#8221; e una volta tornati alla finestra principale
+cliccare sul bottone &#8220;<em>Draw</em>&#8221; in cima a sinistra, subito sotto al menù File.</p>
+</div>
+<div class="section" id="altre-cose-da-provare">
+<h3>Altre cose da provare<a class="headerlink" href="#altre-cose-da-provare" title="Permalink to this headline">¶</a></h3>
+<p>Anche se non trattate qui, potrebbe fare piacere sperimentare il nuovo
+Cartographic Composer e object-oriented Graphical Modeling Tool;
+le icone per lanciarli si trovano nella riga più bassa delle icone nella finestra
+<cite>Layer Manager</cite>. Ulteriori dettagli si possono trovare nelle pagine di aiuto
+<a class="reference external" href="../../grass/wxGUI.html">wxGUI</a> help.</p>
+<p>La nuova GUI è scritta in Python, e se si è fan della programmazione in Python
+sono disponibili diversi ottimi strumenti. In fondo alla finestra <cite>Layer
+Manager</cite> cliccare sul tab <cite>Python shell</cite> e digitare <tt class="docutils literal"><span class="pre">help(grass.core)</span></tt>
+per vedere un elenco delle tante funzioni disponibili nella libreria python del
+core GIS. Oltre alle funzioni del GIS base sono disponibili anche librerie <cite>array</cite>
+(NumPy), <cite>db</cite> (database), <cite>raster</cite>, e <cite>vector</cite>. Per utilizzi avanzati è
+supportato <cite>Pythons CTypes</cite> permettendo al programmatore Python l&#8217;accesso diretto
+alle librerie C complete di GRASS.</p>
+</div>
+<div class="section" id="chiusura-e-linea-di-comando">
+<h3>Chiusura e linea di comando<a class="headerlink" href="#chiusura-e-linea-di-comando" title="Permalink to this headline">¶</a></h3>
+<p>Una volta finito, uscire dalla GUI di GRASS con <em class="menuselection">File ‣ Exit
+GUI</em>. Prima di chiudere anche la sessione del terminal GRASS, provare un modulo
+GRASS digitando &#8220;<tt class="docutils literal"><span class="pre">g.manual</span> <span class="pre">--help</span></tt>&#8221; che darà una lista delle opzioni del
+modulo. La linea di comando GRASS è dove il vero potere del GIS prende piede.
+GRASS è creato per permettere a tutti i comandi di essere concatenati in
+scripts per lavori di anlaisi molto lunghi. I linguaggi più popolari per gli
+script sono Bourne Shell e Python, e sono inclusi molti trucchi chiari per
+rendere lo scripting più facile per entrambi i linguaggi. Con questi strumenti
+si può creare un nuovo modulo GRASS con solo 5 minuti di coding, completo di
+un potente parser, GUI, e pagine di aiuto con template.</p>
+<p>&#8220;<tt class="docutils literal"><span class="pre">g.manual</span> <span class="pre">-i</span></tt>&#8221; lancerà un browser web con le pagine di aiuto dei moduli.
+Quando si è finito chiudere il browser e digitare &#8220;exit&#8221; nel terminal di GRASS
+per lasciare l&#8217;ambiente GIS.</p>
+</div>
+</div>
+<div class="section" id="ulteriori-letture">
+<h2>Ulteriori letture<a class="headerlink" href="#ulteriori-letture" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Visita il sito di GRASS <a class="reference external" href="http://grass.osgeo.org">http://grass.osgeo.org</a></li>
+<li>Visita il sito di aiuto nel GRASS Wiki <a class="reference external" href="http://grass.osgeo.org/wiki">http://grass.osgeo.org/wiki</a></li>
+<li>Ulteriori tutorials e riassunti possono essere trovati <a class="reference external" href="http://grass.osgeo.org/wiki/GRASS_Help#Getting_Started">here</a>.</li>
+<li>Un&#8217;anteprima dei moduli GRASS &lt;<a class="reference external" href="http://grass.osgeo.org/gdp/grassmanuals/grass64">http://grass.osgeo.org/gdp/grassmanuals/grass64</a>
+_module_list.pdf&gt;`_, compresa la posizione nei menù della GUI. (<a class="reference external" href="http://grass.osgeo.org/gdp/grassmanuals/grass64_module_list.html">HTML version</a>)</li>
+<li>Se i 400 moduli GIS  compresi in GRASS non sono abbastanza dai uno sguardo ai
+molti add-ons sviluppati <a class="reference external" href="http://grass.osgeo.org/wiki/AddOns">http://grass.osgeo.org/wiki/AddOns</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

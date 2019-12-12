@@ -1,0 +1,432 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Profile Plugins &mdash; Documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Documentation" href="../index.html" />
+    <link rel="next" title="GeoNode Configuration" href="geonode.html" />
+    <link rel="prev" title="Transactions" href="transactions.html" /> 
+  </head>
+  <body>
+
+<style type="text/css">
+  .header a:link{color: white;}
+  .header a:visited{color: white;}
+</style>
+
+<table class="header" width="100%" style="width: 100%;">
+  <tr>
+    <td class="left" style="padding: 10px 10px 0px 0px; text-align: left; vertical-align: top;"><a href="/index.html" title="pycsw">pycsw</a></td>
+    <td class="right" style="padding: 10px 10px 0px 0px; text-align: right; vertical-align: top;">
+      <a href="/index.html" title="Home">Home</a> |
+      <a href="/demos.html" title="Demos">Demos</a> |
+      <a href="/docs/index.html" title="Docs">Docs</a> |
+      <a href="http://sourceforge.net/apps/trac/pycsw" title="Issue Tracker">Issue Tracker</a> |
+      <a href="/faq.html" title="FAQ">FAQ</a> |
+      <a href="/download.html" title="Download">Download </a>
+    </td>
+  </tr>
+</table>
+
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="geonode.html" title="GeoNode Configuration"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="transactions.html" title="Transactions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="documentation.html">Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="profile-plugins">
+<span id="profiles"></span><h1>Profile Plugins<a class="headerlink" href="#profile-plugins" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>pycsw allows for the implementation of profiles to the core standard. Profiles allow specification of additional metadata format types (i.e. ISO 19139:2007, NASA DIF, INSPIRE, etc.) to the repository, which can be queried and presented to the client.  pycsw supports a plugin architecture which allows for runtime loading of Python code.</p>
+<p>All profiles must be placed in the <tt class="docutils literal"><span class="pre">server/plugins/profiles</span></tt> directory.</p>
+</div>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none"><div class="highlight"><pre>pycsw/
+ server/
+   plugins/
+   __init__.py # empty
+   profiles/ # directory to store profiles
+     __init__.py # empty
+     profile.py # defines abstract profile object (properties and methods) and functions to load plugins
+     apiso/ # profile directory
+       __init__.py # empty
+       apiso.py # profile code
+       ... # supporting files, etc.
+</pre></div>
+</div>
+</div>
+<div class="section" id="abstract-base-class-definition">
+<h2>Abstract Base Class Definition<a class="headerlink" href="#abstract-base-class-definition" title="Permalink to this headline">¶</a></h2>
+<p>All profile code must be instantiated as a subclass of <tt class="docutils literal"><span class="pre">profile.Profile</span></tt>.  Below is an example to add a <tt class="docutils literal"><span class="pre">Foo</span></tt> profile:</p>
+<div class="highlight-python"><pre>from server.plugins.profiles import profile
+
+class FooProfile(profile.Profile):
+    profile.Profile.__init__(self,
+        name='foo',
+        version='1.0.3',
+        title='My Foo Profile',
+        url='http://example.org/fooprofile/docs',
+        namespace='http://example.org/foons',
+        typename='foo:RootElement',
+        outputschema=http://example.org/foons',
+        prefixes=['foo'],
+        model=model,
+        core_namespaces=namespaces,
+        added_namespaces={'foo': 'http://example.org/foons'}
+        repository=REPOSITORY['foo:RootElement'])</pre>
+</div>
+<p>Your profile plugin class (<tt class="docutils literal"><span class="pre">FooProfile</span></tt>) must implement all methods as per <tt class="docutils literal"><span class="pre">profile.Profile</span></tt>.  Profile methods must always return <tt class="docutils literal"><span class="pre">lxml.etree.Element</span></tt> types, or <tt class="docutils literal"><span class="pre">None</span></tt>.</p>
+</div>
+<div class="section" id="enabling-profiles">
+<h2>Enabling Profiles<a class="headerlink" href="#enabling-profiles" title="Permalink to this headline">¶</a></h2>
+<p>All profiles are disabled by default.  To specify profiles at runtime, set the <tt class="docutils literal"><span class="pre">server.profiles</span></tt> value in the <a class="reference internal" href="configuration.html#configuration"><em>Configuration</em></a> to the name of the package (in the <tt class="docutils literal"><span class="pre">server/plugins/profiles</span></tt> directory).  To enable multiple profiles, specify as a comma separated value (see <a class="reference internal" href="configuration.html#configuration"><em>Configuration</em></a>).</p>
+</div>
+<div class="section" id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<p>Profiles must add examples to the <a class="reference internal" href="testing.html#tester"><em>Tester</em></a> interface, which must provide example requests specific to the profile.</p>
+</div>
+</div>
+<div class="section" id="supported-profiles">
+<h1>Supported Profiles<a class="headerlink" href="#supported-profiles" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="iso-metadata-application-profile-1-0-0">
+<span id="apiso"></span><h2>ISO Metadata Application Profile (1.0.0)<a class="headerlink" href="#iso-metadata-application-profile-1-0-0" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Overview<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The ISO Metadata Application Profile (APISO) is a profile of CSW 2.0.2 which enables discovery of geospatial metadata following ISO 19139:2007 and ISO 19119:2005/PDAM 1.</p>
+</div>
+<div class="section" id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<p>No extra configuration is required.</p>
+</div>
+<div class="section" id="querying">
+<h3>Querying<a class="headerlink" href="#querying" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><strong>typename</strong>: gmd:MD_Metadata</li>
+<li><strong>outputschema</strong>: <a class="reference external" href="http://www.isotc211.org/2005/gmd">http://www.isotc211.org/2005/gmd</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="enabling-apiso-support">
+<h3>Enabling APISO Support<a class="headerlink" href="#enabling-apiso-support" title="Permalink to this headline">¶</a></h3>
+<p>To enable APISO support, add <tt class="docutils literal"><span class="pre">apiso</span></tt> to <tt class="docutils literal"><span class="pre">server.profiles</span></tt> as specified in <a class="reference internal" href="configuration.html#configuration"><em>Configuration</em></a>.</p>
+</div>
+<div class="section" id="id2">
+<h3>Testing<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>A testing interface is available in <tt class="docutils literal"><span class="pre">tester/index.html</span></tt> which contains tests specific to APISO to demonstrate functionality.  See <a class="reference internal" href="testing.html#tester"><em>Tester</em></a> for more information.</p>
+</div>
+</div>
+<div class="section" id="inspire-extension">
+<h2>INSPIRE Extension<a class="headerlink" href="#inspire-extension" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>Overview<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>APISO includes an extension for enabling <a class="reference external" href="http://inspire.jrc.ec.europa.eu/documents/Network_Services/TechnicalGuidance_DiscoveryServices_v3.0.pdf">INSPIRE Discovery Services 3.0</a> support.  To enable the INSPIRE extension to APISO, create a <tt class="docutils literal"><span class="pre">[metadata:inspire]</span></tt> section in the main configuration with <tt class="docutils literal"><span class="pre">enabled</span></tt> set to <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+</div>
+<div class="section" id="id4">
+<h3>Configuration<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><strong>[metadata:inspire]</strong></p>
+<ul class="simple">
+<li><strong>enabled</strong>: whether to enable the INSPIRE extension (<tt class="docutils literal"><span class="pre">true</span></tt> or <tt class="docutils literal"><span class="pre">false</span></tt>)</li>
+<li><strong>languages_supported</strong>: supported languages (see <a class="reference external" href="http://inspire.ec.europa.eu/schemas/common/1.0/enums/enum_eng.xsd">http://inspire.ec.europa.eu/schemas/common/1.0/enums/enum_eng.xsd</a>, simpleType <tt class="docutils literal"><span class="pre">euLanguageISO6392B</span></tt>)</li>
+<li><strong>default_language</strong>: the default language (see <a class="reference external" href="http://inspire.ec.europa.eu/schemas/common/1.0/enums/enum_eng.xsd">http://inspire.ec.europa.eu/schemas/common/1.0/enums/enum_eng.xsd</a>, simpleType <tt class="docutils literal"><span class="pre">euLanguageISO6392B</span></tt>)</li>
+<li><strong>date</strong>: date of INSPIRE metadata offering (in <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format)</li>
+<li><strong>gemet_keywords</strong>: a comma-seperated keyword list of <a class="reference external" href="http://www.eionet.europa.eu/gemet/inspire_themes">GEMET INSPIRE theme keywords</a> about the service (see <a class="reference external" href="http://inspire.ec.europa.eu/schemas/common/1.0/enums/enum_eng.xsd">http://inspire.ec.europa.eu/schemas/common/1.0/enums/enum_eng.xsd</a>, complexType <tt class="docutils literal"><span class="pre">inspireTheme_eng</span></tt>)</li>
+<li><strong>conformity_service</strong>: the level of INSPIRE conformance for spatial data sets and services (<tt class="docutils literal"><span class="pre">conformant</span></tt>, <tt class="docutils literal"><span class="pre">notConformant</span></tt>, <tt class="docutils literal"><span class="pre">notEvaluated</span></tt>)</li>
+<li><strong>contact_organization</strong>: the organization name responsible for the INSPIRE metadata</li>
+<li><strong>contact_email</strong>: the email address of entity responsible for the INSPIRE metadata</li>
+<li><strong>temp_extent</strong>: temporal extent of the service (in <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format).  Either a single date (i.e. <tt class="docutils literal"><span class="pre">yyyy-mm-dd</span></tt>), or an extent (i.e. <tt class="docutils literal"><span class="pre">yyyy-mm-dd/yyyy-mm-dd</span></tt>)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="directory-interchange-format-dif-9-7">
+<span id="dif"></span><h2>Directory Interchange Format (DIF) 9.7<a class="headerlink" href="#directory-interchange-format-dif-9-7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>Overview<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="http://gcmd.nasa.gov/User/difguide/whatisadif.html">Directory Interchange Format</a> (DIF) is a metadata format supported by the NASA <a class="reference external" href="http://gcmd.nasa.gov/">Global Change Master Directory</a>.</p>
+</div>
+<div class="section" id="id6">
+<h3>Configuration<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>No additional configuration is required.</p>
+</div>
+<div class="section" id="id7">
+<h3>Querying<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><strong>typename</strong>: dif:DIF</li>
+<li><strong>outputschema</strong>: <a class="reference external" href="http://gcmd.gsfc.nasa.gov/Aboutus/xml/dif/">http://gcmd.gsfc.nasa.gov/Aboutus/xml/dif/</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="enabling-dif-support">
+<h3>Enabling DIF Support<a class="headerlink" href="#enabling-dif-support" title="Permalink to this headline">¶</a></h3>
+<p>To enable DIF support, add <tt class="docutils literal"><span class="pre">dif</span></tt> to <tt class="docutils literal"><span class="pre">server.profiles</span></tt>.</p>
+</div>
+<div class="section" id="id8">
+<h3>Testing<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>A testing interface is available in <tt class="docutils literal"><span class="pre">tester/index.html</span></tt> which contains tests specific to DIF to demonstrate functionality.  See <a class="reference internal" href="testing.html#tester"><em>Tester</em></a> for more information.</p>
+</div>
+</div>
+<div class="section" id="fgdc-csgdm-1998">
+<span id="fgdc"></span><h2>FGDC CSGDM 1998<a class="headerlink" href="#fgdc-csgdm-1998" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>Overview<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="http://portal.opengeospatial.org/files/?artifact_id=16936">FGDC CSDGM Application Profile</a>  is a profile of CSW 2.0.2 which enables discovery of geospatial metadata following FGDC:CSDGM 1998 metadata.</p>
+</div>
+<div class="section" id="id10">
+<h3>Configuration<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>No additional extra configuration is required.</p>
+</div>
+<div class="section" id="id11">
+<h3>Querying<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><strong>typename</strong>: fgdc:metadata</li>
+<li><strong>outputschema</strong>: <a class="reference external" href="http://www.opengis.net/cat/csw/csdgm">http://www.opengis.net/cat/csw/csdgm</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="enabling-fgdc-support">
+<h3>Enabling FGDC Support<a class="headerlink" href="#enabling-fgdc-support" title="Permalink to this headline">¶</a></h3>
+<p>To enable fgdc support, add <tt class="docutils literal"><span class="pre">fgdc</span></tt> to <tt class="docutils literal"><span class="pre">server.profiles</span></tt>.</p>
+</div>
+<div class="section" id="id12">
+<h3>Testing<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>A testing interface is available in <tt class="docutils literal"><span class="pre">tester/index.html</span></tt> which contains tests specific to FGDC to demonstrate functionality.  See <a class="reference internal" href="testing.html#tester"><em>Tester</em></a> for more information.</p>
+</div>
+</div>
+<div class="section" id="csw-ebrim-registry-service-part-1-ebrim-profile-of-csw">
+<span id="ebrim"></span><h2>CSW-ebRIM Registry Service - Part 1: ebRIM profile of CSW<a class="headerlink" href="#csw-ebrim-registry-service-part-1-ebrim-profile-of-csw" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id13">
+<h3>Overview<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>The CSW-ebRIM Registry Service is a profile of CSW 2.0.2 which enables discovery of geospatial metadata following the ebXML information model.</p>
+</div>
+<div class="section" id="id14">
+<h3>Configuration<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>No extra configuration is required.</p>
+</div>
+<div class="section" id="id15">
+<h3>Querying<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><strong>typename</strong>: rim:RegistryObject</li>
+<li><strong>outputschema</strong>: <a class="reference external" href="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="enabling-ebrim-support">
+<h3>Enabling ebRIM Support<a class="headerlink" href="#enabling-ebrim-support" title="Permalink to this headline">¶</a></h3>
+<p>To enable ebRIM support, add <tt class="docutils literal"><span class="pre">ebrim</span></tt> to <tt class="docutils literal"><span class="pre">server.profiles</span></tt> as specified in <a class="reference internal" href="configuration.html#configuration"><em>Configuration</em></a>.</p>
+</div>
+<div class="section" id="id16">
+<h3>Testing<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>A testing interface is available in <tt class="docutils literal"><span class="pre">tester/index.html</span></tt> which contains tests specific to ebRIM to demonstrate functionality.  See <a class="reference internal" href="testing.html#tester"><em>Tester</em></a> for more information.</p>
+</div>
+</div>
+<div class="section" id="atom-syndication-format-1-0">
+<span id="atom"></span><h2>Atom Syndication Format 1.0<a class="headerlink" href="#atom-syndication-format-1-0" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id17">
+<h3>Overview<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="http://tools.ietf.org/html/rfc4287">Atom Syndication Format</a> is used in <a class="reference external" href="http://en.wikipedia.org/wiki/RSS">RSS</a> feeds as well as <a class="reference internal" href="opensearch.html#opensearch"><em>OpenSearch</em></a>.</p>
+</div>
+<div class="section" id="id18">
+<h3>Configuration<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>No additional configuration is required.</p>
+</div>
+<div class="section" id="id19">
+<h3>Querying<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><strong>typename</strong>: atom:entry</li>
+<li><strong>outputschema</strong>: <a class="reference external" href="http://www.w3.org/2005/Atom">http://www.w3.org/2005/Atom</a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="enabling-atom-support">
+<h3>Enabling Atom Support<a class="headerlink" href="#enabling-atom-support" title="Permalink to this headline">¶</a></h3>
+<p>To enable Atom support, add <tt class="docutils literal"><span class="pre">atom</span></tt> to <tt class="docutils literal"><span class="pre">server.profiles</span></tt>.</p>
+</div>
+<div class="section" id="id20">
+<h3>Testing<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p>A testing interface is available in <tt class="docutils literal"><span class="pre">tester/index.html</span></tt> which contains tests specific to Atom to demonstrate functionality.  See <a class="reference internal" href="testing.html#tester"><em>Tester</em></a> for more information.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="documentation.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Profile Plugins</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#abstract-base-class-definition">Abstract Base Class Definition</a></li>
+<li><a class="reference internal" href="#enabling-profiles">Enabling Profiles</a></li>
+<li><a class="reference internal" href="#testing">Testing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#supported-profiles">Supported Profiles</a><ul>
+<li><a class="reference internal" href="#iso-metadata-application-profile-1-0-0">ISO Metadata Application Profile (1.0.0)</a><ul>
+<li><a class="reference internal" href="#id1">Overview</a></li>
+<li><a class="reference internal" href="#configuration">Configuration</a></li>
+<li><a class="reference internal" href="#querying">Querying</a></li>
+<li><a class="reference internal" href="#enabling-apiso-support">Enabling APISO Support</a></li>
+<li><a class="reference internal" href="#id2">Testing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#inspire-extension">INSPIRE Extension</a><ul>
+<li><a class="reference internal" href="#id3">Overview</a></li>
+<li><a class="reference internal" href="#id4">Configuration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#directory-interchange-format-dif-9-7">Directory Interchange Format (DIF) 9.7</a><ul>
+<li><a class="reference internal" href="#id5">Overview</a></li>
+<li><a class="reference internal" href="#id6">Configuration</a></li>
+<li><a class="reference internal" href="#id7">Querying</a></li>
+<li><a class="reference internal" href="#enabling-dif-support">Enabling DIF Support</a></li>
+<li><a class="reference internal" href="#id8">Testing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fgdc-csgdm-1998">FGDC CSGDM 1998</a><ul>
+<li><a class="reference internal" href="#id9">Overview</a></li>
+<li><a class="reference internal" href="#id10">Configuration</a></li>
+<li><a class="reference internal" href="#id11">Querying</a></li>
+<li><a class="reference internal" href="#enabling-fgdc-support">Enabling FGDC Support</a></li>
+<li><a class="reference internal" href="#id12">Testing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#csw-ebrim-registry-service-part-1-ebrim-profile-of-csw">CSW-ebRIM Registry Service - Part 1: ebRIM profile of CSW</a><ul>
+<li><a class="reference internal" href="#id13">Overview</a></li>
+<li><a class="reference internal" href="#id14">Configuration</a></li>
+<li><a class="reference internal" href="#id15">Querying</a></li>
+<li><a class="reference internal" href="#enabling-ebrim-support">Enabling ebRIM Support</a></li>
+<li><a class="reference internal" href="#id16">Testing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#atom-syndication-format-1-0">Atom Syndication Format 1.0</a><ul>
+<li><a class="reference internal" href="#id17">Overview</a></li>
+<li><a class="reference internal" href="#id18">Configuration</a></li>
+<li><a class="reference internal" href="#id19">Querying</a></li>
+<li><a class="reference internal" href="#enabling-atom-support">Enabling Atom Support</a></li>
+<li><a class="reference internal" href="#id20">Testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="transactions.html"
+                        title="previous chapter">Transactions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="geonode.html"
+                        title="next chapter">GeoNode Configuration</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/docs/profiles.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul><p>
+   <script type="text/javascript" src="http://www.ohloh.net/p/488022/widgets/project_thin_badge.js"></script> 
+</p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="geonode.html" title="GeoNode Configuration"
+             >next</a></li>
+        <li class="right" >
+          <a href="transactions.html" title="Transactions"
+             >previous</a> |</li>
+        <li><a href="documentation.html">Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+
+    <div class="footer">
+        &copy; Copyright 2010-2011, Tom Kralidis.
+      Last updated on 2012-04-08T21:06:15Z.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://sourceforge.net/apps/piwik/pycsw/" : "http://sourceforge.net/apps/piwik/pycsw/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  <script type="text/javascript">
+    try {
+      var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
+      piwikTracker.trackPageView();
+      piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+  </script>
+  <noscript>
+    <p>
+      <img src="http://sourceforge.net/apps/piwik/pycsw/piwik.php?idsite=3" style="border:0" alt=""/>
+    </p>
+  </noscript>
+  <!-- End Piwik Tag -->
+
+
+  </body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Введение в MapServer &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://mapserver.org/"><img alt="Project logo" class="align-right" src="../../_images/logo-mapserver-new23.png" style="width: 245.05px; height: 65.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project23.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="mapserver">
+<h1>Введение в MapServer<a class="headerlink" href="#mapserver" title="Permalink to this headline">¶</a></h1>
+<p>MapServer — это серверное приложение <a class="reference external" href="http://www.opensource.org">с открытым исходным кодом</a>,
+позволяющее публиковать векторные и растровые данные согласно
+<a class="reference external" href="http://www.opengeospatial.org/standards">стандартам OGC</a>, таким, как
+<a class="reference external" href="http://www.opengeospatial.org/standards/wms">WMS</a> и <a class="reference external" href="http://www.opengeospatial.org/standards/wfs">WFS</a>.</p>
+<p>Данное &#8220;введение&#8221; содержит описание следующих операций:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mapserver-quickstart-configure-with-mapfile-ru"><em>Конфигурирование MapServer с использованием map-файла</em></a></li>
+<li><a class="reference internal" href="#mapserver-quickstart-wms-request-ru"><em>Отрисовка данных с использованием командной строки MapServer</em></a></li>
+<li><a class="reference internal" href="#mapserver-quickstart-add-new-layer-ru"><em>Добавление нового слоя в map-файл</em></a></li>
+<li><a class="reference internal" href="#mapserver-quickstart-styling-a-layer-ru"><em>Настройка символики слоя</em></a></li>
+</ul>
+</div></blockquote>
+<div class="section" id="mapserver-map">
+<span id="mapserver-quickstart-configure-with-mapfile-ru"></span><h2>Конфигурирование MapServer с использованием map-файла<a class="headerlink" href="#mapserver-map" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Что я узнаю ?</strong> В данном разделе вы узнаете, что такое map-файл и научитесь использовать его для публикации shape-файлов в качестве WMS-сервиса.</p>
+</div>
+<div class="section" id="map">
+<h3>Что такое map-файл ?<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://mapserver.org/mapfile/index.html">map-файл</a> — это основной механизм
+конфигурирования MapServer, с его помощью настраивается список доступных
+на сервере слоёв, а также их визуальное оформление (цвет, символика,
+подписи и т.д.).</p>
+</div>
+<div class="section" id="id3">
+<h3>Создание своего первого map-файла<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Откройте любой текстовый редактор (по умолчанию на данном Live DVD используется Mousepad: <em class="menuselection">Applications ‣ Accessories ‣ Mousepad</em>).</li>
+<li>Создайте файл &#8220;mapserver_quickstart.map&#8221; в своей домашней директории <tt class="file docutils literal"><span class="pre">/home/user/mapserver_quickstart.map</span></tt></li>
+</ol>
+<p>Вставьте в него следующий фрагмент:</p>
+<div class="highlight-python"><div class="highlight"><pre>MAP
+  NAME &quot;MAPSERVER QUICKSTART&quot;
+  EXTENT -137 29 -53 88
+  UNITS DD
+  SHAPEPATH &quot;/home/user/data/natural_earth/&quot;
+  SIZE 800 600
+
+  IMAGETYPE PNG24
+
+  PROJECTION
+    &quot;init=epsg:4326&quot;
+  END
+
+  WEB
+    METADATA
+      ows_enable_request &quot;*&quot;
+    END
+  END
+
+  LAYER
+    NAME &quot;Admin Countries&quot;
+    STATUS ON
+    TYPE POLYGON
+    DATA &quot;10m_admin_0_countries&quot;
+    CLASS
+      STYLE
+        COLOR 246 241 223
+        OUTLINECOLOR 0 0 0
+      END
+    END
+  END
+
+END
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">В данном примере используется набор данных Natural Earth, который присутствует на Live DVD в файле: <tt class="file docutils literal"><span class="pre">~/data/natural_earth</span></tt> (сокращённый вариант для <tt class="file docutils literal"><span class="pre">/usr/local/share/data/natural_earth</span></tt>)</p>
+</div>
+<p>Каждый раздел в map-файле начинается с его имени (например, <strong>MAP</strong>)
+и заканчивается ключевым словом <strong>END</strong>. Содержимое map-файла представляет собой
+глобальный раздел <strong>MAP</strong>, внутри которого располагаются другие разделы, в
+частности, разделы <strong>LAYER</strong>, содержащие описание опубликованных слоёв.
+В нашем примере мы определили только один слой.</p>
+<dl class="docutils">
+<dt>Давайте взглянём на некоторые разделы и их свойства, определённые в нашем map-файле:</dt>
+<dd><ul class="first last simple">
+<li>EXTENT : ограничивающий прямоугольник, используемый в данной конфигурации.</li>
+<li>LAYER : порядок доступа и свойства отображения конкретного слоя. Позже будет добавлен ещё один слой.</li>
+<li>SHAPEPATH : путь до каталога, в котором расположены файловые источники данных (например, shape-файлы или растровые изображения).</li>
+</ul>
+</dd>
+</dl>
+<p>Если взглянуть поближе на раздел <strong>LAYER</strong> нашего map-файла, то можно увидеть, что
+внутри него содержатся некоторые дополнительные свойства, среди которых:
+* STATUS : определяет, должен ли слой быть отрисован (<em>ON</em>) или нет (<em>OFF</em>), или отрисовывать слой всегда (<em>DEFAULT</em>).
+* TYPE : геометрический тип, который должен использовать MapServer при отрисовке данных.  Согласно нашему map-файлу, данные будут отрисованы как <em>полигоны</em>.
+* DATA : имя источника данных, используемый для данного слоя. В нашем случае это имя shape-файла.
+* CLASS : определяет оформление слоя (стиль).  Данный раздел будет подробнее рассмотрен чуть позже.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Полный список разделов map-файла и их свойств доступен на странице <a class="reference external" href="http://mapserver.org/mapfile/index.html">официальной документации</a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="mapserver-quickstart-wms-request-ru">
+<span id="id5"></span><h2>Отрисовка данных с использованием командной строки MapServer<a class="headerlink" href="#mapserver-quickstart-wms-request-ru" title="Permalink to this headline">¶</a></h2>
+<p>Хотя MapServer предназначен для работы в Web-приложениях, он также
+предоставляет инструмент отрисовки изображений посредством командной строки.
+Это может быть удобно, например, при отладке.</p>
+<p>Откройте консоль (Applications/Accessories/Terminal Emulator) и наберите</p>
+<blockquote>
+<div>shp2img -m mapserver_quickstart.map -o mymap.png</div></blockquote>
+<p>Если приведённая команда отработает успешно, то вы получите отрендеренное изображение
+ваших данных в виде файла <tt class="file docutils literal"><span class="pre">/home/user/mymap.png</span></tt>.</p>
+</div>
+<div class="section" id="wms-getmap">
+<h2>Отрисовка данных с использованием WMS-запроса <strong>GetMap</strong><a class="headerlink" href="#wms-getmap" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Что я узнаю?</strong> Вы узнаете, как использовать MapServer для отрисовки данных в ответ на WMS-запрос GetMap.</p>
+</div>
+<p>Откройте браузер и введите следующий URL:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Admin%20Countries&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=PNG&amp;WIDTH=800&amp;HEIGHT=600
+</pre></div>
+</div>
+<p>Что значит эта ссылка?  Это ни что иное, как <a class="reference external" href="http://www.opengeospatial.org/standards/wms">Web Map Service (WMS)</a> —
+<strong>GetMap</strong> запрос, который сообщает приложению MapServer, что следует используя
+указанный map-файл, отрисовать указанные слои с дополнительными
+параметрами, такими, как размер изображения, пространственный охват, проекция и т.д.,
+в PNG-изображение. Будут отрисованы все слои, указанные в списке &#8220;<em>&amp;LAYERS=...</em>&#8221;
+и имеющие <em>STATUS ON</em> в map-файле, а также все слои, имеющие <em>STATUS DEFAULT</em>.
+Результат будет выглядеть следующим образом :</p>
+<a class="reference internal image-reference" href="../../_images/mapserver_map11.png"><img alt="../../_images/mapserver_map11.png" src="../../_images/mapserver_map11.png" style="width: 560.0px; height: 420.0px;" /></a>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Все параметры запроса определяются в стандарте WMS, за исключением &#8220;<em>?map=/home/user/mapserver_quickstart.map</em>&#8221;, который является специфичным для MapServer.</p>
+</div>
+</div>
+<div class="section" id="mapserver-quickstart-add-new-layer-ru">
+<span id="id6"></span><h2>Добавление нового слоя в map-файл<a class="headerlink" href="#mapserver-quickstart-add-new-layer-ru" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Что я узнаю?</strong> Вы узнаете, как добавлять определение нового слоя в существующий map-файл.</p>
+</div>
+<p>Добавим новый слой в наш map-файл. Перед последним ключевым словом <em>END</em>
+вставим следующий фрагмент:</p>
+<div class="highlight-python"><div class="highlight"><pre>LAYER
+  NAME &quot;Lakes&quot;
+  STATUS ON
+  TYPE POLYGON
+  DATA &quot;10m_lakes&quot;
+  CLASS
+    STYLE
+      COLOR 153 179 204
+    END
+  END
+ END
+</pre></div>
+</div>
+<p>Теперь в нашем map-файле определено 2 слоя. Обратите внимание, что
+значение свойства &#8220;STATUS&#8221; установлено в значение &#8220;ON&#8221; — это означает, что
+если явно не передать имя этого слоя в запросе, то он не будет отрисован.</p>
+<p>Отредактируйте наш предыдущий WMS-запрос <strong>GetMap</strong>, добавив в запрос новый
+слой &#8220;Lakes&#8221;.  Для этого нужно просто дописать имя слоя в список
+&#8220;LAYERS&#8221;:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Admin%20Countries,Lakes&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=PNG&amp;WIDTH=800&amp;HEIGHT=600
+</pre></div>
+</div>
+<p>Полученное изображение будет выглядеть, как и в предыдущем
+случае, за исключением того, что в него будет добавлен новый слой озёр:</p>
+<a class="reference internal image-reference" href="../../_images/mapserver_lakes11.png"><img alt="../../_images/mapserver_lakes11.png" src="../../_images/mapserver_lakes11.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div>
+<div class="section" id="mapserver-quickstart-styling-a-layer-ru">
+<span id="id7"></span><h2>Настройка символики слоя<a class="headerlink" href="#mapserver-quickstart-styling-a-layer-ru" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Что я узнаю ?</strong> Будет рассмотрен пример настройки символики слоя в зависимости от значений того или иного атрибутивного поля.</p>
+</div>
+<p>Внутри каждого раздела LAYER может содержаться произвольное количество
+вложенных разделов CLASS. Данный раздел отвечает за оформление, используемое
+для отрисовки пространственных данных, указанных в свойстве DATA. Например, если
+посмотреть на файл &#8220;10m_lakes&#8221;, используя утилиту <a class="reference external" href="http://www.gdal.org/ogrinfo.html">ogrinfo</a>,
+то можно увидеть, что данный файл содержит как геометрическую, так и атрибутивную
+составляющие.  Используя раздел CLASS, можно отрисовать объекты, имеющие
+определённые значения того или иного атрибута, уникальным стилем.</p>
+<p>В нашем случае файл &#8220;10m_lakes&#8221; содержит атрибут <em>ScaleRank</em>, который отражает
+размер озера.  Мы можем использовать его для того, чтобы отрисовывать озёра с
+разным значением этого параметра разным стилем. Для этого внутри раздела
+LAYER добавим ещё один раздел CLASS перед уже существующим:</p>
+<div class="highlight-python"><div class="highlight"><pre>LAYER
+ NAME &quot;Lakes&quot;
+ STATUS DEFAULT
+ TYPE POLYGON
+ DATA &quot;10m_lakes&quot;
+ CLASSITEM &quot;ScaleRank&quot;
+ CLASS
+   EXPRESSION /0|1/
+   STYLE
+     COLOR 153 179 204
+     OUTLINECOLOR 0 0 0
+   END
+ END
+ CLASS
+   STYLE
+     COLOR 153 179 204
+   END
+ END
+END
+</pre></div>
+</div>
+<p>Чего мы добились?  Теперь все объекты, имеющие значение атрибута
+&#8220;ScaleRank&#8221; &#8220;0&#8221; или &#8220;1&#8221;, будут отрисованы с чёрной обводкой.
+Разделы CLASS при отрисовке каждого объекта всегда считываются сверху вниз.
+Когда объект удовлетворяет условию, указанному в свойстве &#8220;EXPRESSION&#8221;,
+определённому внутри класса, то этот класс используется для его отрисовки.
+Если объект не удовлетворяет условию, определённому в классе,
+то производится проверка на соответствие условию следующего класса
+и т.д. Если объект не удовлетворяет ни одному условию, то он не будет отрисован.
+Для установки некоторого стиля по умолчанию последним в списке разделов
+CLASS включают определение класса, не содержащего свойства EXPRESSION. Свойство
+&#8220;CLASSITEM&#8221; сообщает MapServer значение какого атрибута следует использовать
+для проверки выражения EXPRESSION, определённого внутри класса.</p>
+<p>В результате этого дополнения большие озёра на нашей карте будут
+отрисованы с чёрной обводкой:</p>
+<a class="reference internal image-reference" href="../../_images/mapserver_lakes_scalerank11.png"><img alt="../../_images/mapserver_lakes_scalerank11.png" src="../../_images/mapserver_lakes_scalerank11.png" style="width: 560.0px; height: 420.0px;" /></a>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Узнайте больше об <a class="reference external" href="http://mapserver.org/mapfile/expressions.html">EXPRESSIONS</a> в документации MapServer.</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>Что дальше?<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>Это простой пример, но с использованием MapServer вы можете сделать гораздо
+больше.  Сайт MapServer содержит множество полезной информации, которая поможет
+вам начать работу с этим программным продуктом. Для облегчения включения в работу
+с MapServer рекомендуем выполнить следующие шаги:</p>
+<ul class="simple">
+<li>Прочитайте <a class="reference external" href="http://mapserver.org/introduction.html#introduction">Introduction to MapServer</a>.</li>
+<li>Просмотрите <a class="reference external" href="http://www.mapserver.org/tutorial/index.html">MapServer Tutorial</a>, который содержит примеры map-файлов.</li>
+<li>Изучите <a class="reference external" href="http://www.mapserver.org/ogc/index.html">OGC Support and Configuration</a> с целью узнать больше о поддержке стандартов OGC в MapServer (WMS, WFS, SLD, WFS Filter Encoding, WCS, SOS, и т.д.).</li>
+<li>Готовы к использованию MapServer?  Тогда присоединяйтесь к сообществу посредством <a class="reference external" href="http://www.mapserver.org/community/lists.html">списка рассылки</a> для обмена идеями и обсуждения потенциальных усовершенствований проекта. Также здесь можно задать интересующие вас вопросы.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

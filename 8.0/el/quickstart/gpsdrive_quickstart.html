@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εχγειρίδιο Γρήγορηε Εκκίνησης GpsDrive &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Καλώς ήρθατε στο OSGeo-Live" href="../index.html" />
+    <link rel="next" title="Εγχειρίδιο Γρήγορης Εκκίνησης GpsPrune" href="gpsprune_quickstart.html" />
+    <link rel="prev" title="Εγχειρίδιο Γρήγορης Εκκίνησης GMT" href="gmt_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.gpsdrive.de" id="gpsdrive-quickstart-el"><img alt="project logo" class="align-right" src="../../_images/logo-gpsdrive5.png" style="width: 169.0px; height: 155.0px;" /></a>
+<div class="section" id="gpsdrive">
+<h1>Εχγειρίδιο Γρήγορηε Εκκίνησης GpsDrive<a class="headerlink" href="#gpsdrive" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Εκτέλεση<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Πιθανόν θα θέλετε να εγκαταστήσετε το πακέτο
+<a class="reference external" href="http://gpsd.berlios.de">gpsd</a> ώστε να επικοινωνείτε με το GPS&#8217; χωρίς αυτό το GPS σας απλά θα απεικονίζει χάρτες.</p>
+<p>Φωνητική ειδοποίηση υποστηρίζει το λογισμικό &#8220;espeak&#8221; εφόσον εγκατασταθεί. Για να χρησιμοποιείσετε χάρτες από το OpenStreetMap θα πρέπει να εγκαταστήσετε επιπλέον όλα τα πακέτα openstreetmap-* . Ετσι επιπλέον αποσπάσματα χαρτών θα είναι διαθέσιμα μέσω διαδικτύου χωρίς επιπλέον εγκατάσταση.</p>
+<div class="section" id="gps">
+<h3>Εγκαθιστόντας το GPS<a class="headerlink" href="#gps" title="Permalink to this headline">¶</a></h3>
+<p>Συνδέστε το GPS. Εκκινείστε την λειτουργία του gpsd με την εντολή:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo dpkg-reconfigure gpsd
+</pre></div>
+</div>
+<p>και</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo /etc/init.d/gpsd start
+</pre></div>
+</div>
+<p>Οι χρήστες GPS με επικοινωνία BlueTooth ας μελετήσουν σχετικά με την επιλογή no-probe.
+(γιαυτό τον λόγο δεν ενεργοποιείται αυτόματα το gpsd)</p>
+<ul class="simple">
+<li>Το &#8216;xgps&#8217; είναι ένα καλό πρόγραμμα για να ελέγξετε ότι το gpsd βλέπει τον δέκτη GPS.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>Χρήση χωρίς GPS<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Εαν δεν έχετε συνδεδεμένο κάποιο δέκτη gps μπορείτε να ενεργοποιείσετε την λειτουργία
+Explore Mode με το πλήκτρο &#8216;e&#8217; και στην συνέχεια να χρησιμοποιείσετε τα πλήκτρα κατεύθυνσης για μετακίνηση.
+Με δεξί κλικ μπορείτε να εισάγετε τον στόχο προορισμού.</p>
+</div>
+<div class="section" id="id3">
+<h3>Ταχεία Βοήθεια<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Για βοήθεια πατήστε &#8216;<strong>man gpsdrive</strong>&#8216; και &#8216;<strong>gpsdrive &#8211;help</strong>&#8216; σε ένα τερματικό.
+Αυτό θα εμφανίσει πως να μεταβείτε σε κατάσταση λειτουργίας Car ή PDA
+η οποία μπορεί να φανεί χρήσιμη αν χρησιμοποιείτε μικρή οθόνη όπως σε ένα netbook.</p>
+</div>
+<div class="section" id="id4">
+<h3>Ρυθμίζοντας την απεικόνιση<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Πέρα απ&#8217; τις επιλογές στο μενού Preferences και τις διαφορετικές καταστάσεις λειτουργίας
+Car/PDA/desktop οι οποίες παρέχονται, μπορείτε να αλλάξετε τις εμφανιζόμενες ενδείξεις.
+Κάντε κλικ σε μία απ&#8217; τις τρεις θέσεις επιλογής και επιλέξτε ένα νέο στοιχείο.
+Μπορείτε να ανοιγοκλείνετε τα χειριστήρια με τα πλήκτρα &#8216;<strong>d</strong>&#8216; και &#8216;<strong>m</strong>&#8216;.</p>
+</div>
+<div class="section" id="openstreetmap-mapnik">
+<h3>Οπτικοποίηση δεδομένων OpenStreetMap μέσω Mapnik<a class="headerlink" href="#openstreetmap-mapnik" title="Permalink to this headline">¶</a></h3>
+<p>Εαν έχετε εκτελέσει μια τοπική βάση δεδομένων PostGIS (για παράδειγμα μία σαν αυτή που
+παρέχεται με αυτό το Live DVD) μπορείτε να ενεργοποιήσετε την οπτικοποίηση δεδομένων από το
+OpenStreetMap.org σε πραγματικό χρόνο με χρήση του λογισμικού Mapnik. Η βάση αναζητά στον δίσκο
+ένα αρχείο με το όνομα &#8220;osm_local_smerc&#8221;. Προς το παρόν έχει αποθηκευτεί μόνο η πόλη στην οποία
+γίνεται το συνέδριο. Μπορείτε να εισάγετε τα δικά σας Planet.osm δεδομένα με το πρόγραμμα
+<cite>osm2pgsql</cite> ή να κλείσετε την λειτουργία <em>Mapnik Mode</em> από το παράθυρο <em>Map Control</em>
+και να χρησιμοποιείσετε τους προκαθορισμένους ή ήδη τοπικά διαθέσιμους χάρτες.</p>
+</div>
+<div class="section" id="id5">
+<h3>Ερευνώντας σημεία ενδιαφέροντος<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Με το εργαλείο <em>Find</em> μπορείτε να αναζητήσετε τα πλησιέστερα σημεία
+ενδιαφέροντος εντός της βάσης. Για να ξεκινήσετε με δεδομένα απ&#8217;την χώρα
+που φιλοξενεί το συνέδριο κάντε μια αναζήτηση για παράδειγμα <em>Find all pubs
+within 2 km of the conference hall</em>.</p>
+</div>
+<div class="section" id="id6">
+<h3>Αποθηκεύοντας χάρτες<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Χρησιμοποιείστε την επιλογή <em class="menuselection">Options ‣ Maps ‣ Download</em> ώστε να
+δείτε και να κατεβάσετε νέους χάρτες. Προς το παρόν είναι διαθέσιμοι χάρτες OpenStreetMap
+και NASA OnEarth WMS. Υπάρχουν μερικά προγράμματα τα οποία παρέχονται με το GpsDrive
+και επιτρέπουν την ομαδική αποθήκευση χαρτών στην περιοχή σας.</p>
+</div>
+<div class="section" id="id7">
+<h3>Εμφάνιση της θέσης φίλων<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Στο μενού επιλογών Preferences μπορείτε να ενεργοποιήσετε την λειτουργία Friendsd.
+Η υπηρεσία αυτή μεταδίδει την θέση σας σε έναν κεντρικό εξυπηρετητή και επιτρέπει στους
+φίλους σας να ξέρουν που είστε. Παρέχεται επίσης ένα πρόγραμμα το οποίο λειτουργεί σαν
+τοπικός εξυπηρετητής αν δεν θέλετε να ξέρει όλος ο κόσμος που είστε. Για να ενεργοποιήσετε
+την λειτουργία Friendsd γράψτε ένα όνομα για εσάς και κάντε κλικ στο κουμπί [Lookup]
+για να δείτε την διεύθυνση του εξυπηρετητή. Τέλος κάντε κλικ στο κουμπί Enable και πατήστε Close.
+Εικονίδια θα εμφανίζουν εσάς και τους φίλους σας καθώς και τις κατευθύνσεις σας σε
+κλίμακα μικρότερη από 1:10 εκατομύρια. Απ&#8217;ότι παρατηρείτε υπάρχουν πολλοί φίλοι στην Ευρώπη.</p>
+</div>
+<div class="section" id="id8">
+<h3>Φωνητικές Οδηγίες<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>Το GpsDrive μπορεί να σας δώσει οδηγίες όταν είστε κοντά σε προορισμούς κ.α.
+Για να το δοκιμάστε ενεργοποιείστε το λογισμικό eSpeak το οποίο για λόγους
+οικονομίας μνήμης είναι απενεργοποιημένο.
+Για να το ανοίξετε πρέπει να ανοίξετε σαν διαχειριστής(root) το αρχείο
+<strong>/etc/default/speech-dispatcher</strong> και να βάλετε <strong>RUN_SPEECHD=yes</strong>.
+Στην συνέχεια εκτελέστε την εντολή &#8220;<cite>sudo service speech-dispatcher start</cite>&#8221;.
+Το GpsDrive θα το χρησιμοποιήσει αυτόματα αν κατα την εκτέλεσή του είναι ενεργό.
+Στην καρτέλα Speech στο μενού επιλογών Preferences μπορείτε να το ενεργοποιείτε/
+απενεργοποιείτε ή/και να ρυθμίσετε την φωνή ή το επίπεδο πληροφοριών.</p>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>Επιπλέον βοήθεια<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><em>GpsDrive</em>: <a class="reference external" href="http://www.gpsdrive.de">http://www.gpsdrive.de</a></li>
+<li>Σελίδες υποστήριξης: <a class="reference external" href="http://gpsdrive.sf.net">http://gpsdrive.sf.net</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

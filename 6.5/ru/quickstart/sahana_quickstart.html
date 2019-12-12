@@ -1,0 +1,159 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы с Sahana &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.sahanafoundation.org"><img alt="Логотип проекта" class="align-right" src="../../_images/logo-sahana-eden21.png" style="width: 380.0px; height: 70.0px;" /></a>
+<div class="section" id="sahana">
+<h1>Начало работы с Sahana<a class="headerlink" href="#sahana" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Запуск<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Sahana Eden уже установлена и сконфигурирована на момент запуска OSGeo-Live. Для доступа в Sahana Eden <a class="reference external" href="http://127.0.0.1:8007/eden">щелкните здесь</a> или выберите в меню Geospatial, затем Crisis Management, затем Sahana Eden. По умолчанию, у вас будут права только на просмотр. Если вы желаете создавать новые записи или изменять существующие, вам нужно войти в качестве пользователя. Используйте следующие данные для начала работы:</p>
+<ul class="simple">
+<li>Username: admin</li>
+<li>Password: admin</li>
+</ul>
+<p>Если вы ввели краудсоурсинговые данные в Ushahidi, к ним можно получить доступ из Sahana Eden по <a class="reference external" href="http://127.0.0.1:8007/eden/irs/ireport/ushahidi">этой</a> ссылке.</p>
+<p>Вы можете заметить, что система уже настроена для доступа к картографическим данным и серверам, которые являются частью OSGeo-Live. Sahana Eden может использовать OpenStreetMap как подложку в <a class="reference external" href="http://127.0.0.1:8007/eden/gis/map_viewing_client">клиенте просмотра карты</a>. Sahana Eden поддерживает широкий диапазон сервисов OpenStreetMap.</p>
+<div class="section" id="id5">
+<h3>Разработка<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Команда Sahana Eden всегда рада новым разработчикам, готовым присоединиться к проекту. Основная платформа разработки — язык <a class="reference external" href="http://www.python.org/">Python</a> и веб-фреймворк <a class="reference external" href="http://www.web2py.com/">web2py</a> Также мы ищем людей с навыками картографирования, работы с <strong>jquery</strong> и <strong>javascript</strong>.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://eden.sahanafoundation.org/wiki/Develop">Желаете помочь в разработке Sahana Eden?</a></li>
+<li><a class="reference external" href="http://eden.sahanafoundation.org/report/1">Система заявок</a> для сообщений об ошибках</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>Дополнительная информация<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://eden.sahanafoundation.org/">Домашняя страница Sahana Eden</a></li>
+<li><a class="reference external" href="http://www.sahanafoundation.org/">Домашняя страница Sahana Software Foundation</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

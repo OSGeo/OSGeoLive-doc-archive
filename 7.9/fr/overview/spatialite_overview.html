@@ -1,0 +1,187 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SpatiaLite &mdash; OSGeo-Live 7.9
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.9
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.9
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 7.9 Contenus" href="overview.html" />
+    <link rel="next" title="TileMill" href="tilemill_overview.html" />
+    <link rel="prev" title="Sahana Eden" href="sahana_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.gaia-gis.it/spatialite/"><img alt="Logo du projet" class="align-right" src="../../_images/logo-spatialite10.png" style="width: 128.0px; height: 113.0px;" /></a>
+<div class="section" id="spatialite">
+<h1>SpatiaLite<a class="headerlink" href="#spatialite" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="base-de-donnees-spatiale">
+<h2>Base de données spatiale<a class="headerlink" href="#base-de-donnees-spatiale" title="Permalink to this headline">¶</a></h2>
+<p>SpatiaLite est un moteur de base de données <a class="reference external" href="http://www.sqlite.org/">SQLite</a> avec des fonctions spatiales intégrées en plus.</p>
+<p>SQLite est un SGBD populaire, simple, robuste, facile à utiliser et vraiment très léger. Chaque base de données SQLite est simplement un fichier; vous pouvez librement la copier, la compresser, l&#8217;envoyer sur un LAN ou sur le WEB sans aucun problème du tout.</p>
+<p>Les fichiers sont aussi portables; le même fichier de base de données fonctionnera sous Windows, Linux, MacOs, etc...</p>
+<a class="reference internal image-reference" href="../../_images/spatialite5.jpg"><img alt="Capture d'écran Spatialite" class="align-right" src="../../_images/spatialite5.jpg" style="width: 513.5px; height: 386.5px;" /></a>
+<div class="section" id="caracteristiques-principales">
+<h3>Caractéristiques principales<a class="headerlink" href="#caracteristiques-principales" title="Permalink to this headline">¶</a></h3>
+<p>L&#8217;extension SpatiaLite permet à SQLite de supporter les données spatiales en se conformant aux spécifications de l&#8217;OGC.</p>
+<ul class="simple">
+<li>Support des formats standards WKT et WKB</li>
+<li>Implémente des fonctions spatiales SQL comme AsText(), GeomFromText(), Area(), PointN() et similaires</li>
+<li>L&#8217;ensemble des fonctions OpenGis est supporté via GEOS, cela comprend des fonctions d&#8217;analyse spatiale sophistiquées comme Overlaps(), Touches(), Union(), Buffer() ..</li>
+<li>Support complet des métadonnées spatiales avec les spécifications OpenGis</li>
+<li>Support de notations alternatives pour les géométries - EWKT, GML, KML et GeoJSON</li>
+<li>Support de l&#8217;import et l&#8217;export des shapefiles</li>
+<li>Support de la reprojection de coordonnées via PROJ.4 et jeux de paramètres géodésiques de l&#8217;EPSG</li>
+<li>Support des jeux de caractères locaux via GNU libiconv</li>
+<li>Implémente un véritable index spatial basé sur l&#8217;extension RTree SQLite</li>
+<li>L&#8217;extension VirtualShape permet à SQLite d&#8217;accéder aux fichiers shape comme des tables virtuelles</li>
+<li>Vous pouvez faire des requêtes SQL standard sur des shapefiles externes, sans avoir besoin de les importer ou de les convertir</li>
+<li>L&#8217;extension VirtualText permet à SQLite d&#8217;accéder aux fichiers CSV/TSV comme des tables virtuelles</li>
+<li>L&#8217;extension VirtualXL permet à SQLite d&#8217;accéder aux tables de fichiers xls comme des tables virtuelles</li>
+<li>Vous pouvez faire des requêtes SQL standard sur des fichiers externes CSV/TSV ou des tables Excel, sans avoir besoin de les importer ou de les convertir</li>
+<li>L&#8217;outil graphique supporte l&#8217;ensemble de ces éléments, d&#8217;une manière agréable pour l&#8217;utilisateur</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Détails<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h3>
+<p><strong>Site web:</strong> <a class="reference external" href="http://www.gaia-gis.it/gaia-sins/">http://www.gaia-gis.it/gaia-sins/</a></p>
+<p><strong>Licence:</strong> MPL v1.1 et GPL v3</p>
+<p><strong>Version du logiciel:</strong> spatialite 3.1.0a / librasterlite 1.1 / spatialite-gui 1.5.0 / spatialite-gis 1.0.0</p>
+<p><strong>Plates-formes supportées:</strong> Linux, Mac, Windows</p>
+<p><strong>Interface API:</strong> C</p>
+</div>
+<div class="section" id="guide-de-demarrage-rapide">
+<h3>Guide de démarrage rapide<a class="headerlink" href="#guide-de-demarrage-rapide" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/spatialite_quickstart.html"><em>Documentation du guide de démarrage rapide</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

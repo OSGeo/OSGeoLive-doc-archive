@@ -1,0 +1,234 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>QGIS 服务器 快速入门 &mdash; OSGeo-Live 7.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 7.0" href="../index.html" />
+    <link rel="next" title="QGIS Quickstart" href="qgis_quickstart.html" />
+    <link rel="prev" title="pycsw 快速入门" href="pycsw_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-qgis_mapserver25.png"><img alt="project logo" class="align-right" src="../../_images/logo-qgis_mapserver25.png" style="width: 60.0px; height: 60.0px;" /></a>
+<div class="section" id="qgis">
+<h1>QGIS 服务器 快速入门<a class="headerlink" href="#qgis" title="Permalink to this headline">¶</a></h1>
+<p>　　QGIS Server 服务器利用 Quantum GIS（QGIS）桌面应用程序的组件为用户提供了一套网络地图服务（WMS）系统。</p>
+<p>　　本文叙述的内容有：</p>
+<blockquote>
+<div><ul class="simple">
+<li>更新一个已有的 QGIS 工程并以 QGIS Server 渲染输出。</li>
+<li>新建 QGIS 工程并与浏览器中访问 WMS 服务。</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>QGIS Server 文档：</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://www.qgis.org/wiki/QGIS_Server_Tutorial">http://www.qgis.org/wiki/QGIS_Server_Tutorial</a></li>
+</ul>
+</dd>
+</dl>
+<p>在 Debian/Ubuntu 安装：</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong class="command">apt-get install qgis-mapserver libapache2-mod-fcgid</strong></li>
+<li>-&gt; <a class="reference external" href="http://localhost/cgi-bin/qgis_mapserv.fcgi">http://localhost/cgi-bin/qgis_mapserv.fcgi</a></li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>QGIS 网页客户端：</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://github.com/qgis/qgis-web-client">https://github.com/qgis/qgis-web-client</a></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="geoext">
+<h2>启动 GeoExt 查看器<a class="headerlink" href="#geoext" title="Permalink to this headline">¶</a></h2>
+<p>　　OSGeo-Live 包含了一个使用 GeoExt Javascript 框架建立的客户端，显示由 QGIS Server 渲染的地图图像。</p>
+<ul class="simple">
+<li>选择 <em class="menuselection">Geospatial ‣ Web Services ‣ QGIS Server</em> 启动。</li>
+</ul>
+<p>　　浏览器中将显示一幅世界地图。</p>
+<img alt="../../_images/qgis_mapserver_browser12.jpg" src="../../_images/qgis_mapserver_browser12.jpg" />
+<p>　　访问 <a class="reference external" href="http://localhost/qgis_server">http://localhost/qgis_server</a> 这个 URL 也可以得到同样的结果。</p>
+<p>　　接下来演示在 QGIS 中调整地图样式。</p>
+</div>
+<div class="section" id="id1">
+<h2>编辑 QGIS 工程<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>选择 <em class="menuselection">Geospatial ‣ Desktop GIS ‣ Quantum GIS</em> 。</li>
+<li>从菜单选择 <em class="menuselection">File ‣ Open Project...</em> 。</li>
+<li>选择 <tt class="file docutils literal"><span class="pre">QGIS-NaturalEarth-Example.qgs</span></tt> 并点击 <em class="guilabel">Open</em> 打开文件。<ul>
+<li>同样的地图现在由 QGIS 桌面系统渲染显示。</li>
+</ul>
+</li>
+</ol>
+<p>　　现在改变河流的样式，并在网页客户端查看结果。</p>
+<ol class="arabic simple">
+<li>双击图层列表中的 <tt class="file docutils literal"><span class="pre">ne_10m_rivers_lake_centerlines</span></tt> 。</li>
+<li>在 Outline 选项改变颜色。</li>
+<li>点击 <em class="guilabel">OK</em> 确认。<ul>
+<li>河流的渲染颜色改变。</li>
+</ul>
+</li>
+<li>点击 <em class="menuselection">File ‣ Save Project</em> 保存工程。</li>
+<li>再次打开网页客户端。</li>
+<li>放大查看河流。<ul>
+<li>河流现在以新的颜色显示。</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>新建 QGIS 工程<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>打开 QGIS 界面。</li>
+<li>选择 <em class="menuselection">File ‣ New Project</em> 新建。</li>
+<li>选择 <em class="menuselection">Layer ‣ Add Vector Layer...</em> 添加图层。</li>
+<li>选择文件 <tt class="file docutils literal"><span class="pre">/home/user/data/natural_earth2/ne_10m_admin_0_countries.shp</span></tt> 。</li>
+<li>点击 <em class="guilabel">Open</em> 打开。<ul>
+<li>界面中将显示世界的所有国家的疆界。</li>
+</ul>
+</li>
+<li>选择 <em class="menuselection">File ‣ Save Project</em> 保存工程。</li>
+<li>输入 <tt class="file docutils literal"><span class="pre">/home/user/world.qgs</span></tt> 为工程名并点击 <em class="guilabel">Save</em> 保存。</li>
+<li>打开 <a class="reference external" href="http://localhost/cgi-bin/qgis_mapserv?map=/home/user/world.qgs&amp;SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;BBOX=-91.901820,-180.000000,83.633800,180.000000&amp;CRS=EPSG:4326&amp;WIDTH=722&amp;HEIGHT=352&amp;LAYERS=ne_10m_admin_0_countries&amp;STYLES=default&amp;FORMAT=image/png&amp;DPI=96&amp;TRANSPARENT=true">WMS URL</a> 。<ul>
+<li>浏览器中将显示 QGIS Server 渲染的结果。</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>更多信息<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>　　更多有关 QGIS 服务器的信息请参阅 <a class="reference external" href="http://docs.qgis.org/html/en/docs/user_manual/working_with_ogc/ogc_server_support.html">QGIS 用户指南</a> 和 <a class="reference external" href="http://hub.qgis.org/wiki/quantum-gis/QGIS_Server_Tutorial">QGIS 服务器维基</a> 。</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,293 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Creando una unidad USB arrancable de OSGeo Live &mdash; OSGeo-Live 7.9
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.9
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.9
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Bienvenido a OSGeo-Live 7.9" href="../index.html" />
+    <link rel="next" title="Guía de inicio rápido de Ushahidi" href="ushahidi_quickstart.html" />
+    <link rel="prev" title="uDig Inicio Rápido" href="udig_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="creando-una-unidad-usb-arrancable-de-osgeo-live">
+<span id="usb-quickstart-es"></span><h1>Creando una unidad USB arrancable de OSGeo Live<a class="headerlink" href="#creando-una-unidad-usb-arrancable-de-osgeo-live" title="Permalink to this headline">¶</a></h1>
+<p>Este documento describe cómo crear una unidad USB arrancable de OSGeo-Live.
+Arrancar una computadora desde una unidad USB es más rápido que desde un USB,
+y la unidad puede configurarse para almacenar datos entre sesiones.</p>
+<p>Se ha descubierto que hay algunas peculiaridades y trucos involucrados en la
+creación satisfactoria de una unidad USB. Se ha documentado todo lo posible,
+pero pueden aparecer más inconvenientes o problemas. Puede consultar la versión
+más reciente de este documento en
+<a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB</a></p>
+<div class="section" id="requisitos">
+<h2>Requisitos<a class="headerlink" href="#requisitos" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Una unidad USB de 4GB, si se usa osgeo-live-mini (sin los instaladores para
+Windows y MacH)</li>
+<li>Una unidad USB de 8GB, si se usa osgeo-live (con los instaladores para
+Windows y Mac)</li>
+<li>Un DVD o una imagen ISO de OSGeo-Live (descargada de
+<a class="reference external" href="http://live.osgeo.org/en/download.html">http://live.osgeo.org/en/download.html</a>)</li>
+</ul>
+</div>
+<div class="section" id="creacion-de-la-unidad-usb-desde-ubuntu">
+<h2>Creación de la unidad USB desde Ubuntu<a class="headerlink" href="#creacion-de-la-unidad-usb-desde-ubuntu" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Este es el proceso recomendado para crear el USB</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">La versión de Ubuntu que esté utilizando debe de ser la misma o más
+reciente que la versión de Xubuntu que va a instalar en su USB. Si está
+instalando OSGeo-Live 5.0 o 5.5 en el USB, necesitará ejecutar este proceso
+sobre Ubuntu 11.04 o posterior.</p>
+</div>
+<ul>
+<li><p class="first">Descargue osgeo-live u osgeo-live al disco duro de su computadora.</p>
+</li>
+<li><p class="first">Inserte la unidad USB en su computadora</p>
+</li>
+<li><p class="first">Si está usando un DVD entonces colóquelo en la unidad de disco</p>
+<a class="reference internal image-reference" href="../../_images/usb_select4.png"><img alt="../../_images/usb_select4.png" src="../../_images/usb_select4.png" style="width: 302.4px; height: 420.0px;" /></a>
+</li>
+<li><p class="first">Seleccione  <em class="menuselection">System ‣ Administration ‣ Startup Disk Creator</em></p>
+<a class="reference internal image-reference" href="../../_images/usb_set_params4.png"><img alt="../../_images/usb_set_params4.png" src="../../_images/usb_set_params4.png" style="width: 333.2px; height: 375.2px;" /></a>
+</li>
+<li><p class="first">Seleccione la imagen ISO osgeo-live u osgeo-live-mini</p>
+</li>
+<li><p class="first">Seleccione la unidad USB</p>
+</li>
+<li><p class="first">Seleccione <em class="guilabel">Make Startup Disk</em></p>
+<a class="reference internal image-reference" href="../../_images/usb_installing4.png"><img alt="../../_images/usb_installing4.png" src="../../_images/usb_installing4.png" style="width: 302.4px; height: 100.8px;" /></a>
+</li>
+<li><p class="first">Espere aproximadamente unos 20 minutos para que se vuelque la información</p>
+</li>
+</ul>
+</div>
+<div class="section" id="creacion-de-la-unidad-usb-desde-windows">
+<h2>Creación de la unidad USB desde Windows<a class="headerlink" href="#creacion-de-la-unidad-usb-desde-windows" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Inserte la unidad USB en us computadora</p>
+</li>
+<li><p class="first">Descargue y ejecute <em>Universal USB Installer</em> desde
+<a class="reference external" href="http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/">http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/</a></p>
+<img alt="../../_images/usb_penlinux_licence2.png" src="../../_images/usb_penlinux_licence2.png" />
+</li>
+<li><p class="first">Acepte los términos de la licencia</p>
+<img alt="../../_images/usb_penlinux_selection2.png" src="../../_images/usb_penlinux_selection2.png" />
+</li>
+</ul>
+<p>Una vez instalado proceda de la siguiente forma:</p>
+<ol class="arabic">
+<li><p class="first">Distribución: Seleccione la distribución <tt class="docutils literal"><span class="pre">xubuntu</span> <span class="pre">i386</span></tt> usada para la
+imagen de osgeo-live. Para OSGeo-Live 5.5 seleccione
+<tt class="docutils literal"><span class="pre">xubuntu</span> <span class="pre">11.04</span> <span class="pre">Desktop</span> <span class="pre">i386</span></tt></p>
+</li>
+<li><p class="first">Seleccione la última imagen ISO osgeo-live descargada localmente.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Necesitará introducir manualmente la ruta al fichero <tt class="docutils literal"><span class="pre">.iso</span></tt>,
+ya que el botón <em class="guilabel">Browse</em> solo sirve para encontrar
+ficheros ISO de Xubuntu.</p>
+</div>
+</li>
+<li><p class="first">Seleccione su unidad USB</p>
+</li>
+<li><p class="first">Seleccione <em>Persistence</em> si desea que se recuerde el estado de la unidad
+entre sesiones</p>
+</li>
+<li><p class="first">Seleccione <em class="guilabel">Create</em></p>
+<img alt="../../_images/usb_penlinux_installing2.png" src="../../_images/usb_penlinux_installing2.png" />
+<p>Espere unos 20 minutos aproximadamente para que la unidad flash de
+OSgeo-Live se genere completamente</p>
+</li>
+</ol>
+</div>
+<div class="section" id="creacion-de-la-unidad-usb-en-diferentes-sistemas-operativos">
+<h2>Creación de la unidad USB en diferentes sistemas operativos<a class="headerlink" href="#creacion-de-la-unidad-usb-en-diferentes-sistemas-operativos" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Instalar <em>UNetbootin</em> (descargado desde
+<a class="reference external" href="http://unetbootin.sourceforge.net/">http://unetbootin.sourceforge.net/</a>)</p>
+</li>
+<li><p class="first">Insertar la unidad USB en su computadora</p>
+</li>
+<li><p class="first">Arrancar <em>UNetbootin</em>, seleccionar <em>Diskimage</em> (la unidad USB se selecciona
+automáticamente)</p>
+</li>
+<li><p class="first">Seleccionar el fichero ISO de OSGeo-Live</p>
+</li>
+<li><p class="first">Selecciona <em class="guilabel">OK</em></p>
+<img alt="../../_images/unetbootin_live_osgeo1.png" src="../../_images/unetbootin_live_osgeo1.png" />
+</li>
+</ol>
+</div>
+<div class="section" id="establecer-el-orden-de-arranque-en-la-bios">
+<h2>Establecer el orden de arranque en la BIOS<a class="headerlink" href="#establecer-el-orden-de-arranque-en-la-bios" title="Permalink to this headline">¶</a></h2>
+<p>Muchas computadoras no establecen por defecto la unidad USB en la secuencia de búsqueda de dispositivos de arranque.</p>
+<p>Para conseguir esto, arranque su computadora y presione la tecla apropiada cuando se muestre en pantalla los mensajes de la BIOS (generalmente presionando
+la tecla &lt;Delete&gt;, alguna tecla de función o similar).</p>
+<p>Seleccione que la máquina arranque desde la unidad de USB antes del disco duro.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>En algunas computadoras es necesario tener la unidad USB insertada
+para poder seleccionarla.</p>
+<p class="last">Nótese también que a menudo la unidad USB se lista junto a los
+discos duros en lugar de junto a los dispositivos extraíbles.</p>
+</div>
+</div>
+<div class="section" id="ejecucion">
+<h2>Ejecución:<a class="headerlink" href="#ejecucion" title="Permalink to this headline">¶</a></h2>
+<p>Siga las instrucciones de  <a class="reference internal" href="osgeolive_quickstart.html"><em>Guía de inicio rápido OSGeo-Live</em></a></p>
+</div>
+<div class="section" id="problemas-conocidos">
+<h2>Problemas conocidos:<a class="headerlink" href="#problemas-conocidos" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Las computadoras Mac no podrán usar esta unidad USB, deberán usar el LiveDVD</li>
+</ul>
+</div>
+<div class="section" id="vease-tambien">
+<h2>Véase también:<a class="headerlink" href="#vease-tambien" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="osgeolive_quickstart.html"><em>Guía de inicio rápido OSGeo-Live</em></a></li>
+<li><a class="reference internal" href="virtualbox_quickstart.html"><em>Guía de inicio rápido para OSGeo-Live Virtual Box</em></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><em>Instalación de OSGeo-Live en disco duro</em></a></li>
+<li>Si conoce otros problemas o incidencias, por favor repórtelas en esta página
+wiki: <a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB</a>
+y coméntelas en la lista de correo del proyecto:
+<a class="reference external" href="http://lists.osgeo.org/mailman/listinfo/live-demo">http://lists.osgeo.org/mailman/listinfo/live-demo</a></li>
+<li>Para consultar más opciones sobre unidades USB arrancables visite
+<a class="reference external" href="http://pendrivelinux.com">http://pendrivelinux.com</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

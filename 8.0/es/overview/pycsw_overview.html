@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pycsw &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Contenidos OSGeo-Live 8.0" href="overview.html" />
+    <link rel="next" title="PyWPS" href="pywps_overview.html" />
+    <link rel="prev" title="PostGIS" href="postgis_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://pycsw.org/"><img alt="project logo" class="align-right" src="../../_images/logo-pycsw8.png" style="width: 172.0px; height: 172.0px;" /></a>
+<div class="section" id="pycsw">
+<h1>pycsw<a class="headerlink" href="#pycsw" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="catalogo-de-metadatos">
+<h2>Catálogo de metadatos<a class="headerlink" href="#catalogo-de-metadatos" title="Permalink to this headline">¶</a></h2>
+<p>pycsw permite al usuario publicar catálogos de metadatos en la web, usando
+interfaces y formatos basado en estándares, el modo que pueden ser consultados y
+actualizados por clientes de catálogos. pycsw es fácil de configurar en un
+servidor web Apache y puede acceder a metadatos almacenados como archivos XML en
+una base de datos.</p>
+<p>Metadatos son &#8216;datos sobre los datos&#8217;, recogiendo información como fecha de
+creación, autor, título, área de interés, etc., y está normalmente codificado
+como ficheros XML, siguiendo estándares internacionales como ISO 19115, ISO
+19139 y FGDC CSDGM.</p>
+<p>pycsw una implementación en <a class="reference external" href="http://www.python.org/">python</a> del <a class="reference internal" href="../standards/csw_overview.html"><em>Estándar de servicio de
+catálogos web (CSW) de OGC</em></a>. El proyecto está
+certificado como que <a class="reference external" href="http://www.opengeospatial.org/resource/products/details/?pid=1104">cumple con los estándares OGC</a>, y es una <a class="reference external" href="http://demo.pycsw.org/">referencia de
+implementación OGC</a>. El estándar CSW define interfaces comunes para encontrar,
+explorar y consultar metadatos sobre datos espaciales, servicios web y recursos
+relacionados.</p>
+<p>pycsw es software de código abierto, liberado bajo la licencia MIT, y es ejecutable
+en las mayores plataformas (Windows, Linux, Mac OS X).</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_overview4.jpg"><img alt="project logo" class="align-right" src="../../_images/pycsw_overview4.jpg" style="width: 480.0px; height: 384.0px;" /></a>
+<div class="section" id="caracteristicas-principales">
+<h3>Características principales<a class="headerlink" href="#caracteristicas-principales" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>cumple enteramente con OGC CSW 2.0.2</li>
+<li>pasa completamente las herramientas de prueba OGC CITE CSW (103/103)</li>
+<li>implementa los Servicios de Descubrimiento INSPIRE 3.0</li>
+<li>implementa el Perfil de Aplicación de Metadatos ISO 1.0.0</li>
+<li>implementa el Perfil de Aplicación FGDC CSDGM para CSW 2.0</li>
+<li>implementa el protocolo de búsqueda via URL (SRU) Búsqueda/Recuperación</li>
+<li>implementa OpenSearch</li>
+<li>soporta modelos de metadatos ISO, Dublin Core, DIF, FGDC</li>
+<li>utilización de CGI o WSGI</li>
+<li>configuración simple</li>
+<li>capacidades transaccionales (CSW-T)</li>
+<li>configuración flexible de repositorios</li>
+<li>conectividad con GeoNode</li>
+<li>concectividad con <cite>Open Data Catalog</cite></li>
+<li>búsqueda distribuida de catálogos institucionales</li>
+<li>validación de esquemas XML en tiempo real</li>
+<li>arquitectura de extensiones (<cite>plugis</cite>) para para perfiles extensibles</li>
+<li>muy ligero (Python + CGI)</li>
+</ul>
+</div>
+<div class="section" id="estandares-implementados">
+<h3>Estándares implementados<a class="headerlink" href="#estandares-implementados" title="Permalink to this headline">¶</a></h3>
+<p>Estándares OGC:</p>
+<ul class="simple">
+<li>CSW   2.0.2</li>
+<li>Filter        1.1.0</li>
+<li>OWS Common    1.0.0</li>
+<li>GML   3.1.1</li>
+</ul>
+<p>Estándares de metadatos:</p>
+<ul class="simple">
+<li>Dublin Core   1.1</li>
+<li>SOAP  1.2</li>
+<li>ISO 19115     2003</li>
+<li>ISO 19139     2007</li>
+<li>ISO 19119     2005</li>
+<li>NASA DIF      9.7</li>
+<li>FGDC CSDGM    1998</li>
+<li>SRU   1.1</li>
+<li>A9 OpenSearch 1.1</li>
+</ul>
+</div>
+<div class="section" id="detalles">
+<h3>Detalles<a class="headerlink" href="#detalles" title="Permalink to this headline">¶</a></h3>
+<p><strong>Sitio web:</strong> <a class="reference external" href="http://pycsw.org">http://pycsw.org</a></p>
+<p><strong>Licencia:</strong> <a class="reference external" href="http://pycsw.org/docs/license.html#license">MIT</a></p>
+<p><strong>Versión del software:</strong> 1.6.1</p>
+<p><strong>Plataformas soportadas:</strong> Windows, Linux, Mac</p>
+<p><strong>Interfaces API:</strong> Python</p>
+<p><strong>Soporte:</strong> <a class="reference external" href="http://pycsw.org/docs/support.html">http://pycsw.org/docs/support.html</a></p>
+</div>
+<div class="section" id="guia-rapida">
+<h3>Guía rápida<a class="headerlink" href="#guia-rapida" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/pycsw_quickstart.html"><em>Guía de inicio rápido</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

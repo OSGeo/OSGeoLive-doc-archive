@@ -1,0 +1,524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Mapbender3 Quickstart &mdash; OSGeo-Live 8.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Zawartość OSGeo-Live 8.5" href="../overview/overview.html" />
+    <link rel="next" title="MapFish Quickstart" href="mapfish_quickstart.html" />
+    <link rel="prev" title="Getting Started with libLAS" href="liblas_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-Mapbender318.png"><img alt="project logo" class="align-right" src="../../_images/logo-Mapbender318.png" style="width: 128.0px; height: 92.0px;" /></a>
+<div class="section" id="mapbender3-quickstart">
+<h1>Mapbender3 Quickstart<a class="headerlink" href="#mapbender3-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>Mapbender is a web based geoportal framework to publish, register, view, navigate, monitor and grant secure access to spatial data infrastructure services.</p>
+<p>Management interfaces empower administrators who need to maintain and categorize map and feature services and grant access to individuals, groups and other services.</p>
+<p>Mapbender3 is the next version in the Mapbender series. It is rewritten from the ground up, using modern web technologies. The foundation is laid by Symfony 2, the brand-new version of the successful Symfony PHP web application framework.</p>
+<p>On the client-side expect to find OpenLayers and jQuery (UI) nicely glued together by MapQuery.</p>
+<dl class="docutils">
+<dt>With this new code base we will continue the Mapbender idea of being a Geoportal Framework:</dt>
+<dd><ul class="first last simple">
+<li>Applications can be setup and configured right from within the browser</li>
+<li>Services like WMS can be managed inside a service repository and linked to applications</li>
+<li>Rights management are easy to maintain, for individual users and groups, whether you store them inside the database or in an LDAP.</li>
+</ul>
+</dd>
+</dl>
+<p>You will need nothing but a standard web browser for this quickstart.</p>
+<p>This Quick Start describes how to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>start Mapbender</li>
+<li>create an application</li>
+<li>load a Web Map Service (OGC WMS)</li>
+<li>configure WMS</li>
+<li>create an individual application</li>
+<li>create a user and a group and assign applications to them</li>
+</ul>
+</div></blockquote>
+<p>This is how a Mapbender application can look like:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_basic_application19.png"><img alt="../../_images/mapbender3_basic_application19.png" src="../../_images/mapbender3_basic_application19.png" style="width: 636.8px; height: 456.8px;" /></a>
+</div></blockquote>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>For the installation of Mapbender3 have a look at <a class="reference external" href="http://doc.mapbender3.org/en/book/installation.html">http://doc.mapbender3.org/en/book/installation.html</a>.</p>
+</div>
+<div class="section" id="start-mapbender">
+<h2>Start Mapbender<a class="headerlink" href="#start-mapbender" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Choose  <em class="menuselection">Mapbender</em> from the start menu or visit <a class="reference external" href="http://localhost/mapbender3/app.php">http://localhost/mapbender3/app.php</a></li>
+<li>The application will take a few moments to start up</li>
+</ol>
+<p>If you have any difficulties running Mapbender, please check whether your Apache web server and your PostgreSQL database are running.</p>
+</div>
+<div class="section" id="start-mapbender-in-the-developer-mode-app-dev-php">
+<h2>Start Mapbender in the developer mode app_dev.php<a class="headerlink" href="#start-mapbender-in-the-developer-mode-app-dev-php" title="Permalink to this headline">¶</a></h2>
+<p>Symfony offers a developer mode with lot of information about your application (logging, exceptions, database queries, memory usage, time and more). This mode is only available from localhost.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_app_dev8.png"><img alt="../../_images/mapbender3_app_dev8.png" src="../../_images/mapbender3_app_dev8.png" style="width: 841.6px; height: 564.8px;" /></a>
+</div></blockquote>
+<ol class="arabic simple">
+<li>Start the developer mode: <a class="reference external" href="http://localhost/mapbender3/app_dev.php">http://localhost/mapbender3/app_dev.php</a></li>
+<li>Have a look at the information that is offered in the developer mode.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_symfony_profiler8.png"><img alt="../../_images/mapbender3_symfony_profiler8.png" src="../../_images/mapbender3_symfony_profiler8.png" style="width: 640.0px; height: 460.0px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="welcome-page">
+<h2>Welcome page<a class="headerlink" href="#welcome-page" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>The Welcome page lists applications that are public and can be used by all users. The applications are listed with a screenshot, a title and a description.</li>
+<li>You can open an application by click on the title, the screenshot or the start button.</li>
+<li>Before you can administrate with Mapbender you have to login to get access to the administration.</li>
+<li>Click on Login at right-top to open the login page.</li>
+<li>You can login with the user that was generated on installation. It can be <em class="guilabel">root</em> and password <em class="guilabel">root</em> (This is the default user and password that you get after installation of Mapbender on OSGeo-Live. Please change the root password if you want to run a productive environment. Please don&#8217;t delete the user <em class="guilabel">root</em>.).</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_welcome8.png"><img alt="../../_images/mapbender3_welcome8.png" src="../../_images/mapbender3_welcome8.png" style="width: 886.4px; height: 666.4px;" /></a>
+</div></blockquote>
+<p>After successful login you are directed to the <em class="guilabel">Mapbender administration</em>.</p>
+</div>
+<div class="section" id="application-overview">
+<h2>Application overview<a class="headerlink" href="#application-overview" title="Permalink to this headline">¶</a></h2>
+<p>After the login you are directed to the <em class="guilabel">Applications</em> with a list of applications you are allowed to access.</p>
+<p>The Application overview provides the following functionality:</p>
+<blockquote>
+<div><ul class="simple">
+<li>title and description</li>
+<li>screenshot for the application (if provided)</li>
+<li>link to the application</li>
+<li>button to duplicate the application</li>
+<li>button to edit the application</li>
+<li>button to publish/unpublish the application</li>
+<li>button to delete the application</li>
+<li>button to create a new application</li>
+<li>with the filter textfield you can search for applications</li>
+</ul>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_application_overview8.png"><img alt="../../_images/mapbender3_application_overview8.png" src="../../_images/mapbender3_application_overview8.png" style="width: 886.4px; height: 666.4px;" /></a>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="create-an-individual-application">
+<h2>Create an individual application<a class="headerlink" href="#create-an-individual-application" title="Permalink to this headline">¶</a></h2>
+<p>Create a new application by providing basic information about your application. After that you use the edit mode to add elements, layers and security.</p>
+<ol class="arabic simple">
+<li>choose <em class="menuselection">Applications ‣ New Application</em></li>
+<li>define a title and description for your application</li>
+<li>define an URL title which will be used in the URL to open te application. It can be the same as the title</li>
+<li>upload an image file as screenshot for the application overview</li>
+<li>choose a template for your application</li>
+<li>choose the button <strong>Create</strong> to create the application</li>
+<li>click the <em class="menuselection">Edit-Button</em> at the new application to edit the application</li>
+<li>your application is set up. Now you need a WMS to be displayed in your application. This will be described in the section <strong>WMS Management</strong>.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_create_application8.png"><img alt="../../_images/mapbender3_create_application8.png" src="../../_images/mapbender3_create_application8.png" style="width: 886.4px; height: 666.4px;" /></a>
+</div></blockquote>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Please note, that the style-, icon- and layoutconfiguration has to be done in css- and twig-files at the moment. Read more about template generation at <a class="reference external" href="http://doc.mapbender3.org/en/book/templates.html">http://doc.mapbender3.org/en/book/templates.html</a></p>
+</div>
+</div>
+<div class="section" id="copy-or-rename-an-application">
+<h2>Copy or rename an application<a class="headerlink" href="#copy-or-rename-an-application" title="Permalink to this headline">¶</a></h2>
+<p>You also can create a new application by copying an existing application. Every application with write access can be copied. It provides a button to duplicate the application with all the services. The new application will get a derived name which can be changed in the next step.</p>
+</div>
+<div class="section" id="delete-an-application">
+<h2>Delete an application<a class="headerlink" href="#delete-an-application" title="Permalink to this headline">¶</a></h2>
+<p>You can delete an application from the menu item <em class="menuselection">Applications</em> with the <em class="menuselection">+-button</em>.</p>
+</div>
+<div class="section" id="export-import-applications-and-sources">
+<h2>Export / Import applications and sources<a class="headerlink" href="#export-import-applications-and-sources" title="Permalink to this headline">¶</a></h2>
+<p>You can export applications as JSON or YAML with :menuselection:<a href="#id1"><span class="problematic" id="id2">`</span></a>Applications &#8211;&gt; Export. You can chose one or more applications to export and you can also export the sources which are published in the applications.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_application_export7.png"><img alt="../../_images/mapbender3_application_export7.png" src="../../_images/mapbender3_application_export7.png" style="width: 780.0px; height: 242.4px;" /></a>
+</div></blockquote>
+<p>The exportfile contains all the definitions of the application/s (sources) and can be imported via <em class="menuselection">Applications ‣ Import</em> in another Mapbender3 installation or in the same installation.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_application_import7.png"><img alt="../../_images/mapbender3_application_import7.png" src="../../_images/mapbender3_application_import7.png" style="width: 780.0px; height: 235.2px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="management-of-data-sources">
+<h2>Management of Data Sources<a class="headerlink" href="#management-of-data-sources" title="Permalink to this headline">¶</a></h2>
+<p>Mapbender can handle different Services like OGC WMS or OGC WMTS or OGC WFS. Every Service has to be handled differently. The administration provides an administration interface for every source (at the moment only WMS).</p>
+</div>
+<div class="section" id="service-repository-overview">
+<h2>Service Repository overview<a class="headerlink" href="#service-repository-overview" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Go to <em class="guilabel">Services</em> and have a look at the Service repository.</li>
+<li>You get an overview on the Sources that are loaded in your Mapbender.</li>
+<li>Type (f.e WMS, WMTS), Title, Description offer first information about the services.</li>
+<li>On click on the button <em class="menuselection">View-Button</em> you get further information about the source.</li>
+<li>With the button <em class="menuselection">Delete-Button</em> you can delete the source from your repository.</li>
+</ol>
+</div>
+<div class="section" id="loading-web-map-services">
+<h2>Loading Web Map Services<a class="headerlink" href="#loading-web-map-services" title="Permalink to this headline">¶</a></h2>
+<p>You can load OGC Web Map Services (WMS) to your application.</p>
+<p>A WMS returns an XML-file when the getCapabilities document is requested. This information is parsed by Mapbender and Mapbender gets all the necessary information about the service from this XML</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You should first check the Capabilities document in your browser before you try to load it with Mapbender</p>
+</div>
+<ol class="arabic simple">
+<li>Choose menu item <em class="menuselection">Services ‣ Add Service</em> or use the +-Button. Link to the WMS getCapabilities URL in the text field <em class="menuselection">Serviceurl</em>.</li>
+<li>Enter username and password if your service needs authentication.</li>
+<li>Hit <strong>Load</strong> to load the Service to the repository.</li>
+<li>After successfull registration of the service Mapbender will display an overview on the information that was provided by the service.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_wms_load8.png"><img alt="../../_images/mapbender3_wms_load8.png" src="../../_images/mapbender3_wms_load8.png" style="width: 897.6px; height: 677.6px;" /></a>
+</div></blockquote>
+<p>Here are some example WMS:</p>
+<p>Germany demo</p>
+<p><a class="reference external" href="http://wms.wheregroup.com/cgi-bin/germany.xml?VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS">http://wms.wheregroup.com/cgi-bin/germany.xml?VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS</a></p>
+<p>WhereGroup OSM WMS</p>
+<p><a class="reference external" href="http://osm-demo.wheregroup.com/service">http://osm-demo.wheregroup.com/service</a></p>
+<p>Omniscale OSM WMS (see also <a class="reference external" href="http://osm.omniscale.de/">http://osm.omniscale.de/</a>)
+<a class="reference external" href="http://osm.omniscale.net/proxy/service">http://osm.omniscale.net/proxy/service</a>?</p>
+</div>
+<div class="section" id="add-service-to-application">
+<h2>Add Service to Application<a class="headerlink" href="#add-service-to-application" title="Permalink to this headline">¶</a></h2>
+<p>After the successfull upload of a WMS you want to add your WMS to an application.</p>
+<ol class="arabic simple">
+<li>Choose <em class="menuselection">Applications ‣ edit-Button ‣ Layers ‣ Edit-Button</em>.</li>
+<li>Click on the <em class="menuselection">+-button</em> to add a layerset, which represents a collection of layers (a possible name could be main)</li>
+<li>Now you can add layer to the layerset</li>
+<li>Click on the <em class="menuselection">+-button</em> at your new layerset to add a Service.</li>
+<li>You can change the order of the Services in your application by drag &amp; drop.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_add_source_to_application8.png"><img alt="../../_images/mapbender3_add_source_to_application8.png" src="../../_images/mapbender3_add_source_to_application8.png" style="width: 897.6px; height: 677.6px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="configure-your-wms">
+<h2>Configure your WMS<a class="headerlink" href="#configure-your-wms" title="Permalink to this headline">¶</a></h2>
+<p>You can configure the WMS for your specific application. Maybe you don&#8217;t want to provide all layers or you want to change the order or titles of the layer or disable the feature info or change the maxscale for a layer.</p>
+<ol class="arabic simple">
+<li>Choose <em class="menuselection">Applications ‣ edit-Button ‣ Layers ‣ edit-Button</em> to configure the Service Instance.</li>
+<li>You will see a table with the layers of the Service.</li>
+<li>You can change the order of the layers via drag &amp; drop</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapbender3_wms_application_settings8.png"><img alt="../../_images/mapbender3_wms_application_settings8.png" src="../../_images/mapbender3_wms_application_settings8.png" style="width: 897.6px; height: 677.6px;" /></a>
+<p>Service configuration</p>
+<ul class="simple">
+<li>format - choose the format for getMap-Requests</li>
+<li>infoformat - choose the format for getFeatureInfo-Requests</li>
+<li>exceptionformat - choose the format for exceptions</li>
+<li>opacity - choose opacity in percent</li>
+<li>visible</li>
+<li>basesource</li>
+<li>proxy - if active the service will be requested by Mapbender and not directly</li>
+<li>transparency - Standard ist aktiviert, deaktiviert wird der Dienst ohne transparenten Hintergrund angefordert (getMap-Request mit TRANSPARENT=FALSE)</li>
+<li>tiled - you can request a WMS in tiles, default is not tiled (may be a good choice if you map is very big an the WMS service does not support the width/height)</li>
+<li>BBOX factor</li>
+<li>tile buffer</li>
+</ul>
+<p>Layer configuration</p>
+<ul class="simple">
+<li>title - layer title from Service information</li>
+<li>active (on/off) - enable/disable a layer for this individual application</li>
+<li>select on - selectable in geodata explorer</li>
+<li>select allow - layer is active when the application starts</li>
+<li>info on - layer provides feature info requests, info default activates the feature info functionality</li>
+<li>info allow</li>
+<li>minscale / maxscale - the scale range in which the layer should be displayed, 0 means no scale limitation</li>
+<li>toggle - open folder on start of the application</li>
+<li>reorder - allows to reorder the layers with drag &amp; drop while using the application</li>
+<li>... -&gt; opens a dialog with more information</li>
+<li>name</li>
+<li>style - if a WMS provides more than one style you can choose a different style than the default style</li>
+</ul>
+</div>
+<div class="section" id="add-elements-to-your-application">
+<h2>Add Elements to your application<a class="headerlink" href="#add-elements-to-your-application" title="Permalink to this headline">¶</a></h2>
+<p>Mapbender offers a set of elements. You can add the elements to your application. You have different regions (Toolbar, Sidepane, Content, Footer) to which you can add elements.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_application_add_element8.png"><img alt="../../_images/mapbender3_application_add_element8.png" src="../../_images/mapbender3_application_add_element8.png" style="width: 897.6px; height: 677.6px;" /></a>
+</div></blockquote>
+<ol class="arabic simple">
+<li>Choose <em class="menuselection">Applications ‣ edit-Button ‣ Layers ‣ Button +</em> to get an overview over the elements Mapbender3 provides.</li>
+<li>Choose an element from the list.</li>
+<li>Notice that you have different areas in your application. Make sure to add the element to a region that makes sense.</li>
+<li>Configure the element. Notice: When you select an element for example <strong>map</strong> you see that the element has a set of attributes. Each element offers individual attributes for configuration.</li>
+<li>You can change the position of the element via drag &amp; drop</li>
+<li>Have a look at your application. Open your application from <em class="menuselection">Applications ‣ Applications Overview</em></li>
+</ol>
+<p>Now you should get an idea how easy it is to change a Mapbender application without changes in the code.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_application_elements8.png"><img alt="../../_images/mapbender3_application_elements8.png" src="../../_images/mapbender3_application_elements8.png" style="width: 897.6px; height: 677.6px;" /></a>
+</div></blockquote>
+<p>Examples for elements Mapbender3 offers:</p>
+<ul class="simple">
+<li>About Dialog</li>
+<li>Activity Indicator</li>
+<li>BaseSourceSwitcher</li>
+<li>Button</li>
+<li>Coordinates Display</li>
+<li>Copyright</li>
+<li>Feature Info</li>
+<li>GPS-Position</li>
+<li>HTML</li>
+<li>Legend</li>
+<li>Layertree - Table of Content</li>
+<li>Map</li>
+<li>Overview</li>
+<li>PrintClient</li>
+<li>Ruler Line/Area</li>
+<li>Scale Selector</li>
+<li>ScaleBar</li>
+<li>SimpleSearch</li>
+<li>Search Router</li>
+<li>SRS Selector</li>
+<li>Spatial Reference System Selector (SRS Selector)</li>
+<li>Navigation Toolbar (Zoombar)</li>
+<li>WMS Loader</li>
+<li>WMC Editor</li>
+<li>WMC Loader</li>
+<li>WMC List</li>
+</ul>
+<p>You find detailed information on every element at the <a class="reference external" href="http://doc.mapbender3.org/en/bundles/Mapbender/CoreBundle/index.html">MapbenderCoreBundle element documentation</a>, <a class="reference external" href="http://doc.mapbender3.org/en/bundles/Mapbender/WmcBundle/index.html">MapbenderWmcBundle element documentation</a> and <a class="reference external" href="http://doc.mapbender3.org/en/bundles/Mapbender/WmsBundle/index.html">MapbenderWmsBundle element documentation</a>.</p>
+</div>
+<div class="section" id="try-it-yourself">
+<h2>Try it yourself<a class="headerlink" href="#try-it-yourself" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>add a Map Element to the content of your application</li>
+<li>add a Layertree to the content of your application</li>
+<li>add a button that opens the Layertree to the top of your application</li>
+<li>add the Navigation Toolbar to the content</li>
+<li>add a Copyright and change the copyright text</li>
+<li>add a SRS Selector to the footer</li>
+</ul>
+</div>
+<div class="section" id="user-and-group-management">
+<h2>User and group management<a class="headerlink" href="#user-and-group-management" title="Permalink to this headline">¶</a></h2>
+<p>An access to Mapbender requires authentication. Only public applications can be used by everyone.</p>
+<p>A user has permissions to access one or a set of applications and services.</p>
+</div>
+<div class="section" id="create-a-user">
+<h2>Create a user<a class="headerlink" href="#create-a-user" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>To create a user go to <em class="guilabel">New User</em> or click the <em class="menuselection">+-Button</em>.</li>
+<li>Choose a name and a password for your user.</li>
+<li>Provide an email address for the user.</li>
+<li>Save your new user.</li>
+<li>You can provide more information about the user in the tab <em class="menuselection">Profile</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapbender3_create_user8.png"><img alt="../../_images/mapbender3_create_user8.png" src="../../_images/mapbender3_create_user8.png" style="width: 897.6px; height: 677.6px;" /></a>
+</div>
+<div class="section" id="create-a-group">
+<h2>Create a group<a class="headerlink" href="#create-a-group" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Create a group by <em class="guilabel">New Group</em>.</li>
+<li>Define a name and a description for your group.</li>
+<li>Save your new group.</li>
+</ol>
+</div>
+<div class="section" id="assign-users-to-group">
+<h2>Assign users to group<a class="headerlink" href="#assign-users-to-group" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Assign a user to a group by <em class="guilabel">Users &#8211;&gt; Groups</em>.</li>
+<li>Choose one or more users you want to add to the group at <em class="menuselection">Users</em>.</li>
+<li>Assign a user by <em class="menuselection">Users ‣ Edit-Button‣ Groups</em> to a group.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_assign_user_to_group8.png"><img alt="../../_images/mapbender3_assign_user_to_group8.png" src="../../_images/mapbender3_assign_user_to_group8.png" style="width: 897.6px; height: 677.6px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="roles">
+<h2>Roles<a class="headerlink" href="#roles" title="Permalink to this headline">¶</a></h2>
+<p>Mapbender3 provides different rights. They refer to the Symfony ACL System <a class="reference external" href="http://symfony.com/doc/2.1/cookbook/security/acl_advanced.html#built-in-permission-map">http://symfony.com/doc/2.1/cookbook/security/acl_advanced.html#built-in-permission-map</a></p>
+<ul class="simple">
+<li>view - Whether someone is allowed to view the object.</li>
+<li>edit - Whether someone is allowed to make changes to the object.</li>
+<li>delete - Whether someone is allowed to delete the object.</li>
+<li>operator - Whether someone is allowed to perform all of the above actions.</li>
+<li>master - Whether someone is allowed to perform all of the above actions, and in addition is allowed to grant any of the above permissions to others.</li>
+<li>owner - Whether someone owns the object. An owner can perform any of the above actions and grant master and owner permissions.</li>
+</ul>
+<ol class="arabic simple">
+<li>Assign roles to a user by <em class="menuselection">Users ‣ Edit your User ‣ Security</em>.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_roles8.png"><img alt="../../_images/mapbender3_roles8.png" src="../../_images/mapbender3_roles8.png" style="width: 897.6px; height: 677.6px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="assign-an-application-to-a-user-group">
+<h2>Assign an Application to a User/Group<a class="headerlink" href="#assign-an-application-to-a-user-group" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Edit your application by <em class="menuselection">Application ‣ Edit-Button</em>.</li>
+<li>Choose <em class="menuselection">Security</em></li>
+<li>Set permission like view edit delete operator master owner</li>
+<li>Assign a user/group to the application</li>
+<li>Test your configuration!</li>
+<li>Logout from Mapbender by <em class="menuselection">Logout</em>.</li>
+<li>Login as the new user</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_security8.png"><img alt="../../_images/mapbender3_security8.png" src="../../_images/mapbender3_security8.png" style="width: 897.6px; height: 677.6px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="things-to-try">
+<h2>Things to try<a class="headerlink" href="#things-to-try" title="Permalink to this headline">¶</a></h2>
+<p>Here are some additional challenges for you to try:</p>
+<ol class="arabic simple">
+<li>Try to load some WMS in your application. Try to configure your WMS.</li>
+<li>Try to create an individual application.</li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2>What Next?<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<p>This is only the first step on the road to using Mapbender3. There is a lot more functionality you can try.</p>
+<p>Mapbender Project home</p>
+<blockquote>
+<div><a class="reference external" href="http://mapbender.org">http://mapbender.org</a></div></blockquote>
+<p>Mapbender3 Webside</p>
+<blockquote>
+<div><a class="reference external" href="http://mapbender3.org/">http://mapbender3.org/</a></div></blockquote>
+<p>You find tutorials at</p>
+<blockquote>
+<div><p><a class="reference external" href="http://doc.mapbender3.org">http://doc.mapbender3.org</a></p>
+<p><a class="reference external" href="http://api.mapbender3.org">http://api.mapbender3.org</a></p>
+</div></blockquote>
+<p>Get to know Mapbender on</p>
+<blockquote>
+<div><a class="reference external" href="http://projects.mapbender.osgeo.org">http://projects.mapbender.osgeo.org</a></div></blockquote>
+<p>Get involved in the project</p>
+<blockquote>
+<div><a class="reference external" href="http://www.mapbender.org/Community">http://www.mapbender.org/Community</a></div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

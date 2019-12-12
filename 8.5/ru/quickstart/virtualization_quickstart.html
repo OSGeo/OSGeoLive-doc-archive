@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Быстрый запуск OSGeo-Live в виртуальной машине &mdash; OSGeo-Live 8.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.5
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="osgeo-live">
+<h1>Быстрый запуск OSGeo-Live в виртуальной машине<a class="headerlink" href="#osgeo-live" title="Permalink to this headline">¶</a></h1>
+<p>Это руководство описывает один из способов запуска OSGeo-Live в виртуальной машине VirtualBox. Для
+остальных способов проследуйте по ссылке из &#8220;См. также&#8221;.</p>
+<div class="section" id="id1">
+<h2>Преимущества виртуальных машин<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Работать с виртуальной машиной зачастую гораздо быстрее, чем с DVD, а установка практически такая же, как и на хост-машину.</li>
+<li>Все изменения конфигурации, обновления программного обеспечения и сохранения файлов являются постоянными, как и на любом &#8220;обычном&#8221; компьютере. Поэтому:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Вы можете настроить и обновить систему</li>
+<li>Вы можете сохранить вашу работу в виртуальной машине</li>
+<li>Вы можете установить дополнительное программное обеспечение</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Вы можете сделать резервную копию вашей установленной вируальной машины.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>Системные требования<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>ОЗУ: 2 GB и выше. Lubuntu хорошо работает и с 1 Гб оперативной памяти, но вы должны будете оставить примерно такой же объем ОЗУ для хост-системы. Таким образом, для бесперебойной работы потребуются 2 GB.</li>
+<li>Свободное место на жестком диске: файл виртуального диска (vmdk) с:  <a class="reference external" href="http://live.osgeo.org/en/download.html">live.osgeo.org</a>  занимает почти 10 GB. А так как вам понадобится больше свободно места для работы в витуальной машине, то рекомендуемый объем свободного места&nbsp;— 20 GB.</li>
+<li>Процессор: любой, однако процессор, поддерживающий &#8220;Virtualization Technology&#8221;, будет работать быстрее. Вы можете проверить свой процессор <a class="reference external" href="http://www.intel.com/support/processors/sb/cs-030729.htm">здесь</a>.</li>
+</ul>
+<p>Большинство компьютеров не старше 4-5 лет соответствуют данным требованиям.</p>
+</div>
+<div class="section" id="id4">
+<h2>Инструкция<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><strong>Загрузка</strong></p>
+<p>Загрузите и установите <a class="reference external" href="http://www.virtualbox.org/">VirtualBox</a>  для вашего типа операционной системы. В Windows запустите Installer. В дистрибутивах Linux на базе Ubuntu выполните следующую команду:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">virtualbox-ose</span></tt></div></blockquote>
+<p>Также вы можете скачать OSGeo Virtual disk (vmdk) с <a class="reference external" href="http://live.osgeo.org/en/download.html">live.osgeo.org</a>. Щёлкните на кнопку &#8220;Download virtual machine&#8221;. Затем распакуйте загруженный файл (можете использовать <a class="reference external" href="http://www.7-zip.org">7zip</a> ).</p>
+<p><strong>Создание виртуальной машины</strong></p>
+<p>Запустите VirtualBox и нажмите на кнопку <em>Создать</em>, затем нажмите <em>Вперёд</em>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox11.png"><img alt="../../_images/virtualbox11.png" src="../../_images/virtualbox11.png" style="width: 389.0px; height: 289.0px;" /></a>
+</div></blockquote>
+<p>Введите имя, например &#8220;OSGeo-Live&#8221;, выберите операционную систему Linux, версия&nbsp;— Ubuntu.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_select_name11.png"><img alt="../../_images/virtualbox_select_name11.png" src="../../_images/virtualbox_select_name11.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>Установите размер основной памяти 1024 MB (или больше, если у вашего компьютера более 4GB ОЗУ).</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_memory11.jpg"><img alt="../../_images/vmdk_memory11.jpg" src="../../_images/vmdk_memory11.jpg" style="width: 416.0px; height: 274.95px;" /></a>
+</div></blockquote>
+<p>Для продолжения нажмите &#8220;Вперёд&#8221;. Выберите &#8220;Использовать существующий жёсткий диск&#8221;. Нажмите на кнопку обзора (иконка в виде папки) и укажите путь, куда вы сохранили <em>osgeo-live-vm-6.0.vmdk</em>. Выберите этот файл, нажмите &#8220;Открыть&#8221;, затем &#8220;Создать&#8221;.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_disk11.jpg"><img alt="../../_images/vmdk_disk11.jpg" src="../../_images/vmdk_disk11.jpg" style="width: 416.0px; height: 274.95px;" /></a>
+</div></blockquote>
+<p>После того, как виртуальная машина будет создана, нажмите кнопку &#8220;Свойства&#8221;. В пункте меню &#8220;Общие&#8221; выберите вкладку &#8220;Дополнительно&#8221;, и для мини-тулбара отметьте &#8220;Расположить сверху экрана&#8221;.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_general_advanced11.jpg"><img alt="../../_images/vmdk_general_advanced11.jpg" src="../../_images/vmdk_general_advanced11.jpg" style="width: 416.0px; height: 341.25px;" /></a>
+</div></blockquote>
+<p>Откройте пункт &#8220;Дисплей&#8221; и установите значение видео-памяти равным 32 или 64 MB.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_display11.jpg"><img alt="../../_images/vmdk_display11.jpg" src="../../_images/vmdk_display11.jpg" style="width: 416.0px; height: 341.25px;" /></a>
+</div></blockquote>
+<p>Далее перейдите в пункт меню &#8220;Общие папки&#8221;, выберите &#8220;Добавить папку&#8221; (иконка с зеленым &#8220;плюсом&#8221; на папке справа). Выберите папку на локальной машине, которую вы бы хотели сделать доступной из виртуальной машины.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_shared_folders11.jpg"><img alt="../../_images/vmdk_shared_folders11.jpg" src="../../_images/vmdk_shared_folders11.jpg" style="width: 416.0px; height: 343.85px;" /></a>
+</div></blockquote>
+<p>После того, как будут указаны &#8220;Путь к папке&#8221; и &#8220;Имя папки&#8221;, нажмите OK и еще раз OK для того, чтобы закончить настройку параметров и закрыть окно свойств.</p>
+<p><strong>Запуск виртуальной машины</strong></p>
+<p>Теперь можете запустить виртуальную машину, нажав кнопку &#8220;Старт&#8221; (с зелёной стрелкой).</p>
+<p>После того, как OSGeo-Live загрузится, вы можете установить &#8220;Дополнения гостевой ОС&#8221; в VirtualBox, чтобы улучшить производительность видео и включить возможность просматривать общие папки, параметры которой задали выше. Дополнения гостевой ОС обычно идут в виде ISO-образа вместе с VirtualBox, но они не лицензированы в качестве свободного и открытого программного обеспечения. ISO-образ монтируется в виртуальную машину в CD-привод, Установка будет производиться с него. Ниже пример, как это сделать.</p>
+<p>В окне VirtualBox откройте меню <em class="menuselection">Устройства</em> и выберите <em class="menuselection">Установить Дополнения гостевой ОС</em>. После этого ISO-образ смонтируется в CD-привод виртуальной машины OSGeo-Live.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_guest_additions11.jpg"><img alt="../../_images/vmdk_guest_additions11.jpg" src="../../_images/vmdk_guest_additions11.jpg" style="width: 512.0px; height: 418.4px;" /></a>
+</div></blockquote>
+<p>После этого откройте терминал и выполните следующие команды:</p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">linux-headers-`uname</span> <span class="pre">-r`</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">cd</span> <span class="pre">/media/VBOXADDITIONS_4.1.18_78361/</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:/media/VBOXADDITIONS_4.1.18_78361$</span> <span class="pre">sudo</span> <span class="pre">./VBoxLinuxAdditions.run</span></tt></p>
+<p>Немного подождите, пока закончится установка. После перезагрузки у вас появится возможность работать в полноэкранном режиме и подключать общие папки. В предыдущем примере мы определили путь к общей папке на локальном компьютере и присвоили ей имя &#8220;GIS&#8221; в свойствах виртуальной машины. Чтобы примонтировать её в виртуальной машине, откройте терминал и выполните:</p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">mkdir</span> <span class="pre">GIS</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">mount</span> <span class="pre">-t</span> <span class="pre">vboxsf</span> <span class="pre">-o</span> <span class="pre">uid=user,rw</span> <span class="pre">GIS</span> <span class="pre">/home/user/GIS</span></tt></p>
+<p>После этого файлы, которые вы поместите в общую папку на локальной машине, будут также доступны в виртуальной машине в папке &#8220;GIS&#8221; в домашней директории пользователя.</p>
+</div>
+<div class="section" id="id6">
+<h2>См. также:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>Вики-сайт OSGeo:</dt>
+<dd><p class="first last"><a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine">Другие методы создания виртуальной машины</a></p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><a class="reference internal" href="osgeolive_quickstart.html"><em>Начало работы c OSGeo-Live</em></a></p>
+</li>
+<li><p class="first"><a class="reference internal" href="osgeolive_install_quickstart.html"><em>Установка OSGeo-Live на жёсткий диск</em></a></p>
+</li>
+<li><p class="first"><a class="reference internal" href="usb_quickstart.html"><em>Создание загрузочного USB флеш-диска с OSGeo-Live</em></a></p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

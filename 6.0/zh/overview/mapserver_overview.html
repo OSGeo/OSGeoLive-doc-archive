@@ -1,0 +1,215 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MapServer &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 6.0 包含内容一览" href="overview.html" />
+    <link rel="next" title="MapTiler" href="maptiler_overview.html" />
+    <link rel="prev" title="Map Proxy" href="mapproxy_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://mapserver.org/"><img alt="project logo" class="align-right" src="../../_images/logo-mapserver-new20.png" style="width: 245.05px; height: 65.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project20.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="mapserver">
+<h1>MapServer<a class="headerlink" href="#mapserver" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="web">
+<h2>Web服务<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h2>
+<p>MapServer是一个采用C语言开发的`开源 &lt;<a class="reference external" href="http://www.opensource.org">http://www.opensource.org</a>&gt;`_ 地理数据渲染引擎。 除了浏览GIS数据，MapServer还允许用户创建&#8221;geographic image maps&#8221;，也就是引导用户浏览Web内容的地图。例如：Minnesota DNR <a class="reference external" href="http://www.dnr.state.mn.us/maps/compass.html">Recreation Compass</a> 仅通过一个单独应用系统就提供给用户10,000多Web页面、报告和地图。该系统还同时作为&#8221;map engine&#8221;为其他站点服务，提供所需的空间信息背景。</p>
+<p>MapServer起初是由University of Minnesota (UMN)和NASA、Minnesota Department of Natural Resources (MNDNR)一起合作的ForNet项目开发的。后来，又由NASA资助的UMN与土地管理业者联盟共同负责的TerraSIP项目主管。</p>
+<p>MapServer目前是`OSGeo &lt;<a class="reference external" href="http://www.osgeo.org">http://www.osgeo.org</a>&gt;`_的一个项目, 由一个日渐增长的开发团队（约20名）所维护，成员来自世界各地。它得到了各种各样组织的资金支持以提高软件质量和进行日常维护。在OSGeo内部，由Mapserver项目执行委员会负责具体管理，委员会成员由开发人员和资助者组成。</p>
+<div class="section" id="id1">
+<h3>主要功能<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/mapserver10.png"><img alt="screenshot" class="align-right" src="../../_images/mapserver10.png" style="width: 512.0px; height: 383.5px;" /></a>
+<ul class="simple">
+<li>高级制图输出<ul>
+<li>基于比例尺变化的地物要素图形绘制和应用</li>
+<li>地物要素的注记，包括注记文字重叠冲突避免</li>
+<li>注记和符号库的TrueType字体支持</li>
+<li>地图元素自动化（比例尺、全视图和图例）</li>
+<li>采用逻辑或正则表达式选择地物要素类别，制作专题图</li>
+<li>可插入式的渲染驱动支持如AGG, Cairo, GD, OpenGL以及其他</li>
+<li>提供切片式等特殊要求输出</li>
+</ul>
+</li>
+<li>高级空间查询支持<ul>
+<li>通过属性、点、矩形或者几何图形等选择方式，在一个或多个图层中标示出选中的地物要素</li>
+<li>支持栅格查询</li>
+<li>全面支持定制基于模板的输出</li>
+<li>基于OGR查询的输出产生</li>
+</ul>
+</li>
+<li>支持流行的脚本编程和开发环境<ul>
+<li>CGI/FastCGI</li>
+<li>PHP, Python, Perl, Ruby, Java, 和.NET</li>
+</ul>
+</li>
+<li>支持跨平台<ul>
+<li>Linux, Windows, Mac OS X, Solaris, 和更多</li>
+</ul>
+</li>
+<li>多种栅格和矢量数据格式<ul>
+<li>内置驱动支持ESRI shape, PostGIS, ESRI ArcSDE和Oracle Spatial</li>
+<li>采用GDAL和OGR支持更多其它格式</li>
+</ul>
+</li>
+<li>支持地图投影<ul>
+<li>通过Proj.4库支持动态地图投影，超过1000余种</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>已实现的标准规范<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>支持众多的Open Geospatial Consortium  (OGC)标准规范<ul>
+<li>WMS (client/server), non-transactional WFS (client/server), WMC, WCS, Filter Encoding, SLD, GML, SOS, OM</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>实例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost/mapserver_demos/itasca/">Itasca</a></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>文档<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../../mapserver/doc/index.html">MapServer 6.0.3 Documentation</a></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h3>详情请见<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p><strong>站点:</strong> <a class="reference external" href="http://www.mapserver.org/">http://www.mapserver.org/</a></p>
+<p><strong>版权:</strong> <a class="reference external" href="http://mapserver.org/copyright.html#license">MIT-style license</a></p>
+<p><strong>软件版本:</strong> 6.0.3</p>
+<p><strong>支持平台:</strong> Windows, Linux, Mac</p>
+<p><strong>API接口:</strong> C, PHP, Python, Perl, Ruby, Java, and .NET</p>
+<p><strong>支持:</strong> <a class="reference external" href="http://mapserver.org/community/">http://mapserver.org/community/</a></p>
+</div>
+<div class="section" id="id6">
+<h3>快速入门<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/mapserver_quickstart.html"><em>Quickstart documentation</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

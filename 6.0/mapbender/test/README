@@ -1,0 +1,29 @@
+Testing PHP
+---------------
+
+
+Testing javascript
+------------------
+
+
+Write a testfile as described here:
+http://docs.jquery.com/QUnit
+
+and include 
+
+  prefix = environment['user.dir'];
+  load(prefix +  "/tools/testframework.js");
+
+As well as 
+
+load(prefic + "../http/javascript/mod_test.js") 
+
+at the top to load the testframework and the file you want to test
+
+then add a line like:
+	java -jar env-js/rhino/js.jar javascript/test.js
+
+to "tests/Makefile"
+
+
+This process can probably be greatly improved, but for now this works

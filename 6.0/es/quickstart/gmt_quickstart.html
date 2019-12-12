@@ -1,0 +1,171 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guía de inicio rápido para GMT &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Guías de inicio rápido de OSGeo-Live" href="quickstart.html" />
+    <link rel="next" title="GpsDrive Quickstart" href="gpsdrive_quickstart.html" />
+    <link rel="prev" title="GeoServer Quickstart" href="geoserver_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://gmt.soest.hawaii.edu" id="gmt-quickstart-es"><img alt="project logo" class="align-right" src="../../_images/logo-GMT9.gif" style="width: 200.0px; height: 79.0px;" /></a>
+<div class="section" id="guia-de-inicio-rapido-para-gmt">
+<h1>Guía de inicio rápido para GMT<a class="headerlink" href="#guia-de-inicio-rapido-para-gmt" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ejecucion-de-gmt">
+<h2>Ejecución de GMT<a class="headerlink" href="#ejecucion-de-gmt" title="Permalink to this headline">¶</a></h2>
+<p>Incluido en este LiveDVD esta la documentación de GMT en formatos (HTML y PDF),
+algunos scripts de ejemplo (incluida la línea costera de todo el mundo en baja resolución),
+un tutorial en formato (HTML y PDF), y los datos correspondientes del tutorial.</p>
+<dl class="docutils">
+<dt>Documentación en HTML y PDF y un tutorial se puede encontrar en</dt>
+<dd><a class="reference external" href="../../gmt/html/index.html">/usr/share/doc/gmt/html/</a>,</dd>
+<dt>Ejemplos se pueden encontrar en</dt>
+<dd><a class="reference external" href="../../gmt-examples/examples/">/usr/share/doc/gmt-examples/examples/</a>,</dd>
+<dt>Los datos del tutorial se puede encontrar en</dt>
+<dd><a class="reference external" href="../../gmt-tutorial/tutorial/">/usr/share/doc/gmt-tutorial/tutorial/</a>.</dd>
+</dl>
+<p>La línea costera de todo el mundo a baja resolución se puede encontrar en <tt class="file docutils literal"><span class="pre">/usr/share/gmt/coast/</span></tt>.</p>
+<div class="section" id="ejemplos">
+<h3>Ejemplos<a class="headerlink" href="#ejemplos" title="Permalink to this headline">¶</a></h3>
+<p>Hay 29 rutinas de ejemplo construidas y un script para ejecutarlas todas:</p>
+<p>Abrir una ventana de terminal, y después escribir:</p>
+<div class="highlight-python"><pre>cp -r /usr/share/doc/gmt-examples/examples/ gmt-examples
+cd gmt-examples/
+./do_examples.sh</pre>
+</div>
+<p><cite>[Abracadabra .. Magia ..]</cite></p>
+<p>Vea los resultados: ( Escriba <tt class="kbd docutils literal"><span class="pre">q</span></tt> para salir de <strong class="command">gv</strong> <a class="footnote-reference" href="#gv" id="id1">[1]</a> )</p>
+<div class="highlight-python"><pre>for PLOT in `find . -name *.ps` ; do
+   echo "$PLOT"
+   gv "$PLOT"
+done</pre>
+</div>
+<div class="section" id="vea-tambien">
+<h4>Vea también:<a class="headerlink" href="#vea-tambien" title="Permalink to this headline">¶</a></h4>
+<table class="docutils footnote" frame="void" id="gv" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><strong>Sitio web de GNU GV</strong> - Ghostview  <a class="reference external" href="http://www.gnu.org/software/gv/">http://www.gnu.org/software/gv/</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

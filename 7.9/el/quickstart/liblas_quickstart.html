@@ -1,0 +1,223 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης libLAS &mdash; OSGeo-Live 7.9
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.9
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.9
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Καλώς ήρθατε στο OSGeo-Live" href="../index.html" />
+    <link rel="next" title="Εγχειρίδιο Γρήγορης Εκκίνησης Mapbender" href="mapbender_quickstart.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="leaflet_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://liblas.org/"><img alt="project logo" class="align-right" src="../../_images/logo-libLAS5.png" style="width: 192.0px; height: 60.0px;" /></a>
+<div class="section" id="liblas">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης libLAS<a class="headerlink" href="#liblas" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#liblas" id="id3">Εγχειρίδιο Γρήγορης Εκκίνησης libLAS</a><ul>
+<li><a class="reference internal" href="#id1" id="id4">Εκτέλεση</a><ul>
+<li><a class="reference internal" href="#las" id="id5">Πραγματοποιώντας ορθή προβολή ενός αρχείου LAS</a></li>
+<li><a class="reference internal" href="#id2" id="id6">Αποτέλεσμα του LAS αρχείο στο κείμενο</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>Εκτέλεση<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Το εργαλείο τερματικού libLAS προμηθεύει μια πληθώρα από εύχρηστα λειτουργικά λογισμικά για το libLAS, αν και η θεμελιώδης libLAS βιβλιοθήκη δίνει πολλές δυνατότητες για αυτά. Παρακάτω παρουσιάζεται μια λίστα με τις βασικές λειτουργίες, που μπορεί να χρειαστείτε για εφαρμογή σε LAS δεδομένα, τις χρήσεις και τις προσεγγίσεις για την ολοκλήρωση των συγκεκριμένων θεμάτων.</p>
+<div class="section" id="las">
+<h3>Πραγματοποιώντας ορθή προβολή ενός αρχείου LAS<a class="headerlink" href="#las" title="Permalink to this headline">¶</a></h3>
+<p>Όλα τα LAS δεδομένα είναι σε ένα σύστημα συντεταγμένων, ακόμα και αν το σύστημα αυτό δεν αναφέρεται στο αρχείο LAS. Για τα LAS δεδομένα που αφορούν την γή, οι περιγραφές του συστήματος συνταταγμένων συχνά αποτυπώνονται σε ένα σύστημα που περιγράφεται από το <a class="reference external" href="http://www.epsg-registry.org/">EPSG</a> database. Άλλη πηγή πληροφοριών σχετικά με τα συστήματα συντεταγμένων μπορεί να βρεθεί στο <a class="reference external" href="http://spatialreference.org">http://spatialreference.org</a>.</p>
+<div class="highlight-python"><pre>lasinfo --no-check srs.las</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Η επιλογή &#8211;no-check ορίζει στο lasinfο να εκτυπώσει μόνο τις επικεφαλίδες των πληροφοριών του αρχείου και να
+μην σαρώσει όλα τα σημεία. Για ένα αρχείο που περιέχει μόνο 10 σημεία δεν έχει μεγάλη σημασία, αλλά για ένα
+αρχείο με 50 και 500 χιλιάδες σημεία δεν αξίζει η αναμονή για την πλήρη σάρωση όλων των σημείων εάν αρκούν οι
+πληροφορίες από την επικεφαλίδα του αρχείου.</p>
+</div>
+<p>To &#8216;lasinfo&#8217; ορίζει ότι το αρχείο <tt class="docutils literal"><span class="pre">srs.las</span></tt> είναι στο σύστημα συντεταγμένων UTM North Zone 17:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">PROJCS</span><span class="p">[</span><span class="s">&quot;WGS 84 / UTM zone 17N&quot;</span><span class="p">,</span>
+    <span class="n">GEOGCS</span><span class="p">[</span><span class="s">&quot;WGS 84&quot;</span><span class="p">,</span>
+        <span class="n">DATUM</span><span class="p">[</span><span class="s">&quot;WGS_1984&quot;</span><span class="p">,</span>
+            <span class="n">SPHEROID</span><span class="p">[</span><span class="s">&quot;WGS 84&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257223563</span><span class="p">,</span>
+                <span class="n">AUTHORITY</span><span class="p">[</span><span class="s">&quot;EPSG&quot;</span><span class="p">,</span><span class="s">&quot;7030&quot;</span><span class="p">]],</span>
+            <span class="n">AUTHORITY</span><span class="p">[</span><span class="s">&quot;EPSG&quot;</span><span class="p">,</span><span class="s">&quot;6326&quot;</span><span class="p">]],</span>
+        <span class="n">PRIMEM</span><span class="p">[</span><span class="s">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">UNIT</span><span class="p">[</span><span class="s">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+        <span class="n">AUTHORITY</span><span class="p">[</span><span class="s">&quot;EPSG&quot;</span><span class="p">,</span><span class="s">&quot;4326&quot;</span><span class="p">]],</span>
+    <span class="n">PROJECTION</span><span class="p">[</span><span class="s">&quot;Transverse_Mercator&quot;</span><span class="p">],</span>
+    <span class="n">PARAMETER</span><span class="p">[</span><span class="s">&quot;latitude_of_origin&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">PARAMETER</span><span class="p">[</span><span class="s">&quot;central_meridian&quot;</span><span class="p">,</span><span class="o">-</span><span class="mi">81</span><span class="p">],</span>
+    <span class="n">PARAMETER</span><span class="p">[</span><span class="s">&quot;scale_factor&quot;</span><span class="p">,</span><span class="mf">0.9996</span><span class="p">],</span>
+    <span class="n">PARAMETER</span><span class="p">[</span><span class="s">&quot;false_easting&quot;</span><span class="p">,</span><span class="mi">500000</span><span class="p">],</span>
+    <span class="n">PARAMETER</span><span class="p">[</span><span class="s">&quot;false_northing&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">UNIT</span><span class="p">[</span><span class="s">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">AUTHORITY</span><span class="p">[</span><span class="s">&quot;EPSG&quot;</span><span class="p">,</span><span class="s">&quot;9001&quot;</span><span class="p">]],</span>
+    <span class="n">AUTHORITY</span><span class="p">[</span><span class="s">&quot;EPSG&quot;</span><span class="p">,</span><span class="s">&quot;32617&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>Τώρα που είναι γνωστό το σύστημα συντεταγμένων που εισάγεται, μπορεί να παρθεί η απόφαση σε τι θα προβληθούν τα δεδομένα. Στο πρώτο παράδειγμα, θα χρησιμοποιηθεί το σύστημα Plate Carrée μη-συντεταγμένων <a class="reference external" href="http://spatialreference.org/ref/epsg/4326/">EPSG:4326</a>.</p>
+<div class="highlight-python"><pre>las2las srs.las --t_srs EPSG:4326</pre>
+</div>
+<p>Η όλη διαδικασία ολοκληρώθηκε, αλλά μετά από μια γρήγορη επιθεώρηση των δεδομένων με το <tt class="docutils literal"><span class="pre">lasinfo</span> <span class="pre">output.las</span></tt> παρατηρήθηκε το πρόβλημα:</p>
+<div class="highlight-python"><pre>...
+Scale Factor X Y Z:          0.01 0.01 0.01
+Offset X Y Z:                -0.00 -0.00 -0.00
+...
+Min X, Y, Z:                -83.43, 39.01, 170.58,
+Max X, Y, Z:                -83.43, 39.01, 170.76,</pre>
+</div>
+<p>Το αρχείο <tt class="docutils literal"><span class="pre">srs.las</span></tt> είχε κλίμακα 0.01, ή δύο δεκαδικά ψηφία ακρίβεια για τις συντεταγμένες X, Y και Z. Για τα UTM δεδομένα, αυτό αρκεί, καθώς υποδηλώνει μια υπονοούμενη ακρίβεια του 1 cm. Για τα δεκαδικά δεδομένα του Plate Carrée συστήματος συντεταγμένων, το γεγονός αυτό μας κάνει να χάσουμε ακρίβεια. Πρέπει λοιπόν να οριστεί η τιμή της κλίμακας σε κάτι που έχει μεγαλύτερη ακρίβεια, στην περίπτωσή μας:</p>
+<div class="highlight-python"><pre>las2las --t_srs EPSG:4326 srs.las --scale 0.000001 0.000001 0.01</pre>
+</div>
+<p>Μια άλλη γρήγορη επισκόπηση στο &#8216;lasinfo&#8217; μας δίνει κάτι με το οποίο είμαστε πιο εξοικειωμένοι:</p>
+<div class="highlight-python"><pre>...
+Scale Factor X Y Z:          0.000001 0.000001 0.01
+Offset X Y Z:                -0.000000 -0.000000 -0.00
+...
+Min X, Y, Z:                -83.427598, 39.012599, 170.58
+Max X, Y, Z:                -83.427548, 39.012618, 170.76</pre>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Αποτέλεσμα του LAS αρχείο στο κείμενο<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><pre>las2txt input.las --parse xyzti</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

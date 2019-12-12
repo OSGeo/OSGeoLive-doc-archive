@@ -1,0 +1,318 @@
+Read the description in the Mapbender Wiki
+
+http://www.mapbender.org/index.php/Installation
+
+To update a running Mapbender Installation have a look at: http://www.mapbender.org/Update_Mapbender
+
+
+Every Mapbender User is invited to let the Mapbender Wiki grow.
+If you want an account to edit any of these Wiki pages please write an email to info@mapbender.org and request for an ID and password. 
+You need a valid email address to be able to edit this Wiki. 
+
+----
+-- 1. Prerequisite
+----
+Mapbender requires the following components, carfeully read the instructions for the configuration process of each package: 
+* Webserver ( Apache httpd, MS IIS)
+* Database (PostgreSQL >= 8.x with [[PostGIS]])
+* PHP (scripting language, version > 5.1.x)
+** php-mbstring
+** php-gd2
+** php5-imagick
+** php-gettext
+** php5-curl (if you want to use cURL - have a look in mapbender.conf)
+
+The following instructions only describe the configuration process for these packages, please follow the installation instructions for your operating system individually as the paths to files will vary on your systems. 
+
+* Please consider to customize the main configuration file <tt>mapbender.conf</tt> and make sure that this file is backed up.
+* If you want to use Mapbender in an i18n (Internationalization) environment, you need to install php-gettext, see gettext.
+
+----
+-- 2. Download of the package
+----
+Download the newest Mapbender OSGeo installation package. 
+For further details see Download Mapbender.
+Extracting the package
+Mapbender consists of multiple PHP-files in different directories which can be downloaded in one ZIP-file. To extract the ZIP-file you will need archiving software like unzip (commandline) or FileZip (Windows).
+
+Directories
+After downloading and unpacking Mapbender you find the following directories:
+    * conf - directory for the configuration file mapbender.conf
+    * core
+    * documents
+    * http - directory for the application. Within this directory the modules are sorted by type in subdirectories. Some modules are pure JavaScript applications, even though they have .php as suffix.
+    * lib
+    * license - license information files
+    * log - logfiles will be saved here
+    * owsproxy
+    * resource - directory for the SQL-Dump to build up the Mapbender database or update the database; also contains translation files 
+    * tools - assorted scripts for various tasks; contains the script creating the mo files for i18n during the installation
+
+----
+-- 3. Install Script
+----
+The install script creates the Mapbender database and loads the initial content. It also compiles the Mapbender.mo files to implement multi language support (i18n). The install script install.sh (install.bat for Windows systems) is located in the directory: 
+ ./mapbender/resources/db/
+
+You have to run the script on a command line interface (Shell or DOS prompt) in that directory so that the script can find all related directories and files. 
+
+You will be asked to input information, make sure that you have them ready. After requesting this information the installation will proceed automatically. Depending on your system and the connected database this may take a while.
+
+----
+-- 3.1 Required Information
+----
+Before running this script make sure that:
+* you have the credentials og a PostgreSQL user with superuser privileges
+* you know under which account the web server is running (on Debian Linux typically www-data)
+* you know to which group the web server user belongs (on Debian Linux typically www-data)
+
+You can also give all arguments on the commandline:
+ ./install.sh <HOST> <PORT> <DBNAME> <DBTEMPLATE> <DBUSER>
+
+Example:
+ ./install.sh localhost 5432 mapbender_data template0 postgres
+
+----
+-- 3.2 Database Host
+----
+Enter the name, IP or FQDN of the server running the PostgreSQL database (default: localhost).
+
+----
+-- 3.3 Database Port
+----
+The default database port of PostgreSQL is 5432. Only change this if your database cannot be accessed through port 5432. 
+
+----
+-- 3.4 Database Name
+----
+====  ====
+Enter a name for your database. You can use any name following the PostgreSQL conventions (no capitals, no special characters, etc.). This database will contain the credentials of all your users, the metadata of the OWS services and the configurations of your applications. 
+
+----
+-- 3.5 Database Template
+----
+PostgreSQL can use a template to create a new database (default template0). It is recommended to create a postgis_template containing the PostGIS extension and use this template for your Mapbender database. Mapbender needs PostGIS functions for some functionality.  
+
+
+----
+-- 4. Apache virtual directory
+----
+After installation create a virtual directory. Edit /etc/apache/httpd.conf (path varies, for apache2 /etc/apache2/sites-available/default):
+
+       Alias /mapbender /path/to/mapbender/http/
+
+       <Directory /path/to/mapbender/http>
+          Options MultiViews
+          DirectoryIndex index.php
+          Order allow,deny
+          Allow from all
+       </Directory>
+
+For example using Ubuntu, edit: /etc/apache2/sites-available/default
+
+      Alias /mapbender /var/www/apache2-default/mapbender/http/
+
+       <Directory /var/www/apache2-default/mapbender/http>
+          Options MultiViews
+          DirectoryIndex index.php
+          Order allow,deny
+          Allow from all
+       </Directory>
+
+You must reload (or stop and restart) the Apache program after making changes to the configuration file to make them take effect. If you want to enable directory browsing, e.g. for debugging purposes add Indexes to the Options line.
+
+
+----
+-- 4. Apache output compression
+----
+For optimal performance, enable output compression of your web server. Here's an instruction for Apache (see http://httpd.apache.org/docs/2.0/mod/mod_deflate.html for more details). Just append the content in bold to your Directory settings
+
+       <Directory /var/www/apache2-default/mapbender/http>
+           Options Indexes MultiViews FollowSymLinks
+           AllowOverride None
+           Order deny,allow
+           Deny from all
+           Allow from 127.0.0.0/255.0.0.0 ::1/128
+   
+           # Insert filter
+           SetOutputFilter DEFLATE
+   
+           # Netscape 4.x has some problems...
+           BrowserMatch ^Mozilla/4 gzip-only-text/html
+   
+           # Netscape 4.06-4.08 have some more problems
+           BrowserMatch ^Mozilla/4\.0[678] no-gzip
+   
+           # MSIE masquerades as Netscape, but it is fine
+           # BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+   
+           # NOTE: Due to a bug in mod_setenvif up to Apache 2.0.48
+           # the above regex won't work. You can use the following
+           # workaround to get the desired effect:
+           BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+   
+           # Don't compress images
+           SetEnvIfNoCase Request_URI \
+           \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+   
+           # Make sure proxies don't deliver the wrong content
+           Header append Vary User-Agent env=!dont-vary
+       </Directory>
+
+Make sure you have loaded the required modules (for example, Ubuntu and Apache2)
+* a2enmod deflate
+* a2enmod headers
+
+For Windows and Apache2, you have to activate the modules at httpd.conf.
+* LoadModule deflate_module modules/mod_deflate.so
+* LoadModule headers_module modules/mod_headers.so
+
+Mapbender will load almost twice as fast! 
+
+----
+-- 5. Internationalisation
+----
+* Set USE_I18N to true in mapbender.conf.
+	define("USE_I18N", true);
+* Define default language 
+	define("LANGUAGE", "de");   // "en", "de", "bg", "gr", "nl", "it", es" 	
+* Compile the .po files into .mo files via msgfmt, see http://www.mapbender.org/gettext. (this is also done by the install sript)
+	msgfmt resources/locale/bg_BG/LC_MESSAGES/Mapbender.po -o resources/locale/bg_BG/LC_MESSAGES/Mapbender.mo
+	msgfmt resources/locale/de_DE/LC_MESSAGES/Mapbender.po -o resources/locale/de_DE/LC_MESSAGES/Mapbender.mo
+	msgfmt resources/locale/fr_FR/LC_MESSAGES/Mapbender.po -o resources/locale/fr_FR/LC_MESSAGES/Mapbender.mo
+	msgfmt resources/locale/el_GR/LC_MESSAGES/Mapbender.po -o resources/locale/el_GR/LC_MESSAGES/Mapbender.mo
+	msgfmt resources/locale/it_IT/LC_MESSAGES/Mapbender.po -o resources/locale/it_IT/LC_MESSAGES/Mapbender.mo
+
+----
+-- 5. PHP Configuration
+----
+1. Error Logging
+display_errors = Off
+error_log = /var/log/php.log
+
+3. Check the following details in php.ini allow_url_fopen parameter:
+extension_dir = (path to extensions-directory)
+allow_url_fopen = On
+
+4. Mapbender manages access authorization in SESSIONS. Check the following details:
+session.save_handler = files
+session.save_path = (Path to SESSIONS-Directory). (Check authorisation!)
+
+
+5. Further details of session management should be customized according to server load (see 'garbage collection' in php.ini)
+
+6. With regard to other modules the extension gd2 should be included in the installation and configuration process.
+extension=php_gd2.dll        (Windows)
+extension=gd.so              (Linux)
+
+On a Debian-System you find this lib in /usr/lib/libgd.so. If it is not installed zou can do that using the command (or use Synaptic Packet Manager or similar):
+# apt.get install lbgd2-dev 
+
+7. For some Mapbender modules access to a PostgreSQL database is required. If these modules should be used, you have to check the availability of the required extension in the php.ini file:
+extension=php_pgsql.dll      (Windows)
+extension=pgsql.so           (Linux)
+
+8. from Mapbender 2.5 on we need gettext and mbstring
+extension=php_gettext.dll     (Windows)
+extension=php_mbstring.dll    (Windows)
+
+Furthermore check, whether the database information in ./conf/mapbender.conf is correct. 
+
+
+----
+-- 7. mapbender configuration
+----
+The Mapbender Configuration File is found in the directory "conf". 
+Here you find the file mapbender.conf-dist. The install script creates a new file mapbender.conf which contains your database information
+
+-- check the database connection
+http://localhost/mapbender/tools/mapbender_setup.php
+You can check your setup with the script mapbender_setup.php. 
+The script mapbender_setup.php moved to the directory:
+
+/mapbender/tools/mapbender_setup.php
+
+To run the script you have to move it to mapbender/http/tools/mapbender_setup.php, 
+as it can't be accessed at  /mapbender/tools/mapbender_setup.php.
+
+-- Notice
+Please notice that for security reasons the directory tools should not be available for external users, as e.g. the mapbender_setup.php displays internal information about your system (PHP version, databasename, database user...).
+Protect the directory by htaccess or just remove the tools-directory again after testing.
+
+Run the mapbender_setup.php:
+http://localhost/mapbender/tools/mapbender_setup.php
+
+The mapbender_setup.php checks if all configurations of the mapbender.conf are correct 
+and checks some system settings.
+
+
+----
+-- 8. database user
+----
+You need a database user with superuser privileges to create the Mapbender database. For security reasons make sure that you remove superuser permissions after installation. 
+
+Database sample configuration:
+ version: pgsql
+ encoding: UTF-8
+ postgres template: postgis_template
+ db host: localhost
+ db port: 5432
+ dbname: mapbender_db
+ user: mapbender
+
+
+----
+-- 8. print configuration
+----
+to use the pdfprint configure the files:
+mapbender\http\print\printPDF.conf (if you use the print in an iframe)
+mapbender\http\print\printPDF_b.conf (if you use the print with a button - b for button)
+In Linux : change the write permission of tmp folder
+chmod -R g+w tmp
+chgrp -R www-data tmp
+
+
+----
+-- 9. Change the Permission of log Folder
+----
+(this is done by the installscript)
+In Linux : change the permission of the log folder so that Mapbender can write logs in it.
+chmod -R g+w log
+chgrp -R www-data log
+
+
+---
+-- 10. Checking the Setup
+---
+The script moved to tools directory:
+http://localhost/mapbender/tools/mapbender_setup.php
+
+mapbender_setup.php tests the data connections. If you use PostgreSQL it checks if PostGIS and MD5 are available.
+
+Further more you have to check the settings in pg_hba.conf (e.g. you have to set ident sameUser to trust).
+
+After the installation - first Login
+For login you can use the user account with username root and the inital password root. Make sure to change this password asap in order to secure your Mapbender installation. 
+
+Check the Mapbender log files at mapbender/log. 
+
+
+---
+-- 11. OWSPROXY
+---
+Create an ALIAS for owsproxy:
+
+Alias /owsproxy/ "/data/mapbender/owsproxy/"
+ <Directory /data/mapbender/owsproxy/>
+    AllowOverride None
+    Order Deny,Allow
+    Allow from all
+ </Directory>
+ 
+URL to owsproxy (no terminating slash)
+ define("OWSPROXY", "http://<ip or name>/owsproxy");
+ 
+Apache configuration:
+ RedirectMatch ^.*owsproxy.([^i][\w\d]+)\/([\w\d]+)\/?$ http://<name or ip>/owsproxy/http/index.php?sid=$1\&wms=$2\& 
+ 
+Replace <name or ip> with the owsproxy URL.

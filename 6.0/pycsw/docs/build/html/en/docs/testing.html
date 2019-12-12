@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Testing &mdash; Documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Documentation" href="../index.html" />
+    <link rel="next" title="Demos" href="../demos.html" />
+    <link rel="prev" title="GeoNode Configuration" href="geonode.html" /> 
+  </head>
+  <body>
+
+<style type="text/css">
+  .header a:link{color: white;}
+  .header a:visited{color: white;}
+</style>
+
+<table class="header" width="100%" style="width: 100%;">
+  <tr>
+    <td class="left" style="padding: 10px 10px 0px 0px; text-align: left; vertical-align: top;"><a href="/index.html" title="pycsw">pycsw</a></td>
+    <td class="right" style="padding: 10px 10px 0px 0px; text-align: right; vertical-align: top;">
+      <a href="/index.html" title="Home">Home</a> |
+      <a href="/demos.html" title="Demos">Demos</a> |
+      <a href="/docs/index.html" title="Docs">Docs</a> |
+      <a href="http://sourceforge.net/apps/trac/pycsw" title="Issue Tracker">Issue Tracker</a> |
+      <a href="/faq.html" title="FAQ">FAQ</a> |
+      <a href="/download.html" title="Download">Download </a>
+    </td>
+  </tr>
+</table>
+
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../demos.html" title="Demos"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="geonode.html" title="GeoNode Configuration"
+             accesskey="P">previous</a> |</li>
+        <li><a href="documentation.html">Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="testing">
+<span id="id1"></span><h1>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ogc-cite">
+<span id="id2"></span><h2>OGC CITE<a class="headerlink" href="#ogc-cite" title="Permalink to this headline">¶</a></h2>
+<p>Compliance benchmarking is done via the OGC <a class="reference external" href="http://cite.opengeospatial.org/">Compliance &amp; Interoperability Testing &amp; Evaluation Initiative</a>.  The pycsw <a class="reference external" href="http://sourceforge.net/apps/trac/pycsw/wiki/OGCCITECompliance">wiki</a> documents testing procedures and status.</p>
+</div>
+<div class="section" id="tester">
+<span id="id3"></span><h2>Tester<a class="headerlink" href="#tester" title="Permalink to this headline">¶</a></h2>
+<p>The pycsw tester framework (in <tt class="docutils literal"><span class="pre">tester</span></tt>) is a collection of testsuites to perform automated regession testing of the codebase.</p>
+<div class="section" id="running">
+<h3>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h3>
+<p>The tester framework can be run from <tt class="docutils literal"><span class="pre">tester</span></tt>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">cd</span> /path/to/pycsw
+<span class="nv">$ </span><span class="nb">cd </span>tester
+<span class="nv">$ </span>python ./run_tests.py
+<span class="c"># lots of output</span>
+</pre></div>
+</div>
+<p>The tester runs HTTP GET and POST requests.  The expected output for each test can be found in <tt class="docutils literal"><span class="pre">expected</span></tt>.  Results are categorized as <tt class="docutils literal"><span class="pre">passed</span></tt>, <tt class="docutils literal"><span class="pre">failed</span></tt>, or <tt class="docutils literal"><span class="pre">initialized</span></tt>.  A summary of results is output at the end of the run.</p>
+</div>
+<div class="section" id="failed-tests">
+<h3>Failed Tests<a class="headerlink" href="#failed-tests" title="Permalink to this headline">¶</a></h3>
+<p>If a given test has failed, the output is saved in <tt class="docutils literal"><span class="pre">results</span></tt>.  The resulting failure can be analyzed by running <tt class="docutils literal"><span class="pre">diff</span> <span class="pre">expected/name_of_test.xml</span> <span class="pre">results/name_of_test.xml</span></tt> to find variances.</p>
+</div>
+<div class="section" id="test-suites">
+<h3>Test Suites<a class="headerlink" href="#test-suites" title="Permalink to this headline">¶</a></h3>
+<p>The tester framework is run against a series of &#8216;suites&#8217; (in <tt class="docutils literal"><span class="pre">tester/suites</span></tt>), each of which specifies a given configuration to test various functionality of the codebase.  Each suite is structured as follows:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">tester/suite/default.cfg</span></tt>: the configuration for the suite</li>
+<li><tt class="docutils literal"><span class="pre">tester/suite/post</span></tt>: directory of XML documents for HTTP POST requests</li>
+<li><tt class="docutils literal"><span class="pre">tester/suite/get/requests.txt</span></tt>: directory and text file of KVP for HTTP GET requests</li>
+</ul>
+<p>When the tester is invoked, the following operations are run:</p>
+<ul class="simple">
+<li>pycsw configuration is set to <tt class="docutils literal"><span class="pre">tester/suite/default.cfg</span></tt></li>
+<li>HTTP POST requests are run against <tt class="docutils literal"><span class="pre">tester/suite/post/*.xml</span></tt></li>
+<li>HTTP GET requests are run against each request in <tt class="docutils literal"><span class="pre">tester/suite/get/requests.txt</span></tt></li>
+</ul>
+<p>The CSV format of <tt class="docutils literal"><span class="pre">tester/suite/get/requests.txt</span></tt> is <tt class="docutils literal"><span class="pre">testname,request</span></tt>, with one line for each test.  The <tt class="docutils literal"><span class="pre">testname</span></tt> value is a unique test name (this value sets the name of the output file in the test results).  The <tt class="docutils literal"><span class="pre">request</span></tt> value is the HTTP GET request.  The <tt class="docutils literal"><span class="pre">PYCSW_SERVER</span></tt> token is replaced at runtime with the URL to the pycsw install.</p>
+</div>
+<div class="section" id="adding-new-tests">
+<h3>Adding New Tests<a class="headerlink" href="#adding-new-tests" title="Permalink to this headline">¶</a></h3>
+<p>To add tests to an existing suite:</p>
+<ul class="simple">
+<li>for HTTP POST tests, add XML documents to <tt class="docutils literal"><span class="pre">tester/suite/post</span></tt></li>
+<li>for HTTP GET tests, add tests (one per line) to <tt class="docutils literal"><span class="pre">tester/suite/get/requests.txt</span></tt></li>
+<li>run <tt class="docutils literal"><span class="pre">python</span> <span class="pre">./run_tests.py</span> <span class="pre">&lt;url&gt;</span></tt></li>
+</ul>
+<p>To add a new test suite:</p>
+<ul class="simple">
+<li>create a new directory under <tt class="docutils literal"><span class="pre">tester/suites</span></tt> (e.g. <tt class="docutils literal"><span class="pre">foo</span></tt>)</li>
+<li>create a new configuration in <tt class="docutils literal"><span class="pre">tester/suites/foo/default.cfg</span></tt>.  Ensure that all file paths are relative to <tt class="docutils literal"><span class="pre">path/to/pycsw</span></tt></li>
+<li>populate HTTP POST requests in <tt class="docutils literal"><span class="pre">tester/suites/foo/post</span></tt></li>
+<li>populate HTTP GET requests in <tt class="docutils literal"><span class="pre">tester/suites/foo/get/requests.txt</span></tt></li>
+<li>run <tt class="docutils literal"><span class="pre">python</span> <span class="pre">./run_tests.py</span> <span class="pre">&lt;url&gt;</span></tt></li>
+</ul>
+</div>
+<div class="section" id="web-testing">
+<h3>Web Testing<a class="headerlink" href="#web-testing" title="Permalink to this headline">¶</a></h3>
+<p>You can also use the pycsw tester via your web browser to perform sample requests against your pycsw install.  The tester is located in <tt class="docutils literal"><span class="pre">tester/</span></tt>.  To generate the HTML page, run <tt class="docutils literal"><span class="pre">gen_html.py</span></tt>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>python ./gen_html.py &gt; index.html
+</pre></div>
+</div>
+<p>Then navigate to <tt class="docutils literal"><span class="pre">http://host/path/to/pycsw/tester/index.html</span></tt>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="documentation.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Testing</a><ul>
+<li><a class="reference internal" href="#ogc-cite">OGC CITE</a></li>
+<li><a class="reference internal" href="#tester">Tester</a><ul>
+<li><a class="reference internal" href="#running">Running</a></li>
+<li><a class="reference internal" href="#failed-tests">Failed Tests</a></li>
+<li><a class="reference internal" href="#test-suites">Test Suites</a></li>
+<li><a class="reference internal" href="#adding-new-tests">Adding New Tests</a></li>
+<li><a class="reference internal" href="#web-testing">Web Testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="geonode.html"
+                        title="previous chapter">GeoNode Configuration</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../demos.html"
+                        title="next chapter">Demos</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/docs/testing.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul><p>
+   <script type="text/javascript" src="http://www.ohloh.net/p/488022/widgets/project_thin_badge.js"></script> 
+</p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../demos.html" title="Demos"
+             >next</a></li>
+        <li class="right" >
+          <a href="geonode.html" title="GeoNode Configuration"
+             >previous</a> |</li>
+        <li><a href="documentation.html">Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+
+    <div class="footer">
+        &copy; Copyright 2010-2011, Tom Kralidis.
+      Last updated on 2012-04-08T21:06:15Z.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://sourceforge.net/apps/piwik/pycsw/" : "http://sourceforge.net/apps/piwik/pycsw/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  <script type="text/javascript">
+    try {
+      var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
+      piwikTracker.trackPageView();
+      piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+  </script>
+  <noscript>
+    <p>
+      <img src="http://sourceforge.net/apps/piwik/pycsw/piwik.php?idsite=3" style="border:0" alt=""/>
+    </p>
+  </noscript>
+  <!-- End Piwik Tag -->
+
+
+  </body>
+</html>

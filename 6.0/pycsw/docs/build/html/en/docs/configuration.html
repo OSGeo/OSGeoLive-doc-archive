@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuration &mdash; Documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Documentation" href="../index.html" />
+    <link rel="next" title="Administration" href="administration.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+  </head>
+  <body>
+
+<style type="text/css">
+  .header a:link{color: white;}
+  .header a:visited{color: white;}
+</style>
+
+<table class="header" width="100%" style="width: 100%;">
+  <tr>
+    <td class="left" style="padding: 10px 10px 0px 0px; text-align: left; vertical-align: top;"><a href="/index.html" title="pycsw">pycsw</a></td>
+    <td class="right" style="padding: 10px 10px 0px 0px; text-align: right; vertical-align: top;">
+      <a href="/index.html" title="Home">Home</a> |
+      <a href="/demos.html" title="Demos">Demos</a> |
+      <a href="/docs/index.html" title="Docs">Docs</a> |
+      <a href="http://sourceforge.net/apps/trac/pycsw" title="Issue Tracker">Issue Tracker</a> |
+      <a href="/faq.html" title="FAQ">FAQ</a> |
+      <a href="/download.html" title="Download">Download </a>
+    </td>
+  </tr>
+</table>
+
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="administration.html" title="Administration"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="documentation.html">Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="configuration">
+<span id="id1"></span><h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<p>pycsw&#8217;s runtime configuration is defined by <tt class="docutils literal"><span class="pre">default.cfg</span></tt>.  pycsw ships with a sample configuration (<tt class="docutils literal"><span class="pre">default-sample.cfg</span></tt>).  Copy the file to <tt class="docutils literal"><span class="pre">default.cfg</span></tt> and edit the following:</p>
+<p><strong>[server]</strong></p>
+<ul class="simple">
+<li><strong>home</strong>: the full filesystem path to pycsw</li>
+<li><strong>url</strong>: the URL of the resulting service</li>
+<li><strong>mimetype</strong>: the MIME type when returning HTTP responses</li>
+<li><strong>language</strong>: the ISO 639-2 language and country code of the service (e.g. <tt class="docutils literal"><span class="pre">en-CA</span></tt>)</li>
+<li><strong>encoding</strong>: the content type encoding (e.g. <tt class="docutils literal"><span class="pre">ISO-8859-1</span></tt>)</li>
+<li><strong>maxrecords</strong>: the maximum number of records to return by default</li>
+<li><strong>loglevel</strong>: the logging level (see <a class="reference external" href="http://docs.python.org/library/logging.html#logging-levels">http://docs.python.org/library/logging.html#logging-levels</a>)</li>
+<li><strong>logfile</strong>: the full file path to the logfile</li>
+<li><strong>ogc_schemas_base</strong>: base URL of OGC XML schemas tree file structure (default is <a class="reference external" href="http://schemas.opengis.net">http://schemas.opengis.net</a>)</li>
+<li><strong>federatedcatalogues</strong>: comma delimited list of CSW endpoints to be used for distributed searching, if requested by the client (see <a class="reference internal" href="distributedsearching.html#distributedsearching"><em>Distributed Searching</em></a>)</li>
+<li><strong>pretty_print</strong>: whether to pretty print the output (<tt class="docutils literal"><span class="pre">true</span></tt> or <tt class="docutils literal"><span class="pre">false</span></tt>).  Default is <tt class="docutils literal"><span class="pre">false</span></tt></li>
+<li><strong>gzip_compresslevel</strong>: gzip compression level, lowest is <tt class="docutils literal"><span class="pre">1</span></tt>, highest is <tt class="docutils literal"><span class="pre">9</span></tt>.  Default is off</li>
+<li><strong>domainquerytype</strong>: for GetDomain operations, how to output domain values.  Accepted values are <tt class="docutils literal"><span class="pre">list</span></tt> and <tt class="docutils literal"><span class="pre">range</span></tt> (min/max). Default is <tt class="docutils literal"><span class="pre">list</span></tt></li>
+<li><strong>profiles</strong>: comma delimited list of profiles to load at runtime (default is none).  See <a class="reference internal" href="profiles.html#profiles"><em>Profile Plugins</em></a></li>
+<li><strong>smtp_host</strong>: SMTP host for processing <tt class="docutils literal"><span class="pre">csw:ResponseHandler</span></tt> parameter via outgoing email requests (default is <tt class="docutils literal"><span class="pre">localhost</span></tt>)</li>
+</ul>
+<p><strong>[manager]</strong></p>
+<ul class="simple">
+<li><strong>transactions</strong>: whether to enable transactions (<tt class="docutils literal"><span class="pre">true</span></tt> or <tt class="docutils literal"><span class="pre">false</span></tt>).  Default is <tt class="docutils literal"><span class="pre">false</span></tt> (see <a class="reference internal" href="transactions.html#transactions"><em>Transactions</em></a>)</li>
+<li><strong>allowed_ips</strong>: comma delimited list of IP addresses which can perform transactions (see <a class="reference internal" href="transactions.html#transactions"><em>Transactions</em></a>)</li>
+</ul>
+<p><strong>[metadata:main]</strong></p>
+<ul class="simple">
+<li><strong>identification_title</strong>: the title of the service</li>
+<li><strong>identification_abstract</strong>: some descriptive text about the service</li>
+<li><strong>identification_keywords</strong>: comma delimited list of keywords about the service</li>
+<li><strong>identification_keywords_type</strong>: keyword type as per the <a class="reference external" href="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode">ISO 19115 MD_KeywordTypeCode codelist</a>).  Accepted values are <tt class="docutils literal"><span class="pre">discipline</span></tt>, <tt class="docutils literal"><span class="pre">temporal</span></tt>, <tt class="docutils literal"><span class="pre">place</span></tt>, <tt class="docutils literal"><span class="pre">theme</span></tt>, <tt class="docutils literal"><span class="pre">stratum</span></tt></li>
+<li><strong>identification_fees</strong>: fees associated with the service</li>
+<li><strong>identification_accessconstraints</strong>: access constraints associated with the service</li>
+<li><strong>provider_name</strong>: the name of the service provider</li>
+<li><strong>provider_url</strong>: the URL of the service provider</li>
+<li><strong>contact_name</strong>: the name of the provider contact</li>
+<li><strong>contact_position</strong>: the position title of the provider contact</li>
+<li><strong>contact_address</strong>: the address of the provider contact</li>
+<li><strong>contact_city</strong>: the city of the provider contact</li>
+<li><strong>contact_stateorprovince</strong>: the province or territory of the provider contact</li>
+<li><strong>contact_postalcode</strong>: the postal code of the provider contact</li>
+<li><strong>contact_country</strong>: the country of the provider contact</li>
+<li><strong>contact_phone</strong>: the phone number of the provider contact</li>
+<li><strong>contact_fax</strong>: the facsimile number of the provider contact</li>
+<li><strong>contact_email</strong>: the email address of the provider contact</li>
+<li><strong>contact_url</strong>: the URL to more information about the provider contact</li>
+<li><strong>contact_hours</strong>: the hours of service to contact the provider</li>
+<li><strong>contact_instructions</strong>: the how to contact the provider contact</li>
+<li><strong>contact_role</strong>: the role of the provider contact</li>
+</ul>
+<p><strong>[repository]</strong></p>
+<ul class="simple">
+<li><strong>database</strong>: the full file path to the metadata database, in database URL format (see <a class="reference external" href="http://www.sqlalchemy.org/docs/core/engines.html#database-urls">http://www.sqlalchemy.org/docs/core/engines.html#database-urls</a>)</li>
+<li><strong>mappings</strong>: custom repository mappings (see <a class="reference internal" href="administration.html#custom-repository"><em>Mapping to an Existing Repository</em></a>)</li>
+<li><strong>source</strong>: the source of this repository only if not local (e.g. <a class="reference internal" href="geonode.html#geonode"><em>GeoNode Configuration</em></a>).  Supported values are <tt class="docutils literal"><span class="pre">geonode</span></tt></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">See <a class="reference internal" href="administration.html#administration"><em>Administration</em></a> for connecting your metadata repository and supported information models.</p>
+</div>
+<div class="section" id="alternate-configurations">
+<span id="id2"></span><h2>Alternate Configurations<a class="headerlink" href="#alternate-configurations" title="Permalink to this headline">¶</a></h2>
+<p>By default, pycsw loads <tt class="docutils literal"><span class="pre">default.cfg</span></tt> at runtime.  To load an alternate configuration, modify <tt class="docutils literal"><span class="pre">csw.py</span></tt> to point to the desired configuration.  Alternatively, pycsw supports explicitly specifiying a configuration by appending <tt class="docutils literal"><span class="pre">config=/path/to/default.cfg</span></tt> to the base URL of the service (e.g. <tt class="docutils literal"><span class="pre">http://localhost/pycsw/csw.py?config=tester/suites/default/default.cfg&amp;service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</span></tt>).  When the <tt class="docutils literal"><span class="pre">config</span></tt> parameter is passed by a CSW client, pycsw will override the default configuration location and subsequent settings with those of the specified configuration.</p>
+<p>This also provides the functionality to deploy numerous CSW servers with a single pycsw installation.</p>
+<div class="section" id="hiding-the-location">
+<h3>Hiding the Location<a class="headerlink" href="#hiding-the-location" title="Permalink to this headline">¶</a></h3>
+<p>Some deployments with alternate configurations prefer not to advertise the base URL with the <tt class="docutils literal"><span class="pre">config=</span></tt> approach.  In this case, there are many options to advertise the base URL.</p>
+<div class="section" id="environment-variables">
+<h4>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h4>
+<p>One option is using Apache&#8217;s <tt class="docutils literal"><span class="pre">Alias</span></tt> and <tt class="docutils literal"><span class="pre">SetEnvIf</span></tt> directives.  For example, given the base URL <tt class="docutils literal"><span class="pre">http://localhost/pycsw/csw.py?config=foo.cfg</span></tt>, set the following in Apache&#8217;s <tt class="docutils literal"><span class="pre">httpd.conf</span></tt>:</p>
+<div class="highlight-none"><div class="highlight"><pre>Alias /pycsw/csw-foo.py /var/www/pycsw/csw.py
+SetEnvIf Request_URI &quot;/pycsw/csw-foo.py&quot; PYCSW_CONFIG=/var/www/pycsw/csw-foo.cfg
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Apache must be restarted after changes to <tt class="docutils literal"><span class="pre">httpd.conf</span></tt></p>
+</div>
+<p>pycsw will use the configuration as set in the <tt class="docutils literal"><span class="pre">PYCSW_CONFIG</span></tt> environment variable in the same manner as if it was specified in the base URL.  Note that the configuration value <tt class="docutils literal"><span class="pre">server.url</span></tt> value must match the <tt class="docutils literal"><span class="pre">Request_URI</span></tt> value so as to advertise correctly in pycsw&#8217;s Capabilities XML.</p>
+</div>
+<div class="section" id="wrapper-script">
+<h4>Wrapper Script<a class="headerlink" href="#wrapper-script" title="Permalink to this headline">¶</a></h4>
+<p>Another option is to write a simple wrapper (e.g. <tt class="docutils literal"><span class="pre">csw-foo.sh</span></tt>), which provides the same functionality and can be deployed without restarting Apache:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c">#!/bin/sh</span>
+
+<span class="nb">export </span><span class="nv">PYCSW_CONFIG</span><span class="o">=</span>/var/www/pycsw/csw-foo.cfg
+
+/var/www/pycsw/csw.py
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="documentation.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Configuration</a><ul>
+<li><a class="reference internal" href="#alternate-configurations">Alternate Configurations</a><ul>
+<li><a class="reference internal" href="#hiding-the-location">Hiding the Location</a><ul>
+<li><a class="reference internal" href="#environment-variables">Environment Variables</a></li>
+<li><a class="reference internal" href="#wrapper-script">Wrapper Script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="installation.html"
+                        title="previous chapter">Installation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="administration.html"
+                        title="next chapter">Administration</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/docs/configuration.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul><p>
+   <script type="text/javascript" src="http://www.ohloh.net/p/488022/widgets/project_thin_badge.js"></script> 
+</p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="administration.html" title="Administration"
+             >next</a></li>
+        <li class="right" >
+          <a href="installation.html" title="Installation"
+             >previous</a> |</li>
+        <li><a href="documentation.html">Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+
+    <div class="footer">
+        &copy; Copyright 2010-2011, Tom Kralidis.
+      Last updated on 2012-04-08T21:06:15Z.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://sourceforge.net/apps/piwik/pycsw/" : "http://sourceforge.net/apps/piwik/pycsw/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  <script type="text/javascript">
+    try {
+      var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 3);
+      piwikTracker.trackPageView();
+      piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+  </script>
+  <noscript>
+    <p>
+      <img src="http://sourceforge.net/apps/piwik/pycsw/piwik.php?idsite=3" style="border:0" alt=""/>
+    </p>
+  </noscript>
+  <!-- End Piwik Tag -->
+
+
+  </body>
+</html>

@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GDAL/OGR クイックスタート &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 6.5 −Ｌｉｖｅへようこそ" href="../index.html" />
+    <link rel="next" title="GeoKettle Quickstart" href="geokettle_quickstart.html" />
+    <link rel="prev" title="EOxServer Quickstart" href="eoxserver_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://gdal.org/" id="gdal-quickstart-ja"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL15.png" style="width: 81.0px; height: 89.4px;" /></a>
+<div class="section" id="gdal-ogr">
+<h1>GDAL/OGR クイックスタート<a class="headerlink" href="#gdal-ogr" title="Permalink to this headline">¶</a></h1>
+<p>このクイックスタートではターミナルのみ必要となります。結果を視覚化したい場合には、
+<a class="reference internal" href="../overview/qgis_overview.html"><em>Quantum GIS (QGIS)</em></a>. など、 OSGeo-Live に含まれているデスクトップ GIS アプリケーションをご利用ください。</p>
+<p>このクイックスタートは GDAL（ラスタデータ）と OGR（ベクタデータ）の二部で構成しています。まず GDALからはじめます。</p>
+<p>クイックスタートの流れ:</p>
+<dl class="docutils">
+<dt>GDAL</dt>
+<dd><ul class="first last simple">
+<li>gdalinfo で画像データを探索しましょう</li>
+<li>gdal_translate でのフォーマット変換</li>
+<li>gdalwarp での投影法変換</li>
+<li>gdal_warp もしくは gdal_merge.py を用いたタイリング</li>
+<li>gdaltindex でのラスタタイルインデックス作成</li>
+</ul>
+</dd>
+<dt>OGR</dt>
+<dd><ul class="first last simple">
+<li>ofrinfo によるデータの情報取得</li>
+<li>ogr2ogr によるデータフォーマットの変換</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="gdal">
+<h2>GDAL について<a class="headerlink" href="#gdal" title="Permalink to this headline">¶</a></h2>
+<p><tt class="file docutils literal"><span class="pre">/usr/local/share/data</span></tt> のデモデータをご覧下さい。このクイックスタートでは <a class="reference internal" href="../overview/naturalearth_overview.html"><em>Natural Earth のデータ</em></a> について見ていきます。はじめにデータのコピーを作成します。ホームディレクトリにデータをコピーしてください。</p>
+<div class="highlight-python"><pre>cd /home/user
+cp -R /usr/local/share/data/natural_earth/ ./gdal_natural_earth</pre>
+</div>
+<p>NaturalEarth のラスタファイルと tfw-file は以下の位置にあります。</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">gdal_natural_earth</span><span class="o">/</span><span class="n">HYP_50M_SR_W</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">QGIS などのデスクトップ GIS でファイルを開いてみてください。</p>
+</div>
+</div>
+<div class="section" id="gdalinfo">
+<h2>gdalinfo でラスタデータの情報を取得する<a class="headerlink" href="#gdalinfo" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>gdalinfo HYP_50M_SR_W.tif
+  Driver: GTiff/GeoTIFF
+  Files: HYP_50M_SR_W.tif
+         HYP_50M_SR_W.tfw
+  Size is 10800, 5400
+  Coordinate System is `'
+  Origin = (-179.999999999999972,90.000000000000000)
+  Pixel Size = (0.033333333333330,-0.033333333333330)
+  Metadata:
+    TIFFTAG_SOFTWARE=Adobe Photoshop CS3 Macintosh
+    TIFFTAG_DATETIME=2009:09:19 10:13:17
+    TIFFTAG_XRESOLUTION=342.85699
+    TIFFTAG_YRESOLUTION=342.85699
+    TIFFTAG_RESOLUTIONUNIT=2 (pixels/inch)
+  Image Structure Metadata:
+    INTERLEAVE=PIXEL
+  Corner Coordinates:
+  Upper Left  (-180.0000000,  90.0000000)
+  Lower Left  (-180.0000000, -90.0000000)
+  Upper Right ( 180.0000000,  90.0000000)
+  Lower Right ( 180.0000000, -90.0000000)
+  Center      (  -0.0000000,   0.0000000)
+  Band 1 Block=10800x1 Type=Byte, ColorInterp=Red
+  Band 2 Block=10800x1 Type=Byte, ColorInterp=Green
+  Band 3 Block=10800x1 Type=Byte, ColorInterp=Blue</pre>
+</div>
+<dl class="docutils">
+<dt>注記:</dt>
+<dd><ul class="first last simple">
+<li>ドライバは &#8220;GTiff/GeoTIFF&#8221;</li>
+<li>サイズは 10800x5400</li>
+<li>3バンド、8bit color</li>
+<li>代表点の座標（4隅）</li>
+<li>投影法なし</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id1">
+<h2>簡易フォーマット翻訳<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>まず、ドライバの情報を取得します。
+コマンドラインから <cite>&#8211;formats</cite> のオプションをつけて gdal_translate を起動すると、利用できるフォーマットドライバが一覧できます。</p>
+<dl class="docutils">
+<dt>各フォーマットレポートは以下のように読みます。</dt>
+<dd><ul class="first last simple">
+<li>読み込みのみ (ro - read only)</li>
+<li>読み書き (rw - read write)</li>
+<li>読み書き更新 (rw+)</li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">gdal_translate</span> <span class="o">--</span><span class="n">formats</span>
+</pre></div>
+</div>
+<p>コマンドラインスイッチ <cite>&#8211;format</cite> では指定したドライバについて、作成オプション、
+利用できるデータタイプなど詳しい情報を見ることができます。</p>
+<div class="highlight-python"><pre>gdalinfo --format jpeg
+gdal_translate --format png</pre>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>フォーマット変換<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>フォーマット変換は gdal_translate コマンドを使用します。
+デフォルトでは出力フォーマットは GeoTIFFになっています。</p>
+<div class="highlight-python"><pre>gdal_translate HYP_50M_SR_W.tif HYP_50M_SR_W.png</pre>
+</div>
+<p><cite>-of</cite> フラグは出力フォーマットの指定に、 -co フラグは作成オプションに使用します。</p>
+<div class="highlight-python"><pre>gdal_translate -of JPEG -co QUALITY=40 HYP_50M_SR_W.tif HYP_50M_SR_W.jpg</pre>
+</div>
+<p><cite>-ot</cite> スイッチはデータ型の変更に使用します。</p>
+<div class="highlight-python"><pre>gdal_translate -ot Int16 HYP_50M_SR_W.tif HYP_50M_SR_W_Int16.tif</pre>
+</div>
+<p>データ型を知るには gdalinfoを使用してください。</p>
+</div>
+<div class="section" id="id3">
+<h2>縮尺変更<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>gdal_translate で <cite>-outsize</cite> スイッチを使用すると、出力ファイルの縮尺を変更できます。</p>
+<div class="highlight-python"><pre>gdal_translate -outsize 50% 50% HYP_50M_SR_W.tif  HYP_50M_SR_W_small.tif</pre>
+</div>
+<p>gdalinfo でサイズの確認を行ってください。</p>
+<p><cite>-scale</cite> スイッチを使って、データの縮尺を変更できます。入出力範囲も細かく調節できます。
+gdalinfoで <cite>-mm</cite> スイッチでピクセルの最小/最大の範囲を見ることができます。</p>
+<p><cite>-srcwin</cite> スイッチを使って、ピクセル単位で画像内の特定 box (xoff yoff xsize ysize) を切り抜いたコピーを作成できます。
+<cite>-projwin</cite> スイッチを使うと ジオリファレンスによる box 指定 (ulx uly lrx lry) ができます。</p>
+<div class="highlight-python"><pre>gdalinfo -mm HYP_50M_SR_W.tif
+gdal_translate -srcwin 0 0 5400 5400 HYP_50M_SR_W.tif  west.tif
+gdal_translate -srcwin 5400 0 5400 5400 HYP_50M_SR_W.tif  east.tif</pre>
+</div>
+</div>
+<div class="section" id="gdaltindex">
+<h2>gdaltindex によるラスタタイルインデックスの作成<a class="headerlink" href="#gdaltindex" title="Permalink to this headline">¶</a></h2>
+<p>shp ファイルのタイルインデックスを作成できます。
+各画像境界形状のポリゴンを生成します。</p>
+<div class="highlight-python"><pre>gdaltindex index_natural_earth.shp *st.tif</pre>
+</div>
+<p>出力した shp ファイルを QGIS と ogrinfo で見ると以下のようになっています。
+（詳細は後述する ogrinfo の使い方を参照してください。）</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex7.png"><img alt="../../_images/gdal_gdaltindex7.png" src="../../_images/gdal_gdaltindex7.png" style="width: 416.0px; height: 212.0px;" /></a>
+</div></blockquote>
+<div class="highlight-python"><pre>ogrinfo ../HYP_50M_SR_W/ index
+INFO: Open of `../HYP_50M_SR_W/'
+    using driver `ESRI Shapefile' successful.
+
+Layer name: index
+Geometry: Polygon
+Feature Count: 2
+Extent: (-180.000000, -90.000000) - (180.000000, 90.000000)
+Layer SRS WKT: (unknown)
+location: String (255.0)
+OGRFeature(index):0
+  location (String) = east.tif
+  POLYGON ((-0.00000000001796 90.0,179.999999999964047 90.0,179.999999999964047 -89.999999999982009,-0.00000000001796 -89.999999999982009,-0.00000000001796 90.0))
+
+OGRFeature(index):1
+  location (String) = west.tif
+  POLYGON ((-179.999999999999972 90.0,-0.00000000001796 90.0,-0.00000000001796 -89.999999999982009,-179.999999999999972 -89.999999999982009,-179.999999999999972 90.0))</pre>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>投影法変更<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>この手順では、 HYP_50M_SR_W.tif が境界線付きで正確に作成されていることを前提としています。
+既に　gdalinfo で見たように、投影法は設定されていませんでした。
+そこでます、この画像に WGS84 を指定します。</p>
+<div class="highlight-python"><pre>gdal_translate -a_srs WGS84 HYP_50M_SR_W.tif HYP_50M_SR_W_4326.tif</pre>
+</div>
+<p>gdalwarp コマンドでは画像の再投影ができます。ここでは WGS84 からメルカトルに変換してみます:</p>
+<div class="highlight-python"><pre>gdalwarp -t_srs '+proj=merc +datum=WGS84' HYP_50M_SR_W_4326.tif mercator.tif</pre>
+</div>
+<p>gadlinfo で投影法の変換が行えたことを確認し、画像を見てみましょう。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/gdal_mercator7.png"><img alt="../../_images/gdal_mercator7.png" src="../../_images/gdal_mercator7.png" style="width: 405.6px; height: 327.2px;" /></a>
+</div></blockquote>
+<p>続いて、正射投影 に変換してみます。</p>
+<div class="highlight-python"><pre>gdalwarp -t_srs '+proj=ortho +datum=WGS84' HYP_50M_SR_W_4326.tif ortho.tif</pre>
+</div>
+<a class="reference internal image-reference" href="../../_images/gdal_ortho7.png"><img alt="../../_images/gdal_ortho7.png" src="../../_images/gdal_ortho7.png" style="width: 294.4px; height: 296.8px;" /></a>
+<p>ノート 極付近を切り出すにはどうしたらよいでしょうか？ gdalwarp ではすべてのデータを読むことができないため、極付近は投影を変換できません。足りない部分のデータを周辺のデータで強制的に埋めることで読み込ませることができます。詳しくは <a class="reference external" href="http://trac.osgeo.org/gdal/wiki/UserDocs/">http://trac.osgeo.org/gdal/wiki/UserDocs/</a> にあるラスタチュートリアルをご覧下さい。</p>
+</div>
+<div class="section" id="id5">
+<h2>タイリング<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>python スクリプト gdal_merge.py を使って、シンプルなタイリングを行えます。
+east.tif と west.tif を一つのファイルにしてみます。</p>
+<div class="highlight-python"><pre>gdal_merge.py  east.tif west.tif -o merged.tif</pre>
+</div>
+<p>gdalwarp を使っても同じことができます。
+gdalwarp は様々な gdal_merge よりも多くの利点を持ち合わせていますが、多くのファイルを結合する際にはより時間がかかります。</p>
+<div class="highlight-python"><pre>gdalwarp east.tif west.tif warpmerged.tif</pre>
+</div>
+</div>
+<div class="section" id="ogr">
+<h2>OGR について<a class="headerlink" href="#ogr" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>cd /home/usr/gdal_natural_earth/</pre>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">QGIS などのデスクトップ GIS でここにある shp ファイルを開いてみてください。</p>
+</div>
+</div>
+<div class="section" id="ogrinfo">
+<h2>ogrinfo でベクタデータの情報を得る<a class="headerlink" href="#ogrinfo" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>ogrinfo ./natural_earth
+INFO: Open of `../natural_earth/'
+    using driver `ESRI Shapefile' successful.
+1: 10m_lakes (Polygon)
+2: 10m_land (Polygon)
+3: 10m_rivers_lake_centerlines (Line String)
+4: 10m-admin-0-countries (Polygon)
+5: 10m_ocean (Polygon)
+6: 10m-urban-area (Polygon)
+7: 10m_populated_places_simple (Point)</pre>
+</div>
+<p><cite>-so</cite> をつけて ogrinfo を実行すると、データの概要を見ることができます。</p>
+<div class="highlight-python"><pre>ogrinfo -so ../natural_earth/ 10m-admin-0-countries
+INFO: Open of `../natural_earth/'
+      using driver `ESRI Shapefile' successful.
+
+Layer name: 10m-admin-0-countries
+Geometry: Polygon
+Feature Count: 251
+Extent: (-179.999783, -89.999828) - (180.000258, 83.633811)
+Layer SRS WKT:
+GEOGCS["GCS_WGS_1984",
+    DATUM["WGS_1984",
+        SPHEROID["WGS_1984",6378137.0,298.257223563]],
+    PRIMEM["Greenwich",0.0],
+    UNIT["Degree",0.0174532925199433]]
+OBJECTID: Integer (9.0)
+COUNTRY: String (100.0)
+FEATURECLA: String (32.0)
+SOV: String (100.0)
+SHAPE_LENG: Real (19.11)
+SHAPE_AREA: Real (19.11)</pre>
+</div>
+<p>パラメータなしで ogrinfo を起動した場合、それぞれのデータセット直後のセクションの概要を表示します。</p>
+<div class="highlight-python"><pre>ogrinfo ../natural_earth/ 10m-admin-0-countries</pre>
+</div>
+<p>出力結果を grep にパイプで渡して、必要な箇所のみフィルタできます。ここでは COUNTRY を含む行のみ抜き出してみます。</p>
+<div class="highlight-python"><pre>ogrinfo ../natural_earth/ 10m-admin-0-countries | grep COUNTRY
+
+COUNTRY: String (100.0)
+COUNTRY (String) = Afghanistan
+COUNTRY (String) = Akrotiri Sovereign Base Area
+COUNTRY (String) = Aland
+COUNTRY (String) = Albania
+COUNTRY (String) = Algeria
+COUNTRY (String) = American Samoa
+COUNTRY (String) = Andorra
+etc.</pre>
+</div>
+<p>別の形式でも出力できます。
+サポートするフォーマットは <cite>&#8211;formats</cite> をつけて起動すると表示されます。</p>
+</div>
+<div class="section" id="ogr2ogr">
+<h2>ogr2ogr でのファイルフォーマット変換<a class="headerlink" href="#ogr2ogr" title="Permalink to this headline">¶</a></h2>
+<p>ogr2ogr を使用して、地物のファイルフォーマット変換が行えます。
+<cite>&#8211;formats</cite> でサポートしているフォーマットを読み書きの情報込みで見ることができます。</p>
+<p>国境の shp ファイルから GML を作成してみます。</p>
+<div class="highlight-python"><pre>ogr2ogr --formats
+ogr2ogr -f GML countries.xml 10m-admin-0-countries.shp</pre>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>やってみましょう<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>次のステップとして以下のようなことをやってみるとよいでしょう。</p>
+<ol class="arabic simple">
+<li>gdalwarp か gdal_merge.py で持っているデータをタイリングしてみましょう</li>
+<li>gdaladdo でオーバービュー（サムネイル）を作成してみましょう</li>
+<li>QGIS では多くのフォーマットのサポートに GDAL/OGR を使用しています。ラスタデータの処理のために GdalTools プラグインを備えています。このプラグインは gdal-tools を QGIS に統合します。</li>
+<li>ogr2ogr でお手持ちのベクタデータを PostGIS など別のフォーマットに変換してみましょう。ogr2ogr のオプションを確認してみましょう。</li>
+<li>QGIS プラグインの OGR-Layer-Converter を試してみましょう。</li>
+</ol>
+</div>
+<div class="section" id="id7">
+<h2>更新情報<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>これは GDAL と OGR の最初のステップにすぎません。ほかにもたくさんの機能があります。</p>
+<p>GDAL プロジェクトホーム</p>
+<blockquote>
+<div><a class="reference external" href="http://www.gdal.org">http://www.gdal.org</a></div></blockquote>
+<p>OGR のすべて</p>
+<blockquote>
+<div><a class="reference external" href="http://gdal.org/ogr/index.html">http://gdal.org/ogr/index.html</a></div></blockquote>
+<p>GDAL チュートリアル</p>
+<blockquote>
+<div><a class="reference external" href="http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial">http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial</a></div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

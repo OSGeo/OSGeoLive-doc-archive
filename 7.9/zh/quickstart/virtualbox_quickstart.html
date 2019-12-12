@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OSGeo-Live Virtual Box 虚拟机运行指南 &mdash; OSGeo-Live 7.9
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.9
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.9
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 7.9" href="../index.html" />
+    <link rel="next" title="OSGeo-Live Quickstart for Running in a Virtual Machine" href="virtualization_quickstart.html" />
+    <link rel="prev" title="Viking 快速入门" href="viking_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="osgeo-live-virtual-box">
+<h1>OSGeo-Live Virtual Box 虚拟机运行指南<a class="headerlink" href="#osgeo-live-virtual-box" title="Permalink to this headline">¶</a></h1>
+<p>　　本文演示在 <a class="reference external" href="http://www.virtualbox.org/">VirtualBox</a> 虚拟机运行 OSGeo-Live 。</p>
+<p>　　VirtualBox 是一款开源虚拟机系统。它被众多的 OSGeo-Live 开发测试人员使用。</p>
+<div class="section" id="id1">
+<h2>系统需求<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>内存：1 GB，若需同时运行其它程序建议至少 2 GB 。</li>
+<li>硬盘空间：</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>从 ISO 镜像运行时 10 GB</li>
+<li>从镜像安装时 17 GB</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>配置虚拟机<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>　　下载并安装 <a class="reference external" href="http://www.virtualbox.org/">Virtual Box</a> 。在 Debian/Ubuntu 环境下：</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">virtualbox-ose</span></tt></div></blockquote>
+<p>启动 Virtual Box</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox12.png"><img alt="../../_images/virtualbox12.png" src="../../_images/virtualbox12.png" style="width: 544.6px; height: 404.6px;" /></a>
+</div></blockquote>
+<p>选择 <em class="guilabel">New</em> 创建虚拟机</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_create_vm12.png"><img alt="../../_images/virtualbox_create_vm12.png" src="../../_images/virtualbox_create_vm12.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>点击 <em class="guilabel">Next</em> 继续</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_select_name12.png"><img alt="../../_images/virtualbox_select_name12.png" src="../../_images/virtualbox_select_name12.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>设定一个名称，并选择环境为 &#8220;Linux&#8221;、&#8221;Ubuntu&#8221; 。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_memory12.png"><img alt="../../_images/virtualbox_memory12.png" src="../../_images/virtualbox_memory12.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>Base Memory 至少768 MB，1 GB 以上有利于 Java 程序运行。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_no_hard_disk12.png"><img alt="../../_images/virtualbox_no_hard_disk12.png" src="../../_images/virtualbox_no_hard_disk12.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>简单安装：取消 &#8220;Boot Hard Disk&#8221;，虚拟机将从镜像直接运行。</p>
+<p>　　若希望虚拟机能够在关闭后保存数据，并拥有其它一些高级功能，可以选择硬盘（hard disk）。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_warning_no_hard_disk12.png"><img alt="../../_images/virtualbox_warning_no_hard_disk12.png" src="../../_images/virtualbox_warning_no_hard_disk12.png" style="width: 253.4px; height: 164.5px;" /></a>
+</div></blockquote>
+<p>选择 <em class="guilabel">Continue</em></p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_final_check12.png"><img alt="../../_images/virtualbox_final_check12.png" src="../../_images/virtualbox_final_check12.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>选择 <em class="guilabel">Finish</em></p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_select_settings12.png"><img alt="../../_images/virtualbox_select_settings12.png" src="../../_images/virtualbox_select_settings12.png" style="width: 544.6px; height: 404.6px;" /></a>
+</div></blockquote>
+<p>　　镜像载入后就可以模拟 Live 从光驱启动了。</p>
+<p>右击 &#8220;osgeo-live&#8221; 镜像并选择 <em class="guilabel">Settings</em> 。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_set_cd12.png"><img alt="../../_images/virtualbox_set_cd12.png" src="../../_images/virtualbox_set_cd12.png" style="width: 469.7px; height: 364.7px;" /></a>
+</div></blockquote>
+<p>选择 &#8220;Storage&#8221;, CD/DVD Device，...</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_add_dvd12.png"><img alt="../../_images/virtualbox_add_dvd12.png" src="../../_images/virtualbox_add_dvd12.png" style="width: 439.6px; height: 341.6px;" /></a>
+</div></blockquote>
+<p>选中 OSGeo-Live 镜像文件。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_start_vm12.png"><img alt="../../_images/virtualbox_start_vm12.png" src="../../_images/virtualbox_start_vm12.png" style="width: 544.6px; height: 404.6px;" /></a>
+</div></blockquote>
+<p>依照 <a class="reference internal" href="osgeolive_quickstart.html"><em>OSGeo-Live 启动指南</em></a> 使用</p>
+</div>
+<div class="section" id="id3">
+<h2>创建永久性虚拟机<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>若有必要，依照 <a class="reference internal" href="osgeolive_install_quickstart.html"><em>在硬盘安装 OSGeo-Live</em></a> 在虚拟机硬盘安装 Live 。</p>
+</div>
+<div class="section" id="id4">
+<h2>提高显示分辨率等<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>　　使用以下工具可以选择高分辨率，在真实系统和虚拟机间拷贝数据、实现图形硬件加速等。</p>
+<p>　　连接至英特网：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_synaptic_menu12.png"><img alt="../../_images/virtualbox_synaptic_menu12.png" src="../../_images/virtualbox_synaptic_menu12.png" style="width: 303.8px; height: 420.0px;" /></a>
+</div></blockquote>
+<p>　　选择 synaptic package manager 软件包管理器。</p>
+<p>　　输入密码 password = &#8220;user&#8221;</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_synaptic_select_tools12.png"><img alt="../../_images/virtualbox_synaptic_select_tools12.png" src="../../_images/virtualbox_synaptic_select_tools12.png" style="width: 453.6px; height: 353.5px;" /></a>
+</div></blockquote>
+<p>　　选中 &#8220;virtualbox-ose-guest-utils&#8221; 以安装。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_synaptic_apply12.png"><img alt="../../_images/virtualbox_synaptic_apply12.png" src="../../_images/virtualbox_synaptic_apply12.png" style="width: 452.9px; height: 352.1px;" /></a>
+</div></blockquote>
+<p>　　点击 Apply 执行。</p>
+<p>　　重启虚拟机后，其分辨率应可以同物理系统一致。显示设置位于：</p>
+<p>桌面菜单 <em class="menuselection">Applications ‣ Settings ‣ Xfce 4 Settings Manager ‣ Display</em></p>
+</div>
+<div class="section" id="id5">
+<h2>相关信息<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="osgeolive_quickstart.html"><em>OSGeo-Live 启动指南</em></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><em>在硬盘安装 OSGeo-Live</em></a></li>
+<li><a class="reference internal" href="usb_quickstart.html"><em>创建自启动 OSGeo-Live USB 盘</em></a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

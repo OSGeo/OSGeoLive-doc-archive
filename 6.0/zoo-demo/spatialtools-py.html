@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>ZOO Project Demo - Spatial Tools</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link href="spatialtools_files/jquery-ui-1.css" rel="stylesheet" type="text/css">
+  <link href="spatialtools_files/default.css" rel="stylesheet" type="text/css">
+  <link href="spatialtools_files/demo-map.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="spatialtools_files/jquery-latest.js"></script>
+  <script type="text/javascript" src="spatialtools_files/jquery-ui-1.js"></script>
+  <script type="text/javascript" src="spatialtools_files/jquery.js"></script>
+  <link rel="stylesheet" href="spatialtools_files/style_002.css" type="text/css">
+  <script src="/openlayers/OpenLayers.js"></script>
+  <script type="text/javascript" src="spatialtools_files/demo.js"></script>
+  <link href="spatialtools_files/style.css" type="text/css" rel="stylesheet">
+ </head>
+ <body onload="init()">
+  <div id="page">
+   <div class="fg-toolbar ui-widget-header ui-corner-all 
+ui-helper-clearfix">
+    <div class="fg-buttonset fg-buttonset-single">
+     <a href="#" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all ui-state-active" title="Pan / Select" name="pan" onclick="toggleControl(this)" ;=""><span class="ui-icon pan"></span>Pan</a>
+     <a href="#" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all" title="Zoom In" name="zoomin" onclick="toggleControl(this)" ;=""><span class="ui-icon zoom_in"></span> Zoom in</a>
+     <a href="#" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all" title="Zoom Out" name="zoomout" onclick="toggleControl(this)" ;=""><span class="ui-icon zoom_out"></span> Zoom out</a>
+     <a href="#" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all single-process process" title="Buffer" name="buffer" onclick="singleProcessing('BufferPy');"><span class="ui-icon buffer"></span>Buffer</a>
+     <a href="#" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all single-process process" title="Centroid" name="Centroid" onclick="singleProcessing('CentroidPy');"><span class="ui-icon centroid"></span>Centroid</a>
+     <a href="#" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all single-process process" title="ConvexHull" name="convexhull" onclick="singleProcessing('ConvexHullPy');"><span class="ui-icon convexhull"></span>Convex hull</a>
+     <a href="#" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all single-process process" title="Boundary" name="boundary" onclick="singleProcessing('BoundaryPy');"><span class="ui-icon boundary"></span>Boundary</a>
+     <a href="#" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all multi-process process" title="Union" name="Union" onclick="multiProcessing('UnionPy');"><span class="ui-icon union"></span>Union</a>
+     <a href="#" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all multi-process process" title="Intersection" name="intersection" onclick="multiProcessing('IntersectionPy');"><span class="ui-icon in intersection"></span>Intersection</a>
+     <a href="#" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all multi-process process" title="SymDifference" name="symdifference" onclick="multiProcessing('SymDifferencePy');"><span class="ui-icon symdifference"></span>SymDifference</a>
+     <a href="#" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all multi-process process" title="Difference" name="difference" onclick="multiProcessing('DifferencePy');"><span class="ui-icon difference"></span>Difference</a>
+    </div>	
+    <a href="http://zoo-project.org/"><img src="spatialtools_files/zoo-icon.png" title="ZOO Project Offical Website" style="float: right; margin-right: 10px;"></a>
+   </div>
+   <div id="map" class="bigmap olMap">
+   </div>
+   <div class="footer">
+    <h2>ZOO Spatial Tools demo</h2>
+    <p>© Copyright <a href="http://www.geolabs.fr/">GeoLabs</a> &amp; <a href="http://www.3liz.com/">3LIZ</a>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>

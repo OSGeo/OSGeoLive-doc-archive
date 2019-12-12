@@ -1,0 +1,178 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>JTS Topology Suite (JTS) 拓扑运算函数库 &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 6.5 包含内容一览" href="overview.html" />
+    <link rel="next" title="Kosmo Desktop" href="kosmo_overview.html" />
+    <link rel="prev" title="JOSM" href="josm_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/jts_project11.png"><img alt="project logo" class="align-right" src="../../_images/jts_project11.png" style="width: 186.6px; height: 22.2px;" /></a>
+<div class="section" id="jts-topology-suite-jts">
+<h1>JTS Topology Suite (JTS) 拓扑运算函数库<a class="headerlink" href="#jts-topology-suite-jts" title="Permalink to this headline">¶</a></h1>
+<p>　　JTS 是一套用于处理几何要素拓扑关系的函数库。它提供了完整、稳定、可靠的基本二位平面线形图形运算算法实现。</p>
+<p>　　JTS 包含了”JTS Test Builder“ 用于通过交互界面测试各种功能。大量的测试保证了 JTS 的可靠性。</p>
+<p>　　JTS 被大量 Java 开源地理信息软件使用，并有 <a class="reference internal" href="geos_overview.html"><em>GEOS</em></a> 这一 C++ 移植版用于大量 C++ 软件。另有 C# 和 JavaScript 移植。</p>
+<a class="reference internal image-reference" href="../../_images/jts-overview11.jpg"><img alt="JTS Topology Suite - Test Builder application" class="align-right" src="../../_images/jts-overview11.jpg" style="width: 464.4px; height: 432.0px;" /></a>
+<div class="section" id="id1">
+<h2>核心功能<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>点、线、面二维几何对象</li>
+<li>交、并、包含等几何运算</li>
+<li>精度控制</li>
+<li>几何变换操作</li>
+<li>度量操作（如 2D 笛卡尔距离、豪斯道夫距离等）</li>
+<li>空间运算（如缓冲、线偏移、线简化等）</li>
+<li>几何数值测量（角度、长度等）</li>
+<li>空间数据结构（四分树、R 树、德洛内三角化等）</li>
+<li>WKT、GML 等输入和输出</li>
+<li>高精度运算</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>文件格式支持<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Well Known Text (WKT) 和 Well Known Binary (WKB)</li>
+<li>GML 2</li>
+<li>Java Swing/AWT writing</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>兼容标准<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>OGC Simple Features for SQL (SFSQL)</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>其它信息<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><strong>官方网站：</strong> <a class="reference external" href="http://tsusiatsoftware.net/jts/main.html">http://tsusiatsoftware.net/jts/main.html</a></p>
+<p><strong>开源协议：</strong> LGPL</p>
+<p><strong>支持平台：</strong> Windows, Linux, Mac</p>
+<p><strong>接口语言：</strong> Java</p>
+<p><strong>技术支持：</strong> <a class="reference external" href="http://tsusiatsoftware.net/jts/main.html">http://tsusiatsoftware.net/jts/main.html</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

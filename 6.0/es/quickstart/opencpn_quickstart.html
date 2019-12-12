@@ -1,0 +1,181 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OpenCPN Inicio Rápido &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Guías de inicio rápido de OSGeo-Live" href="quickstart.html" />
+    <link rel="next" title="OpenJUMP Guía Rápida" href="openjump_quickstart.html" />
+    <link rel="prev" title="Guía de inicio rápido de MB-System" href="mb-system_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.opencpn.org" id="opencpn-quickstart-es"><img alt="project logo" class="align-right" src="../../_images/logo-opencpn9.png" style="width: 96.0px; height: 96.0px;" /></a>
+<div class="section" id="opencpn-inicio-rapido">
+<h1>OpenCPN Inicio Rápido<a class="headerlink" href="#opencpn-inicio-rapido" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ejecucion">
+<h2>Ejecución<a class="headerlink" href="#ejecucion" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="configurando-sus-cartas">
+<h3>Configurando sus Cartas<a class="headerlink" href="#configurando-sus-cartas" title="Permalink to this headline">¶</a></h3>
+<p>Antes de ejecutar OpenCPN en el LiveDVD se deberían activar los datos de ejemplo.
+Para hacer esto abrir un Terminal desde el menú de Aplicaciones principal y ejecutar
+<strong class="command">opencpn_noaa_agreement.sh</strong>. Se deberá dar la clave del usuario en el archivo en
+el escritorio principal.</p>
+<p>También se puede descargar cartas náuticas de Estados Unidos desde NOAA en
+<a class="reference external" href="http://www.charts.noaa.gov">http://www.charts.noaa.gov</a></p>
+</div>
+<div class="section" id="configurando-el-gps">
+<h3>Configurando el GPS<a class="headerlink" href="#configurando-el-gps" title="Permalink to this headline">¶</a></h3>
+<p>Si tiene un GPS conectado se querrá iniciar el servicio gpsd.
+Para hacer esto ejecutar:</p>
+<div class="highlight-python"><pre>sudo dpkg-reconfigure gpsd</pre>
+</div>
+<p>y luego</p>
+<div class="highlight-python"><pre>sudo /etc/init.d/gpsd start</pre>
+</div>
+<p>Los usuarios de BlueTooth GPS deberían tener especial cuidado en leer acerca de
+las opciones no-probe. ( Por esta razón no se inicia gpsd automáticamente)</p>
+<ul class="simple">
+<li>&#8216;<cite>xgps</cite>&#8216; is a good program to check that Gpsd can see your GPS ok.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="documentacion">
+<h2>Documentación<a class="headerlink" href="#documentacion" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>La documentación esta disponible en el
+<a class="reference external" href="../../opencpn/doc/help_en_US.html">Menú de Ayuda</a>, u
+online en <a class="reference external" href="http://www.opencpn.org/docwiki">http://www.opencpn.org/docwiki</a></li>
+<li><a class="reference external" href="../../opencpn/doc/tips.html">Consejos para iniciar</a></li>
+</ul>
+</div>
+<div class="section" id="ver-tambien">
+<h2>Ver También<a class="headerlink" href="#ver-tambien" title="Permalink to this headline">¶</a></h2>
+<p>El tiempo actual y los datos de pronóstico pueden ser descargados
+y puestos sobre la carta usando el plugin GRIB. El <a class="reference external" href="../overview/zygrib_overview.html">zyGrib software</a>
+(también en este disco) provee una fácil manera para descargarlos. Para mas
+detalles ver el <a class="reference external" href="../quickstart/zygrib_quickstart.html">zyGrib inicio rápido</a>.
+Habilitar el conector (plugin) que se encuentra en la pestaña mas a la derecha en el menú
+de configuración; hacer click en la ventana de selección del directorio GRIB. Para
+mostrar los archivos ocultos incluidos en el directorio <tt class="docutils literal"><span class="pre">.zygrib</span></tt> que contiene
+el directorio de descarga de GRIB por omisión. Si salva el archivo GRIB en
+el directorio home navegar a <tt class="file docutils literal"><span class="pre">/home</span></tt> para seleccionar el directorio <tt class="docutils literal"><span class="pre">user</span></tt>.
+No se necesita descomprimir los archivos. Haciendo un click en el &#8220;+&#8221; a la izquierda
+del nombre de archivo y seleccionando de la lista los pronósticos disponibles.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

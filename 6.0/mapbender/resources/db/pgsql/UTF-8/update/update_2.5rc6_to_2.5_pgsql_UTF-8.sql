@@ -1,0 +1,1 @@
+DELETE FROM gui_treegde WHERE fkey_gui_id IN ('gui', 'gui1', 'admin1', 'gui2', 'wms_africa');

@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης gvSIG &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Καλώς ήρθατε στο OSGeo-Live" href="../index.html" />
+    <link rel="next" title="Εγχειρίδιο Τοπικών Ρυθμίσεων OSGeo-Live" href="internationalisation_quickstart.html" />
+    <link rel="prev" title="Εγχειρίδιο Γρήγορης Εκκίνησης GRASS GIS" href="grass_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-gvSIG5.png"><img alt="../../_images/logo-gvSIG5.png" class="align-right" src="../../_images/logo-gvSIG5.png" style="width: 75.0px; height: 75.5px;" /></a>
+<div class="section" id="gvsig">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης gvSIG<a class="headerlink" href="#gvsig" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Περιγραφή της εργασίας<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>&#8220;Το gvSIG είναι ένα γεωγραφικό σύστημα πληροφοριών (GIS), το οποίο είναι μια εφαρμογή για υπολογιστές σχεδιασμένη για να παγιδεύει, αποθηκεύει, κρατάει, αναλύει και αναπτύσει οποιοδήποτε τύπο από αναφερόμενη γεωγραφική πληροφορία προκειμένου να λύσει πολύπλοκα προβλήματα διαχείρισης και σχεδίασης. Το gvSIG είναι γνωστό για το εύκολο στον χρήστη περιβάλλον του, την δυνατότητά του να προσεγγίζει τα περισσότερα πρότυπα, τόσο διανυσματικά όσο και σε πλέγμα. Περιέχει ένα μεγάλο εύρος από εργαλεία για εργασίες σε γεωγραφικές πληροφορίες (εργαλεία για ερωτήσεις, δημιουργία στρωμάτων, γεω-επεξεργασίες, διασυνδέσεις κ.τ.λ.), τα οποία κάνουν το gvSIG ιδανικό εργαλείο για χρήστες που εργάζονται στην περιοχή της γής.&#8221; <a class="reference external" href="http://www.gvsig.org/web/projects/gvsig-desktop/description2/view?set_language=en">gvSIG</a> 2011</p>
+</div>
+<div class="section" id="id2">
+<h2>Αυτό το εγχειρίδιο γρήγορης εκκίνησης περιγράφει πως...<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Να ξεκινήσει το gvSIG και να δημιουργήσει μια απεικόνηση;</li>
+<li>Να ορίσει μια προβολή της απεικόνισης;</li>
+<li>Να προσθέσει δεδομένα σε πλέγμα και σε διανύσματα σε μια απεικόνιση;</li>
+<li>Να πλοηγηθεί σε μια απεικόνηση;</li>
+<li>Να αλλάξει το πως τα στρώματα παρουσιάζονται σε μια απεικόνηση;</li>
+<li>Να επιλέξει τις πόλεις που υπάρχουν σε μια συγκεκριμένη περιοχή και να τις εκάγει σε νέο αρχείο;</li>
+<li>Να δημιουργήσει έναν χάρτη με τον κάναβο; και</li>
+<li>Να αποθηκεύσει την τρέχουσα εργασία ή να βγεί από το gvSIG.</li>
+<li>Save the current project or exit gvSIG.</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>Ξεκίνημα του gvSIG και δημιουργία μιας απεικόνησης<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Επιλέξτε το gvSIG από το μενό εφαρμογών. Η εφαρμογή παίρνει συνήθως κάποια λεπτά για να ξεκινήσει.</p>
+<ol class="arabic simple">
+<li>Εξ ορισμού του το gvSIG ανοίγει με μια άδεια εργασία με το τύπο τύπο έγγραφο &#8216;View&#8217; επιλεγμένο.</li>
+<li>Κλικάρετε στο κουμπί [New] για να δημιουρησετε μια απεικόνηση.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0012.png"><img alt="../../_images/gvsig_qs_0012.png" src="../../_images/gvsig_qs_0012.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="id4">
+<h2>Ορισμός μιας προβολής της απεικόνησης σας<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>Ανοίξτε την απεικόνησης από την ιδιότητα διαλόγου<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Επιλέξτε μια καινούργια δημιουργία απεικόνησης. Εξ ορισμού έχει τίτλο <tt class="docutils literal"><span class="pre">Untitled</span> <span class="pre">-</span> <span class="pre">0</span></tt> αλλά μπορεί να έχει και τίτλο <tt class="docutils literal"><span class="pre">Untitled</span> <span class="pre">-</span> <span class="pre">1</span></tt> εάν το δημιουργήσετε, τότε μπορεί κιόλας να διαγραφεί η απεικόνηση.</li>
+<li>Κλικάρετε στο κουμπί [Properties] για να ανοίξει ο διάλογος <strong>View properties</strong>.</li>
+<li>Κλικάρετε στο κουμπί [...] που ακολουθεί το &#8216;Current projection&#8217;.  Αυτό θα ανοίεξι το διάλογο <strong>New CRS</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0022.png"><img alt="../../_images/gvsig_qs_0022.png" src="../../_images/gvsig_qs_0022.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="id6">
+<h3>Ορίστε το αναφερόμενο σύστημα συντεταγμένων σας<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Χρήση της προς τα κάτω αναπτυσσόμενης λίστας για &#8216;Type&#8217;, επιλέξτε EPSG.</li>
+<li>Βαλτε τον κωδικό EPSG για το αναφερόμενο σύστημα συντεταγμένων. Για αυτό το παράδειγμα χρησιμοποιούμε το EPSG=4326, το οποίο αποτελεί την γεωγραφική προβολή WGS84 2D. Στην συνέχεια, κλικάρετε στο κουμπί [Search]. Αυτό θα σας δώσει μια λίστα με τα επιλεγμένα CRS στον παρακάτω πίνακα στο πεδίο της έρευνας.</li>
+<li>Επιλέξτε [OK] για να γυρίσετε στο <strong>View Properties</strong> διάλογο.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0032.png"><img alt="../../_images/gvsig_qs_0032.png" src="../../_images/gvsig_qs_0032.png" style="width: 330.0px; height: 236.5px;" /></a>
+</div>
+<div class="section" id="id7">
+<h3>Αποθηκεύοντας τις ιδιότητες των απεικονήσεων<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Προσέξτε πως ο κωδικός EPSG είναι τώρα 4326 και ότι οι μονάδες του χάρτη έχουν αλλάξει σε μοίρες.</li>
+<li>ΕΠιλέξτε [OK] για να γυρίσετε στο <strong>Project Manager</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0042.png"><img alt="../../_images/gvsig_qs_0042.png" src="../../_images/gvsig_qs_0042.png" style="width: 213.4px; height: 248.6px;" /></a>
+</div>
+<div class="section" id="id8">
+<h3>Άνοιγμα μιας απεικόνησης<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Επιλέξτε μια καινούργια απεικόνηση.</li>
+<li>Κλικάρετε στο κουμπί [Open] για να ανοίξει το <em>View</em>.</li>
+<li>Το παράθυρο της απεικόνισς αποτελείται από τρείς ζώνες.</li>
+<li>Το πάνω αριστερά κελί περιέχει μια λίστα με τα διανυσματικά ή σε μορφή πλέγματος στρώματα που χρησιμοποιούνται στην απεικόνηση (π.χ. ο πίνακας των περιεχομένων).</li>
+<li>Το κάτω αριστερά κελί παρουσιάζει την έκταση της βασικής απεικόνησης σε σχέση με το επιλεγμένο διανυσματικό αρχείο.</li>
+<li>Το δεξί κελί περιέχει την βασική περιοχή απεικόνησης όπου δεδομένα σε μορφή πλέγματος και διανυσματικά έχουν αποδωθεί.</li>
+<li>Επιλέξτε το εικονίδιο &#8216;Maximise window&#8217; για να προσαρμοστεί η απεικόνηση σε όλη την οθόνη.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0052.png"><img alt="../../_images/gvsig_qs_0052.png" src="../../_images/gvsig_qs_0052.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>Η απεικόνηση - πρόσθεση δεδομένων σε μορφή πλέγματος και διανυσματικά<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>Άνοιγμα του διαλόγου πρόσθεσης στρώματος<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Κλικάρετε το εικονίδιο &#8216;Add layer&#8217; στην βασική γραμμή εντολών για να ανοίξει ο διάλογος <strong>Add layer</strong>.</li>
+<li>Επιλέξτε το [Add] στο διάλογο <strong>Add layer</strong>. Εξ ορισμού τη πρώτη επιγραφή είναι το <em>File</em> οπότε το <strong>Open</strong> διάλογος αρχείου εμφανίζεται.</li>
+<li>Αvοίξτε κάτω το <tt class="docutils literal"><span class="pre">/usr/local/share/data/natural_earth/HYP_50M_SR_W</span></tt> φάκελο αρχείων.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0062.png"><img alt="../../_images/gvsig_qs_0062.png" src="../../_images/gvsig_qs_0062.png" style="width: 563.2px; height: 422.95px;" /></a>
+</div>
+<div class="section" id="id11">
+<h3>Επιλέγοντας το αρχείο σε μορφή πλέγματος<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Επιλέξτε το <em>gvSIG Raster Driver</em> από το αρχείο πληκτρολογώντας στην αναπτυσσόμενη προς τα κάτω λίστα. Εξ ορισμού οι οδηγοί του αρχείου τύπου shapefile χρησομοποιούν ένα φάκελο αρχείων που μπορεί να εμφανίζεται άδειος.</li>
+<li>Επιλέξτε το <tt class="docutils literal"><span class="pre">HYP_50M_SR_W.tif</span></tt>.</li>
+<li>Κλικάρετε στο κουμπί [OK] για να επιστρέψετε στο <strong>Add layer</strong> διάλογο.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0072.png"><img alt="../../_images/gvsig_qs_0072.png" src="../../_images/gvsig_qs_0072.png" style="width: 281.6px; height: 193.6px;" /></a>
+</div>
+<div class="section" id="id12">
+<h3>Επιλέγοντας διανυσματικά αρχεία<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Ο διάλογος <strong>Add layer</strong> τώρα έχει μια λίστα με αρχεία σε μορφή πλέγματος.</li>
+<li>Επιλέξτε το κουμπί [Add] για να προσθέσετε διανυσματικά αρχεία. Ο διάλογος του <strong>Open</strong> αρχείων θα εμφανιστεί.</li>
+<li>Επιλέξτε το κουμπί [Up one level] στο μενού για να αλλάξει ο φάκελος των αρχείων στον φάκελο <tt class="docutils literal"><span class="pre">/usr/local/share/data/natural_earth</span></tt>.</li>
+<li>Επιλέξτε το <em>gvSIG shp driver</em> από το αρχείο αναπτύσσοντας προς τα κάτω την λίστα.</li>
+<li>Επιλέξτε τα <tt class="docutils literal"><span class="pre">10m_admin_1_states_provinces.shp</span></tt>, <tt class="docutils literal"><span class="pre">10m_populated_places_simple.shp</span></tt> και <tt class="docutils literal"><span class="pre">10m_rivers_lake_centerlines.shp</span></tt> αρχεία τύπου shapefile από την λίστα. Πατήστε το πλήκτρο control για να επιλέξετε περισσότερα από ένα αρχεία.</li>
+<li>Κλικάρετε το κουμπί [OK] για να επιστρέψετε στον διάλογο <strong>Add layer</strong>.</li>
+<li>Κλικάρετε το κουμπί [OK] στον διάλογο <strong>Add layer</strong> για να επιστρέψετε στην απεικόνηση.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0082.png"><img alt="../../_images/gvsig_qs_0082.png" src="../../_images/gvsig_qs_0082.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>Η απεικόνηση - βασική περιήγηση<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h3>Ζουμάρισμα σε μια περιοχή<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>Γυρνώντας πίσω στη βασική απεικόνηση θα δείτε τα διανυσματικά αρχεία που επιβάλλονται πανω στα αρχεία με μορφή πλέγματος. Τα χρώματα που εμφανίζονται στην οθόνη μπορούν να διαφοροποιηθούν με τα δικά σας ανάλογα με τις επιθυμίες του χρήστη.</p>
+<ol class="arabic simple">
+<li>Εξ ορισμού το εργαλείο <em>Zoom in</em> επιλέγεται από την βασική μπάρα εργαλείων.</li>
+<li>Χρησιμοποιείστε το δείκτη του ποντικιού για να ζωγραφίσετε το κουτί του ορίου γύρω από την Νότιο-ανατολική Αυστραλία. Κάντε το επιλέγοντας την πάνω αριστερά γωνία του κουτιού ορίου, κρατώντας πατημένο το αριστερό κουμπί του ποντικιού και σύρετε την κάτω δεξιά γωνία του κουτιού στην επιλεγμένη περιοχή. Αφήστε το αριστερό κουμπί του ποντικιού όταν έχετε ορίσει την κατάλληλη περιοχή.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0092.png"><img alt="../../_images/gvsig_qs_0092.png" src="../../_images/gvsig_qs_0092.png" style="width: 563.75px; height: 423.5px;" /></a>
+</div>
+<div class="section" id="id15">
+<h3>Κομψή-κλίμακωτή πλοήγηση<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>Η απεικόνηση θα αλλάξει αυτόματα για να δείξει την περιοχή μέσα στην οποία βρήσκεται το επιλεγμένο κουτί ορίου.</p>
+<ol class="arabic simple">
+<li>Το μέγεθος της στήλης του πίνακα περιεχομένων μπορεί να προσαρμοστεί με χρήση του ποντικιού, για να βοηθήσει στα μεγάλα ονόματα αρχείων.</li>
+<li>Προσαρμόστε το τι φαίνεται στην απεικόνηση χρησιμοποιώντας τα κύρια εργαλεία, έτσι ώστε η Victoria να είναι κεντρικά.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0102.png"><img alt="../../_images/gvsig_qs_0102.png" src="../../_images/gvsig_qs_0102.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+</div>
+<div class="section" id="id16">
+<h2>Η απεικόνηση - αλλάζοντας το πως φαίνονται τα στρώματα<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id17">
+<h3>Δημιουργώντας ένα σαφές πολύγωνο<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Επιλέξτε το <tt class="docutils literal"><span class="pre">10m_admin_1_states_provinces.shp</span></tt> στρώμα χρησιμοποιώντας το αριστερό κουμπί του ποντικιού και κλικάροντας πάλι με το δεξί κουμπί του ποντικιού.</li>
+<li>Επιλέξτε το υπομενού <em>Properties</em>.</li>
+<li>Ο διάλογος <strong>Layer properties</strong> θα εμφανιστεί.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0112.png"><img alt="../../_images/gvsig_qs_0112.png" src="../../_images/gvsig_qs_0112.png" style="width: 563.2px; height: 423.5px;" /></a>
+</div>
+<div class="section" id="id18">
+<h3>Αλλάζοντας τον συμβολισμό ενός διανυσματικού στρώματος<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Επιλέξτε την επιλογή <em>Symbols</em> από το πάνω <strong>Layers properties</strong> διάλογο.</li>
+<li>Επιλέξτε το κουμπί [Choose symbol] οπότε ο <strong>Symbol selector</strong> διάλογος εμφανίζεται.</li>
+<li>Βγάλτε την επιλογή από το <em>Fill color</em> κουτί ώστε τα πολύγωνα να γίνουν σαφή.</li>
+<li>Κλικάρετε το κουμπί [OK] για να γυρίσετε στον διάλογο <strong>Layers properties</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0122.png"><img alt="../../_images/gvsig_qs_0122.png" src="../../_images/gvsig_qs_0122.png" style="width: 563.2px; height: 422.4px;" /></a>
+</div>
+<div class="section" id="id19">
+<h3>Αλλάζοντας τις ετικέτες ενός διανυσματικού στρώματος<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Επιλέξτε την επιλογή <em>Labelling</em> στο πάνω <strong>Layers properties</strong> διάλογο.</li>
+<li>Αλλάξτε τις ιδιότητες του κειμένου όπως αυτές φαίνονται στην εικόνα, και στην συνέχεια κλικάρετε το κουμπί [Accept].</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0132.png"><img alt="../../_images/gvsig_qs_0132.png" src="../../_images/gvsig_qs_0132.png" style="width: 431.75px; height: 317.35px;" /></a>
+</div>
+<div class="section" id="id20">
+<h3>Αποτέλεσμα<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p>Σημειώστε πως αυτή είναι μια πολύ βασική απεικόνηση που εμφανίζει ένα σημείο, μια γραμμή και ένα αρχείο με πολυγωνικό διάνυσμα πάνω από ένα αρχείο σε μορφή πλέγματος. Είναι το ίδιο εύκολο να έχετε μια αεροφωτογραφία ή ένα ψηφιακό μοντέλο εδάφους σαν ένα πίσω σκηνικό για τα διανυσματικά δεδομένα ή να εμφανίσετε άλλα διανυσματικά δεδομένα αποθηκευμένα σε διάφορα πρότυπα.</p>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0142.png"><img alt="../../_images/gvsig_qs_0142.png" src="../../_images/gvsig_qs_0142.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="id21">
+<h3>Μια άσκηση για τον χρήστη - αλλάξτε τον συμβολισμό και την ετικέτα σημείου και γραμμής στρωμάτων<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>Ακολουθούν τα προηγούμενα βήματα αλλαγής συμβόλου, χρώματος και ετικέτας για ποτάμια και πόλεις για να ταιριάζουν γενικά με την παρακάτω απεικόνηση.</p>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0152.png"><img alt="../../_images/gvsig_qs_0152.png" src="../../_images/gvsig_qs_0152.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+</div>
+<div class="section" id="id22">
+<h2>Απλή ανάλυση - επιλογή πόλεων μέσα σε μια περιοχή<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id23">
+<h3>Επιλέγοντας την περιοχή<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Επιλέξτε το <tt class="docutils literal"><span class="pre">10m_admin_1_states_provinces.shp</span></tt> στρώμα με χρήση του αριστερού κουμπιού του ποντικιού.</li>
+<li>Επιλέξτε το εικονίδιο &#8216;Select by point&#8217; από την βασική μπάρα εργαλείων.</li>
+<li>Κλικάρετε το πολύγωνο που αναπαριστά στην περιοχή της State of Victoria. ΤΟ πολύγωνο θα γίνει κίτρινο ή κάποιο άλλο χρώμα ανάλογα με τις προτιμήσεις του χρήστη.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0162.png"><img alt="../../_images/gvsig_qs_0162.png" src="../../_images/gvsig_qs_0162.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="id24">
+<h3>Επιλέγοντας τις πόλεις που βρίσκονται μέσα στην περιοχή<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Επιλέξτε το <tt class="docutils literal"><span class="pre">10m_populated_places_simple.shp</span></tt> στρώμα με χρήση του αριστερού κουμπιού του ποντικιού.</li>
+<li>Επιλέξτε το <tt class="docutils literal"><span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Selection</span> <span class="pre">&gt;</span> <span class="pre">Selection</span> <span class="pre">by</span> <span class="pre">layer</span></tt> για να ανοίξει ο <strong>Selection by Layer</strong> διάλογος.</li>
+<li>Αλλάξτε τα δύο επιλεγμένα κριτήρια χρησιμοποιώντας τα αναπτυσσόμενα προς τα κάτω κουτιά στην αριστερή πλευρά του <strong>Selection by Layer</strong> διαλόγου. Κλικάρετε το κουμπί [New set] για να επιλέξετε τις πόλεις μέσα στο επιλεγμένο πολύγωνο.</li>
+<li>Επιλέξτε το κουμπί [Cancel] στο <strong>Selection by Layer</strong> διάλογο για να επιστρέψετε στην απεικόνηση</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0172.png"><img alt="../../_images/gvsig_qs_0172.png" src="../../_images/gvsig_qs_0172.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="id25">
+<h3>Βγάλτε την επιλογή του πολυγώνου για να δείτε τι θα γίνει<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Επιλέξτε το στρώμα <tt class="docutils literal"><span class="pre">10m_admin_1_states_provinces.shp</span></tt> με χρήση του αριστερού κουμπιού του ποντικιού.</li>
+<li>Επιλέξτε το εικονίδιο &#8216;Clear selection&#8217; από την βασική μπάρα εργαλείων.</li>
+<li>Τώρα μπορείτε να δείτε ότι μόνο οι πόλεις μέσα στην περιοχή της Victoria είναι επιλεγμένες.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0182.png"><img alt="../../_images/gvsig_qs_0182.png" src="../../_images/gvsig_qs_0182.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="shapefile">
+<h3>Εξάγετε τις επιλεγμένες πόλεις σε ένα νέο αρχείο τύπου shapefile<a class="headerlink" href="#shapefile" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Επιλέξτε το <tt class="docutils literal"><span class="pre">10m_populated_places_simple.shp</span></tt> στρώμα με χρήση του αριστερού κουμπιού του ποντικιού.</li>
+<li>Επιλέξτε το <tt class="docutils literal"><span class="pre">Layer</span> <span class="pre">&gt;</span> <span class="pre">Export</span> <span class="pre">to...</span> <span class="pre">&gt;</span> <span class="pre">SHP</span></tt> για να αρχίσει η εξαγωγή.</li>
+<li>Ο <strong>Export to...</strong> διάλογος εμφανίζεται. Το gvSIG αναγνωρίζει ότι μόνο 26 χαρακτηριστικά έχουν επιλογεί οπότε σας προειδοποιεί ότι μόνο ένα υποσύνολο του αρχείου τύπου shapefile θα εξαχθεί. Επιλέξτε το κουμπί [Yes] για να συνεχίσετε.</li>
+<li>Ο διάλογος <strong>Save</strong> εμφανίζεται. Δώστε στο αρχείο ένα όνομα και αποθηκεύστε το στον φάκελο αρχείων της αρεσκεία σας. Επιλέξτε το κουμπί [Save] για να συνεχίσετε.
+Σημειώστε ότι εάν υπάρχει και άλλο αρχείο με το ίδιο όνομα θα εμφανιστεί ένα μήνυμα προειδοποίησης.</li>
+<li>Ο διάλογος <strong>Add layer</strong> εμφανίζεται. Επιλέξτε το κουμπί [Yes] για να προσθέσετε ένα νέο αρχείο τύπου shapefile στον πίνακα περιεχομένων.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0192.png"><img alt="../../_images/gvsig_qs_0192.png" src="../../_images/gvsig_qs_0192.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="id26">
+<h3>Εμφανίζοντας μόνο τις πόλεις μέσα στην περιοχή<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Όταν επιστρέψετε στην απεικόνηση, βγάλτε την επιλογή <tt class="docutils literal"><span class="pre">10m_populated_places_simple.shp</span></tt> από τον πίνακα περιεχομένων.</li>
+<li>Αλλάξτε τον συμβολισμό και τις ετικέτες του <tt class="docutils literal"><span class="pre">test.shp</span></tt> για να μοιάζει με το παρακάτω στιγμιότυπο οθόνης.</li>
+<li>Τώρα η απεικόνηση περιέχει μόνο τις πόλεις που υπάγονται μέσα στην περιοχή της State of Victoria.</li>
+<li>Επιλέξτε το εικονίδιο &#8216;Close window&#8217; για να επιστρέψετε στο <strong>Project manager</strong> οπότε να μπορείτε να δημιουργήσετε έναν χάρτη με χρήση αυτής της απεικόνησης.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0202.png"><img alt="../../_images/gvsig_qs_0202.png" src="../../_images/gvsig_qs_0202.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+</div>
+<div class="section" id="id27">
+<h2>Πως να δημιουργήσετε έναν χάρτη<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id28">
+<h3>Δημιουργείστε ένα νέο χάρτη και ανοίξτε το<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Επιλέξτε το αρχείο τύπου <em>Map</em> από το <strong>Project Manager</strong>.</li>
+<li>Κλικάρετε το κουμπί [New] για να δημιουργήσετε ένα χάρτη.</li>
+<li>Επιλέξτε ένα νέο χάρτη. Εξ ορισμού ο τίτλος του είναι <tt class="docutils literal"><span class="pre">Untitled</span> <span class="pre">-</span> <span class="pre">0</span></tt>.</li>
+<li>Κλικάρετε το κουμπί [Open].</li>
+<li>Ένας άδειος χάρτης θα εμφανιστεί στο δικό του παράθυρο με το τίτλο <tt class="docutils literal"><span class="pre">Map:</span> <span class="pre">Untitled</span> <span class="pre">-</span> <span class="pre">0</span></tt>.
+Σημειώστε πως μια σειρά από σημεία έχουν τοποθετηθεί στην σελίδα. Αυτό ονομάζεται κάναβος ή οδηγός και χρησιμοποιείται για να αποτυπώσει τα στοιχεία προτυποποιώντας τον χάρτη σας.</li>
+<li>Επιλέξτε το εικονίδιο &#8216;Maximise window&#8217; για να προσαρμοστεί ο χάρτης σε όλη την οθόνη.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0212.png"><img alt="../../_images/gvsig_qs_0212.png" src="../../_images/gvsig_qs_0212.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="id29">
+<h3>Εισάγετε μια απεικόνηση με κάναβο/τετράγωνα<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Κλικάρετε το εικονίδιο &#8216;Insert view&#8217; από το βασικό μενού</li>
+<li>Δημιουργείστε ένα κουτί ορίου που αναπαριστά την έκταση του χάρτη στην σελίδα κλικάροντας τον άδειο χάρτη, κρατώντας πατημένο το αριστερό κουμπί του ποντικιού και σύροντας το έξω από το κουτί, μόνο μπαίνοντας στην περιοχή που χρησιμοποιείται είναι ολοκληρωμένο.  Αυτό ανοίγει τον διάλογο <strong>Properties of view framework</strong>.</li>
+<li>Επιλέξτε το <em>view</em> για ευκολότερη δημιουργία.</li>
+<li>Κλικάρετε την επιλογή <em>Show Grid</em> (αυτή στην πραγματικότητα δημιουργεί ένα τετράγωνο).</li>
+<li>Κλικάρετε το κουμπί του κανάβου [Configure] για να ανοίξετε το διάλογο <strong>Grid settings</strong>.</li>
+<li>Στον διάλογο <strong>Grid settings</strong> αλλάξτε την τιμή του κανάβου σε 1.0, αυτό είναι 1 μοίρα μεταξύ των γραμμών του γεωγραφικού μήκους και πλάτους.</li>
+<li>Επιλέξτε το πρότυπο του κανάβου (χρησιμοποιείστε γραμμές αντί για σημεία για πιο εύκολη απεικόνηση).</li>
+<li>Αυξήστε το μέγεθος της γραμματοσειράς σε 14.</li>
+<li>Επιλέξτε το κουμπί [Ok] για να επιστρέψετε στο διάλογο <strong>Properties of view framework</strong> και στην συνέχεια επιλέξτε το κουμπί [Accept] για έξοδο και επιστροφή στον χάρτη σας.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0222.png"><img alt="../../_images/gvsig_qs_0222.png" src="../../_images/gvsig_qs_0222.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="id30">
+<h3>Τι άλλο μπορείτε να κάνετε σε έναν χάρτη;<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Επιλέξτε το <tt class="docutils literal"><span class="pre">Map</span> <span class="pre">&gt;</span> <span class="pre">Properties</span></tt> από το βασικό μενού για να ανοίξετε το κουτί διαλόγου <strong>Map Properties</strong>. Βγάλτε την επιλογή <em>Visualise Grid</em> από το κλικαρισμένο κουτί και επιλέξτε το κοθμπί[OK]. Το &#8216;snap-to&#8217; οδηγός/κάναβος χρησιμοποιείται όσο το πρότυπο πρέπει να αφαιρεθεί από την σελίδα και η εικόνα πρέπει να μοιάζει με αυτή που απεικονίζεται παρακάτω.</li>
+<li>Άλλα στοιχεία όπως η κλίμακα και το βέλος του βορρά μπορεί να προσθεθεί στον χάρτη χρησιμοποιώντας τα ρικονίδια από την βασική γραμμή εργαλείων ή από τα υπομενού στο μενού <tt class="docutils literal"><span class="pre">Map</span></tt>.</li>
+<li>Ο χάρτης μπορεί να εκτυπωθεί ή να εξαχθεί σε PDF ή Postscript για συνεργασία με άλλες εργασίες.</li>
+<li>Επιλέξτε το εικονίδιο &#8216;Close window&#8217; για να επιστρέψετε στο <strong>Project manager</strong></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0232.png"><img alt="../../_images/gvsig_qs_0232.png" src="../../_images/gvsig_qs_0232.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+</div>
+<div class="section" id="id31">
+<h2>Αποθηκεύοντας την εργασία σας και βγαίνοντας από το gvSIG<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Οι εργασίες μπορούν να αποθηκευτούν για μετέπειτα χρήση με χρήστη του μενού επιλογής <tt class="docutils literal"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">as...</span></tt> ή</li>
+<li>Οι εργασίες μπορούν να βγούν ή να κλείσουν με χρήση του μενού επιλογής <tt class="docutils literal"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Exit</span></tt>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/gvsig_qs_0242.png"><img alt="../../_images/gvsig_qs_0242.png" src="../../_images/gvsig_qs_0242.png" style="width: 564.3px; height: 424.05px;" /></a>
+</div>
+<div class="section" id="id32">
+<h2>Από εδώ και πέρα...<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h2>
+<p>Βοήθεια στα αγγλικά και διάφοροι οδηγοί χρήσης είναι διαθέσιμοι στην ιστοσελίδα
+<a class="reference external" href="http://www.gvsig.org/web/docusr/learning/">gvSIG</a>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

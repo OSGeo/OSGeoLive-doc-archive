@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>uDig Inicio Rápido &mdash; OSGeo-Live 8.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Bienvenido a OSGeo-Live 8.5" href="../index.html" />
+    <link rel="next" title="Creando una unidad USB arrancable de OSGeo Live" href="usb_quickstart.html" />
+    <link rel="prev" title="Guía de inicio rápido de TinyOWS" href="tinyows_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-uDig9.png" id="udig-quickstart-es"><img alt="project logo" class="align-right" id="udig-quickstart-es" src="../../_images/logo-uDig9.png" style="width: 76.8px; height: 79.2px;" /></a>
+<div class="section" id="udig-inicio-rapido">
+<h1><a class="toc-backref" href="#id1">uDig Inicio Rápido</a><a class="headerlink" href="#udig-inicio-rapido" title="Permalink to this headline">¶</a></h1>
+<p>uDig (User Friendly Internet Desktop GIS), es un Escritorio SIG para edición y análisis de datos geoespaciales.</p>
+<p>Este rápido inicio describe como:</p>
+<blockquote>
+<div><ul class="simple">
+<li>cargar una capa de un mapa desde un shapefile y desde un Web Map Service (WMS)</li>
+<li>utilizar las herramientas de mapa estándares</li>
+<li>aplicar color a las entidades geográficas (features) de un mapa utilizando estilos</li>
+</ul>
+</div></blockquote>
+<div class="contents topic" id="contenidos">
+<p class="topic-title first">Contenidos</p>
+<ul class="simple">
+<li><a class="reference internal" href="#udig-inicio-rapido" id="id1">uDig Inicio Rápido</a><ul>
+<li><a class="reference internal" href="#iniciar-udig" id="id2">Iniciar uDig</a></li>
+<li><a class="reference internal" href="#ventana-de-bienvenida" id="id3">Ventana de Bienvenida</a></li>
+<li><a class="reference internal" href="#workbench" id="id4">Workbench</a></li>
+<li><a class="reference internal" href="#archivos" id="id5">Archivos</a></li>
+<li><a class="reference internal" href="#mapa" id="id6">Mapa</a></li>
+<li><a class="reference internal" href="#servidor-de-mapas-web" id="id7">Servidor de Mapas Web</a></li>
+<li><a class="reference internal" href="#estilo" id="id8">Estilo</a></li>
+<li><a class="reference internal" href="#cosas-para-probar" id="id9">Cosas para Probar</a></li>
+<li><a class="reference internal" href="#que-es-lo-que-sigue" id="id10">¿Qué es lo que sigue?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="iniciar-udig">
+<h2><a class="toc-backref" href="#id2">Iniciar uDig</a><a class="headerlink" href="#iniciar-udig" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Seleccionar <em class="menuselection">Geospatial ‣ Desktop GIS ‣ uDig</em> en el menú de inicio</li>
+<li>La aplicación tomará unos momentos para iniciarse</li>
+</ol>
+<p>Si tiene alguna dificultad ejecutando uDig por favor lea la pagina de referencia Running uDig.</p>
+</div>
+<div class="section" id="ventana-de-bienvenida">
+<h2><a class="toc-backref" href="#id3">Ventana de Bienvenida</a><a class="headerlink" href="#ventana-de-bienvenida" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Cuando se inicia uDig por primera vez la vista de Bienvenida se mostrará en toda la pantalla. Esta pantalla tiene vínculos a las tutorías, documentación y al sitio del proyecto.</li>
+<li>Haciendo Click en la flecha titulada Workbench, se accede a los contenidos del banco de trabajo de uDig.</li>
+</ol>
+<blockquote>
+<div><img alt="../../_images/udig_welcome4.png" src="../../_images/udig_welcome4.png" />
+</div></blockquote>
+<p>En cualquier momento se puede volver a la vista de Bienvenida seleccionando <em class="menuselection">Help ‣ Welcome</em> en la barra de menú.</p>
+</div>
+<div class="section" id="workbench">
+<h2><a class="toc-backref" href="#id4">Workbench</a><a class="headerlink" href="#workbench" title="Permalink to this headline">¶</a></h2>
+<p>La ventana Workbench ofrece múltiples Editores (cada uno muestra un Mapa) y soporta Vistas (para ofrecer información acerca del mapa actual).</p>
+<blockquote>
+<div><img alt="../../_images/udig_workbench4.png" src="../../_images/udig_workbench4.png" />
+</div></blockquote>
+<p>En la imagen anterior se presenta una típica sesión de uDig con un mapa en el editor llamado Map, la vista Project (Proyecto), la vista Layer (Capa) y finalmente la vista Catalog (Catalogo).
+Estas vistas serán descriptas en mas detalle cuando se muestre su uso.</p>
+</div>
+<div class="section" id="archivos">
+<h2><a class="toc-backref" href="#id5">Archivos</a><a class="headerlink" href="#archivos" title="Permalink to this headline">¶</a></h2>
+<p>Para comenzar vamos a cargar algunos de los datos de ejemplo incluidos en el DVD.</p>
+<ol class="arabic simple">
+<li>Elija <em class="menuselection">Layer ‣ Add</em> desde la barra de menú para abrir el asistente <strong>Add Data</strong></li>
+<li>Seleccione <strong>Files</strong> en la lista de fuentes de datos</li>
+<li>Presione <em class="guilabel">Next</em> para abrir el diálogo de archivo</li>
+<li>El OSGeo-Live DVD contiene los datos de ejemplo en:<ul>
+<li><tt class="file docutils literal"><span class="pre">~/data</span></tt> (el camino corto es <tt class="file docutils literal"><span class="pre">/usr/local/share/data</span></tt>)</li>
+</ul>
+</li>
+<li>Seleccione el siguiente archivo de la carpeta udig-data:<ul>
+<li><tt class="file docutils literal"><span class="pre">countries.shp</span></tt></li>
+</ul>
+</li>
+<li>Presione <em class="guilabel">Open</em><ul>
+<li>Un nuevo editor Map se abre basado en los contenidos del shapefile. El nombre y proyección por omisión
+serán tomados del shapefile.</li>
+<li>Se puede ver que en el <strong>Catalog view</strong> se ha actualizado con una entrado para <tt class="file docutils literal"><span class="pre">countries.shp</span></tt>. Esta
+vista es utilizada para seguir el uso de recursos utilizados por la aplicación uDig.</li>
+<li>La vista <strong>Layers</strong> muestra la única capa que se despliega en este mapa. Esta vista es utilizada para cambiar
+el orden y la apariencia de la información del mapa.</li>
+<li>La vista <strong>Projects</strong> muestra que el mapa esta guardado en projects &gt; countries.
+Puede haber multiples proyectos abiertos a la vez, cada proyecto puede tener varios mapas.</li>
+</ul>
+</li>
+<li>Abra la carpeta de datos en el escritorio</li>
+<li>Arrastre <tt class="file docutils literal"><span class="pre">clouds.jpg</span></tt> en el Editor de Mapa, una nueva capa es agregada al mapa.</li>
+<li>Se puede ver el orden en el que son dibujadas las capas en la vista de capas. Ahora la capa clouds.jpg se dibuja
+por encima de la capa countries.</li>
+<li>Seleccione la capa clouds.jpg en la vista de catálogo y arrastrela al pie de la lista</li>
+</ol>
+<blockquote>
+<div><img alt="../../_images/udig_QuickstartCountriesMap4.png" src="../../_images/udig_QuickstartCountriesMap4.png" />
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Una de las preguntas mas comunes cuando se considera a uDig para una organización es cuanta memoria
+utiliza la aplicación. A diferencia de muchas aplicaciones GIS, uDig puede obtener una cantidad fija de memoria.
+El anterior shapefile no se carga en memoria, se tiene como política mantener los datos en disco y dibujar los datos,
+como los del shapefile, en la pantalla solo cuando es necesario.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Se puede arrastrar y soltar un shapefile directamente en la aplicación uDig!</p>
+</div>
+</div>
+<div class="section" id="mapa">
+<h2><a class="toc-backref" href="#id6">Mapa</a><a class="headerlink" href="#mapa" title="Permalink to this headline">¶</a></h2>
+<p>Se puede controlar el lugar del mundo en el que el Editor de Mapa se posiciona por utilización de
+las herramientas de navegación dispuestas en la barra de herramientas en la parte superior de la
+pantalla.</p>
+<ol class="arabic simple">
+<li>La herramienta de Zoom <img alt="ZOOM" src="../../_images/udig_zoom_mode4.png" /> está habilitada por omisión<ul>
+<li>Use la herramienta de zoom para dibujar un rectángulo utilizando el botón derecho del ratón en el área del mundo que desea ver.</li>
+<li>Para alejar la imagen (zoom out) dibuje un rectángulo con el botón derecho del ratón. La actual extensión del mapa será localizada en el rectángulo
+que se ha dibujado.</li>
+</ul>
+</li>
+<li>La herramienta Pan <img alt="PAN" src="../../_images/udig_pan_mode4.png" /> puede utilizarse para desplazarse sobre el mapa cambiendo la escala.</li>
+<li>Existen también varios botones de navegación que pueden utilizarse en cualquier momento:<ul>
+<li><img alt="SHOWALL" src="../../_images/udig_zoom_extent_co4.png" /> Mostrar todo, puede utilizarse para retornar a la extensión completa en cualquier momento</li>
+<li><img alt="ZOOM_IN" src="../../_images/udig_zoom_in_co4.png" /> Alejar y <img alt="ZOOM_OUT" src="../../_images/udig_zoom_out_co4.png" /> Acercar pueden ser utilizadas para cambiar la escala a una cantidad determinada.</li>
+<li>Puede usar Navigation Back <img alt="BNAV" src="../../_images/udig_backward_nav4.png" /> and Forward <img alt="FNAV" src="../../_images/udig_forward_nav4.png" /> en la barra de menú para ciclar entre las localizaciones previamente visitadas.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">También es posible una hacer una panorámica manteniendo presionado el botón central y controlar la escala usando la rueda de desplazamiento.</p>
+</div>
+</div>
+<div class="section" id="servidor-de-mapas-web">
+<h2><a class="toc-backref" href="#id7">Servidor de Mapas Web</a><a class="headerlink" href="#servidor-de-mapas-web" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Si no se esta conectado a internet ejecute <em class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</em> para tener un WMS Local. El script
+abrirá una página con un vínculo a &#8220;wms capabilities&#8221;, que puede ser arrastrado dentro del mapa vacío.</p>
+</div>
+<p>Una de las razones para usar una aplicación como uDig es la posibilidad de acceder a la gran cantidad de
+información geoespacial disponible en la web. Esta sección cubre el uso de Servidores Web de Mapas que
+cuentan con capas de información que pueden ser incluidos en un mapa propio.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Es posible conectarse a Servidores de Mapas Web usando el asistente &#8220;Add Data&#8221; mediante una acción de
+arrastrar y soltar.</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Seleccione <em class="menuselection">File ‣ New ‣ New Map</em> de la barra de menú</p>
+</li>
+<li><p class="first">Cambiar a la vista <strong>Web</strong>, click en la siguiente pestaña para presentar la vista <strong>Catalog</strong> para desplegar la vista <em>Web</em></p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_WebViewClick4.png"><img alt="../../_images/udig_WebViewClick4.png" src="../../_images/udig_WebViewClick4.png" style="width: 415.5px; height: 177.0px;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">Hacer click en el vínculo <a class="reference external" href="http://www2.dmsolutions.ca/cgi-bin/mswms_gmap?Service=WMS&amp;VERSION=1.1.0&amp;REQUEST=GetCapabilities">WMS:dm solution</a></p>
+</li>
+<li><p class="first">En la página Resource Selectión (Selección de Recursos) se seleccionan las siguientes capas:</p>
+<ul>
+<li><p class="first">Elevation/Bathymetry</p>
+</li>
+<li><p class="first">Parks</p>
+</li>
+<li><p class="first">Cities</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_AddWMSLayers4.png"><img alt="../../_images/udig_AddWMSLayers4.png" src="../../_images/udig_AddWMSLayers4.png" style="width: 367.5px; height: 410.2px;" /></a>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p class="first">Presione <em class="guilabel">Finish</em> para agregar estas capas en su mapa</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_WMSMap4.png"><img alt="../../_images/udig_WMSMap4.png" src="../../_images/udig_WMSMap4.png" style="width: 714.0px; height: 517.3px;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">Use la herramienta Zoom <img alt="ZOOM" src="../../_images/udig_zoom_mode4.png" /> para acercarse a uno de los parques (Parks)</p>
+</li>
+<li><p class="first">Cambie a la herramienta Info <img alt="INFO" src="../../_images/udig_info_mode4.png" /> y haga un click sobre los parques para obtener mas información de ellos.</p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Es posible cambiar de la herramienta Zoom a Info presionando las teclas Z e I.</p>
+</div>
+</div>
+<div class="section" id="estilo">
+<h2><a class="toc-backref" href="#id8">Estilo</a><a class="headerlink" href="#estilo" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Selecionar el project &gt; countries, hacer un doble click para abrir este Mapa, o un click con el botón derecho y elegir Open Map</p>
+</li>
+<li><p class="first">Seleccionar la capa countries en la vista Layer.</p>
+</li>
+<li><p class="first">Abrir el Style Editor por click con el botón derecho sobre la capa countries y elija Change Style (cambiar estilo)</p>
+</li>
+<li><p class="first">Vamos ha realizar cambios en unas pocas cosas referentes a como se están desplegando los países</p>
+<ul class="simple">
+<li>Line: Click en el Color y cambiar el color a BLACK</li>
+<li>Fill: eliminar el tilde (check) de la casilla para cambiar el fill a apagado (off).</li>
+<li>Label: marcar con un tilde la casilla, y seleccione CNTRY_NAME de la lista de atributos</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/udig_StyleEditor4.png"><img alt="../../_images/udig_StyleEditor4.png" src="../../_images/udig_StyleEditor4.png" style="width: 716.8px; height: 498.4px;" /></a>
+</li>
+<li><p class="first">Presionar <em class="guilabel">Apply</em> para ver como se presenta el Mapa, la vista <strong>Layer</strong> se actualizará
+para reflejar el estilo actual.</p>
+</li>
+<li><p class="first">Cuando se esté conforme con el resultado se puede presionar <em class="guilabel">Close</em> para cerrar el diálogo</p>
+</li>
+<li><p class="first">Algunos archivos incluyen configuraciones de estilo, seleccionar <em class="menuselection">Layer ‣ Add</em> de la barra de menú</p>
+</li>
+<li><p class="first">Seleccionar <strong>Files</strong> de la lista de fuentes de datos y presione <em class="guilabel">Next</em></p>
+</li>
+<li><p class="first">Utilizr el selector de archivos para abrir <strong>timezone.shp</strong> y presionar <em class="guilabel">Open</em></p>
+</li>
+<li><p class="first">Aún es dificultoso para ver, vamos a tomar la capa clouds.jpg para agregar mas detalles.
+Seleccionar <em class="menuselection">Map ‣ Mylar</em> en la barra de menú para enfocar la capa seleccionada.</p>
+</li>
+<li><p class="first">Utilizar la vista <em>Layer</em> para seleccionar timezone, counties y clouds.jpg sucesivamente para ver el efecto</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_MapMylar4.png"><img alt="../../_images/udig_MapMylar4.png" src="../../_images/udig_MapMylar4.png" style="width: 718.9px; height: 524.3px;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">Se puede cambiar a apagado (off) este efecto en cualquier momento usando <em class="menuselection">Map ‣ Mylar</em> en la barra de menú</p>
+</li>
+</ol>
+</div>
+<div class="section" id="cosas-para-probar">
+<h2><a class="toc-backref" href="#id9">Cosas para Probar</a><a class="headerlink" href="#cosas-para-probar" title="Permalink to this headline">¶</a></h2>
+<p>Tenemos algunos desafíos adicionales para que usted pruebe:</p>
+<ol class="arabic simple">
+<li>Probar ver sus propias capas de mapa SIG, o probar agregar una capa desde un Web Feature Service (WFS).</li>
+<li>Probar los estilos en una capa WFS.</li>
+</ol>
+</div>
+<div class="section" id="que-es-lo-que-sigue">
+<h2><a class="toc-backref" href="#id10">¿Qué es lo que sigue?</a><a class="headerlink" href="#que-es-lo-que-sigue" title="Permalink to this headline">¶</a></h2>
+<p>Este es solo el primer paso en el camino para utilizar uDig. Hay una gran cantidad de material (y habilidades) que quedan por descubrir en nuestros walkthroughs.</p>
+<ul>
+<li><p class="first">Walkthrough 1 - Prueba el uso de PostGIS, extraer datos desde un Web Feature Server y explorar el
+uso de Temas con la potente tecnología Color Brewer.</p>
+<p><tt class="file docutils literal"><span class="pre">/usr/local/share/udig/udig-docs/uDigWalkthrough</span> <span class="pre">1.pdf</span></tt></p>
+</li>
+<li><p class="first">Walkthrough 2 - Enseña como crear shapefile y usar las Herramientas de Edición para manipular
+los datos de las entidades geográficas. También cubre la instalación de <a class="reference internal" href="../overview/geoserver_overview.html"><em>GeoServer</em></a> y la edición con un Web Feature Server.</p>
+<p>Disponible en <a class="reference external" href="http://udig.refractions.net/">http://udig.refractions.net/</a></p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

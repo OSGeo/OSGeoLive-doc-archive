@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ZOO-Project &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 6.5 Contenus" href="overview.html" />
+    <link rel="next" title="zyGrib" href="zygrib_overview.html" />
+    <link rel="prev" title="Viking" href="viking_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://zoo-project.org/"><img alt="Logo du projet" class="align-right" src="../../_images/logo-Zoo5.png" style="width: 175.0px; height: 60.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="Projet en incubation OSGeo" class="align-right" src="../../_images/OSGeo_incubation5.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="zoo-project">
+<h1>ZOO-Project<a class="headerlink" href="#zoo-project" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="serveur-wps">
+<h2>Serveur WPS<a class="headerlink" href="#serveur-wps" title="Permalink to this headline">¶</a></h2>
+<p>ZOO-Project fournit un framework pour le Web Processing Service (WPS) adapté
+pour les développeurs afin de créer et chaîner plusieurs Web Processing Services.
+Un serveur WPS fournit un accès web à des fonctions qui lancent des algorithmes
+spatiaux.
+ZOO-Project supporte de nombreux languages de programmation et contient deux
+applications de démos utilisant des fournisseurs de services simples d&#8217;outils
+spatiaux (un module avec bibliothèque C partagée et un avec Python)
+basés sur les bibliothèques GEOS et OGR.</p>
+<p>ZOO est composé de trois parties:</p>
+<a class="reference internal image-reference" href="../../_images/zoo-project-demo-210.png"><img alt="Capture d'écran ZOO" class="align-right" src="../../_images/zoo-project-demo-210.png" style="width: 483.6px; height: 224.4px;" /></a>
+<p><em>Kernel ZOO</em> : Un noyau côté serveur en C qui rend possible le fait de
+gérer et chaîner des webservices codés dans différents langages de programmation.</p>
+<p><em>Services ZOO</em> : Un suite d&#8217;exemples de webservices en évolution basée sur
+diverses bibliothèques Open Source.</p>
+<p><em>API ZOO</em> : Une API JavaScript côté serveur capable d&#8217;appeler et de chaîner
+les services ZOO, qui rend le développement et le chaînage de processus plus
+simple.</p>
+<p>ZOO est basé sur un &#8216;noyau de service WPS&#8217; qui constitue le coeur du système
+de ZOO (c&#8217;est à dire le &#8220;ZOO Kernel&#8221;). Ce dernier est capable de charger des
+bibliothèques dynamiques et de les manipuler au gré des demandes des services
+web. Le noyau ZOO est écrit en langage C, mais supporte de nombreux autres
+langages de programmation dans le but de se connecter à de nombreuses
+bibliothèques et par dessous tout de simplifier le travail du développeur
+final de services web.</p>
+<p>Un service ZOO est un lien composé d&#8217;un fichier de métadonnées (.zcfg) et du
+code pour l&#8217;implémentation correspondante. Le fichier de métadonnée décrit
+toutes les fonctions disponibles qui peuvent être appelée en utilisant une
+requête WPS &#8220;Execute&#8221;, ainsi que les entrées/sorties désirées. Les services
+contiennent des algorithmes et des fonctions et peuvent maintenant être
+implémentés en C/C++, Fortran, Java, Python, PHP et JavaScript.</p>
+<div class="section" id="caracteristiques-principales">
+<h3>Caractéristiques principales<a class="headerlink" href="#caracteristiques-principales" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Serveur WPS Multilangages</li>
+<li>Création de services web simple et procédure de déploiement</li>
+<li>Chaînage simple de WPS avec l&#8217;API de ZOO</li>
+</ul>
+</div>
+<div class="section" id="standards-implementes">
+<h3>Standards implémentés<a class="headerlink" href="#standards-implementes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>WPS 1.0.0 OGC</li>
+</ul>
+</div>
+<div class="section" id="demo">
+<h3>Démo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost/zoo-demo/spatialtools.html">Démo simple utilisant le fournisseur de services C basé sur les bibliothèques GEOS et OGR</a></li>
+<li><a class="reference external" href="http://localhost/zoo-demo/spatialtools-py.html">Démo simple utilisant le fournisseur de services Python basé sur les bibliothèques GEOS et OGR</a></li>
+<li><a class="reference external" href="http://localhost/zoo-demo/spatialtools.html">Formulaire html simple pour lancer votre requête vers le noyau de ZOO</a></li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Détails<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h3>
+<p><strong>Site web:</strong> <a class="reference external" href="http://zoo-project.org">http://zoo-project.org</a></p>
+<p><strong>Licence:</strong> MIT x/11</p>
+<p><strong>Version du logiciel:</strong> 1.2.0</p>
+<p><strong>Plates-formes supportées:</strong> Windows, Linux, Mac</p>
+<p><strong>Languages de programmation supportés:</strong> C, Python, Java, PHP, Fortran, Javascript</p>
+<p><strong>Support:</strong> <a class="reference external" href="http://zoo-project.org/trac">http://zoo-project.org/trac</a></p>
+</div>
+<div class="section" id="guide-de-demarrage-rapide">
+<h3>Guide de démarrage rapide<a class="headerlink" href="#guide-de-demarrage-rapide" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/zoo-project_quickstart.html"><em>Documentation du guide de démarrage rapide</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

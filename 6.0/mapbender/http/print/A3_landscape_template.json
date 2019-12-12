@@ -1,0 +1,199 @@
+{
+    "type" : "templatePDF",
+    "orientation" : "L",
+    "units" : "mm",
+    "format" : "a3",
+    "controls" : [
+    	{
+    		"id" : "title",
+    		"label" : "Titel",
+    		"type" : "text",
+    		"size" : 20,
+    		"pageElementsLink" : {
+    			"titel" : "value"
+    		}
+    	},
+    	{
+    		"id" : "dpi",
+    		"label" : "DPI",
+    		"type" : "select",
+    		"size" : 20,
+    		"pageElementsLink" : {
+    			"karte" : "res_dpi"
+    		},
+    		"options" : [
+		        {
+		            "value" : "72",
+		            "label" : "72 dpi"
+		        },
+		        {
+		            "value" : "144",
+		            "label" : "144 dpi"
+		        },
+		        {
+		            "value" : "288",
+		            "label" : "288 dpi"
+		        }
+    		]
+    	},
+    	{
+    		"id" : "comment1",
+    		"label" : "Kommentar1",
+    		"type" : "textarea",
+    		"size" : 5,
+    		"pageElementsLink" : {
+    			"kommentar1" : "value"
+    		}
+    	},
+    	{
+    		"id" : "comment2",
+    		"label" : "Kommentar 2",
+    		"type" : "textarea",
+    		"size" : 5,
+    		"pageElementsLink" : {
+    			"kommentar2" : "value"
+    		}
+    	},
+    	{
+    		"id" : "angle",
+    		"label" : "Winkel",
+    		"type" : "text",
+    		"pageElementsLink" : {
+    			"nordpfeil" : "angle",
+    			"karte" : "angle",
+    			"minikarte" : "angle"
+    		}
+    	},
+    	{
+    		"id" : "coordinates",
+    		"type" : "hidden"
+    	},
+    	{
+    		"id" : "scale",
+    		"label" : "Maßstab",
+    		"type" : "text",
+    		"pageElementsLink" : {
+    			"scale" : "value"
+    		}
+    	}
+    ],
+    "pages" : [
+    	{
+    	 "tpl" : "A3_landscape_template.pdf",
+    	 "useTplPage" : 1,
+    	 "elements" : {
+	    	 "karte" : {
+    			"type" : "map",
+    			"res_dpi" : 72,
+    			"x_ul" : 8.8,
+	    		"y_ul" : 15.2,
+	    		"width" : 292,
+    			"height" : 259.5,
+    			"coords" : 1,
+    			"coords_font_family" : "Arial",
+    			"coords_font_size" : 11
+	   			},
+	   		"messung" : {
+    			"type" : "measure",
+    			"do_fill" : 0,
+    			"fill_color" : {
+    				"r" : 255,
+    				"g" : 0,
+    				"b" : 0
+    				},
+    			"do_stroke" : 0,
+    			"stroke_color" : {
+    				"r" : 0,
+    				"g" : 0,
+    				"b" : 0
+    				},
+    			"line_style" : {
+    				"width" : 1.0
+    				}
+	   			},
+	   		"minikarte" : {
+    			"type" : "overview",
+    			"res_dpi" : 72,
+    			"x_ul" : 311.5,
+	    		"y_ul" : 15.2,
+	    		"width" : 101.25,
+    			"height" : 90
+	   			},
+	   		"titel" : {
+    			"type" : "text",
+    			"x_ul" : 9,
+	    		"y_ul" : 11.5,
+	    		"font_family" : "Arial",
+	    		"font_size" : 24
+	   			},
+	   		"scale" : {
+    			"type" : "text",
+    			"x_ul" : 347,
+	    		"y_ul" : 172.4,
+	    		"font_family" : "Arial",
+	    		"font_size" : 20,
+				"value" : "scale"
+	   		},
+	   		"date" : {
+    			"type" : "text",
+    			"x_ul" : 347,
+	    		"y_ul" : 158.7,
+	    		"font_family" : "Arial",
+	    		"font_size" : 20,
+				"value" : "date"
+	   		},
+	   		"nordpfeil" : {
+    			"type" : "image",
+    			"x_ul" : 322,
+	    		"y_ul" : 125,
+	    		"width" : 24,
+	    		"height" : 24,
+	    		"angle" : 0,
+				"filename" : "./img/northarrow.png"
+	   		},
+	   		"kommentar1" : {
+    			"type" : "para",
+    			"x_ul" : 312.5,
+	    		"y_ul" : 203,
+	    		"font_family" : "Arial",
+	    		"font_size" : 20,
+	    		"width" : 45,
+	    		"height" : 7,
+	    		"align" : "L",
+	    		"border" : 0,
+	    		"fill" : 1,
+	    		"border_width" : 0.5
+	   			},
+	   		"kommentar2" : {
+    			"type" : "para",
+    			"x_ul" : 312.5,
+	    		"y_ul" : 215,
+	    		"font_family" : "Arial",
+	    		"font_size" : 20,
+	    		"width" : 45,
+	    		"height" : 7,
+	    		"align" : "L",
+	    		"border" : 0,
+	    		"fill" : 1,
+	    		"border_width" : 0.5
+	   			}
+	   		}
+	   	},
+	   	  	{
+            "tpl" : "A3_landscape_template.pdf",
+            "useTplPage" : 2,
+            "elements" : {
+                "legende" : {
+                    "type" : "legend",
+                    "x_ul" : 10,
+                    "y_ul" : 42,
+                    "width" : 90,
+                    "height" : 180,
+                    "font_family" : "Arial",
+                    "font_size" : 13,
+                    "scale" : 0.75
+                }
+			}
+        }
+	]
+}

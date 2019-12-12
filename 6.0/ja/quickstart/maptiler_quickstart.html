@@ -1,0 +1,173 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MapTiler Quickstart &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live クイックスタート集" href="quickstart.html" />
+    <link rel="next" title="KDE-edu Marble Quickstart" href="marble_quickstart.html" />
+    <link rel="prev" title="MapServer クイックスタート" href="mapserver_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-maptiler15.png"><img alt="project logo" class="align-right" src="../../_images/logo-maptiler15.png" style="width: 128.0px; height: 128.0px;" /></a>
+<div class="section" id="maptiler-quickstart">
+<h1>MapTiler Quickstart<a class="headerlink" href="#maptiler-quickstart" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://www.maptiler.org/">MapTiler</a> provides a simple way of creating a set of tiles from any georeferenced map image. The tiles can then be presented as a as a georeferenced map overlay on a web server. It follows the <a class="reference external" href="http://www.osgeo.org/">Open Source Geospatial Foundation&#8217;s (OSGeo&#8217;s)</a> <a class="reference external" href="http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification">Tile Map Service (TMS)</a> specification.</p>
+<ul class="simple">
+<li><strong>Input options</strong>: Any georeferenced image file, eg. a TIFF, JPEG from ArcGIS, QGIS.</li>
+<li><strong>Output options</strong>: A set of directories with tiled images which can be copied to a web server for presentation as a georeferenced overlay. <a class="reference external" href="http://examples.maptiler.org/">View examples</a>.</li>
+<li><strong>Strengths</strong>: MapTiler is simple, free, open-source software, with an easy wizard, described below, to guide through the options.</li>
+</ul>
+<p>MapTiler takes advantage of the fact that <a class="reference external" href="http://maps.google.com/">Google Maps</a> , <a class="reference external" href="http://maps.bing.com">Microsoft Bing</a> , <a class="reference external" href="http://maps.yahoo.com/">Yahoo Maps</a> , and other online mapping providers including <a class="reference external" href="http://www.openstreetmap.org/">OpenStreetMap</a>  use the same projection and tiling profile and the tiles are therefore compatible. The <a class="reference external" href="http://www.maptiler.org/google-maps-coordinates-tile-bounds-projection/">Tiles à la Google Maps</a> page describes and illustrates this. MapTiler prepares tiles using this specification as an easy and quick way of preparing a georeferenced map in a mashup web page.</p>
+<div class="section" id="start-maptiler">
+<h2>Start MapTiler<a class="headerlink" href="#start-maptiler" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://help.maptiler.org/betatest/">Download MapTiler</a> to your it on your computer or start it directly from this LiveDVD.</li>
+<li>Select the <strong>Tile Profile</strong>. Choose <em>Google Maps Compatible (Spherical Mercator)</em> for standard web publishing. Choose <em>Google Earth (KML SuperOverlay)</em> if you also want to generate a KML file for use in Google Earth. Click <em>Continue</em>.</li>
+</ol>
+<img alt="../../_images/maptiler17.jpg" class="align-center" src="../../_images/maptiler17.jpg" style="width: 90%;" />
+<ol class="arabic simple" start="3">
+<li>Choose the <strong>Source Data Files</strong>. Browse to select the raster image you want to tile. It is also possible to select a NODATA colour that will appear as transparent in the resulting image. Click <em>Continue</em>.</li>
+</ol>
+<img alt="../../_images/maptiler27.jpg" class="align-center" src="../../_images/maptiler27.jpg" style="width: 90%;" />
+<ol class="arabic simple" start="4">
+<li>Specify the <strong>Spatial Reference System / Coordinate System</strong> of the image. Specify the id-number from the EPSG/ESRI database. If you have maps from UK for example the transformation should include the <a class="reference external" href="http://help.maptiler.org/coordinates/europe/uk">EPSG:27700 with TOWGS84</a> parameter. Click <em>Continue</em>.</li>
+</ol>
+<img alt="../../_images/maptiler37.jpg" class="align-center" src="../../_images/maptiler37.jpg" style="width: 90%;" />
+<ol class="arabic simple" start="5">
+<li>Specify details about the <strong>Tile Pyramid</strong>. The default settings for zoom levels and file format are often best. Click <em>Continue</em>.</li>
+</ol>
+<img alt="../../_images/maptiler47.jpg" class="align-center" src="../../_images/maptiler47.jpg" style="width: 90%;" />
+<ol class="arabic simple" start="6">
+<li>Specify details about the <strong>Destination folder and Addresses / URLs</strong> for the tileset. If you do not know these, they can be added into the default <em>googlemaps.html</em> and <em>openlayers.html</em> files after tile generation. Click <em>Continue</em>.</li>
+</ol>
+<img alt="../../_images/maptiler57.jpg" class="align-center" src="../../_images/maptiler57.jpg" style="width: 90%;" />
+<ol class="arabic simple" start="7">
+<li>Tick the <strong>Viewers that should be generated</strong>. By default, a <em>googlemaps.html</em> and <em>openlayers.html</em> file are generated. You can also choose to generate a KML SuperOverlay file for Google Earth. Click <em>Continue</em>.</li>
+</ol>
+<img alt="../../_images/maptiler67.jpg" class="align-center" src="../../_images/maptiler67.jpg" style="width: 90%;" />
+<ol class="arabic simple" start="8">
+<li>Specify the <strong>Details for generating the Viewers</strong>, such as the title, copyright notice, and API keys. If you do not know these, they can be added into the default <em>googlemaps.html / openlayers.html</em> files after tile generation. Click <em>Continue</em>.</li>
+</ol>
+<img alt="../../_images/maptiler77.jpg" class="align-center" src="../../_images/maptiler77.jpg" style="width: 90%;" />
+<ol class="arabic simple" start="9">
+<li>Click <strong>Render</strong> to start rendering the image. When complete, MapTiler provides a link to the finished tileset. Open the <em>googlemaps.html</em> or <em>openlayers.html</em> files in a web browser to view the tileset as an overlay on the live online map. To present this on the web, just copy the entire tileset and all subdirectories to a web server, and edit the googlemaps.html or openlayers.html files as required.</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

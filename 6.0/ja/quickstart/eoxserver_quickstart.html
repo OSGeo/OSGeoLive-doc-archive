@@ -1,0 +1,238 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>EOxServer Quickstart &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 6.0 −Ｌｉｖｅへようこそ" href="../index.html" />
+    <link rel="next" title="GDAL/OGR クイックスタート" href="gdal_quickstart.html" />
+    <link rel="prev" title="deegree 3 webservices quickstart" href="deegree_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://eoxserver.org/"><img alt="project logo" class="align-right" src="../../_images/logo-eoxserver-215.png" style="width: 590.2px; height: 99.45px;" /></a>
+<div class="section" id="eoxserver-quickstart">
+<h1><a class="toc-backref" href="#id2">EOxServer Quickstart</a><a class="headerlink" href="#eoxserver-quickstart" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id3">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>EOxServer is a server for Earth Observation (EO) data. More precisely it is
+a Python application and framework for presenting EO data and metadata.</p>
+<p>This Quick Start describes how to:</p>
+<ul class="simple">
+<li>Install EOxServer in OSGeo-Live</li>
+<li>Access and use the demonstration instance</li>
+</ul>
+<p>See the <a class="reference internal" href="../overview/eoxserver_overview.html"><em>EOxServer Overview</em></a>, the
+<a class="reference external" href="../../eoxserver-docs/EOxServer_documentation.pdf">EOxServer 0.2.1 Documentation</a>, or the <a class="reference external" href="http://eoxserver.org/doc/">online
+documentation</a> for more information.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#eoxserver-quickstart" id="id2">EOxServer Quickstart</a><ul>
+<li><a class="reference internal" href="#overview" id="id3">Overview</a></li>
+<li><a class="reference internal" href="#installation" id="id4">Installation</a></li>
+<li><a class="reference internal" href="#id1" id="id5">Demonstration Instance</a><ul>
+<li><a class="reference internal" href="#web-client" id="id6">Web Client</a></li>
+<li><a class="reference internal" href="#admin-client" id="id7">Admin Client</a></li>
+<li><a class="reference internal" href="#log-viewer" id="id8">Log Viewer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#what-next" id="id9">What Next?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="installation">
+<h2><a class="toc-backref" href="#id4">Installation</a><a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Run the following commands to install EOxServer:</p>
+<div class="highlight-python"><pre>cd /usr/local/share/gisvm/bin/
+sudo ./install_eoxserver.sh</pre>
+</div>
+<p>Note the password for the user <cite>user</cite> is <cite>user</cite>.</p>
+<p>The script not only installs EOxServer but also creates and deploys a
+<a class="reference external" href="http://localhost/eoxserver/">demonstration instance</a>, downloads the
+documentation, adds launchers to the desktop, etc.</p>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id5">Demonstration Instance</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The new icon on the desktop labelled <cite>EOxServer</cite> launches a browser showing
+the demonstration instance available at <a class="reference external" href="http://localhost/eoxserver/">http://localhost/eoxserver/</a>.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_start7.png"><img alt="EOxServer demonstration start" src="../../_images/eoxserver_start7.png" style="width: 512.0px; height: 348.0px;" /></a>
+<p>The other new icon on the desktop labelled <cite>EOxServer Documentation</cite>
+launches a pdf viewer showing the available documentation.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_documentation7.png"><img alt="EOxServer documentation" src="../../_images/eoxserver_documentation7.png" style="width: 512.0px; height: 371.5px;" /></a>
+<div class="section" id="web-client">
+<h3><a class="toc-backref" href="#id6">Web Client</a><a class="headerlink" href="#web-client" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Web Client</strong> link allows you to see a list of available <cite>Dataset
+Series</cite> and <cite>Stitched Mosaics</cite>. The demonstration has one <cite>Dataset Series</cite>
+configured named &#8220;MER FRS 1P RGB reduced&#8221; holding three ENVISAT MERIS
+scenes. Please refer to the <a class="reference external" href="http://eoxserver.org/doc/en/users/demonstration.html">online demonstration documentation</a> for more
+information on the available data.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_webclient17.png"><img alt="EOxServer demonstration embedded client dataset series selection" src="../../_images/eoxserver_webclient17.png" style="width: 512.0px; height: 348.0px;" /></a>
+<p>Selecting a list entry provides you with a map view showing the outlines of
+the available <cite>Datasets</cite>.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_webclient27.jpg"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient27.jpg" style="width: 512.0px; height: 348.0px;" /></a>
+<p>Using the standard OpenLayers controls you can enable also previews of the
+available data.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_screenshot15.jpg"><img alt="EOxServer demonstration embedded client outlines and previews" src="../../_images/eoxserver_screenshot15.jpg" style="width: 512.0px; height: 348.0px;" /></a>
+<p>With the <strong>Date slider</strong> the <cite>Datasets</cite> shown can be limited to the time
+interval of interest.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_webclient37.jpg"><img alt="EOxServer demonstration embedded client date change" src="../../_images/eoxserver_webclient37.jpg" style="width: 512.0px; height: 348.0px;" /></a>
+<p>The <strong>Download</strong> button provides you a list of downloadable <cite>Datasets</cite>.
+Downloadable means within the set Bounding Box or currently viewn map extent
+if not set and the set time interval. You can select which <cite>Datasets</cite> to
+download in which size, projection, format, and band subset.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_webclient47.jpg"><img alt="EOxServer demonstration embedded client download selection" src="../../_images/eoxserver_webclient47.jpg" style="width: 512.0px; height: 348.0px;" /></a>
+<p><strong>Start Download</strong> initiates the actual download which might result in
+multiple files if multiple <cite>Datasets</cite> have been selected.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_webclient57.jpg"><img alt="EOxServer demonstration embedded client download" src="../../_images/eoxserver_webclient57.jpg" style="width: 512.0px; height: 348.0px;" /></a>
+</div>
+<div class="section" id="admin-client">
+<h3><a class="toc-backref" href="#id7">Admin Client</a><a class="headerlink" href="#admin-client" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Admin Client</strong> link brings you to the login page for the <cite>Admin
+Client</cite>. The password for the user <cite>admin</cite> is <cite>admin</cite>.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_adminclient17.png"><img alt="EOxServer demonstration admin client login" src="../../_images/eoxserver_adminclient17.png" style="width: 512.0px; height: 348.0px;" /></a>
+<p>The <cite>Admin Client</cite> is Djangos standard admin and allows you to configure the
+available data. Please feel free to explore the client. More information can
+be found <a class="reference external" href="http://eoxserver.org/doc/en/users/operators.html">online</a>.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_adminclient27.png"><img alt="EOxServer demonstration admin client start" src="../../_images/eoxserver_adminclient27.png" style="width: 512.0px; height: 348.0px;" /></a>
+<p>It is for example possible to view and alter the <cite>EO Metadata</cite> of the
+configured <cite>Dataset Series</cite>.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_adminclient37.jpg"><img alt="EOxServer demonstration admin client" src="../../_images/eoxserver_adminclient37.jpg" style="width: 512.0px; height: 348.0px;" /></a>
+</div>
+<div class="section" id="log-viewer">
+<h3><a class="toc-backref" href="#id8">Log Viewer</a><a class="headerlink" href="#log-viewer" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Log Viewer</strong> link provides an easy way to view the latest log entries.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_logviewer7.png"><img alt="EOxServer demonstration log viewer" src="../../_images/eoxserver_logviewer7.png" style="width: 512.0px; height: 348.0px;" /></a>
+</div>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id9">What Next?</a><a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<p>This is a simple demonstration, but you can do much more with EOxServer. The
+project website contains a lot of resources to help you get started. Here’s
+a few resources to check out next:</p>
+<ul class="simple">
+<li>Read the <a class="reference external" href="http://eoxserver.org/doc/en/users/operators.html">EOxServer Operators&#8217; Guide</a>.</li>
+<li>Read the complete <a class="reference external" href="http://eoxserver.org/doc/en/users/index.html">EOxServer Users&#8217; documentation</a> starting from the <a class="reference external" href="http://eoxserver.org/doc/en/users/basics.html">EOxServer
+Basics</a>.</li>
+<li>Ready to use EOxServer? Then join the community on the <a class="reference external" href="http://eoxserver.org/doc/en/users/mailing_lists.html">mailing lists</a> to exchange ideas,
+discuss potential software improvements, and ask questions.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

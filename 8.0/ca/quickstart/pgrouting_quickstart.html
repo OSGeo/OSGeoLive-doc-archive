@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guia d’inici ràpid per pgRouting &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Benvinguts a OSGeo-Live 8.0" href="../index.html" />
+    <link rel="next" title="Guia d’inici ràpid de PostGIS" href="postgis_quickstart.html" />
+    <link rel="prev" title="OTB Quickstart" href="otb_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.pgrouting.org"><img alt="pgRouting logo" class="align-right" src="../../_images/logo-pgRouting1.png" style="width: 130.0px; height: 126.0px;" /></a>
+<div class="section" id="guia-d-inici-rapid-per-pgrouting">
+<h1>Guia d&#8217;inici ràpid per pgRouting<a class="headerlink" href="#guia-d-inici-rapid-per-pgrouting" title="Permalink to this headline">¶</a></h1>
+<p>pgRouting és una extensió de <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a> que afegeix funcionalitat de càlcul de rutes a les bases de dades <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a>/<a class="reference external" href="http://www.postgresql.org">PostgreSQL</a>.</p>
+<p>Aquesta guia d&#8217;inici ràpid descriu com obrir una base de dades des de la línia de comandes i com executar una consulta del camí més curt amb unes dades de prova.</p>
+<div class="section" id="executant-pgrouting">
+<h2>Executant pgRouting<a class="headerlink" href="#executant-pgrouting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Obri una finestra de terminal <em class="menuselection">Applications ‣ Accessories ‣ Terminal</em> i estableixi una connexió a la base de dades de <tt class="docutils literal"><span class="pre">pgrouting</span></tt> :</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre>psql -U user pgrouting
+</pre></div>
+</div>
+<ul class="simple">
+<li>Escrigui <strong class="command">\d</strong> per mostrar totes les taules disponibles:</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre>                      <span class="n">List</span> <span class="k">of</span> <span class="n">relations</span>
+ <span class="k">Schema</span> <span class="o">|</span>        <span class="n">Name</span>         <span class="o">|</span>   <span class="k">Type</span>   <span class="o">|</span>  <span class="k">Owner</span>
+<span class="c1">--------+---------------------+----------+----------</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">classes</span>               <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">geography_columns</span>   <span class="o">|</span> <span class="k">view</span>    <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">geometry_columns</span>      <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">nodes</span>                 <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">spatial_ref_sys</span>       <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">types</span>                 <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">vertices_tmp</span>          <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">vertices_tmp_id_seq</span> <span class="o">|</span> <span class="n">sequence</span> <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">ways</span>                  <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">user</span>
+<span class="p">(</span><span class="mi">9</span> <span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Executar la funció de ruta més curta fent ús de l&#8217;algorisme de Dijkstra:</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">shortest_path</span><span class="p">(</span><span class="s1">&#39;</span>
+<span class="s1">                SELECT gid as id,</span>
+<span class="s1">                         source::integer,</span>
+<span class="s1">                         target::integer,</span>
+<span class="s1">                         length::double precision as cost</span>
+<span class="s1">                        FROM ways&#39;</span><span class="p">,</span>
+                <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre>     <span class="n">vertex_id</span> <span class="o">|</span> <span class="n">edge_id</span> <span class="o">|</span>       <span class="n">cost</span>
+    <span class="c1">-----------+---------+---------------------</span>
+           <span class="mi">100</span> <span class="o">|</span>    <span class="mi">1457</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">0152981335887719</span>
+           <span class="mi">554</span> <span class="o">|</span>     <span class="mi">543</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">0658986376594475</span>
+           <span class="mi">553</span> <span class="o">|</span>     <span class="mi">542</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">0720522950545032</span>
+           <span class="p">...</span> <span class="o">|</span>     <span class="p">...</span> <span class="o">|</span>  <span class="p">...</span>
+          <span class="mi">1803</span> <span class="o">|</span>    <span class="mi">1902</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">1000754339802650</span>
+           <span class="mi">600</span> <span class="o">|</span>      <span class="o">-</span><span class="mi">1</span> <span class="o">|</span>                   <span class="mi">0</span>
+<span class="p">(</span><span class="mi">77</span> <span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Proveu la següent funció per obtenir el resultat d&#8217;enrutament en un format diferent:</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="n">gid</span><span class="p">,</span> <span class="n">AsText</span><span class="p">(</span><span class="n">the_geom</span><span class="p">)</span> <span class="k">AS</span> <span class="n">the_geom</span>
+        <span class="k">FROM</span> <span class="n">dijkstra_sp</span><span class="p">(</span><span class="s1">&#39;ways&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre>  <span class="n">gid</span>   <span class="o">|</span>                              <span class="n">the_geom</span>
+<span class="c1">--------+---------------------------------------------------------------</span>
+    <span class="mi">533</span> <span class="o">|</span> <span class="n">MULTILINESTRING</span><span class="p">((</span><span class="o">-</span><span class="mi">105</span><span class="p">.</span><span class="mi">0205242</span> <span class="mi">39</span><span class="p">.</span><span class="mi">7613979</span><span class="p">,</span><span class="o">-</span><span class="mi">105</span><span class="p">.</span><span class="mi">0205115</span> <span class="mi">39</span><span class="p">.</span><span class="mi">7620158</span><span class="p">))</span>
+    <span class="mi">534</span> <span class="o">|</span> <span class="n">MULTILINESTRING</span><span class="p">((</span><span class="o">-</span><span class="mi">105</span><span class="p">.</span><span class="mi">0205115</span> <span class="mi">39</span><span class="p">.</span><span class="mi">7620158</span><span class="p">,</span><span class="o">-</span><span class="mi">105</span><span class="p">.</span><span class="mi">0205151</span> <span class="mi">39</span><span class="p">.</span><span class="mi">7632155</span><span class="p">))</span>
+    <span class="mi">535</span> <span class="o">|</span> <span class="n">MULTILINESTRING</span><span class="p">((</span><span class="o">-</span><span class="mi">105</span><span class="p">.</span><span class="mi">0205151</span> <span class="mi">39</span><span class="p">.</span><span class="mi">7632155</span><span class="p">,</span><span class="o">-</span><span class="mi">105</span><span class="p">.</span><span class="mi">0205098</span> <span class="mi">39</span><span class="p">.</span><span class="mi">764433</span><span class="p">))</span>
+        <span class="p">...</span> <span class="o">|</span> <span class="p">...</span>
+   <span class="mi">9395</span> <span class="o">|</span> <span class="n">MULTILINESTRING</span><span class="p">((</span><span class="o">-</span><span class="mi">104</span><span class="p">.</span><span class="mi">9921535</span> <span class="mi">39</span><span class="p">.</span><span class="mi">7209342</span><span class="p">,</span><span class="o">-</span><span class="mi">104</span><span class="p">.</span><span class="mi">9921516</span> <span class="mi">39</span><span class="p">.</span><span class="mi">722527</span><span class="p">))</span>
+   <span class="mi">9400</span> <span class="o">|</span> <span class="n">MULTILINESTRING</span><span class="p">((</span><span class="o">-</span><span class="mi">104</span><span class="p">.</span><span class="mi">9921793</span> <span class="mi">39</span><span class="p">.</span><span class="mi">7147876</span><span class="p">,</span><span class="o">-</span><span class="mi">104</span><span class="p">.</span><span class="mi">9923595</span> <span class="mi">39</span><span class="p">.</span><span class="mi">714781</span><span class="p">))</span>
+<span class="p">(</span><span class="mi">76</span> <span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Amb la instrucció <strong class="command">\q</strong> sortirà de la consola de PostgreSQL.</li>
+</ul>
+</div>
+<div class="section" id="i-ara-que">
+<h2>I ara qué?<a class="headerlink" href="#i-ara-que" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Lloc web de pgRouting</strong> - Visiteu el lloc web del projecte <a class="reference external" href="http://www.pgrouting.org">http://www.pgrouting.org</a> per aprendre més sobre pgRouting.</li>
+<li><strong>Taller en DVD</strong> - El taller de pgRouting del FOSS4G 2010 <cite>&#8220;FOSS4G routing with pgRouting tools, OpenStreetMap road data and GeoExt&#8221;</cite> està inclòs en aquest LiveDVD, i disponible a: <tt class="file docutils literal"><span class="pre">/usr/share/pgrouting/workshop/</span></tt></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Per actualitzar a l&#8217;última versió del tutorial, obriu una finestra de terminal, i a continuació, executeu <tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span> <span class="pre">&amp;&amp;</span> <span class="pre">apt-get</span> <span class="pre">upgrade</span> <span class="pre">pgrouting-workshop</span></tt></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

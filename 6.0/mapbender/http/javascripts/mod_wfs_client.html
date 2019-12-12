@@ -1,0 +1,456 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;CHARSET=utf-8">
+
+<link rel="stylesheet" type="text/css" media="screen,projection" href="../css/admin.screen.css" title="screen" />
+
+<script type='text/javascript'>
+
+
+/*
+ * services['action']: instructs the servercomponent
+ * services['services']: infos about the services (wfs)
+ * services['services']['id']: a list of ids
+ * services['service']['title']: a corresponding list of titles
+ *
+ */
+var services = {};
+/*
+ * wfsConf['action']: instructs the servercomponent
+ * wfsConf['wfs']: the ID of the selected wfs
+ * wfsConf['wfsConf']: infos about the wfs configurations
+ * wfsConf['wfsConf']['id']: a list of ids
+ * wfsConf['wfsConf']['abstract']: a corresponding list of descriptions
+ */
+var wfsConf = {};
+
+/*
+ * guis['action']: instructs the servercomponent
+ * guis['id']: a list of gui-IDs where the current user is owner
+ * guis['selectedGui']: the selected Gui
+ */
+var guis = {};
+
+/*
+ * handleAssignment['action']: instructs the servercomponent
+ * handleAssignment['selectedConf']: a list of wfs-conf Ids
+ * handleAssignment['selectedGui']: the selected Gui
+ */
+var handleAssignment = {}
+
+/*
+ * vupdateWfs['action']: instructs the servercomponent
+ * vupdateWfs['wfs']: id of wfs to update
+ * vupdateWfs['url']: capabilities url
+ */
+var vupdateWfs = {};
+
+/*
+ * deleteWfs_['action']: instructs the servercomponent
+ * deleteWfs_['wfs']: id of wfs to update
+ */
+var deleteWfs_ = {};
+
+/*
+ * geturl['action']: instructs the servercomponent
+ * geturl['wfs']: id of wfs to get the url for
+ * geturl['column']: column of the url to get in table wfs
+ */
+var geturl = {}
+
+var owsproxy = {}
+
+
+
+
+function getWfsList(){
+	services['action'] = 'getServices';
+	getData(services);
+}
+function getGuis(){
+	guis['action'] = 'getGuis';
+	getData(guis);
+}
+function getWfsConfData(){
+	wfsConf['action'] = 'getWfsConfData';
+	wfsConf['wfs'] = getSelectedWfs();
+	getData(wfsConf);
+}
+function getSelectedWfs(){
+	var w = document.wfsForm.wfsList;
+	var ind  = w.selectedIndex;
+	if(ind == -1){
+		return false;
+	}
+	if(ind == w.options.length-1)
+		return "gui_confs";
+	return w.options[ind].value;
+}
+function getGuiConfs(){
+	guis['action'] = 'getAssignedConfs';
+	var g = document.wfsForm.guiList;
+	var ind  = g.selectedIndex;
+	if(ind == -1){
+		return false;
+	}
+	guis['selectedGui'] = g.options[ind].value;
+	guis['selectedWfs'] = wfsConf['wfs'];
+	getData(guis);
+}
+/**
+ * Sends an request to get the url to the capabilities doc of selected wfs
+ *
+ */
+
+function getUpdateUrl(column){
+	geturl['action'] = 'getUpdateUrl';
+	var w = document.wfsForm.wfsList;
+	var ind  = w.selectedIndex;
+	if(ind == -1){
+		alert("please select an WFS");
+		return;
+	}
+	geturl['wfs'] = w.options[ind].value;
+	geturl['column'] = column;
+	geturl['wfs_version'] = '';
+	getData(geturl);
+}
+
+function addConfsToGui(){
+	handleAssignment['action'] = 'add';
+	handleAssignment['confs'] = getSelectedConfs();
+	handleAssignment['gui'] = getSelectedGui();
+	getData(handleAssignment);
+}
+function removeConfsFromGui(){
+	handleAssignment['action'] = 'remove';
+	handleAssignment['confs'] = getSelectedAssignedConfs();
+	handleAssignment['gui'] = getSelectedGui();
+	getData(handleAssignment);
+}
+/**
+ * Sends an update request to update the capabilities of selected wfs
+ *
+ * @return success
+ * @type boolean
+ */
+
+function updateWfs(){
+	vupdateWfs['action'] = 'updateWfs';
+	var w = document.wfsForm.wfsList;
+	var ind  = w.selectedIndex;
+	if(ind == -1){
+		alert("please select an WFS");
+		return false;
+	}
+	vupdateWfs['wfs'] = w.options[ind].value;
+	if(document.getElementById("updateUrl").value == ''){
+		alert("Please choose the link to the new WFS Capabilities URL.");
+		return false;
+	}
+
+	vupdateWfs['url'] = document.getElementById("updateUrl").value;
+	getData(vupdateWfs);
+	return true;
+}
+
+function deleteWfs(){
+	deleteWfs_['action'] = 'deleteWfs';
+	deleteWfs_['wfs'] = getSelectedWfs();
+	if(deleteWfs_['wfs']&&deleteWfs_['wfs']!="gui_confs"){
+		if(confirm("Do you really want to delete the Wfs with Wfs-id:"+deleteWfs_['wfs']+"?")){
+			getData(deleteWfs_);
+		}
+		return true;
+	}
+	return false;
+}
+
+function setIndicator(){
+	var str = "<img src='../img/indicator_wheel.gif'>";
+	document.getElementById("indicator").innerHTML = str;
+}
+function removeIndicator(){
+	document.getElementById("indicator").innerHTML = "";
+}
+function getOwsproxy(){
+	owsproxy['action'] = 'getOwsproxy';
+	owsproxy['wfs'] = getSelectedWfs();
+	getData(owsproxy);
+}
+function setOwsproxy(obj){
+	if(obj.checked == true){
+		owsproxy['action'] = 'setOwsproxy';
+	}
+	else{
+		owsproxy['action'] = 'removeOwsproxy';
+	}
+	owsproxy['wfs'] = getSelectedWfs();
+	if(owsproxy['wfs']){
+		getData(owsproxy);
+	}
+	else{
+		obj.checked = false;
+	}
+}
+/*
+ * Ajax-function to get data from the server
+ */
+function getData(obj){
+	setIndicator();
+	var obj2json = parent.$.toJSON(obj);
+	parent.$.post("../php/mod_wfs_server.php",{"obj":obj2json}, function (json,status){
+		if(status == 'success'){
+			var dsJson = typeof(json) == 'object' ? json : eval('(' + json + ')');
+			switch(obj['action']){
+				case "getServices":
+					appendServices(dsJson);
+				break;
+				case "getWfsConfData":
+					getOwsproxy();
+					appendWfsConfData(dsJson);
+				break;
+				case "getGuis":
+					appendGuis(dsJson);
+				break;
+				case "getAssignedConfs":
+					appendGuiConfs(dsJson);
+				break;
+				case "getUpdateUrl":
+					setUpdateUrl(dsJson)
+				break;
+				case "add":
+					getGuiConfs();
+				break;
+				case "remove":
+					getGuiConfs();
+				break;
+				case "updateWfs":
+					if(dsJson['success'])
+						alert("Update performed.");
+					else
+						alert("An error occured, see log for details.");
+				break;
+				case "deleteWfs":
+					if(dsJson['success']){
+						clearList(document.forms[0].wfsList);
+						clearList(document.forms[0].guiList);
+						getWfsList();
+						getGuis();
+						alert("WFS deleted.");
+					}
+				break;
+				case "setOwsproxy":
+					displayOwsproxy(dsJson);
+				break;
+				case "removeOwsproxy":
+					displayOwsproxy(dsJson);
+				break;
+				case "getOwsproxy":
+					displayOwsproxy(dsJson);
+				break;
+				default:
+					alert("No action specified.....");
+				break;
+			}
+		}
+		else{
+			alert("An error occured!");
+		}
+		removeIndicator();
+	});
+}
+
+/**
+ * Sets the update url comming from db in the html form
+ *
+ */
+
+function setUpdateUrl(dsJson){
+	document.getElementById("updateUrl").value = dsJson['url'];
+}
+
+function clearUpdateUrl(){
+	document.getElementById("updateUrl").value = '';
+}
+
+/*
+ *
+ */
+function displayOwsproxy(dsJson){
+	if(dsJson.string == "" || dsJson.string == false){
+		document.wfsForm.owsproxy.checked = false;
+	}
+	else{
+		document.wfsForm.owsproxy.checked = true;
+	}
+}
+
+function appendServices(dsJson){
+	services['services'] = dsJson.services;
+	var o = services['services'];
+	if (o === false) {
+		return;
+	}
+	for(var i=0; i<o.id.length; i++){
+		appendOption(document.forms[0].wfsList, o.title[i], o.id[i], false);
+	}
+	appendOption(document.forms[0].wfsList, "all assigned WFS Configurations", "-1", false);
+}
+
+function appendWfsConfData(dsJson){
+	wfsConf['wfsConf'] = {};
+	wfsConf['wfsConf'] = dsJson.wfsConf;
+	var o = wfsConf['wfsConf'];
+	document.forms[0].wfsConfList.innerHTML = '';
+	if(typeof(o.id)=="undefined")
+		return;
+	for(var i=0; i<o.id.length; i++){
+		appendOption(document.forms[0].wfsConfList, o.abstract[i], o.id[i], false);
+	}
+}
+
+function appendGuis(dsJson){
+	guis['id'] = {};
+	guis['id'] = dsJson.id;
+	var o = guis['id'];
+	for(var i=0; i<o.length; i++){
+		appendOption(document.forms[0].guiList, o[i], o[i], false);
+	}
+}
+function appendGuiConfs(dsJson){
+	var list = document.forms[0].guiConfList;
+	list.innerHTML = '';
+	for(var i=0; i<dsJson.assignedConfs.length; i++){
+		var confAbstract = getConfAbstract(dsJson.assignedConfs[i]);
+		appendOption(list, confAbstract, dsJson.assignedConfs[i], false);
+	}
+}
+function appendOption(boxObject, optionText, optionValue, selected){
+	var newOption = new Option(optionText,optionValue,false,selected);
+	boxObject.options[boxObject.length] = newOption;
+}
+function clearList(boxObject){
+	boxObject.length = 0;
+}
+
+/*
+ * returns id and abstract from a wfs configuration
+ */
+function getConfAbstract(confId){
+	var c = wfsConf['wfsConf'];
+	for(var i=0; i < c['id'].length; i++){
+		if(c['id'][i] == confId){
+			return c['abstract'][i];
+		}
+	}
+}
+function getSelectedConfs(){
+	var list = document.forms[0].wfsConfList;
+	var confs = [];
+	for(var i=0; i<list.length; i++){
+		if(list.options[i].selected === true){
+			confs.push(list.options[i].value);
+		}
+	}
+	return confs;
+}
+function getSelectedAssignedConfs(){
+	var list = document.forms[0].guiConfList;
+	var confs = [];
+	for(var i=0; i<list.length; i++){
+		if(list.options[i].selected === true){
+			confs.push(list.options[i].value);
+		}
+	}
+	return confs;
+}
+function getSelectedGui(){
+	var ind = document.forms[0].guiList.selectedIndex;
+	return document.forms[0].guiList.options[ind].value;
+}
+
+function previewWfsUrl(){
+				 var previewUrl = document.forms[0].updateUrl.value;
+				 if(previewUrl !=''){
+				 							 capabilitiesWin = window.open(previewUrl);
+				}else{
+							alert("Please select a WFS first");			
+				}			
+}
+</script>
+</head>
+<body onload='getWfsList();getGuis();'>
+
+<h1>Edit WFS</h1>
+<form name='wfsForm'>
+	<div id='indicator'>ahh</div>
+
+	<fieldset class="leftContainer">
+	<legend>WFS List</legend>
+		<p>
+			<select size='10' name='wfsList' class='wfsList' onchange='getWfsConfData();getGuiConfs();clearUpdateUrl();'></select>
+		</p>
+	</fieldset>
+
+	<fieldset class="rightContainer">
+		<legend>Options</legend>
+		<p>
+			<input type='checkbox' name='owsproxy' id='owsproxy' onclick='setOwsproxy(this)' />
+			<label for="owsproxy">enable OWSProxy for the selected WFS</label>
+			<br><br>
+			<input type='button' value='Delete WFS' name='delete' id='deleteButton' onclick='deleteWfs()' />
+		</p>
+	</fieldset>
+
+	<fieldset class="rightContainer">
+		<legend>Update WFS</legend>
+		<p>
+				Please choose the Link to the WFS Capabilities URL:
+				<br />
+				<a href='javascript:getUpdateUrl("wfs_getcapabilities")'>wfs_getcapabilities</a> or <a href='javascript:getUpdateUrl("wfs_upload_url")'>wfs_upload_url</a>
+			</label>
+			<input id='updateUrl' type='text' value='' name='updateUrl' class='updateUrl' />
+			<br />
+			<input type='button' value='Update WFS' name='update' id='updateButton' onclick='updateWfs()' />
+						<input type='button' value='Preview WFS Capabilities' name='preview' id='previewButton' onclick='previewWfsUrl();' />
+		</p>
+	</fieldset>
+<hr />
+
+	<fieldset class="rightContainer">
+	<legend>GUI List</legend>
+		<p>
+			<select size='6' name='guiList' class='guiList' onchange='getGuiConfs()'></select>
+		</p>
+	</fieldset>
+
+<hr />
+
+	<fieldset class="leftContainer">
+	<legend>WFS Configuration List</legend>
+		<p>
+			<select size='6' name='wfsConfList' class='wfsConfList' onchange='' multiple="multiple"></select>
+		</p>
+	</fieldset>
+
+	<fieldset class="centerContainer">
+	<legend>Action</legend>
+		<p>
+			<input type='button' value='&gt;' name ='add' id ='add' class='add' onclick='addConfsToGui()'><br />
+			<input type='button' value='&lt;' name ='remove' id ='remove' class='remove' onclick='removeConfsFromGui()'>
+		</p>
+	</fieldset>
+
+	<fieldset class="rightContainer">
+	<legend>GUI Configuration List</legend>
+		<p>
+			<select size='6' name='guiConfList' class='guiConfList' onchange='' multiple="multiple"></select>
+		</p>
+	</fieldset>
+
+<hr />
+</form>
+
+</body>
+</html>

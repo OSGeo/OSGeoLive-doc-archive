@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Iniciando rápidamente pgRouting &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Bienvenido a OSGeo-Live 8.0" href="../index.html" />
+    <link rel="next" title="Guía de inicio rápido de PostGIS" href="postgis_quickstart.html" />
+    <link rel="prev" title="Guía de inicio rápido de OTB" href="otb_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.pgrouting.org"><img alt="Logo de pgRouting" class="align-right" src="../../_images/logo-pgRouting9.png" style="width: 130.0px; height: 126.0px;" /></a>
+<div class="section" id="iniciando-rapidamente-pgrouting">
+<h1>Iniciando rápidamente pgRouting<a class="headerlink" href="#iniciando-rapidamente-pgrouting" title="Permalink to this headline">¶</a></h1>
+<p>pgRouting es una extensión y añade enrutamiento y funcionalidad de análisis de redes a las bases de datos  <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a>/<a class="reference external" href="http://www.postgresql.org">PostgreSQL</a> .</p>
+<p>Este inicio rápido describe cómo abrir una base de datos con la línea de comandos y ejecutar una consulta básica de ruta más corta con la muestra de datos de prueba.</p>
+<div class="section" id="ejecutando-pgrouting">
+<h2>Ejecutando pgRouting<a class="headerlink" href="#ejecutando-pgrouting" title="Permalink to this headline">¶</a></h2>
+<p>Desde el menú  <em class="menuselection">Applications ‣ Accessories ‣ Terminal</em> y conectar a la base de datos``pgrouting``:</p>
+<div class="highlight-bash"><div class="highlight"><pre>psql -U user pgrouting
+</pre></div>
+</div>
+<ul class="simple">
+<li>Escribir <strong class="command">\d</strong> y esto enlistará todas las tablas disponibles:</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre>                <span class="n">List</span> <span class="k">of</span> <span class="n">relations</span>
+ <span class="k">Schema</span> <span class="o">|</span>        <span class="n">Name</span>         <span class="o">|</span>   <span class="k">Type</span>   <span class="o">|</span> <span class="k">Owner</span>
+<span class="c1">--------+---------------------+----------+-------</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">classes</span>             <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">geography_columns</span>   <span class="o">|</span> <span class="k">view</span>     <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">geometry_columns</span>    <span class="o">|</span> <span class="k">view</span>     <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">nodes</span>               <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">raster_columns</span>      <span class="o">|</span> <span class="k">view</span>     <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">raster_overviews</span>    <span class="o">|</span> <span class="k">view</span>     <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">relation_ways</span>       <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">relations</span>           <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">spatial_ref_sys</span>     <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">types</span>               <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">vertices_tmp</span>        <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">vertices_tmp_id_seq</span> <span class="o">|</span> <span class="n">sequence</span> <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">way_tag</span>             <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="k">user</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">ways</span>                <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="k">user</span>
+<span class="p">(</span><span class="mi">14</span> <span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Ejecutar la función de ruta más corta de Dijkstra:</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="n">seq</span><span class="p">,</span> <span class="n">id1</span> <span class="k">AS</span> <span class="n">node</span><span class="p">,</span> <span class="n">id2</span> <span class="k">AS</span> <span class="n">edge</span><span class="p">,</span> <span class="n">cost</span>
+        <span class="k">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span><span class="s1">&#39;</span>
+<span class="s1">                SELECT gid::int as id, source::int, target::int,</span>
+<span class="s1">                        length::float8 as cost FROM ways&#39;</span><span class="p">,</span>
+                <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">false</span>
+        <span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre> <span class="n">seq</span> <span class="o">|</span> <span class="n">node</span> <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>        <span class="n">cost</span>
+<span class="c1">-----+------+-------+---------------------</span>
+   <span class="mi">0</span> <span class="o">|</span>  <span class="mi">100</span> <span class="o">|</span>   <span class="mi">115</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">0605959823538948</span>
+   <span class="mi">1</span> <span class="o">|</span>   <span class="mi">99</span> <span class="o">|</span>  <span class="mi">2972</span> <span class="o">|</span>   <span class="mi">0</span><span class="p">.</span><span class="mi">197600739218643</span>
+   <span class="mi">2</span> <span class="o">|</span> <span class="mi">2151</span> <span class="o">|</span>  <span class="mi">3783</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">0139212050887606</span>
+ <span class="p">...</span> <span class="o">|</span>  <span class="p">...</span> <span class="o">|</span>   <span class="p">...</span> <span class="o">|</span>                 <span class="p">...</span>
+  <span class="mi">52</span> <span class="o">|</span>  <span class="mi">599</span> <span class="o">|</span>   <span class="mi">732</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">0390125147117973</span>
+  <span class="mi">53</span> <span class="o">|</span>  <span class="mi">600</span> <span class="o">|</span>    <span class="o">-</span><span class="mi">1</span> <span class="o">|</span>                   <span class="mi">0</span>
+<span class="p">(</span><span class="mi">54</span> <span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Para obtener la geometría, ligar los resultados con la geometría de los caminos:</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="n">seq</span><span class="p">,</span> <span class="n">id2</span> <span class="k">AS</span> <span class="n">edge</span><span class="p">,</span> <span class="n">rpad</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">the_geom</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="k">AS</span> <span class="ss">&quot;the_geom (truncated)&quot;</span>
+        <span class="k">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span><span class="s1">&#39;</span>
+<span class="s1">                SELECT gid::int as id, source::int, target::int,</span>
+<span class="s1">                        length::float8 as cost FROM ways&#39;</span><span class="p">,</span>
+                <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">false</span>
+        <span class="p">)</span> <span class="n">a</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">ways</span> <span class="n">b</span> <span class="k">ON</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">id2</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">gid</span><span class="p">)</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">seq</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre> <span class="n">seq</span> <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>                     <span class="n">the_geom</span> <span class="p">(</span><span class="n">truncated</span><span class="p">)</span>
+<span class="c1">-----+-------+--------------------------------------------------------------</span>
+   <span class="mi">0</span> <span class="o">|</span>   <span class="mi">115</span> <span class="o">|</span> <span class="mi">0102000020</span><span class="n">E610000002000000012D0208C4B0F2BFBD2DA237267A4A40E5</span>
+   <span class="mi">1</span> <span class="o">|</span>  <span class="mi">2972</span> <span class="o">|</span> <span class="mi">0102000020</span><span class="n">E610000002000000622B0DA1EFB3F2BF65236B685E7A4A4001</span>
+   <span class="mi">2</span> <span class="o">|</span>  <span class="mi">3783</span> <span class="o">|</span> <span class="mi">0102000020</span><span class="n">E610000002000000BD4571D8C7B4F2BFB2648EE55D7A4A4062</span>
+ <span class="p">...</span> <span class="o">|</span>   <span class="p">...</span> <span class="o">|</span>                                                          <span class="p">...</span>
+  <span class="mi">52</span> <span class="o">|</span>   <span class="mi">732</span> <span class="o">|</span> <span class="mi">0102000020</span><span class="n">E6100000020000006B48DC63E903F3BF84CCDFCECF7B4A40E9</span>
+<span class="p">(</span><span class="mi">53</span> <span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Con  <strong class="command">\q</strong> nos salimos de PostgreSQL.</li>
+</ul>
+</div>
+<div class="section" id="que-sigue">
+<h2>¿Qué sigue?<a class="headerlink" href="#que-sigue" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>Sitio web de pgRouting</strong> - visite la página Web del proyecto  <a class="reference external" href="http://www.pgrouting.org">http://www.pgrouting.org</a> para aprender más sobre pgRouting.</li>
+<li><strong>Documentación de pgRouting</strong> - La documentación más reciente la encuentra en <a class="reference external" href="http://docs.pgrouting.org">http://docs.pgrouting.org</a></li>
+<li><strong>Taller de pgRouting</strong>  - El taller <cite>&#8220;FOSS4G routing with pgRouting tools and OpenStreetMap road data&#8221;</cite>  está disponible en: <a class="reference external" href="http://workshop.pgrouting.org">http://workshop.pgrouting.org</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

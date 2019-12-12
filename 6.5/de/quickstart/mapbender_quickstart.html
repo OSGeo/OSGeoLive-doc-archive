@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Mapbender Quickstart &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Willkommen OSGeo-Live 6.5" href="../index.html" />
+    <link rel="next" title="Mapfish Quickstart" href="mapfish_quickstart.html" />
+    <link rel="prev" title="Getting Started with libLAS" href="liblas_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-Mapbender3.png"><img alt="project logo" class="align-right" src="../../_images/logo-Mapbender3.png" style="width: 99.0px; height: 99.0px;" /></a>
+<div class="section" id="mapbender-quickstart">
+<h1>Mapbender Quickstart<a class="headerlink" href="#mapbender-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>Mapbender ist ein web-basiertes Geoportal Framework zum Veröffentlichen, Anzeigen und Überwachen von Diensten, mit der Möglichkeit Dienste gesichert anzubieten.</p>
+<p>Administrationsoberflächen ermöglichen es Administratoren Karten- und Datendienste zu verwalten und zu kategorisieren. Über die Administration können einzelnen Benutzern und Gruppen Zugriffe gewährt werden.</p>
+<p>Sie brauchen lediglich einen Standard Browser für die folgenden Übungen.</p>
+<p>Diese Kurzeinführung beschreibt:</p>
+<blockquote>
+<div><ul class="simple">
+<li>das Erstellen einer Mapbender Anwendung</li>
+<li>das Veröffentlichen von Web Map Services (OGC WMS)</li>
+<li>das Konfigurieren von WMS in Mapbender</li>
+<li>das Erzeugen von individuellen Mapbender Anwendungen</li>
+<li>das Anlegen von Benutzern und Gruppen und das Zuweisen von Zugriffsberechtigungen auf Anwendungen</li>
+<li>das Laden von Web Feature Services (OGC WFS)</li>
+<li>das Konfigurieren von FeatureTypes und das Erzeugen einer Anwendung mit WFS Suche und Digitalisierung</li>
+</ul>
+</div></blockquote>
+<div class="section" id="mapbender-starten">
+<h2>Mapbender starten<a class="headerlink" href="#mapbender-starten" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Wählen Sie den Eintrag <em class="menuselection">Mapbender</em> im Startmenü</li>
+<li>Die Anwendung braucht einen Moment zum Starten</li>
+</ol>
+<p>Sollten Sie Probleme haben Mapbender zu starten, prüfen Sie bitte, ob Ihr Apache Webserver und Ihre PostgreSQL Datenbank laufen.</p>
+</div>
+<div class="section" id="die-willkommensseite">
+<h2>Die Willkommensseite<a class="headerlink" href="#die-willkommensseite" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Sie müssen sich anmelden, bevor Sie mit Mapbender arbeiten können.</li>
+<li>Die Willkommen-Seite verfügt über Links zu den wichtigsten Seiten zu Mapbender.</li>
+<li>Sie können sich mit dem Benutzer <em class="guilabel">root</em> und Passwort <em class="guilabel">root</em> anmelden (root ist der einzige Benutzer, der nach der Installation von Mapbender vorliegt. Bitte ändern Sie das Passwort des Benutzers root, wenn Sie Mapbender in einer produktiven Umgebung einsetzen wollen. Bitte löschen Sie den Benutzer <em class="guilabel">root</em> nicht, da dieser Benutzer Zugriff auf die Mapbender Anwendungsvorlagen hat und beim Aktualisieren von Mapbender verwendet wird).</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender_welcome1.png"><img alt="../../_images/mapbender_welcome1.png" src="../../_images/mapbender_welcome1.png" style="width: 640.0px; height: 453.6px;" /></a>
+</div></blockquote>
+<p>Nach erfolgreicher Anmeldung werden Sie zur <em class="guilabel">Anwendungsübersicht</em> weitergeleitet.</p>
+</div>
+<div class="section" id="anwendungsubersicht">
+<h2>Anwendungsübersicht<a class="headerlink" href="#anwendungsubersicht" title="Permalink to this headline">¶</a></h2>
+<p>Nach der Anmeldung werden Sie zur <em class="guilabel">Anwendungsübersicht</em> weitergeleitet, die eine Liste der Anwendungen, auf die Sie zugreifen können, enthält. Mapbender verfügt über Anwendungsvorlagen, die Sie verwenden können, um eigene Anwendungen aufzubauen.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender_application_overview1.png"><img alt="../../_images/mapbender_application_overview1.png" src="../../_images/mapbender_application_overview1.png" style="width: 640.0px; height: 431.2px;" /></a>
+</div></blockquote>
+<dl class="docutils">
+<dt>Es gibt verschiedene Arten von Vorlagen:</dt>
+<dd><ul class="first last simple">
+<li>Administrationsanwendungen</li>
+<li>Kartenanwendungen</li>
+<li>Dienste Container</li>
+</ul>
+</dd>
+</dl>
+<p>Die Anwendungen werden in <em class="guilabel">Kategorien</em> in Reitern angezeigt. Sie können Ihre eigenen Kategorien erstellen und Ihre Anwendungen darüber kategorisieren.</p>
+</div>
+<div class="section" id="administrationsanwendungen">
+<h2>Administrationsanwendungen<a class="headerlink" href="#administrationsanwendungen" title="Permalink to this headline">¶</a></h2>
+<p><em class="guilabel">Administrationsanwendungen</em> erlauben es Ihnen, z. B. Dienste zu laden, Benutzer anzulegen oder neue Anwendungen zu erstellen.</p>
+<p>Jede <em class="guilabel">Administrationsanwendung</em> verfügt über unterschiedliche Funktionalitäten. Sie können eigene <em class="guilabel">Administrationsanwendungen</em> erstellen und diese nur mit der Funktionalität ausstatten, die Sie den Anwendern zur Verfügung stellen möchten.</p>
+<dl class="docutils">
+<dt>Nach der Installation hat der Benutzer <em class="guilabel">root</em> Zugriff auf die folgenden Anwendungen:</dt>
+<dd><ul class="first last simple">
+<li>ADMINISTRATION, ADMINISTRATION_DE - WMS Administration, Anwendungsverwaltung, Benutzer- und Gruppenverwaltung (neu in Version 2.7)</li>
+<li>admin2_en, admin2_de - WMS Administration, Anwendungsverwaltung, Benutzer- und Gruppenverwaltung</li>
+<li>admin_en_services, admin_de_services - Fokus auf WFS und Metadatenverwaltung sowie owsproxy</li>
+<li>admin1 - Vorlage mit allen Administrationsmöglichkeiten (unsortiert)</li>
+<li>admin_wms_metadata, admin_wfs_metadata, admin_wmc_metadata - Metadatenverwaltung (neu in Version 2.7)</li>
+</ul>
+</dd>
+<dt>Das folgende Bild zeigt die Anwendung admin2_en. Auf der linken Seiten stehen diverse Links zur Verwaltung zur Verfügung.</dt>
+<dd><a class="first last reference internal image-reference" href="../../_images/mapbender_admin2_en1.png"><img alt="../../_images/mapbender_admin2_en1.png" src="../../_images/mapbender_admin2_en1.png" style="width: 640.0px; height: 431.2px;" /></a>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Über den <a class="reference internal" href="../../_images/mapbender_home1.png"><img alt="HOME" src="../../_images/mapbender_home1.png" style="width: 24.0px; height: 24.0px;" /></a> Button gelangen Sie zurück zur Anwendungsübersicht.</p>
+</div>
+</div>
+<div class="section" id="kartenanwendungen">
+<h2>Kartenanwendungen<a class="headerlink" href="#kartenanwendungen" title="Permalink to this headline">¶</a></h2>
+<p>Kartenanwendungen enthalten OGC Web Map Services (WMS), Buttons, einen Geodataexplorer, eine Legende, Ihr Logo und mehr.</p>
+<ol class="arabic simple">
+<li>Wählen Sie <em class="guilabel">per Klick</em> eine Kartenanwendung aus der <em class="guilabel">Anwendungsübersicht</em>.</li>
+<li>Lernen Sie Mapbender kennen und testen Sie die Funktionen, die die Kartenanwendung zur Verfügung stellt.<ul>
+<li>wählen Sie beispielsweise die Anwendungen gui und gui_digitize</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender_gui_digitize1.png"><img alt="../../_images/mapbender_gui_digitize1.png" src="../../_images/mapbender_gui_digitize1.png" style="width: 640.0px; height: 432.0px;" /></a>
+</div></blockquote>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Wenn Ihr Browser Reiter unterstützt, können Sie die Anwendung auch in einem neuen Reiter öffnen und so leicht zur Anwendungsübersicht zurückkehren.</p>
+</div>
+</div>
+<div class="section" id="wms-container-anwendungen">
+<h2>WMS Container Anwendungen<a class="headerlink" href="#wms-container-anwendungen" title="Permalink to this headline">¶</a></h2>
+<p>Sie können eine Container Anwendungen zum Speichern von WMS Diensten anlegen. WMS Container sind nicht für die Anzeige der Daten bestimmt. Mit Containern können Sie ein Diensterepository aufbauen.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender_container1.png"><img alt="../../_images/mapbender_container1.png" src="../../_images/mapbender_container1.png" style="width: 480.0px; height: 285.6px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="erzeugen-sie-eine-eigene-individuelle-anwendung">
+<h2>Erzeugen Sie eine eigene individuelle Anwendung<a class="headerlink" href="#erzeugen-sie-eine-eigene-individuelle-anwendung" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Öffnen Sie die Administrationsoberfläche <cite>admin2_de</cite></li>
+<li>Wählen Sie den Link <em class="menuselection">Anwendungsverwaltung ‣ Anwendung erzeugen</em></li>
+<li>Geben Sie einen Namen und eine Beschreibung für Ihre neue Anwendung an und bestätigen Sie die Eingabe über den Button <strong>new</strong>. Die Anwendung wird erzeugt.</li>
+<li>Wählen Sie den Link <em class="menuselection">Anwendungsverwaltung ‣ Anwendungselemente bearbeiten</em> und wählen Sie die neue Anwendung aus.</li>
+<li>Wählen Sie aus der Auswahlbox oben rechts eine Anwendung aus, die Sie als Vorlage für Ihre neue Anwendung verwenden möchten und bestätigen Sie die Eingabe mit <strong>add all elements</strong>. Diese Aktion wird alle Elemente der ausgewählten Vorlage in Ihre Anwendung kopieren.</li>
+<li>Sie können auch einzelne Elemente aus anderen Anwendungen in Ihre neue Anwendung übertragen. Wählen Sie dazu wiederum über die Auswahlbox eine Anwendung aus. Sie können nun ein einzelnes Element über den Radiobutton des Elementes auswählen. Über den Button <strong>save</strong> wird das Element in Ihre Anwendung kopiert.</li>
+<li>Ihre Anwendung liegt nun vor. Nun brauchen Sie einen Kartendienst, den Sie in Ihrer Anwendung anzeigen möchten. Die Einbindung von Kartendiensten wird im Abschnitt <strong>WMS Verwaltung</strong> behandelt.</li>
+</ol>
+</div>
+<div class="section" id="anwendung-umbenennen-oder-kopieren">
+<h2>Anwendung umbenennen oder kopieren<a class="headerlink" href="#anwendung-umbenennen-oder-kopieren" title="Permalink to this headline">¶</a></h2>
+<p>Sie können eine neue Anwendung auch als Kopie einer bestehenden Anwendung erzeugen. Wählen Sie den Link <em class="menuselection">Anwendungsverwaltung ‣ `Anwendung kopieren/umbenennen</em>, wählen Sie die Anwendung, die kopiert werden soll und geben Sie einen Namen für die neue Anwendung an.</p>
+</div>
+<div class="section" id="anwendung-loschen">
+<h2>Anwendung löschen<a class="headerlink" href="#anwendung-loschen" title="Permalink to this headline">¶</a></h2>
+<p>Sie können eine Anwendung über <em class="menuselection">Anwendungsverwaltung ‣ Anwendung löschen</em> löschen. Dabei wird lediglich die Anwendung gelöscht. Die Dienste, die in der Anwendung eingebunden waren, liegen weiterhin vor.
+Sie haben nicht das Recht Anwendungen zu löschen, die noch anderen Benutzern zugewiesen sind.</p>
+</div>
+<div class="section" id="anwendung-exportieren">
+<h2>Anwendung exportieren<a class="headerlink" href="#anwendung-exportieren" title="Permalink to this headline">¶</a></h2>
+<p>Sie können eine Anwendung als SQL exportieren. Dies erfolgt über <em class="menuselection">Anwendungsverwaltung ‣ Anwendung exportieren (SQL)</em>. Das SQL enthält die Definitionen der Anwendungselemente und kann in andere Mapbender Datenbanken überführt werden.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Der Export einer Anwendung enthält nicht die Diensteinformationen und auch nicht die Informationen über Benutzer- und Gruppenzugriff.</p>
+</div>
+</div>
+</div>
+<div class="section" id="wms-verwaltung">
+<h1>WMS Verwaltung<a class="headerlink" href="#wms-verwaltung" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="laden-eines-web-map-services">
+<h2>Laden eines Web Map Services<a class="headerlink" href="#laden-eines-web-map-services" title="Permalink to this headline">¶</a></h2>
+<p>Sie können einen OGC Web Map Services (WMS) in Ihre Anwendung laden.</p>
+<p>Ein WMS gibt beim getCapabilities-Aufruf ein XML zurück. Diese Information wird durch Mapbender eingelesen und Mapbender erhält darüber alle notwendigen Informationen über den Dienst.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Bevor Sie einen Dienst in Mapbender einbinden, sollten Sie das Capabilities-Dokument in Ihrem Browser prüfen.</p>
+</div>
+<ol class="arabic simple">
+<li>Gehen Sie hierzu in die Anwendung <em class="guilabel">admin2_de</em> und wählen Sie den Link <em class="menuselection">WMS Verwaltung ‣ Capabilities hochladen</em>. Wählen Sie die Anwendung, die den WMS enthalten soll, aus. Tragen Sie den Link zum WMS Capabilities-Dokument in das Textfeld ein und klicken Sie <strong>Load</strong>.</li>
+<li>Hier sind ein paar Beispiel WMS, die Sie in Ihre Anwendung laden können:</li>
+</ol>
+<p>Spanisches Kataster(Cadastre of spain)</p>
+<p><a class="reference external" href="http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS">http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS</a></p>
+<p>Geoportal Barcelona (Geoportalbcn - Link verweist auf ein Diensterepository)</p>
+<p><a class="reference external" href="http://www.bcn.cat/geoportal/es/geoserveis.html">http://www.bcn.cat/geoportal/es/geoserveis.html</a></p>
+<p>Demis World Map</p>
+<p><a class="reference external" href="http://www2.demis.nl/wms/wms.asp?wms=WorldMap&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS">http://www2.demis.nl/wms/wms.asp?wms=WorldMap&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS</a></p>
+<p>Vogelstudien Kanada (Bird Studies Canada)</p>
+<p><a class="reference external" href="http://www.bsc-eoc.org/cgi-bin/bsc_ows.asp?VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS">http://www.bsc-eoc.org/cgi-bin/bsc_ows.asp?VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS</a></p>
+<p>Demo WMS mit Deutschlanddaten (Germany demo)</p>
+<p><a class="reference external" href="http://wms.wheregroup.com/cgi-bin/mapserv?map=/data/umn/germany/germany.map&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS">http://wms.wheregroup.com/cgi-bin/mapserv?map=/data/umn/germany/germany.map&amp;VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS</a></p>
+<p>WhereGroup OSM WMS</p>
+<p><a class="reference external" href="http://osm.wheregroup.com/cgi-bin/osm_basic.xml?REQUEST=GetCapabilities&amp;SERVICE=WMS&amp;VERSION=1.1.1">http://osm.wheregroup.com/cgi-bin/osm_basic.xml?REQUEST=GetCapabilities&amp;SERVICE=WMS&amp;VERSION=1.1.1</a></p>
+<p>Sie können mehr als einen Kartendienst in eine Anwendung laden. Wählen Sie <em>WMS Anwendungseinstellungen</em>, um die Reihenfolge der Dienste zu ändern oder um einen Dienst aus der Anwendung zu entfernen.</p>
+<p>Der WMS mit dem Index 0 definiert das Koordinatenreferenzsystem, in dem die Anwendung gestartet wird. Außerdem legt dieser Dienst den Startbereich fest.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Legen Sie eine Container-Anwendung an und laden Sie jeden WMS nur einmal in diesen Container. Aus diesem Container können Sie die Dienste in andere Anwendungen übertragen. Wenn Sie einen WMS aktualisieren, werden die Änderungen in allen Anwendungen wirksam, die diesen WMS enthalten. Sie können einen Dienst leicht über <em>WMS in Anwendung einbinden</em> in andere Anwendungen übertragen.</p>
+</div>
+</div>
+<div class="section" id="wms-konfigurieren">
+<h2>WMS konfigurieren<a class="headerlink" href="#wms-konfigurieren" title="Permalink to this headline">¶</a></h2>
+<p>Nach dem Laden eines WMS kann dieser für Ihre Anwendung angepasst werden. Vielleicht sollen nicht alle Ebenen des Dienstes angezeigt werden, vielleicht wollen Sie die Reihenfolge oder die Titel der Ebenen ändern oder Sie wollen die Infoabfrage deaktivieren oder die Maßstabsstufen anpassen.</p>
+<a class="reference internal image-reference" href="../../_images/mapbender_wms_application_settings1.png"><img alt="../../_images/mapbender_wms_application_settings1.png" src="../../_images/mapbender_wms_application_settings1.png" style="width: 640.0px; height: 390.4px;" /></a>
+<ul class="simple">
+<li>on/off - de-/aktivieren einer Ebene innerhalb der gewählten Anwendung</li>
+<li>sel - soll die Ebene im Geodata Explorer auswählbar sein?</li>
+<li>sel_default - Ebene wird beim Start der Anwendung aktiviert</li>
+<li>info / info default - Ebene unterstützt die Infoabfrage (featureInfo-Request), info default aktiviert die Infoabfrage beim Start der Anwendung</li>
+<li>minscale / maxscale - Maßstabsbereich, in dem die Ebene angezeigt werden soll (Angabe des Nenners), 0 steht für keine Einschränkung der Anzeige</li>
+<li>style - sofern ein WMS Style unterstützt, kann bei der Kartenanfrage ein anderer Style als der default-Style angefordert werden</li>
+<li>prio - definiert die Zeichenreihenfolge der Ebenen</li>
+<li>setWFS - verbindet eine WMS Ebene mit einer WFS FeatureType-Konfiguration (später dazu mehr)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="konfigurieren-sie-ihre-anwendung">
+<h1>Konfigurieren Sie Ihre Anwendung<a class="headerlink" href="#konfigurieren-sie-ihre-anwendung" title="Permalink to this headline">¶</a></h1>
+<p>In diesem Abschnitt sollen Sie erfahren wie einfach es ist, eine Mapbender Anwendung anzupassen ohne den Code verändern zu müssen.</p>
+<p>Wählen Sie ein Element Ihrer Anwendung beispielsweise die Karte <strong>mapframe1</strong> über einen Klick auf den Radiobutton aus. Nach der Auswahl werden die Attribute des Elementes angezeigt. Hierbei handelt es sich um HTML Elemente. Aus dem Elementen Ihrer Anwendung baut Mapbender beim Öffnen der Anwendung eine Seite auf.</p>
+<blockquote>
+<div><ul class="simple">
+<li>id - eindeutiger Name für das Element</li>
+<li>on/off - de-/aktivieren eines Elements</li>
+<li>title - Name, der als Tooltip oder Reiter angezeigt wird</li>
+<li>HTML-TAG/CLOSE-TAG - Art des HTML Elements z. B. div, img</li>
+<li>top, left - Definition der Position des Elements (für ein Layout mit festen Positionen)</li>
+<li>width/height - Definition der Größe eines Elements (Breite/Höhe)</li>
+</ul>
+</div></blockquote>
+<p>Manche Elemente verfügen über Elementvariablen, die es ermöglichen variierende Parameter für ein Element zu setzen. Die Elementvariablen können Javascript oder PHP Variablen, Referenzen auf CSS-Dateien oder CSS-Textdefinitionen sein.</p>
+<p>Beispiele für Elementvariablen:</p>
+<ul class="simple">
+<li>Das Element <strong>copyright</strong> hat eine Elementvariable, um das eigene individuelle Copyright zu setzen</li>
+<li>Das Element <strong>overview</strong> (Übersichtskarte) hat eine Elementvariable, um zu definieren, welcher WMS in der Übersichtskarte verwendet werden soll</li>
+<li>Das Element <strong>treeGDE</strong> (Geodata Explorer) hat diverse Elementvariablen, um den Stil der Baumstruktur anzupassen</li>
+</ul>
+<div class="section" id="probieren-sie-es-aus">
+<h2>Probieren Sie es aus<a class="headerlink" href="#probieren-sie-es-aus" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Passen Sie die Größe des Kartenfensters an (Element mapframe1)</li>
+<li>Ändern Sie das Logo - wählen Sie das foss4g-Logo als Bild (Element logo)</li>
+<li>Setzen Sie die Hintergrundfarbe (background-color - Element body Elementvariable css_class_bg)</li>
+<li>Verschieben Sie Ihre Buttons (Verändern Sie left und top Ihres Elements, geben Sie eine andere Pixelposition an)</li>
+<li>Verändern Sie den copyright-Text</li>
+</ul>
+</div>
+</div>
+<div class="section" id="benutzer-und-gruppenverwaltung">
+<h1>Benutzer- und Gruppenverwaltung<a class="headerlink" href="#benutzer-und-gruppenverwaltung" title="Permalink to this headline">¶</a></h1>
+<p>Der Zugriff auf eine Anwendung setzt bei Mapbender immer eine Berechtigung voraus. Ein Anwender hat die Berechtigung auf eine oder mehrere Anwendungen zu zu greifen. Der Anwender kann durch diese Berechtigung die Dienste (WMS, WFS) in diesen Anwendungen nutzen.</p>
+<p>Es besteht kein Unterschied zwischen den Rollen <em class="guilabel">Gast</em>, <em class="guilabel">Operator</em> oder <em class="guilabel">Administrator</em>. Die <em class="guilabel">Rolle</em> eines Benutzer hängt von dem Funktionsumfang und den Diensten ab, die dem Benutzer durch seine Anwendungen zur Verfügung stehen.</p>
+<div class="section" id="benutzer-anlegen">
+<h2>Benutzer anlegen<a class="headerlink" href="#benutzer-anlegen" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Gehen Sie in die Anwendung <em class="guilabel">admin2_de</em> und wählen Sie unter <em class="menuselection">Benutzerverwaltung ‣ Benutzer anlegen und bearbeiten</em></li>
+<li>Wählen Sie einen Namen und eine Passwort für Ihren Benutzer.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapbender_create_user1.png"><img alt="../../_images/mapbender_create_user1.png" src="../../_images/mapbender_create_user1.png" style="width: 640.0px; height: 388.0px;" /></a>
+</div>
+<div class="section" id="anlegen-einer-gruppe">
+<h2>Anlegen einer Gruppe<a class="headerlink" href="#anlegen-einer-gruppe" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Erzeugen Sie über <em class="menuselection">Benutzerverwaltung ‣ Gruppe anlegen und editieren</em>. Vergeben Sie für Ihre Gruppe einen Namen und eine Beschreibung.</li>
+</ol>
+</div>
+<div class="section" id="anwendung-einem-r-benutzer-gruppe-zuweisen">
+<h2>Anwendung einem/r Benutzer/Gruppe zuweisen<a class="headerlink" href="#anwendung-einem-r-benutzer-gruppe-zuweisen" title="Permalink to this headline">¶</a></h2>
+<p>Sie können einen Benutzer einer Gruppe zuweisen, indem Sie unter <em class="menuselection">Benutzerverwaltung ‣ Benutzer in Gruppe eintragen</em> oder durch <em class="menuselection">Benutzerverwaltung ‣ Gruppe mit Benutzern bestücken</em> eine Zuweisung durchführen.</p>
+<ol class="arabic simple">
+<li>Weisen Sie über <em class="menuselection">Benutzerverwaltung ‣ einem Benutzer Zugriff auf Anwendungen erlauben</em> eine Anwendung einem Benutzer zu.</li>
+<li>Weisen Sie über <em class="menuselection">Benutzerverwaltung ‣ Gruppe Zugriff auf Anwendung erlauben</em> eine Anwendung einer Gruppe zu.</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Wenn Sie einem Benutzer Schreibrechte für eine Anwendung geben möchten, müssen Sie dem Benutzer die Anwendung über <em class="menuselection">Benutzerverwaltung ‣ Anwendung editieren Benutzer zuordnen</em> zuweisen.</p>
+</div>
+<ol class="arabic simple">
+<li>Melden Sie sich über den <a class="reference internal" href="../../_images/mapbender_logout1.png"><img alt="LOGOUT" src="../../_images/mapbender_logout1.png" style="width: 24.0px; height: 24.0px;" /></a> Button ab.</li>
+<li>Melden Sie sich mit dem neuen Benutzer an.</li>
+<li>Was passiert, wenn der Benutzer Zugriff auf nur eine bzw. auf mehrere Anwendung hat?</li>
+</ol>
+<blockquote>
+<div></div></blockquote>
+</div>
+</div>
+<div class="section" id="wfs-verwaltung">
+<h1>WFS Verwaltung<a class="headerlink" href="#wfs-verwaltung" title="Permalink to this headline">¶</a></h1>
+<p>Mapbender unterstützt OGC Web Feature Service WFS 1.0.0 und 1.1.0. Ein WFS (Datendienst) kann in Mapbender Anwendungen für verschiedene Funktionalitäten verwendet werden:</p>
+<ul class="simple">
+<li>alphanumerische Suche</li>
+<li>räumliche Suche</li>
+<li>Digitalisierung</li>
+<li>Informationausgabe</li>
+<li>Generierung von Tooltips</li>
+<li>Download von Daten</li>
+</ul>
+<p>Wenn Sie einen WFS in Mapbender nutzen möchten, müssen Sie den Dienst laden und anschließend eine FeatureType-Konfiguration vornehmen.</p>
+<p>Bevor Sie die FeatureType-Konfiguration nutzen können, müssen Sie diese einer Anwendung zuordnen.</p>
+<p>Wenn Sie eine Oberfläche mit WFS Digitalisierung aufbauen möchten, benötigen Sie einen WFS, der Transaktionen unterstützt (WFS-T). Sie können beispielsweise die Programme <a class="reference internal" href="../overview/geoserver_overview.html"><em>GeoServer</em></a> oder deegree nutzen, um einen WFS-T aufzusetzen.</p>
+<div class="section" id="laden-eines-web-feature-services">
+<h2>Laden eines Web Feature Services<a class="headerlink" href="#laden-eines-web-feature-services" title="Permalink to this headline">¶</a></h2>
+<p>Die Module zur WFS Konfiguration sind in die Administrationsoberfläche <strong>admin_de_services</strong> eingebunden.</p>
+<ol class="arabic simple">
+<li>Öffnen Sie die Anwendung <em>admin_de_services</em> und wählen Sie <em>WFS Verwaltung &#8211;&gt; WFS laden</em>. Wählen Sie eine Anwendung aus der Anwendungsliste. Tragen Sie den Link der WFS getCapabilities URL in das Textfeld und klicken Sie  <strong>Load</strong>.</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Sie sollten zuerst das WFS Capabilities-Dokument in Ihrem Browser prüfen, bevor Sie es in Mapbender laden.</p>
+</div>
+<p>Beispiel WFS</p>
+<p><a class="reference external" href="http://wms.wheregroup.com/geoserver/wfs?REQUEST=getCapabilities&amp;VERSION=1.0.0&amp;SERVICE=WFS">http://wms.wheregroup.com/geoserver/wfs?REQUEST=getCapabilities&amp;VERSION=1.0.0&amp;SERVICE=WFS</a></p>
+<a class="reference internal image-reference" href="../../_images/mapbender_loadWFS1.png"><img alt="../../_images/mapbender_loadWFS1.png" src="../../_images/mapbender_loadWFS1.png" style="width: 704.0px; height: 519.2px;" /></a>
+</div>
+<div class="section" id="erzeugen-einer-wfs-featuretype-konfiguration">
+<h2>Erzeugen einer WFS FeatureType-Konfiguration<a class="headerlink" href="#erzeugen-einer-wfs-featuretype-konfiguration" title="Permalink to this headline">¶</a></h2>
+<p>Der nächste Schritt ist das Erzeugen einer WFS FeatureType-Konfiguration. Erst nach der Konfiguration und anschließenden Freischaltung für eine Anwendung kann die Konfiguration in einer Anwendung verwendet werden.</p>
+<a class="reference internal image-reference" href="../../_images/mapbender_configure_WFS_featureType1.png"><img alt="../../_images/mapbender_configure_WFS_featureType1.png" src="../../_images/mapbender_configure_WFS_featureType1.png" style="width: 718.4px; height: 507.2px;" /></a>
+<p><strong>Konfiguration</strong></p>
+<ol class="arabic simple">
+<li>Zuerst müssen Sie einen WFS aus der Liste <em>Select WFS</em> auswählen. Anschließend werden alle FeatureTypes des gewählten WFS aufgelistet.</li>
+<li>Wählen Sie den FeatureType, den Sie konfigurieren möchten.</li>
+<li>Nach der Auswahl werden die Attributfelder und zusätzliche Felder angezeigt.</li>
+<li>Definieren Sie eine Beschreibung (Abstract) und eine Überschrift für Ihre Suche.</li>
+<li>Definieren Sie den Text auf dem Suchbutton (f. e. ok oder Suche starten)</li>
+<li>In dem Textfeld style und result-style können Sie über css-Text den Anzeige-Stil beeinflussen</li>
+<li>Definieren Sie einen Puffer, der beim Zoom auf das Ergebnis verwendet werden soll.</li>
+<li>Wählen Sie die Geometriespalte.</li>
+<li>search / pos - definieren Sie die Spalten, die in Ihrer Suchmaske angezeigt werden sollen. Über pos (Position) können Sie die Reihenfolge der Suchspalten festlegen.</li>
+<li>minimum_input (<strong>Suche</strong>) - Definition der Zeichen, die bei der Suche in diesem Feld mindestens eingegeben werden müssen.</li>
+<li>label - definieren Sie eine Beschriftung für Ihre Suchfelder.</li>
+<li>show - definieren Sie die Spalten, die als Ergebnis ausgegeben werden sollen. Geben Sie auch hier die Position an.</li>
+<li>show_detail - definieren Sie die Spalten, die als Detailinformationen beim Klick auf einen einzelnen Treffer  ausgegeben werden sollen.</li>
+<li>mandatory (<strong>Digitalisierung</strong>) - die Spalte muss bei der Digitalisierung gefüllt werden und darf nicht leer sein.</li>
+<li>edit (<strong>Digitalisierung</strong>) - definieren Sie welche Spalte bei der Digialisierung zum Füllen angeboten werden soll.</li>
+<li>html - Definition einer Auswahlbox, einer Datumsauswahl, einer Checkbox, eines Textfeldes, eines Datei-Uploads statt eines Textfeldes</li>
+<li>auth - Sie können eine Authorisierung definieren, um benutzerabhängigen Zugriff auf Objekte einzurichten.</li>
+<li>operator - (<strong>Suche</strong>) - Definition des Vergleichsoperators der Suche.</li>
+<li>helptext - Sie können für jedes Feld einen Hilfetext definieren.</li>
+<li>category - es können Kategorien definiert werden. Das Feld wird der angegebenen Kategorie zugewiesen und in der Anwendung in einem entsprechenden Reiter mit dem Namen der Kategorie angezeigt.</li>
+<li><strong>save</strong> - Button zum Speichern der Einträge</li>
+<li>Ihre Konfiguration wird beim Speichern mit einer Konfigurations-Id versehen.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapbender_configure_WFS_featureType_attribute_table1.png"><img alt="../../_images/mapbender_configure_WFS_featureType_attribute_table1.png" src="../../_images/mapbender_configure_WFS_featureType_attribute_table1.png" style="width: 1075.2px; height: 248.0px;" /></a>
+</div>
+<div class="section" id="featuretype-konfiguration-einer-anwendung-zuordnen">
+<h2>FeatureType-Konfiguration einer Anwendung zuordnen<a class="headerlink" href="#featuretype-konfiguration-einer-anwendung-zuordnen" title="Permalink to this headline">¶</a></h2>
+<p>Ihre neue Konfiguration muss nun einer oder mehreren Anwendungen zugewiesen werden. Dies erfolgt über <em>WFS Verwaltung -&gt; WFS Konfiguration GUI zuweisen</em>.</p>
+<ol class="arabic simple">
+<li>Wählen Sie Ihren  WFS</li>
+<li>Wählen Sie die Anwendung</li>
+<li>Übertragen Sie die Konfiguration zur <em>GUI configuration list</em> auf der rechten Seite.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapbender_set_featureType_access1.png"><img alt="../../_images/mapbender_set_featureType_access1.png" src="../../_images/mapbender_set_featureType_access1.png" style="width: 924.8px; height: 568.8px;" /></a>
+</div>
+<div class="section" id="aufsetzen-einer-wfs-suche">
+<h2>Aufsetzen einer WFS Suche<a class="headerlink" href="#aufsetzen-einer-wfs-suche" title="Permalink to this headline">¶</a></h2>
+<p>Um eine FeatureType-Konfiguration in einer Anwendung in einer Suche verwenden zu können, müssen Sie die Konfigurations-Id im Suchmodul eintragen. Gehen Sie in die Administration <em>admin_de_services -&gt; Anwendungselemente bearbeiten</em>, wählen Sie Ihre Anwendung und wählen Sie anschließend das Element <em>gazetteerWFS</em>. Diesen Element hat eine Elementvariable <em>wfsConfIdString</em>. Die Variable enthält eine Komma separierte Liste der WFS Konfiguratons-Ids. In der Reihenfolge der Liste werden die angegebenen Suchen in der Anwendung angeboten.</p>
+<a class="reference internal image-reference" href="../../_images/mapbender_wfsConfIdString1.png"><img alt="../../_images/mapbender_wfsConfIdString1.png" src="../../_images/mapbender_wfsConfIdString1.png" style="width: 516.8px; height: 216.0px;" /></a>
+<p>Schauen sie sich an, wie eine Suche in einer Anwendung aussehen kann. Das Beispiel zeigt links ein Suchfenster, über das Sie nach Mapbender Anwendern suchen können. Sie können eine räumliche Suche durch die Definition eines Suchbereichs durchführen oder Sie führen eine alphanumerische Suche durch. Die Suchergebnisse werden in einer Ergebnistabelle ausgegeben. Beim Klick auf ein Ergebnis zoomt Mapbender auf das Objekt und hebt dieses hervor. Außerdem werden Detailinformationen angezeigt.</p>
+<a class="reference internal image-reference" href="../../_images/mapbender_WFS_search1.png"><img alt="../../_images/mapbender_WFS_search1.png" src="../../_images/mapbender_WFS_search1.png" style="width: 1033.0px; height: 697.0px;" /></a>
+</div>
+<div class="section" id="aufsetzen-einer-wfs-digitalisierfunktionalitat">
+<h2>Aufsetzen einer WFS Digitalisierfunktionalität<a class="headerlink" href="#aufsetzen-einer-wfs-digitalisierfunktionalitat" title="Permalink to this headline">¶</a></h2>
+<p>Die einfachste Art eine Anwendung mit Digitalierfunktionalität zu erhalten ist das Erzeugen einer Kopie der Anwendung gui_digitize.
+Nun müssen Sie lediglich eine WMS Ebene mit Ihrer FeatureType-Konfiguration verbinden. Dies erfolgt über <em>WMS Anwendungseinstellungen</em> über den Button <em>set WFS</em> in the Liste der Ebenen. Wählen Sie den Button und anschließend Ihre Konfigurations Id.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Stellen Sie sicher, dass die WMS Ebene, mit der Sie die Konfigurations-Id verbinden, WMS FeatureInfo unterstützt. Hierüber entscheidet Mapbender, ob ein WFS getFeature-Aufruf geschickt werden soll oder nicht.</p>
+</div>
+<p>Nun können Sie über die räumliche Auswahl bestehende Objekte selektieren, die in einer Trefferliste angezeigt werden. Die Objekte können verändert werden (Verschieben der Stützpunkte, Hinzufügen von Stützpunkten, Ändern der Attributeinträge, Teilen von Linien, Linien verlängern, Zusammenführen von Polygonen...). Sie können natürlich auch neue Objekte anlegen.</p>
+<a class="reference internal image-reference" href="../../_images/mapbender_gui_digitize1.png"><img alt="../../_images/mapbender_gui_digitize1.png" src="../../_images/mapbender_gui_digitize1.png" style="width: 640.0px; height: 432.0px;" /></a>
+</div>
+<div class="section" id="weitere-aufgaben">
+<h2>Weitere Aufgaben<a class="headerlink" href="#weitere-aufgaben" title="Permalink to this headline">¶</a></h2>
+<p>Hier sind ein paar weitere Aufgaben, die Sie lösen können.</p>
+<ol class="arabic simple">
+<li>Versuchen Sie ein paar weitere WMS in Ihre Anwendung zu laden. Konfigurieren Sie anschließend die WMS über <em class="menuselection">WMS Verwaltung ‣ WMS Anwendungseinstellungen</em>.</li>
+<li>Versuchen Sie eine individuelle Anwendung aufzubauen - ändern Sie die Hintergrundfarbe, verschieben Sie Buttons, ändern Sie die Kartengröße (Element mapframe1). Diese Änderungen erfolgen über <em class="menuselection">Anwendungsverwaltung ‣ Anwendungselemente bearbeiten</em>.</li>
+</ol>
+</div>
+<div class="section" id="der-nachste-schritt">
+<h2>Der nächste Schritt<a class="headerlink" href="#der-nachste-schritt" title="Permalink to this headline">¶</a></h2>
+<p>Dies war lediglich der erste Einstieg in Mapbender. Es gibt sehr viel mehr Funktionalität zu entdecken.</p>
+<p>Mapbender Projektseite</p>
+<blockquote>
+<div><a class="reference external" href="http://www.mapbender.org/">http://www.mapbender.org/</a></div></blockquote>
+<p>Dokumentationen finden Sie unter</p>
+<blockquote>
+<div><a class="reference external" href="http://www.mapbender.org/Tutorials">http://www.mapbender.org/Tutorials</a></div></blockquote>
+<p>Schauen Sie sich das Mapbender Tutorial an</p>
+<blockquote>
+<div><a class="reference external" href="http://www.mapbender.org/Mapbender_Tutorial_de">Mapbender Tutorial (deutsch)</a></div></blockquote>
+<p>Lernen Sie Mapbender kennen</p>
+<blockquote>
+<div><a class="reference external" href="http://projects.mapbender.osgeo.org">http://projects.mapbender.osgeo.org</a></div></blockquote>
+<p>Bringen Sie sich in das Projekt ein</p>
+<blockquote>
+<div><a class="reference external" href="http://www.mapbender.org/Community">http://www.mapbender.org/Community</a></div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

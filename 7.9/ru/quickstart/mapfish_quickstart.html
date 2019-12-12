@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы с MapFish &mdash; OSGeo-Live 7.9
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.9
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.9
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.mapfish.org"><img alt="project logo" class="align-right" src="../../_images/logo-mapfish23.png" style="width: 180.0px; height: 96.0px;" /></a>
+<div class="section" id="mapfish">
+<h1>Начало работы с MapFish<a class="headerlink" href="#mapfish" title="Permalink to this headline">¶</a></h1>
+<p>MapFish — это полнофункциональный и гибкий фреймворк для создания
+картографических Web-приложений, отличающийся высокой
+производительностью и качеством разработки.</p>
+<p>Данное &#8220;введение&#8221; содержит описание следующих операций:</p>
+<ul class="simple">
+<li>запуск простейшего приложения на базе MapFish, установленного на Live DVD;</li>
+<li>установка MapFish;</li>
+<li>создание приложения на базе MapFish.</li>
+</ul>
+<div class="section" id="id1">
+<h2>Запуск простейшего приложения<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Для запуска простейшего приложения щёлкните мышью по ссылке MapFish,
+расположенной на рабочем столе. После чего откроется вкладка FireFox, в которой
+будет загружено приложение, развёрнутое при помощи веб-сервера Apache
+на базе модуля mod_wsgi (<a class="reference external" href="http://localhost/mapfishsample/osgeolive/wsgi/">http://localhost/mapfishsample/osgeolive/wsgi/</a>).</p>
+<p>Данное демонстрационное приложение содержит следующие возможности:
+поддержка запросов, редактирование, поиск и печать.
+Чтобы просмотреть REST протокол MapFish в действии, откройте Firebug
+и изучите запросы/ответы, которыми обменивается браузер и Web-сервис
+на базе MapFish.</p>
+</div>
+<div class="section" id="id2">
+<h2>Установка MapFish<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Для установки MapFish скачайте скрипт установки и выполните следующие команды в
+терминале (командной строке):</p>
+<div class="highlight-python"><pre>$ wget http://www.mapfish.org/downloads/go-mapfish-framework-2.2.py
+
+$ python go-mapfish-framework-2.2.py --no-site-packages venv</pre>
+</div>
+<p>Последняя команда создаёт виртуальное окружение Python в каталоге <tt class="docutils literal"><span class="pre">venv</span></tt>,
+скачивает MapFish с зависимостями и устанавливает их в виртуальное
+окружение.</p>
+<p>Для активации виртуального окружения и проверки корректности установки
+MapFish выполните следующие команды:</p>
+<div class="highlight-python"><pre>$ source venv/bin/activate
+
+(venv) $ paster create --list-templates</pre>
+</div>
+<p>В результате выполнения последней команды в консоли должен появиться следующий список:</p>
+<div class="highlight-python"><pre>Available templates:
+basic_package:   A basic setuptools-enabled package
+mapfish:         MapFish application template
+mapfish_client:  MapFish client plugin template
+paste_deploy:    A web application deployed through paste.deploy
+pylons:          Pylons application template
+pylons_minimal:  Pylons minimal application template</pre>
+</div>
+<p>Хорошо, фреймворк успешно установлен. Теперь можно переходить
+к следующему разделу, в котором будет рассмотрено создание нового
+приложения.</p>
+</div>
+<div class="section" id="id3">
+<h2>Создание приложения на базе MapFish<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>После активации виртуального окружения Python можно сгенерировать своё
+первое MapFish-приложение. Назовём его, например, MyMapFishApp:</p>
+<div class="highlight-python"><pre>(venv) $ paster create -t mapfish MyMapFishApp sqlalchemy=true</pre>
+</div>
+<p>Затем следует установить JavaScript библиотеки в приложение:</p>
+<div class="highlight-python"><pre>(venv) $ paster create --no-interactive -t mapfish_client MyMapFishApp</pre>
+</div>
+<p>Выше приведённые команды создадут MapFish-приложение в каталоге
+<tt class="docutils literal"><span class="pre">MyMapFishApp</span></tt>.</p>
+<p>После этого приложение может быть запущено при помощи следующих
+команд:</p>
+<div class="highlight-python"><pre>(venv) $ cd MyMapFishApp
+(venv) $ paster serve development.ini</pre>
+</div>
+<p>В браузере перейдите по адресу <a class="reference external" href="http://localhost:5000">http://localhost:5000</a> - откроется
+минимальное приложение, включающее карту с двумя <a class="reference external" href="http://www.openstreetmap.org/">OSM слоями</a>, панель инструментов, расположенную
+над картой и дерево слоёв.</p>
+<p>Это далеко не всё, на что способен MapFish. В частности, с его помощью
+можно создавать RESTFul Web-сервисы, позволяющие создавать, получать,
+обновлять и удалять объекты. Посетите страницу
+<a class="reference external" href="http://mapfish.org/doc/2.2/quickstart.html">http://mapfish.org/doc/2.2/quickstart.html</a>, чтобы узнать, как
+создавать такие Web-сервисы, и <a class="reference external" href="http://mapfish.org">http://mapfish.org</a>, чтобы узнать больше о
+MapFish.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

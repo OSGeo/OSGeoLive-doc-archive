@@ -1,0 +1,185 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PostGIS &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Zawartość OSGeo-Live 6.5" href="overview.html" />
+    <link rel="next" title="pycsw" href="pycsw_overview.html" />
+    <link rel="prev" title="pgRouting" href="pgrouting_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://postgis.refractions.net/"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS18.png" style="width: 89.7px; height: 131.7px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org/incubator/process/principles.html"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project18.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="postgis">
+<h1>PostGIS<a class="headerlink" href="#postgis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="przestrzenna-baza-danych">
+<h2>Przestrzenna baza danych<a class="headerlink" href="#przestrzenna-baza-danych" title="Permalink to this headline">¶</a></h2>
+<p>PostGIS spatially enables the popular PostgreSQL object-relational database, allowing it to be used as a back-end database for geographic information systems (GIS) and web-mapping applications in the same manner as Oracle Spatial enables the Oracle database.</p>
+<p>PostGIS jest stabilny, szybki, zgodny ze standardami, zawiera tysiące funkcji przestrzennych i jest obecnie najszerzej używanym przestrzennym systemem zarządznia bazą danych typu Open Source. PostGIS używany jest przez różne organizacje na całym świecie, łącznie z agencjami rządowymi oraz organizacjami przechowującymi terabajty danych obsługujących miliony żądań sieciowych dziennie.</p>
+<p>Zarządzanie bazą danych jest dostępne poprzez pgAdmin, phpPgAdmin oraz inne programy.
+Import i eksport danych odbywa się przy pomocy narzędzi wiersza poleceń (shp2pgsql, pgsql2shp, ogr2ogr, dxf2postgis)
+lub klientów desktopowych, czy w przeglądarce internetowej,  służących również do przeglądania danych przestrzennych i atrybutowych PostGIS.</p>
+<a class="reference internal image-reference" href="../../_images/pgadmin9.png"><img alt="pgAdmin database manager" class="align-right" src="../../_images/pgadmin9.png" style="width: 443.3px; height: 317.35px;" /></a>
+<div class="section" id="glowne-funkcje">
+<h3>Główne funkcje<a class="headerlink" href="#glowne-funkcje" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Tysiące funkcji przestrzennych<ul>
+<li>Buforowanie,  łączenie, nakładanie, pomiar odległości i inne</li>
+</ul>
+</li>
+<li>ACID transactional integrity</li>
+<li>Indeks przestrzenny R-Tree</li>
+<li>Obsługa wielu użytkowników</li>
+<li>Row-level locking</li>
+<li>Replikacja</li>
+<li>Partitioning</li>
+<li>Role-based security</li>
+<li>Table-spaces, schemas</li>
+</ul>
+</div>
+<div class="section" id="zaimplementowane-standardy">
+<h3>Zaimplementowane standardy<a class="headerlink" href="#zaimplementowane-standardy" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Zgodność ze standardami OGC (SFSQL)</li>
+</ul>
+</div>
+<div class="section" id="szczegoly">
+<h3>Szczegóły<a class="headerlink" href="#szczegoly" title="Permalink to this headline">¶</a></h3>
+<p><strong>Strona internetowa:</strong> <a class="reference external" href="http://postgis.refractions.net/">http://postgis.refractions.net/</a></p>
+<p><strong>Licencja:</strong> Powszechna Licencja Publiczna GNU (GPL) wersja 2</p>
+<p><strong>Wersja programu:</strong> 2.0</p>
+<p><strong>Systemy operacyjne:</strong> Windows, Linux, Mac</p>
+<p><strong>Interfejsy API:</strong> SQL</p>
+<p><strong>Wsparcie:</strong> <a class="reference external" href="http://www.osgeo.org/search_profile">http://www.osgeo.org/search_profile</a></p>
+</div>
+<div class="section" id="wprowadzenie">
+<h3>Wprowadzenie<a class="headerlink" href="#wprowadzenie" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/postgis_quickstart.html"><em>Przejdź do wprowadzenia</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

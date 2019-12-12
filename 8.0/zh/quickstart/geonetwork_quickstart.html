@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GeoNetwork 快速入门文档 &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 8.0" href="../index.html" />
+    <link rel="next" title="Geonode Quickstart" href="geonode_quickstart.html" />
+    <link rel="prev" title="GeoMoose 快速入门文档" href="geomoose_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="figure align-right">
+<img alt="project logo" src="../../_images/logo-GeoNetwork25.png" />
+</div>
+<div class="section" id="geonetwork">
+<h1>GeoNetwork 快速入门文档<a class="headerlink" href="#geonetwork" title="Permalink to this headline">¶</a></h1>
+<p>　　 GeoNetwork 是一款标准兼容的分布式地理信息数据管理系统。它通过元数据描述为用户提供对多种不同数据源的数据获取服务。</p>
+<p>　　除了 GeoNetwork 的启动运行外，本文档叙述了：</p>
+<ul class="simple">
+<li>在 GeoNetwork 中搜索地理数据的多种方式</li>
+<li>根据搜索结果下载和显示数据的操作</li>
+<li>用户权限管理系统</li>
+</ul>
+<p>　　更详细的文档位于 <a class="reference external" href="http://localhost:8880/geonetwork/docs/eng/users/index.html">http://localhost:8880/geonetwork/docs/eng/users/index.html</a> 。你也可以在 GeoNetwork 示例页面点击“Help”链接前往。</p>
+<div class="section" id="gn">
+<h2>启动 GeoNetwork<a class="headerlink" href="#gn" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>点击“Start GeoNetwork”按钮</li>
+<li>GeoNetwork 将稍候启动</li>
+<li>前往 GeoNetwork 示例主页 <a class="reference external" href="http://localhost:8880/geonetwork">http://localhost:8880/geonetwork</a> 。该页面截图如下：</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-firstviews12.png" src="../../_images/geonetwork-firstviews12.png" />
+</div>
+<ul class="simple">
+<li>作为 GeoNetwork 的入门示例，这里读取一份简单的元数据记录。请将用户名/密码“admin” 输入右上角表格，点击“Login”进入 GeoNetwork 。</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-login12.png" src="../../_images/geonetwork-login12.png" />
+</div>
+<ul class="simple">
+<li>在页面顶部将出现 <em>Administration</em> 链接。点击进入。</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-administration-banner12.png" src="../../_images/geonetwork-administration-banner12.png" />
+</div>
+<ul class="simple">
+<li>在 <em>Administration</em> 页面中，底部的“Add sample metadata”可以用于载入 Live 预装的元数据。</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-addsampledatabutton12.png" src="../../_images/geonetwork-addsampledatabutton12.png" />
+</div>
+<ul class="simple">
+<li>完成读取后退回主页。此时页面应当显示如下：</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-returntohomepage12.png" src="../../_images/geonetwork-returntohomepage12.png" />
+</div>
+</div>
+<div class="section" id="id1">
+<h2>检索<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>　　 GeoNetwork 提供多种方式进行元数据编录的检索。本文档包含常用的默认文字检索、高级检索和分类检索。无论采用哪一种方式，检索的结果取决于元数据资源和检索用户的权限。（详见后述）</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">对于 GeoNetwork 而言，数据源可以包括各类数据集、地图服务、表格、文档等任何能够进行元数据记录和链接的信息。</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>默认检索<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>　　默认检索功能提供了对元数据集中所有文本内容的匹配，包括元数据中的文本记录和地理位置的文本表述。</p>
+<p>　　<strong>默认自由检索（Free Search）</strong> 在 <em>What?</em> 一览键入检索词即可执行。任何文本均可。双引号（半角模式输入）用于强制组合一组检索词。</p>
+<p>　　检索词和逻辑运算符（and, or, not）默认均不对大小写敏感。</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-what12.png" src="../../_images/geonetwork-what12.png" />
+<p class="caption"><em>默认自由检索栏</em></p>
+</div>
+<p>　　<strong>地理位置检索（Geographic Search）</strong> 对于该功能，有两种选择方式可以执行。</p>
+<p>　　通过预定义的 <strong>region</strong> 区域菜单选择；</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-where112.png" src="../../_images/geonetwork-where112.png" />
+<p class="caption"><em>区域检索框</em></p>
+</div>
+<p>　　你也可以通过绘制区域检索框限制检索的空间范围。点击地图显示右上角的按钮即可拖拽检索范围。</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-where212.png" src="../../_images/geonetwork-where212.png" />
+<p class="caption"><em>交互式目标区选择</em></p>
+</div>
+<p>　　<strong>执行检索</strong> 文本和区域检索可以组合以缩小结果的范围，点击 <em>Search</em> 按钮即可执行和显示检索。</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-search_button12.png" src="../../_images/geonetwork-search_button12.png" />
+<p class="caption"><em>检索按钮</em></p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>分类检索<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>　　在 GeoNetwork 系统中，通过 <strong>Category</strong> 类别选择可以有效地缩小检索范围。演示中配置了预定义的一套分类，包括 <strong>Applications</strong>，<strong>Audio/Video</strong>，<strong>Case study and best practises</strong>，<strong>Conference proceedings</strong>，<strong>Datasets</strong>，<strong>Directories</strong>，<strong>Interactive resources</strong>，<strong>Maps and graphics</strong>，<strong>Other information resources</strong> 和 <strong>Photo</strong> 。</p>
+<p>　　若需要在地图数据中检索，选择 <strong>Maps and Graphics</strong> 即可。系统将显示可用的地图数据源。点击 <strong>Metadata</strong> 可显示更详细的元数据信息。</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-Categories12.png" src="../../_images/geonetwork-Categories12.png" />
+<p class="caption"><em>分类检索</em></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>高级检索<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>　　高级检索（Advanced Search）提供了更细致的条件组合，对数据源表现何地、何时、何种对象等各个方面进行限制。</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search112.png" src="../../_images/geonetwork-advanced_search112.png" />
+<p class="caption"><em>高级检索</em></p>
+</div>
+<p>　　选择主页中的“Advanced Search”可以进入高级检索。</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_button12.png" src="../../_images/geonetwork-advanced_search_button12.png" />
+<p class="caption"><em>高级检索选项页面</em></p>
+</div>
+<p>　　在 <strong>WHAT?</strong> 部分可以通过文本匹配筛选数据。与前述简单匹配不同，高级检索支持对标题、摘要等各个项目进行专门的限定，并可以选择是否模糊匹配。</p>
+<ul class="simple">
+<li>需要对 <strong>Title（标题）、Abstract（摘要）、Free Text（任意字段）、Keyword（关键字）</strong> 等进行检索时，只需在相应的栏目中键入检索词或检索式。对于无需使用的字段，保留空白即可。</li>
+<li>检索的 <strong>模糊匹配程度（accuracy）</strong> 可以自由设置。1.0 表示精确匹配，其它小于 1 的数字表示模糊匹配，0.2 模糊程度最高的方案。</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_what12.png" src="../../_images/geonetwork-advanced_search_what12.png" />
+<p class="caption"><em>“What”文本检索条件区</em></p>
+</div>
+<p>　　在 <strong>WHERE?</strong> 部分，你可以控制检索的空间范围。同简单空间检索一样，此处可以选择预定义的范围或绘制选择框，但也可以输入精确坐标。</p>
+<ul class="simple">
+<li>框选设定 <strong>自定义目标区</strong> 时，用地图窗口左下角的按钮拖拽选择区域即可。</li>
+<li>若需输入 <strong>精确坐标</strong> ，在 lat/long 窗口输入相应的经纬度即可。坐标的小数位数可以根据需要任意选取。</li>
+<li>若需套用预定义区域的坐标，从 <strong>predefined region</strong> 下拉菜单中选择。</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_where12.png" src="../../_images/geonetwork-advanced_search_where12.png" />
+<p class="caption"><em>“Where”区域检索条件区</em></p>
+</div>
+<p>　　空间检索中，<strong>Spatial search type</strong> 可以选择 <strong>is（等同）</strong>、<strong>overlaps**（叠盖）、**encloses（包围）</strong>、<strong>is fully outside of（位于外部）</strong>。这一设置决定了选择区域作用在备选数据集上的方法。例如：</p>
+<ul class="simple">
+<li>若设置为 <strong>Spatial search type</strong> <em>is</em> “Country”，则只有“Country（国家）”这一类别的对象可以选中。而包含在“Country”一集某些数据范围之内的其它数据集，例如“City（城市）”，并不会被选中。</li>
+<li>若设置为 <strong>Spatial search type</strong> <em>overlaps</em> “Country”，则所有完全叠压选择区域的数据集都可以选中，这包括所选“Country”对象的领国、该国所在大陆以及全球数据集。</li>
+<li>若设置为 <strong>Spatial search type</strong> <em>encloses</em> “Country”，则在所选“Country”对象范围之内的一切数据集，例如其内部的城市，均可以选择。</li>
+<li>同样的，若设置为 <strong>Spatial search type</strong> <em>is</em> <em>fully outside of</em>，则任何与所选“Country”对象有部分或全部交叠的数据集均不能选择。</li>
+</ul>
+<p>　　在 <strong>WHEN?</strong> 部分可以设置检索的时间范围，将数据集的生成或发布时间限制在一定的时间段内。</p>
+<ul class="simple">
+<li>点击 <strong>From – To</strong> 输入框右侧的日历图标可以选定起至时间。使用 <strong>&gt;</strong> 和 <strong>&gt;&gt;</strong> 按钮可以选择年份和月份，点击下方的数字选择具体日期。完整的日期会以 YY-MM-DD（年-月-日）的格式填入。</li>
+<li>右侧的 <strong>x</strong> 可以清除所在一行的选项。清除所有时间范围后，页面会自动选择 <strong>Any（任何时间）</strong> ，此时执行检索不会有数据集时间限制。</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_when12.png" src="../../_images/geonetwork-advanced_search_when12.png" />
+<p class="caption"><em>时间范围选择面板</em></p>
+</div>
+<p>　　同时，你也可以通过限制数据源、数据编录和数据格式缩小检索范围。</p>
+<ul class="simple">
+<li>若要将检索限制在特定的数据编录中，在 <strong>Catalogue</strong> 菜单选择所需的对象使之高亮。<strong>Any</strong> 选项可以清除选择。</li>
+<li>对于选择特定分类的数据，在 <strong>Category</strong> 选择所需的部分即可。<strong>Any</strong> 选项可以清除选择。</li>
+<li>可以依据 <strong>Digital 数字地图</strong> 或 <strong>Hard Copy 扫描纸质图</strong> 限定搜索。在需要的选项前打钩。</li>
+</ul>
+<p>　　在 <em>Hits Per Page</em> 一栏可以限定每页显示的条目数量。默认为 10 个。</p>
+<ul class="simple">
+<li>点击 <strong>Search 检索</strong> 按钮执行检索。</li>
+</ul>
+<div class="figure">
+<img alt="../../_images/geonetwork-advanced_search_morerest12.png" src="../../_images/geonetwork-advanced_search_morerest12.png" />
+<p class="caption"><em>高级检索其它设置项</em></p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>检索结果页面<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>　　检索结果页面显示了满足条件的所有条目的元数据。每个条目都显示了标题、摘要和关键词等。取决于各个条目上的有效权限，每个条目最多可以显示四栏信息。</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-search_output212.png" src="../../_images/geonetwork-search_output212.png" />
+<p class="caption"><em>检索结果页面</em></p>
+</div>
+<ol class="arabic simple">
+<li><strong>Metadata 元数据</strong>：元数据栏显示了包括引用信息、数据所有者、时空范围与数据类型等在内的各种信息，并包含了其支持网站的链接。</li>
+<li><strong>Download 下载</strong>：在有相应权限的情况下，显示该按钮表示可以下载数据。点击该按钮或根据元数据访问相应的链接即可。</li>
+</ol>
+<div class="figure">
+<img alt="../../_images/geonetwork-search_output112.png" src="../../_images/geonetwork-search_output112.png" />
+<p class="caption"><em>检索结果的一个条目</em></p>
+</div>
+<div class="figure">
+<img alt="../../_images/geonetwork-download12.png" src="../../_images/geonetwork-download12.png" />
+<p class="caption"><em>一个数据源可用的服务</em></p>
+</div>
+<ol class="arabic simple">
+<li><strong>Interactive Map 交互式数据浏览图</strong>：这项服务在可用时会对数据覆盖进行交互式的地图显示。其内容默认显示在上部的地图窗口。点击 <strong>Show Map</strong> 显示视图。</li>
+</ol>
+<div class="figure">
+<img alt="../../_images/geonetwork-interactive_map12.png" src="../../_images/geonetwork-interactive_map12.png" />
+<p class="caption"><em>交互式数据浏览图</em></p>
+</div>
+<ol class="arabic simple">
+<li><strong>Graphic Overviews 预览图</strong>：数据集所带有的预览图有助于了解数据集的内容，尤其是在交互式浏览试图不可用的条件下。点击预览图可以放大。</li>
+</ol>
+<div class="figure">
+<img alt="../../_images/geonetwork-thumbnail12.png" src="../../_images/geonetwork-thumbnail12.png" />
+<p class="caption"><em>放大显示的预览图</em></p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>用户组、角色和权限<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>　　 GeoNetwork 使用 <em>Privileges 权限</em>、<em>Roles 角色</em> 和 <em>User groups 用户组</em> 来管理对数据的访问。</p>
+<p>　　对于开放的数据集，任何用户均可以通过 GeoNetwork 访问。对于私有数据集或默写高级功能，需要具有相应权限的用户。该用户登录信息一般由 GeoNetwork 系统管理员提供。</p>
+<p>　　在主页输入用户名（username）和密码（password）并点击“login”即可以相应身份登录系统。</p>
+<div class="figure">
+<img alt="../../_images/geonetwork-login12.png" src="../../_images/geonetwork-login12.png" />
+<p class="caption"><em>Login 登录</em></p>
+</div>
+<p><strong>权限</strong> 数据集的权限设置决定了特定的用户所能读取的元数据和是否能够下载或交互式地浏览其内容。</p>
+<p><strong>角色</strong> 具有 <em>Editor 编辑</em> 角色的用户可以创建、导入和编辑修改元数据，也可以上传和调整数据服务的配置。</p>
+<p><strong>用户组</strong> 每个用户都属于一个特定的用户组，该设定决定了用户能够进行数据浏览的范围。</p>
+</div>
+<div class="section" id="id7">
+<h2>更多信息<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>　　点击页面顶部的 &#8216;Help&#8217; 或访问 <a class="reference external" href="http://localhost:8880/geonetwork/docs/eng/users/index.html">http://localhost:8880/geonetwork/docs/eng/users/index.html</a> 可以阅读进一步的说明。</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

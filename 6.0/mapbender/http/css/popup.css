@@ -1,0 +1,107 @@
+@CHARSET "UTF-8";
+/*fixes*/
+div.mbPopup iframe {width:100%;height:100%;border:none;}
+div.mbPopup div.scrollDiv {position:relative;top:50px;left:0px;right:0px;bottom:0px;width:100%;height:85%;}
+
+div.scrollDiv {
+ overflow: auto;
+}
+
+/* exploder V6 only */
+* html div.scrollDiv {
+ overflow-y: auto;
+}
+
+/* exploder V7 only */
+*+html div.scrollDiv {
+ overflow-y: auto;
+}
+
+div.mbPopup {
+    display: none;
+    overflow:hidden;
+    position: absolute;
+    
+	/*styles that can change*/
+    background:#EEEEEE url(../img/info_on.gif) 8px 8px no-repeat;
+    border: 1px solid #000;
+    -moz-border-radius:10px;
+    -webkit-border-radius: 10px;
+        
+    /*border to client area (top right bottom left)*/
+    padding: 30px 10px 10px 10px;
+}
+
+div.mbPopup .Resize {
+	position: absolute; 
+	right: 5px; 
+	bottom: 5px;
+	width:16px;
+	height:16px;
+	background:url(../img/resize.gif);
+}
+
+div.mbPopup .Title{
+	position:absolute;
+	left:35px;
+	right:25px;
+	top:9px;
+	margin:0pt;
+	padding:0pt;
+}
+  
+div.mbPopup .Title h1{
+	background-color:#505050;
+	color:#EEEEEE;
+	font-size:12px;
+	margin:0pt;
+	width:100%;
+	text-align:center;
+}
+
+div.mbPopup .Close {
+  position: absolute;
+  cursor: pointer;
+  right: 8px;
+  top: 10px;
+}
+
+div.mbPopup .Content{
+}
+
+.balloonTL{
+	position:absolute;
+	background-image:url("../img/balloon_ul.png");
+	width:100px;
+	height:80px;
+}
+*html .balloonTL{
+	background-image:url("../img/balloon_ul.gif");
+}
+.balloonTR{
+	position:absolute;
+	background-image:url("../img/balloon_ur.png");
+	width:100px;
+	height:80px;
+}
+*html .balloonTR{
+	background-image:url("../img/balloon_ur.gif");
+}
+.balloonBR{
+	position:absolute;
+	background-image:url("../img/balloon_lr.png");
+	width:100px;
+	height:80px;
+}
+*html .balloonBR{
+	background-image:url("../img/balloon_lr.gif");
+}
+.balloonBL{
+	position:absolute;
+	background-image:url("../img/balloon_ll.png");
+	width:100px;
+	height:80px;
+}
+*html .balloonBL{
+	background-image:url("../img/balloon_ll.gif");
+}

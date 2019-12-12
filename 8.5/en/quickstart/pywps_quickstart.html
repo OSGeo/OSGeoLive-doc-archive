@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PyWPS Quickstart &mdash; OSGeo-Live 8.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 8.5 Contents" href="../overview/overview.html" />
+    <link rel="next" title="QGIS Server Quickstart" href="qgis_mapserver_quickstart.html" />
+    <link rel="prev" title="pycsw Quickstart" href="pycsw_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://pywps.wald.intevation.org"><img alt="project logo" class="align-right" src="../../_images/logo-pywps7.png" style="width: 102.4px; height: 51.2px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Labs" class="align-right" src="en/quickstart/../../images/logos/OSGeo_labs.png" /></a>
+<div class="section" id="pywps-quickstart">
+<h1>PyWPS Quickstart<a class="headerlink" href="#pywps-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>PyWPS is an OGC WPS server implementation written in <a class="reference external" href="http://python.org">Python</a>.</p>
+<p>PyWPS allows for the expose geospatial operations (refered as processes).</p>
+<p>PyWPS is <a class="reference external" href="http://www.opensource.org/">Open Source</a>, released under an GNU/GPL license, and runs on all major platforms (Windows, Linux, Mac OS X).</p>
+<p>PyWPS is installed by default on the OSGeo-Live DVD.  This QuickStart will describe how to:</p>
+<ul class="simple">
+<li>perform a fresh installation of PyWPS</li>
+<li>test PyWPS installation</li>
+<li>basic configuration of PyWPS instance</li>
+<li>create and deploy process in PyWPS</li>
+<li>perform GetCapabilities, DescribeProcess and Execute operations</li>
+</ul>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="system-requirements">
+<h3>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this headline">¶</a></h3>
+<p>PyWPS is written in <a class="reference external" href="http://python.org">Python</a>, and works with (tested) version 2.6 and 2.7</p>
+<p>PyWPS requires the following supporting libraries:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://lxml.de/">lxml</a> (version &gt;= 2.2.3) for XML support</li>
+</ul>
+</div>
+<div class="section" id="installing-from-source">
+<h3>Installing from Source<a class="headerlink" href="#installing-from-source" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://pywps.wald.intevation.org/download">Download pywps</a> the latest version or clone from <a class="reference external" href="https://github.com/geopython/PyWPS">GitHub</a>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone https://github.com/geopython/PyWPS.git pywps
+</pre></div>
+</div>
+<p>Ensure that CGI is enabled for your install directory.</p>
+</div>
+</div>
+<div class="section" id="tester-application">
+<h2>Tester Application<a class="headerlink" href="#tester-application" title="Permalink to this headline">¶</a></h2>
+<p>To run the PyWPS tester, use the PyWPS launcher from the Web Services group, or open Firefox and navigate to <tt class="docutils literal"><span class="pre">http://localhost/cgi-bin/pywps</span></tt>:</p>
+<p>From Application menu, start Terminal application and test GetCapabilities
+operation:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ wget -O - &quot;http://localhost/cgi-bin/pywps?service=wps&amp;request=GetCapabilities&quot;
+
+&lt;wps:Capabilities service=&quot;WPS&quot;
+...
+&lt;/wps:Capabilities&gt;
+</pre></div>
+</div>
+<p>You should see full WPS Capabilites response document. You can also see similar
+response using <a class="reference external" href="http://localhost/cgi-bin/pywps?service=wps&amp;request=GetCapabilities">browser</a></p>
+<p>Select some process from the list, for example <cite>ultimatequestionprocess</cite>, and
+display it&#8217;s description by calling <cite>DescribeProcess</cite> operation.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ wget -O - &quot;http://localhost/cgi-bin/pywps?service=wps&amp;version=1.0.0&amp;request=DescribeProcess&amp;identifier=ultimatequestionprocess&quot;
+
+&lt;wps:ProcessDescriptions
+...
+&lt;/wps:ProcessDescriptions&gt;
+</pre></div>
+</div>
+<p>Again, you should see WPS DescribeProcess response document. You can also see similar
+response using <a class="reference external" href="http://localhost/cgi-bin/pywps?service=wps&amp;version=1.0.0&amp;request=DescribeProcess&amp;identifier=ultimatequestionprocess">browser</a></p>
+<p>Now let us Execute <cite>ultimatequestionprocess</cite>, on the server. The process is,
+according to it&#8217;s description, able to <em>Answer to Life, the Universe and Everything</em>. No inputs are requied.:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ wget -O - &quot;http://localhost/cgi-bin/pywps?service=wps&amp;version=1.0.0&amp;request=Execute&amp;identifier=ultimatequestionprocess&quot;
+
+# wait about 10s
+
+&lt;wps:ExecuteResponse
+...
+     &lt;wps:Data&gt;
+            &lt;wps:LiteralData dataType=&quot;integer&quot;&gt;42&lt;/wps:LiteralData&gt;
+    &lt;/wps:Data&gt;
+...
+&lt;/wps:ExecuteResponse&gt;
+</pre></div>
+</div>
+<p>As you might know, it takes a while, before the process is calculated. In our
+case, it&#8217;s about 10s. At the and, we can see the answer to life, universe and
+everyting.</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>You can configure PyWPS instance in the <cite>/usr/local/share/pywps/pywps.cfg</cite>
+configuration file. The values are self explaining, but you can always refer to
+<a class="reference external" href="http://pywps.wald.intevation.org/documentation/pywps-3.2/configuration/index.html#configuration-of-pywps-instance">standard documentation</a></p>
+<div class="section" id="processes">
+<h3>Processes<a class="headerlink" href="#processes" title="Permalink to this headline">¶</a></h3>
+<p>You can find some example processes in the <cite>/usr/local/share/pywps/processes</cite>
+directory. Every process is usually stored in separate file and is represented
+by Python class, with constructor and <cite>execute()</cite> method:</p>
+<div class="highlight-python"><div class="highlight"><pre># Example of PyWPS process (shorten)
+from pywps.Process import WPSProcess
+class Process(WPSProcess):
+ def __init__(self):
+     WPSProcess.__init__(self,
+                         identifier=&quot;ultimatequestionprocess&quot;, #the same as the file name
+                         ....
+
+ def execute(self):
+     import time
+     self.status.set(&quot;Preparing....&quot;, 0)
+     for i in xrange(1, 11):
+         time.sleep(2)
+         self.status.set(&quot;Thinking.....&quot;, i*10)
+     #The final answer
+     self.Answer.setValue(&quot;42&quot;)
+</pre></div>
+</div>
+<p>Directory of your process deployment is configured in <cite>pywps</cite> file within the
+<cite>cgi-bin</cite> directory, in the <cite>PYWPS_PROCESSES</cite> environment variable.</p>
+<p>For more information on pywps, please consult the <a class="reference external" href="http://pywps.wald.intevation.org/documentation">documentation</a> on the pywps website.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,225 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html;CHARSET=iso-8859-1">
+
+<link rel="stylesheet" type="text/css" media="screen,projection" href="../css/admin.screen.css" title="screen" />
+
+<script type='text/javascript'>
+
+
+/* 
+ * services['action']: instructs the servercomponent
+ * services['services']: infos about the services (wfs)
+ * services['services']['id']: a list of ids
+ * services['service']['title']: a corresponding list of titles
+ *
+ */
+var services = {};
+/*
+ * wfsConf['action']: instructs the servercomponent
+ * wfsConf['wfs']: the ID of the selected wfs 
+ * wfsConf['wfsConf']: infos about the wfs configurations
+ * wfsConf['wfsConf']['id']: a list of ids
+ * wfsConf['wfsConf']['abstract']: a corresponding list of descriptions
+ */
+var wfsConf = {};
+
+/*
+ * guis['action']: instructs the servercomponent
+ * guis['id']: a list of gui-IDs where the current user is owner
+ * guis['selectedGui']: the selected Gui
+ */
+var guis = {};
+
+/*
+ * handleAssignment['action']: instructs the servercomponent
+ * handleAssignment['selectedConf']: a list of wfs-conf Ids 
+ * handleAssignment['selectedGui']: the selected Gui
+ */
+var handleAssignment = {}
+
+/*
+ * deleteWfsConf['action']: instructs the servercomponent
+ * deleteWfsConf['confs']: a list of wfs-conf Ids to delete 
+ */
+ var deleteWfsConf = {};
+
+
+function getWfsList(){
+	services['action'] = 'getServices';
+	getData(services);
+}
+function getWfsConfData(){
+	wfsConf['action'] = 'getWfsConfData';
+	wfsConf['wfs'] = getSelectedWfs();
+	getData(wfsConf);
+}
+function getSelectedWfs(){
+	var w = document.wfsForm.wfsList;
+	var ind  = w.selectedIndex;
+	if(ind == -1){
+		return false;	
+	}
+//	if(ind == w.options.length-1){
+//		return "gui_confs";
+//	}
+	return w.options[ind].value;	
+}
+function getGuiConfs(){
+	guis['action'] = 'getAssignedGuis';
+	guis['selectedWfs'] = wfsConf['wfs'];
+	guis['selectedConf'] =getSelectedConfs();
+	getData(guis);
+}
+
+function deleteWfsConfs(){
+	deleteWfsConf['action'] = 'deleteSelectedConfs';
+	deleteWfsConf['confs'] = getSelectedConfs();
+	if(deleteWfsConf['confs']){
+		if(confirm("Do you really want to delete the Wfs conf with ID:"+deleteWfsConf['confs']+"?")){
+			getData(deleteWfsConf);
+		}
+		return true;
+	}
+	return false;
+}
+
+function setIndicator(){
+	var str = "<img src='../img/indicator_wheel.gif'>";
+	document.getElementById("indicator").innerHTML = str;	
+}
+function removeIndicator(){
+	document.getElementById("indicator").innerHTML = "";
+}
+/*
+ * Ajax-function to get data from the server
+ */
+function getData(obj){
+	setIndicator();
+	var obj2json = parent.$.toJSON(obj);
+	parent.mb_ajax_post("../php/mod_deleteWfsConf_server.php",{"obj":obj2json}, function (json,status){
+		if(status == 'success'){
+			var dsJson = json;
+			switch(obj['action']){
+				case "getServices":
+					services['services'] = dsJson.services;
+					var wfsServices = services['services'];
+					if (dsJson.services.id.length > 0) {
+						appendServices(dsJson);
+					} else {
+						alert("You have no WFS registrated till now.....");
+					}
+				break;
+				case "getWfsConfData":
+					appendWfsConfData(dsJson);					
+				break;
+				case "deleteSelectedConfs":
+					if(dsJson['success']){
+						alert("WFS conf deleted.");
+						getWfsConfData();
+					}
+				break;
+				case "getAssignedGuis":
+					checkGuiConfs(dsJson);
+				break;
+				case "remove":
+					getGuiConfs();
+				break;
+				default:
+					alert("No action specified.....");
+				break;
+			}
+		}		
+		else{
+			alert("An error occured!");
+		}
+		removeIndicator();
+	});
+}
+
+function removeChildNodes(node) {
+	while (node.childNodes.length > 0) {
+		var childNode = node.firstChild;
+		node.removeChild(childNode);
+	}
+}
+
+function appendServices(dsJson){
+	services['services'] = dsJson.services;
+	var o = services['services'];
+	removeChildNodes(document.getElementById('wfsList'));
+	for(var i=0; i<o.id.length; i++){
+		appendOption(document.forms[0].wfsList, o.title[i], o.id[i], false);
+	}
+	//appendOption(document.forms[0].wfsList, "WFS Configurations", "-1", false);
+}
+
+function appendWfsConfData(dsJson){
+	wfsConf['wfsConf'] = {};
+	wfsConf['wfsConf'] = dsJson.wfsConf;
+	var o = wfsConf['wfsConf']; 
+	document.forms[0].wfsConfList.innerHTML = '';
+	if(o.id){
+		for(var i=0; i<o.id.length; i++){
+			appendOption(document.forms[0].wfsConfList, o.abstract[i], o.id[i], false);
+		}
+	}
+}
+
+function checkGuiConfs(dsJson){
+	var checkedGuis = '';
+	for(var i=0; i<dsJson.assignedGuis.length; i++){
+		if(i>0){
+			checkedGuis += ", ";
+		}
+		checkedGuis += dsJson.assignedGuis[i];
+		//checkedGuis.push(dsJson.assignedGuis[i]);
+	}
+	if(dsJson.assignedGuis.length>0){
+		alert("Achtung: WFS-Konfiguration wird noch in den Guis "+checkedGuis+" verwendet.");
+	}
+}
+
+function getSelectedConfs(){
+	var list = document.forms[0].wfsConfList;
+	var confs = [];
+	for(var i=0; i<list.length; i++){
+		if(list.options[i].selected === true){
+			confs.push(list.options[i].value);
+		}
+	}
+	return confs;
+}
+
+function appendOption(boxObject, optionText, optionValue, selected){
+	var newOption = new Option(optionText,optionValue,false,selected);
+	boxObject.options[boxObject.length] = newOption;
+}
+
+</script>
+</head>
+<body onload='getWfsList();'>
+
+<h1>Delete WFS Configuration </h1>
+<form name='wfsForm'>
+	<div id='indicator'>ahh</div>
+
+	<fieldset class="leftContainer">
+	<legend>WFS List</legend>
+		<p>
+			<select size='4' name='wfsList' id='wfsList' class='wfsList' onchange='getWfsConfData();'></select>
+		</p>
+	</fieldset>
+	
+	<fieldset class="leftContainer">
+	<legend>WFS Configuration List</legend>
+		<p>
+			<select size='4' name='wfsConfList' class='wfsConfList' onchange='' multiple="multiple"></select>
+		</p>
+		<input type='button' value='Delete WFS Conf' name='delete' id='deleteButton' onclick='getGuiConfs();deleteWfsConfs();' />
+	</fieldset>
+	<hr />
+</form>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>52°North SOS &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 6.5 コンテンツ" href="overview.html" />
+    <link rel="next" title="52°North WPS" href="52nWPS_overview.html" />
+    <link rel="prev" title="OSGeo-Live 6.5 コンテンツ" href="overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://52north.org/sos" id="nsos-overview-ja"><img alt="project logo" class="align-right" src="../../_images/logo_52North_16014.png" style="width: 200.0px; height: 68.0px;" /></a>
+<div class="section" id="north-sos">
+<h1>52°North SOS<a class="headerlink" href="#north-sos" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>ウェブサービス<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>52°North <a class="reference external" href="../standards/sos_overview.html">Sensor Observation Service (SOS)</a>
+は、現地もしくは遠隔センサがリアルタイムに蓄積したデータの取得をサポートします。
+センサとしては人工衛星に搭載したカメラから、川の水量メーターまで様々な物を取り扱うことができます。</p>
+<a class="reference internal image-reference" href="../../_images/52n_sos_test_client_v1_0_0_GetCapabilities13.png"><img alt="screenshot of sos test client" class="align-right" src="../../_images/52n_sos_test_client_v1_0_0_GetCapabilities13.png" style="width: 798.0px; height: 776.0px;" /></a>
+<div class="section" id="id2">
+<h3>機能<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>52°North SOS (version 3.1.1) では SOS 仕様のうち最新のスキーマバージョン (1.0.0) より、
+コア、トランザクション、一部の拡張プロファイルを実装しています。</p>
+<p><strong>コア SOS 操作</strong>:</p>
+<ul class="simple">
+<li>GetCapabilities.によるサービス詳細のリクエスト</li>
+<li>GetObservation による Observations &amp; Measurements (O&amp;M) で記述したセンサ測定値のリクエスト</li>
+<li>DescribeSensor によるSensor Model Language (SensorML) で記述したセンサメタ情報のリクエスト</li>
+</ul>
+<p><strong>トランザクションでの SOS 操作</strong>:</p>
+<ul class="simple">
+<li>RegisterSensor による新しいセンサの登録</li>
+<li>InsertObservation による登録したセンサへの新しい観測対象の追加</li>
+</ul>
+<p><strong>その他の SOS 操作</strong>:</p>
+<ul class="simple">
+<li>GetResult によるセンサデータの定期的なリクエスト</li>
+<li>GetObservationById による個々の観測値の再取得</li>
+<li>GetFeatureOfInterest によるGMLで記述したセンサの観測対象情報のリクエスト</li>
+<li>GetFeatureOfInterestTime により、センサのデータが今の時点で利用可能かの調査</li>
+</ul>
+<p><strong>クライアント</strong>:</p>
+<ul class="simple">
+<li>ブラウザベースのクライアントでサポートする全ての操作の、テストXMLクエリを提供しています</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>準拠している標準規格<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://www.ogcnetwork.net/SOS">OGC Sensor Observation Service (SOS)</a></li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3>詳細<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>ウェブサイト:</strong> <a class="reference external" href="http://52north.org/communities/sensorweb/sos">http://52north.org/communities/sensorweb/sos</a></li>
+<li><strong>ライセンス:</strong> GNU GPL v2.0</li>
+<li><strong>バージョン:</strong> SOS 3.2.0</li>
+<li><strong>対応プラットフォーム:</strong> Windows, Linux, Mac</li>
+<li><strong>API:</strong> Java</li>
+<li><strong>商用サポート:</strong> <a class="reference external" href="http://52north.org/">http://52north.org/</a></li>
+<li><strong>コミュニティサポート:</strong> <a class="reference external" href="http://sensorweb.forum.52north.org/">http://sensorweb.forum.52north.org/</a></li>
+<li><strong>コミュニティウェブサイト:</strong> <a class="reference external" href="http://52north.org/communities/sensorweb/">http://52north.org/communities/sensorweb/</a></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h3>クイックスタート<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../quickstart/52nSOS_quickstart.html">Quickstart documentation</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GPSPrune 快速入门文档 &mdash; OSGeo-Live 8.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '8.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 8.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 8.0" href="../index.html" />
+    <link rel="next" title="GRASS GIS 快速入门文档" href="grass_quickstart.html" />
+    <link rel="prev" title="GPSDrive 快速入门文档" href="gpsdrive_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://gpsprune.activityworkshop.net/"><img alt="project logo" class="align-right" src="../../_images/logo-prune14.png" /></a>
+<div class="section" id="gpsprune">
+<h1>GPSPrune 快速入门文档<a class="headerlink" href="#gpsprune" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>启动<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>　　在 Navigation and Maps 菜单选择 GPSPrune 即可启动。</p>
+<p>　　数据可以从航迹文件、GPS 设备（由 <em>GPSbabel</em> 连接）、Wikipedia 地理位置服务或手工输入获得。在 <em class="menuselection">File ‣ Open file</em> 选择 gpx 、kml 或 kmz 文件是最简单的方式。</p>
+<p>　　航迹会以蓝色线条显示。若有导航点信息，也会显示位置和名称。</p>
+<p>　　在存在英特网连接的情况下，点击界面顶部的地球图标或选择 <em class="menuselection">View ‣ Show Map</em> 可显示网络地图数据。</p>
+<p>　　使用鼠标可以移动和缩放显示。点击航迹上的点可以查看该点的平面位置、高程和时间（如果包含此数据）信息。</p>
+<p>　　界面底部为高程图。在有高程数据的情况下，此处会显示高程的变化曲线。点击此图上的位置会选中平面图上对应的点。</p>
+<div class="section" id="id2">
+<h3>显示设定<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>　　使用 <em class="menuselection">Settings ‣ Set map background</em> 可以改变地图设置。可以选择一个内建的地图服务，添加其它服务的 URL ，或者 maps.cloudmade.com 的样式号。</p>
+<p>　　在 <em class="menuselection">Settings ‣ Set colours</em> 可以改变显示的颜色设置。</p>
+<p>　　各项设置默认只在本次运行有效。通过 <em class="menuselection">Settings ‣ Save settings</em> 可以保存设置设置。若 Live 是在光盘或无记忆的 U 盘安装条件下运行的，设置将无法保存。</p>
+</div>
+<div class="section" id="id3">
+<h3>下载地图<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>　　通过 <em class="menuselection">Settings ‣ Save maps to disk</em> 可以下载地图到本地用于快速查看。这在硬盘安装的条件下较为适用。</p>
+<p>在其它环境使用 GPSPrune
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~　　在 Live 试用 GPSPrune 后，您可能想在其它系统环境下使用。某些 Linux 发行版在其官方软件库中包含了 GPSPrune ，搜索“Prune”或“GPSPrune”即可。当然，您也可以在官方网站下载最新版。</p>
+<p>　　GPSPrune 是绿色软件，无需安装。它需要 1.5 版本或以上的 Java 环境支持（目前 Live 所运行的为 OpenJDK 7）。通过 <em>GPSbabel</em>、<em>Gnuplot</em>、<em>Exiftool</em>、<em>Java3d</em> 等工具，GPSPrune 的功能可以进一步扩展。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>其它信息<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>GPSPrune 主页： <a class="reference external" href="http://gpsprune.activityworkshop.net/">http://gpsprune.activityworkshop.net/</a></li>
+<li>软件截图： <a class="reference external" href="http://gpsprune.activityworkshop.net/screenshots.html">http://gpsprune.activityworkshop.net/screenshots.html</a></li>
+<li>使用说明： <a class="reference external" href="http://gpsprune.activityworkshop.net/how-tos.html">http://gpsprune.activityworkshop.net/how-tos.html</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,227 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SpatiaLite クイックスタート &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 6.5 −Ｌｉｖｅへようこそ" href="../index.html" />
+    <link rel="next" title="TileMill Quickstart" href="tilemill_quickstart.html" />
+    <link rel="prev" title="Sahana Quickstart" href="sahana_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-spatialite15.png" id="spatialite-quickstart-ja"><img alt="project logo" class="align-right" id="spatialite-quickstart-ja" src="../../_images/logo-spatialite15.png" style="width: 128.0px; height: 113.0px;" /></a>
+<div class="section" id="spatialite">
+<h1>SpatiaLite クイックスタート<a class="headerlink" href="#spatialite" title="Permalink to this headline">¶</a></h1>
+<p>SpatiaLite は地理空間関数を追加した SQLite データベースエンジンです。</p>
+<p>このクイックスタートではコマンドラインと GUI アプリケーションからデータベースの開き方を記載します。</p>
+<div class="section" id="id1">
+<h2><strong>spatialite</strong> を起動する<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">コンソールを開き、spatialite でサンプルデータベースを開きます。</p>
+<blockquote>
+<div><p>spatialite /home/user/data/spatialite/trento.sqlite</p>
+</div></blockquote>
+</li>
+<li><p class="first">CLI インターフェースで役立つ以下のようなコマンドがあります:</p>
+<div class="highlight-python"><pre>.help
+.tables
+.quit</pre>
+</div>
+</li>
+<li><p class="first">サンプル空間クエリをいくつか紹介します:</p>
+<div class="highlight-python"><pre>SELECT lc.NOME, lc.NOME_PROV, lc.COM, mh.Perimeter
+     FROM LocalCouncils AS lc, MunicipalHalls AS mh
+     WHERE CONTAINS(lc.Geometry,mh.Geometry) AND lc.NOME LIKE 'VILLA%'
+     ORDER BY lc.NOME;
+.headers ON
+SELECT COMUNE, LOCALITA, Area(Geometry)/1000000 AS "Area Sq.km."
+     FROM PopulatedPlaces ORDER BY "Area Sq.km." DESC LIMIT 10 ;
+SELECT lc.NOME AS "Provence Name", X(mh.Geometry) AS X_COORD, Y(mh.Geometry) AS Y_COORD
+     FROM LocalCouncils AS lc, MunicipalHalls AS mh
+     WHERE mh.COMU=lc.COM ORDER BY "Provence Name" LIMIT 10;</pre>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="spatialite-gui">
+<h2><strong>spatialite-gui</strong> から新しいデータベースを作成する<a class="headerlink" href="#spatialite-gui" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>デスクトップのデータベースフォルダから spatialite_gui を起動してください</li>
+<li>メニューから <em class="menuselection">File ‣ Creating a new SQLite DB</em> を選択してください。</li>
+<li>Browse をクリックして /home/user/data/spatialite/ ディレクトリに移動してください。作成するデータベースの名前を &#8220;Test.sqlite&#8221; など入力して保存 (Save) をクリックしてください。</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>既存のデータベースを <strong>spatialite-gui</strong> で開く<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">接続しているデータベースがあるときには &#8220;Disconnecting current SQLite DB&#8221; ボタンをクリックしてください。</p>
+</li>
+<li><p class="first">&#8220;Connect existing SQLite DB&#8221; ボタンをクリックしてください。</p>
+</li>
+<li><p class="first">/home/user/data/spatialite を開き、trento.sqlite を選択してください。</p>
+</li>
+<li><p class="first">MunicpalHallsView テーブルで右クリックし、&#8221;Show Columns&#8221; を選択してください。</p>
+</li>
+<li><p class="first">PopulatedPlaces で右クリックし、&#8221;Edit table rows&#8221; を選択してください。</p>
+</li>
+<li><p class="first">上部の SQL 枠で以下をタイプします:</p>
+<div class="highlight-python"><pre>SELECT NOME, X(Geometry) AS Longitude, Y(Geometry) AS Latitude
+     FROM "MunicipalHallsView"
+     WHERE NOME_PROV LIKE "BRESCIA";</pre>
+</div>
+<p>右側の &#8220;Execute SQL&#8221; ボタンをクリックして実行してください。</p>
+</li>
+</ul>
+</div>
+<div class="section" id="spatialite-gis">
+<h2>spatialite-gis の実行<a class="headerlink" href="#spatialite-gis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>デスクトップの Desktop GIS フォルダから spatialite-gis を実行してください。</li>
+<li>&#8220;Connecting existing SQLite DB&#8221; ボタンをクリックして /home/user/data/spatialite/trento.sqlite に接続してください。</li>
+</ul>
+<p>イタリアのトレント自治県の地図を見ることができるでしょう。</p>
+<blockquote>
+<div><ul class="simple">
+<li>Highways レイヤで右クリックして <em class="menuselection">Hide</em> を選択してください。</li>
+<li>LocalCouncilsTrento レイヤで右クリックして <em class="menuselection">Layer Configuration-&gt;Classify</em> を選択してください。 &#8220;Shape Area&#8221; を選択してください。4 つのクラスを選択して最小と最大に割り当てる色を選択してください。県の範囲の階級区分図が表示されます。</li>
+<li>LocalCouncils で右クリックして境界線の色を選択し、メニューから <em class="menuselection">Layer configuration-&gt;Graphics</em> を選択して、境界線と異なる色を選択してください。</li>
+<li>表示をすこし拡大し、PopulatedPlaces レイヤを右クリックし、 <em class="menuselection">Indentify on</em> を選択してください。人口の多い地域をクリックして、地物の属性を確認してください。</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>やってみましょう<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>次のステップとして以下のようなことをやってみるとよいでしょう。</p>
+<ul class="simple">
+<li>spatialite-gui でのジオメトリについて調べてみましょう</li>
+<li>QGIS で SpatiaLite レイヤを表示、編集してみましょう</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>参考資料<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>SpatiaLite についてより詳しく学ぶには <a class="reference external" href="https://www.gaia-gis.it/fossil/libspatialite/index">SpatiaLite project page</a> を参照してください。</p>
+<p>また、チュートリアル <a class="reference external" href="http://www.gaia-gis.it/gaia-sins/spatialite-cookbook/index.html">Spatialite cookbook</a> が公開されています。</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

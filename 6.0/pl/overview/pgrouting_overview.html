@@ -1,0 +1,168 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pgRouting &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Zawartość OSGeo-Live 6.0" href="overview.html" />
+    <link rel="next" title="PostGIS" href="postgis_overview.html" />
+    <link rel="prev" title="OTB" href="otb_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.pgrouting.org/"><img alt="pgRouting logo" class="align-right" src="../../_images/logo-pgRouting18.png" style="width: 130.0px; height: 126.0px;" /></a>
+<div class="section" id="pgrouting">
+<h1>pgRouting<a class="headerlink" href="#pgrouting" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gis-tools">
+<h2>GIS Tools<a class="headerlink" href="#gis-tools" title="Permalink to this headline">¶</a></h2>
+<p>pgRouting rozszerza geoprzestrzenną bazę danych <a class="reference internal" href="postgis_overview.html"><em>PostGIS</em></a>/<a class="reference external" href="http://www.postgresql.org">PostgreSQL</a>  o funkcjonalność geoprzestrzennego trasowania.</p>
+<p>Zalety bazodanowego podejścia do trasowania:</p>
+<ul class="simple">
+<li>Dane i atrybuty mogą być modyfikowane poprzez wielu klientów, takich jak <a class="reference internal" href="qgis_overview.html"><em>Quantum GIS</em></a> i <a class="reference internal" href="udig_overview.html"><em>uDig</em></a> przez JDBC, ODBC, albo bezpośrednio z użyciem Pl/pgSQL. Klienci mogą być na komputerach osobistych lub urządzeniach mobilnych.</li>
+<li>Zmiany danych mogą być natychmiast odzwierciedlone w trasowaniu. Nie map potrzeby wstępnych kalkulacji.</li>
+<li>Parametr &#8220;kosztu&#8221; może być dynamicznie obliczany za pomocą SQL a jego wartość może wynikać z wielu pól lub tabel.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/pgrouting9.png"><img alt="pgRouting query in pgAdminIII" class="align-right" src="../../_images/pgrouting9.png" style="width: 481.2px; height: 343.8px;" /></a>
+<div class="section" id="glowne-funkcje">
+<h3>Główne funkcje<a class="headerlink" href="#glowne-funkcje" title="Permalink to this headline">¶</a></h3>
+<p>pgRouting provides functions for:</p>
+<ul class="simple">
+<li>Shortest Path Dikstra: routing algorithm without heuristics</li>
+<li>Shortest Path A-Star: routing for large datasets (with heuristics)</li>
+<li>Shortest Path Shooting-Star: routing with turn restrictions (with heuristics)</li>
+<li>Traveling Salesperson Problem (TSP)</li>
+<li>Driving Distance calculation (Isolines)</li>
+</ul>
+</div>
+<div class="section" id="szczegoly">
+<h3>Szczegóły<a class="headerlink" href="#szczegoly" title="Permalink to this headline">¶</a></h3>
+<p><strong>Strona internetowa:</strong> <a class="reference external" href="http://www.pgrouting.org">http://www.pgrouting.org</a></p>
+<p><strong>Licencja:</strong> Powszechna Licencja Publiczna GNU (GPL) wersja 2</p>
+<p><strong>Wersja programu:</strong> 1.05</p>
+<p><strong>Systemy operacyjne:</strong> Linux, Windows, Mac</p>
+<p><strong>Interfejsy API:</strong> SQL</p>
+<p><strong>Wsparcie komercyjne:</strong> <a class="reference external" href="http://www.pgrouting.org">http://www.pgrouting.org</a></p>
+</div>
+<div class="section" id="wprowadzenie">
+<h3>Wprowadzenie<a class="headerlink" href="#wprowadzenie" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/pgrouting_quickstart.html"><em>Przejdź do wprowadzenia</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GDAL/OGR &mdash; OSGeo-Live 6.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Zawartość OSGeo-Live 6.5" href="overview.html" />
+    <link rel="next" title="GeoKettle" href="geokettle_overview.html" />
+    <link rel="prev" title="EOxServer" href="eoxserver_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL18.png" style="width: 81.0px; height: 89.4px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org/incubator/process/principles.html"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project18.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="gdal-ogr">
+<h1>GDAL/OGR<a class="headerlink" href="#gdal-ogr" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="geospatial-data-translation-tools">
+<h2>Geospatial Data Translation Tools<a class="headerlink" href="#geospatial-data-translation-tools" title="Permalink to this headline">¶</a></h2>
+<p>Geospatial Data Abstraction Library (GDAL/OGR) dostarcza narz?dzi wiersza polece?
+do przeliczania i przekszta?cania szerokiego spektrum danych przestrzennych
+zapisanych w formatach rastrowych i wektorowych.</p>
+<p>Narz?dzia zbudowane s? w oparciu o wieloplatformow? bibliotek? C++
+dost?pn? z poziomu wielu j?zyk?w programowania. Biblioteka prezentuje aplikacjom
+wywo?uj?cym ujednolicony model danych dla wszystkich obs?ugiwanych format?w.</p>
+<p>GDAL/OGR jest najszerzej stosowan? geoprzestrzenn? bibliotek? dost?pu do danych.
+Zapewnia silnik dost?pu do danych, wielu aplikacjom, w tym korzysta z niej
+MapServer, GRASS, QGIS, i OpenEV. Jest r?wnie? wykorzystywana przez takie
+programy jak OSSIM, Cadcorp SIS, FME, Google Earth, VTP, Thuban, ILWIS,
+MapGuide and ArcGIS.</p>
+<a class="reference internal image-reference" href="../../_images/gdal_ogr_proj_overview9.png"><img alt="GDAL supports many geodata formats" class="align-right" src="../../_images/gdal_ogr_proj_overview9.png" style="width: 609.0px; height: 456.0px;" /></a>
+<div class="section" id="g-wne-funkcje">
+<h3>G??wne funkcje<a class="headerlink" href="#g-wne-funkcje" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Narz?dzia wiersza polece? do przeliczania, odkszta?cania obraz?w, selekcji informacji, i wielu innych powszechnych zada?</li>
+<li>Bardzo wydajny dost?p do danych rastrowych, wykorzystuj?cy kaflowanie i podgl?dy</li>
+<li>Obs?uga du?ych plik?w - wi?kszych ni? 4GB</li>
+<li>Dost?p do biblioteki za pomoc? j?zyk?w Python, Java, C#, Ruby, VB6 and Perl</li>
+<li>System obs?ugi uk?ad?w odniesienia oparty na bibliotekach PROJ.4 oraz OGC Well Known Text</li>
+</ul>
+</div>
+<div class="section" id="popularne-obs-ugiwane-formaty">
+<h3>Popularne obs?ugiwane formaty<a class="headerlink" href="#popularne-obs-ugiwane-formaty" title="Permalink to this headline">¶</a></h3>
+<p>GDAL obs?uguje ponad 50 format?w danych rastrowych, OGR ponad 20 wektorowych.</p>
+<p>Mi?dzy innymi s? to:</p>
+<ul class="simple">
+<li><strong>Raster:</strong> GeoTIFF, Erdas Imagine, SDTS, ESRI Grids, ECW, MrSID, JPEG2000, DTED, i wicej ...</li>
+<li><strong>Wektor:</strong> MapInfo (tab i mid/mif), ESRI Shapefile, ESRI Coverages, ESRI Personal Geodatabase, DGN, GML, PostGIS, Oracle Spatial, i wicej ...</li>
+</ul>
+</div>
+<div class="section" id="zaimplementowane-standardy">
+<h3>Zaimplementowane standardy<a class="headerlink" href="#zaimplementowane-standardy" title="Permalink to this headline">¶</a></h3>
+<p>Model danych OGR jest zgodny ze specyfikacj? OGC Simple Feature.</p>
+</div>
+<div class="section" id="szczeg-y">
+<h3>Szczeg?y<a class="headerlink" href="#szczeg-y" title="Permalink to this headline">¶</a></h3>
+<p><strong>Strona internetowa:</strong>  <a class="reference external" href="http://www.gdal.org">http://www.gdal.org</a></p>
+<p><strong>Licencja:</strong> <a class="reference external" href="http://trac.osgeo.org/gdal/wiki/FAQGeneral#WhatlicensedoesGDALOGRuse">X/MIT style Open Source license</a></p>
+<p><strong>Wersja programu:</strong> 1.7.0 (1.9.2)</p>
+<p><strong>Systemy operacyjne:</strong> Windows, Linux, Mac</p>
+<p><strong>Interfejsy API:</strong> C, C++, Python, Java, C#, Ruby, VB6 and Perl</p>
+<p><strong>Wsparcie:</strong> <a class="reference external" href="http://lists.osgeo.org/mailman/listinfo/gdal-dev">http://lists.osgeo.org/mailman/listinfo/gdal-dev</a>, <a class="reference external" href="http://www.osgeo.org/search_profile">http://www.osgeo.org/search_profile</a></p>
+</div>
+<div class="section" id="wprowadzenie">
+<h3>Wprowadzenie<a class="headerlink" href="#wprowadzenie" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/gdal_quickstart.html"><em>Przejd? do wprowadzenia</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

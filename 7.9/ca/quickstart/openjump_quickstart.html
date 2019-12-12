@@ -1,0 +1,225 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guia d’inici ràpid amb OpenJUMP &mdash; OSGeo-Live 7.9
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.9
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.9
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Benvinguts a OSGeo-Live 7.9" href="../index.html" />
+    <link rel="next" title="OpenLayers Quickstart" href="openlayers_quickstart.html" />
+    <link rel="prev" title="OpenCPN Quickstart" href="opencpn_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="guia-d-inici-rapid-amb-openjump">
+<h1>Guia d&#8217;inici ràpid amb OpenJUMP<a class="headerlink" href="#guia-d-inici-rapid-amb-openjump" title="Permalink to this headline">¶</a></h1>
+<p>OpenJUMP és un SIG d&#8217;escriptori que permet fàcilment editar i visualitzar dades SIG vectorials. Ofereix suport limitat a la visualització de dades raster.</p>
+<p>Aquesta guia d&#8217;inici ràpid descriu com:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Obrir un arxiu shapefile amb OpenJUMP.</li>
+<li>Modificar les propietats de l&#8217;arxiu per visualitzar-lo millor.</li>
+<li>Editar les geometries de la capa.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="comencant-amb-openjump">
+<h2>Començant amb OpenJUMP<a class="headerlink" href="#comencant-amb-openjump" title="Permalink to this headline">¶</a></h2>
+<p>OSGeo Live-DVD: feu doble-clic en l&#8217;enllaç OpenJUMP en l&#8217;escriptori o executi /usr/bin/openjump</p>
+<p>Indicacions generals: Per començar amb OpenJUMP en Windows, aneu a la carpeta bin i feu doble-clic sobre openjump.exe o openjump.bat.
+Per Linux, executeu oj_linux.sh des d&#8217;un terminal. Per MacOSX, feu clic en el simbol de l&#8217;aplicació OpenJUMP.</p>
+<p>(Observació important: per executar OpenJUMP és necessari el runtime de Java.
+Es pot descarregar des del següent enllaç: <a class="reference external" href="http://java.com/en/download/index.jsp">http://java.com/en/download/index.jsp</a>)</p>
+</div>
+<div class="section" id="descripcio-basica-de-la-interficie-d-usuari">
+<h2>Descripció bàsica de la interfície d&#8217;usuari<a class="headerlink" href="#descripcio-basica-de-la-interficie-d-usuari" title="Permalink to this headline">¶</a></h2>
+<p>La interfície d&#8217;usuari d&#8217;OpenJUMP té els quatre (4) components bàsics que té qualssevol altre GIS d&#8217;escriptori.
+(i) El primer és la barra superior de menú. (ii) El segon és la barra principal d&#8217;eines que està just a sota de la barra de menús.
+(iii) El tercer és una vista en arbre a l&#8217;esquerra que mostra el llistat de les capes d&#8217;informació existents en el projecte actiu.
+(iv) El quart element és la vista de les capes. Aquesta és la finestra en la que es mostra la representació gràfica de les dades espacials de cada capa.
+Cadascuna de les llistes de capes i la seva vista corresponent estan contingudes de manera conjunta en un projecte.
+Cada sessió d&#8217;OpenJUMP pot contenir diversos projectes alhora. En aquesta guia d&#8217;inici ràpid, treballarem amb un únic projecte o dit d&#8217;una altra manera: amb una única finestra.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_01.png"><img alt="../../_images/openjump_ss_01.png" src="../../_images/openjump_ss_01.png" style="width: 563.2px; height: 400.95px;" /></a>
+</div>
+<div class="section" id="obrir-un-arxiu-shapefile-d-esri">
+<h2>Obrir un arxiu Shapefile d&#8217;ESRI<a class="headerlink" href="#obrir-un-arxiu-shapefile-d-esri" title="Permalink to this headline">¶</a></h2>
+<p>En aquesta secció s&#8217;explica com obrir un arxiu shapefile en OpenJUMP.</p>
+<p>A la barra de menú superior en OpenJump seleccioneu el menú [Arxiu]. A continuació, seleccioneu l&#8217;opció [Obrir arxiu ...].
+Això li presentarà un quadre de diàleg que permet obrir fitxers que continguin dades geoespacials.
+En el nostre exemple, buscarem un arxiu en format shapefile d&#8217;ESRI. Busqueu un arxiu amb l&#8217;extensió .shp.
+Seleccioneu el fitxer i feu clic al botó d&#8217;obrir en al quadre de diàleg. Després d&#8217;uns moments, es veuran les dades del
+shapefile a la vista de Capes. També veurà un nova capa creada per aquestes dades a la llista de capes.
+El nom de la capa coincidirà el nom del shapefile.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_02.png"><img alt="../../_images/openjump_ss_02.png" src="../../_images/openjump_ss_02.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>Una altra opció més ràpida és arrossegar i deixar anar directament el shapefile a la Layer View.</p>
+</div>
+<div class="section" id="aplicar-estils-a-una-capa-de-dades">
+<h2>Aplicar estils a una capa de dades<a class="headerlink" href="#aplicar-estils-a-una-capa-de-dades" title="Permalink to this headline">¶</a></h2>
+<p>Aquesta secció explica breument com aplicar estils a les dades d&#8217;una capa.</p>
+<p>En la Llista de Capes, feu clic amb el botó dret sobre el nombre de la capa seleccionada. S&#8217;obrirà un arxiu de menú.
+Seleccioneu l&#8217;opció [Change Styles] en el menú [Style]. Aquesta opció té cinc (5) tabs per tal de modificar l&#8217;aspecte amb
+què es mostraran les dades de la capa: canviar el color del contorn, el color d&#8217;emplenament, la transparència, afegir etiquetes
+i definir les escales mínima i màxima en les que les dades seran visibles.</p>
+<ul class="simple">
+<li>Per tal d&#8217;accedir a aquest menú en MacOSX cal que feu clic sobre <em class="guilabel">Apple</em></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_03.png"><img alt="../../_images/openjump_ss_03.png" src="../../_images/openjump_ss_03.png" style="width: 563.2px; height: 400.95px;" /></a>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_04.png"><img alt="../../_images/openjump_ss_04.png" src="../../_images/openjump_ss_04.png" style="width: 563.2px; height: 400.95px;" /></a>
+</div>
+<div class="section" id="editar-les-geometries-d-una-capa">
+<h2>Editar les geometries d&#8217;una capa<a class="headerlink" href="#editar-les-geometries-d-una-capa" title="Permalink to this headline">¶</a></h2>
+<p>En la Llista de Capes, un cop seleccionada una capa feu clic amb el botó dret. S&#8217;obrirà un arxiu de menú.
+Seleccioneu l&#8217;opció anomenada &#8220;Editable&#8221; en el menú Editable. Això ens obrirà una nova barra d&#8217;eines sobre la visor de capes.
+Aquesta nova barra d&#8217;eines té un conjunt de botons que podem usar per editar les geometries.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_05.png"><img alt="../../_images/openjump_ss_05.png" src="../../_images/openjump_ss_05.png" style="width: 563.2px; height: 400.95px;" /></a>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_06.png"><img alt="../../_images/openjump_ss_06.png" src="../../_images/openjump_ss_06.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>Anem a provar de fer una edició ràpida. El nostre objectiu serà seleccionar una geometria i intentar moure un punt d&#8217;aquesta geometria.
+Per fer això, primer farem clic sobre el botó que mostra la icona d&#8217;un ratolí sobre el menú d&#8217;edició.
+Seleccionarem una única geometria en el visor [Layer View]. Hauria de canviar a color groc i mostrar petits quadrats de color groc en cadascun dels vèrtexs de la figura.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_07.png"><img alt="../../_images/openjump_ss_07.png" src="../../_images/openjump_ss_07.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>A continuació, feu clic sobre el botó que mostra una creu blava amb un quadrat groc en el mig, <em class="guilabel">Move Vertex Tool</em>
+(Si passeu el ratolí per damunt d&#8217;aquests botons tindreu una descripció de la seva funcionalitat).
+Ara, si ens situem damunt del visor de les dades, s&#8217;hauria de veure com el cursor del ratolí canvia de a una petita creu negra.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_08.png"><img alt="../../_images/openjump_ss_08.png" src="../../_images/openjump_ss_08.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>Intenteu usar-lo per tal de moure un vèrtex de la geometria seleccionada.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_09.png"><img alt="../../_images/openjump_ss_09.png" src="../../_images/openjump_ss_09.png" style="width: 563.2px; height: 400.95px;" /></a>
+</div>
+<div class="section" id="altres-recursos-per-aprendre-a-treballar-amb-openjump">
+<h2>Altres recursos per aprendre a treballar amb OpenJUMP<a class="headerlink" href="#altres-recursos-per-aprendre-a-treballar-amb-openjump" title="Permalink to this headline">¶</a></h2>
+<p>Aquesta és una breu introducció a l&#8217;ús d&#8217;OpenJUMP.
+Hi ha molta més informació i molt més material amb què treballar i descobrir les seves funcionalitats.</p>
+<p>Podeu descarregar tutorials d&#8217;OpenJUMP aquí:
+<a class="reference external" href="http://sourceforge.net/projects/jump-pilot/files/Documentation/">http://sourceforge.net/projects/jump-pilot/files/Documentation/</a></p>
+<p>Podeu consultar el wiki d&#8217;OpenJUMP aquí:
+<a class="reference external" href="http://sourceforge.net/apps/mediawiki/jump-pilot/index.php?title=Main_Page">http://sourceforge.net/apps/mediawiki/jump-pilot/index.php?title=Main_Page</a></p>
+<p>I també podeu consultar les llistes d&#8217;usuaris:
+<a class="reference external" href="http://groups.google.com/group/openjump-users">http://groups.google.com/group/openjump-users</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

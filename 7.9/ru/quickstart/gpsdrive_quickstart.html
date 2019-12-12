@@ -1,0 +1,199 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы с GpsDrive &mdash; OSGeo-Live 7.9
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '7.9
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 7.9
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.gpsdrive.de"><img alt="Логотип проекта" class="align-right" src="../../_images/logo-gpsdrive23.png" style="width: 169.0px; height: 155.0px;" /></a>
+<div class="section" id="gpsdrive">
+<h1>Начало работы с GpsDrive<a class="headerlink" href="#gpsdrive" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Запуск<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Вы определённо захотите установить пакет <a class="reference external" href="http://savannah.nongnu.org/projects/gpsd">gpsd</a>, который позволит взаимодействовать с вашим GPS; без него GpsDrive будет просто симпатичной смотрелкой для карт.</p>
+<p>На диске предустановлена СУБД <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a> с картографическими данными <a class="reference internal" href="../overview/osm_dataset_overview.html"><em>OpenStreetMap</em></a>. Тайлы из этих данных генерируются автоматически с использованием библиотеки <a class="reference internal" href="../overview/mapnik_overview.html"><em>Mapnik</em></a>. Также статические тайлы карты могут быть загружены из сети Интернет без установки. Голосовые сообщения поддерживаются при наличии установленного пакета &#8220;espeak&#8221;.</p>
+<div class="section" id="gps">
+<h3>Подключение GPS<a class="headerlink" href="#gps" title="Permalink to this headline">¶</a></h3>
+<p>Для подключения GPS нужно запустить сервис <em>gpsd</em>. Для этого выполните:</p>
+<div class="highlight-python"><pre>sudo dpkg-reconfigure gpsd</pre>
+</div>
+<p>и</p>
+<div class="highlight-python"><pre>sudo /etc/init.d/gpsd start</pre>
+</div>
+<p>Пользователям BlueTooth-GPS нужно будет почитать про опцию <em>no-probe</em> (по этой причине мы не запускаем gpsd автоматически).</p>
+<ul class="simple">
+<li>Есть хорошая программа <em>xgps</em>. Она проверяет, нормально ли <em>gpsd</em> видит ваш GPS.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>Использование без GPS в качестве атласа<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Если у вас нет GPS, вы можете переключиться в Explore Mode, нажав клавишу &#8216;e&#8217;. Для перемещения используйте клавиши со стрелками. Щелчок правой кнопкой мыши указывает пункт назначения.</p>
+</div>
+<div class="section" id="id3">
+<h3>Быстрая помощь<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Для получения помощи наберите <strong>man gpsdrive</strong> и <strong>gpsdrive &#8211;help</strong> в командной строке. Там вы можете узнать, как переключиться в режимы <em>Car</em> или <em>PDA</em>, который полезен, если вы работаете с маленьким экраном вроде нетбука.</p>
+</div>
+<div class="section" id="id4">
+<h3>Настройка отображения<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Помимо опций, доступных в меню Preferences и режимов car/PDA/desktop из командной строки, вы можете изменить значения элементов приборной доски щелчком мыши по ним. Отображение панели управления картой и приборной доски можно включать и выключать клавишами <strong>d</strong> и <strong>m</strong>.</p>
+</div>
+<div class="section" id="openstreetmap-mapnik">
+<h3>Рендеринг данных OpenStreetMap посредством Mapnik<a class="headerlink" href="#openstreetmap-mapnik" title="Permalink to this headline">¶</a></h3>
+<p>Если у вас запущена локальная база данных PostGIS (например, та, что есть на этом Live DVD) вы можете настроить GpsDrive на рендеринг &#8220;на лету&#8221; отличных карт OpenStreetMap с помощью Mapnik. На данном диске эта PostgreSQL база называется &#8220;osm_local_smerc&#8221;. Здесь хранится только выгрузка карты города, в котором проходила конференция FOSS4G, так что вы возможно захотите добавить свои данные из Planet.osm с помощью программы <cite>osm2pgsql</cite> или выключить <em>Mapnik Mode</em> в окне <em>Map Control</em> и использовать встроенные или загруженные статические тайлы карты.</p>
+</div>
+<div class="section" id="id5">
+<h3>Поиск объектов<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>С помощью инструмента <em>Find POI</em> можно искать ближайшие точки интереса, загруженные в SQLite-базу путевых точек. Для экспериментов загружены данные OpenStreetMap для города Ноттингем. Можете поискать все пабы в радиусе 2 километров от конференц-зала.</p>
+</div>
+<div class="section" id="id6">
+<h3>Загрузка карт<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Для предварительного просмотра и загрузки новых тайлов карты воспользуйтесь инструментом <em class="menuselection">Options ‣ Maps ‣ Download</em>. В данный момент в качестве источников доступны веб-тайлы OpenStreetMap и T-WMS сервер NASA OnEarth. С GpsDrive устанавливаются пара программ для командной строки, которыми можно делать массовую загрузку набора тайлов, покрывающих нужную область.</p>
+</div>
+<div class="section" id="id7">
+<h3>Местоположение ваших друзей<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>В меню <em>Preferences</em> вы можете включить сервис Friendsd. Он передаёт вашу позицию на центральный сервер и позволяет вашим друзьям знать, где вы находитесь. Если вы не желаете, чтобы весь мир знал, где вы есть, можно запустить свой приватный сервер. Для включения данного сервиса войдите в меню Preferences и перейдете на вкладку Friends. Введите свое имя и нажмите кнопку [Lookup] для получения IP-адреса стандартного сервера friendsd. Наконец, поставьте галку Enable friends service и нажмите [Close]. Значки, отмечающие положения и направления движения ваших друзей, будут отображаться на масштабах меньше 1:10&nbsp;000&nbsp;000.</p>
+</div>
+<div class="section" id="id8">
+<h3>Голосовые сообщения<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>GpsDrive может сообщать голосом о вашем приближении к цели и прочем. Чтобы попробовать эту функцию, надо запустить программу eSpeak. На этом Live DVD она отключена по умолчанию для экономии памяти. Для включения вам нужно с правами root отредактировать файл <strong>/etc/default/speech-dispatcher</strong>, поставив там <strong>RUN=yes</strong>. Затем запустите сервис командой &#8220;<cite>sudo service speech-dispatcher start</cite>&#8221;. Если сервис работает, GpsDrive автоматически обнаружит его при запуске. В меню <em>Preferences</em> на вкладке Speech вы можете включить/выключить эту функцию, изменить голос и уровень подробности сообщений.</p>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>Смотрите также<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Страница GpsDrive: <a class="reference external" href="http://www.gpsdrive.de">http://www.gpsdrive.de</a></li>
+<li>Страница поддержки: <a class="reference external" href="http://gpsdrive.sf.net">http://gpsdrive.sf.net</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

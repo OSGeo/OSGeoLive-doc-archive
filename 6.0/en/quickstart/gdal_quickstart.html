@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GDAL/OGR Quickstart &mdash; OSGeo-Live 6.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '6.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 6.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live Quick Starts" href="quickstart.html" />
+    <link rel="next" title="GeoKettle Quickstart" href="geokettle_quickstart.html" />
+    <link rel="prev" title="EOxServer Quickstart" href="eoxserver_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL7.png" style="width: 81.0px; height: 89.4px;" /></a>
+<div class="section" id="gdal-ogr-quickstart">
+<h1>GDAL/OGR Quickstart<a class="headerlink" href="#gdal-ogr-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>You will need nothing but a terminal for this quickstart. If you want to
+visualize the results, you can use one of the Desktop GIS Software
+applications on OSGeo-Live like <a class="reference internal" href="../overview/qgis_overview.html"><em>Quantum GIS (QGIS)</em></a>.</p>
+<p>This Quick Start is devided in two parts GDAL (raster data) and OGR
+(vector data). We will start with GDAL.</p>
+<p>This Quick Start describes how to:</p>
+<dl class="docutils">
+<dt>GDAL</dt>
+<dd><ul class="first last simple">
+<li>Explore your image data with gdalinfo</li>
+<li>Format translations with gdal_translate</li>
+<li>Reproject your data with gdalwarp</li>
+<li>Mosaic your data with gdal_warp or gdal_merge.py</li>
+<li>Build a shapefile as a raster tileindex with gdaltindex</li>
+</ul>
+</dd>
+<dt>OGR</dt>
+<dd><ul class="first last simple">
+<li>get information about your data with ogrinfo</li>
+<li>use ogr2ogr to transform your data to other formats</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="get-to-know-gdal">
+<h2>Get to know GDAL<a class="headerlink" href="#get-to-know-gdal" title="Permalink to this headline">¶</a></h2>
+<p>You will find the demo data at <tt class="file docutils literal"><span class="pre">/usr/local/share/data</span></tt>. We want to have a
+look at the <a class="reference internal" href="../overview/naturalearth_overview.html"><em>Natural Earth data</em></a> in this quickstart. We want to work with a
+copy of the data. So the first step is to copy the data to your home
+directory.</p>
+<div class="highlight-python"><pre>cd /home/user
+cp -R /usr/local/share/data/natural_earth/ ./gdal_natural_earth</pre>
+</div>
+<p>You find a NaturalEarth Raster file and a tfw-file at:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">gdal_natural_earth</span><span class="o">/</span><span class="n">HYP_50M_SR_W</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Open the file with a Desktop GIS like QGIS. And have a look.</p>
+</div>
+</div>
+<div class="section" id="get-information-about-the-raster-data-with-gdalinfo">
+<h2>Get information about the raster data with gdalinfo<a class="headerlink" href="#get-information-about-the-raster-data-with-gdalinfo" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>gdalinfo HYP_50M_SR_W.tif
+  Driver: GTiff/GeoTIFF
+  Files: HYP_50M_SR_W.tif
+         HYP_50M_SR_W.tfw
+  Size is 10800, 5400
+  Coordinate System is `'
+  Origin = (-179.999999999999972,90.000000000000000)
+  Pixel Size = (0.033333333333330,-0.033333333333330)
+  Metadata:
+    TIFFTAG_SOFTWARE=Adobe Photoshop CS3 Macintosh
+    TIFFTAG_DATETIME=2009:09:19 10:13:17
+    TIFFTAG_XRESOLUTION=342.85699
+    TIFFTAG_YRESOLUTION=342.85699
+    TIFFTAG_RESOLUTIONUNIT=2 (pixels/inch)
+  Image Structure Metadata:
+    INTERLEAVE=PIXEL
+  Corner Coordinates:
+  Upper Left  (-180.0000000,  90.0000000)
+  Lower Left  (-180.0000000, -90.0000000)
+  Upper Right ( 180.0000000,  90.0000000)
+  Lower Right ( 180.0000000, -90.0000000)
+  Center      (  -0.0000000,   0.0000000)
+  Band 1 Block=10800x1 Type=Byte, ColorInterp=Red
+  Band 2 Block=10800x1 Type=Byte, ColorInterp=Green
+  Band 3 Block=10800x1 Type=Byte, ColorInterp=Blue</pre>
+</div>
+<dl class="docutils">
+<dt>Note:</dt>
+<dd><ul class="first last simple">
+<li>Driver is &#8220;GTiff/GeoTIFF&#8221;</li>
+<li>Size is 10800x5400</li>
+<li>3 Bands of type Byte.</li>
+<li>Coordinates</li>
+<li>no coordinate system</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="simple-format-translation">
+<h2>Simple Format Translation<a class="headerlink" href="#simple-format-translation" title="Permalink to this headline">¶</a></h2>
+<p>First get to know your drivers. The <cite>&#8211;formats</cite> commandline switch of
+gdal_translate can be used to see a list of available format drivers.</p>
+<dl class="docutils">
+<dt>Each format reports if it is</dt>
+<dd><ul class="first last simple">
+<li>read only (ro),</li>
+<li>read/write (rw) or</li>
+<li>read/write/update (rw+).</li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">gdal_translate</span> <span class="o">--</span><span class="n">formats</span>
+</pre></div>
+</div>
+<p>The <cite>&#8211;format</cite> commandline switch can be used to query details about a
+particular driver, including creation options, and permitted data types.</p>
+<div class="highlight-python"><pre>gdalinfo --format jpeg
+gdal_translate --format png</pre>
+</div>
+</div>
+<div class="section" id="translation">
+<h2>Translation<a class="headerlink" href="#translation" title="Permalink to this headline">¶</a></h2>
+<p>Translations are accomplished with the gdal_translate command. The
+default output format is GeoTIFF:</p>
+<div class="highlight-python"><pre>gdal_translate HYP_50M_SR_W.tif HYP_50M_SR_W.png</pre>
+</div>
+<p>The <cite>-of</cite> flag is used to select an output format and the -co flag is used
+to specify a creation option:</p>
+<div class="highlight-python"><pre>gdal_translate -of JPEG -co QUALITY=40 HYP_50M_SR_W.tif HYP_50M_SR_W.jpg</pre>
+</div>
+<p>The <cite>-ot</cite> switch can be used to alter the output data type.</p>
+<div class="highlight-python"><pre>gdal_translate -ot Int16 HYP_50M_SR_W.tif HYP_50M_SR_W_Int16.tif</pre>
+</div>
+<p>Use gdalinfo to verify data type.</p>
+</div>
+<div class="section" id="rescaling">
+<h2>Rescaling<a class="headerlink" href="#rescaling" title="Permalink to this headline">¶</a></h2>
+<p>The <cite>-outsize</cite> switch can be used to set the size of the output file.</p>
+<div class="highlight-python"><pre>gdal_translate -outsize 50% 50% HYP_50M_SR_W.tif  HYP_50M_SR_W_small.tif</pre>
+</div>
+<p>Use gdalinfo to verify the size.</p>
+<p>The <cite>-scale</cite> switch can be used to rescale data. Explicit control of the
+input and output ranges is also available. The gdalinfo <cite>-mm</cite> switch can
+be used to see pixel min/max values.</p>
+<p>Let&#8217;s split our image into two with <cite>-srcwin</cite> which makes a copy based on
+pixel/line location (xoff yoff xsize ysize). You also could use <cite>-projwin</cite>
+and define the corners in georeferenced coordinates (ulx uly lrx lry).</p>
+<div class="highlight-python"><pre>gdalinfo -mm HYP_50M_SR_W.tif
+gdal_translate -srcwin 0 0 5400 5400 HYP_50M_SR_W.tif  west.tif
+gdal_translate -srcwin 5400 0 5400 5400 HYP_50M_SR_W.tif  east.tif</pre>
+</div>
+</div>
+<div class="section" id="raster-tileindex-with-gdaltindex">
+<h2>Raster tileindex with gdaltindex<a class="headerlink" href="#raster-tileindex-with-gdaltindex" title="Permalink to this headline">¶</a></h2>
+<p>You can build a shapefile as a raster tileindex. For every image a
+polygon is generated with the bounds of the extent of the polygon and
+the path to the file.</p>
+<div class="highlight-python"><pre>gdaltindex index_natural_earth.shp *st.tif</pre>
+</div>
+<p>Have a look at your output shapefile with QGIS and ogrinfo (you
+will learn more about ogrinfo later in this tutorial)</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex3.png"><img alt="../../_images/gdal_gdaltindex3.png" src="../../_images/gdal_gdaltindex3.png" style="width: 416.0px; height: 212.0px;" /></a>
+</div></blockquote>
+<div class="highlight-python"><pre>ogrinfo ../HYP_50M_SR_W/ index
+INFO: Open of `../HYP_50M_SR_W/'
+    using driver `ESRI Shapefile' successful.
+
+Layer name: index
+Geometry: Polygon
+Feature Count: 2
+Extent: (-180.000000, -90.000000) - (180.000000, 90.000000)
+Layer SRS WKT: (unknown)
+location: String (255.0)
+OGRFeature(index):0
+  location (String) = east.tif
+  POLYGON ((-0.00000000001796 90.0,179.999999999964047 90.0,179.999999999964047 -89.999999999982009,-0.00000000001796 -89.999999999982009,-0.00000000001796 90.0))
+
+OGRFeature(index):1
+  location (String) = west.tif
+  POLYGON ((-179.999999999999972 90.0,-0.00000000001796 90.0,-0.00000000001796 -89.999999999982009,-179.999999999999972 -89.999999999982009,-179.999999999999972 90.0))</pre>
+</div>
+</div>
+<div class="section" id="reprojecting">
+<h2>Reprojecting<a class="headerlink" href="#reprojecting" title="Permalink to this headline">¶</a></h2>
+<p>For this process we assume that HYP_50M_SR_W.tif has been properly
+created with bounds. As we saw before with gdainfo no coordinate system
+was set. So we assign WGS84 as coordinate system to the image in the
+first step.</p>
+<div class="highlight-python"><pre>gdal_translate -a_srs WGS84 HYP_50M_SR_W.tif HYP_50M_SR_W_4326.tif</pre>
+</div>
+<p>The gdalwarp command can be used to reproject images. Here we reproject
+the WGS84 geographic image to the Mercator projection:</p>
+<div class="highlight-python"><pre>gdalwarp -t_srs '+proj=merc +datum=WGS84' HYP_50M_SR_W_4326.tif mercator.tif</pre>
+</div>
+<p>Use gdalinfo to verify the change and have a look at the image.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/gdal_mercator3.png"><img alt="../../_images/gdal_mercator3.png" src="../../_images/gdal_mercator3.png" style="width: 405.6px; height: 327.2px;" /></a>
+</div></blockquote>
+<p>Here we reproject to the Ortho projection.</p>
+<div class="highlight-python"><pre>gdalwarp -t_srs '+proj=ortho +datum=WGS84' HYP_50M_SR_W_4326.tif ortho.tif</pre>
+</div>
+<a class="reference internal image-reference" href="../../_images/gdal_ortho3.png"><img alt="../../_images/gdal_ortho3.png" src="../../_images/gdal_ortho3.png" style="width: 294.4px; height: 296.8px;" /></a>
+<p>Note how the poles are clipped?  This is because the edges at the pole
+can&#8217;t be reprojected gdalwarp does not read all the data.  We can force
+gdalwarp to read a bunch of surplus data around chunks as one way to
+resolve this. Read more about this in the RasterTutorial <a class="reference external" href="http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial">http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial</a>.</p>
+</div>
+<div class="section" id="mosaicing">
+<h2>Mosaicing<a class="headerlink" href="#mosaicing" title="Permalink to this headline">¶</a></h2>
+<p>gdal_merge.py is a python script that can be used for simple mosaicing
+tasks. Mosaic the east.tif and west.tif into a single file:</p>
+<div class="highlight-python"><pre>gdal_merge.py  east.tif west.tif -o merged.tif</pre>
+</div>
+<p>The same task can be accomplished with gdalwarp. gdalwarp has a variety
+of advantages over gdal_merge, but can be slow to merge many files:</p>
+<div class="highlight-python"><pre>gdalwarp east.tif west.tif warpmerged.tif</pre>
+</div>
+</div>
+<div class="section" id="get-to-know-ogr">
+<h2>Get to know OGR<a class="headerlink" href="#get-to-know-ogr" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>cd /home/usr/gdal_natural_earth/</pre>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Open the shape file with a Desktop GIS like QGIS. And have a look.</p>
+</div>
+</div>
+<div class="section" id="get-information-about-the-vector-data-with-ogrinfo">
+<h2>Get information about the vector data with ogrinfo<a class="headerlink" href="#get-information-about-the-vector-data-with-ogrinfo" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>ogrinfo ./natural_earth
+INFO: Open of `../natural_earth/'
+    using driver `ESRI Shapefile' successful.
+1: 10m_lakes (Polygon)
+2: 10m_land (Polygon)
+3: 10m_rivers_lake_centerlines (Line String)
+4: 10m-admin-0-countries (Polygon)
+5: 10m_ocean (Polygon)
+6: 10m-urban-area (Polygon)
+7: 10m_populated_places_simple (Point)</pre>
+</div>
+<p>Get a summary about your data with ogrinfo together with <cite>-so</cite>.</p>
+<div class="highlight-python"><pre>ogrinfo -so ../natural_earth/ 10m-admin-0-countries
+INFO: Open of `../natural_earth/'
+      using driver `ESRI Shapefile' successful.
+
+Layer name: 10m-admin-0-countries
+Geometry: Polygon
+Feature Count: 251
+Extent: (-179.999783, -89.999828) - (180.000258, 83.633811)
+Layer SRS WKT:
+GEOGCS["GCS_WGS_1984",
+    DATUM["WGS_1984",
+        SPHEROID["WGS_1984",6378137.0,298.257223563]],
+    PRIMEM["Greenwich",0.0],
+    UNIT["Degree",0.0174532925199433]]
+OBJECTID: Integer (9.0)
+COUNTRY: String (100.0)
+FEATURECLA: String (32.0)
+SOV: String (100.0)
+SHAPE_LENG: Real (19.11)
+SHAPE_AREA: Real (19.11)</pre>
+</div>
+<p>If you run ogrinfo without a parameter you will get a summary about your data and afterwards a section for every dataset.</p>
+<div class="highlight-python"><pre>ogrinfo ../natural_earth/ 10m-admin-0-countries</pre>
+</div>
+<p>You can forward the result from ogrinfo to grep to filter and get only the attribute COUNTRY.</p>
+<div class="highlight-python"><pre>ogrinfo ../natural_earth/ 10m-admin-0-countries | grep COUNTRY
+
+COUNTRY: String (100.0)
+COUNTRY (String) = Afghanistan
+COUNTRY (String) = Akrotiri Sovereign Base Area
+COUNTRY (String) = Aland
+COUNTRY (String) = Albania
+COUNTRY (String) = Algeria
+COUNTRY (String) = American Samoa
+COUNTRY (String) = Andorra
+etc.</pre>
+</div>
+<p>You can convert your data to other formats. Get the list of the
+supported formats with <cite>&#8211;formats</cite>.</p>
+</div>
+<div class="section" id="use-ogr2ogr-to-convert-data-between-file-formats">
+<h2>Use ogr2ogr to convert data between file formats<a class="headerlink" href="#use-ogr2ogr-to-convert-data-between-file-formats" title="Permalink to this headline">¶</a></h2>
+<p>You can use ogr2ogr to converts simple features data between file
+formats. You can use <cite>&#8211;formats</cite> to get the list of the supported formats
+with read/write information.</p>
+<p>Convert the countries to GML.</p>
+<div class="highlight-python"><pre>ogr2ogr --formats
+ogr2ogr -f GML countries.xml 10m-admin-0-countries.shp</pre>
+</div>
+</div>
+<div class="section" id="things-to-try">
+<h2>Things to try<a class="headerlink" href="#things-to-try" title="Permalink to this headline">¶</a></h2>
+<p>Here are some additional challenges for you to try:</p>
+<ol class="arabic simple">
+<li>Try gdalwarp or gdal_merge.py to mosaic your data</li>
+<li>Try gdaladdo to build internal overviews</li>
+<li>QGIS uses GDAL/OGR too to suport many formats. It also provides the GdalTools Plugin to process raster data. This plugin integrates the gdal-tools into QGIS.</li>
+<li>Try ogr2ogr to import/export your vector data to other formats like PostGIS. Have a look at the options ogr2ogr provides.</li>
+<li>Try the QGIS plugin OGR-Layer-Konverter.</li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2>What Next?<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<p>This is only the first step on the road to using GDAL and OGR. There is
+a lot more functionality you can try.</p>
+<p>GDAL Project home</p>
+<blockquote>
+<div><a class="reference external" href="http://www.gdal.org">http://www.gdal.org</a></div></blockquote>
+<p>All about OGR</p>
+<blockquote>
+<div><a class="reference external" href="http://gdal.org/ogr/index.html">http://gdal.org/ogr/index.html</a></div></blockquote>
+<p>GDAL Tutorial</p>
+<blockquote>
+<div><a class="reference external" href="http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial">http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial</a></div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>
