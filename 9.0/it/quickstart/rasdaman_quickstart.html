@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guida rapida rasdaman &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 9.0 Contents" href="../overview/overview.html" />
+    <link rel="next" title="SAGA GIS Quickstart" href="saga_quickstart.html" />
+    <link rel="prev" title="Guida rapida su QGIS" href="qgis_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.rasdaman.org"><img alt="project logo" class="align-right" src="../../_images/logo-rasdaman13.png" style="width: 128.0px; height: 128.0px;" /></a>
+<div class="section" id="guida-rapida-rasdaman">
+<h1>Guida rapida rasdaman<a class="headerlink" href="#guida-rapida-rasdaman" title="Permalink to this headline">¶</a></h1>
+<p>rasdaman è un server raster consentire l&#8217;interrogazione n-D dati raster memorizzati
+in un database relazionale standard.</p>
+<p>Questa guida rapida descrive come provare interrogazioni su un sandbox di oggetti raster.
+Prima di questi esempi, il server rasdaman deve essere avviato
+(<em class="menuselection">Geospatial ‣ Databases ‣ Rasdaman ‣ Start Rasdaman Server</em>).</p>
+<div class="section" id="esplorare-esempi-da-1-d-a-4-d">
+<h2>Esplorare esempi da 1-D a 4-D<a class="headerlink" href="#esplorare-esempi-da-1-d-a-4-d" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Potete accedere alla <a class="reference external" href="http://localhost:8080/earthlook/index.php">demo locale</a> di
+rasdaman per esplorare i dati demo di vari set. Una piccola parte sono contenute in OSGeo-Live,
+queste utilizzano i larghi set di dati direttamente dal <a class="reference external" href="http://kahlua.eecs.jacobs-university.de/~earthlook/demos/index.php">sito Earthlook</a> (richiede una connessione internet attiva).</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="eseguire-interrogazioni-localmente">
+<h2>Eseguire interrogazioni localmente<a class="headerlink" href="#eseguire-interrogazioni-localmente" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first">Aprire una console e aprire il database di esempio installata localmente</p>
+</li>
+<li><p class="first">usare l&#8217;applicazione <strong class="command">rasql</strong> per spedire interrogazioni e ricevere i
+risultati, per esempio:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ rasql -q &quot;select png((char)(c.red / (c.red + c.green) - c.green / (c.red + c.green)) &gt; 0.6 * 255) from rgb AS c&quot; --out file
+</pre></div>
+</div>
+</li>
+<li><p class="first">usare il vostro strumento preferito per oprire i file generati.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="creare-il-vostro-database">
+<h2>Creare il vostro database<a class="headerlink" href="#creare-il-vostro-database" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p class="first">Aprire una console</p>
+</li>
+<li><p class="first"><a class="reference external" href="http://kahlua.eecs.jacobs-university.de/trac/rasdaman/wiki/Download">Scaricare e installare rasdaman</a>
+e <a class="reference external" href="http://kahlua.eecs.jacobs-university.de/trac/rasdaman/wiki/RequiredPackages">i suoi prerequisiti</a></p>
+</li>
+<li><p class="first">eseguire lo script ingestion demo:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ install_demo.sh
+</pre></div>
+</div>
+</li>
+<li><p class="first">usare lo strumento <strong class="command">rasql</strong> per spedire interrogazioni e ricevere i risultati, per esempio:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ rasql -q &quot;select png( NIR ) from NIR&quot; --out file
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="cose-da-provare">
+<h2>Cose da provare<a class="headerlink" href="#cose-da-provare" title="Permalink to this headline">¶</a></h2>
+<p>Ecco alcune ulteriori sfide per provare:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Esplorare il set di dati demo guardando la <a class="reference external" href="http://kahlua.eecs.jacobs-university.de/trac/rasdaman/browser/manuals_and_examples/manuals/pdf/ql-guide.pdf">guida del linguaggio rasql</a></li>
+<li>Per sapere di più su OGC  <a class="reference external" href="http://www.opengeospatial.org/standards/wcps">Web Coverage Processing Service</a> (WCPS) Linguaggio standard (che è stato fortemente ispirato da rasdaman), un punto di partenza è la <a class="reference external" href="http://kahlua.eecs.jacobs-university.de/~earthlook/tech/interface-wcps.php">documentazione e i  tutorial</a> .</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

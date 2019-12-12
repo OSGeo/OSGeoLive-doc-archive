@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Geography Markup Language (GML) &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Open Geospatial Consortium Standards" href="standards.html" />
+    <link rel="next" title="KML Encoding Standard (KML)" href="kml_overview.html" />
+    <link rel="prev" title="Filter Encoding (FE)" href="fe_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-OGC-left6.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-left6.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/logo-OGC-right6.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right6.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="geography-markup-language-gml">
+<h1>Geography Markup Language (GML)<a class="headerlink" href="#geography-markup-language-gml" title="Permalink to this headline">¶</a></h1>
+<p>GML (<a class="reference external" href="http://www.opengeospatial.org/standards/gml">http://www.opengeospatial.org/standards/gml</a>) is an XML grammar defined to express and communicate geographical features. GML serves as a modeling language for geographic systems as well as an open interchange format for geographic transactions on the Internet. Note that the concept of feature in GML is a very general one and includes not only conventional &#8220;vector&#8221; or discrete objects, but also coverages and some elements of sensor data. The ability to integrate all forms of geographic information is key to the utility of GML.</p>
+<a class="reference internal image-reference" href="../../_images/gml6.jpg"><img alt="GML in Context" src="../../_images/gml6.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>GML contains a rich set of primitives that are used to build application specific schemas or application languages. These primitives include:</p>
+<ul class="simple">
+<li>Feature</li>
+<li>Geometry</li>
+<li>Coordinate Reference System</li>
+<li>Topology</li>
+<li>Time</li>
+<li>Dynamic feature</li>
+<li>Coverage (including geographic images)</li>
+<li>Unit of measure</li>
+<li>Directions</li>
+<li>Observations</li>
+<li>Map presentation styling rules</li>
+</ul>
+<p>Understanding the use of “Feature”, “Geometry”, and “CRS” is critical in the use and development of any GML based encoding.</p>
+<p>OGC work on the GML standard began in 1998. GML was first formally approved as an OGC standard in 2001. GML became an ISO standard in 2007. GML 3.2.16 is the most current revision of the joint OGC-ISO standard. Versions 3.2.2 and 4.0 are currently in progress.</p>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>CityGML</li>
+<li>GeosciML</li>
+<li>GML in JPEG 2000</li>
+<li><a class="reference internal" href="wfs_overview.html"><em>Web Feature Service (WFS)</em></a></li>
+<li><a class="reference internal" href="kml_overview.html"><em>KML Encoding Standard (KML)</em></a></li>
+<li><a class="reference internal" href="sld_overview.html"><em>Style Layer Descriptor (SLD)</em></a></li>
+<li><a class="reference internal" href="fe_overview.html"><em>Filter Encoding (FE)</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

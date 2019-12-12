@@ -1,0 +1,353 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Inicio Rápido de QGIS &#8212; OSGeoLive 12.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '12.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Guía de Inicio Rápido de Rasdaman" href="rasdaman_quickstart.html" />
+    <link rel="prev" title="Inicio rápido del Servidor QGIS" href="qgis_mapserver_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.qgis.org"><img alt="../../_images/logo_qgis.png" class="align-right" src="../../_images/logo_qgis.png" /></a>
+<a class="reference external image-reference" href="target:http://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="qgis-quickstart">
+<h1><a class="toc-backref" href="#id2">Inicio Rápido de QGIS</a><a class="headerlink" href="#qgis-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>QGIS es un cliente de SIG de escritorio, fácil de usar, que te permite visualizar, gestionar, editar, analizar datos y componer mapas imprimibles.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#qgis-quickstart" id="id2">Inicio Rápido de QGIS</a><ul>
+<li><a class="reference internal" href="#edit-qgis-project" id="id3">Editar proyecto de QGIS</a></li>
+<li><a class="reference internal" href="#style-a-layer" id="id4">Estilo de una capa</a></li>
+<li><a class="reference internal" href="#create-a-new-qgis-project" id="id5">Cree un nuevo proyecto QGIS</a></li>
+<li><a class="reference internal" href="#connect-to-a-postgis-spatial-database" id="id6">Conectar a una base de datos espacial PostGIS</a></li>
+<li><a class="reference internal" href="#using-the-grass-toolbox" id="id7">Usando la caja de herramientas de GRASS</a></li>
+<li><a class="reference internal" href="#using-the-processing-toolbox" id="id8">Utilizando Processing Toolbox</a></li>
+<li><a class="reference internal" href="#importing-openstreetmap-data" id="id9">Importación de datos de OpenStreetMap</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id10">Cosas que probar</a></li>
+<li><a class="reference internal" href="#what-next" id="id11">¿Qué sigue?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="edit-qgis-project">
+<h2><a class="toc-backref" href="#id3">Editar proyecto de QGIS</a><a class="headerlink" href="#edit-qgis-project" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Vamos a comenzar por abrir un proyecto existente de QGIS y abriendo y cerrando capas.</p>
+<ol class="arabic">
+<li><p class="first">Iniciar QGIS desde <span class="menuselection">Geoespacial‣ SIG de Escritorio‣ QGIS</span> y seleccione <span class="menuselection">Proyecto‣Abierto</span> de la barra de menús.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_project_open.png"><img alt="Open a QGIS project" src="../../_images/qgis_project_open.png" style="width: 714.7px; height: 519.4px;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">Elegir <code class="file docutils literal"><span class="pre">QGIS-NaturalEarth-Example.qgs</span></code> y presione <span class="guilabel">Abrir</span>.</p>
+<ul class="simple">
+<li>Usted debe ver un mapa del mundo.</li>
+</ul>
+</li>
+<li><p class="first">Marque la casilla de verificación  <code class="docutils literal"><span class="pre">ne_10m_populated_places</span></code> en el árbol de capas.</p>
+<ul>
+<li><p class="first">Lugares poblados se muestran ahora como muchos puntos verdes:</p>
+<a class="reference internal image-reference" href="../../_images/qgis_screenshot.png"><img alt="Map in QGIS" src="../../_images/qgis_screenshot.png" style="width: 716.8px; height: 520.8px;" /></a>
+</li>
+</ul>
+</li>
+<li><p class="first">Intente arrastrar las capas hacia arriba y hacia abajo en la leyenda y ver cómo eso afecta a la visibilidad de las capas de abajo.</p>
+</li>
+<li><p class="first">Eche un vistazo a la barra de herramientas. Intente desplazar, acercar y alejar para ver la extensión completa. Encuentre estas herramientas junto al ícono <span class="guilabel">mano</span>. Si las barras de herramientas parecen desordenadas puede arrastrarlas y encenderlas o apagarlas haciendo click derecho. También puede acercar y alejar con la rueda del ratón y desplazarlas, arrastrándolas presionando el botón izquierdo del mouse.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_zoom_toolbar.png"><img alt="Map in QGIS" src="../../_images/qgis_zoom_toolbar.png" style="width: 289.1px; height: 30.8px;" /></a>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="style-a-layer">
+<h2><a class="toc-backref" href="#id4">Estilo de una capa</a><a class="headerlink" href="#style-a-layer" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Ahora intentemos personalizar el estilo del mapa.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_style_set.png"><img alt="Style setting" src="../../_images/qgis_style_set.png" style="width: 716.8px; height: 474.6px;" /></a>
+</div></blockquote>
+<ol class="arabic simple">
+<li>Ampliar un poco en el mapa, luego haga doble click en <code class="docutils literal"><span class="pre">ne_10m_rivers_lake_centerlines</span></code> en el árbol de capas.</li>
+</ol>
+<p>#. In the <cite>Layer Properties</cite> dialog on the <cite>Style</cite> tab click on the
+<cite>Color</cite> to select a different color, say yellow.</p>
+<ol class="arabic">
+<li><p class="first">Presione <span class="guilabel">OK</span>.</p>
+<ul>
+<li><p class="first">Note que los ríos se renderizan ahora en su nuevo color.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style.png"><img alt="Map in QGIS" src="../../_images/qgis_style.png" style="width: 716.8px; height: 520.8px;" /></a>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="create-a-new-qgis-project">
+<h2><a class="toc-backref" href="#id5">Cree un nuevo proyecto QGIS</a><a class="headerlink" href="#create-a-new-qgis-project" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Ahora, vamos a crear un nuevo proyecto QGIS y cargar nuestros propios datos.</p>
+<ol class="arabic simple">
+<li>Elija <span class="menuselection">Proyecto‣ Nuevo</span>. Se le preguntará si desea guardar el proyecto anterior, usted puede presionar <span class="guilabel">Cerrar sin Guardar</span>.</li>
+</ol>
+<p>#. Click <span class="menuselection">Layer ‣ Add Layer‣ Add Vector Layer…</span> Or click on the “Add Vector Layer” button (the one with the “V” shape, in the red rectangle in the image).
+You can also use the keyboard shortcut “Ctrl+Shift+V”</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_add_layer.png"><img alt="Add layer" src="../../_images/qgis_add_layer.png" style="width: 714.7px; height: 521.5px;" /></a>
+</div></blockquote>
+<ol class="arabic">
+<li><p class="first">Navegue al conjunto de datos  <code class="file docutils literal"><span class="pre">/home/user/data/natural_earth2/ne_10m_admin_0_countries.shp</span></code>.</p>
+</li>
+<li><p class="first">Presione <span class="guilabel">Abrir</span> y otra vez <span class="guilabel">Abrir</span>.</p>
+<ul>
+<li><p class="first">Usted debe ver todos los países de mundo.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_countries.png"><img alt="Add layer result" src="../../_images/qgis_countries.png" style="width: 716.8px; height: 520.8px;" /></a>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="connect-to-a-postgis-spatial-database">
+<h2><a class="toc-backref" href="#id6">Conectar a una base de datos espacial PostGIS</a><a class="headerlink" href="#connect-to-a-postgis-spatial-database" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Vamos a incluir ahora una capa de una base de datos Postgres.</p>
+<ol class="arabic simple">
+<li>En la lista de capas a la izquierda, desmarque la casilla de verificación de visibilidad <code class="docutils literal"><span class="pre">ne_10m_admin_0_países</span></code> para ocultarla temporalmente.</li>
+<li>Elegir <span class="menuselection">Capas ‣ Agrergar Capas ‣ Agregar Capas PostGIS…</span>.<ul>
+<li>También puede hacer click en el ícono con la cabeza del elefante en el panel de la izquierda o usar el atajo de teclado <cite>Ctrl+Shift+D</cite>.</li>
+<li>Ambas bases de datos, Natural Earth y OpenStreetMap Postgis, ya están disponibles; usaremos la base de datos de Natural Earth. Si desea conectarse a una base de datos diferente, debe seleccionar el botón <span class="guilabel">Nuevo</span> y completar los parámetros de la base de datos.</li>
+</ul>
+</li>
+</ol>
+<p>#. Select the «Natural Earth» connection and press <span class="guilabel">Connect</span>. Then
+click on the Public schema to deploy it:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Aparecerá una lista de tablas de base de datos.</li>
+</ul>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_postgis_connect.png"><img alt="Connecting to a PostGIS DB" src="../../_images/qgis_postgis_connect.png" style="width: 504.0px; height: 249.9px;" /></a>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic">
+<li><p class="first">Seleccione <code class="docutils literal"><span class="pre">ne_10_populated_places</span></code>  y haga click en <span class="guilabel">Añadir</span>.</p>
+<ul class="simple">
+<li>Para más detalles sobre cómo trabajar con  bases de datos PostGIS Consulte el <a class="reference internal" href="postgis_quickstart.html"><span class="doc">PostGIS Quickstart</span></a>.</li>
+</ul>
+</li>
+<li><p class="first">Haz un acercamiento a los Estados Unidos utilizando la rueda central del mouse y arrastra presionando el botón izquierdo del mouse para navegar.</p>
+</li>
+<li><p class="first">Haga click derecho en <code class="docutils literal"><span class="pre">ne_10m_populated_places</span></code> en la lista de capas para obtener un menú contextual, luego seleccione <span class="menuselection">Propiedades</span>.</p>
+</li>
+<li><p class="first">Vamos a representar uno de los atributos de la base de datos en los datos como un diagrama de burbuja. En medio de la pestaña de <cite>Estilo</cite>, arrastre el control deslizante de Transparencia hasta <strong>50%</strong>. Haga click en el pequeño botón a la derecha del campo de tamaño y seleccione <span class="menuselection">Campo de tamaño de escala</span>, después seleccione <strong>Rango de escala</strong> (está cerca del principio de la lista). Haga click en <span class="guilabel">Ok</span>.</p>
+</li>
+<li><p class="first">A continuación, puede hacer click en el botón de consulta en la barra de herramientas (flecha de cursor con una «i» azul ) y luego en las burbujas del borde del mapa para ver información sobre las ciudades individuales.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_bubble.png"><img alt="Scale field map" src="../../_images/qgis_bubble.png" style="width: 716.8px; height: 520.8px;" /></a>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="using-the-grass-toolbox">
+<h2><a class="toc-backref" href="#id7">Usando la caja de herramientas de GRASS</a><a class="headerlink" href="#using-the-grass-toolbox" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Ha habido muchos plugins escritos para QGIS que extienden la funcionalidad central de QGIS. Uno de los más poderosos es el plugin GRASS, que aprovecha los cientos de geoespacial de los módulos de procesamiento disponibles desde <a class="reference internal" href="../overview/grass_overview.html"><span class="doc">GRASS GIS</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Usted tendrá que cambiar los permisos de la carpeta de datos de GRASS para llevar a cabo los siguientes pasos. Por favor, abra una terminal y ejecute lo siguiente: «sudo chmod -R 775 /usr/local/share/grass/nc_basic_spm_grass7»</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Borrar la pizarra con <span class="menuselection">Proyecto ‣ Nuevo</span>.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_plugin.png"><img alt="Enable GRASS plugin" src="../../_images/qgis_plugin.png" style="width: 557.9px; height: 434.7px;" /></a>
+</li>
+<li><p class="first">Elegir <span class="menuselection">Plugins ‣ Aministrar e Istalar Plugins…</span>, a continuación, desplácese hacia abajo o tecleé  <code class="docutils literal"><span class="pre">grass</span></code> en el Cuadro de Búsqueda y seleccione el plugin <cite>GRASS 7</cite>.</p>
+<ul class="simple">
+<li>Observe que se ha añadido un nuevo ícono de GRASS a la Barra de Herramientas, ha aparecido una ventana acoplada, denominada «GRASS Tools» a la derecha del mapa y un nuevo elemento de menú <cite>GRASS</cite> se ha añadido al menú <cite>Plugins</cite>.</li>
+</ul>
+</li>
+<li><p class="first">Conectarse a un área de trabajo existente de GRASS con  <span class="menuselection">Plugins ‣ GRASS ‣ Open mapset</span>.</p>
+<ul class="simple">
+<li>La base de datos de GRASS SIG  (Gisdbase) ya se ha configurado en <cite>/home/user/grassdata</cite> en el disco para usted.</li>
+</ul>
+</li>
+<li><p class="first">En la base de datos central de GRASS hay una serie de conjuntos de datos de muestra. Cargaremos la ubicación de Carolina del Norte y el conjunto de mapas <code class="docutils literal"><span class="pre">user1</span></code> dentro de ella. Elija la ubicación  <cite>nc_basic_spm_grass7`y el conjunto de mapas de trabajo  `user1</cite>, a continuación, haga click en <span class="guilabel">Ok</span>.</p>
+</li>
+<li><p class="first">Para agregar un mapa ráster a la lista de capas QGIS, navegue desde el Panel del Navegador de QGIS a Home/grassdata/nc_basic_spm_grass7.</p>
+<ul>
+<li><p class="first">En el conjunto de mapas PERMANENTE seleccione el mapa de la <cite>elevación</cite> y haga doble click para agregarlo.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_grass_layers.jpg"><img alt="GRASS GIS layers loaded into QGIS" src="../../_images/qgis_grass_layers.jpg" style="width: 512.0px; height: 384.0px;" /></a>
+</li>
+</ul>
+</li>
+<li><p class="first">Añadir otra capa de ráster de GRASS, esta vez el mapa de  <cite>geología</cite> del mapset PERMANENT.</p>
+<ul class="simple">
+<li>Haga doble click en el mapa de <cite>geología</cite> en la Lista de capas QGIS y en la pestaña de Transparencia, establezca la transparencia global en 70%.</li>
+</ul>
+</li>
+<li><p class="first">Para agregar un mapa vectorial, seleccione una capa vectorial del Navegador de QGIS, como en los pasos anteriores.</p>
+<ul class="simple">
+<li>En el mapset PERMANENT seleccione el mapa de <cite>roadsmajor</cite> con un doble click.</li>
+</ul>
+</li>
+<li><p class="first">Cambiar el orden de capa si es necesario (roadsmajor, geología, elevación).</p>
+</li>
+</ol>
+<p>El plugin también le da acceso a muchos de los poderosos módulos de análisis y herramientas de visualización de GRASS:</p>
+<ol class="arabic">
+<li><p class="first">En el menú superior seleccione <span class="menuselection">Plugins ‣ GRASS ‣ Open GRASS tools</span>  y arrastre el borde para hacer un poco más grande que la ventana.</p>
+<ul class="simple">
+<li>Aparecerá una larga lista de herramientas de análisis. Vaya la pestaña de <cite>Modules Tree</cite> y seleccione <span class="menuselection">Region settings ‣ g.region.multiple.raster</span>. Hagciendo click sobre ella se abrirá una nueva pestaña Seleccione <code class="docutils literal"><span class="pre">elevation</span></code> de la lista del menú y pulse  <span class="guilabel">Run</span>. El mapa <cite>elevation</cite>  tendrá ahora una línea roja alrededor de él, indicando la extensión de límites de  <cite>computational region</cite>&nbsp; de GRASS.</li>
+</ul>
+</li>
+<li><p class="first">De nuevo en la pestaña de <cite>Modules Tree</cite> de la ventana <cite>GRASS Tools</cite> vaya hacia  <span class="menuselection">Raster</span> and select <span class="menuselection">Surface Management ‣ Generate Vector contour lines</span>.</p>
+</li>
+<li><p class="first">En la nueva pestaña del módulo que aparece abierta, seleccione el mapa  <cite>elevation</cite> como entrada.</p>
+</li>
+<li><p class="first">Añadir algunos niveles de contorno (por ejemplo 20, 40, 60, 80, 100)</p>
+</li>
+<li><p class="first">Seleccione el nombre de la capa de salida (por ejemplo, contour_lines) después haga click en <span class="guilabel">Run</span>.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_contours.jpg"><img alt="Contour creation" src="../../_images/qgis_contours.jpg" style="width: 716.8px; height: 537.6px;" /></a>
+</li>
+</ol>
+</div>
+<div class="section" id="using-the-processing-toolbox">
+<h2><a class="toc-backref" href="#id8">Utilizando Processing Toolbox</a><a class="headerlink" href="#using-the-processing-toolbox" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Un plugin central para QGIS que abre la puerta a una gran familia de herramientas de procesamiento es Processing Toolbox (anteriormente llamado SEXTANTE Toolbox). Actúa como un contenedor estandarizado alrededor de otros conjuntos de herramientas.</p>
+<ol class="arabic">
+<li><p class="first">Elija <span class="menuselection">Processing ‣ Toolbox</span>.</p>
+<ul class="simple">
+<li>Una nueva barra de herramientas se abrirá en el lado derecho de la pantalla con herramientas de procesamiento de muchos para elegir. Tómese su tiempo y eche un vistazo.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/qgis_toolbox.png"><img alt="Processing Toolbox" src="../../_images/qgis_toolbox.png" style="width: 716.8px; height: 520.8px;" /></a>
+<ul class="simple">
+<li>Puede que necesite habilitar un proveedor de Procesamiento para su uso. La captura de pantalla siguiente muestra cómo habilitar el soporte  GRASS GIS 7 en las herramientas de procesamiento. Asegúrese de desactivar el soporte GRASS  (es decir, de GRASS 6). Adicionalmente, cambie a la «Interfaz Avanzada» (vea la esquina inferior derecha de la captura de pantalla) para ver los proveedores:</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/qgis_enable_provider.png"><img alt="Enabling the GRASS GIS 7 provider in the Processing settings." src="../../_images/qgis_enable_provider.png" style="width: 716.8px; height: 520.8px;" /></a>
+</li>
+</ol>
+</div>
+<div class="section" id="importing-openstreetmap-data">
+<h2><a class="toc-backref" href="#id9">Importación de datos de OpenStreetMap</a><a class="headerlink" href="#importing-openstreetmap-data" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Abrir el LX Terminal Emulator del menú principal <span class="menuselection">Accessories</span> .</p>
+<ul>
+<li><p class="first">Corte y pegue los siguientes comandos en la ventana de Terminal para crear una copia de trabajo de los datos OSM en el directorio inicial:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">data</span><span class="o">/</span><span class="n">osm</span><span class="o">/</span><span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span><span class="o">.</span><span class="n">bz2</span> <span class="o">.</span>
+<span class="n">bzip2</span> <span class="o">-</span><span class="n">d</span> <span class="n">feature_city</span><span class="o">.</span><span class="n">osm</span><span class="o">.</span><span class="n">bz2</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p class="first">En QGIS, seleccione  <span class="menuselection">Project ‣ New</span>. Si tiene abierta la ventana de Processing Toolbox es posible que desee cerrarla.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_osm_plugin.png"><img alt="The OpenStreetMap plugin" src="../../_images/qgis_osm_plugin.png" style="width: 512.0px; height: 384.0px;" /></a>
+</li>
+<li><p class="first">Elija <span class="menuselection">Vector ‣ OpenStreetMap ‣ Import topology from XML</span>.</p>
+</li>
+<li><p class="first">Haga click en el botón «…» junto a  «Input XML file (.osm)»  y seleccione el archivo <cite>feature_city.osm</cite> que acaba de copiar en el directorio de inicio. El nombre de «Output SpatialLite DB file» se ajusta automáticamente. Haga click en <span class="guilabel">Ok</span> para convertir el conjunto de datos al formato SpatiaLite y crear una conexión a SpatialLite DB dentro de QGIS.</p>
+</li>
+<li><p class="first">A continuación, necesitamos extraer puntos, líneas y áreas, y luego agregar topología a cada una de estas tres nuevas capas. Para hacer esto, necesitamos ejecutar la herramienta tres veces. Seleccione <span class="menuselection">Vector ‣ OpenStreetMap ‣ Export toplogy to SpatiaLite</span> y use el botón «…» para seleccionar el archivo recién creado` feature_city.osm.db` . Automáticamente, se completará el nombre de la capa de salida como <cite>Output layer name</cite>, dependiendo del <cite>Export type</cite> seleccionadoi. Haga click en el botón <span class="guilabel">Load from DB</span> para cargar las etiquetas disponibles. Para la capa de «puntos», marque el recuadro <cite>amentity</cite>; para la capa de «polilíneas», marque la capa <cite>highway</cite>; y para la capa «polígono», seleccione la capa <cite>building</cite>. Es posible que desee cambiar el <cite>Output layer name</cite> para reflejar las etiquetas de características que ha seleccionado. Cuando esté listo, presione <span class="guilabel">Ok</span> para cargar la capa. Tendrá que presionar nuevamente el botón <span class="guilabel">Load from DB</span> después de cambiar el tipo de exportación de puntos a polilíneas y de polilíneas a polígonos.</p>
+</li>
+<li><p class="first">Una vez cargada topología, puede refinar la capa SpatiaLite consultando sólo ciertas funciones desde dentro de ella. Seleccione  <span class="menuselection">Layer ‣ Add Layer ‣ Add SpatiaLite Layer…</span> del menú y de la lista <cite>Databases</cite>  seleccione  <cite>feature_city&#64;…</cite>  y luego haga click en <span class="guilabel">Connect</span>. Haga doble click en la tabla  <cite>feature_city_polylines</cite>  y luego haga doble click en «highway» para comenzar a construir la consulta SQL. Haga click en el botón  <span class="guilabel">=</span> , después en el botón <span class="guilabel">All</span>  y haga doble click en  <cite>motorway</cite> de la lista de valores. Haga click en el botón <span class="guilabel">Test</span>  para verificar el resultado y finalmente haga click en  <span class="guilabel">Ok</span>. De vuelta en la ventana de  <cite>Add SpatiaLite Table</cite>  haga click en  <span class="guilabel">Add</span> para restringir la renderización a sólo autopistas principales. Puede repetir este proceso con nuevas capas para renderizar tipos con diferentes anchos y estilos.</p>
+<a class="reference internal image-reference" href="../../_images/QGIS_spatialite_add_layer.png"><img alt="The OpenStreetMap add layer" src="../../_images/QGIS_spatialite_add_layer.png" style="width: 936.0px; height: 477.0px;" /></a>
+</li>
+<li><p class="first">Ahora puede explorar este rico conjunto de datos. Utilice el botón de información del cursor <code class="docutils literal"><span class="pre">i</span></code> en la barra de herramientas de QGIS para consultas individuales sobre funciones del mapa.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id10">Cosas que probar</a><a class="headerlink" href="#things-to-try" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li>Intente ver las fuentes de datos con <a class="reference external" href="http://planet.qgis.org/planet/tag/qgis%20browser/">QGIS Data Browser</a>  en el menú <span class="menuselection">Geospatial ‣ Databases</span>.</li>
+<li>Intente publicar su mapa QGIS en la Web utilizando <a class="reference internal" href="../overview/qgis_mapserver_overview.html"><span class="doc">QGIS Map Server</span></a> en el menú <span class="menuselection">Geospatial ‣ Web Services</span> .</li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id11">¿Qué sigue?</a><a class="headerlink" href="#what-next" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Tutoriales para funciones más avanzadas de QGIS se recogen como <a class="reference external" href="../../qgis/">OSGeoLive QGIS tutorials</a>.</p>
+<p>Para obtener más información acerca de QGIS, un buen punto de partida es  <a class="reference external" href="http://docs.qgis.org/">Documentation page</a> en la página web QGIS y  <a class="reference external" href="http://docs.qgis.org/2.8/en/docs/gentle_gis_introduction/">A Gentle Introduction to GIS</a> eBook.</p>
+<p>The <a class="reference external" href="http://docs.qgis.org/2.8/en/docs/user_manual/">QGIS User Guide</a> <a class="reference external" href="../../qgis/QGIS-2.2-UserGuide-en.pdf">[1]</a> is also included on the OSGeoLive disc.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

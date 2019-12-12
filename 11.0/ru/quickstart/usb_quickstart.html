@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Создание загрузочного USB флеш-диска с OSGeo-Live &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="usb-osgeo-live">
+<h1>Создание загрузочного USB флеш-диска с OSGeo-Live<a class="headerlink" href="#usb-osgeo-live" title="Permalink to this headline">¶</a></h1>
+<p>Здесь описан предпочтительный метод создания загрузочного USB флеш-диска
+с OSGeo-Live. Загрузка с USB-диска происходит быстрее, чем с DVD, и
+USB-диск может быть настроен для хранения данных между сессиями.</p>
+<p>Мы обнаружили, что существует целый ряд способов и ухищрений для успешного
+создания такого USB-диска. Мы задокументировали то, что знаем в настоящее
+время, но наверняка есть ещё какие-нибудь приёмы. Советы смотрите здесь:
+<a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB</a></p>
+<div class="section" id="id1">
+<h2>Требования<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>USB флеш-диск (минимальный объём 4 Гб, рекомендуется 8 Гб).</li>
+<li>Образ диска OSGeo-Live (ISO) (загруженный отсюда: <a class="reference external" href="http://live.osgeo.org/en/download.html">http://live.osgeo.org/en/download.html</a>) или полученный с DVD.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Для USB-диска объёмом 4 Гб используйте образ диска (ISO) <em>osgeo-live-mini</em> ISO (без установщиков для Windows и Mac)</li>
+<li>Для USB-диска объёмом 8 Гб и более используйте или образ диска <em>osgeo-live-mini</em>, или osgeo-live ISO (с установщиками для Windows и Mac).</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="usb-ubuntu">
+<h2>Создание загрузочного USB-диска из Ubuntu<a class="headerlink" href="#usb-ubuntu" title="Permalink to this headline">¶</a></h2>
+<p>Это рекомендованный процесс для создания USB. Он применим с Ubuntu и
+вариантам Ubuntu типа Lubuntu или того же OSGeo-Live.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Версия Ubuntu, которую вы запускаете, должна быть такой же или выше
+версии Lubuntu, которая будет установлена на ваш USB-диск. Если
+устанавливать OSGeo-Live 6.0 на USB, то вам потребуется запуск Ubuntu 12.04 или новее.</p>
+</div>
+<p><a class="reference external" href="http://live.osgeo.org/en/download.html">Загрузите</a> образы дисков <em>osgeo-live</em> или
+<em>osgeo-live-mini</em> на ваш жёсткий диск.</p>
+<p>Загрузите компьютер с последней версией Ubuntu/Xbuntu. Вы можете сделать это
+с OSGeo-Live DVD, как описано в <a class="reference internal" href="osgeolive_quickstart.html"><em>Начало работы c OSGeo-Live</em></a>.</p>
+<p>Вставьте USB-диск в компьютер.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/usb_select.png"><img alt="../../_images/usb_select.png" src="../../_images/usb_select.png" style="width: 305.2px; height: 294.0px;" /></a>
+</div></blockquote>
+<p>Выберите <span class="menuselection">System Tools ‣ Startup Disk Creator</span> или
+найдите <cite>Startup Disk Creator</cite> через интерфейс Unity.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/usb_set_params.png"><img alt="../../_images/usb_set_params.png" src="../../_images/usb_set_params.png" style="width: 333.2px; height: 375.2px;" /></a>
+</div></blockquote>
+<p>Выберите <em>osgeo-live</em> или <em>osgeo-live-mini</em> ISO-образы, загруженные ранее.</p>
+<p>Выберите USB-диск. Если вы имеете дополнительное место на диске, вы можете
+подтянуть слайдер, чтобы создать пространство для постоянного хранения данных
+на диске (рекомендовано).</p>
+<p>Выберите <span class="guilabel">Make Startup Disk</span>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/usb_installing.png"><img alt="../../_images/usb_installing.png" src="../../_images/usb_installing.png" style="width: 302.4px; height: 100.8px;" /></a>
+</div></blockquote>
+<p>Подождите 20 минут или около того, пока USB-диск создаётся.</p>
+</div>
+<div class="section" id="usb">
+<h2>Загрузка с USB-диска<a class="headerlink" href="#usb" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Выключите компьютер</li>
+<li>Вставьте USB-диск в свободный USB-порт</li>
+<li>Включите компьютер и выберите загрузку с USB:<ul>
+<li>Большинство компьютеров не настроены для загрузки с USB по умолчанию</li>
+<li>При загрузке смотрите на сообщения, появляющиеся в меню загрузки (в большинстве случаев нужно нажать клавишу F12)</li>
+<li>Если ваш компьютер не имеет загрузочного меню, то войдите в настройки BIOS. Клавиша для входа варьируется в зависимости от производителя и модели компьютера. Если вы не смогли войти в настройки сами, посмотрите на веб-сайте, где перечислены &#8220;горячие клавиши&#8221; для разных BIOS (<a class="reference external" href="http://www.mydigitallife.info/comprehensive-list-of-how-key-to-press-to-access-bios-for-various-oem-and-computer-systems/">http://www.mydigitallife.info/comprehensive-list-of-how-key-to-press-to-access-bios-for-various-oem-and-computer-systems/</a> ).</li>
+</ul>
+</li>
+<li>Выберите загрузку с USB-устройства<ul>
+<li>Заметьте, что на некоторых компьютерах вы должны иметь USB-диск, вставленный в компьютер, чтобы выбрать его.</li>
+<li>Заметьте также, что USB-диск часто находится в списке ниже жёстких дисков, а не съёмных устройств.</li>
+<li><a class="reference external" href="http://www.youtube.com/watch?v=eQBdVO-n6Mg">Видео</a>, демонстрирующее загрузку с USB.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2>Запуск<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Запуск, как описано в <a class="reference internal" href="osgeolive_quickstart.html"><em>Начало работы c OSGeo-Live</em></a></p>
+</div>
+<div class="section" id="id5">
+<h2>Смотрите также:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="osgeolive_quickstart.html"><em>Начало работы c OSGeo-Live</em></a></li>
+<li><a class="reference internal" href="virtualization_quickstart.html"><em>Быстрый запуск OSGeo-Live в виртуальной машине</em></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><em>Установка OSGeo-Live на жёсткий диск</em></a></li>
+<li>Альтернативные способы создания загрузочного USB-диска и актуальные советы собраны здесь: <a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">wiki</a></li>
+<li>Вопросы могут быть заданы через наш мэйл-лист <a class="reference external" href="http://lists.osgeo.org/mailman/listinfo/live-demo">http://lists.osgeo.org/mailman/listinfo/live-demo</a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

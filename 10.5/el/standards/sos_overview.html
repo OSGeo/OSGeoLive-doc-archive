@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sensor Observation Service (SOS) &mdash; OSGeo-Live 10.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 10.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Πρότυπα Open Geospatial Consortium" href="standards.html" />
+    <link rel="next" title="Web Coverage Service (WCS)" href="wcs_overview.html" />
+    <link rel="prev" title="Style Layer Descriptor (SLD)" href="sld_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-OGC-left2.png" id="sos-overview-el"><img alt="OGC logo" class="align-right" id="sos-overview-el" src="../../_images/logo-OGC-left2.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/logo-OGC-right2.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right2.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="sensor-observation-service-sos">
+<h1>Sensor Observation Service (SOS)<a class="headerlink" href="#sensor-observation-service-sos" title="Permalink to this headline">¶</a></h1>
+<p>Το πρότυπο Sensor Observation Service (SOS) του OGC αφορά μια διαδικτυακή υπηρεσία δεδομένων. Το πρότυπο SOS του OGC ορίζει μια τυποποιημένη διεπαφή και λειτουργίες για πρόσβαση σε παρατηρήσεις από αισθητήρες και συστήματα αισθητήρων που ομοιογενείς για όλα τα συστήματα αισθητήρων (περιλαμβανομένων τηλεπισκοπικών, επίγειων, ακίνητων και κινητών αισθητήρων). Το πρότυπο SOS παρέχει αποτελέσματα ερωτημάτων στο πρότυπο Observation and Measurements (O&amp;M) για τη μοντελοποίηση παρατηρήσεων από δέκτες αλλά και με τη χρήση της γλώσσας SensorML για τη μοντελοποίηση των συστημάτων αισθητήρων και δεκτών. (<a class="reference external" href="http://www.opengeospatial.org/standards/sos">http://www.opengeospatial.org/standards/sos</a>)</p>
+<a class="reference internal image-reference" href="../../_images/sos2.jpg"><img alt="SOS in Context" src="../../_images/sos2.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>Το πρότυπο SOS ορίζει ένα κοινό μοντέλο για αισθητήρες αλλά και συστήματα αισθητήρων το οποίο δεν είναι συγκεκριμένο σχετικά με ένα πεδίο εφαρμογών αλλά μπορεί να χρησιμοποιηθεί χωρίς την εκ των προτέρων γνώση του πεδίου εφαρμογής.</p>
+<p>Μια παρατήρηση είναι ένα γεγονός του οποίου το αποτέλεσμα είναι μια εκτίμηση της τιμής μιας ιδιότητας στο πεδίο ενδιαφέροντος, και λαμβάνεται με συγκεκριμένη διαδικασία. Οι παρατηρήσεις ορίζονται από</p>
+<ul class="simple">
+<li>eventTime – τον χρόνο του γεγονότος, πότε δηλαδή η παρατήρηση συνέβει</li>
+<li>featureOfInterest – το χαρακτηριστικό ενδιαφέροντος, ποιά οντότητα μετρήθηκε</li>
+<li>observedProperty - την παρατηρούμενη ιδιότητα, δηλαδή το ποιά ιδιότητα μετρήθηκε</li>
+<li>procedure  - τη διαδικασία, πως δηλαδή αυτή η ιδιότητα μετρήθηκε</li>
+</ul>
+<p>Οι υποχρεωτικές διαδικασίες μιας υπηρεσίας SOS περιλαμβάνουν:
+* GetObservation - πρόσβαση στις παρατηρήσεις και στα δεδομένα μετρήσεων μέσω χωρο-χρονικών ερωτημάτων που μπορούν να φιλτραριστούν με βάση γεγονότα
+* GetCapabilities - Τα μεταδεδομένα της υπηρεσίας SOS
+* DescribeSensor - Πληροφορίες σχετικές με τους αισθητήρες και τους δέκτες, τις λειτουργίες τους και τις πλατφόρμες τους μοντελοποιημένες σε γλώσσα SensorML</p>
+<p>Προαιρετικές λειτουργίες μιας τέτοιας υπηρεσίας περιλαμβάνουν τις: GetResult, GetFeatureOfInterest, GetFeatureOfInterestTime, DescribeFeatureofInterest, DescribeObservationType, DescribeResultModel, Register Sensor, και InsertObservation.</p>
+<div class="section" id="id1">
+<h2>Δείτε επίσης<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="wcs_overview.html"><em>Web Coverage Service (WCS)</em></a></li>
+<li><a class="reference internal" href="wfs_overview.html"><em>Web Feature Service (WFS)</em></a></li>
+<li>Grid Coverage Service</li>
+<li>Sensor Planning Service</li>
+<li>Coordinate Transformation Service</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

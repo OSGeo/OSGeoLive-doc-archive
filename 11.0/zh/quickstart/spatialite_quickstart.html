@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SpatiaLite 快速入门 &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="Quickstarts" href="toc.html" />
+    <link rel="prev" title="SAGA GIS 快速入门" href="saga_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-spatialite.png"><img alt="project logo" class="align-right" src="../../_images/logo-spatialite.png" style="width: 64.0px; height: 56.5px;" /></a>
+<div class="section" id="spatialite">
+<h1><a class="toc-backref" href="#id5">SpatiaLite 快速入门</a><a class="headerlink" href="#spatialite" title="Permalink to this headline">¶</a></h1>
+<p>　　SpatiaLite 是一套具有空间数据功能的 SQLite 数据库系统。</p>
+<p>　　本文演示如何通过图形界面或命令行打开一个 SpatiaLite 数据库并执行简单查询。</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#spatialite" id="id5">SpatiaLite 快速入门</a><ul>
+<li><a class="reference internal" href="#spatialite-gui" id="id6">使用 SpatiaLite-GUI 图形界面</a></li>
+<li><a class="reference internal" href="#spatialite-gis" id="id7">使用 SpatiaLite-GIS</a></li>
+<li><a class="reference internal" href="#id1" id="id8">从命令行运行</a></li>
+<li><a class="reference internal" href="#id2" id="id9">其它尝试</a></li>
+<li><a class="reference internal" href="#id3" id="id10">其它信息</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="spatialite-gui">
+<h2><a class="toc-backref" href="#id6">使用 SpatiaLite-GUI 图形界面</a><a class="headerlink" href="#spatialite-gui" title="Permalink to this headline">¶</a></h2>
+<p>　　SpatiaLite-GUI 为浏览和维护空间数据库提供了一套图形界面，方便使用鼠标点击生成 SQL 命令以方便地管理表单和数据。</p>
+<p>　　首先打开一个 SpatiaLite 数据库并查看表单内的字段：</p>
+<ul class="simple">
+<li>通过 <span class="menuselection">Geospatial-&gt;Databases-&gt;Spatialite GUI</span> 打开 SpatiaLite-GUI 。</li>
+</ul>
+<ul>
+<li><p class="first">选择 <span class="menuselection">File-&gt;Connecting an existing SQLite DB</span></p>
+</li>
+<li><p class="first">在 <code class="file docutils literal"><span class="pre">/home/user/data/spatialite</span></code> 目录选择 <code class="file docutils literal"><span class="pre">trento.sqlite</span></code></p>
+<a class="reference internal image-reference" href="../../_images/spatialite-gui-trento.png"><img alt="../../_images/spatialite-gui-trento.png" src="../../_images/spatialite-gui-trento.png" style="width: 560.0px; height: 433.3px;" /></a>
+</li>
+</ul>
+<ul>
+<li><p class="first">在 MunicipalHallsView 右击选择 &#8220;Show Columns&#8221; 显示字段。</p>
+<a class="reference internal image-reference" href="../../_images/spatialite-gui-columns.png"><img alt="../../_images/spatialite-gui-columns.png" src="../../_images/spatialite-gui-columns.png" style="width: 560.0px; height: 433.3px;" /></a>
+</li>
+<li><p class="first">界面将分为三个部分：</p>
+<ol class="arabic simple">
+<li>左侧显示数据库结构，包含表单、字段等信息。右击一个栏目可以选择一些基本的数据库操作。</li>
+<li>右上方的面板显示了所选操作的 SQL 命令。可以通过编辑此处的文字输入自定义命令。</li>
+<li>右下角面板显示所执行的 SQL 命令的结果。</li>
+</ol>
+</li>
+<li><p class="first">右击 MunicipalHalls 表单并选择 &#8220;Edit table rows&#8221; 。注意右上角即时生成的 SQL 命令以及右下角显示的结果：</p>
+<div class="highlight-python"><div class="highlight"><pre>SELECT ROWID, &quot;PK_UID&quot;, &quot;AREA&quot;, &quot;PERIMETER&quot;, &quot;COMU&quot;, &quot;Geometry&quot;
+    FROM &quot;MunicipalHalls&quot;
+    ORDER BY ROWID
+</pre></div>
+</div>
+</li>
+</ul>
+<ul>
+<li><p class="first">可以调整该 SQL 命令，从而只从 MunicipalHallsView 的 NOME_PROV 中包含 &#8220;BRESCIA&#8221; 的记录获取 NOME 。在右上角 SQL 面板中：</p>
+<div class="highlight-python"><div class="highlight"><pre>SELECT NOME, X(Geometry) AS Longitude, Y(Geometry) AS Latitude
+     FROM &quot;MunicipalHallsView&quot;
+     WHERE NOME_PROV LIKE &quot;BRESCIA&quot;;
+</pre></div>
+</div>
+</li>
+</ul>
+<p>　　点击 &#8220;Execute SQL&#8221; 执行，结果将显示在右下角。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/spatialite-gui-select.png"><img alt="../../_images/spatialite-gui-select.png" src="../../_images/spatialite-gui-select.png" style="width: 560.0px; height: 433.3px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="spatialite-gis">
+<h2><a class="toc-backref" href="#id7">使用 SpatiaLite-GIS</a><a class="headerlink" href="#spatialite-gis" title="Permalink to this headline">¶</a></h2>
+<p>　　SpatiaLite-GIS 是浏览空间记录图层的一个简单客户端。</p>
+<ul class="simple">
+<li>从桌面 Desktop GIS 菜单选择 SpatiaLite-GIS 。</li>
+<li>点击 &#8220;Connecting existing SQLite DB&#8221; 连接至 /home/user/data/spatialite/trento.sqlite 。</li>
+</ul>
+<p>　　显示的地图为意大利 Trento 省。</p>
+<blockquote>
+<div><ul class="simple">
+<li>右击 Highways 高速公路图层并选择 <span class="menuselection">Hide</span> 隐藏。</li>
+<li>右击 LocalCouncilsTrento 地方议会图层点击 <span class="menuselection">Layer Configuration-&gt;Classify</span> 并选择 &#8220;Shape Area&#8221; 。设置 4 Classes（分组）并设定最小（Min）和最大（Max）值色块并选择颜色。这样就得到了 Trento 的分色显示地图。</li>
+<li>右击 LocalCouncils 并选择 <span class="menuselection">Layer configuration-&gt;Graphics</span> 可以编辑 Border Graphics 改变边界线颜色。</li>
+<li>将地图放大到一部分并右击 PopulatedPlaces 图层选择 <span class="menuselection">Indentify on</span> 。点击任意一个居民点图标可以显示其属性信息。</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id8">从命令行运行</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>　　需要自动操作或者使用脚本的用户将会更希望使用命令行界面。本例演示从命令行读取一个 shp 文件并搜索一条道路附近的学校。</p>
+<ul>
+<li><p class="first">从桌面选择 <span class="menuselection">Applications -&gt; Accessories -&gt; Terminal Emulator</span> 可以开启命令行界面。</p>
+</li>
+<li><p class="first">以 <strong>spatialite</strong> 打开示例数据库：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">spatialite</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">spatialite</span><span class="o">/</span><span class="n">trento</span><span class="o">.</span><span class="n">sqlite</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">基本命令：</p>
+<div class="highlight-python"><div class="highlight"><pre>.help（帮助信息）
+.tables（显示表单）
+.quit（退出）
+</pre></div>
+</div>
+</li>
+</ul>
+<ul>
+<li><p class="first">创建一个数据库并读取 shp：</p>
+<blockquote>
+<div><ul>
+<li><p class="first">创建一个新的数据库并从 north_carolina 数据集读取两个 shp 文件。</p>
+<div class="highlight-python"><div class="highlight"><pre>user@osgeo-6:~$ spatialite test.sqlite
+SpatiaLite version ..: 3.1.0-RC2      Supported Extensions:
+     - &#39;VirtualShape&#39;        [direct Shapefile access]
+     - &#39;VirtualDbf&#39;          [direct DBF access]
+     - &#39;VirtualXL&#39;           [direct XLS access]
+     - &#39;VirtualText&#39;         [direct CSV/TXT access]
+     - &#39;VirtualNetwork&#39;      [Dijkstra shortest path]
+     - &#39;RTree&#39;               [Spatial Index - R*Tree]
+     - &#39;MbrCache&#39;            [Spatial Index - MBR cache]
+     - &#39;VirtualSpatialIndex&#39; [R*Tree metahandler]
+     - &#39;VirtualFDO&#39;          [FDO-OGR interoperability]
+     - &#39;SpatiaLite&#39;          [Spatial SQL - OGC]
+PROJ.4 version ......: Rel. 4.8.0, 6 March 2012
+GEOS version ........: 3.3.3-CAPI-1.7.4
+SQLite version ......: 3.7.9
+Enter &quot;.help&quot; for instructions
+spatialite&gt;
+spatialite&gt; .loadshp data/north_carolina/shape/schools_wake schools utf-8 3358
+spatialite&gt; .loadshp data/north_carolina/shape/roadsmajor roads utf-8 3358
+</pre></div>
+</div>
+</li>
+<li><p class="first">在 .loadshp 命令中第一项为目标文件名（无 .shp 扩展名），第二项为目标表单，然后是字符编码和投影系统的 EPSG 代码。</p>
+</li>
+<li><p class="first">查询 42 高速公路周围的学校：</p>
+<div class="highlight-python"><div class="highlight"><pre>spatialite&gt; SELECT s.NAMESHORT, s.ADDRNUMBER, s.ADDRROOT
+     ...&gt; FROM schools AS s, roads AS r
+     ...&gt; WHERE r.ROAD_NAME = &quot;NC-42&quot; AND
+     ...&gt; ST_Distance(s.Geometry, r.Geometry) &lt; 1000;
+FUQUAY-VARINA|6600|Johnson Pond Rd
+WILLOW SPRINGS|6800|Dwight Rowland Rd
+FUQUAY-VARINA|109|N Ennis St
+LINCOLN HEIGHTS|307|Bridge St
+</pre></div>
+</div>
+</li>
+<li><p class="first">输出：</p>
+</li>
+<li><p class="first">最后，我们可以对逗号分隔的 &#8220;schools_rt42.txt&#8221; 文本文件作查询：</p>
+<div class="highlight-python"><div class="highlight"><pre>spatialite&gt; .mode csv
+spatialite&gt; .output &quot;schools_rt42.txt&quot;
+spatialite&gt; SELECT s.NAMESHORT, s.ADDRNUMBER, s.ADDRROOT
+    ...&gt; FROM schools AS s, roads AS r
+    ...&gt; WHERE r.ROAD_NAME = &quot;NC-42&quot; AND
+    ...&gt; ST_Distance(s.Geometry, r.Geometry) &lt; 1000;
+spatialite&gt;.q
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id9">其它尝试</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>　　您可以继续尝试其它操作：</p>
+<ul class="simple">
+<li>使用 SpatiaLite-GUI 浏览几何对象</li>
+<li>在 QGIS 打开和编辑 SpatiaLite 图层</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id10">其它信息</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>　　您可以访问 <a class="reference external" href="https://www.gaia-gis.it/fossil/libspatialite/index">SpatiaLite 项目主页</a> 获取更多的信息。</p>
+<p>　　这份 <a class="reference external" href="http://www.gaia-gis.it/gaia-sins/spatialite-cookbook/index.html">Spatialite Cookbook</a> 提供了帮助您学习 SpatiaLite 的许多信息。</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

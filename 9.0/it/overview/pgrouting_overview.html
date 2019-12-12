@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pgRouting &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 9.0 Contents" href="overview.html" />
+    <link rel="next" title="PostGIS" href="postgis_overview.html" />
+    <link rel="prev" title="OTB" href="otb_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.pgrouting.org/"><img alt="pgRouting logo" class="align-right" src="../../_images/logo-pgRouting12.png" /></a>
+<div class="section" id="pgrouting">
+<h1>pgRouting<a class="headerlink" href="#pgrouting" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="strumenti-gis">
+<h2>Strumenti GIS<a class="headerlink" href="#strumenti-gis" title="Permalink to this headline">¶</a></h2>
+<p>pgRouting estende il database geospaziale <a class="reference internal" href="postgis_overview.html"><em>PostGIS</em></a>/<a class="reference external" href="http://postgresql.org">PostgreSQL</a>
+per provvedere funzionalità di routing geospaziale e analisi di reti.</p>
+<p>Vantaggi dell&#8217;approccio di database per il routing sono:</p>
+<ul class="simple">
+<li>I dati e gli attributi possono essere modificati da molti clients, come
+<a class="reference internal" href="qgis_overview.html"><em>Quantum GIS</em></a> e <a class="reference internal" href="udig_overview.html"><em>uDig</em></a> attraverso JDBC,
+ODBC, o direttamente usando Pl/pgSQL. I clients possono essere sia PCs che dispositivi mobili.</li>
+<li>I cambiamenti nei dati possono essere istantaneamente riflessi attraverso il motore
+di routing. Non c&#8217;è bisogno di effettuare calcoli precedentemente.</li>
+<li>Il parametro del &#8220;costo&#8221; può essere calcolato dinamicamente attraverso SQL e il suo
+valore può essere il risultato di diversi campi o tabelle.</li>
+</ul>
+<p>pgRouting è disponibile sotto la licenza GPLv2 ed è supportata da una crescente comunità
+di persone individuali, aziende e organizzazioni.</p>
+<a class="reference internal image-reference" href="../../_images/pgrouting6.png"><img alt="pgRouting query in pgAdminIII" class="align-right" src="../../_images/pgrouting6.png" style="width: 561.4px; height: 401.1px;" /></a>
+<div class="section" id="caratteristiche-principali">
+<h3>Caratteristiche principali<a class="headerlink" href="#caratteristiche-principali" title="Permalink to this headline">¶</a></h3>
+<p>pgRouting fornisce funzioni per:</p>
+<ul class="simple">
+<li>Tutte le coppie dei percorsi più brevi, Johnsonas Algorithm</li>
+<li>Tutte le coppie dei percorsi più brevi, Floyd-Warshall Algorithm</li>
+<li>Percorso più breve Path A*</li>
+<li>Percorso più breve bidirezionale Dijkstra</li>
+<li>Percorso più breve bidirezionale A*</li>
+<li>Percorso più breve Dijkstra</li>
+<li>Calcolo della distanza di guida</li>
+<li>Percorso K-Shortest, Diversi percorsi alternativi</li>
+<li>K-Dijkstra, Uno a molti percorsi più brevi</li>
+<li>Problema del commesso viaggiatore</li>
+<li>Percorso più breve con restrizioni di svolta (TRSP)</li>
+</ul>
+<p>Impara di più su come utilizzare pgRouting nelle tue applicazioni leggendo la <a class="reference external" href="http://docs.pgrouting.org">documentazione</a>.</p>
+</div>
+<div class="section" id="dettagli">
+<h3>Dettagli<a class="headerlink" href="#dettagli" title="Permalink to this headline">¶</a></h3>
+<p><strong>Sito Web:</strong> <a class="reference external" href="http://www.pgrouting.org">http://www.pgrouting.org</a></p>
+<p><strong>Licenza:</strong> GNU General Public License (GPL) version 2</p>
+<p><strong>Versioni Software:</strong> 2.0</p>
+<p><strong>Piattaforme Supportate:</strong> Linux, Windows, Mac</p>
+<p><strong>Interfaccia API:</strong> SQL</p>
+<p><strong>Supporto Commerciale:</strong> <a class="reference external" href="http://www.pgrouting.org/support.html">http://www.pgrouting.org/support.html</a></p>
+</div>
+<div class="section" id="guida-rapida">
+<h3>Guida rapida<a class="headerlink" href="#guida-rapida" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/pgrouting_quickstart.html"><em>Documentazione introduttiva</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MapServer 快速入门文档 &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="MapSlicer 快速入门文档" href="mapslicer_quickstart.html" />
+    <link rel="prev" title="MapProxy 快速入门文档" href="mapproxy_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://mapserver.org/"><img alt="Project logo" class="align-right" src="../../_images/logo-mapserver-new.png" style="width: 45.5px; height: 65.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="mapserver">
+<h1>MapServer 快速入门文档<a class="headerlink" href="#mapserver" title="Permalink to this headline">¶</a></h1>
+<p>　　MapServer 是一款 <a class="reference external" href="http://www.opensource.org">开源</a> 的服务程序，用于以 <a class="reference external" href="http://www.opengeospatial.org/standards">OGC 标准服务</a> 发布影象、矢量要素等地理信息。其提供的服务包括 <a class="reference external" href="http://www.opengeospatial.org/standards/wms">WMS 网络地图服务</a> 和 <a class="reference external" href="http://www.opengeospatial.org/standards/wfs">WFS 网络地理要素服务</a> 。</p>
+<p>　　本的内容包括：</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mapserver-quickstart-configure-with-mapfile-zh"><span>使用 &#8220;mapfile&#8221; 配置文件配置 MapServer</span></a></li>
+<li><a class="reference internal" href="#mapserver-quickstart-wms-request-zh"><span>在 MapServer 以命令行渲染图像</span></a></li>
+<li><a class="reference internal" href="#mapserver-quickstart-add-new-layer-zh"><span>在 mapfile 添加本地 shp 文件图层</span></a></li>
+<li><a class="reference internal" href="#mapserver-quickstart-styling-a-layer-zh"><span>在 mapfile 中设置样式配置</span></a></li>
+</ul>
+</div></blockquote>
+<div class="section" id="mapfile-mapserver">
+<span id="mapserver-quickstart-configure-with-mapfile-zh"></span><h2>使用 &#8220;mapfile&#8221; 配置文件配置 MapServer<a class="headerlink" href="#mapfile-mapserver" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>教学内容</strong> 本节讲述 mapfile 及其配置，并设置一个示例用于控制 MapServer 将 shp 变换为栅格用于 WMS 服务。</p>
+</div>
+<div class="section" id="mapfile">
+<h3>MapFile 配置文件<a class="headerlink" href="#mapfile" title="Permalink to this headline">¶</a></h3>
+<p>　　MapServer 的 <a class="reference external" href="http://mapserver.org/mapfile/index.html">Mapfile</a> 用于控制对数据的栅格或矢量输出。其中包含了数据源和渲染样式（颜色、符号、标准等）信息。</p>
+</div>
+<div class="section" id="id3">
+<h3>创建 MapFile<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>开启文本编辑器（Mousepad 是 Live 默认的文本编辑器： <span class="menuselection">Applications ‣ Accessories ‣ Mousepad</span> ）；</li>
+<li>在 <code class="file docutils literal"><span class="pre">/home/user/mapserver_quickstart.map</span></code> 创建  &#8220;mapserver_quickstart.map&#8221; ；</li>
+</ol>
+<p>　　输入以下示例配置：</p>
+<div class="highlight-python"><div class="highlight"><pre>MAP
+  NAME &quot;MAPSERVER QUICKSTART&quot;
+  EXTENT -137 29 -53 88
+  UNITS DD
+  SHAPEPATH &quot;/home/user/data/natural_earth/&quot;
+  SIZE 800 600
+
+  IMAGETYPE PNG24
+
+  PROJECTION
+    &quot;init=epsg:4326&quot;
+  END
+
+  WEB
+    METADATA
+      ows_enable_request &quot;*&quot;
+    END
+  END
+
+  LAYER
+    NAME &quot;Admin Countries&quot;
+    STATUS ON
+    TYPE POLYGON
+    DATA &quot;10m_admin_0_countries&quot;
+    CLASS
+      STYLE
+        COLOR 246 241 223
+        OUTLINECOLOR 0 0 0
+      END
+    END
+  END
+
+END
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">这个配置使用了位于 <code class="file docutils literal"><span class="pre">~/data/natural_earth</span></code> （或 <code class="file docutils literal"><span class="pre">/usr/local/share/data/natural_earth</span></code> ）的 Natural Earth 数据集。</p>
+</div>
+<p>　　在一个 MapFile 配置文件中，一个对象以其名称（例如 <strong>MAP</strong>）开始，并以 <strong>END</strong> 结束。每个配置应当以 <strong>MAP</strong> 对象名开始，并包含一组 <strong>LAYER</strong> 图层对象。在以上示例中只定义了一个图层。</p>
+<dl class="docutils">
+<dt>　　部分对象和属性含义如下：</dt>
+<dd><ul class="first last simple">
+<li>EXTENT：默认的地理坐标范围</li>
+<li>LAYER：图层数据源与显示属性</li>
+<li>SHAPEPATH：文件目录（针对 shp 、tiff 等文件，非数据库或网络服务）</li>
+</ul>
+</dd>
+<dt>　　在 <strong>LAYER</strong> 中存在一系列的属性，例如：</dt>
+<dd><ul class="first last simple">
+<li>STATUS：图层允许显示(<em>ON</em>)、不显示(<em>OFF</em>)或强制显示(<em>DEFAULT</em>)</li>
+<li>TYPE：渲染对象的几何类型，此处为 <em>polygons</em> 多边形（面要素）</li>
+<li>DATA：所使用的源文件名称，此处为一 shp 文件</li>
+<li>CLASS：渲染样式控制，详见后述</li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">　　详细的 <a class="reference external" href="http://mapserver.org/mapfile/index.html">Mapfile</a> 对象与属性说明可以在 MapServer 文档中找到。</p>
+</div>
+</div>
+</div>
+<div class="section" id="mapserver-quickstart-wms-request-zh">
+<span id="id5"></span><h2>在 MapServer 以命令行渲染图像<a class="headerlink" href="#mapserver-quickstart-wms-request-zh" title="Permalink to this headline">¶</a></h2>
+<p>　　MapServer 主要是为网络服务设计的，但也可以在本地以命令行方式执行处理图像等操作。对于大量重复操作或调试，这种功能会很有用。</p>
+<p>　　在命令行界面（Applications/Accessories/Terminal Emulator）输入：</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd>shp2img -m mapserver_quickstart.map -o mymap.png</dd>
+</dl>
+<p>　　执行成功后，在 <a class="reference external" href="file:///home/user/mymap.png">file:///home/user/mymap.png</a> 将可以获得成果图像。</p>
+</div>
+<div class="section" id="mapserver-wms-getmap">
+<h2>通过 MapServer 进行 WMS <strong>GetMap</strong> 请求<a class="headerlink" href="#mapserver-wms-getmap" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>提示</strong> 以下演示如何利用 mapfile 根据 OGC WMS 请求 在 MapServer 中渲染 OGC WMS 请求提供的多个图层的数据。</p>
+</div>
+<p>　　在浏览器中访问 URL</p>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Admin%20Countries&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=PNG&amp;WIDTH=800&amp;HEIGHT=600
+</pre></div>
+</div>
+<p>　　以上 URL 为一个 <a class="reference external" href="http://www.opengeospatial.org/standards/wms">Web Map Service (WMS)</a> <strong>GetMap</strong> 请求。MapServer 通过其中指定的 mapfile 将指定图层渲染为 PNG 图像，并且符合用户指定的参数（图像大小、地理区域范围、投影等）。在 mapfile 的 &#8220;<em>&amp;LAYERS=...</em>&#8221; 中指定的各图层都具备 <em>STATUS ON</em> 属性，同时 <em>STATUS DEFAULT</em> 的图层也会被渲染。渲染结果如图所示。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_map.png"><img alt="../../_images/mapserver_map.png" src="../../_images/mapserver_map.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">除了 &#8220;<em>?map=/home/user/mapserver_quickstart.map</em>&#8221; 参数针对 MapServer 外，其它参数都是 WMS 标准规定的。</p>
+</div>
+</div>
+<div class="section" id="mapfile-shp">
+<span id="mapserver-quickstart-add-new-layer-zh"></span><h2>在 mapfile 添加本地 shp 文件图层<a class="headerlink" href="#mapfile-shp" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>提示</strong> 以下演示向 mapfile 添加一个新的图层对象。</p>
+</div>
+<p>　　此处将向 mapfile 添加图层对象。在最后一个 <em>END</em> 前添加以下图层配置：</p>
+<div class="highlight-python"><div class="highlight"><pre>LAYER
+  NAME &quot;Lakes&quot;
+  STATUS ON
+  TYPE POLYGON
+  DATA &quot;10m_lakes&quot;
+  CLASS
+    STYLE
+      COLOR 153 179 204
+    END
+  END
+ END
+</pre></div>
+</div>
+<p>　　目前示例 MapFile 中定义了两个图层。注意新图层具备 &#8220;STATUS ON&#8221; 属性，即允许调用但默认并不渲染。</p>
+<p>　　改动之前的 WMS <strong>GetMap</strong> 请求可以加入新的 &#8220;Lakes&#8221; 图层。这里只需改变 &#8220;LAYERS&#8221; 列表，即：</p>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Admin%20Countries,Lakes&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=PNG&amp;WIDTH=800&amp;HEIGHT=600
+</pre></div>
+</div>
+<p>　　请求的结果与上一次的相似，但添加了湖泊图层：</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes.png"><img alt="../../_images/mapserver_lakes.png" src="../../_images/mapserver_lakes.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="mapserver-quickstart-styling-a-layer-zh">
+<span id="id6"></span><h2>在 mapfile 中设置样式配置<a class="headerlink" href="#mapserver-quickstart-styling-a-layer-zh" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>提示</strong> 以下演示根据数据属性配置控制图层内要素的渲染样式。</p>
+</div>
+<p>　　在 MapFile 中，一个 LAYER 要素可以包含任意多个 CLASS 对象。这些用于控制数据中空间要素的渲染样式。例如，在 &#8220;10m_lakes&#8221; 数据集使用 <a class="reference external" href="http://www.gdal.org/ogrinfo.html">ogrinfo</a> 可以看到要素的属性信息。利用不同的 CLASS 对象，可以通过这些属性控制渲染样式。</p>
+<p>　　在 &#8220;10m_lakes&#8221; 数据集包含了一个 <em>ScaleRank</em> 属性用于标识湖泊对象的大小。据此可以对不同湖泊采用不同的渲染样式。在 LAYER 中添加一个新的 CLASS 对象：</p>
+<div class="highlight-python"><div class="highlight"><pre>LAYER
+ NAME &quot;Lakes&quot;
+ STATUS DEFAULT
+ TYPE POLYGON
+ DATA &quot;10m_lakes&quot;
+ CLASSITEM &quot;ScaleRank&quot;
+ CLASS
+   EXPRESSION /0|1/
+   STYLE
+     COLOR 153 179 204
+     OUTLINECOLOR 0 0 0
+   END
+ END
+ CLASS
+   STYLE
+     COLOR 153 179 204
+   END
+ END
+END
+</pre></div>
+</div>
+<p>　　新的 CLASS 对象使得 MapServer 根据 &#8220;ScaleRank&#8221; 属性控制样式。ScaleRank 为 &#8220;0&#8221; 或 &#8220;1&#8221; 者边界线以黑色显示。CLASS 列表以从前到后的顺序调用。当一个要素满足了 &#8220;EXPRESSION&#8221; 的定义，该要素会使用相应 CLASS 进行渲染。不满足时，系统将检查下一个。若没有任何条目满足，该要素默认不会渲染，除非该对象包含 no EXPRESSION 作为默认。图层的 &#8220;CLASSITEM&#8221; 参数指导 MapServer 调用所需的属性用于 EXPRESSION 对比。</p>
+<p>　　以上改动使得渲染图像上较大的湖泊出现黑边，如图所示。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes_scalerank.png"><img alt="../../_images/mapserver_lakes_scalerank.png" src="../../_images/mapserver_lakes_scalerank.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">在 <a class="reference external" href="http://mapserver.org/mapfile/expressions.html">EXPRESSIONS</a> 可以学习更多有关属性匹配表达式的内容。</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>其它信息<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>　　以上只是一个简单的示例，MapServer 提供了其它大量的功能。MapServer 项目网站提供了大量的培训资源，以下是其中一些：</p>
+<ul class="simple">
+<li><a class="reference external" href="http://mapserver.org/introduction.html#introduction">MapServer 入门</a>.</li>
+<li><a class="reference external" href="http://www.mapserver.org/tutorial/index.html">MapServer 教程</a> （含有更多示例）</li>
+<li><a class="reference external" href="http://www.mapserver.org/ogc/index.html">OGC 配置与支持</a> （有关 OGC 标准，包括 WMS, WFS, SLD, WFS Filter Encoding, WCS, SOS, 等）</li>
+<li><a class="reference external" href="http://www.mapserver.org/community/lists.html">社区邮件列表</a> 欢迎有关 MapServer 的问题和建议。</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

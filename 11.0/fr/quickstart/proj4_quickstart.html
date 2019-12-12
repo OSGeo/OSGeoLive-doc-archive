@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Démarrage rapide avec Proj.4 &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Bienvenue sur OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="pycsw Quickstart" href="pycsw_quickstart.html" />
+    <link rel="prev" title="PostGIS Quickstart" href="postgis_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <img alt="project logo" class="align-right" src="../../_images/logo-proj4.png" />
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Community Project" class="align-right" src="../../_images/OSGeo_community.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="demarrage-rapide-avec-proj-4">
+<h1>Démarrage rapide avec Proj.4<a class="headerlink" href="#demarrage-rapide-avec-proj-4" title="Permalink to this headline">¶</a></h1>
+<p>Proj.4 est une fonction filtre standard d&#8217;Unix qui converti les coordonnées géographiques de latitude et longitude entre coordonnées cartesienne (et vice versa), et est une API C pour les développeurs de logiciels permettant d&#8217;y inclure des transformations de coordonnées.</p>
+<div class="contents local topic" id="ce-guide-de-demarrage-rapide-reprend-les-fonctions-suivantes">
+<p class="topic-title first">Ce guide de démarrage rapide reprend les fonctions suivantes :</p>
+<ul class="simple">
+<li><a class="reference internal" href="#proj" id="id2">proj</a></li>
+<li><a class="reference internal" href="#cs2cs" id="id3">cs2cs</a></li>
+<li><a class="reference internal" href="#geod" id="id4">geod</a></li>
+</ul>
+</div>
+<div class="section" id="proj">
+<h2><a class="toc-backref" href="#id2">proj</a><a class="headerlink" href="#proj" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Que vais-je apprendre ?</strong> Dans cette section, vous apprendrez à vous servir de l&#8217;outil proj.</p>
+</div>
+<div class="section" id="qu-est-ce-que-proj">
+<h3>Qu&#8217;est-ce que proj ?<a class="headerlink" href="#qu-est-ce-que-proj" title="Permalink to this headline">¶</a></h3>
+<p>Proj et invproj effectuent respectivement une transformation des données cartographique
+et son inverse depuis ou vers des données cartésiennes au travers d&#8217;un large panel de
+projections.</p>
+</div>
+<div class="section" id="resume-de-proj">
+<h3>Résumé de proj<a class="headerlink" href="#resume-de-proj" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>proj [ -bcCeEfiIlmorsStTvVwW [ args ] ] [ +args ] file[s]
+invproj [ -bcCeEfiIlmorsStTwW [ args ] ] [ +args ] file[s]
+</pre></div>
+</div>
+<p>Ces commandes sont complètement décrites dans leur dernière version dans <a class="reference external" href="http://proj4.org/apps/proj.html">proj documentation</a>.</p>
+</div>
+<div class="section" id="exemple-de-proj">
+<h3>Exemple de proj<a class="headerlink" href="#exemple-de-proj" title="Permalink to this headline">¶</a></h3>
+<p>Le script qui suit</p>
+<div class="highlight-python"><div class="highlight"><pre>proj +proj=utm  +lon_0=112w  +ellps=clrk66
+-r &lt;&lt;EOF
+45d15&#39;33.1&quot;   111.5W
+45d15.551666667N   -111d30
++45.25919444444    111d30&#39;000w
+EOF
+</pre></div>
+</div>
+<p>va effectuer une projection UTM avec un médidien
+standard central de longitude 112W. Les coordonnées
+géographiques de cet exemple sont équivalentes et
+utilisées comme exemple des nombreuses formes
+d&#8217;entrées de coordonnées. Les données x-y de sortie
+vont apparaître sous la forme de 3 fois la ligne:</p>
+<div class="highlight-python"><div class="highlight"><pre>460769.27     5011648.45
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="cs2cs">
+<h2><a class="toc-backref" href="#id3">cs2cs</a><a class="headerlink" href="#cs2cs" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Que vais-je apprendre ?</strong> Dans cette section, vous allez apprendre à utiliser l&#8217;outil cs2cs.</p>
+</div>
+<div class="section" id="qu-est-ce-que-cs2cs">
+<h3>Qu&#8217;est ce que cs2cs ?<a class="headerlink" href="#qu-est-ce-que-cs2cs" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">cs2cs</span></code> effectue des transformations d&#8217;un système de coordonnées géographique source à un système destination sur un ensemble de points. La transformation de système de coordonnées peut inclure des translations entre des coordonnées géographiques ou projetées autant qu&#8217;appliquer des translations de systèmes de référence (datums).</p>
+</div>
+<div class="section" id="resume-de-cs2cs">
+<h3>Résumé de cs2cs<a class="headerlink" href="#resume-de-cs2cs" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>cs2cs [ -eEfIlrstvwW [ args ] ] [ +opts[=arg] ] [ +to [+opts[=arg]] ] file[s]
+</pre></div>
+</div>
+<p>La dernière version de cette commande est complètement décrite dans <a class="reference external" href="http://proj4.org/apps/cs2cs.html">cs2cs documentation</a>.</p>
+</div>
+<div class="section" id="exemple-de-cs2cs">
+<h3>Exemple de cs2cs<a class="headerlink" href="#exemple-de-cs2cs" title="Permalink to this headline">¶</a></h3>
+<p>Le script suivant</p>
+<div class="highlight-python"><div class="highlight"><pre>cs2cs +proj=latlong +datum=NAD83
+      +to +proj=utm +zone=10  +datum=NAD27
+-r &lt;&lt;EOF
+45d15&#39;33.1&quot;   111.5W
+45d15.551666667N   -111d30
++45.25919444444    111d30&#39;000w
+EOF
+</pre></div>
+</div>
+<p>va transformer les coordonnées géographiques NAD83 en entrée en coordonnées NAD27 dans la zone 10 de la projection UTM. Les coordonnées géographiques de cet exemple sont équivalentes et utilisées comme exemple des nombreuses formes d&#8217;entrée de coordonnées.
+Les données x-y en sortie vont apparaître 3 fois sous la forme:</p>
+<div class="highlight-python"><div class="highlight"><pre>1402285.99      5076292.42 0.000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="geod">
+<h2><a class="toc-backref" href="#id4">geod</a><a class="headerlink" href="#geod" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Que vais-je apprendre ?</strong> Dans cette section, vous allez apprendre à utiliser l&#8217;outil geod.</p>
+</div>
+<div class="section" id="qu-est-ce-que-geod">
+<h3>Qu&#8217;est-ce que geod ?<a class="headerlink" href="#qu-est-ce-que-geod" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal"><span class="pre">geod</span></code>  (direct)  et  <code class="docutils literal"><span class="pre">invgeod</span></code> (inverse) effectuent des calculs
+geodesiques (&#8220;Grand cercle&#8221;) pour déterminer la latitude, longitude
+et azimuth d&#8217;un point cible à partir d&#8217;un point initial formé d&#8217;une
+latitude, longitude, azimuth et distance (sens direct) ou pour déterminer
+les azimuths avant et arrière et la distance entre les latitudes et longitudes d&#8217;un point initial et final (sens inverse). Les résultats sont arrondis tel que <code class="code docutils literal"><span class="pre">|f|</span> <span class="pre">&lt;</span> <span class="pre">1/50</span></code>, où f est l&#8217;aplanissement.</p>
+<p><code class="docutils literal"><span class="pre">invgeod</span></code> n&#8217;est pas nécessairement disponible sur toutes les plateformes; dans ce cas, il est possible d&#8217;appeler geod avec l&#8217;option -I.</p>
+</div>
+<div class="section" id="resume-de-geod">
+<h3>Résumé de geod<a class="headerlink" href="#resume-de-geod" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>geod +ellps=&lt;ellipse&gt; [ -afFIlptwW [ args ] ] [ +args ] file[s]
+
+invgeod +ellps=&lt;ellipse&gt; [ -afFIlptwW [ args  ]  ]  [  +args  ] file[s]
+</pre></div>
+</div>
+<p>La dernière version de ces commandes sont complètement décrites dans <a class="reference external" href="http://proj4.org/apps/proj.html">proj documentation</a>.</p>
+</div>
+<div class="section" id="exemple-de-geod">
+<h3>Exemple de geod<a class="headerlink" href="#exemple-de-geod" title="Permalink to this headline">¶</a></h3>
+<p>Le script suivant détermine les azimuths géodésiques et la distance en miles U.S. de Boston, MA, à Portland, OR:</p>
+<div class="highlight-python"><div class="highlight"><pre>geod +ellps=clrk66 &lt;&lt;EOF -I +units=us-mi
+42d15&#39;N 71d07&#39;W 45d31&#39;N 123d41&#39;W
+EOF
+</pre></div>
+</div>
+<p>ce qui donne comme résultats:</p>
+<div class="highlight-python"><div class="highlight"><pre>-66d31&#39;50.141&quot; 75d39&#39;13.083&quot; 2587.504
+</pre></div>
+</div>
+<p>où les deux premières valeurs sont l&#8217;azimuth de Boston à Portland et
+l&#8217;azimuth arrière de Portland à Boston suivis de la distance.</p>
+<p>Un exemple d&#8217;usage de géodésique avant est d&#8217;utiliser la position à
+Boston et de déterminer la position à Portland par son azimuth et
+sa distance:</p>
+<div class="highlight-python"><div class="highlight"><pre>geod +ellps=clrk66 &lt;&lt;EOF +units=us-mi
+42d15&#39;N 71d07&#39;W -66d31&#39;50.141&quot; 2587.504
+EOF
+</pre></div>
+</div>
+<p>ce qui donne:</p>
+<div class="highlight-python"><div class="highlight"><pre>45d31&#39;0.003&quot;N 123d40&#39;59.985&quot;W 75d39&#39;13.094&quot;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">lack  of precision in the distance value compromises the
+precision of the Portland location.</p>
+</div>
+</div>
+<div class="section" id="pour-aller-plus-loin">
+<h3>Pour aller plus loin<a class="headerlink" href="#pour-aller-plus-loin" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://geographiclib.sf.net">GeographicLib</a></li>
+<li><a class="reference external" href="http://dx.doi.org/10.1007/s00190-012-0578-z">C. F. F. Karney, Algorithms for Geodesics, J. Geodesy 87, 43-55 (2013)</a>.
+<a class="reference external" href="http://geographiclib.sf.net/geod-addenda.html">Addendum</a></li>
+<li><a class="reference external" href="http://geographiclib.sf.net/geodesic-papers/biblio.html">The online geodesic bibliography</a></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

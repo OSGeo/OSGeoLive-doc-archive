@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης του OSGeo-Live σε εικονική μηχανή &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Καλώς ήρθατε στο OSGeo-Live" href="../index.html" />
+    <link rel="next" title="Εγχειρίδιο Γρήγορης Εκκίνησης OSGeo-Live για το VMWare Player" href="vmware_quickstart.html" />
+    <link rel="prev" title="Εγχειρίδιο Γρήγορης Εκκίνησης OSGeo-Live για το Virtual Box" href="virtualbox_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="osgeo-live">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης του OSGeo-Live σε εικονική μηχανή<a class="headerlink" href="#osgeo-live" title="Permalink to this headline">¶</a></h1>
+<p>Αυτό το εγχειρίδιο περιγράφει ένα τρόπο εκτέλεσης της διανομής OSGeo-Live μέσα σε μία εικονική μηχανή/υπολογιστή τύπου VirtualBox. Για άλλους τρόπους εκτέλεσης ακολουθείστε τους συνδέσμους στην παράγραφο «Δείτε επίσης»</p>
+<div class="section" id="id1">
+<h2>Πλεονεκτήματα χρήσης εικονικής μηχανής<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Η ταχύτητα αντίδρασης και λειτουργίας είναι μεγαλύτερη συγκριτικά με αυτήν του DVD και σχεδόν συγκρίσιμη με αυτήν που θα είχε η διανομή μας αν ήταν απευθείας εγκατεστημένη στον ίδιο υπολογιστή.</li>
+<li>Όλες οι ρυθμίσεις, οι ενημερώσεις των λογισμικών και τα αποθηκευμένα αρχεία είναι μόνιμα και ασφαλή όπως σε κανονική χρήση. Έτσι:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>Μπορείτε να ενημερώσετε ή/και να τροποποιήσετε κατά τις επιλογές σας το σύστημα</li>
+<li>Να αποθηκεύσετε την δουλειά σας</li>
+<li>Να εγκαταστήσετε πρόσθετα λογισμικά</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Μπορείτε να κρατήσετε αντίγραφο ασφαλείας όποια χρονική στιγμή επιλέξετε</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>Απαιτήσεις συστήματος<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>RAM: τουλάχιστον 2GB. Η διανομή Lubuntu εκτελείται ικανοποιητικά με 1GB μνήμης RAM, ενώ χρειάζεστε άλλο τόσο περίπου για το σύστημα που φιλοξενεί την εικονική μηχανή σας. Έτσι είναι βέβαιο ότι με 2GB θα έχετε ομαλή λειτουργία.</li>
+<li>Ελεύθερος χώρος στον σκληρό δίσκο: Το αρχείο vmdk της εικονικής μηχανής από εδώ:  <a class="reference external" href="http://live.osgeo.org/en/download.html">live.osgeo.org</a>  αποσυμπιέζεται σε 10GB περίπου. Επίσης θα χρειαστείτε επιπλέον χώρο για την λειτουργία του. Κατά συνέπεια ελεύθερος χώρος 20GB είναι μια καλή επιλογή.</li>
+<li>ΚΜΕ: Οποιαδήποτε Κεντρική Μονάδα Επεξεργασίας είναι κατάλληλη αλλά θα είναι ταχύτερη αν υποστηρίζει «Τεχνολογία Εικονικής Εκτέλεσης». Μπορείτε να ελέγξετε την ΚΜΕ του υπολογιστή σας <a class="reference external" href="http://www.intel.com/support/processors/sb/cs-030729.htm">εδώ:</a>.</li>
+</ul>
+<p>Οι περισσότεροι Η/Υ παραγωγής της τελευταίας πενταετίας καλύπτουν τις παραπάνω απαιτήσεις.</p>
+</div>
+<div class="section" id="id4">
+<h2>Πως<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><strong>Μεταφόρτωση</strong></p>
+<p>Κατεβάστε το <a class="reference external" href="http://www.virtualbox.org/">Virtual Box</a>  για το λειτουργικό σας και εγκαταστήστε το. Στα windows απλά εκτελετε το λογισμικό εγκατάστασης ενώ σε διανομές της οικογένειας debian/ubuntu μπορείτε να εκτελέσετε την ακόλουθη εντολή:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">virtualbox-ose</span></tt></div></blockquote>
+<dl class="docutils">
+<dt>Επιπλέον κατεβάστε το αρχείο OSGeo Virtual (vmdk) από την διεύθυνση <a class="reference external" href="http://live.osgeo.org/en/download.html">live.osgeo.org</a></dt>
+<dd>με κλικ στην επιλογή &#8220;Download virtual machine&#8221;. Στην συνέχεια αποσυμπιέστε το με την χρήση του <a class="reference external" href="http://www.7-zip.org">7zip</a> .</dd>
+</dl>
+<p><strong>Δημιουργείστε μια εικονική μηχανή</strong></p>
+<p>ΕΚτελέστε το λογισμικό VirtualBox και επιλέξτε το κουμπί New για να φτιάξετε μια νέα εικονική μηχανή. Στην συνέχεια πατήστε Next.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox2.png"><img alt="../../_images/virtualbox2.png" src="../../_images/virtualbox2.png" style="width: 389.0px; height: 289.0px;" /></a>
+</div></blockquote>
+<p>Δώστε ως όνομα κάτι σαν OSGeo-Live, και στην συνέχεια επιλέξτε Linux ως λειτουργικό σύστημα (Operating system) και Ubuntu ως έκδοση (Version).</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_select_name2.png"><img alt="../../_images/virtualbox_select_name2.png" src="../../_images/virtualbox_select_name2.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>Στην επόμενη οθόνη θέστε ως διαθέσιμη μνήμη τα 1024MB ή και περισσότερα αν ο υπολογιστής σας έχει 4GB ή περισσότερα.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_memory2.jpg"><img alt="../../_images/vmdk_memory2.jpg" src="../../_images/vmdk_memory2.jpg" style="width: 416.0px; height: 274.95px;" /></a>
+</div></blockquote>
+<p>Συνεχίστε στην επόμενη οθόνη και επιλέξτε &#8220;Use existing hard disk&#8221;. Κάντε κλικ στο εικονίδιο πλοήγησης στον δίσκο σας και δείξτε τον αρχείο osgeo-live-vm-6.0.vmdk που αποσυμπιέσατε σε προηγούμενο βήμα. Επιλέξτε το, πατήστε Next και Create.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_disk2.jpg"><img alt="../../_images/vmdk_disk2.jpg" src="../../_images/vmdk_disk2.jpg" style="width: 416.0px; height: 274.95px;" /></a>
+</div></blockquote>
+<p>Εφόσον έχει δημιουργηθεί η εικονική μηχανή επιλέξτε τις ρυθμίσεις (Settings). Στον τομέα &#8220;General&#8221; στην καρτέλα &#8220;Advanced&#8221; επιλέξτε για την μικρή εργαλειοθήκη με ένα κλικ στο &#8220;Show at top of screen&#8221;.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_general_advanced2.jpg"><img alt="../../_images/vmdk_general_advanced2.jpg" src="../../_images/vmdk_general_advanced2.jpg" style="width: 416.0px; height: 341.25px;" /></a>
+</div></blockquote>
+<p>Στον τομέα &#8220;Display&#8221; αυξήστε την μνήμη της οθόνης από 32 σε 64MB.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_display2.jpg"><img alt="../../_images/vmdk_display2.jpg" src="../../_images/vmdk_display2.jpg" style="width: 416.0px; height: 341.25px;" /></a>
+</div></blockquote>
+<p>Επιπλέον στον τομέα &#8220;Shared Folders&#8221; προσθέστε έναν νέο υποφάκελο &#8220;Add folder&#8221; (πράσινο εικονίδιο + στα δεξιά) στον σκληρό σας δίσκο, το οποίο θα είναι κοινό μεταξύ της εικονικής μηχανής και του υπολογιστή σας.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_shared_folders2.jpg"><img alt="../../_images/vmdk_shared_folders2.jpg" src="../../_images/vmdk_shared_folders2.jpg" style="width: 416.0px; height: 343.85px;" /></a>
+</div></blockquote>
+<p>Εφόσον έχουν ορισθεί τα &#8220;Folder path&#8221; και &#8220;Folder name&#8221; πατήστε ΟΚ και ξανά ΟΚ για να κλείσετε το παράθυρο των ρυθμίσεων.</p>
+<p><strong>Εκτελώντας την εικονική μηχανή</strong></p>
+<p>Για να εκκινήσετε την εικονική μηχανή πατήστε το πράσινο βέλος Start.</p>
+<p>Με την ολοκλήρωση της εκκίνησης του συστήματος OSGeo πρέπει να προσθέσετε τα VirtualBox &#8220;Guest Additions&#8221; ώστε να βελτιώσετε τις επιδόσεις των γραφικών και διαμοιραστεί ο υποφάκελος που ορίσατε παραπάνω. Αυτά περιέχονται επιπλέον ως ένα αρχείο τύπου ISO μαζί με την εφαρμογή VirtualBox. Αυτό το αρχείο ISO συνδέεται ως ένα εικονικό CD και η εγκατάσταση γίνεται από εκεί:</p>
+<p>Στο παράθυρο του VirtualBox ανοίξτε <em class="menuselection">Devices</em> και επιλέξτε <em class="menuselection">Install Guest Additions</em>. Αυτό θα συνδέσει το
+ISO αρχείο Guest Additions ως ένα εικονικό CD στην εικονική μηχανή του OSGeo Live.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_guest_additions.jpg"><img alt="../../_images/vmdk_guest_additions.jpg" src="../../_images/vmdk_guest_additions.jpg" style="width: 512.0px; height: 418.4px;" /></a>
+</div></blockquote>
+<p>Εφόσον εμφανιστεί ο φάκελος του CD ανοίξτε ένα τερματικό και εκτελέστε τις ακόλουθες εντολές:</p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">linux-headers-`uname</span> <span class="pre">-r`</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">cd</span> <span class="pre">/media/VBOXADDITIONS_4.1.18_78361/</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:/media/VBOXADDITIONS_4.1.18_78361$</span> <span class="pre">sudo</span> <span class="pre">./VBoxLinuxAdditions.run</span></tt></p>
+<p>Αυτή η διαδικασία θα ολοκληρωθεί μετά από μερικές στιγμές. Επανεκκινήστε την εικονική μηχανή και τώρα θα μπορείτε να την εκτελέσετε σε πλήρη οθόνη και να συνδέσετε τον τοπικό σας φάκελο. Στο παραπάνω παράδειγμα ορίσαμε έναν διαμοιρασμένο φάκελο στον υπολογιστή μας και τον ονομάσαμε &#8220;GIS&#8221; στις επιλογές της εικονικής μηχανής. Για να τον συνδέσουμε εκτελούμε τις ακόλουθες εντολές σε ένα τερματικό:</p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">mkdir</span> <span class="pre">GIS</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">mount</span> <span class="pre">-t</span> <span class="pre">vboxsf</span> <span class="pre">-o</span> <span class="pre">uid=user,rw</span> <span class="pre">GIS</span> <span class="pre">/home/user/GIS</span></tt></p>
+<p>Τώρα αρχεία στην εικονική μηχανή τα οποία αποθηκεύονται στον διαμοιρασμένο φάκελο GIS θα είναι διαθέσιμα και στον υπολογιστή σας.</p>
+</div>
+<div class="section" id="id6">
+<h2>Δείτε επίσης:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>Τις βικι-σελίδες OSGeo:</dt>
+<dd><p class="first last"><a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine">Άλλοι τρόποι να δημιουργήσετε μια εικονική μηχανή</a></p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><a class="reference internal" href="osgeolive_quickstart.html"><em>Γρήγορη Εκκίνηση του OSGeo-Live</em></a></p>
+</li>
+<li><p class="first"><a class="reference internal" href="osgeolive_install_quickstart.html"><em>Εγκατάσταση του OSGeo-Live στο σκληρό δίσκο</em></a></p>
+</li>
+<li><p class="first"><a class="reference internal" href="usb_quickstart.html"><em>Δημιουργώντας ένα εκκινήσιμο USB με το OSGeo-Live</em></a></p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

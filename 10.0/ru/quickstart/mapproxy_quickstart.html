@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы с MapProxy &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://mapproxy.org/"><img alt="логотип проекта" class="align-right" src="../../_images/logo-mapproxy25.png" /></a>
+<div class="section" id="mapproxy">
+<h1>Начало работы с MapProxy<a class="headerlink" href="#mapproxy" title="Permalink to this headline">¶</a></h1>
+<p>MapProxy&nbsp;— &#8220;швейцарский армейский нож&#8221; для работы с WMS-сервисами и сервисами тайлирования.
+Он кэширует и трансформирует данные уже существующих картографических сервисов, а также ускоряет доступ к ним.</p>
+<img alt="диаграмма MapProxy" class="align-center" src="../../_images/mapproxy25.png" />
+<p>MapProxy&nbsp;— это не только кэширующий сервер тайлирования. Он предлагает множество новых и инновационных функций, таких, как полная поддержка WMS-клиентов.</p>
+<div class="section" id="id1">
+<h2>Запуск демо-службы<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>MapProxy имеет гибкие возможности развёртывания. К примеру, вы можете интегрировать его в веб-сервер Apache. Но вы можете запустить его и как самостоятельную службу, что будет лучшим вариантом для начала работы.</p>
+<p>Для запуска MapProxy в виде самостоятельного сервиса нажмите <span class="menuselection">Geospatial ‣ Web Services ‣ MapProxy ‣ Start MapProxy</span>.</p>
+</div>
+<div class="section" id="id2">
+<h2>Просмотр демо MapProxy<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Демо-страница MapProxy содержит простейшие WMS-сервис и клиент для каждого преднастроенного слоя. Например, вы не сможете выбрать проекцию для WMS-слоя, но этого варианта достаточно для того, чтобы убедиться, что сервис работает.</p>
+<p>Вы можете открыть демо-страницу в веб-браузере: <a class="reference external" href="http://localhost:8011/demo">http://localhost:8011/demo</a></p>
+</div>
+<div class="section" id="id3">
+<h2>Просмотр в настольной ГИС<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Вы можете добавлять сервисы MapProxy в любую настольную ГИС: uDig, QGIS или gvSIG. Адрес сервиса: <a class="reference external" href="http://localhost:8011/service?">http://localhost:8011/service?</a></p>
+<p>Пример конфигурационного файла MapProxy содержит несколько слоёв, которые используют различные картографические движки и данные. Детальная информация о каждом слое приведена ниже.</p>
+<div class="figure align-center">
+<img alt="пример MapProxy в uDig" src="../../_images/mapproxy_udig12.png" />
+</div>
+<p>Одиночный WMS-слой, с данными из двух каскадных сервисов и возможностью делать <cite>FeatureInformation</cite> запросы к одному из них.</p>
+</div>
+<div class="section" id="id4">
+<h2>Доступные слои<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><strong>mapnik</strong>:</dt>
+<dd>Карта населения мира, отрисованная Mapnik. Нет необходимости явно запускать сервис Mapnik, потому что этот слой может использовать интегрированную поддержку Mapnik в MapProxy.</dd>
+<dt><strong>tilelite</strong>:</dt>
+<dd>TileLite&nbsp;— простой сервер, предоставляющий тайлы с сервиса Mapnik &#8220;Карта населения мира&#8221;. Этот слой демонстрирует возможность использования существующих тайловых сервисов в MapProxy и организации к ним доступа через WMS.
+Перед тем, как использовать этот слой, вам необходимо запустить TileLite, вызвав <em>Start Mapnik &amp; TileLite</em>.</dd>
+<dt><strong>geoserver</strong>:</dt>
+<dd>Карта населения US, отрисованная <a class="reference internal" href="../overview/geoserver_overview.html"><em>GeoServer</em></a> из WMS. Этот слой поддерживает <code class="docutils literal"><span class="pre">GetFeatureInfo</span></code> запросы, которые каскадно перенаправляются на базовый сервис.
+Перед тем, как использовать этот слой, вам необходимо запустить GeoServer: <span class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</span>.</dd>
+<dt><strong>mapnik_geoserver</strong>:</dt>
+<dd>Этот слой демонстрирует возможность объединения нескольких источников в один слой. Он объединяет карту карту населения мира, отрисованную Mapnik, и карту населения US с GeoServer. Запросы <code class="docutils literal"><span class="pre">GetFeatureInfo</span></code> к карте населения US всё так же работают.
+Перед тем, как использовать этот слой, вам необходимо запустить GeoServer: <span class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</span>.</dd>
+<dt><strong>mapserver</strong>:</dt>
+<dd>Этот слой использует демонстрационный набор данных <em>Mapserver Itasca</em>. Это локальный набор, и для него используется функция ограничения пространственных охватом <em>Itasca, IL</em>.</dd>
+</dl>
+</div>
+<div class="section" id="id5">
+<h2>Создание собственной конфигурации<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Вы можете использовать <code class="docutils literal"><span class="pre">mapproxy-util</span></code> для создания нового шаблона конфигурации и запуска тестового сервера.</p>
+<p>Для создания конфигурации:</p>
+<div class="highlight-python"><div class="highlight"><pre>mapproxy-util create -t base-config ~/mapproxy
+</pre></div>
+</div>
+<p>Для запуска тестового сервера, прослушивающего порт <em>8011</em>, на базе созданного конфигурационного файла:</p>
+<div class="highlight-python"><div class="highlight"><pre>mapproxy-util serve-develop ~/mapproxy/mapproxy.yaml -b 0.0.0.0:8011
+</pre></div>
+</div>
+<p>Теперь вы можете открыть демо-страницу по адресу <a class="reference external" href="http://127.0.0.1:8011/demo/">http://127.0.0.1:8011/demo/</a>.
+Тестовый сервер MapProxy автоматически перезагружается, если вы измените свой конфигурационный файл.</p>
+</div>
+<div class="section" id="id6">
+<h2>Что дальше?<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Прочитайте <a class="reference external" href="../../mapproxy/index.html">документацию по MapProxy</a></li>
+<li>Посмотрите пример конфигурационного файла (<code class="docutils literal"><span class="pre">/usr/local/share/mapproxy/mapproxy.yaml</span></code>)</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

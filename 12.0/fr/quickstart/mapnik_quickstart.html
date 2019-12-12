@@ -1,0 +1,163 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Guide de démarrage rapide de Mapnik &#8212; OSGeoLive 12.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '12.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="MapProxy Quickstart" href="mapproxy_quickstart.html" />
+    <link rel="prev" title="Mapbender Quickstart" href="mapbender_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://mapnik.org/"><img alt="../../_images/logo_mapnik.png" class="align-right" src="../../_images/logo_mapnik.png" /></a>
+<div class="section" id="mapnik-quickstart">
+<h1>Guide de démarrage rapide de Mapnik<a class="headerlink" href="#mapnik-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Mapnik est une boîte à outils pour développer des applications de cartographie. Mapnik est avant tout pour faire de belles cartes. Il est facilement extensible et approprié pour le développement d’applications bureautiques et web.</p>
+<div class="section" id="mapnik-python">
+<h2>Mapnik &amp; Python<a class="headerlink" href="#mapnik-python" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Mapnik et ses liaisons Python sont installés et prêts à être utilisés pour les scripts sur cette machine.</p>
+<p>La création de cartes dans python est facile avec Mapnik. Tapez <cite>python</cite>  sur la ligne de commande pour entrer un interpréteur python et essayez ceci&nbsp;:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mapnik</span><span class="o">,</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">mapnik</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">style</span> <span class="o">=</span> <span class="s1">&#39;/usr/local/share/mapnik/demo/population.xml&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapnik</span><span class="o">.</span><span class="n">load_map</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">style</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">zoom_all</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapnik</span><span class="o">.</span><span class="n">render_to_file</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="s1">&#39;map.png&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;xdg-open map.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Le code ci-dessus dépend d’une feuille de style XML que Mapnik est capable de lire, définissant les couches à partir desquelles lire des données  et les styles à appliquer à ces couches. Vous pouvez en créer un  à l’aide de QGIS et du plugin Quantumnik&nbsp;: <a class="reference external" href="http://plugins.qgis.org/plugins/quantumnik/">http://plugins.qgis.org/plugins/quantumnik/</a></p>
+</div>
+</div>
+<div class="section" id="mapnik-leaflet">
+<h2>Mapnik &amp; Leaflet<a class="headerlink" href="#mapnik-leaflet" title="Lien permanent vers ce titre">¶</a></h2>
+<p>En outre, une application de base de démonstration est disponible, qui met en évidence l’utilisation de Mapnik pour servir les tuiles dans une webmap OpenLayers dans le shéma de tuile OSM/Google.</p>
+<p>La démonstration utilise un serveur de tuiles conçu pour Mapnik appelé «&nbsp;TileStache&nbsp;»</p>
+<blockquote>
+<div><ul class="simple">
+<li>Plus d’informations sur TileStache&nbsp;: <a class="reference external" href="http://tilestache.org/">http://tilestache.org/</a></li>
+</ul>
+</div></blockquote>
+<p>Pour exécuter la démo il suffit de suivre ces étapes&nbsp;:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Cliquez sur&nbsp;&nbsp;<span class="menuselection">Desktop ‣ Spatial Tools ‣ Start Mapnik &amp; TileStache</span></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Le serveur devrait commencer dans une fenêtre de terminal (qui reste ouvert et génère des informations basiques de débogage).</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple">
+<li>Vérifiez que le serveur fonctionne en demandant une tuile depuis le serveur à <a class="reference external" href="http://localhost:8012/example/0/0/0.png">http://localhost:8012/example/0/0/0.png</a></li>
+<li>Puis visitez la page de démonstration de Leaflet&nbsp;:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Cette page est à cet endroit:  <a class="reference external" href="../../../leaflet-demo.html">http://localhost/leaflet-demo.html</a></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="what-next">
+<h2>Ensuite ?<a class="headerlink" href="#what-next" title="Lien permanent vers ce titre">¶</a></h2>
+<ul>
+<li><p class="first">&nbsp;Tutoriels Mapnik</p>
+<p>Suivez le <a class="reference external" href="https://github.com/mapnik/mapnik/wiki/MapnikTutorials">tutoriels</a> pour en savoir plus sur Mapnik.</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">Explorez les fichiers sur le DVD</p>
+<p>Voir aussi les <a class="reference external" href="file:///usr/local/share/mapnik/">fichiers</a> inclus sur le DVD.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

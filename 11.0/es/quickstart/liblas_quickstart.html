@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guía de inicio rápido de libLAS &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Quickstarts" href="toc.html" />
+    <link rel="next" title="Mapbender Guía de Inicio Rápido" href="mapbender_quickstart.html" />
+    <link rel="prev" title="Leaflet Quickstart" href="leaflet_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://liblas.org/"><img alt="project logo" class="align-right" src="../../_images/logo-libLAS.png" style="width: 192.0px; height: 60.0px;" /></a>
+<div class="section" id="guia-de-inicio-rapido-de-liblas">
+<h1>Guía de inicio rápido de libLAS<a class="headerlink" href="#guia-de-inicio-rapido-de-liblas" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#guia-de-inicio-rapido-de-liblas" id="id1">Guía de inicio rápido de libLAS</a><ul>
+<li><a class="reference internal" href="#procesamiento" id="id2">Procesamiento</a><ul>
+<li><a class="reference internal" href="#reproyectar-un-fichero-las" id="id3">Reproyectar un fichero LAS</a></li>
+<li><a class="reference internal" href="#exportar-un-fichero-las-a-texto" id="id4">Exportar un fichero LAS a texto</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="procesamiento">
+<h2>Procesamiento<a class="headerlink" href="#procesamiento" title="Permalink to this headline">¶</a></h2>
+<p>Las herramientas de línea de comandos libLAS proporcionan el grueso del software operacional
+de interacción con los usuarios de libLAS, aunque es la librería libLAS subyacente la que
+realmente ofrece la funcionalidad.  A continuación se muestra un listado con las operaciones
+más comunes que podría realizar sobre los datos LAS y las utilidades y métodos para llevar a
+cabo estas tareas.</p>
+<div class="section" id="reproyectar-un-fichero-las">
+<h3>Reproyectar un fichero LAS<a class="headerlink" href="#reproyectar-un-fichero-las" title="Permalink to this headline">¶</a></h3>
+<p>Todos los datos LAS se encuentran en algún tipo de sistema de coordenadas, a pesar de que éste
+no se encuentre descrito en el fichero LAS. Para datos LAS terrestres, estas descripciones de
+sistemas de coordenadas a menudo se corresponden con los descritos en la base de datos <a class="reference external" href="http://www.epsg-registry.org/">EPSG</a> .
+Otra fuente de información sobre sistemas de coordenadas puede ser encontrado en <a class="reference external" href="http://spatialreference.org">http://spatialreference.org</a>.</p>
+<div class="highlight-python"><div class="highlight"><pre>lasinfo --no-check srs.las
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">La opción &#8211;no-check indica al comando &#8216;lasinfo&#8217; que sólo debe mostrar la información del encabezado del archivo
+y que no escanee todos los puntos.  Para un archivo con sólo 10 puntos,
+esto no supone una preocupación, pero para un fichero con 50 o 500 millones de puntos,
+el tiempo de espera de un análisis completo de los datos no merece la pena si sólo se necesita información
+de la cabecera.</p>
+</div>
+<p>Nuestra llamada a &#8216;lasinfo&#8217; nos informa que el fichero <code class="docutils literal"><span class="pre">srs.las</span></code>
+posee coordenadas en UTM Zona 17 Norte:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">PROJCS</span><span class="p">[</span><span class="s2">&quot;WGS 84 / UTM zone 17N&quot;</span><span class="p">,</span>
+    <span class="n">GEOGCS</span><span class="p">[</span><span class="s2">&quot;WGS 84&quot;</span><span class="p">,</span>
+        <span class="n">DATUM</span><span class="p">[</span><span class="s2">&quot;WGS_1984&quot;</span><span class="p">,</span>
+            <span class="n">SPHEROID</span><span class="p">[</span><span class="s2">&quot;WGS 84&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257223563</span><span class="p">,</span>
+                <span class="n">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;7030&quot;</span><span class="p">]],</span>
+            <span class="n">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;6326&quot;</span><span class="p">]],</span>
+        <span class="n">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+        <span class="n">UNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">],</span>
+        <span class="n">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;4326&quot;</span><span class="p">]],</span>
+    <span class="n">PROJECTION</span><span class="p">[</span><span class="s2">&quot;Transverse_Mercator&quot;</span><span class="p">],</span>
+    <span class="n">PARAMETER</span><span class="p">[</span><span class="s2">&quot;latitude_of_origin&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">PARAMETER</span><span class="p">[</span><span class="s2">&quot;central_meridian&quot;</span><span class="p">,</span><span class="o">-</span><span class="mi">81</span><span class="p">],</span>
+    <span class="n">PARAMETER</span><span class="p">[</span><span class="s2">&quot;scale_factor&quot;</span><span class="p">,</span><span class="mf">0.9996</span><span class="p">],</span>
+    <span class="n">PARAMETER</span><span class="p">[</span><span class="s2">&quot;false_easting&quot;</span><span class="p">,</span><span class="mi">500000</span><span class="p">],</span>
+    <span class="n">PARAMETER</span><span class="p">[</span><span class="s2">&quot;false_northing&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">UNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;9001&quot;</span><span class="p">]],</span>
+    <span class="n">AUTHORITY</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="s2">&quot;32617&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>Ahora que sabemos cual es el sistema de coordenadas de nuestros datos de entrada, podemos decidir a qué sistema los reproyectaremos.
+En nuestro primer ejemplo, vamos a usar la venerable proyección Plate Carrée (también llamada equirrectangular o equidistante cilíndrica), <a class="reference external" href="http://spatialreference.org/ref/epsg/4326/">EPSG:4326</a>.</p>
+<div class="highlight-python"><div class="highlight"><pre>las2las srs.las --t_srs EPSG:4326
+</pre></div>
+</div>
+<p>Nuestro proceso tiene éxito, pero después de un vistazo rápido a los datos con
+<code class="docutils literal"><span class="pre">lasinfo</span> <span class="pre">output.las</span></code> apreciamos un problema:</p>
+<div class="highlight-python"><div class="highlight"><pre>...
+Scale Factor X Y Z:          0.01 0.01 0.01
+Offset X Y Z:                -0.00 -0.00 -0.00
+...
+Min X, Y, Z:                -83.43, 39.01, 170.58,
+Max X, Y, Z:                -83.43, 39.01, 170.76,
+</pre></div>
+</div>
+<p>El fichero <code class="docutils literal"><span class="pre">srs.las</span></code> tenía una escala de 0.01, o dos decimales de precisión para las
+coordenadas X, Y, Z. Para datos UTM, esto está bien porque implica una precisión implícita de 1 cm.
+Para los datos en grados decimales del sistema de coordenadas no proyectado Plate Carrée, esto causa
+una gran pérdida de de precisión. Necesitamos poner nuestros valores de escala a algo que pueda tener una mayor precisión.
+En nuestro caso:</p>
+<div class="highlight-python"><div class="highlight"><pre>las2las --t_srs EPSG:4326 srs.las --scale 0.000001 0.000001 0.01
+</pre></div>
+</div>
+<p>Tras otra nueva revisión con &#8216;lasinfo&#8217; obtenemos unos resultados más satisfactorios:</p>
+<div class="highlight-python"><div class="highlight"><pre>...
+Scale Factor X Y Z:          0.000001 0.000001 0.01
+Offset X Y Z:                -0.000000 -0.000000 -0.00
+...
+Min X, Y, Z:                -83.427598, 39.012599, 170.58
+Max X, Y, Z:                -83.427548, 39.012618, 170.76
+</pre></div>
+</div>
+</div>
+<div class="section" id="exportar-un-fichero-las-a-texto">
+<h3>Exportar un fichero LAS a texto<a class="headerlink" href="#exportar-un-fichero-las-a-texto" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre>las2txt input.las --parse xyzti
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

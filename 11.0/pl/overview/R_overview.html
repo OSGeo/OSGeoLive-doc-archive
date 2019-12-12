@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>R do danych przestrzennych &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Witaj w OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="Cesium" href="cesium_overview.html" />
+    <link rel="prev" title="52°North WPS" href="52nWPS_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://cran.r-project.org"><img alt="project logo" class="align-right" src="../../_images/logo-R.png" /></a>
+<div class="section" id="r-do-danych-przestrzennych">
+<h1>R do danych przestrzennych<a class="headerlink" href="#r-do-danych-przestrzennych" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="programowanie-statystyczne">
+<h2>Programowanie Statystyczne<a class="headerlink" href="#programowanie-statystyczne" title="Permalink to this headline">¶</a></h2>
+<p>R jest potężnym, szeroko stosowanym środowiskiem dla obliczeń
+statystycznych i grafiki, który przoduje w analizach i przetwarzaniu
+geograficznych zestawów danych. Geoprzestrzenne narzędzia do analiz są
+dostępne w R w pakietach R (modułach rozszerzających możliwości R),
+które zapewniają dostęp do dużej liczby tradycyjnych i wyszukanych
+algorytmów, często zanim będą one dostępne w innych programach
+open source lub własnościowych. R i jego pakiety przetwarzają
+punkty, linie, wieloboki, oraz siatki. Użytkownicy mogą wykonywać
+szeroki wachlarz zadań, takich jak: klasyfikacja obrazów, analiza
+statystyczna tworząca relacje przestrzenne i schematy obiektów oraz
+inne, wymienione poniżej. Funkcje dostępne w R uzupełniają i
+rozszerzają możliwości dostępne w narzędziach GIS i programach
+do przetwarzania zobrazowań.</p>
+<p>Właściwy interfejs R to okno wiersza poleceń, które zapewnia
+doskonałą elastyczność i kontrolę, ale zdaje się, w porównaniu
+z graficznym interfejsem użytkownika (GUI), wydłużać czas
+potrzebny na uzyskanie użytkownikowi biegłości obsługi.
+Szczęśliwie R jest dobrze udokumentowane na stronie internetowej,
+co stanowi dużą pomoc w nauce obsługi. Skrypty są często używane
+do automatyzacji kroków przetwarzania, ale są dostępne także
+GUI programu, wiodący nazywa się RStudio (<a class="reference external" href="http://www.rstudio.com">http://www.rstudio.com</a>).</p>
+<p>R jest implementacją języka programowania S. Jest znaczna zgodność
+pomiędzy R a spuścizną po S oraz kodem S-Plus, a także pomiędzy R a
+nową komercyjną wersją S, TIBCO Spotfire S+. Pozwala to na konwersję
+różnych wersji kodu S w celu ich uruchomienia w R bez znaczących
+modyfikacji.</p>
+<a class="reference internal image-reference" href="../../_images/r-screenshot.png"><img alt="project logo" class="align-right" src="../../_images/r-screenshot.png" style="width: 497.0px; height: 382.5px;" /></a>
+<div class="section" id="glowne-funkcje">
+<h3>Główne funkcje<a class="headerlink" href="#glowne-funkcje" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Kompletny obiektowy język programowania zaprojektowany do statystyki i podobnych zaawansowanych matematycznych analiz</li>
+<li>Tysiące przestrzennych rozszerzeń statystycznych dostarczonych przez społeczność</li>
+<li>Klasy danych przestrzennych</li>
+<li>Obsługa danych przestrzennych</li>
+<li>Czytanie i zapis danych przestrznych</li>
+<li>Analizy rozkładu punktów</li>
+<li>Geostatystyka</li>
+<li>Mapy chorób i analizy danych obszarowych</li>
+<li>Regresja przestrzenna</li>
+<li>Analizy ekologczne</li>
+</ul>
+</div>
+<div class="section" id="szczegoly">
+<h3>Szczegóły<a class="headerlink" href="#szczegoly" title="Permalink to this headline">¶</a></h3>
+<p><strong>Strona internetowa:</strong> <a class="reference external" href="http://cran.r-project.org">http://cran.r-project.org</a></p>
+<p><strong>Licencja:</strong> Powszechna Licencja Publiczna GNU (GPL)</p>
+<p><strong>Wersja programu:</strong> 3.1.1</p>
+<p><strong>Systemy operacyjne:</strong> Windows, Linux, Mac, Unix</p>
+<p><strong>Wsparcie społeczności:</strong> <a class="reference external" href="http://cran.r-project.org/web/views/Spatial.html">http://cran.r-project.org/web/views/Spatial.html</a></p>
+</div>
+<div class="section" id="wprowadzenie">
+<h3>Wprowadzenie<a class="headerlink" href="#wprowadzenie" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/R_quickstart.html"><em>Przejdź do wprowadzenia</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

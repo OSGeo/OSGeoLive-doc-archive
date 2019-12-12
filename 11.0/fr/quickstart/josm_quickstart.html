@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>JOSM Quickstart &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Bienvenue sur OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="Jupyter Notebook Quickstart" href="jupyter_quickstart.html" />
+    <link rel="prev" title="istSOS Quickstart" href="istsos_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="josm-quickstart">
+<h1><a class="toc-backref" href="#id1">JOSM Quickstart</a><a class="headerlink" href="#josm-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>Ce guide de démarrage rapide couvre les usages de base de l&#8217;éditeur Java d&#8217;OpenStreetMap.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#josm-quickstart" id="id1">JOSM Quickstart</a><ul>
+<li><a class="reference internal" href="#preferences-de-josm" id="id2">Préférences de JOSM</a></li>
+<li><a class="reference internal" href="#apprendre-les-techniques-de-base-de-dessin-avec-josm" id="id3">Apprendre les techniques de base de dessin avec JOSM</a><ul>
+<li><a class="reference internal" href="#operations-basiques" id="id4">Opérations basiques</a></li>
+<li><a class="reference internal" href="#points-lignes-et-polygones" id="id5">Points, lignes et polygones</a></li>
+<li><a class="reference internal" href="#modifier-les-objets" id="id6">Modifier les objets</a></li>
+<li><a class="reference internal" href="#tracer" id="id7">Tracer</a></li>
+<li><a class="reference internal" href="#utiliser-les-modeles-d-attributs" id="id8">Utiliser les modèles d&#8217;attributs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tracer-votre-carte" id="id9">Tracer votre carte</a></li>
+<li><a class="reference internal" href="#supprimer-la-couche-d-exemple" id="id10">Supprimer la couche d&#8217;exemple</a></li>
+<li><a class="reference internal" href="#et-ensuite" id="id11">Et ensuite ?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<ul class="simple">
+<li>Quand JOSM démarre, cela devrait ressembler à cela:</li>
+</ul>
+<img alt="écran de chargement de JOSM" src="../../_images/josm-splash-page.png" />
+<div class="section" id="preferences-de-josm">
+<h2><a class="toc-backref" href="#id2">Préférences de JOSM</a><a class="headerlink" href="#preferences-de-josm" title="Permalink to this headline">¶</a></h2>
+<p>Il y a plusieurs paraamètres que vous pouvez modifier dans JOSM. Un
+paramètre que vous pouvez vouloir changer est la langue. JOSM a été
+traduit dans de nombreuses langues, et vous pouvez préférer travailler dans
+une langue différente.</p>
+<ul class="simple">
+<li>Pour accèder à la fenêtre des Préférences, cliquez sur Edit -&gt; Preferences.</li>
+</ul>
+<img alt="Fenêtre des Préférences" src="../../_images/josm_preferences.png" />
+<ul class="simple">
+<li>Sur le côté gauche, cliquez sur l&#8217;icône qui ressemble à un pot de peinture et
+un pinceau.</li>
+<li>En haut de la fenêtre, cliquez sur l&#8217;onglet intitulé “Look and Feel”.</li>
+<li>Choisissez votre langue dans le menu déroulant à côté du mot “Language”.</li>
+</ul>
+<img alt="Onglet Look and feel" src="../../_images/josm_look-and-feel.png" />
+<ul class="simple">
+<li>Cliquez sur OK.</li>
+<li>Vous devez redémarrer JOSM pour sauvegarder le paramètrage. Cliquez “File” dans le
+coin supérieur gauche, et cliquez sur “Restart” en bas du menu.</li>
+</ul>
+</div>
+<div class="section" id="apprendre-les-techniques-de-base-de-dessin-avec-josm">
+<h2><a class="toc-backref" href="#id3">Apprendre les techniques de base de dessin avec JOSM</a><a class="headerlink" href="#apprendre-les-techniques-de-base-de-dessin-avec-josm" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Maintenant ouvrons un fichier OSM que  nous utiliserons pour apprendre les
+méthodes basiques pour dessiner des cartes avec JOSM. Notez que cette carte n&#8217;est pas réelle,
+que ce n&#8217;est pas une carte réelle d&#8217;un endroit réel, donc nous n&#8217;aurons pas besoin de sauvegarder nos changements
+sur OpenStreetMap.</li>
+<li>Téléchargez le fichier ici: <a class="reference external" href="http://learnosm.org/files/sample.osm">sample.osm</a></li>
+<li>Maintenant ouvrons-le dans JOSM. Cliquez sur le bouton “Open”
+en haut à gauche.</li>
+</ul>
+<img alt="Ouvrir un fichier" src="../../_images/josm_open-file.png" />
+<ul class="simple">
+<li>Trouvez le fichier <strong>sample.osm</strong>. Il est probablement dans votre dossier Téléchargements,
+à moins que vous l&#8217;ayez sauvegardé ailleurs. Cliquez dessus, puis
+cliquez sur “Open”.</li>
+<li>Vous devriez voir un exemple de carte qui ressemble à ça:</li>
+</ul>
+<img alt="fichier exemple" src="../../_images/josm_sample-file.png" />
+<ul class="simple">
+<li>Vous utiliserez ces données dans le but d&#8217;essayer différentes techniques d&#8217;édition.
+<em>Vous ne devez jamais charger dans la base de données ces données fictives.</em></li>
+</ul>
+<div class="section" id="operations-basiques">
+<h3><a class="toc-backref" href="#id4">Opérations basiques</a><a class="headerlink" href="#operations-basiques" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Pour déplacer la carte de droite à gauche ou de haut en bas, utilisez le bouton
+droit de votre souris, que vous devez laissez appuyé tout en déplaçant votre souris.</li>
+<li>Il y a plusieurs façons de zoomer ou dézoomer la carte. Si vous avez une molette
+sur votre souris, vous pouvez l’utiliser. Sinon, vous pouvez utiliser le curseur
+dans le coin en haut à gauche de la carte. Déplacer la barre vers la gauche ou
+vers la droite avec votre souris pour zoomer ou dézoomer.</li>
+</ul>
+<img alt="Barre d'échelle" src="../../_images/josm_scale-bar.png" />
+<ul class="simple">
+<li>Regardez la carte d&#8217;exemple. Il y a plusieurs types d&#8217;objets.
+Il y a une rivière, une forêt, quelques bâtiments, plusieurs routes et une
+paire de magasins. Pour sélectionner un objet, cliquez dessus avec le
+bouton gauche de la souris.</li>
+</ul>
+</div>
+<div class="section" id="points-lignes-et-polygones">
+<h3><a class="toc-backref" href="#id5">Points, lignes et polygones</a><a class="headerlink" href="#points-lignes-et-polygones" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">En cliquant sur différents objets de la carte, vous pouvez remarquer qu&#8217;il
+y a trois types différents d&#8217;objets sur la carte. Il y a les points,
+lignes et les polygones.</p>
+</li>
+<li><p class="first">Les points sont des lieux simples, représentés par des symboles.
+Dans notre carte d’exemple, nous avons deux points: une boutique de vêtements
+et un marché. La boutique de vêtements est représentée par une image de maillot
+et le marché, par un panier de courses.</p>
+</li>
+<li><p class="first">Il y a aussi des lignes sur la carte, qui représentent des routes. Si vous regardez
+attentivement vous remarquerez que les lignes contiennent des points. Aucune
+information et aucun symbole n’est associé avec ces points: leur rôle est de
+déterminer le tracé de la ligne.</p>
+</li>
+<li><p class="first">Enfin, il y a différents polygones, qui représentent plusieurs lieux: une forêt,
+une rivière, et des bâtiments. Un polygone représente généralement une aire,
+par exemple un champ ou un bâtiment. Le polygone est en fait une ligne avec une
+caractéristique notable: dans le cas d’un polygone, la ligne commence et finit
+sur le même point.</p>
+<blockquote>
+<div><p>Il est facile de penser une carte comme contenant ces trois types d&#8217;objets
+de base - points, linges et formes. Dans OpenStreetMap il y a
+une terminologie spéciale que vous apprendrez en progressant. Dans
+OSM, les points sont appelés <strong>nodes</strong> (noeuds), les linges sont appelées
+<strong>ways</strong> (voies). Une forme est appelée <strong>closed way</strong> (voie fermée) car c&#8217;est
+seulement une ligne qui se termine sur le point où elle commence.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Vous avez peut-être remarqué la fenêtre «Attributs» qui apparaît sur la droite
+quand vous sélectionnez un objet. Celle-ci liste ce qu’on appelle les tags.
+Les tags sont associés un point, une ligne ou un polygone, et permettent de les
+définir. Nous en apprendrons un peu plus sur les tags dans le chapitre 7,
+«Édition avancée avec JOSM». Pour le moment, retenez que les tags servent à déterminer
+si un objet est une forêt, une rivière, un bâtiment, ou autre chose.</p>
+</li>
+<li><p class="first">Pensez au cartes dessinées à la main, est-ce qu’on utilise pas là aussi des points,
+des lignes et des polygones ? Quels lieux peuvent être représentés par des
+points ? par des lignes ? par des polygones ?</p>
+</li>
+</ul>
+</div>
+<div class="section" id="modifier-les-objets">
+<h3><a class="toc-backref" href="#id6">Modifier les objets</a><a class="headerlink" href="#modifier-les-objets" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Sélectionnez la forêt qui est sur la gauche de la carte. Faites bien attention
+de cliquer sur la ligne qui entoure la forêt, et pas sur un des points qui la
+constituent. En maintenant votre clic droit enfoncé et en déplaçant votre souris,
+vous devriez être capable de changer la forêt de position.</li>
+<li>Cliquez maintenant sur un des points constituant le polygone de la forêt.
+À l’aide de votre souris, en maintenant le clic gauche enfoncé, vous devriez
+pouvoir déplacer ce point. C’est la façon de faire si vous avez besoin de
+changer la forme d’un polygone, ou tout simplement pour changer la position d’un point.</li>
+</ul>
+</div>
+<div class="section" id="tracer">
+<h3><a class="toc-backref" href="#id7">Tracer</a><a class="headerlink" href="#tracer" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Tout à gauche de la fenêtre de JOSM, il y a une barre d’outils. Une partie de
+ces boutons permettent d’ouvrir des fenêtres à droite qui affichent des informations
+supplémentaires sur la carte. Mais les boutons qui nous intéressent pour le moment
+sont en haut de cette barre d’outils. Ces boutons permettent de définir ce que
+vous pouvez faire avec votre souris.</li>
+<li>Les quatre boutons du haut sont les plus importants.
+Ils sont utilisés pour sélectionner les objets et en dessiner de nouveaux.</li>
+<li>Jusqu’à présent, vous avez utilisé l’outil de sélection, qui ressemble à
+ceci:</li>
+</ul>
+<img alt="Outil de sélection" src="../../_images/josm_select-tool.png" />
+<ul class="simple">
+<li>Avant de commencer à tracer, assurez-vous que rien n’est sélectionné. Pour cela,
+toujours avec l’outil de sélection, cliquez dans une zone vide de la carte.</li>
+<li>Vous pouvez maintenant cliquer sur le deuxième bouton, celui pour tracer.</li>
+</ul>
+<img alt="Outil de traçage" src="../../_images/josm_draw-tool.png" />
+<ul class="simple">
+<li>Dans une zone vide de la carte, double-cliquez avec le bouton gauche de votre
+souris. Vous venez de créer un point.</li>
+<li>Pour tracer une ligne, faites un simple clic avec votre souris. Déplacez votre
+souris et cliquez de nouveau. Continuez jusqu’à que vous ayez obtenu le résultat
+souhaité. Pour finir la ligne, double-cliquez avec votre souris.</li>
+<li>Le procédé est le même pour tracer un polygone, mais vous devez finir le polygone
+en double-cliquant sur le premier point de la ligne.</li>
+</ul>
+</div>
+<div class="section" id="utiliser-les-modeles-d-attributs">
+<h3><a class="toc-backref" href="#id8">Utiliser les modèles d&#8217;attributs</a><a class="headerlink" href="#utiliser-les-modeles-d-attributs" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Nous savons désormais comment tracer des points, des lignes et des polygones,
+mais pour l’instant nous n’avons pas défini ce qu’ils représentent. Nous voulons
+être capable de dire qu’un point est une boutique, une école, ou autre chose,
+et de même si nos polygones sont des champs, des bâtiments, ou autre chose.</li>
+<li>Dans la barre d’outils à gauche, cliquez de nouveau sur l’outil de sélection.</li>
+</ul>
+<img alt="Outil de sélection" src="../../_images/josm_select-tool.png" />
+<ul class="simple">
+<li>Sélectionnez un des objets que vous venez de tracer. Dans le menu du haut,
+cliquez sur «Attributs». Déplacer votre souris dans les sous-menus jusqu’à trouver
+le type de lieu que vous souhaitez.</li>
+<li>Après avoir sélectionné un modèle d’attributs, une fenêtre devrait s’ouvrir pour
+vous permettre d’ajouter des informations. Tous les champs ne sont pas obligatoires,
+mais vous voudrez certainement ajouter les plus importants, par exemple le nom de votre lieu.</li>
+<li>Quand vous avez renseigné toutes les informations voulues, appuyer sur «Appliquer
+les attributs». Si tout s’est bien passé, votre point, ligne ou polygone devrait
+changer de couleur ou afficher un symbole. C’est parce que vous avez maintenant
+défini de quoi il s’agit.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="tracer-votre-carte">
+<h2><a class="toc-backref" href="#id9">Tracer votre carte</a><a class="headerlink" href="#tracer-votre-carte" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>C’est le moment de tracer une carte pour mettre en pratique ce que l’on vient
+d’apprendre. Vous pouvez par exemple tracer la carte que vous aviez dessiné précedemment.</li>
+<li>À l’aide du bouton droit de votre souris, déplacez-vous dans une zone de la carte totalement vide.</li>
+<li>Utilisez l’outil de tracé pour créer des points, des lignes et des polygones.
+N’oubliez pas de définir les objets en utilisant le menu «Attributs».</li>
+<li>Quand vous aurez fini, vous devriez avoir une carte similaire à celle que nous
+avons chargée avec le fichier «sample.osm».</li>
+</ul>
+</div>
+<div class="section" id="supprimer-la-couche-d-exemple">
+<h2><a class="toc-backref" href="#id10">Supprimer la couche d&#8217;exemple</a><a class="headerlink" href="#supprimer-la-couche-d-exemple" title="Permalink to this headline">¶</a></h2>
+<p>Une fois que vous êtes à l&#8217;aise avec les tehniques de tracé, you souhaitez probablement
+vous tourner vers des entités réelles.</p>
+<p><em>Il est très important que vous supprimiez la couches avec les données
+d&#8217;exemple. Ces données sont fictives et ne doivent pas être chargées dans
+la base de données OpenStreetMap (les versions les plus récentes de JOSM prévienne cela
+automatiquement).</em></p>
+<p>Dans la fenêtre Couches dans le coin en haut à droite de l&#8217;écran, sélectionnez
+la couche sample.osm. Puis cliquez sur la corbeille en bas à droite
+de cette fenêtre. Vous pouvez aussi supprimer cette couche à l&#8217;aide du
+menu contextuel.</p>
+</div>
+<div class="section" id="et-ensuite">
+<h2><a class="toc-backref" href="#id11">Et ensuite ?</a><a class="headerlink" href="#et-ensuite" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Essayez la documentation de LearnOSM, dont ce guide est dérivé:
+<a class="reference external" href="http://learnosm.org/fr/josm/start-josm/">http://learnosm.org/fr/josm/start-josm/</a></li>
+<li>Pour pouvoir continuer à éditer vous devez préalablement télécharger des données réelles.
+Ceci est expliqué dans le chapitre suivant:
+<a class="reference external" href="http://learnosm.org/en/josm/more-about-josm/">http://learnosm.org/en/josm/more-about-josm/</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

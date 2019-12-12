@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Γρήγορη Εκκίνηση pycsw &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Καλώς ήρθατε στο OSGeo-Live" href="../index.html" />
+    <link rel="next" title="Εγχειρίδιο Γρήγορης Εκκίνησης QGIS Server" href="qgis_mapserver_quickstart.html" />
+    <link rel="prev" title="Proj.4 Quickstart" href="proj4_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://pycsw.org/"><img alt="project logo" class="align-right" src="../../_images/logo-pycsw.png" style="width: 102.4px; height: 102.4px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="pycsw">
+<h1>Γρήγορη Εκκίνηση pycsw<a class="headerlink" href="#pycsw" title="Permalink to this headline">¶</a></h1>
+<p>Το pycsw είναι μια υλοποίηση εξυπηρετητή του προτύπου OGC CSW σε γλώσσα προγραμματισμού <a class="reference external" href="http://www.python.org/">Python</a>.</p>
+<p>To pycsw υλοποιεί την οδηγία 10 (πρωτόκολο επικοινωνίας HTTP του προτύπου Catalogue Services for the Web, CSW) της προδιαγραφής υλοποίησης Υπηρεσίας Καταλόγου του OpenGIS, στην έκδοση 2.0.2. Η υλοποίηση ξεκίνησε το 2010 (και ανακοινώθηκε πιο επίσημα το 2011).</p>
+<p>Το pycsw επιτρέπει την δημοσίευση και αναζήτηση γεωχωρικών μεταδεδομένων. Υπάρχοντα αποθετήρια γεωχωρικών μεταδεδομένων μπορούν να δημοσιευθούν μέσω του προτύπου OGC:CSW 2.0.2.</p>
+<p>Το pycsw είναι Λογισμικό Ανοιχτού Κώδικα, υπό την άδεια MIT, και υποστηρίζει όλες τις κύριες πλατφόρμες (Windows, Linux, Mac OS X).</p>
+<p>Το pycsw είναι προεγκατεστημένο στο OSGeo-Live. Αυτός ο οδηγός περιγράφει:</p>
+<ul class="simple">
+<li>Την βασική εγκατάσταση του pycsw</li>
+<li>Την δοκιμή της εγκατάσταση μέσω της δοκιμαστικής εφαρμογής</li>
+<li>Την παραμετροποίηση του κειμένου Δυνατοτήτων (Capabilities) και απεικόνιση των πληροφοριών σε περιηγητή διαδικτύου</li>
+<li>Την δημιουργία αρχείου μεταδεδομένων ISO 19139 XML (μέσω των εφαρμογών INSPIRE Metadata Editor ή του GIMED)</li>
+<li>Την ενσωμάτωση των νέων αρχείων μεταδεδομένων στην βάση δεδομένων του pycsw</li>
+<li>Την εγκατάσταση του πρόσθετου CSW για το QGIS</li>
+<li>Την αναζήτηση δεδομένων μέσω της υπηρεσίας καταλόγου pycsw μέσα από το QGIS</li>
+</ul>
+<div class="section" id="id1">
+<h2>Εγκατάσταση<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Απαιτήσεις συστήματος<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Το pycsw βασίζεται στις παρακάτω βιβλιοθήκες:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://lxml.de/">lxml</a> (έκδοση &gt;= 2.2.3) για υποστήριξη XML</li>
+<li><a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy</a> (έκδοση &gt;= 0.0.5) για διασύνδεση με βάση δεδομένων</li>
+<li><a class="reference external" href="http://trac.gispython.org/lab/wiki/Shapely">Shapely</a> (έκδοση &gt;= 1.2.8) για δυνατότητα χωρικών ερωτημάτων</li>
+<li><a class="reference external" href="http://code.google.com/p/pyproj/">pyproj</a> (έκδοση &gt;= 1.8.9) για μετατροπές συντεταγμένων</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Εγκατάσταση από τον πηγαίο κώδικα<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://pycsw.org/download.html">Κατεβάστε</a> την τελευταία επίσημη έκδοση ή την τελευταία έκδοση μέσω svn:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ svn co https://pycsw.svn.sourceforge.net/svnroot/pycsw pycsw
+</pre></div>
+</div>
+<p>Βεβαιωθείτε ότι το CGI είναι ενεργοποιημένο στο φάκελο της εγκατάστασης. Για παράδειγμα στον Apache, εαν έχετε εγκαταστήσει το pycsw στο φάκελο <code class="docutils literal"><span class="pre">/srv/www/htdocs/pycsw</span></code> (όπου το URL θα είναι <code class="docutils literal"><span class="pre">http://host/pycsw/csw.py</span></code>), προσθέστε το παρακάτω στο αρχείο ρυθμίσεων <code class="docutils literal"><span class="pre">httpd.conf</span></code>:</p>
+<div class="highlight-none"><div class="highlight"><pre>&lt;Location /pycsw/&gt;
+ Options FollowSymLinks +ExecCGI
+ Allow from all
+ AddHandler cgi-script .py
+&lt;/Location&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="ubuntu-lubuntu-kubuntu">
+<h3>Εγκατάσταση σε Ubuntu/Lubuntu/Kubuntu<a class="headerlink" href="#ubuntu-lubuntu-kubuntu" title="Permalink to this headline">¶</a></h3>
+<p>Για να εγκαταστήσετε το pycsw σε μια διανομή βασισμένη στο Ubuntu, μπορείτε να χρησιμοποιήσετε το script εγκατάστασης του OSGeo-Live DVD που βρίσκεται στο <code class="docutils literal"><span class="pre">pycsw/etc/dist</span></code>:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">cd</span> pycsw/etc/dist
+$ sudo ./install_pycsw.sh
+</pre></div>
+</div>
+<p>Ο κώδικας θα εγκαταστήσει τις απαραίτητες βιβλιοθήκες (Apache, lxml, sqlalchemy, shapely, pyproj) και στη συνέχεια το pycsw στο φάκελο <code class="docutils literal"><span class="pre">/var/www</span></code>.</p>
+</div>
+<div class="section" id="opensuse">
+<h3>Εγκατάσταση στο openSUSE<a class="headerlink" href="#opensuse" title="Permalink to this headline">¶</a></h3>
+<p>Για να εγκαταστήσετε το πακέτο του pycsw στο openSUSE 12.1, μπορείτε να εκτελέσετε τις παρακάτω εντολές σαν χρήστης <code class="docutils literal"><span class="pre">root</span></code>:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ zypper -ar http://download.opensuse.org/repositories/Application:/Geo/openSUSE_12.1/ GEO
+$ zypper -ar http://download.opensuse.org/repositories/devel:/languages:/python/openSUSE_12.1/ python
+$ zypper refresh
+$ zypper install pycsw
+</pre></div>
+</div>
+<p>Για προηγούμενες εκδόσεις του openSUSE αλλάξτε την έκδοση από <code class="docutils literal"><span class="pre">12.1</span></code> σε <code class="docutils literal"><span class="pre">11.4</span></code>. Για μελλοντικές εκδόσεις χρησιμοποιήστε το openSUSE <code class="docutils literal"><span class="pre">Factory</span></code>. Η κυλιόμενη διανομή <code class="docutils literal"><span class="pre">Tumbleweed</span></code> επίσης υποστηρίζεται.
+Το pycsw περιλαμβάνεται στο επίσημο αποθετήριο Application::Geo στο OpenSUSE Build Service.</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Δοκιμαστική Εφαρμογή<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Για να εκτελέσετε την δοκιμαστική εφαρμογή, επιλέξτε από το μενού WebServices το εικονίδιο pycsw ή εναλλακτικά ανοίξτε ένα παράθυρο Firefox και πληκτρολογήστε <a class="reference external" href="http://localhost/pycsw/tester/index.html">http://localhost/pycsw/tester/index.html</a> στη μπάρα διευθύνσεων.</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_startup.png"><img alt="../../_images/pycsw_tester_startup.png" src="../../_images/pycsw_tester_startup.png" style="width: 481.5px; height: 378.0px;" /></a>
+<p>Με την επιλογή από την αριστερή λίστα, μπορείτε να επιλέξετε έτοιμα ερωτήματα POST, με την μορφή XML, τα οποία μπορούν να σταλούν στο pycsw:</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_selection.png"><img alt="../../_images/pycsw_tester_selection.png" src="../../_images/pycsw_tester_selection.png" style="width: 748.5px; height: 408.0px;" /></a>
+<p>Για παράδειγμα επιλέγοντας &#8220;apiso/DescribeRecord&#8221;, και πατώντας το κουμπί &#8220;Send&#8221;, μια περιγραφή εγγραφής ISO Application Profile παρουσιάζεται στο δεξί παράθυρο:</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_describe_apiso_record.png"><img alt="../../_images/pycsw_tester_describe_apiso_record.png" src="../../_images/pycsw_tester_describe_apiso_record.png" style="width: 746.25px; height: 408.75px;" /></a>
+<p>Επιλέγοντας &#8220;GetCapabilities-SOAP&#8221; και πιέζοντας το κουμπί &#8220;Send&#8221;, ένα ερώτημα SOAP αποστέλεται στον εξυπηρετητή για να δημοσιοποιήσει τις δυνατότητες της διαδικτυακής υπηρεσίας:</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_soap_capabillities.png"><img alt="../../_images/pycsw_tester_soap_capabillities.png" src="../../_images/pycsw_tester_soap_capabillities.png" style="width: 746.25px; height: 408.0px;" /></a>
+<p>Επιπλέον μπορείτε να αναζητήσετε εγγραφές δεδομένων, με χωρικό ερώτημα προς τον εξυπηρετητή, με την επιλογή &#8220;GetRecords-filter-bbox&#8221; και αφού επεξεργαστείτε τις συντεταγμένες στο XML ερώτημα:</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_getrecords_bbox_filter.png"><img alt="../../_images/pycsw_tester_getrecords_bbox_filter.png" src="../../_images/pycsw_tester_getrecords_bbox_filter.png" style="width: 749.25px; height: 399.0px;" /></a>
+<p>Μπορείτε να δοκιμάσετε όλες τα πιθανά ερωτήματα μέσω αυτής της δοκιμαστικής εφαρμογής. Ένας πιο αποτελεσματικός και γραφικός τρόπος για να κάνετε τέτοια ερωτήματα περιγράφεται παρακάτω σε αυτόν τον οδηγό.</p>
+</div>
+<div class="section" id="capabilities-document-and-configuration">
+<h2>Capabilities Document and Configuration<a class="headerlink" href="#capabilities-document-and-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Το έγγραφο δυνατοτήτων της υπηρεσίας μπορούν να βρεθούν στο: <a class="reference external" href="http://localhost/pycsw/csw.py?service=CSW&amp;version=2.0.2&amp;request=GetCapabilities">http://localhost/pycsw/csw.py?service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</a>.</p>
+<p>Για να επεξεργαστείτε τα μεταδεδομένα της υπηρεσίας που περιλαμβάνονται στο κείμενο δυνατοτήτων, μπορείτε να αλλάξετε τα περιεχόμενα του αρχείου <code class="docutils literal"><span class="pre">/var/www/pycsw/default.cfg</span></code> κάτω από την ετικέτα <code class="docutils literal"><span class="pre">[metadata:main]</span></code>.
+Εαν θέλετε να ενεργοποιήσετε την υποστήριξη INSPIRE Discovery Service, τα μεταδεδομένα κάτω από την ετικέτα <code class="docutils literal"><span class="pre">[metadata:inspire]</span></code> πρέπει να συμπληρωθούν και η ιδιότητα <code class="docutils literal"><span class="pre">enabled</span></code> πρέπει να τεθεί σε τιμή <code class="docutils literal"><span class="pre">true</span></code>.</p>
+<p>Για την πλήρη λειτουργικότητα, παρακαλώ συμβουλευθείτε το <a class="reference external" href="http://pycsw.org/documentation.html">εγχειρίδιο</a> στην ιστοσελίδα του pycsw.</p>
+</div>
+<div class="section" id="id5">
+<h2>Δημιουργία Μεταδεδομένων<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="european-open-source-metadata-editor-euosme">
+<h3>Με χρήση του λογισμικού European Open Source Metadata Editor (EUOSME)<a class="headerlink" href="#european-open-source-metadata-editor-euosme" title="Permalink to this headline">¶</a></h3>
+<p>Αρχεία μεταδεδομένων για χωρικά δεδομένα ή για σύνολα χωρικών δεδομένων μπορούν να δημιουργηθούν μέσω της επίσημης ελεύθερης υλοποίησης επεξεργαστή μεταδεδομένων του INSPIRE, την εφαρμογή European Open Source Metadata Editor (EUOSME). Η εφαρμογή αυτή είναι διαθέσιμη στο <code class="docutils literal"><span class="pre">http://inspire-geoportal.ec.europa.eu/editor/</span></code>. Ο πηγαίος κώδικας βρίσκεται στο <code class="docutils literal"><span class="pre">https://joinup.ec.europa.eu/svn/euosme/trunk</span></code></p>
+<p>Μπορείτε να συμπληρώσετε τα απαραίτητα πεδία μεταδεδομένων μέσω της εφαρμογής, προσθέτωντας πληροφορίες όπως το όνομα του ιδιοκτήτη των δεδομένων, λέξεις κλειδιά, ιστοσελίδα των δεδομένων στο διαδίκτυο, την γεωγραφική θέση κλπ.</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_euosme_metadata_input.png"><img alt="../../_images/pycsw_euosme_metadata_input.png" src="../../_images/pycsw_euosme_metadata_input.png" style="width: 831.75px; height: 485.25px;" /></a>
+<p>Μετά την συμπλήρωση των μεταδεδομένων, πραγματοποιείται πιστοποίηση των μεταδεδομένων μέσα από το κουμπί (validation) στην αρχή της σελίδας, ώστε να εκτελεστούν οι απαραίτητοι έλεγχοι σε σχέση με τη οδηγία INSPIRE.</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_euosme_save_metadata.png"><img alt="../../_images/pycsw_euosme_save_metadata.png" src="../../_images/pycsw_euosme_save_metadata.png" style="width: 830.25px; height: 485.25px;" /></a>
+<p>Μετά απο επιτυχημένη πιστοποίηση των μεταδεδομένων, το αρχείο XML μπορεί να αποθηκευτεί στον τοπικό δίσκο και να παρουσιαστεί μέσω ενός επεξεργαστή κειμένου ή ενός φυλλομετρητή.</p>
+</div>
+<div class="section" id="gimed">
+<h3>Με χρήση του λογισμικού GIMED<a class="headerlink" href="#gimed" title="Permalink to this headline">¶</a></h3>
+<p>Το <a class="reference external" href="http://sourceforge.net/projects/gimed/">GIMED</a> είναι ένα Ελευθερο Λογισμικό για την δημιουργία και επεξεργασία αρχείων μεταδεδομένων XML τα οποία είναι συμβατά με την οδηγία INSPIRE.
+Για να εγκαταστήσετε την εφαρμογή, χρησιμοποιείστε τις παρακάτω εντολές από το τερματικό:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ wget http://downloads.sourceforge.net/project/gimed/GIMED_v1.3.0.tar.gz
+$ tar zxvf GIMED_v1.3.0.tar.gz
+$ mono ./GIMED_v1.3.0/bin/GIMED.exe
+</pre></div>
+</div>
+<p>Μπορείτε να ακολουθήσετε τον ίδιο τρόπο εργασίας με το EUOSME για να δημιουργήσετε μεταδεδομένα, χωρίς να είναι απαραίτητη η σύνδεση στο διαδίκτυο.</p>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/pycsw_gimed.png"><img alt="images/screenshots/1024x768/pycsw_gimed.png" src="images/screenshots/1024x768/pycsw_gimed.png" /></a>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Αποθήκευση Μεταδεδομένων<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>Ρυθμίσεις βάσης μεταδεδομένων<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>Το pycsw υποστηρίζει τις παρακάτω βάσεις δεδομένων:</p>
+<ul class="simple">
+<li>SQLite3</li>
+<li>PostgreSQL</li>
+<li>MySQL</li>
+</ul>
+<p>Στο OSGeo-Live, μια απλή βάση SQLite έχει υλοποιηθεί. Η βάση μπορεί να βρεθεί στο  <code class="docutils literal"><span class="pre">/var/www/pycsw/data/cite</span></code></p>
+<p>Για την δημιουργία μιας νέας βάσης, η διαδικασία είναι:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">cd</span> /path/to/pycsw
+$ <span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+$ python ./sbin/setup_db.py sqlite:////path/to/records.db
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>Εισαγωγή Μεταδεδομένων<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">cd</span> /path/to/pycsw
+$ <span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+$ python ./sbin/load_records.py /path/to/records sqlite:////path/to/records.db
+</pre></div>
+</div>
+<p>Αυτή η διαδικασία θα εισάγει όλα τα αρχεία <code class="docutils literal"><span class="pre">*.xml</span></code> από τον φάκελο <code class="docutils literal"><span class="pre">/path/to/records</span></code> στην βάση δεδομένων <code class="docutils literal"><span class="pre">records.db</span></code> και θα ρυθμίσει την υπηρεσία να διαφημίσει τους τίτλους των πεδίων των μεταδεδομένων όπως περιγράφεται στον Πίνακα 53 του προτύπου OGC:CSW.</p>
+</div>
+</div>
+<div class="section" id="qgis-csw">
+<h2>Εγκατάσταση εφαρμογής QGIS CSW<a class="headerlink" href="#qgis-csw" title="Permalink to this headline">¶</a></h2>
+<p>Ο μηχανισμός ερωτημάτων και αποκρίσεων HTTP δεν είναι φιλικός προς τους τελικούς χρήστες μιας υπηρεσίας καταλόγου σαν το pycsw.
+Για αυτό το λόγο υπάρχουν πολλές εφαρμογές πελάτες CSW στην μορφή διαδικτυακών εφαρμογών όπως το  <a class="reference external" href="http://inspire-geoportal.ec.europa.eu/discovery/discovery/">INSPIRE Geoportal</a> ή το <a class="reference internal" href="../overview/geonetwork_overview.html"><em>GeoNetwork</em></a>.
+Εδώ χρησιμοποιείται το πρόσθετο <a class="reference internal" href="../overview/qgis_overview.html"><em>QGIS</em></a> <a class="reference external" href="https://sourceforge.net/apps/trac/qgiscommunitypl/wiki/qgcsw">OGC Catalogue Service Client</a> .</p>
+<p>Για εγκατάσταση του προσθέτου:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">cd</span> ~
+$ <span class="nb">cd</span> .qgis/python/plugins
+$ svn co https://qgiscommunitypl.svn.sourceforge.net/svnroot/qgiscommunitypl/python/plugins/qgcsw/trunk qgcsw
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>Αναζήτηση Δεδομένων<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>Εφαρμογή QGIS CSW<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>Εκκινήστε το QGIS από το φάκελο της επιφάνειας εργασίας &#8220;Desktop GIS&#8221; και επιλέξτε την εντολή &#8220;Manage Plugins&#8221;</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_qgis_plugin.png"><img alt="../../_images/pycsw_qgis_plugin.png" src="../../_images/pycsw_qgis_plugin.png" style="width: 831.75px; height: 485.25px;" /></a>
+<p>Ενεργοποιήστε το πρόσθετο CSW από τη λίστα</p>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/pycsw_qgis_plugin_enable.png"><img alt="images/screenshots/1024x768/pycsw_qgis_plugin_enable.png" src="images/screenshots/1024x768/pycsw_qgis_plugin_enable.png" /></a>
+<p>Επιλέξτε το κουμπί CSW από το μενού εργαλείων και εκκινήστε το πρόσθετο CSW</p>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/pycsw_qgis_csw_plugin_open.png"><img alt="images/screenshots/1024x768/pycsw_qgis_csw_plugin_open.png" src="images/screenshots/1024x768/pycsw_qgis_csw_plugin_open.png" /></a>
+<p>Εισάγετε τον εξυπηρετητή pycsw επιλέγοντας το κουμπί &#8220;New&#8221; και πληκτρολογώντας  <code class="docutils literal"><span class="pre">http://localhost/pycsw/csw.py</span></code></p>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/pycsw_qgis_csw_plugin_add_server.png"><img alt="images/screenshots/1024x768/pycsw_qgis_csw_plugin_add_server.png" src="images/screenshots/1024x768/pycsw_qgis_csw_plugin_add_server.png" /></a>
+<p>Μπορείτε να εισάγετε κάποιους προεπιλεγμένους εξυπηρετητές από το κουμπί &#8220;Add default servers&#8221; και να δείτε τις δυνατότητες των εξυπηρετητών από το κουμπί &#8220;Server info&#8221;</p>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/pycsw_qgis_csw_plugin_server_info.png"><img alt="images/screenshots/1024x768/pycsw_qgis_csw_plugin_server_info.png" src="images/screenshots/1024x768/pycsw_qgis_csw_plugin_server_info.png" /></a>
+<p>Πραγματοποιήστε αναζήτηση μέσω καταλόγου, είτε πληκτρολογώντας λέξεις κλειδιά, είτε με μια γεωγραφική περιοχή</p>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/pycsw_qgis_csw_plugin_search.png"><img alt="images/screenshots/1024x768/pycsw_qgis_csw_plugin_search.png" src="images/screenshots/1024x768/pycsw_qgis_csw_plugin_search.png" /></a>
+</div>
+<div class="section" id="id11">
+<h3>Δοκιμαστική Εφαρμογή<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>Αναζήτηση δεδομένων μπορεί να γίνει επίσης από την δοκιμαστική εφαρμογή επιλέγοντας τα κατάλληλα ερωτήματα και εισάγωντας τις απαραίτητες παραμέτρους πχ. με τη χρήση του ερωτήματος &#8220;any text&#8221; με το αλφαριθμητικό &#8220;imagery&#8221; οδηγεί στην ανεύρεση των δεδομένων που δημιουργήθηκε προηγουμένως μέσω του  EUOSME</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_discovery.png"><img alt="../../_images/pycsw_tester_discovery.png" src="../../_images/pycsw_tester_discovery.png" style="width: 786.75px; height: 342.0px;" /></a>
+<p>Για πλήρη ανάλυση των δυνατοτήτων του pycsw μπορείτε να συμβουλευθείτε την επίσημη σελίδα: <a class="reference external" href="http://pycsw.org/documentation.html">http://pycsw.org/documentation.html</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

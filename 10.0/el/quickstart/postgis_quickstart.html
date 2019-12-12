@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Οδηγός γρήγορης εκκίνησης PostGIS &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Περιεχόμενα OSGeo-Live 10.0" href="../overview/overview.html" />
+    <link rel="next" title="Γρήγορη Εκκίνηση pycsw" href="pycsw_quickstart.html" />
+    <link rel="prev" title="Εγχειρίδιο Γρήγορης Εκκίνησης pgRouting" href="pgrouting_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://postgis.org/"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS5.png" style="width: 26.1px; height: 38.4px;" /></a>
+<div class="section" id="postgis">
+<h1>Οδηγός γρήγορης εκκίνησης PostGIS<a class="headerlink" href="#postgis" title="Permalink to this headline">¶</a></h1>
+<p>Η PostGIS προσθέτει δυνατότητα για χωρικές πράξεις στην σχεσιακή βάση δεδομένων PostgreSQL. Επεκτείνει
+την PostgreSQL ώστε να μπορεί να αποθηκεύει, ερωτά, και να διαχειρίζεται χωρικά δεδομένα. Σε αυτό τον Οδηγό Γρήγορης εκκίνησης θα χρησιμοποιήσουμε
+τον όρο &#8216;PostgreSQL&#8217; όταν θα αναφερόμαστε σε γενικές συναρτήσεις των βάσεων δεδομένων, και τον όρο &#8216;PostGIS&#8217; όταν
+θα περιγράφεται η επιπρόσθετη χωρική δυνατότητα που παρέχει η PostGIS.</p>
+<div class="section" id="id1">
+<h2>Αρχιτεκτονική Πελάτη-Διακομιστή<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Η PostgreSQL, όπως πολλές βάσεις δεδομένων, λειτουργεί σαν διακομιστής (server) σε ένα πλαίσο πελάτη-διακομιστή (client-server).
+O πελάτης κάνει ένα αίτημα στο διακομιστή και λαμβάνει πίσω μια απάντηση. Αυτός είναι ο ίδιος τρόπος που λειτουργεί το διαδίκτυο - ο πλοηγητής σελίδων (browser) είναι ένας πελάτης, ενώ ένας διαδικτυακός διακομιστής στέλνει πίσω τη σελίδα του ιστοτόπου. Με την PostgreSQL τα αιτήματα είναι στη γλώσσα SQL και οι απαντήσεις συνήθως είναι ένας πίνακας με δεδομένα από τη βάση.</p>
+<p>Δεν εμποδίζει τίποτα το διακομιστή να είναι στον ίδιο υπολογιστή με τον πελάτη και αυτό επιτρέπει τη χρήση της PostgresQL σε ένα και μόνο μηχάνημα. Ο πελάτης συνδέεται στο διακομιστή μέσω μιας εσωτερικής &#8216;επαναληπτικής&#8217; δικτυακής σύνδεσης και δεν είναι ορατός σε άλλους υπολογιστής, εκτός και αν γίνουν οι κατάλληλες ρυθμίσεις.</p>
+</div>
+<div class="section" id="id2">
+<h2>Δημιουργία μιας Χωρικής Βάσης Δεδομένων<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Ένας διακομιστής PostgreSQL σας επιτρέπει να οργανώσετε τα δεδομένα, τοποθετώντας τα σε χωριστές βάσεις δεδομένων. Κάθε βάση λειτουργεί ανεξάρτητα από τις άλλες, με τους δικούς της πίνακες, θεάσεις (views) χρήστες κτλ. Όταν συνδέεστε στην PostgreSQL θα πρέπει να καθορίσετε τη βάση δεδομένων.</p>
+<p>Μπορείτε να πάρετε μια λίστα βάσεων δεδομένων από το διακομιστή με την εντολή``psql -l``. Θα πρέπει να δείτε διάφορες βάσεις δεδομένων, που χρησιμοποιούνται από κάποια από τα προγράμματα που υπάρχουν στο σύστημα . Σε αυτό τον Οδηγό, θα δημιουργήσουμε μια νέα.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Η λίστα των βάσεων χρησιμοποιεί ένα τυπικό παρουσιαστή αρχείων κειμένου τύπου UNIX - πατήστε κενό για να πάτε στην επόμενη σελίδα, b για την προηγούμενη, q για να κλείσει και h για βοήθεια.</p>
+</div>
+<p>Η PostgreSQL μας δίνει το εργαλείο για δημιουργία βάσεων δεδομένων <code class="docutils literal"><span class="pre">createdb</span></code>. Πρέπει να δημιουργήσουμε μια βάση δεδομένων με τις επεκτάσεις της PostGIS, έτσι χρειάζεται να πούμε στην PostgreSQL ποια πρότυπη βάση να χρησιμοποιήσει. Θα πούμε τη βάση δεδομένων μας``demo``. Η εντολή είναι:</p>
+<div class="highlight-python"><div class="highlight"><pre>createdb -T template_postgis demo
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Μπορείτε συνήθως να λάβετε βοήθεια από τη γραμμή εντολών χρησιμοποιώντας την επιλογή <code class="docutils literal"><span class="pre">--help</span></code> μετά από μία εντολή.</p>
+</div>
+<p>Εάν τώρα τρέξετε <code class="docutils literal"><span class="pre">psql</span> <span class="pre">-l</span></code> θα πρέπει να δείτε τη βάση δεδομένων <code class="docutils literal"><span class="pre">demo</span></code> στη λίστα.</p>
+<p>Μπορείτε βεβαίως να δημιουργήσετε βάσεις δεδομένων PostGIS databases με χρήση της SQL. Πρώτα θα διαγράψουμε τη βάση δεδομένων που μόλις φτιάξαμε με την εντολή``dropdb``, μετά θα χρησιμοποιήσουμε την εντολή <code class="docutils literal"><span class="pre">psql</span></code> για να χρησιμοποιήσουμε ένα διερμηνέα εντολών SQL :</p>
+<div class="highlight-python"><div class="highlight"><pre>dropdb demo
+psql -d postgres
+</pre></div>
+</div>
+<p>Αυτές οι εντολές συνδέονται στη βάση δεδομένων που λέγεται <code class="docutils literal"><span class="pre">postgres</span></code>, που είναι μια βάση δεδομένων του συστήματος την οποία πρέπει να έχουν όλοι οι διακομιστές. Τώρα εισάγετε την ακόλουθη εντολή SQL για να δημιουργήσετε μια νέα βάση:</p>
+<div class="highlight-python"><div class="highlight"><pre>postgres=# CREATE DATABASE demo TEMPLATE=template_postgis;
+</pre></div>
+</div>
+<p>Τώρα αλλάξτε τη σύνδεσή σας από τη βάση δεδομένων <code class="docutils literal"><span class="pre">postgres</span></code> στη νέα βάση <code class="docutils literal"><span class="pre">demo</span></code>.
+Στο μέλλον θα μπορείτε να συνδεθείτε απευθείας με την εντολή <code class="docutils literal"><span class="pre">psql</span> <span class="pre">-d</span> <span class="pre">demo</span></code>, αλλά υπάρχει ένας απλός τρόπος να αλλάζετε βάση μέσα από τη γραμμή εντολών της <code class="docutils literal"><span class="pre">psql</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>postgres=# \c demo
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Επιλέξτε το συνδυασμό Ctrl-C εάν η γραμμή εντολών της psql  συνεχίζει να εμφανίζεται αφού πατήσετε return. Θα καθαρίσει ό,τι δεδομένα εισάγατε στη γραμμή και θα ξεκινήσετε από την αρχή. Πιθανότατα περιμένεετε για ένα κλειστό ερωτηματικό, εισαγωγικό ή και κάτι άλλο.</p>
+</div>
+<p>Θα πρέπει να δείτε ένα ενημερωτικό μήνυμα και το πρόθεμα στη γραμμή εντολών θα αλλάξει για να δείξει πως είστε συνδεδεμένος/η στη βάση <code class="docutils literal"><span class="pre">demo</span></code>. Για να επιβεβαιώσετε πως όλα έγιναν σωστά, εισάγετε <code class="docutils literal"><span class="pre">\dt</span></code> για να δείτε όλους τους πίνακες της βάσης. Θα πρέπει να δείτε κάτι σαν το ακόλουθο:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# \dt
+             List of relations
+ Schema |       Name       | Type  | Owner
+--------+------------------+-------+-------
+ public | geometry_columns | table | user
+ public | spatial_ref_sys  | table | user
+(2 rows)
+</pre></div>
+</div>
+<p>Αυτοί οι 2 πίνακας χρησιμοποιούνται από την PostGIS. Ο πίνακας <code class="docutils literal"><span class="pre">spatial_ref_sys</span></code> περιέχει πληροφορίες για υπαρκτά συστήματα αναφοράς και μπορούμε να χρησιμοποιήσουμε SQL για να δούμε εν τάχει τα δεδομένα:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT srid,auth_name,proj4text FROM spatial_ref_sys LIMIT 10;
+
+ srid | auth_name |          proj4text
+------+-----------+--------------------------------------
+ 3819 | EPSG      | +proj=longlat +ellps=bessel +towgs...
+ 3821 | EPSG      | +proj=longlat +ellps=aust_SA +no_d...
+ 3824 | EPSG      | +proj=longlat +ellps=GRS80 +towgs8...
+ 3889 | EPSG      | +proj=longlat +ellps=GRS80 +towgs8...
+ 3906 | EPSG      | +proj=longlat +ellps=bessel +no_de...
+ 4001 | EPSG      | +proj=longlat +ellps=airy +no_defs...
+ 4002 | EPSG      | +proj=longlat +a=6377340.189 +b=63...
+ 4003 | EPSG      | +proj=longlat +ellps=aust_SA +no_d...
+ 4004 | EPSG      | +proj=longlat +ellps=bessel +no_de...
+ 4005 | EPSG      | +proj=longlat +a=6377492.018 +b=63...
+(10 rows)
+</pre></div>
+</div>
+<p>Αυτό επιβεβαιώνει πως έχουμε μια χωρική βάση. Ο πίνακας <code class="docutils literal"><span class="pre">geometry_columns</span></code> ενημερώνει την PostGIS, ποιοι πίνακες περιέχουν χωρική πληροφορία. Αυτό είναι το επόμενο βήμα.</p>
+</div>
+<div class="section" id="id3">
+<h2>Δημιουργία ενός Χωρικού Πίνακα με το Δύσκολο Τρόπο<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Τώρα που έχουμε μια χωρική βάση, μπορούμε να κάνουμε μερικούς χωρικούς πίνακες.</p>
+<p>Πρώτα δημιουργείστε ένα τυπικό πίνακα για να αποθηκεύσετε μερικά δεδομένα πόλεων.
+Ο πίνακας έχει 2 πεδία - ένα με ένα αριθμητικό αναγνωριστικό και ένα άλλο για το όνομα της πόλης:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# CREATE TABLE cities ( id int4, name varchar(50) );
+</pre></div>
+</div>
+<p>Στη συνέχεια προσθέστε μια στήλη που θα περιέχει γεωμετρία, για να αποθηκεύσετε την τοποθεσία των πόλεων .
+Από σύμβαση, η στήλη καλείται
+<code class="docutils literal"><span class="pre">the_geom</span></code>. Αυτό λέει στην PostGIS τo είδος της γεωμετρίας του χαρακτηριστικού (σημεία, γραμμές, πολύγωνα κτλ), πόσες διαστάσεις (σε αυτή την περίπτωση δύο) και το σύστημα αναφοράς. Θα χρησιμοποιούμε το σύστημα αναφοράς EPSG:4326 για τις πόλεις μας.</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT AddGeometryColumn ( &#39;cities&#39;, &#39;the_geom&#39;, 4326, &#39;POINT&#39;, 2);
+</pre></div>
+</div>
+<p>Τώρα, εάν παρατηρήσετε τον πίνακα των πόλεων θα δείτε τη νέα στήλη και θα ενημερωθείτε πως για την ώρα ο πίνακας δεν περιέχει καμία γραμμή-εγγραφή.</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT * from cities;
+ id | name | the_geom
+----+------+----------
+(0 rows)
+</pre></div>
+</div>
+<p>Για να προσθέσετε γραμμές στον πίνακα, θα χρησιμοποιήσετε μερικές εντολές SQL. Για να εισάγουμε τη γεωμετρία στη στήλη των γεωμετρικών, χρησιμοποιήστε τη συνάρτητη της PostGIS <code class="docutils literal"><span class="pre">ST_GeomFromText</span></code> για να μετατραπούν από μια μορφοποίηση κειμένου που δίνει τις συντεταγμένες και ένα κωδικό από ένα χωρικό σύστημα αναφοράς:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# INSERT INTO cities (id, the_geom, name) VALUES (1,ST_GeomFromText(&#39;POINT(-0.1257 51.508)&#39;,4326),&#39;London, England&#39;);
+demo=# INSERT INTO cities (id, the_geom, name) VALUES (2,ST_GeomFromText(&#39;POINT(-81.233 42.983)&#39;,4326),&#39;London, Ontario&#39;);
+demo=# INSERT INTO cities (id, the_geom, name) VALUES (3,ST_GeomFromText(&#39;POINT(27.91162491 -33.01529)&#39;,4326),&#39;East London,SA&#39;);
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Χρησιμοποιήστε τα βέλει για να ανακαλέσετε και να επεξεργαστείτε γραμμές εντολών.</p>
+</div>
+<p>Όπως μπορείτε να δείτε αυτό γίνεται αυξανόμενα καταπονητικό πολύ γρήγορα. Ευτυχώς υπάρχουν και άλλοι τρόποι για να εισαχθούν δεδομένα σε πίνακες της PostGIS, πολύ πιο γρήγορα. Αλλά τώρα υπάρχουν τρεις πόλεις και μπορούμε να εργαστούμε με αυτές.</p>
+</div>
+<div class="section" id="id4">
+<h2>Απλές ερωτήσεις<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Όλοι οι τυπικοί τελεστές SQL μπορούν να εφαρμοστούν για να επιλέξετε δεδομένα από ένα πίνακα της PostGIS:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT * FROM cities;
+ id |      name       |                      the_geom
+----+-----------------+----------------------------------------------------
+  1 | London, England | 0101000020E6100000BBB88D06F016C0BF1B2FDD2406C14940
+  2 | London, Ontario | 0101000020E6100000F4FDD478E94E54C0E7FBA9F1D27D4540
+  3 | East London,SA  | 0101000020E610000040AB064060E93B4059FAD005F58140C0
+(3 rows)
+</pre></div>
+</div>
+<p>Αυτό επιστρέψει μια δεξαεξαδική αναπαράσταση των συντεταγμένων χωρίς νόημα για τον άνθρωπο.</p>
+<p>Αν θέλετε να ξαναδείτε τις συντεταγμένες σας σε τυποποίηση WKT, μπορείτε να χρησιμοποιήσετε τις συναρτήσεις ST_AsText(the_geom) or ST_AsEwkt(the_geom). Μπορείτε επίσης να χρησιμοποιήσετε τις συναρτήσεις ST_X(the_geom), ST_Y(the_geom) για να πάρετε αριθμητικές τιμές από τις συντεταγμένες:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT id, ST_AsText(the_geom), ST_AsEwkt(the_geom), ST_X(the_geom), ST_Y(the_geom) FROM cities;
+ id |          st_astext           |               st_asewkt                |    st_x     |   st_y
+----+------------------------------+----------------------------------------+-------------+-----------
+  1 | POINT(-0.1257 51.508)        | SRID=4326;POINT(-0.1257 51.508)        |     -0.1257 |    51.508
+  2 | POINT(-81.233 42.983)        | SRID=4326;POINT(-81.233 42.983)        |     -81.233 |    42.983
+  3 | POINT(27.91162491 -33.01529) | SRID=4326;POINT(27.91162491 -33.01529) | 27.91162491 | -33.01529
+(3 rows)
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Χωρικές ερωτήσεις<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Η PostGIS προσθέτει πολλές συναρτήσεις με χωρική λειτουργικότητα στην PostgreSQL. Είδαμε ήδη την ST_GeomFromText που μετατρέπει WKT σε γεωμετρία. οι περισσότερες από αυτές ξεκινούν με το πρόθεμα ST (εννοώντας &#8216;spatial type&#8217; - χωρική συνάρτηση) και αναφέρονται στην τεκμηρίωση της PostGIS. Θα χρησιμοποιήσουμε μία για να απαντήσουμε μια πρακτική περώτηση - Πόσο μακριά είναι οι τρεις πόλεις μεταξύ τους, θεωρώντας μια σφαιρική γη;</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT p1.name,p2.name,ST_Distance_Sphere(p1.the_geom,p2.the_geom) FROM cities AS p1, cities AS p2 WHERE p1.id &gt; p2.id;
+      name       |      name       | st_distance_sphere
+-----------------+-----------------+--------------------
+ London, Ontario | London, England |   5875766.85191657
+ East London,SA  | London, England |   9789646.96784908
+ East London,SA  | London, Ontario |   13892160.9525778
+ (3 rows)
+</pre></div>
+</div>
+<p>Το αποτέλεσμα είναι η απόσταση, σε μέτρα, ανάμεσασ σε κάθε ζευγάρι πόλεων. Παρατηρήστε πώς το &#8216;WHERE&#8217; τμήμα μας παρεμποδίζει από το να πάρουμε αποστάσεις μιας πόλης με τον εαυτό της (που θα ήταν μηδέν) ή τις αντίστροφες αποστάσεις (London, England με London, Ontario είναι η ίδια απόσταση με την London, Ontario με London, England). Δοκιμάστε την ίδια ερώτηση χωρίς το &#8216;WHERE&#8217; τμήμα της και δείτε τι θα συμβεί.</p>
+<p>Μπορούμε επίσης να υπολογίσουμε την απόσταση, χρησιμοποιώντας ένα σφαιροειδές, με τη χρήση μιας διαφορετικής συνάρτησης στην οποία θα δωθούν σαν παράμετροι το όνομα του σφαιροειδούς, το μισό μήκος του μεγάλου άξονα και η αντίστροφη επιπλάτυνση:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT p1.name,p2.name,ST_Distance_Spheroid(
+        p1.the_geom,p2.the_geom, &#39;SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222]&#39;
+        )
+       FROM cities AS p1, cities AS p2 WHERE p1.id &gt; p2.id;
+      name       |      name       | st_distance_spheroid
+-----------------+-----------------+----------------------
+ London, Ontario | London, England |     5892413.63776489
+ East London,SA  | London, England |     9756842.65711931
+ East London,SA  | London, Ontario |     13884149.4140698
+(3 rows)
+</pre></div>
+</div>
+</div>
+<div class="section" id="mapping">
+<h2>Mapping<a class="headerlink" href="#mapping" title="Permalink to this headline">¶</a></h2>
+<p>Για να παράγουμε ένα χάρτη από δεδομένα της PostGIS, απαιτείται ένας πελάτης που μπορεί να έχει πρόσβαση στα δεδομένα. Τα περισσότερα GIS ανοικτού λογισμικού μπορούν να το κάνουν, για παράδειγμα τα Quantum GIS, gvSIG και uDig. Τώρα θα σας δείξουμε πώς μπορείτε να κάνετε ένα χάρτη από το Quantum GIS.</p>
+<p>Ξεκινήστε το Quantum GIS και επιλέξτε <code class="docutils literal"><span class="pre">Add</span> <span class="pre">PostGIS</span> <span class="pre">layer</span></code> από τη λίστα των επιπέδων. Επειδή δεν έχετε αποκτήσει πρόσβαση στις πληροφορίες της PostGIS από το QGIS παλαιότερα, δεν θα δείτε καμιά παλαιότερη σύνδεση με την PostGIS.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_addlayers2.png"><img alt="Προσθήκη επιπέδου PostGIS" class="align-center" src="../../_images/postgis_addlayers2.png" style="width: 300.0px; height: 252.0px;" /></a>
+<p>Πατήστε &#8216;new&#8217; και εισάγετε τις παραμέτρους της σύνδεσης. Θα χρησιμοποιήσουμε τη βάση δεδομένων Natural Earth που υπάρχει μέσα στο παρών DVD. Δεν χρειάζεται όνομα χρήστη ή κωδικός επειδή η ασφάλεια είναι ρυθμισμένη για να σας επιτρέψει την πρόσβαση. Αποεπιλέξτε την επιλογή για προβολή πινάκων χωρίς γεωμετρία, αν είναι επιλεγμένη - θα κάνει τα πράγματα λίγο πιο εύκολα.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_addlayers2.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_addlayers2.png" style="width: 300.0px; height: 252.0px;" /></a>
+<p>Πατήστε το κουμπί <code class="docutils literal"><span class="pre">Test</span> <span class="pre">Connect</span></code>,και αν όλα είναι εντάξει, θα πάρετε ένα μήνυμα επιβεβαίωσης. Πατήστε <code class="docutils literal"><span class="pre">OK</span></code> και η σύνδεσή σας θα αποθηκευτεί στη λίστα των συνδέσεων. Τώρα μπορείτε να πατήσετε  <code class="docutils literal"><span class="pre">Connect</span></code> και να λάβετε μια λίστα από πίνακες με χωρική πληροφορία από τη βάση:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_listtables2.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables2.png" style="width: 300.0px; height: 252.0px;" /></a>
+<p>Επιλέξτε τις λίμνες και πατήστε <code class="docutils literal"><span class="pre">Add</span></code> (όχι <code class="docutils literal"><span class="pre">Load</span></code> - αυτή η επιλογή σώζει ερωτήσεις), και θα πρέπει να φορτωθεί στοQGIS:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_lakesmap2.png"><img alt="Το πρώτο μου PostGIS επίπεδο" class="align-center" src="../../_images/postgis_lakesmap2.png" style="width: 512.0px; height: 371.5px;" /></a>
+<p>Θα πρέπει να δείτε ένα χάρτη των λιμνών. Καθώς το QGIS δεν ξέρει πως είναι λίμνες, πιθανότατα δεν θα έχουν το χρώμα μπλε - δείτε την τεκμηρίωση του QGIS για να δείτε πώς θα το αλλάξετε. Εστιάστε στο διάσημο σύνολο λιμνών του Καναδά.</p>
+</div>
+<div class="section" id="id6">
+<h2>Δημιουργία χωρικού πίνακα με τον εύκολο τρόπο<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Τα περισσότερα εργαλεία της OSGeo έχουν συναρτήσεις για την είσοδο χωρικών δεδομένων από αρχεία, όπως shapefiles, σε βάσεις δεδομένων PostGIS. Θα χρησιμοποιήσουμε πάλι το QGIS για να δείξουμε αυτή τη λειτουργία.</p>
+<p>Η εισαγωγή shapefiles στο QGIS μέσω ενός εύχρηστου πρόσθετου, του PostGIS Manager. Για να το εγκαταστήσετε, πηγαίνετε στη λίστα Plugins, επιλέξτε <code class="docutils literal"><span class="pre">Manage</span> <span class="pre">Plugins</span></code> και μετά βρείτε το <code class="docutils literal"><span class="pre">PostGIS</span> <span class="pre">Manager</span></code>. Μαρκάρετε το κουτί και πατήστε ΟΚ για την επιλογή σας. Τώρα στη λίστα Plugin θα πρέπει να υπάρχει αναφορά για τον PostGIS Manager η οποία δίνει την επιλογή να ξεκινήσει το πρόσθετο.</p>
+<p>Το πρόσθετο θα χρησιμοποιήσει τις προηγούμενες ρυθμίσεις, για να συνδεθεί στη βάση δεδομένων Natural Earth. Αφήστε το πεδίο του κωδικού κενό, εάν ερωτηθείτε. Θα δείτε το κεντρικό παράθυρο του διαχειριστή.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_getmanager2.png"><img alt="Πρόσθετο PostGIS Manager" class="align-center" src="../../_images/postgis_getmanager2.png" style="width: 399.0px; height: 312.0px;" /></a>
+<p>Μπορείτε να χρησιμοποιήσετε τις καρτέλες που βρίσκονται στο δεξί μέρος για να δείτε και να επιβεβαιώσετε τις ιδιότητες του επιπέδου, ακόμα και να πάρετε ένα βασικό χάρτη με δυνατότητες εστίασης και πλοήγησης. Εδώ έχω επιλέξει το επίπεδο των κατοικημένων περιοχών και έχω έστιάσει σε ένα μικρό νησί που ξέρω:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_managerpreview2.png"><img alt="Προεπισκόπηση δεδομένων στον PostGIS Manager" class="align-center" src="../../_images/postgis_managerpreview2.png" style="width: 407.0px; height: 285.5px;" /></a>
+<p>Θα χρησιμοποιήσουμε τώρα τον PostGIS Manager για να εισάγουμε ένα shapefile στη βάση δεδομένων. Θα χρησιμοποιήσουμε τα δεδομένα της Βόρειας Καρολίνας που αφορούν αιφνίδιους θανάτους βρεφών (SIDS - Sudden Infant Death Syndrome), τα οποία περιλαμβάνονται με την προσθήκη ενός πρόσθετου του προγράμματος στατιστικής R.</p>
+<p>Από τη λίστα <code class="docutils literal"><span class="pre">Data</span></code> επιλέξτε την επιλογή <code class="docutils literal"><span class="pre">Load</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">shapefile</span></code>.
+Πατήστε το <code class="docutils literal"><span class="pre">...</span></code> και πλοηγηθείτε ώστε να βρείτε το shapefile <code class="docutils literal"><span class="pre">sids.shp</span></code> στο πακέτο <code class="docutils literal"><span class="pre">maptools</span></code>  του R:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_browsedata2.png"><img alt="Εύρεση του shapefile" class="align-center" src="../../_images/postgis_browsedata2.png" style="width: 394.0px; height: 306.5px;" /></a>
+<p>Αφήστε τις άλλες επιλογές ως έχουν και πατήστε <code class="docutils literal"><span class="pre">Load</span></code></p>
+<a class="reference internal image-reference" href="../../_images/postgis_importsids2.png"><img alt="Εισαγωγή ενός shapefile" class="align-center" src="../../_images/postgis_importsids2.png" style="width: 217.0px; height: 320.0px;" /></a>
+<p>Το shapefile θα πρέπει να εισαχθεί στην PostGIS χωρίς λάθη. Κλείστε τον PostGIS manager και
+επιστρέψτ στο κεντρικό παράθυρο του QGIS .</p>
+<p>Τώρα φορτώστε τα δεδομένα SIDS στο χάρτη με την επιλογή &#8216;Add PostGIS Layer&#8217;. Με μια ανακατανομή των επιπέδων και λίγο επεξεργασία των χρωμάτων, θα πρέπει να μπορέσετε να παράξετε ένα χωροπληθικό χάρτη του πλήθους των αιφνιδίων θανάτων βρεφών στη Βόρεια Καρολίνα:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_sidsmap2.png"><img alt="Χαρτογραφική ανα παράσταση των δεδομένων SIDS" class="align-center" src="../../_images/postgis_sidsmap2.png" style="width: 512.0px; height: 371.5px;" /></a>
+</div>
+<div class="section" id="pgadmin-iii">
+<h2>Εκμάθηση του pgAdmin III<a class="headerlink" href="#pgadmin-iii" title="Permalink to this headline">¶</a></h2>
+<p>Μπορείτε να χρησιμοποιήσετε τον πελάτη <code class="docutils literal"><span class="pre">pgAdmin</span> <span class="pre">III</span></code> που παρέχει γραφικά εργαλεία για να γίνονται ερωτήσεις και αλλαγές στην βάση δεδομένων σας μη χωρικά Είναι ο επίσημος πελάτης της PostgreSQL, και επιτρέπει τη χρήση SQL για τη διαχείριση των πινάκων της βάσης.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_adminscreen12.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_adminscreen12.png" style="width: 512.0px; height: 371.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_adminscreen22.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_adminscreen22.png" style="width: 512.0px; height: 371.5px;" /></a>
+</div>
+<div class="section" id="id7">
+<h2>Δοκιμές<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>Εδώ είναι μερικές ακόμα προκλήσεις, που μπορείτε να δοκιμάσετε:</p>
+<ol class="arabic simple">
+<li>Δοκιμάστε μερικές ακόμα χωρικές συναρτήσεις, όπως <code class="docutils literal"><span class="pre">st_buffer(the_geom)</span></code>, <code class="docutils literal"><span class="pre">st_transform(the_geom,25831)</span></code>, <code class="docutils literal"><span class="pre">x(the_geom)</span></code> - θα βρείτε πλήρη τεκμηρίωση στη σελίδα <a class="reference external" href="http://postgis.org/documentation/">http://postgis.org/documentation/</a></li>
+<li>Εξαγωγή των πινάκων σε shapefiles με το εργαλείο <code class="docutils literal"><span class="pre">pgsql2shp</span></code> από τη γραμμή εντολών.</li>
+<li>Δοκιμάστε το εργαλείο <code class="docutils literal"><span class="pre">ogr2ogr</span></code> για να εισάγετε και να εξάγετε δεδομένα από τη βάση σας.</li>
+</ol>
+</div>
+<div class="section" id="id8">
+<h2>Τι ακολουθεί?<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>Αυτό είναι μόλις το πρώτο βήκα στο δρόμο για να χρησιμοποιήσετε την PostGIS. Υπάρχουν πολλές περισσότερες δυνατότητες που μπορείτε να δοκιμάσετε.</p>
+<p>Σελίδα PostGIS</p>
+<blockquote>
+<div><a class="reference external" href="http://postgis.org">http://postgis.org</a></div></blockquote>
+<p>Τεκμηρίωση της PostGIS</p>
+<blockquote>
+<div><a class="reference external" href="http://postgis.org/documentation/">http://postgis.org/documentation/</a></div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

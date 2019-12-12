@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pgRouting クイックスタート &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.0 コンテンツ" href="../overview/overview.html" />
+    <link rel="next" title="PostGIS Quickstart" href="postgis_quickstart.html" />
+    <link rel="prev" title="OTB Quickstart" href="otb_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.pgrouting.org"><img alt="pgRouting logo" class="align-right" src="../../_images/logo-pgRouting19.png" style="width: 128.0px; height: 124.0px;" /></a>
+<div class="section" id="pgrouting">
+<h1>pgRouting クイックスタート<a class="headerlink" href="#pgrouting" title="Permalink to this headline">¶</a></h1>
+<p>pgRouting は、経路探索と他のネットワーク解析機能を <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a>/<a class="reference external" href="http://www.postgresql.org">PostgreSQL</a> データベースに追加する拡張機能です。</p>
+<p>このクイックスタートでは、PostgreSQL データベースで pgrouting を有効化し、 osm2pgrouting でデータを読み込み、サンプルのテストデータに対して基本的な最短経路探索クエリを実行する方法について記述しています。</p>
+<div class="section" id="id1">
+<h2>データベースで pgRouting を有効化する<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>このサンプルでは、 <cite>city_routing</cite> というデータベースを作成し、そのデータベースで pgRouting を有効化します。</p>
+<ul class="simple">
+<li>メニューから <span class="menuselection">Applications ‣ Accessories ‣ Terminal</span> を開き、 psql を起動します:</li>
+</ul>
+<p>(psql は、PostgreSQL にパッケージされているコマンドラインツールです。)</p>
+<div class="highlight-bash"><div class="highlight"><pre>psql
+</pre></div>
+</div>
+<p>psql のプロンプトで、以下をタイプします:</p>
+<div class="highlight-sql"><div class="highlight"><pre>CREATE DATABASE city_routing;
+\connect city_routing;
+CREATE EXTENSION postgis;
+CREATE EXTENSION pgrouting;
+</pre></div>
+</div>
+<p>もし PostgreSQL 9.6+ を実行している場合は、 postgis の行はスキップ可能で、 <code class="code docutils literal"><span class="pre">CREATE</span> <span class="pre">EXTENSION</span> <span class="pre">pgrouting</span> <span class="pre">CASCADE;</span></code> を実行します。</p>
+<p>インストールの確認は、以下の実行により可能です:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span>  <span class="o">*</span> <span class="k">FROM</span> <span class="n">pgr_version</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre> version <span class="p">|</span>       tag       <span class="p">|</span>  <span class="nb">hash</span>   <span class="p">|</span> branch <span class="p">|</span> boost
+---------+-----------------+---------+--------+--------
+ 2.2.2   <span class="p">|</span> pgrouting-2.2.2 <span class="p">|</span> <span class="m">7141904</span> <span class="p">|</span> master <span class="p">|</span> 1.59.0
+<span class="o">(</span><span class="m">1</span> row<span class="o">)</span>
+</pre></div>
+</div>
+<p>このクイックスタートのサンプルを使用するためには、バージョンは 2.1.0 かそれ以上である必要があります。</p>
+</div>
+<div class="section" id="osm2pgrouting-osm">
+<h2>osm2pgrouting での OSM データの読み込み<a class="headerlink" href="#osm2pgrouting-osm" title="Permalink to this headline">¶</a></h2>
+<p>osm2pgrouting は .osm ファイルを pgRouting の互換フォーマットに読み込むコマンドラインツールです。
+ここでは、どのように osm2pgrouting バージョン 2.1.0+ を使用するかを説明します。</p>
+<p>最初に、インストールされている osm2pgrouting のバージョンの確認を行います。 2.1 かそれ以上である必要があります。</p>
+<div class="highlight-bash"><div class="highlight"><pre>osm2pgrouting --version
+</pre></div>
+</div>
+<p>出力が表示されます:</p>
+<div class="highlight-bash"><div class="highlight"><pre>This is osm2pgrouting Version 2.1
+</pre></div>
+</div>
+<p>では、 osm ファイルからデータを読み込みます。</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd</span>
+bzcat data/osm/feature_city.osm.bz2 &gt; /tmp/feature_city.osm
+osm2pgrouting -f /tmp/feature_city.osm -h localhost -U user -d city_routing -p <span class="m">5432</span> -W user --conf<span class="o">=</span>/usr/share/osm2pgrouting/mapconfig_for_cars.xml
+rm /tmp/feature_city.osm
+</pre></div>
+</div>
+<p>出力は以下のような形となるはずです:</p>
+<div class="highlight-bash"><div class="highlight"><pre>Opening data file: feature_city.osm
+    Parsing data
+
+Spliting ways
+
+Dropping tables...
+NOTICE:  table <span class="s2">&quot;ways&quot;</span> does not exist, skipping
+NOTICE:  table <span class="s2">&quot;ways_vertices_pgr&quot;</span> does not exist, skipping
+NOTICE:  table <span class="s2">&quot;relations_ways&quot;</span> does not exist, skipping
+Creating tables...
+Creating <span class="s1">&#39;ways_vertices_pgr&#39;</span>: OK
+   Adding Geometry: Creating <span class="s1">&#39;ways&#39;</span>: OK
+   Adding Geometry: Creating <span class="s1">&#39;relations_ways&#39;</span>: OK
+Creating <span class="s1">&#39;osm_nodes&#39;</span>: OK
+   Adding Geometry: Creating <span class="s1">&#39;osm_relations&#39;</span>: OK
+Creating <span class="s1">&#39;osm_way_tags&#39;</span>: OK
+Creating <span class="s1">&#39;osm_way_types&#39;</span>: OK
+Creating <span class="s1">&#39;osm_way_classes&#39;</span>: OK
+Adding auxiliary tables to database...
+    Processing <span class="m">1</span> way types:  Inserted <span class="m">1</span> way types
+    Processing way<span class="s1">&#39;s classes:  Inserted 16 way&#39;</span>s classes
+    Processing way<span class="s1">&#39;s relations:  Inserted: 83874way&#39;</span>s relations
+    Processing way<span class="s1">&#39;s tags:  Inserted 10455 way&#39;</span>s tags
+    Processing <span class="m">10455</span> ways:
+Vertices inserted <span class="m">9165</span>    Ways inserted: 10455
+Creating topology...
+<span class="c1">#########################</span>
+size of streets: 4904
+size of splitted ways : 10455
+Execution started at: Tue Jun <span class="m">21</span> 17:57:57 2016
+Execution ended at:   Tue Jun <span class="m">21</span> 17:58:02 2016
+Elapsed time: 5.084 Seconds.
+User CPU time: -&gt; 5.084 seconds
+<span class="c1">#########################</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>pgRouting を実行する<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>メニューから、 <span class="menuselection">Applications ‣ Accessories ‣ Terminal</span> を開き、 <code class="docutils literal"><span class="pre">city_routing</span></code> データベースに接続します。</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre>psql -U postgres city_routing
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong class="command">\d</strong> とタイプすると、利用可能なテーブルの一覧が表示されます。</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre>                    <span class="n">List</span> <span class="k">of</span> <span class="n">relations</span>
+ <span class="k">Schema</span> <span class="o">|</span>           <span class="n">Name</span>           <span class="o">|</span>   <span class="k">Type</span>   <span class="o">|</span>  <span class="k">Owner</span>
+<span class="c1">--------+--------------------------+----------+----------</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">geography_columns</span>        <span class="o">|</span> <span class="k">view</span>     <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">geometry_columns</span>         <span class="o">|</span> <span class="k">view</span>     <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">osm_nodes</span>                <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">osm_nodes_node_id_seq</span>    <span class="o">|</span> <span class="n">sequence</span> <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">osm_relations</span>            <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">osm_way_classes</span>          <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">osm_way_tags</span>             <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">osm_way_types</span>            <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">raster_columns</span>           <span class="o">|</span> <span class="k">view</span>     <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">raster_overviews</span>         <span class="o">|</span> <span class="k">view</span>     <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">relations_ways</span>           <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">spatial_ref_sys</span>          <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">ways</span>                     <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">ways_gid_seq</span>             <span class="o">|</span> <span class="n">sequence</span> <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">ways_vertices_pgr</span>        <span class="o">|</span> <span class="k">table</span>    <span class="o">|</span> <span class="n">postgres</span>
+ <span class="k">public</span> <span class="o">|</span> <span class="n">ways_vertices_pgr_id_seq</span> <span class="o">|</span> <span class="n">sequence</span> <span class="o">|</span> <span class="n">postgres</span>
+<span class="p">(</span><span class="mi">16</span> <span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>ダイクストラ法による最短経路探索関数を、無方向での移動を想定して実行します。</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="n">seq</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">cost</span>
+        <span class="k">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span><span class="s1">&#39;</span>
+<span class="s1">                SELECT gid as id, source, target,</span>
+<span class="s1">                        length as cost FROM ways&#39;</span><span class="p">,</span>
+                <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="k">false</span>
+        <span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre> <span class="n">seq</span> <span class="o">|</span> <span class="n">node</span> <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>         <span class="n">cost</span>
+<span class="c1">-----+------+-------+-----------------------</span>
+   <span class="mi">1</span> <span class="o">|</span>  <span class="mi">100</span> <span class="o">|</span>   <span class="mi">148</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">000106201177015572</span>
+   <span class="mi">2</span> <span class="o">|</span> <span class="mi">3603</span> <span class="o">|</span>  <span class="mi">4118</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">000171096610136435</span>
+   <span class="mi">3</span> <span class="o">|</span> <span class="mi">8284</span> <span class="o">|</span>  <span class="mi">9429</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">000101401380664492</span>
+ <span class="p">...</span> <span class="o">|</span>  <span class="p">...</span> <span class="o">|</span>   <span class="p">...</span> <span class="o">|</span>                 <span class="p">...</span>
+  <span class="mi">37</span> <span class="o">|</span> <span class="mi">3461</span> <span class="o">|</span>  <span class="mi">3964</span> <span class="o">|</span>   <span class="mi">0</span><span class="p">.</span><span class="mi">00121559903339768</span>
+  <span class="mi">38</span> <span class="o">|</span> <span class="mi">1761</span> <span class="o">|</span>  <span class="mi">2013</span> <span class="o">|</span>   <span class="mi">0</span><span class="p">.</span><span class="mi">00307553090376563</span>
+  <span class="mi">39</span> <span class="o">|</span> <span class="mi">5981</span> <span class="o">|</span>  <span class="mi">6801</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">000158813884783759</span>
+  <span class="mi">40</span> <span class="o">|</span>  <span class="mi">600</span> <span class="o">|</span>    <span class="o">-</span><span class="mi">1</span> <span class="o">|</span>                     <span class="mi">0</span>
+<span class="p">(</span><span class="mi">40</span> <span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>pgr_dijkstra はさらにノードとエッジに bigint 型を使用可能で、osm2pgrouting は同様に osm_id を読み込みますので、
+自動生成された source と target ノードの代わりに、osm_id を使用できるかもしれません。
+ノードと一致する osm_id を検索するために、以下のクエリを使用してみます。</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">osm_id</span>
+        <span class="k">FROM</span> <span class="n">ways_vertices_pgr</span> <span class="k">where</span> <span class="n">id</span> <span class="k">IN</span><span class="p">(</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>これは以下を出力します:</p>
+<div class="highlight-bash"><div class="highlight"><pre> id  <span class="p">|</span>   osm_id
+-----+------------
+ <span class="m">100</span> <span class="p">|</span> 1896068597
+ <span class="m">600</span> <span class="p">|</span>   31369798
+<span class="o">(</span><span class="m">2</span> rows<span class="o">)</span>
+</pre></div>
+</div>
+<p>osm_id を使用するために、
+以下のクエリに変更してみます:</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="n">seq</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">cost</span>
+<span class="k">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span><span class="s1">&#39;</span>
+<span class="s1">        SELECT gid as id, source_osm AS source, target_osm AS target,</span>
+<span class="s1">                length as cost FROM ways&#39;</span><span class="p">,</span>
+        <span class="mi">1896068597</span><span class="p">,</span> <span class="mi">31369798</span><span class="p">,</span> <span class="k">false</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>注意: SQL ステートメントは、常にフィールド名に <cite>id, source, target, 及び cost</cite> を持つ必要があります。
+上記では、フィールドに <cite>source_osm</cite> と <cite>target_osm</cite> を使用しているので、それらのエイリアスを作成することで、
+pgr_dijkstra のクエリカラムが source と target になります。</p>
+<p>出力は:</p>
+<div class="highlight-sql"><div class="highlight"><pre> <span class="n">seq</span> <span class="o">|</span>    <span class="n">node</span>    <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>         <span class="n">cost</span>
+<span class="c1">-----+------------+-------+-----------------------</span>
+   <span class="mi">1</span> <span class="o">|</span> <span class="mi">1896068597</span> <span class="o">|</span>   <span class="mi">148</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">000106201177015572</span>
+   <span class="mi">2</span> <span class="o">|</span>  <span class="mi">471372588</span> <span class="o">|</span>  <span class="mi">4118</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">000171096610136435</span>
+   <span class="mi">3</span> <span class="o">|</span>  <span class="mi">471372583</span> <span class="o">|</span>  <span class="mi">9429</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">000101401380664492</span>
+   <span class="p">:</span>
+   <span class="p">:</span>
+  <span class="p">...</span><span class="o">|</span>  <span class="p">...</span>       <span class="o">|</span>   <span class="p">...</span> <span class="o">|</span>                 <span class="p">...</span>
+  <span class="mi">37</span> <span class="o">|</span> <span class="mi">1370351630</span> <span class="o">|</span>  <span class="mi">3964</span> <span class="o">|</span>   <span class="mi">0</span><span class="p">.</span><span class="mi">00121559903339768</span>
+  <span class="mi">38</span> <span class="o">|</span>   <span class="mi">30812815</span> <span class="o">|</span>  <span class="mi">2013</span> <span class="o">|</span>   <span class="mi">0</span><span class="p">.</span><span class="mi">00307553090376563</span>
+  <span class="mi">39</span> <span class="o">|</span> <span class="mi">3214028631</span> <span class="o">|</span>  <span class="mi">6801</span> <span class="o">|</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">000158813884783759</span>
+  <span class="mi">40</span> <span class="o">|</span>   <span class="mi">31369798</span> <span class="o">|</span>    <span class="o">-</span><span class="mi">1</span> <span class="o">|</span>                     <span class="mi">0</span>
+<span class="p">(</span><span class="mi">40</span> <span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>まだ自動生成されたエッジの id を使用しているため、エッジ番号は先述のクエリと同じとなりますが、
+ノードは osm ノード id となります。</p>
+<p>自動生成された id の代わりに osm_id を使用する利点は、異なるデータベース間でも、
+それらが共通の osm id を共有している場合は結果に一貫性が得られることです。
+pgRouting の全ての関数は、 bigint 型を使用できるよう変更されていませんので、 osm_id を全ての関数で使用することはできません。</p>
+<ul class="simple">
+<li>経路のジオメトリを出力するために、結果を道路のジオメトリにリンクさせます。</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="n">seq</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">rpad</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">the_geom</span><span class="p">::</span><span class="nb">text</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="k">AS</span> <span class="ss">&quot;the_geom (truncated)&quot;</span>
+        <span class="k">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span><span class="s1">&#39;</span>
+<span class="s1">                SELECT gid as id, source, target,</span>
+<span class="s1">                        length as cost FROM ways&#39;</span><span class="p">,</span>
+                <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="k">false</span>
+        <span class="p">)</span> <span class="n">a</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="n">ways</span> <span class="n">b</span> <span class="k">ON</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">edge</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">gid</span><span class="p">)</span> <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">seq</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre> <span class="n">seq</span> <span class="o">|</span> <span class="n">edge</span>  <span class="o">|</span>                     <span class="n">the_geom</span> <span class="p">(</span><span class="n">truncated</span><span class="p">)</span>
+<span class="c1">-----+-------+--------------------------------------------------------------</span>
+   <span class="mi">1</span> <span class="o">|</span>   <span class="mi">148</span> <span class="o">|</span> <span class="mi">0102000020</span><span class="n">E61000000200000035BEE5A03A641C40BC98C1734A5E4940F4</span>
+   <span class="mi">2</span> <span class="o">|</span>  <span class="mi">4118</span> <span class="o">|</span> <span class="mi">0102000020</span><span class="n">E610000002000000F4CE577F3A641C402B5CA0EE4D5E494058</span>
+   <span class="mi">3</span> <span class="o">|</span>  <span class="mi">9429</span> <span class="o">|</span> <span class="mi">0102000020</span><span class="n">E61000000200000058BCA2A53C641C40C3503D88535E4940F5</span>
+ <span class="p">...</span> <span class="o">|</span>   <span class="p">...</span> <span class="o">|</span>                                                          <span class="p">...</span>
+  <span class="mi">36</span> <span class="o">|</span>  <span class="mi">6538</span> <span class="o">|</span> <span class="mi">0102000020</span><span class="n">E6100000020000002999F7938C6F1C409DD843FB585D49405C</span>
+  <span class="mi">37</span> <span class="o">|</span>  <span class="mi">3964</span> <span class="o">|</span> <span class="mi">0102000020</span><span class="n">E6100000020000005CAE7E6C926F1C40E55C2FF2575D494088</span>
+  <span class="mi">38</span> <span class="o">|</span>  <span class="mi">2013</span> <span class="o">|</span> <span class="mi">0102000020</span><span class="n">E6100000020000008849B89047701C406DF7BC2C375D4940E8</span>
+  <span class="mi">39</span> <span class="o">|</span>  <span class="mi">6801</span> <span class="o">|</span> <span class="mi">0102000020</span><span class="n">E610000002000000E82E89B322721C40A85890C1E55C494059</span>
+<span class="p">(</span><span class="mi">39</span> <span class="k">rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>経路は <a class="reference internal" href="../overview/openjump_overview.html"><em>OpenJump</em></a> や</li>
+</ul>
+<p><a class="reference internal" href="../overview/qgis_overview.html"><em>QGIS</em></a> DbManager プラグインなどの
+グラフィカルツールを使用して表示することができます。</p>
+<p>QGIS の DbManager プラグインを使用するには、QGIS を起動し、メニューから <code class="docutils literal"><span class="pre">Database</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span> <span class="pre">-&gt;</span> <span class="pre">DB</span> <span class="pre">Manager</span></code> を選択します。
+SQL Window アイコンを選択し、上記の pgRouting クエリをカット&amp;ペーストします。</p>
+<ul class="simple">
+<li>ダイクストラによる最短経路探索を、方向を考慮して実行します。</li>
+</ul>
+<p>先述のサンプルでは、道路がどちらの方向にも同じコストであると想定しました。
+一方通行や車線のいずれかで異なる速度規制がある場合は、道路の一方向のコストは、他の方向のコストと
+異なるかもしれません。
+これらの場合、 <cite>reverse_cost</cite> カラムを、クエリに追加する必要があります。</p>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="n">seq</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">edge</span><span class="p">,</span> <span class="n">cost</span>
+        <span class="k">FROM</span> <span class="n">pgr_dijkstra</span><span class="p">(</span><span class="s1">&#39;</span>
+<span class="s1">                SELECT gid as id, source, target,</span>
+<span class="s1">                        cost_s As cost, reverse_cost_s AS reverse_cost FROM ways&#39;</span><span class="p">,</span>
+                <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="k">true</span>
+        <span class="p">);</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong class="command">\q</strong> コマンドで PostgreSQL シェルを終了します。</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>次のステップ<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>pgRouting ウェブサイト</strong> - プロジェクトのウェブサイト <a class="reference external" href="http://www.pgrouting.org">http://www.pgrouting.org</a> で、pgRouting についてさらに学ぶことができます。</li>
+<li><strong>pgRouting ドキュメント</strong> - 最新のドキュメントは <a class="reference external" href="http://docs.pgrouting.org">http://docs.pgrouting.org</a> にあります。</li>
+<li><strong>pgRouting ワークショップ</strong> - ワークショップ <cite>&#8220;FOSS4G routing with pgRouting tools and OpenStreetMap road data&#8221;</cite> が <a class="reference external" href="http://workshop.pgrouting.org">http://workshop.pgrouting.org</a> で利用可能です。</li>
+<li><strong>osm2pgRouting でのデータ読み込み</strong> - <a class="reference external" href="https://github.com/pgRouting/osm2pgrouting/wiki/Documentation-for-osm2pgrouting-v2.1">https://github.com/pgRouting/osm2pgrouting/wiki/Documentation-for-osm2pgrouting-v2.1</a></li>
+<li><strong>QGIS pgRoutingLayer プラグイン</strong> - <a class="reference external" href="https://plugins.qgis.org/plugins/pgRoutingLayer/">https://plugins.qgis.org/plugins/pgRoutingLayer/</a> は pgRouting 関数のための GUI を提供し、地図と連動するため、SQL を書く必要がなくなります。</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

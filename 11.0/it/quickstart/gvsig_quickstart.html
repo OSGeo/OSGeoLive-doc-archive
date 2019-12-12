@@ -1,0 +1,506 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>gvSIG Quickstart &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Benvenuti in OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="The iD Editor" href="ideditor_quickstart.html" />
+    <link rel="prev" title="Guida veloce a GRASS GIS 7" href="grass_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-gvSIG.png"><img alt="../../_images/logo-gvSIG.png" class="align-right" src="../../_images/logo-gvSIG.png" style="width: 64.0px; height: 64.5px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="gvsig-quickstart">
+<h1>gvSIG Quickstart<a class="headerlink" href="#gvsig-quickstart" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="descrizione-del-progetto">
+<h2>Descrizione del progetto<a class="headerlink" href="#descrizione-del-progetto" title="Permalink to this headline">¶</a></h2>
+<p>&#8220;gvSIG è un&#8217;applicazione desktop GIS (Sistema Informativo Geografico) progettata
+per acquisire, immagazinare, manipolare, analizzare e implementare qualsiasi
+tipo di informazione geografica georeferenziata al fine di risolvere problemi
+di pianificazione e gestione complessi. gvSIG è noto per la sua interfaccia
+user-friendly e la capacità di accesso ai formati vettoriali e raster più comuni.
+Comprende un&#8217;ampia serie di strumenti per lavorare con l&#8217;informazione geografica
+(query, creazione di layout, geoprocessi, reti, ecc.), che rende gvSIG uno strumento
+ideale per gli utenti che lavorano in ambito geografico.&#8221;
+<a class="reference external" href="http://www.gvsig.org/web/projects/gvsig-desktop/description2/view?set_language=en">gvSIG</a> 2011</p>
+</div>
+<div class="section" id="il-quickstart-descrive-come">
+<h2>Il quickstart descrive come...<a class="headerlink" href="#il-quickstart-descrive-come" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>avviare gvSIG e creare una vista;</li>
+<li>definire la proiezione di una vista;</li>
+<li>aggiungere dati vettoriali e raster ad una vista;</li>
+<li>navigare in una vista;</li>
+<li>modificare la modalità di presentazione dei layer in una vista;</li>
+<li>selezionare le città che ricadono in una particolare regione e esportarle
+in un nuovo file;</li>
+<li>creare una mappa con reticolato geografico e</li>
+<li>salvare il progetto corrente ed uscire da gvSIG.</li>
+</ul>
+</div>
+<div class="section" id="avviare-gvsig-e-creare-una-vista">
+<h2>Avviare gvSIG e creare una vista<a class="headerlink" href="#avviare-gvsig-e-creare-una-vista" title="Permalink to this headline">¶</a></h2>
+<p>Selezionare gvSIG dal menù delle applicazioni. L&#8217;applicazione di solito impiega alcuni
+secondi per l&#8217;avvio.</p>
+<ol class="arabic simple">
+<li>Per impostazione predefinita, gvSIG si apre con un file di progetto vuoto con il
+tipo di documento &#8216;Vista&#8217; selezionato.</li>
+<li>Cliccare sul pulsante [Nuovo] per creare una vista.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_001.png"><img alt="images/screenshots/1024x768/gvsig_qs_001.png" src="images/screenshots/1024x768/gvsig_qs_001.png" /></a>
+</div>
+<div class="section" id="definire-la-proiezione-di-una-vista">
+<h2>Definire la proiezione di una vista<a class="headerlink" href="#definire-la-proiezione-di-una-vista" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="aprire-la-finestra-delle-proprieta-della-vista">
+<h3>Aprire la finestra delle proprietà della vista<a class="headerlink" href="#aprire-la-finestra-delle-proprieta-della-vista" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Selezionare la nuova vista appena creata. Per impostazione predefinita è
+intitolata <code class="docutils literal"><span class="pre">Senza</span> <span class="pre">titolo</span> <span class="pre">-</span> <span class="pre">0</span></code> oppure <code class="docutils literal"><span class="pre">Senza</span> <span class="pre">titolo</span> <span class="pre">-</span> <span class="pre">1</span></code> se è stata già
+creata e poi cancellata una vista.</li>
+<li>Cliccare sul pulsante [Proprietà] per aprire la finestra <strong>Proprietà della vista</strong>.</li>
+<li>Cliccare sul pulsante [...] accanto a &#8216;Proiezione attuale&#8217;.
+Questa azione apre la finestra <strong>Nuovo CRS</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_002.png"><img alt="images/screenshots/1024x768/gvsig_qs_002.png" src="images/screenshots/1024x768/gvsig_qs_002.png" /></a>
+</div>
+<div class="section" id="definire-un-sistema-di-coordinate-crs">
+<h3>Definire un sistema di coordinate (CRS)<a class="headerlink" href="#definire-un-sistema-di-coordinate-crs" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Usando la casella a discesa &#8216;Tipo&#8217;, selezionare EPSG.</li>
+<li>Digitare il codice EPSG per il sistema di coordinate (CRS). Ad esempio,
+si scelga 4326, essendo EPSG:4326 il sistema geografico WGS84 2D. Successivamente
+cliccare sul pulsante [Cerca]. Comparirà la lista del CRS ricercato nella tabella
+sottostante la casella di testo di ricerca.</li>
+<li>Cliccare sul pulsante [Accetta] per tornare alla finestra <strong>Proprietà della vista</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_003.png"><img alt="images/screenshots/1024x768/gvsig_qs_003.png" src="images/screenshots/1024x768/gvsig_qs_003.png" /></a>
+</div>
+<div class="section" id="salvare-le-proprieta-della-vista">
+<h3>Salvare le proprietà della vista<a class="headerlink" href="#salvare-le-proprieta-della-vista" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Si noti che ora il codice EPSG è 4326 e le unità di mappa sono espresse in gradi.</li>
+<li>Cliccare sul pulsante [Accetta] per tornare alla finestra <strong>Gestore di progetto</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_004.png"><img alt="images/screenshots/1024x768/gvsig_qs_004.png" src="images/screenshots/1024x768/gvsig_qs_004.png" /></a>
+</div>
+<div class="section" id="aprire-la-vista">
+<h3>Aprire la vista<a class="headerlink" href="#aprire-la-vista" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Selezionare la vista appena creata.</li>
+<li>Cliccare sul pulsante [Apri] per aprire la <em>Vista</em>.</li>
+<li>La finestra di una vista consiste in tre zone.</li>
+<li>La zona in alto a sinistra contiene la lista dei layer vettoriali e raster che
+sono usati nella vista (Tabella dei Contenuti, ToC in breve).</li>
+<li>La zona in basso a sinistra contiene il <em>Localizzatore</em>, in cui è mostrata
+l&#8217;estensione attuale della vista rispetto a uno (o più) layer di riferimento.</li>
+<li>La zona a destra è l&#8217;area di visualizzazione, laddove sono rappresentati i layer
+vettoriali e raster.</li>
+<li>Selezionare l&#8217;icona &#8216;Ripristina&#8217; per massimizzare l&#8217;area occupata dalla vista.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_005.png"><img alt="images/screenshots/1024x768/gvsig_qs_005.png" src="images/screenshots/1024x768/gvsig_qs_005.png" /></a>
+</div>
+</div>
+<div class="section" id="aggiungere-layer-vettoriali-e-raster-nella-vista">
+<h2>Aggiungere layer vettoriali e raster nella vista<a class="headerlink" href="#aggiungere-layer-vettoriali-e-raster-nella-vista" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="aprire-la-finestra-aggiungi-layer">
+<h3>Aprire la finestra Aggiungi layer<a class="headerlink" href="#aprire-la-finestra-aggiungi-layer" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Cliccare sull&#8217;icona &#8216;Aggiungi layer&#8217; nella barra degli strumenti per aprire la
+finestra <strong>Aggiungi layer</strong>.</li>
+<li>Selezionare il pulsante [Aggiungi] nella finestra <strong>Aggiungi layer</strong>. Per
+impostazione predefinita la prima scheda è <em>File</em>, pertanto comparirà la
+finestra di dialogo <strong>Apri</strong> per l&#8217;apertura di file.</li>
+<li>Esplorare la cartella <code class="docutils literal"><span class="pre">/usr/local/share/data/natural_earth2/</span></code>.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_006.png"><img alt="images/screenshots/1024x768/gvsig_qs_006.png" src="images/screenshots/1024x768/gvsig_qs_006.png" /></a>
+</div>
+<div class="section" id="selezionare-un-file-raster">
+<h3>Selezionare un file raster<a class="headerlink" href="#selezionare-un-file-raster" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Selezionare <em>gvSIG Raster Driver</em> dalla lista a discesa dei tipi di file.
+Per impostazione predefinita è selezionato il driver degli shapefile driver
+in modo che la cartella non appaia vuota.</li>
+<li>Selezionare il file <code class="docutils literal"><span class="pre">HYP_50M_SR_W.tif</span></code>.</li>
+<li>Cliccare sul pulsante [Apri] per ritornare alla finestra <strong>Aggiungi layer</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_007.png"><img alt="images/screenshots/1024x768/gvsig_qs_007.png" src="images/screenshots/1024x768/gvsig_qs_007.png" /></a>
+</div>
+<div class="section" id="selezionare-un-file-vettoriale">
+<h3>Selezionare un file vettoriale<a class="headerlink" href="#selezionare-un-file-vettoriale" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>La finestra <strong>Aggiungi layer</strong> ora elencherà il file raster selezionato in
+precedenza.</li>
+<li>Selezionare il pulsante [Aggiungi] per aggiungere alcuni layer vettoriali.
+Comparirà la finestra di dialogo <strong>Apri</strong> per l&#8217;apertura di file.</li>
+<li>Selezionare il pulsante [Cartella superiore] nel menù per cambiare la cartella
+in <code class="docutils literal"><span class="pre">/usr/local/share/data/natural_earth2/</span></code>.</li>
+<li>Selezionare <em>gvSIG shp driver</em> dalla lista a discesa dei tipi di file.</li>
+<li>Selezionare gli shapefile <code class="docutils literal"><span class="pre">ne_10m_admin_1_states_provinces.shp</span></code>,
+<code class="docutils literal"><span class="pre">ne_10m_populated_places.shp</span></code> e <code class="docutils literal"><span class="pre">ne_10m_rivers_lake_centerlines.shp</span></code>
+dalla lista. Tenere premuto il tasto Ctrl per effettuare una selezione multipla.</li>
+<li>Cliccare sul pulsante [Apri] per ritornare alla finestra <strong>Aggiungi layer</strong>.</li>
+<li>Cliccare sul pulsante [Accetta] nella finestra <strong>Aggiungi layer</strong> per ritornare
+alla vista.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_008.png"><img alt="images/screenshots/1024x768/gvsig_qs_008.png" src="images/screenshots/1024x768/gvsig_qs_008.png" /></a>
+</div>
+</div>
+<div class="section" id="strumenti-di-base-di-navigazione-della-vista">
+<h2>Strumenti di base di navigazione della vista<a class="headerlink" href="#strumenti-di-base-di-navigazione-della-vista" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="zoom-su-un-area-di-interesse">
+<h3>Zoom su un&#8217;area di interesse<a class="headerlink" href="#zoom-su-un-area-di-interesse" title="Permalink to this headline">¶</a></h3>
+<p>Ritornando alla vista si osserva che i file vettoriali sono sovrapposti al file
+raster. I colori mostrati in questa schermata possono essere differenti a seconda
+delle preferenze dell&#8217;utente.</p>
+<ol class="arabic simple">
+<li>Per impostazione predefinita lo strumento <em>Aumenta zoom</em> è selezionato nella
+barra degli strumenti.</li>
+<li>Usare il puntatore del mouse per tracciare un&#8217;area di selezione comprendente
+il Sud-Est dell&#8217;Australia. A tal fine, selezionare l&#8217;angolo in alto a sinistra
+dell&#8217;area di selezione e, tenendo premuto il tasto sinistro del mouse,
+trascinare l&#8217;angolo in basso a destra fino a comprendere l&#8217;area da selezionare.
+Rilasciare il tasto sinistro del mouse una volta definita l&#8217;area di interesse.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_009.png"><img alt="images/screenshots/1024x768/gvsig_qs_009.png" src="images/screenshots/1024x768/gvsig_qs_009.png" /></a>
+</div>
+<div class="section" id="navigazione-nella-vista">
+<h3>Navigazione nella vista<a class="headerlink" href="#navigazione-nella-vista" title="Permalink to this headline">¶</a></h3>
+<p>La vista cambierà automaticamente in modo da mostrare la zona compresa nell&#8217;area
+di selezione.</p>
+<ol class="arabic simple">
+<li>Le dimensioni della ToC possono essere modificate usando il
+mouse in modo da poter vedere i nomi di layer lunghi.</li>
+<li>Adattare il contenuto della vista utilizzando gli strumenti di navigazione
+attivi nella barra degli strumenti in modo da mostrare la città di Vittoria
+al centro della vista.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_010.png"><img alt="images/screenshots/1024x768/gvsig_qs_010.png" src="images/screenshots/1024x768/gvsig_qs_010.png" /></a>
+</div>
+</div>
+<div class="section" id="cambiare-la-modalita-di-rappresentazione-dei-layer-nella-vista">
+<h2>Cambiare la modalità di rappresentazione dei layer nella vista<a class="headerlink" href="#cambiare-la-modalita-di-rappresentazione-dei-layer-nella-vista" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rendere-un-poligono-trasparente">
+<h3>Rendere un poligono trasparente<a class="headerlink" href="#rendere-un-poligono-trasparente" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Selezionare il layer <code class="docutils literal"><span class="pre">ne_10m_admin_1_states_provinces.shp</span></code> usando il tasto
+sinistro del mouse e cliccare nuovamente con il tasto destro del mouse.</li>
+<li>Selezionare l&#8217;opzione <em>Proprietà</em> dal menù contestuale.</li>
+<li>Apparirà la finestra <strong>Proprietà del layer</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_011.png"><img alt="images/screenshots/1024x768/gvsig_qs_011.png" src="images/screenshots/1024x768/gvsig_qs_011.png" /></a>
+</div>
+<div class="section" id="cambiare-la-simbologia-di-un-layer-vettoriale">
+<h3>Cambiare la simbologia di un layer vettoriale<a class="headerlink" href="#cambiare-la-simbologia-di-un-layer-vettoriale" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Selezionare la scheda <em>Simbologia</em> nella finestra <strong>Proprietà del layer</strong>.</li>
+<li>Cliccare sul pulsante [Seleziona simbolo] in modo da far comparire la finestra
+<strong>Selettore dei simboli</strong>.</li>
+<li>Disattivare l&#8217;opzione <em>Colore di riempimento</em> in modo da rendere i poligoni
+trasparenti.</li>
+<li>Cliccare sul pulsante [Accetta] per ritornare alla finestra <strong>Proprietà del layer</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_012.png"><img alt="images/screenshots/1024x768/gvsig_qs_012.png" src="images/screenshots/1024x768/gvsig_qs_012.png" /></a>
+</div>
+<div class="section" id="cambiare-l-etichettatura-di-un-layer-vettoriale">
+<h3>Cambiare l&#8217;etichettatura di un layer vettoriale<a class="headerlink" href="#cambiare-l-etichettatura-di-un-layer-vettoriale" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Selezionare la scheda <em>Etichettatura</em> nella finestra <strong>Proprietà del layer</strong>.</li>
+<li>Cambiare il <em>Campo da etichettare</em> con quello da mostrare nella vista, poi
+cliccare sul pulsante [Accetta].</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_013.png"><img alt="images/screenshots/1024x768/gvsig_qs_013.png" src="images/screenshots/1024x768/gvsig_qs_013.png" /></a>
+</div>
+<div class="section" id="il-risultato">
+<h3>Il risultato<a class="headerlink" href="#il-risultato" title="Permalink to this headline">¶</a></h3>
+<p>Si noti che nella vista sono mostrati un layer vettoriale di punti, uno di linee
+e un altro di poligoni sovrapposti ad un layer raster. E&#8217; facile utilizzare una
+foto aerea o un modello digitale del terreno (DTM) come sfondo ai dati vettoriali
+o per mostrare altri dati vettoriali memorizzati in altro formato.</p>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_014.png"><img alt="images/screenshots/1024x768/gvsig_qs_014.png" src="images/screenshots/1024x768/gvsig_qs_014.png" /></a>
+</div>
+<div class="section" id="esercizio-cambiare-la-simbologia-e-l-etichettatura-dei-layer-di-punti-e-di-linee">
+<h3>Esercizio - cambiare la simbologia e l&#8217;etichettatura dei layer di punti e di linee<a class="headerlink" href="#esercizio-cambiare-la-simbologia-e-l-etichettatura-dei-layer-di-punti-e-di-linee" title="Permalink to this headline">¶</a></h3>
+<p>Seguendo i passaggi precedenti, cambiare la simbologia, il colore e l&#8217;etichettatura
+dei fiumi e delle città in modo da ottenere un risultato simile a quello della
+seguente schermata.</p>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_015.png"><img alt="images/screenshots/1024x768/gvsig_qs_015.png" src="images/screenshots/1024x768/gvsig_qs_015.png" /></a>
+</div>
+</div>
+<div class="section" id="semplice-analisi-selezione-delle-citta-in-una-regione">
+<h2>Semplice analisi - selezione delle città in una regione<a class="headerlink" href="#semplice-analisi-selezione-delle-citta-in-una-regione" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="selezionare-la-regione">
+<h3>Selezionare la regione<a class="headerlink" href="#selezionare-la-regione" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Selezionare il layer <code class="docutils literal"><span class="pre">ne_10m_admin_1_states_provinces.shp</span></code> usando il tasto
+sinistro del mouse.</li>
+<li>Selezionare l&#8217;icona &#8216;Seleziona con punto&#8217; nella barra degli strumenti.</li>
+<li>Cliccare sul poligono che rappresenta lo Stato di Vittoria. Il poligono
+diventerà di colore giallo o un altro in funzione delle proprie preferenze utente.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_016.png"><img alt="images/screenshots/1024x768/gvsig_qs_016.png" src="images/screenshots/1024x768/gvsig_qs_016.png" /></a>
+</div>
+<div class="section" id="selezionare-le-citta-contenute-nella-regione">
+<h3>Selezionare le città contenute nella regione<a class="headerlink" href="#selezionare-le-citta-contenute-nella-regione" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Selezionare il layer <code class="docutils literal"><span class="pre">ne_10m_populated_places.shp</span></code> usando il tasto
+sinistro del mouse.</li>
+<li>Selezionare l&#8217;opzione <code class="docutils literal"><span class="pre">Vista</span> <span class="pre">&gt;</span> <span class="pre">Selezione</span> <span class="pre">&gt;</span> <span class="pre">Selezione</span> <span class="pre">con</span> <span class="pre">layer</span></code> dal menù
+principale per aprire la finestra <strong>Selezione con layer</strong>.</li>
+<li>Cambiare i due criteri di selezione usando le caselle a discesa poste nel
+lato sinistro della finestra <strong>Selezione con layer</strong>. Cliccare sul pulsante
+[Nuovo insieme] per selezionare le città contenute nel poligono selezionato.</li>
+<li>Cliccare sul pulsante [Cancella] nella finestra <strong>Selezione con layer</strong> per
+ritornare alla vista.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_017.png"><img alt="images/screenshots/1024x768/gvsig_qs_017.png" src="images/screenshots/1024x768/gvsig_qs_017.png" /></a>
+</div>
+<div class="section" id="annullare-la-selezione-del-poligono-in-modo-da-vedere-il-risultato">
+<h3>Annullare la selezione del poligono in modo da vedere il risultato<a class="headerlink" href="#annullare-la-selezione-del-poligono-in-modo-da-vedere-il-risultato" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Selezionare il layer <code class="docutils literal"><span class="pre">ne_10m_admin_1_states_provinces.shp</span></code> usando il tasto
+sinistro del mouse.</li>
+<li>Cliccare sull&#8217;icona &#8216;Deseleziona&#8217; nella barra degli strumenti.</li>
+<li>Si osserverà che solo le città contenute nello stato di vittoria sono state
+selezionate.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_018.png"><img alt="images/screenshots/1024x768/gvsig_qs_018.png" src="images/screenshots/1024x768/gvsig_qs_018.png" /></a>
+</div>
+<div class="section" id="esportare-le-citta-selezionate-in-un-nuovo-shapefile">
+<h3>Esportare le città selezionate in un nuovo shapefile<a class="headerlink" href="#esportare-le-citta-selezionate-in-un-nuovo-shapefile" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Selezionare il layer <code class="docutils literal"><span class="pre">ne_10m_populated_places.shp</span></code> usando il tasto
+sinistro del mouse.</li>
+<li>Selezionare l&#8217;opzione <code class="docutils literal"><span class="pre">Layer</span> <span class="pre">&gt;</span> <span class="pre">Esporta...</span> <span class="pre">&gt;</span> <span class="pre">SHP</span></code> dal menù principale per
+iniziare l&#8217;esportazione.</li>
+<li>Comparirà la finestra <strong>Esporta...</strong>. gvSIG riconosce che solo 26 elementi
+sono selezionati, quindi avverte l&#8217;utente che solo un sottoinsieme dello
+shapefile sarà esportato. Cliccare sul pulsante [Si] per continuare.</li>
+<li>Apparirà la finestra <strong>Salva</strong>, in cui occorrerà fornire il nome del file
+e selezionare la cartella dove salvarlo. Cliccare sul pulsante [Salva]
+per continuare. Occorre notare che se un file con lo stesso nome è già
+presente comparirà un messaggio di informazione per l&#8217;utente.</li>
+<li>Apparirà la finestra <strong>Aggiungi layer</strong>. Cliccare sul pulsante [Si] per
+aggiungere il nuovo shapefile alla ToC.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_019.png"><img alt="images/screenshots/1024x768/gvsig_qs_019.png" src="images/screenshots/1024x768/gvsig_qs_019.png" /></a>
+</div>
+<div class="section" id="mostrare-solo-le-citta-contenute-in-una-regione">
+<h3>Mostrare solo le città contenute in una regione<a class="headerlink" href="#mostrare-solo-le-citta-contenute-in-una-regione" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Una volta ritornati alla vista, deselezionare <code class="docutils literal"><span class="pre">ne_10m_populated_places.shp</span></code>
+nella ToC.</li>
+<li>Cambiare la simbologia e l&#8217;etichettatura di <code class="docutils literal"><span class="pre">test.shp</span></code> come nella schermata
+seguente.</li>
+<li>Ora la vista includerà solo le città contenute nello Stato di Vittoria.</li>
+<li>Cliccare sull&#8217;icona &#8216;Chiudi&#8217; per tornare al <strong>Gestore di progetto</strong> in modo
+da poter creare una mappa con questa vista.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_020.png"><img alt="images/screenshots/1024x768/gvsig_qs_020.png" src="images/screenshots/1024x768/gvsig_qs_020.png" /></a>
+</div>
+</div>
+<div class="section" id="come-creare-una-mappa">
+<h2>Come creare una mappa<a class="headerlink" href="#come-creare-una-mappa" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creare-una-nuova-mappa-e-aprirla">
+<h3>Creare una nuova mappa e aprirla<a class="headerlink" href="#creare-una-nuova-mappa-e-aprirla" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Selezionare il tipo di documento <em>Mappa</em> nel <strong>Gestore di progetto</strong>.</li>
+<li>Cliccare sul pulsante [Nuovo] per creare una mappa.</li>
+<li>Selezionare la mappa appena creata. Per impostazione predefinita è intitolata
+<code class="docutils literal"><span class="pre">Senza</span> <span class="pre">titolo</span> <span class="pre">-</span> <span class="pre">0</span></code>.</li>
+<li>Cliccare sul pulsante [Apri].</li>
+<li>Apparirà una mappa vuota la cui finestra è intitolata <code class="docutils literal"><span class="pre">Mappa</span> <span class="pre">:</span> <span class="pre">Senza</span> <span class="pre">titolo</span> <span class="pre">-</span> <span class="pre">0</span></code>.
+E&#8217; possibile notare una serie di punti posizionati sulla mappa. Si chiama griglia
+ed è utilizzata per agganciare gli oggetti durante la composizione di una mappa.</li>
+<li>Cliccare sull&#8217;icona &#8216;Ingrandisci&#8217; in modo che la mappa occupi l&#8217;intero schermo.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_021.png"><img alt="images/screenshots/1024x768/gvsig_qs_021.png" src="images/screenshots/1024x768/gvsig_qs_021.png" /></a>
+</div>
+<div class="section" id="inserire-una-vista-con-griglia-reticolato-geografico">
+<h3>Inserire una vista con griglia/reticolato geografico<a class="headerlink" href="#inserire-una-vista-con-griglia-reticolato-geografico" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Cliccare sull&#8217;icona &#8216;Inserisci vista&#8217; nella barra degli strumenti della mappa.</li>
+<li>Definire un&#8217;area di selezione che rappresenta l&#8217;estensione della vista
+all&#8217;interno del documento mappa, cliccando sulla mappa vuota tenendo premuto
+il tasto sinistro del mouse e trascinando quest&#8217;ultimo, per poi rilasciarlo una
+volta che si è descritta l&#8217;area da usare. Questa operazione aprirà la finestra
+<strong>Proprietà della vista</strong>.</li>
+<li>Selezionare la <em>vista</em> creata in precedenza nella finestra <strong>Proprietà della
+vista</strong>.</li>
+<li>Attivare l&#8217;opzione <em>Mostra griglia</em> al fine di creare il reticolato.</li>
+<li>Cliccare sul pulsante [Configura] per aprire la finestra <strong>Proprietà della
+griglia</strong>.</li>
+<li>Nella finestra <strong>Proprietà della griglia</strong> impostare l&#8217;intervallo della griglia
+pari a 1.0, in modo che la distanza tra le linee del reticolato geografico
+sia pari a 1 grado.</li>
+<li>Selezionare il formato della griglia (usare le linee piuttosto che i punti
+per semplicità di visualizzazione).</li>
+<li>Impostare la dimensione dei caratteri pari a 14.</li>
+<li>Cliccare sul pulsante [Accetta] per ritornare alla finestra <strong>Proprietà della
+griglia</strong>, poi cliccare sul pulsante [Accetta] per uscire e ritornare alla mappa.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_022.png"><img alt="images/screenshots/1024x768/gvsig_qs_022.png" src="images/screenshots/1024x768/gvsig_qs_022.png" /></a>
+</div>
+<div class="section" id="cos-altro-e-possibile-fare-con-una-mappa">
+<h3>Cos&#8217;altro è possibile fare con una mappa?<a class="headerlink" href="#cos-altro-e-possibile-fare-con-una-mappa" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Selezionare l&#8217;opzione <code class="docutils literal"><span class="pre">Mappa</span> <span class="pre">&gt;</span> <span class="pre">Proprietà</span></code> dal menù principale per aprire
+la finestra <strong>Proprietà della mappa</strong>. Disattivare l&#8217;opzione <em>Visualizza
+griglia</em> e poi cliccare sul pulsante [Accetta]. La griglia di aggancio
+usata durante la composizione della mappa è rimossa dal documento e
+l&#8217;immagine dovrebbe essere simile a quella mostrata nel seguito.</li>
+<li>Ulteriori oggetti come la scala e il simbolo del Nord possono essere aggiunti
+alla mappa usando le icone della barra degli strumenti della mappa o dei
+sottomenù del menù <code class="docutils literal"><span class="pre">Mappa</span></code>.</li>
+<li>La mappa può essere stampata o esportata come PDF o Postscript (PS) per
+utilizzarle in altri lavori.</li>
+<li>Cliccare sull&#8217;icona &#8216;Chiudi&#8217; per tornare al <strong>Gestore di progetto</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_023.png"><img alt="images/screenshots/1024x768/gvsig_qs_023.png" src="images/screenshots/1024x768/gvsig_qs_023.png" /></a>
+</div>
+</div>
+<div class="section" id="salvare-il-progetto-o-uscire-da-gvsig">
+<h2>Salvare il progetto o uscire da gvSIG<a class="headerlink" href="#salvare-il-progetto-o-uscire-da-gvsig" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>I progetti possono essere salvati per usarli successivamente mediante
+l&#8217;opzione di menù <code class="docutils literal"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Salva</span> <span class="pre">come...</span></code>.</li>
+<li>E&#8217; possibile chiudere i progetti usando l&#8217;opzione di menù <code class="docutils literal"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Esci</span></code>.</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/gvsig_qs_024.png"><img alt="images/screenshots/1024x768/gvsig_qs_024.png" src="images/screenshots/1024x768/gvsig_qs_024.png" /></a>
+</div>
+<div class="section" id="risorse-utili">
+<h2>Risorse utili<a class="headerlink" href="#risorse-utili" title="Permalink to this headline">¶</a></h2>
+<p>Del materiale didattico in italiano è disponibile sul sito di
+<a class="reference external" href="https://gvsig.org/web/docusr/learning/cursos-gvsig#italiano">gvSIG</a> .</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

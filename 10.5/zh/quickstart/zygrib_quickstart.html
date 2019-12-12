@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>zyGrib 快速入门 &mdash; OSGeo-Live 10.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 10.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.5 包含内容一览" href="../overview/overview.html" />
+    <link rel="next" title="Open Geospatial Consortium 开放地理空间信息联盟标准" href="../standards/standards.html" />
+    <link rel="prev" title="ZOO 快速入门" href="zoo-project_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.zygrib.org"><img alt="project logo" class="align-right" src="../../_images/logo-zygrib27.png" style="width: 192.0px; height: 192.0px;" /></a>
+<div class="section" id="zygrib">
+<h1>zyGrib 快速入门<a class="headerlink" href="#zygrib" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>运行<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>基本操作<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>　　启动 zyGrib 后系统将显示一幅世界地图。由于 Live 没有包含 GRIB 天气预报信息，您将需要英特网连接以下载数据。由于 GRIB 数据经常被用于外海航行，其发布包含了低带宽的邮件与电台数据连接下的传输服务。虽然数据必须被从外界下载，该软件本身并不要求持续的英特网连接。墨西哥湾和南部非洲都是演示的理想区域。</p>
+<p>　　GRIB 数据有很多来源。zyGrib 项目具有其自己的服务器。点击工具栏右侧的插头图标可以检测与其的连接。</p>
+<p>　　鼠标左键推拽将试图放大至目标区。点击放大镜与长方形组合的按钮执行。鼠标滚轮也可以缩放试图。</p>
+<p>　　点击 <span class="menuselection">File ‣ Download GRIB</span> 并选择需要的数据。若您不熟悉这些数据，保持默认。点击 <code class="docutils literal"><span class="pre">Download</span></code> 下载数据至硬盘。</p>
+<p>　　完成后，系统将显示一个天气预报图。一个滚动条用于改变时间设置。</p>
+</div>
+<div class="section" id="id3">
+<h3>改变试图<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>　　左侧面板显示的数据是光标在图上所指位置的具体情况。移动时间滚动条可以查看不同时间的预报。左侧下拉菜单也可以选择时间。</p>
+<p>　　在 <code class="docutils literal"><span class="pre">Weather</span> <span class="pre">map</span></code> 菜单可以选择渲染的项目。例如选择 <span class="menuselection">Weather map ‣ Cloud cover</span> 可以查看云量情况。</p>
+<p>　　若您同图中演示的一样下载了墨西哥湾的数据，您会对对流有效位能（CAPE）数据感兴趣。该数据较高（1000J/kg+）的位置大气不稳定，较容易发生雷暴和风暴。</p>
+<p>　　对于南部非洲的数据，云量会提供较多的信息。</p>
+</div>
+<div class="section" id="id4">
+<h3>创建动画<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>　　点击工具栏最右侧的火箭图标将显示一个新窗口播放动画。第一遍渲染播放完成后，您就可以控制播放、暂停和返回。您也可以使用 <a class="reference external" href="http://grass.osgeo.org/wiki/Movies">其它工具</a> 导出 AVI、MPEG 或 GIF 动画。</p>
+<p>　　红色电源图标用于关闭。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>其它信息<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>　　 <a class="reference internal" href="../overview/opencpn_overview.html"><em>OpenCPN</em></a> 同样具有 GRIB 图层插件。您可以尝试使用该软件查看数据。详见 <a class="reference internal" href="opencpn_quickstart.html"><em>OpenCPN quickstart</em></a> 。</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

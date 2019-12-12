@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guida rapida su 52°North SOS &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 9.0 Contents" href="../overview/overview.html" />
+    <link rel="next" title="Guida rapida su 52°North WPS" href="52nWPS_quickstart.html" />
+    <link rel="prev" title="zyGrib" href="../overview/zygrib_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://52north.org/sos"><img alt="52°North - exploring horizons - logo" class="align-right" src="../../_images/logo_52North_16013.png" style="width: 128.0px; height: 126.0px;" /></a>
+<div class="section" id="guida-rapida-su-52north-sos">
+<h1>Guida rapida su 52°North SOS<a class="headerlink" href="#guida-rapida-su-52north-sos" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="come-incominciare">
+<h2>Come incominciare<a class="headerlink" href="#come-incominciare" title="Permalink to this headline">¶</a></h2>
+<p>52°North SOS è un servizio web, che vi permette di fornire e archiviare dati spaziali di
+sensori (includendo i metadati e le misurazioni/osservazioni).</p>
+<p>1) Andate in <em class="menuselection">Geospatial ‣ Web Services ‣ 52North ‣ Start 52North SOS</em>
+per avviare 52°North SOS o usate questo <a class="reference external" href="http://localhost:8080/52nSOS/">collegamento diretto</a>.
+(Se il servizio non è raggiungibile, provare ad avviare il servlet Tomcat seguendo i passaggi
+in fondo alla pagina.)</p>
+<p>2) Firefox aprirà la pagina principale del client di test 52°North SOS (vedere Fiq. 1).
+Selezionare la versione che vorrete usare, 1.0.0 per esempio:</p>
+<a class="reference internal image-reference" href="it/quickstart/../../images/screenshots/1024x768/52n_sos_test_client_start.png"><img alt="screenshot of 52°North SOS test client welcome page" class="align-center" src="it/quickstart/../../images/screenshots/1024x768/52n_sos_test_client_start.png" /></a>
+<p><strong>Fig. 1</strong>: 52°North SOS test client - welcome page</p>
+<p>3) Il client di test apparirà. Può essere usato per spedire richieste al server usando semplici form.
+Un menù a tendina vi permetterà di selezionarne una da una collezione di richieste predefinite,
+che sono adottate dalle rispettive versioni del servizio selezionato nel passaggio precedente.</p>
+<a class="reference internal image-reference" href="it/quickstart/../../images/screenshots/1024x768/52n_sos_test_client_v1_0_0_GetCapabilities.png"><img alt="screenshot of 52°North SOS test client version 1.0.0" class="align-center" src="it/quickstart/../../images/screenshots/1024x768/52n_sos_test_client_v1_0_0_GetCapabilities.png" /></a>
+<p><strong>Fig. 2</strong>: 52°North SOS test client - specification version 1.0.0</p>
+<p>4) Per incominciare con il SOS, selezionate la richiesta GetCapabilities_allSections.xml dalla lista
+a tendina dopo &#8220;Request Examples&#8221; (see number [1] in Fig. 2).</p>
+<p>5) Premete il <strong>bottone Send</strong> (numero [2] in Fig. 2) e la richiesta sarà trasmessa a 52°North SOS.
+Come risultato, un documento XML sarà ritornato (vedere Fig. 3), che mostra le capacità del SOS (
+i metadati del servizio parole chiave o il fornitore, operazioni disponibili e filtri, dati delle
+osservazioni contenute,...). Per vedere la risposta originale aprire la sorgente (Ctrl+U).</p>
+<a class="reference internal image-reference" href="it/quickstart/../../images/screenshots/1024x768/52n_sos_response.png"><img alt="screenshot of 52°North SOS output - GetCapabilities response encoded in XML" class="align-center" src="it/quickstart/../../images/screenshots/1024x768/52n_sos_response.png" /></a>
+<p><strong>Fig. 3</strong>: 52°North SOS - GetCapabilities response (XML encoded)</p>
+<p>6) Al fine di costruire la vostra richiesta dovrete ottenere le <a class="reference external" href="http://localhost:8080/52nSOS/sos?REQUEST=GetCapabilities&amp;SERVICE=SOS&amp;ACCEPTVERSIONS=1.0.0">capacità</a>  di
+52°North SOS (specifica 1.0.0). Usando le informazioni fornite nelle capacità, e maggiormente nella
+sezione dei contenuti, potete adeguare le richieste al server nel client di test. Basta selezionare
+una richiesta GetObservation (GetObs...) dal menù a tendina e usarlo come template per richiesre
+il vostro sottoinsieme di osservazioni.</p>
+</div>
+<div class="section" id="ulteriori-informazioni">
+<h2>Ulteriori informazioni<a class="headerlink" href="#ulteriori-informazioni" title="Permalink to this headline">¶</a></h2>
+<p>Per imparare di più su 52°North SOS e/o la comunità 52°North Sensor Web, punti di partenza potenziali sono:</p>
+<ul class="simple">
+<li>La 52°North <a class="reference internal" href="../overview/52nSOS_overview.html"><em>SOS overview</em></a>,</li>
+<li>La mailing list 52°North Sensor Web: <a class="reference external" href="mailto:swe&#37;&#52;&#48;52north&#46;org">swe<span>&#64;</span>52north<span>&#46;</span>org</a>,</li>
+<li>Controllate il <a class="reference external" href="http://sensorweb.forum.52north.org/">forum della comunità</a> 52°North Sensor Web ,</li>
+<li>Controllate il 52°North <a class="reference external" href="http://sensorweb.demo.52north.org/SOSclient/">SOS Client</a>,</li>
+<li><a class="reference external" href="http://52north.org/communities/sensorweb/sos/">Il sito 52°North SOS</a>, o</li>
+<li>Il sito internate della <a class="reference external" href="http://52north.org/communities/sensorweb/">comunità 52°North Sensor Web</a>.</li>
+<li>Quando il SOS non è disponibile, controllate se il servlet tomcat sta girando usando i seguenti comandi:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>user@osgeolive:~$ sudo /etc/init.d/tomcat6 status
+* Tomcat servlet engine is running with pid 1234          &lt;-- Tomcat is running
+[...]
+* Tomcat servlet engine is not running.                   &lt;-- Tomcat not runing, so please start:
+user@osgeolive:~$ sudo /etc/init.d/tomcat6 start
+* Starting Tomcat servlet engine tomcat6           [ OK ] &lt;-- Tomcat is running, now
+</pre></div>
+</div>
+<p><strong>Listing 1:</strong> Tomcat Status and Start (password for sudo: user)</p>
+<ul class="simple">
+<li>Lo sviluppo di questa versione di 52°North SOS è stata supportata dal progetto di ricerca europeo FP7 <a class="reference external" href="http://www.eo2heaven.org/">EO2HEAVEN</a> (co-finanziato dalla Commissione Europea sotto la convenzione di sovvenzione n°244100):</li>
+</ul>
+<a class="reference external image-reference" href="http://www.eo2heaven.org/"><img alt="EO2HEAVEN - Earth Observation and ENVironmental Modeling for the Mitigation of HEAlth Risks" class="align-center" src="it/quickstart/../../images/project_logos/logo_52North_other_200px.png" /></a>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

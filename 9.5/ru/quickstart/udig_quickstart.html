@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы с uDig &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-uDig23.png"><img alt="логотип" class="align-right" src="../../_images/logo-uDig23.png" style="width: 76.8px; height: 79.2px;" /></a>
+<div class="section" id="udig">
+<h1><a class="toc-backref" href="#id10">Начало работы с uDig</a><a class="headerlink" href="#udig" title="Permalink to this headline">¶</a></h1>
+<p>uDig представляет собой программу для просмотра и редактирования пространственных данных.</p>
+<p>В данном &#8220;введении&#8221; рассказывается о:</p>
+<blockquote>
+<div><ul class="simple">
+<li>загрузке слоёв из шейп-файлов и <a class="reference internal" href="../standards/wms_overview.html"><em>Web Map Service (WMS)</em></a>;</li>
+<li>использовании стандартных картографических инструментов;</li>
+<li>изменении стиля отображения карты.</li>
+</ul>
+</div></blockquote>
+<div class="contents topic" id="id1">
+<p class="topic-title first">Содержание</p>
+<ul class="simple">
+<li><a class="reference internal" href="#udig" id="id10">Начало работы с uDig</a><ul>
+<li><a class="reference internal" href="#id2" id="id11">Запуск uDig</a></li>
+<li><a class="reference internal" href="#id3" id="id12">Начальный вид</a></li>
+<li><a class="reference internal" href="#id4" id="id13">Рабочий набор</a></li>
+<li><a class="reference internal" href="#id5" id="id14">Файлы</a></li>
+<li><a class="reference internal" href="#id6" id="id15">Карта</a></li>
+<li><a class="reference internal" href="#wms" id="id16">WMS</a></li>
+<li><a class="reference internal" href="#id7" id="id17">Стили</a></li>
+<li><a class="reference internal" href="#id8" id="id18">Что еще</a></li>
+<li><a class="reference internal" href="#id9" id="id19">Что дальше?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id11">Запуск uDig</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Выберите <em class="menuselection">Geospatial ‣ Desktop GIS ‣ uDig</em> из меню.</li>
+<li>Приложению нужно несколько секунд для старта.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/udig_Quickstart1Splash10.png"><img alt="../../_images/udig_Quickstart1Splash10.png" src="../../_images/udig_Quickstart1Splash10.png" style="width: 350.0px; height: 224.0px;" /></a>
+<p>Если у вас возникли трудности с запуском uDig, пожалуйста, просмотрите страницу &#8220;Запуск uDig&#8221;.</p>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id12">Начальный вид</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>После первого запуска uDig откроется окно &#8220;Начальный вид&#8221; и займёт весь экран. Здесь размещены ссылки на руководства, документацию и веб-сайт проекта.</li>
+<li>Нажмите на стрелку с надписью &#8220;Рабочий набор&#8221; в верхнем правом углу для показа состава рабочих наборов uDig.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_welcome11.png"><img alt="../../_images/udig_welcome11.png" src="../../_images/udig_welcome11.png" style="width: 711.2px; height: 514.5px;" /></a>
+</div></blockquote>
+<p>Вы можете вернуться к &#8220;Начальному виду&#8221; в любой момент, выбрав <em class="menuselection">Help ‣ Welcome</em> из меню.</p>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id13">Рабочий набор</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Окно Рабочего набора предоставляет множество инструментов редактирования (каждый показан на карте) и поддерживает Виды (предоставляет информацию о текущей карте).</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_workbench11.png"><img alt="../../_images/udig_workbench11.png" src="../../_images/udig_workbench11.png" style="width: 718.9px; height: 524.3px;" /></a>
+</div></blockquote>
+<p>Ниже представлена типичная сессия в uDig:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>вид слоев (1),</li>
+<li>вид проектов (2),</li>
+<li>вид каталога (3) и</li>
+<li>редактор карт (4).</li>
+</ol>
+</div></blockquote>
+<p>Эти виды будут описаны далее по ходу демонстрации их использования.</p>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id14">Файлы</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Для начала мы загрузим некоторые данные примеров.</p>
+<ol class="arabic simple">
+<li>Выберите <em class="menuselection">Layer ‣ Add</em> из меню для открытия Мастера <strong>Add Data</strong>.</li>
+<li>Выберите <strong>Files</strong> из списка источников данных.</li>
+<li>Нажмите <em class="guilabel">Next</em>, чтобы открыть диалог выбора файлов.</li>
+<li>OSGeo-Live содержит данные примеров в:<ul>
+<li><tt class="file docutils literal"><span class="pre">~/data</span></tt> (ссылка <tt class="file docutils literal"><span class="pre">/usr/local/share/data</span></tt>)</li>
+</ul>
+</li>
+<li>Выберите следующий файл из папки <tt class="file docutils literal"><span class="pre">natural_earth</span></tt>:<ul>
+<li><tt class="file docutils literal"><span class="pre">10m_admin_0_countries.shp</span></tt></li>
+</ul>
+</li>
+<li>Нажмите <em class="guilabel">Open</em><ul>
+<li>Откроется новый редактор карт на основе содержимого шейп-файлов. Имя и проекция карты будут взяты из шейп-файла.</li>
+<li>Вы можете заметить, что вид <strong>Catalog view</strong> обновился и в нём появилась запись для шейп-файла <tt class="file docutils literal"><span class="pre">10m_admin_0_countries.shp</span></tt>. Этот вид предназначен для отображения ресурсов, используемых uDig.</li>
+<li>Вид <strong>Layers</strong> отображает отдельный слой карты. Этот вид используется для изменения порядка и отображения информации на карте.</li>
+<li>Вид <strong>Projects</strong> при обновлении показывает, что карта хранится в <cite>projects &gt; 10m admin 0 countries</cite>.
+Вы можете иметь множество одновременно открытых проектов, каждый проект может иметь несколько карт.</li>
+</ul>
+</li>
+<li>Откройте папку <tt class="file docutils literal"><span class="pre">~/data/natural_earth/HYP_50M_SR_W</span></tt> на рабочем столе.</li>
+<li>Перетащите <tt class="file docutils literal"><span class="pre">HYP_50M_SR_W.tif</span></tt> в окно редактора карт, при этом появится новый слой в карте.</li>
+<li>Вы можете видеть порядок слоев, в котором они отрисовываются в окне карты. Сейчас слой <cite>HYP_50M_SR_W</cite> рисуется поверх слоя <cite>10m admin 0 countries</cite>.</li>
+<li>Выберите слой <cite>HYP_50M_SR_W</cite> в окне каталога и перетащите его вниз списка.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_QuickstartCountriesMap11.png"><img alt="../../_images/udig_QuickstartCountriesMap11.png" src="../../_images/udig_QuickstartCountriesMap11.png" style="width: 718.9px; height: 524.3px;" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Одним из самых распространенных вопросов, задаваемых при анализе возможности использования uDig в организации является: сколько памяти&nbsp;использует приложение? В отличие от большинства ГИС-приложений uDig можете занимать фиксированный объемом памяти. Шейп-файлы не загружаются в память, у нас есть политика хранения данных на диске и их отображения по мере необходимости.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Вы можете перетащить (&#8220;drag-and-drop&#8221;) шейп-файлы прямо в окно приложения uDig!</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id15">Карта</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Вы можете управлять, каким именно образом редактор карт отображает контент, используя навигационные инструменты на панели инструментов в верхней части экрана.</p>
+<ol class="arabic simple">
+<li><img alt="ZOOM" src="../../_images/udig_zoom_mode11.png" /> Инструмент масштабирования доступен по умолчанию.<ul>
+<li>Используйте инструмент масштабирования, рисуя прямоугольник на экране вокруг области карты, которую необходимо приблизить/отдалить.</li>
+<li>Для уменьшения рисуйте прямоугольник правой клавишей мыши. Текущий экстент будет локализован внутри нарисованного прямоугольника.</li>
+</ul>
+</li>
+<li><img alt="PAN" src="../../_images/udig_pan_mode11.png" /> Инструмент перемещения служит для сдвига карты без изменения масштаба.</li>
+<li>Имеется несколько навигационных кнопок, которые могут быть использованы в любой момент:<ul>
+<li>Инструмент <img alt="SHOWALL" src="../../_images/udig_zoom_extent_co11.png" /> &#8220;Показать всё&#8221; может быть использован для возврата к полному охвату в любой момент времени.</li>
+<li>Инструменты <img alt="ZOOM_IN" src="../../_images/udig_zoom_in_co11.png" /> &#8220;Приблизить&#8221; и <img alt="ZOOM_OUT" src="../../_images/udig_zoom_out_co11.png" /> &#8220;Отдалить&#8221; могут быть использованы для изменения масштаба.</li>
+<li>Вы можете использовать инструменты навигации &#8220;Назад&#8221; <img alt="BNAV" src="../../_images/udig_backward_nav11.png" /> и &#8220;Вперёд&#8221; <img alt="FNAV" src="../../_images/udig_forward_nav11.png" /> в меню для перемещения между предыдущими местоположениями.</li>
+</ul>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Большинство инструментов позволяют перемещать содержимое окна карты, зажимая центральную клавишу мыши и изменять масштаб колесом прокрутки.</p>
+</div>
+</div>
+<div class="section" id="wms">
+<h2><a class="toc-backref" href="#id16">WMS</a><a class="headerlink" href="#wms" title="Permalink to this headline">¶</a></h2>
+<p>Одной из причин использовать приложения типа uDig&nbsp;— это доступ ко всем замечательным ресурсам пространственных данных в сети Интернет. Данная глава посвящена использованию WMS.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Если у вас нет доступа в Интернет, запустите <em class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</em> для создания локального WMS. Скрипт откроет страницу с данными &#8220;Service Capabilities&#8221; и двумя ссылками для WMS, которые вы можете перетащить в вашу пустую карту.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Также, вы можете подключится к WMS используя мастер <strong>Add Data</strong> (<em class="menuselection">Layer ‣ Add...</em>).</p>
+</div>
+<ol class="arabic">
+<li><p class="first">Выберите <em class="menuselection">File ‣ New ‣ New Map</em> в меню.</p>
+</li>
+<li><p class="first">Переключите на вид <strong>Web</strong>, кликните на вкладке после вида <strong>Catalog</strong> для отображения вида <em>Web</em>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_WebViewClick11.png"><img alt="../../_images/udig_WebViewClick11.png" src="../../_images/udig_WebViewClick11.png" style="width: 415.5px; height: 177.0px;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">Кликните на ссылке WMS:<a class="reference external" href="http://www2.dmsolutions.ca/cgi-bin/mswms_gmap?Service=WMS&amp;VERSION=1.1.0&amp;REQUEST=GetCapabilities">dm solutions</a> link</p>
+<blockquote>
+<div></div></blockquote>
+</li>
+<li><p class="first">На странице выбора ресурсов выберите следующие слои:</p>
+<ul>
+<li><p class="first">Высоты/батиметрия</p>
+</li>
+<li><p class="first">Парки</p>
+</li>
+<li><p class="first">Населённые пункты</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_AddWMSLayers11.png"><img alt="../../_images/udig_AddWMSLayers11.png" src="../../_images/udig_AddWMSLayers11.png" style="width: 367.5px; height: 410.2px;" /></a>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p class="first">Нажмите <em class="guilabel">Finish</em> для добавления слоев на карту.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_WMSMap11.png"><img alt="../../_images/udig_WMSMap11.png" src="../../_images/udig_WMSMap11.png" style="width: 714.0px; height: 517.3px;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">Используйте <img alt="ZOOM" src="../../_images/udig_zoom_mode11.png" /> инструмент масштабирования для приближения к одному из парков.</p>
+</li>
+<li><p class="first">Переключитесь на <img alt="INFO" src="../../_images/udig_info_mode11.png" /> инструмент информации и кликните на парке для изучения информации о нём.</p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Вы можете переключаться между инструментами масштабирования и информации, нажимая клавиши <cite>Z</cite> и <cite>I</cite> на клавиатуре.</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id17">Стили</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Выберите <cite>project &gt; 10m admin 0 countries</cite>. Вы можете открыть эту карту двойным щелчком или щелчком ПКМ и выбором пункта &#8220;Открыть карту&#8221;.</p>
+</li>
+<li><p class="first">Выберите слой countries в виде &#8220;Слои&#8221;.</p>
+</li>
+<li><p class="first">Откройте <strong>Style Editor</strong> щелчком ПКМ на слое <cite>10m admin 0 countries</cite> и выберите <em class="guilabel">Change Style</em>.</p>
+</li>
+<li><p class="first">Мы собираемся изменить настройки отображения для слоя <em>countries</em></p>
+<ul class="simple">
+<li>линии: нажмите <em class="guilabel">Border</em>, нажмите кнопку Цвет и измените цвет на чёрный;</li>
+<li>заливка: на вкладке <em class="guilabel">Fill</em> снимите выбор <em class="guilabel">enable/disable fill</em> чтобы отключить заливку;</li>
+<li>подписи: на вкладке <em class="guilabel">Labels</em> поставьте выбор <em class="guilabel">enable/disable labeling</em>, и отметьте <strong>NAME</strong> из списка атрибутов.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/udig_StyleEditor11.png"><img alt="../../_images/udig_StyleEditor11.png" src="../../_images/udig_StyleEditor11.png" style="width: 716.8px; height: 498.4px;" /></a>
+</li>
+<li><p class="first">Нажмите <em class="guilabel">Apply</em>, чтобы увидеть как это выглядит на нашей карте. Вид <strong>Layer</strong> будет также обновлён, чтобы соответствовать текущему стилю.</p>
+</li>
+<li><p class="first">Если вам понравился результат, вы можете нажать <em class="guilabel">Close</em>, чтобы закрыть диалог.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Некоторые файлы содержат настройки стиля. Настройки стиля могут быть в файлах с расширением <tt class="file docutils literal"><span class="pre">*.sld</span></tt>. Название файла стиля должно совпадать с файлом данных. Если такой файл <a class="reference internal" href="../standards/sld_overview.html"><em>Styled Layer Description (SLD)</em></a> создан, то стиль будет применен автоматически.</p>
+</div>
+<p>Иногда тяжело определить, что творится со стилем, имеющем множество деталей. Для того, чтобы сфокусироваться на задаче, с которой вы хотите работать, вы можете выбрать <em class="menuselection">Map ‣ Mylar</em> из меню. При помощи вида <em>Layer</em> выберите различные слои, чтобы увидеть эффект. Вы можете отключить эффект в любой момент при помощи меню <em class="menuselection">Map ‣ Mylar</em>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_MapMylar11.png"><img alt="../../_images/udig_MapMylar11.png" src="../../_images/udig_MapMylar11.png" style="width: 718.9px; height: 524.3px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="#id18">Что еще</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>Вот некоторые дополнительные действия, которые стоит попробовать:</p>
+<ol class="arabic simple">
+<li>Попробуйте отобразить вашу собственную карту или попробуйте добавить слой из <a class="reference internal" href="../standards/wfs_overview.html"><em>Web Feature Service (WFS)</em></a>.</li>
+<li>Попробуйте настроить стили слоя WFS.</li>
+</ol>
+</div>
+<div class="section" id="id9">
+<h2><a class="toc-backref" href="#id19">Что дальше?</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>Это только первый шаг к использованию uDig. Есть множество хороших материалов для изучения в документах типа <strong>walkthrough</strong>:</p>
+<ul>
+<li><p class="first">Пошаговое руководство 1</p>
+<p>Попробуйте воспользоваться <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a> для получения данных от WFS и изучить использование <strong>Themes</strong> при помощи мощной технологии <cite>Color Brewer</cite>.</p>
+<p><tt class="file docutils literal"><span class="pre">/usr/local/share/udig/udig-docs/uDigWalkthrough</span> <span class="pre">1.pdf</span></tt></p>
+</li>
+<li><p class="first">Пошаговое руководство 2</p>
+<p>Изучите, как создавать шейп-файлы и использовать инструменты редактирования для управления пространственными данными. Руководство охватывает установку <a class="reference internal" href="../overview/geoserver_overview.html"><em>GeoServer</em></a> и редактирование WFS.</p>
+<p>Всё это доступно по ссылке <a class="reference external" href="http://udig.refractions.net/">http://udig.refractions.net/</a></p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

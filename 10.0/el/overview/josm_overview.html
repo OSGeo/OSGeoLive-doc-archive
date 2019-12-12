@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>JOSM &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Περιεχόμενα OSGeo-Live 10.0" href="overview.html" />
+    <link rel="next" title="Σουίτα Τοπολογίας JTS" href="jts_overview.html" />
+    <link rel="prev" title="istSOS" href="istsos_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://josm.openstreetmap.de"><img alt="project logo" class="align-right" src="../../_images/logo-josm2.png" /></a>
+<div class="section" id="josm">
+<h1>JOSM<a class="headerlink" href="#josm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="openstreetmap">
+<h2>Επεξεργαστής δεδομένων OpenStreetMap<a class="headerlink" href="#openstreetmap" title="Permalink to this headline">¶</a></h2>
+<p>Το JOSM είναι ένας επεκτάσιμος επεξεργαστής δεδομένων OpenStreetMap (OSM) γραμμενος σε γλώσσα Java 1.6.</p>
+<p>Υποστηρίζει αυτόνομες καταγραφές GPX από την βάση δεδομένων OSM καθώς και υπαρχόντων κόμβων, διαδρομών,μεταδεδομένων, εττικετών και σχέσεών τους στην βάση OSM. Αυτά τα αρχεία GPX μεταφορτώνονται συνήθως από δέκτες GPS ή από άλλες πηγές.</p>
+<p>Ένας κόμβος &#8220;node&#8221; είναι ένα σημείο, μία διαδρομή &#8220;way&#8221; είναι μια γραμμή η οποία συνδέει πολλούς κόμβους,
+μία σχέση &#8220;Relation&#8221; είναι μία ακολουθία από διαδρομές και κόμβους (ως λογική ομαδοποίηση αντικειμένων)
+και οι ετικέτες &#8220;Tags&#8221; περιγράφουν τι αναπαριστά κάθε αντικείμενο κόμβος ή διαδρομή (οι ετικέτες είναι χωρισμένες στα κλειδιά &#8220;keys&#8221; και τις τιμές &#8220;values&#8221; τους).</p>
+<p>Είναι μία από τις πιο ισχυρές εφαρμογές γραφείου για την ψηφιοποίηση και ενημέρωση δεδομένων OpenStreetMap.</p>
+<p>Ο JOSM είναι ένας επεξεργαστής ο οποίος λειτουργεί και εκτός διαδικτύου και έτσι ότι κάνετε δεν είναι διαθέσιμο ή ορατό σε άλλους χρήστες μέχρι να το μεταφορτώσετε στον εξυπηρετητή.
+Απ&#8217; την στιγμή που θα έχετε ολοκληρώσει τις αλλαγές ή τις προσθήκες σας αν επιθυμήσετε να τις αποθηκεύσετε, ο JOSM θα ελέγξει αν έρχονται σε σύγκρουση με άλλες εκδόσεις άλλων χρηστών στα ίδια στοιχεία.
+Αν δεν υπάρχει πρόβλημα τα δεδομένα σας θα αποθηκευτούν και αναρτηθούν άμεσα ώστε να είναι διαθέσιμα σε όλους.</p>
+<a class="reference internal image-reference" href="../../_images/josm_inteface2.png"><img alt="Επεξεργαστής JOSM." class="align-right" src="../../_images/josm_inteface2.png" style="width: 548.35px; height: 367.4px;" /></a>
+<div class="section" id="id1">
+<h3>Κύρια χαρακτηριστικά<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Τυπική διεπαφή ΓΣΠ (GIS) με μπαρα εργαλείων, έλεγχο απεικόνισης (zoom, pan. etc), είδη γραμμών, εικονίδια και διαχείρηση επιθεμάτων.</p>
+</li>
+<li><p class="first">Μεταφόρτωση διανυσματικών δεδομένων OSM.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Φόρτωση τοπικών δεδομένων γνωστών τύπων:</dt>
+<dd><ul class="first last simple">
+<li>NMEA-0183: .nmea, .nme, .nma, .log, .txt</li>
+<li>OSM αρχεία: .osm, .xlm, .osmbz2, .osmbz</li>
+<li>OSM αρχεία μεταβολών: .osc, .osc.bz2, .osc.bz, .osc.gz</li>
+<li>εικόνες (.jpg)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Εικόνες: Απεικόνιση χαρτών από OSM, Bingsat, Lansat, MapBox, MapQuest Open Aerial ή οποιαδήποτε άλλη πηγή τύπου WMS.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Εργαλεία διόρθωσης: με εξελιγμένο γραφικό περιβάλλον σχεδίασης.</dt>
+<dd><ul class="first last simple">
+<li>Κόμβοι: ένωση, σύνδεση, αποκόληση, διάκριση, στοίχιση σε κύκλο, στοίχιση σε γραμμή, προσθήκη σε διαδρομή και πολλά άλλα.</li>
+<li>Διαδρομές: κόψιμο, συνδυασμός, αναστροφή, απλοποίηση, αποκόληση διαδρομών και άλλα.</li>
+<li>Επιφάνειες: σύνδεση επικαλυπτόμενων περιοχών, δημιουργία πολυ-πολυγώνων και άλλα..</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Ηχητική χαρτογράφηση με διαχείριση ήχου.</p>
+</li>
+<li><p class="first">Φωτογραφική χαρτογράφηση με διαχείριση φωτογραφιών.</p>
+</li>
+<li><p class="first">Εξειδικευμένα πρόσθετα: μέσω της διεπαφής είναι διαθέσιμη μια λίστα με πρόσθετες λειτουργίες έτοιμες για εγκατάσταση και χρήση.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>Υλοποιημένα πρότυπα<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Το JOSM υποστηρίζει το πρότυπο WMS OGC από την μεριά του χρήστη, αλλά χρησιμοποιεί το <a class="reference external" href="http://wiki.openstreetmap.org/wiki/API_v0.6">OSM API</a> για την επικοινωνία με την βάση δεδομένων.</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Λεπτομέρειες<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><strong>Κεντρική Ιστοσελίδα:</strong> <a class="reference external" href="http://http://josm.openstreetmap.de/">http://http://josm.openstreetmap.de/</a></p>
+<p><strong>Άδεια:</strong> JOSM, and all its integral parts, are released under the GNU General Public License v2 or later. Note: This is not valid for JOSM plugins. These are not considered an integral part of JOSM and may be under any license.</p>
+<p><strong>Έκδοση Λογισμικού:</strong> r7347</p>
+<p><strong>Υποστηριζόμενες Πλατφόρμες:</strong> Windows, Linux, Mac</p>
+<p><strong>Διεπαφές API:</strong> <a class="reference external" href="http://wiki.openstreetmap.org/wiki/API_v0.6">OSM API</a></p>
+<p><strong>Υποστήριξη:</strong> <a class="reference external" href="http://www.osgeo.org/search_profile">http://www.osgeo.org/search_profile</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

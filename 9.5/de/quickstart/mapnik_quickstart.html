@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Mapnik Quickstart &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 9.5 Inhaltsverzeichnis" href="../overview/overview.html" />
+    <link rel="next" title="MapProxy Quickstart" href="mapproxy_quickstart.html" />
+    <link rel="prev" title="MapGuide Quick Start" href="mapguide_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-mapnik3.png"><img alt="project logo" class="align-right" src="../../_images/logo-mapnik3.png" style="width: 192.0px; height: 56.0px;" /></a>
+<div class="section" id="mapnik-quickstart">
+<h1>Mapnik Quickstart<a class="headerlink" href="#mapnik-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>Mapnik ist eine Werkzeug um Kartenanwendungen zu entwickeln. Vor allem wird Mapnik dazu eingesetzt um Karten zu generieren. Mapnik ist leicht erweiterbar und sowohl für Web- als auch Desktop-Entwicklung geeignet.</p>
+<div class="section" id="mapnik-python">
+<h2>Mapnik &amp; Python<a class="headerlink" href="#mapnik-python" title="Permalink to this headline">¶</a></h2>
+<p>Mapnik und die dazugehörigen Python-Abhängigkeiten sind auf dem aktuellen System installiert und können über entsprechende Scripts angesprochen werden.</p>
+<p>Karten über Python zu erstellen ist mit Mapnik ganz einfach. Öffnen Sie das Terminal und tippen Sie <cite>python</cite> in der Kommandozeile. Nach dem Bestätigen öffnet sich der Python-Interpreter. Geben Sie dort folgendes ein:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mapnik2</span><span class="o">,</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">mapnik2</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">style</span> <span class="o">=</span> <span class="s">&#39;/usr/local/share/mapnik/demo/population.xml&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapnik2</span><span class="o">.</span><span class="n">load_map</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">style</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">zoom_all</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapnik2</span><span class="o">.</span><span class="n">render_to_file</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="s">&#39;map.png&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;xdg-open map.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Der oben dargestellte Code beruht darauf, dass ein XML Stylesheet an den Mapnik übergeben wird.
+Hieraus werden die Layerdaten und die dazugehörigen Stylings gelesen. Diese können zum Beispiel
+innerhalb von QGIS mit dem Quantumnik erstellt werden: <a class="reference external" href="http://plugins.qgis.org/plugins/quantumnik/">http://plugins.qgis.org/plugins/quantumnik/</a></p>
+</div>
+</div>
+<div class="section" id="mapnik-openlayers">
+<h2>Mapnik &amp; OpenLayers<a class="headerlink" href="#mapnik-openlayers" title="Permalink to this headline">¶</a></h2>
+<p>Außerdem ist eine Basis-Demo Anwendung vorhanden. Hier wird Mapnik dazu genutzt um Kacheln im OSM/Google Tile-Schema in eine OpenLayers Anwendung einzubinden.</p>
+<p>Die Demo benutzt den für den Mapnik entwickelten Tileserver &#8220;TileLite&#8221;</p>
+<blockquote>
+<div><ul class="simple">
+<li>Mehr Informationen über TileLite: <a class="reference external" href="https://github.com/springmeyer/tilelite">https://github.com/springmeyer/tilelite</a></li>
+</ul>
+</div></blockquote>
+<p>Um die Demo zu starten müssen folgende Schritte durchgeführt werden:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Klick <em class="menuselection">Desktop ‣ Spatial Tools ‣ Start Mapnik &amp; TileLite</em></li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p class="first">Der Server startet nun in einem Terminal Fenster, welches geöffnet bleibt um Basis-Debug-Informationen auszugeben.</p>
+</li>
+<li><p class="first">Falls sich das Terminal Fenster nicht öffnet, versuchen Sie TileLite noch einmal zu installieren und starten Sie den Server über die Kommandozeile:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo easy_install tilelite
+$ liteserv.py /usr/local/share/mapnik/demo/population.xml
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple">
+<li>Um sicher zu gehen, dass der Server läuft besuchen Sie die TileLite Willkommens-Seite auf <a class="reference external" href="http://localhost:8012">http://localhost:8012</a></li>
+<li>Nun rufen Sie das TileLite OpenLayers Beispiel &#8220;World Population&#8221; auf:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Die Seite finden sie unter: <a class="reference external" href="../../mapnik/local.html">http://localhost/mapnik/local.html</a></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="wie-geht-es-weiter">
+<h2>Wie geht es weiter?<a class="headerlink" href="#wie-geht-es-weiter" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Mapnik Tutorials</p>
+<p>Lesen Sie das <a class="reference external" href="https://github.com/mapnik/mapnik/wiki/MapnikTutorials">Tutorial</a> um mehr über Mapnik zu lernen.</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">Erkunden Sie die Dateien auf der DVD</p>
+<p>Schauen Sie sich die bereitgestellten <a class="reference external" href="file:///usr/local/share/mapnik/">Dateien</a> auf der DVD an.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

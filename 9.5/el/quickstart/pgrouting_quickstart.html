@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης pgRouting &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Καλώς ήρθατε στο OSGeo-Live" href="../index.html" />
+    <link rel="next" title="Οδηγός γρήγορης εκκίνησης PostGIS" href="postgis_quickstart.html" />
+    <link rel="prev" title="Εγχειρίδιο Γρήγορης Εκκίνησης OTB" href="otb_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.pgrouting.org"><img alt="pgRouting logo" class="align-right" src="../../_images/logo-pgRouting5.png" style="width: 128.0px; height: 124.0px;" /></a>
+<div class="section" id="pgrouting">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης pgRouting<a class="headerlink" href="#pgrouting" title="Permalink to this headline">¶</a></h1>
+<p>Το pgRouting είναι μια επέκταση στην <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a> στην οποία προσθέτει διαδικασίες δρομολόγησης στις <a class="reference external" href="http://www.postgis.org">PostGIS</a>/<a class="reference external" href="http://www.postgresql.org">PostgreSQL</a>.</p>
+<p>Αυτό το κείμενο περιγράφει πώς να ανοίξετε μια βάση δεδομένων από την γραμμή εντολών και να εκτελέσετε μια απλή αναζήτηση ελάχιστης διαδρομής στα δεδομένα επίδειξης.</p>
+<div class="section" id="id1">
+<h2>Εκτελώντας το pgRouting<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Ανοίξτε ένα παράθυρο <em class="menuselection">Applications ‣ Accessories ‣ Terminal</em> και συνδεθείτε στην <tt class="docutils literal"><span class="pre">pgrouting</span></tt> βάση δεδομένων:</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre>psql -U user pgrouting
+</pre></div>
+</div>
+<ul class="simple">
+<li>Πληκτρολογήστε <strong class="command">\d</strong> και θα δείτε όλους τους διαθέσιμους πίνακες:</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre>                      Πίνακας σχέσεων
+ Σχήμα  |       Όνομα         |  Τύπος   | Χρήστης
+--------+---------------------+----------+----------
+ public | classes               | table | user
+ public | geography_columns   | view    | user
+ public | geometry_columns      | table | user
+ public | nodes                 | table | user
+ public | spatial_ref_sys       | table | user
+ public | types                 | table | user
+ public | vertices_tmp          | table | user
+ public | vertices_tmp_id_seq | sequence | user
+ public | ways                  | table | user
+(9 γραμμές)
+</pre></div>
+</div>
+<ul class="simple">
+<li>Εκτελέστε στην συνάρτηση ελάχιστης διαδρομής Dijkstra:</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">shortest_path</span><span class="p">(</span><span class="s1">&#39;</span>
+<span class="s1">                SELECT gid as id,</span>
+<span class="s1">                         source::integer,</span>
+<span class="s1">                         target::integer,</span>
+<span class="s1">                         length::double precision as cost</span>
+<span class="s1">                        FROM ways&#39;</span><span class="p">,</span>
+                <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre>     vertex_id | edge_id |       cost
+    -----------+---------+---------------------
+           100 |    1457 |  0.0152981335887719
+           554 |     543 |  0.0658986376594475
+           553 |     542 |  0.0720522950545032
+           ... |     ... |  ...
+          1803 |    1902 |  0.1000754339802650
+           600 |      -1 |                   0
+(77 γραμμές)
+</pre></div>
+</div>
+<ul class="simple">
+<li>Δοκιμάστε την συνάρτηση μετατροπής (wrapper) ώστε να πάρετε το αποτέλεσμα σε μια άλλη μορφή:</li>
+</ul>
+<div class="highlight-sql"><div class="highlight"><pre><span class="k">SELECT</span> <span class="n">gid</span><span class="p">,</span> <span class="n">AsText</span><span class="p">(</span><span class="n">the_geom</span><span class="p">)</span> <span class="k">AS</span> <span class="n">the_geom</span>
+        <span class="k">FROM</span> <span class="n">dijkstra_sp</span><span class="p">(</span><span class="s1">&#39;ways&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">600</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-sql"><div class="highlight"><pre>  gid   |                              the_geom
+--------+---------------------------------------------------------------
+    533 | MULTILINESTRING((-105.0205242 39.7613979,-105.0205115 39.7620158))
+    534 | MULTILINESTRING((-105.0205115 39.7620158,-105.0205151 39.7632155))
+    535 | MULTILINESTRING((-105.0205151 39.7632155,-105.0205098 39.764433))
+        ... | ...
+   9395 | MULTILINESTRING((-104.9921535 39.7209342,-104.9921516 39.722527))
+   9400 | MULTILINESTRING((-104.9921793 39.7147876,-104.9923595 39.714781))
+(76 γραμμές)
+</pre></div>
+</div>
+<ul class="simple">
+<li>Με την εντολή <strong class="command">\q</strong> εγκαταλείπετε το κέλυφος της PostgreSQL.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>Τεκμηρίωση<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>pgRouting Website</strong> - Επισκεφτείτε τον ιστοχώρο <a class="reference external" href="http://www.pgrouting.org">http://www.pgrouting.org</a> για να μάθετε περισσότερα για το pgRouting.</li>
+<li><strong>Workshop on DVD</strong> - Σε αυτό το DVD περιλαμβάνονται τα αρχεία του FOSS4G 2010 pgRouting workshop <cite>&#8220;FOSS4G routing with pgRouting tools, OpenStreetMap road data and GeoEx&#8221;</cite>, διαθέσιμα στο: <tt class="file docutils literal"><span class="pre">/usr/share/pgrouting/workshop/</span></tt></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Για να εγκαταστήσετε την τελευταία έκδοση από το εγχειρίδιο εκμάθησης ανοίξτε ένα τερματικό και εκτελέστε την ακόλουθη εντολή <tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span> <span class="pre">&amp;&amp;</span> <span class="pre">apt-get</span> <span class="pre">upgrade</span> <span class="pre">pgrouting-workshop</span></tt></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

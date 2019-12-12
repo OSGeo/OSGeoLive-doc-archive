@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Style Layer Descriptor (SLD) &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Estándares del Open GeoSPatial Consortium" href="standards.html" />
+    <link rel="next" title="Sensor Observation Service (SOS)" href="sos_overview.html" />
+    <link rel="prev" title="Sensor Model Language (SensorML)" href="sensorml_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-OGC-left3.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-left3.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/logo-OGC-right3.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right3.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="style-layer-descriptor-sld">
+<h1>Style Layer Descriptor (SLD)<a class="headerlink" href="#style-layer-descriptor-sld" title="Permalink to this headline">¶</a></h1>
+<p>El estandar OGC® Styled Layer Descriptor (SLD)
+proporciona los artefactos para la simbolización y coloreado de coberturas y geometrías geográficas. Se utiliza generalmente para aplicar estilos a los Web Map Services, o los estilos de un GML proporcionado por Web Feature Services.  (<a class="reference external" href="http://www.opengeospatial.org/standards/sld">http://www.opengeospatial.org/standards/sld</a>)</p>
+<a class="reference internal image-reference" href="../../_images/sld3.jpg"><img alt="SLD en contexto" src="../../_images/sld3.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>El control fino de la representación gráfica de datos es un requerimiento fundamental de muchas aplicaciones de mapas. La habilidad para definir reglas de definición de estilos requiere un lenguaje de estilos que tanto las parte cliente, como la parte servidora puedan entender.</p>
+<p>El actual estandar OGC Web Map Service (WMS) expone un proveedor de información (en inglés <em>&#8216;information provider&#8217;</em>) para especificar opciones de estilo a través unas colecciones preestablecidas de plantillas visuales para cada conjunto disponible. Sin embargo, mientras que una implementación WMS actual puede proporcionar al usuario una serie de opciones de estilo a ejegir, la implementación WMS solo puede deicir al usuario el nombre de cada uno de ellos. No puede decir al usuario cómo quedará cada plantilla de estilos en el mapa. Y más importante aún, el usuario no tiene una manera de definir sus propias reglas de estilo.</p>
+<p>La habilidad para un cliente de definir estas reglas requiere un lenguaje de estilos que tanto las parte cliente, como la parte servidora puedan entender. El estandar OGC Symbology  Encoding (SE) (<a class="reference external" href="http://www.opengeospatial.org/standards/symbol">http://www.opengeospatial.org/standards/symbol</a>) especifica el formato para ese tipo de lenguaje de estilos de mapas. El perfil SLD del estandar WMS permite la aplicación de SE a capas WMS utilizando extensiones de operaciones WMS. Adicionalmente, SLD define una operación para el acceso estandarizado a símbolos de leyenda que se puede almacenar remotamente en un servidor para ser utilizado por múltiples operaciones.</p>
+<p>Hay que notar que adicionalmente al diseño de la salida de una implementación WMS, SE también se puede utilizar para diseñar la salida de implementaciones WFS e implementaciones del standar de interface OGC Web Coverage Service (WCS) Interface Standard.</p>
+<div class="section" id="ver-tambien">
+<h2>Ver también<a class="headerlink" href="#ver-tambien" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="fe_overview.html"><em>Filter Encoding (FE)</em></a></li>
+<li><a class="reference internal" href="kml_overview.html"><em>KML Encoding Standard (KML)</em></a></li>
+<li>Symbology Encoding</li>
+<li><a class="reference internal" href="gml_overview.html"><em>Geography Markup Language (GML)</em></a></li>
+<li><a class="reference internal" href="wms_overview.html"><em>Web Map Service (WMS)</em></a></li>
+<li><a class="reference internal" href="wfs_overview.html"><em>Web Feature Service (WFS)</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

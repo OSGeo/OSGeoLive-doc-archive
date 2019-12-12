@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы с GeoServer &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <img alt="Логотип проекта" class="align-right" src="../../_images/logo-GeoServer25.png" />
+<div class="section" id="geoserver">
+<h1>Начало работы с GeoServer<a class="headerlink" href="#geoserver" title="Permalink to this headline">¶</a></h1>
+<p>GeoServer&nbsp;— это приложение, написанное на языке Java, обслуживающее карты и
+данные для их отображения в сторонних клиентах.</p>
+<p>Эта глава описывает пути решения следующих задач:</p>
+<blockquote>
+<div><ul class="simple">
+<li>добавление векторных и растровых данных в GeoServer;</li>
+<li>применение стилей оформления объектов для их отображения на карте;</li>
+<li>тестирование отображения объектов в виде карт;</li>
+<li>ознакомление с клиентами, которые могут отобразить ваши карты.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="gs">
+<h2>Запуск GeoServer<a class="headerlink" href="#gs" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Выберите пункт <span class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</span> в меню.</li>
+<li>Приложению потребуется некоторое время для запуска.</li>
+<li>Перейдите на веб-страницу <a class="reference external" href="http://localhost:8082/geoserver/web">http://localhost:8082/geoserver/web</a></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/geoserver-login12.png"><img alt="../../_images/geoserver-login12.png" src="../../_images/geoserver-login12.png" style="width: 562.1px; height: 289.8px;" /></a>
+</div>
+<div class="section" id="id1">
+<h2>Первый просмотр<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>При первом открытии страницы GeoServer вы увидите форму ввода сверху экрана, вы должны войти, используя имя пользователя <em>admin</em> и пароль <em>geoserver</em>. После этого вы увидите <em>admin page</em>.</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-welcome12.png"><img alt="../../_images/geoserver-welcome12.png" src="../../_images/geoserver-welcome12.png" style="width: 556.5px; height: 350.0px;" /></a>
+<p>Пункт <strong>Layer Preview</strong>, расположенный слева сверху в меню <em>Data</em>, позволяет сделать предварительный просмотр всех слоёв, загруженных на сервер.</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-layerpreview12.png"><img alt="../../_images/geoserver-layerpreview12.png" src="../../_images/geoserver-layerpreview12.png" style="width: 784.7px; height: 458.5px;" /></a>
+<p>Перейдите к нижней части страницы и нажмите на ссылку <strong>OpenLayers</strong> в строке <strong>tiger-ny</strong>, после этого откроется новое окно предварительного просмотра некоторых выборочных данных.</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-preview12.png"><img alt="../../_images/geoserver-preview12.png" src="../../_images/geoserver-preview12.png" style="width: 260.4px; height: 398.3px;" /></a>
+<p>Вы можете менять масштаб карты тремя разными способами:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Щёлкать по шкале увеличения слева на экране, чем выше&nbsp;— тем больше увеличение.</li>
+<li>Используя колесо мыши (если таковое имеется), прокрутка от себя приводит к увеличению масштаба, а к себе&nbsp;— к уменьшению.</li>
+<li>Созданием бокса в окне карты с зажатой клавишей Shift&nbsp;— это приблизит выбранную боксом область (настолько, насколько позволит экстент).</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple">
+<li>Поэкспериментируйте с этим видом и посмотрите другие примеры.</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>Загрузка данных<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Вы не сможете произвести следующие действия, если вы работаете с файловой системой, смонтированной только для чтения (например с DVD-диска). Вам понадобится установить GeoServer с DVD на жесткий диск или создать систему, поддерживающую USB-накопители.</p>
+</div>
+<p>В этом примере мы будем использовать набор данных <a class="reference internal" href="../overview/naturalearth_overview.html"><em>Natural Earth</em></a> который включён в OSGeo-Live (<code class="file docutils literal"><span class="pre">/usr/local/share/data/natural_earth/</span></code>).</p>
+<p>Нам необходимо создать хранилище для наших данных. С начальной страницы GeoServer перейдите к <em>Stores</em> и затем выберите &#8220;Add new Store&#8221;. Вы увидите такую страницу:</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-newstore12.png"><img alt="Страница создания хранилища данных" class="align-center" src="../../_images/geoserver-newstore12.png" style="width: 793.8px; height: 457.1px;" /></a>
+<p>Выберите <span class="guilabel">Directory of spatial files</span>:</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-new-vector12.png"><img alt="Заполнение поля имя хранилища данных" class="align-center" src="../../_images/geoserver-new-vector12.png" style="width: 805.7px; height: 457.1px;" /></a>
+<p>Напишите имя для хранилища данных, например, <em>Natural Earth</em>, и заполните URL к папке с данными в этой форме <code class="file docutils literal"><span class="pre">/usr/local/share/data/natural_earth/</span></code>.</p>
+<p>Вы можете использовать кнопку поиска, чтобы найти папку, если ваши данные где-то ещё. Нажмите <span class="guilabel">save</span>.</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-naturalearth12.png"><img alt="Хранилище данных Natural Earth" class="align-center" src="../../_images/geoserver-naturalearth12.png" style="width: 536.2px; height: 303.8px;" /></a>
+<p>Нажмите <span class="guilabel">publish</span> для одного из слоёв, чтобы завершить добавление данных. Вы перейдёте на страницу <em>Layers</em>:</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-publish12.png"><img alt="Страница публикации слоя" class="align-center" src="../../_images/geoserver-publish12.png" style="width: 532.7px; height: 1051.4px;" /></a>
+<p>Пролистнув страницу вниз, вы увидите, что GeoServer заполнил много полей для вас. Когда вы достигнете <span class="guilabel">Coordinate Reference System</span>, вы увидите надпись UNKNOWN под формой <em>Native SRS</em>. Вам следует заполнить форму (<em>declared SRS</em>) чтобы убедиться в том, что GeoServer получил данные. Для нашего примера напечатайте в форме EPSG:4326, можете проверить правильность введённого по адресу <a class="reference external" href="http://prj2epsg.org/search">http://prj2epsg.org/search</a> в строке, которую увидите при нажатии ссылки рядом с &#8220;UNKNOWN&#8221;. Затем нажмите <span class="guilabel">Compute from data</span> и <span class="guilabel">Compute from native bounds</span>, чтобы заполнить ограничивающие прямоугольники. Наконец, нажмите <span class="guilabel">save</span> — так вы опубликуете свой первый слой.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Если вы посмотрите на слой на странице предварительного просмотра, то он будет выглядеть не очень красиво, это всего лишь стиль по умолчанию. В следующем разделе мы увидим, как создавать более красивые стили.</p>
+</div>
+<p>Вы можете  следовать теми же шагами при работе с другими слоями, используя кнопку <span class="guilabel">Add a new resource</span> на странице слоев. Выберите хранилище <em>natural earth</em> из списка для возврата к странице хранилищ.</p>
+<div class="section" id="id3">
+<h3>Стилизация<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>При создании стилей для набора данных GeoServer использует стандарт OGC <a class="reference internal" href="../standards/sld_overview.html"><em>Styled Layer Descriptors (SLD)</em></a>. Он представлен XML-файлами, описывающими правила, которые используются для применения способов отображения данных.</p>
+<p>Для начала стилизуем наборы данных Land и Ocean. Вы можете создавать SLD-файлы, используя простой текстовый редактор, но иногда проще использовать графический редактор. Для этого существует ряд программ, вам может понравиться uDig, поскольку он позволяет открывать шейп-файлы и применять стили, используя графический интерфейс, а также в нём представлен простой редактор XML.</p>
+<div class="section" id="ug">
+<h4>Использование uDig для создания простых стилей<a class="headerlink" href="#ug" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Детальное описание использования uDig смотрите здесь: <a class="reference internal" href="udig_quickstart.html"><em>Начало работы с uDig</em></a></p>
+</div>
+<p>Для начала откроем uDig и добавим шейп-файлы (используя кнопку <em>add data</em> в верхнем левом углу). Перенесём слои &#8220;10m_land&#8221;
+и &#8220;10m_ocean&#8221; в окно карты. uDig автоматически применил стиль (поэтому мы можем видеть данные).</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-udig_startup12.png"><img alt="Стиль по умолчанию в uDig" class="align-center" src="../../_images/geoserver-udig_startup12.png" style="width: 773.5px; height: 357.7px;" /></a>
+<p>Очевидно, что оранжевый океан выглядит немного странно. В списке слоёв <a class="reference internal" href="../../zh/quickstart/geoserver_quickstart.html#layer-list"><span>Layer list</span></a> выберите кнопку стилей (она похожа на палитру красок).</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-layer-chooser12.png" id="layer-list"><img alt="Окно слоев" class="align-center" id="layer-list" src="../../_images/geoserver-layer-chooser12.png" style="width: 177.8px; height: 167.3px;" /></a>
+<p>Откроется <a class="reference internal" href="../../zh/quickstart/geoserver_quickstart.html#style-pane"><span>Style Pane</span></a> — в простом окне можео выбрать приятный голубой цвет для океанов нажатием на цветные прямоугольники в окне заливки и выбором необходимого цвета простым щелчком. Также можно повысить непрозрачность заливки до 100%, чтобы она выглядела лучше. Для границ также можно выбрать голубой цвет.</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-style-pane12.png" id="style-pane"><img alt="Панель стилей" class="align-center" id="style-pane" src="../../_images/geoserver-style-pane12.png" style="width: 680.4px; height: 501.9px;" /></a>
+<p>Когда все сделано, нажмите <code class="docutils literal"><span class="pre">OK</span></code>, и uDig покажет изменения.</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-blue-ocean12.png"><img alt="Синий океан" class="align-center" src="../../_images/geoserver-blue-ocean12.png" style="width: 770.7px; height: 394.8px;" /></a>
+<p>Теперь давайте изменим цвет суши с зелёного на более правдоподобный и повторим все шаги по изменению цвета в слое <em>land</em>. Если ни один из цветов по умолчанию вам не приглянулся, можно открыть <code class="docutils literal"><span class="pre">define</span> <span class="pre">custom</span> <span class="pre">colors</span></code>, чтобы создать свой цвет.</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-custom-colour12.png"><img alt="Выбор более красивого цвета земли" class="align-center" src="../../_images/geoserver-custom-colour12.png" style="width: 359.1px; height: 208.6px;" /></a>
+<p>В результате получаем красивую базовую карту мира.</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-basic-world12.png"><img alt="Базовая карта мира" class="align-center" src="../../_images/geoserver-basic-world12.png" style="width: 743.4px; height: 375.2px;" /></a>
+</div>
+<div class="section" id="id4">
+<h4>Добавление стиля в GeoServer<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>Теперь необходимо перенести эти стили в GeoServer — в окне стилей есть кнопка <em>export</em>, позволяющая сохранить SLD-файл, который определяет наш стиль. Как только мы сохранили два стиля, можно перейти к странице GeoServer <em>admin page</em> и выбрать <code class="docutils literal"><span class="pre">Styles</span></code> (снизу секции <code class="docutils literal"><span class="pre">Data</span></code>). Затем выбираем <code class="docutils literal"><span class="pre">Add</span> <span class="pre">New</span> <span class="pre">Style</span></code>, снизу страницы появится форма загрузки и кнопка поиска. Нажатие на неё позволяет произвести поиск только что сохранённых файлов на жёстком диске. Как только нужные файлы найдены, жмём <em>upload</em> (находится рядом с кнопкой поиска), и копия файла появляется в редакторе. Если щёлкнуть по кнопке <em>validate</em>, то подсвеченные линии покажут, где есть ошибки, но можно также безопасно её проигнорировать (или удалить ненужные строки).</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-add-style12.png"><img alt="Добавление стиля в GeoServer" class="align-center" src="../../_images/geoserver-add-style12.png" style="width: 765.1px; height: 455.7px;" /></a>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Добавление стиля в слой<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Нажмите <span class="guilabel">Layers</span> в левом меню окна GeoServer. Нажмите на название слоя (т.е. <em>10m_land</em>), затем выберите вкладку <span class="guilabel">Publishing</span> и замените <span class="guilabel">Default Style</span> на стиль, загруженный ранее. Теперь перейдите к странице <em>Layer Preview</em>, чтобы проверить, что все выглядит хорошо.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Здесь находятся примеры стилей для всех слоёв Natural Earth.</p>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Добавление растра<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Каталог Natural Earth содержит вложенный каталог <code class="file docutils literal"><span class="pre">HYP_50M_SR_W</span></code>, в котором находится растровое изображение. Вы можете загрузить его напрямую в GeoServer, перейдя к странице stores и выбрав <span class="menuselection">New Stores ‣ World Image</span> и написав <code class="file docutils literal"><span class="pre">/home/user/data/natural_earth/HYP_50M_SR_W/HYP_50M_SR_W.tif</span></code> в форме ввода <span class="guilabel">URL</span>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geoserver-raster.png"><img alt="Добавление растра" class="align-center" src="../../_images/geoserver-raster.png" style="width: 394.8px; height: 342.3px;" /></a>
+</div></blockquote>
+<p>Нажмите <span class="guilabel">Save</span>, вы перейдёте к <em>New Layers Chooser</em>, затем опубликуйте слой и нажмите <span class="guilabel">Save</span>, чтобы закончить добавление растра. Если вы перейдете к странице <em>Layers Preview</em>, то увидите новое изображение.</p>
+</div>
+<div class="section" id="wms">
+<h2>Клиенты для просмотра WMS-слоев<a class="headerlink" href="#wms" title="Permalink to this headline">¶</a></h2>
+<p>Существует широкий выбор клиентов для использования <a class="reference internal" href="../standards/wms_overview.html"><em>WMS</em></a>, получаемого из GeoServer. Здесь приведён перечень некоторых из них.</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="../overview/udig_overview.html"><em>uDig</em></a></li>
+<li><a class="reference internal" href="../overview/openlayers_overview.html"><em>OpenLayers</em></a></li>
+<li><a class="reference internal" href="../overview/atlasstyler_overview.html"><em>Atlas Styler</em></a></li>
+<li><a class="reference internal" href="../overview/mapbender_overview.html"><em>MapBender</em></a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

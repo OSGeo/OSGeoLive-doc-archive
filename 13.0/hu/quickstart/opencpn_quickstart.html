@@ -1,0 +1,138 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OpenCPN gyorstalpaló &#8212; OSGeoLive 13.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '13.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="OpenJUMP GIS gyorstalpaló" href="openjump_quickstart.html" />
+    <link rel="prev" title="ncWMS Quickstart" href="ncWMS_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.opencpn.org"><img alt="../../_images/logo_opencpn.png" class="align-right" src="../../_images/logo_opencpn.png" /></a>
+<div class="section" id="opencpn-quickstart">
+<h1>OpenCPN gyorstalpaló<a class="headerlink" href="#opencpn-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>Az OpenCPN egy compakt térkép rajzoló és navigátor (CPN). Mint mindig, soha ne használjon egy szoftvert vagy egy elektronikus berendezést az egyetlen navigációs eszközként, és tartsa az egyik szemét ablakon.</p>
+<div class="section" id="running">
+<h2>Futtatás<a class="headerlink" href="#running" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<div class="section" id="setting-up-your-charts">
+<h3>Térképek beállítása<a class="headerlink" href="#setting-up-your-charts" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>Mielőtt az OpenCPN a LiveDVD-ről futtatná, aktiválnia kell a minta adatokat. Ez a NOAA ingyenes tengeri térképek megosztásának feltétele.Amikor először futtatja az OpenCPN-t a  <span class="menuselection">Geospatial ‣ Navigation and Maps</span> menüből vagy asztali ikonnal,  egy beállítás jelenik meg, mellyel ezt automatikusan megteheti.</p>
+<p>További US tengeri térképeket tölthet le a NOAA-tól a <a class="reference external" href="http://www.charts.noaa.gov">http://www.charts.noaa.gov</a> címről.</p>
+</div>
+<div class="section" id="setting-up-your-gps">
+<h3>GPS-ének beállítása<a class="headerlink" href="#setting-up-your-gps" title="Hivatkozás erre a fejezetcímre">¶</a></h3>
+<p>Ha van egy csatlakoztatott GPS eszköze, akkor el kell indítania a gpsd szolgáltatást. Ehhez futtassa:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">dpkg</span><span class="o">-</span><span class="n">reconfigure</span> <span class="n">gpsd</span>
+</pre></div>
+</div>
+<p>és</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">gpsd</span> <span class="n">start</span>
+</pre></div>
+</div>
+<p>A BlueTooth GPS használóknak különös gondossággal kell olvasniuk a no-probe beállításról.</p>
+<ul class="simple">
+<li>«<cite>xgps</cite>» jó program annak ellenőrzésére, hogy a Gpsd látja az ön GPS-ét.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="documentation">
+<h2>Dokumentáció<a class="headerlink" href="#documentation" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<ul class="simple">
+<li>A dokumentáció elérhető a  <a class="reference external" href="../../opencpn/help_en_US.html">Help menüből</a>, vagy közvetlenül <a class="reference external" href="http://www.opencpn.org/ocpn/opencpn_manual">http://www.opencpn.org/ocpn/opencpn_manual</a></li>
+<li><a class="reference external" href="../../opencpn/tips.html">Tippek kezdőknek</a></li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2>Lásd még<a class="headerlink" href="#see-also" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A FRIB modul segítségével aktuális időjárási és hullám előrejelzés adatokat lehet letölteni, és a térképekre rátenni.. A <a class="reference internal" href="../overview/zygrib_overview.html"><span class="doc">zyGrib software</span></a>  (szintén ezen a lemezen) egy egyszerű módja arra, hogy letölthetse ezeket. Lásd a <a class="reference internal" href="zygrib_quickstart.html"><span class="doc">zyGrib gyorstalpalót</span></a>  a részletekért. Kapcsolja be a modult az OpenCPN konfigurációs menü jobb oldali fülén egy új szélzsák ikon jelenik meg a fő eszköztár jobb végén.</p>
+<p>Ha a zyGrib fájlt a bejelentkezési könyvtárába mentette, akkor navigáljon a <code class="file docutils literal"><span class="pre">/home</span></code> mappába és válassza a  <code class="docutils literal"><span class="pre">user</span></code> könyvtárat mint a GRIB adatkönyvtár. Majd jobb kattintás a fájl lista hátterébe a rejtett fájlok megjelenítéséhez, a <code class="docutils literal"><span class="pre">.zygrib</span></code> könyvtár tartalmazza a letöltött GRIB fájlokat.</p>
+<p>Nincs szükség a fájl kitömörítésére. Kattintson a „&gt;”-ra  a fájlnév bal oldalán és válasszon a elérhető előrejelzési időpontok közül.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

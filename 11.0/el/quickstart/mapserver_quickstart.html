@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης MapServer &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Καλώς ήρθατε στο OSGeo-Live" href="../index.html" />
+    <link rel="next" title="Εγχειρίδιο Γρήγορης Εκκίνησης MapSlicer" href="mapslicer_quickstart.html" />
+    <link rel="prev" title="Εγχειρίδιο Γρήγορης Εκκίνησης MapProxy" href="mapproxy_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://mapserver.org/"><img alt="Project logo" class="align-right" src="../../_images/logo-mapserver-new.png" style="width: 45.5px; height: 65.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="mapserver">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης MapServer<a class="headerlink" href="#mapserver" title="Permalink to this headline">¶</a></h1>
+<p>Ο MapServer είναι ένα <a class="reference external" href="http://www.opensource.org">λογισμικό ανοικτού κώδικα</a> απόδοσης γεωγραφικών δεδομένων. Σας επιτρέπει να δημιουργήσετε &#8220;εικόνες γεωγραφικών χαρτών&#8221;.</p>
+<p>Αυτό το εγχειρίδιο περιγράφει πώς να:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Δημιουργήσετε ένα αρχείο χάρτη (mapfile)</li>
+<li>Οπτικοποιήσετε ένα χάρτη χρησιμοποιώντας μια Διαδικτυακή Υπηρεσία Διαμοιρασμού Χαρτών(Web Map Service-WMS)</li>
+<li>Προσθέσετε ένα νέο θεματικό επίπεδο (layer) από ένα shapefile</li>
+<li>Βελτιώσετε την εμφάνιση ενός θεματικού επιπέδου</li>
+</ul>
+</div></blockquote>
+<div class="section" id="mapfile">
+<h2>Δημιουργώντας ένα mapfile<a class="headerlink" href="#mapfile" title="Permalink to this headline">¶</a></h2>
+<p>Αρχικά, πρόκειται να δημιουργήσουμε ένα mapfile.</p>
+<ol class="arabic simple">
+<li>Ανοιξτε οποιοδήποτε επεξεργαστή κειμένου (Ο Mousepad είναι ο προεπιλεγμένος επεξεργαστής κειμένου σε αυτό το live dvd: <span class="menuselection">Applications ‣ Accessories ‣ Mousepad</span>).</li>
+<li>Δημιουργήστε το αρχείο&#8221;mapserver_quickstart.map&#8221; στον προσωπικό σας φάκελο: <code class="file docutils literal"><span class="pre">/home/user/mapserver_quickstart.map</span></code></li>
+</ol>
+<p>Το αρχείο θα πρέπει να περιέχει το ακόλουθο περιεχόμενο:</p>
+<div class="highlight-python"><div class="highlight"><pre>MAP
+  NAME &quot;MAPSERVER QUICKSTART&quot;
+  STATUS ON
+  EXTENT -137 29 -53 88
+  UNITS DEGREE
+  SHAPEPATH &quot;/home/user/data/natural_earth/&quot;
+  SIZE 800 600
+
+  PROJECTION
+    &quot;init=epsg:900913&quot;
+  END
+
+  OUTPUTFORMAT
+    NAME &#39;AGG/PNG&#39;
+    DRIVER AGG/PNG
+  END
+
+  LAYER
+    NAME &quot;Admin Countries&quot;
+    STATUS DEFAULT
+    TYPE POLYGON
+    DATA &quot;10m_admin_0_countries&quot;
+    CLASS
+      STYLE
+        COLOR 246 241 223
+        OUTLINECOLOR 0 0 0
+      END
+    END
+  END
+
+END
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Αυτό οτο παράδειγμα χρησιμοποιεί ένα σύνολο δεδομένων που περιέχει στοιχεία για το φυσικό περιβάλλον της γης, το οποίο είναι προεγκατεστημένο στο live dvd: <code class="file docutils literal"><span class="pre">~/data/natural_earth</span></code> (a short cut to <code class="file docutils literal"><span class="pre">/usr/local/share/data/natural_earth</span></code>)</p>
+</div>
+<ul class="simple">
+<li>Οπτικοποιώντας ένα χάρτη χρησιμοποιώντας μια Διαδικτυακή Υπηρεσία Διαμοιρασμού Χαρτών(Web Map Service-WMS)</li>
+</ul>
+<p>Ανοίξτε ένα περιηγητή του παγκόσμιου δικτύου (πχ firefox) και εισάγετε τον ακόλουθο σύνδεσμο:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Admin%20Countries&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=AGG/PNG&amp;WIDTH=800&amp;HEIGHT=600
+</pre></div>
+</div>
+<p>Θα πρέπει να δείτε ένα χάρτη της βόρειας αμερικής.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_map.png"><img alt="../../_images/mapserver_map.png" src="../../_images/mapserver_map.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+<ul class="simple">
+<li>Προσθέτωντας ένα νέο θεματικό επίπεδο (layer) από ένα shapefile</li>
+</ul>
+<p>Τώρα πρόκειται να προσθέσουμε ένα νέο θεματικό επίπεδο στο mapfile που ήδη έχουμε. Πριν τη τελευταία δήλωση <em>END</em> στο mapfile, προσθέτε τις ακόλουθες ρυθμίσεις για το θεματικό επίπεδο:</p>
+<div class="highlight-python"><div class="highlight"><pre>LAYER
+  NAME &quot;Lakes&quot;
+  STATUS DEFAULT
+  TYPE POLYGON
+  DATA &quot;10m_lakes&quot;
+  CLASS
+    STYLE
+      COLOR 153 179 204
+    END
+  END
+ END
+</pre></div>
+</div>
+<p>Στον περιηγητή σας, προβάλετε το χάρτη χρησιμοποιώντας τον ακόλουθο σύνδεσμο:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Admin%20Countries,Lakes&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=AGG/PNG&amp;WIDTH=800&amp;HEIGHT=600
+</pre></div>
+</div>
+<p>Θα πρέπει τώρα να βλέπετε τον αρχικό χάρτη σε συνδυασμό με τις λίμνες από το νέο θεματικό μας επίπεδο.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes.png"><img alt="../../_images/mapserver_lakes.png" src="../../_images/mapserver_lakes.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+<ul class="simple">
+<li>Βελτιώνοντας την εμφάνιση ενός θεματικού επιπέδου</li>
+</ul>
+<p>Για παράδειγμα πρόκειται να βελτιώσουμε την εμφάνιση του  θεματικού επιπέδου με τις λίμνες. Αυτό το σύνολο δεδομένων περιέχει ένα χαρακτηριστικό που λέγεται <em>ScaleRank</em>, το οποίο πιθανότατα σχετίζεται με το μέγεθος της λίμνης. Μεταβάλετε τις ρυθμίσεις του θεματικού επιπέδου ώστε να είναι οι ακόλουθες:</p>
+<div class="highlight-python"><div class="highlight"><pre>LAYER
+ NAME &quot;Lakes&quot;
+ STATUS DEFAULT
+ TYPE POLYGON
+ DATA &quot;10m_lakes&quot;
+ CLASSITEM &quot;ScaleRank&quot;
+ CLASS
+   EXPRESSION /0|1/
+   STYLE
+     COLOR 153 179 204
+     OUTLINECOLOR 0 0 0
+   END
+ END
+ CLASS
+   STYLE
+     COLOR 153 179 204
+   END
+ END
+
+END
+</pre></div>
+</div>
+<p>Οι ανωτέρω ρυθμίσεις σχεδιάζουν τις μεγάλες λίμνες με ένα ελαφρύ μπλε με μαύρο περίγραμμα, ενώ όλες οι υπόλοιπες λίμνες σχεδιάζονται με σκούρο μπλε.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes_scalerank.png"><img alt="../../_images/mapserver_lakes_scalerank.png" src="../../_images/mapserver_lakes_scalerank.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>Τι επίκειται;<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Αυτό είναι μόλις το πρώτο βήμα στο δρόμο να χρησιμοποιήσετε το MapServer. Υπάρχουν πολλά περισσότερα υλικά (και τεχνογνωσία) αφημένα να τα ανακαλύψετε στη σελίδα μας.</p>
+<ul class="simple">
+<li>Δείτε την τεκμηρίωση του MapServer, οδηγούς και παραδείγματα τα οποία είναι διαθέσιμα στο: <a class="reference external" href="http://mapserver.org/en/documentation.html">http://mapserver.org/en/documentation.html</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

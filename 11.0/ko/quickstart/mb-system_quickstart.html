@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MB-System Quickstart &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 11.0 의 이용을 환영합니다 ." href="../index.html" />
+    <link rel="next" title="ncWMS Quickstart" href="ncWMS_quickstart.html" />
+    <link rel="prev" title="KDE-edu Marble Quickstart" href="marble_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.ldeo.columbia.edu/res/pi/MB-System/"><img alt="project logo" class="align-right" src="../../_images/logo-mb-system.png" style="width: 57.6px; height: 38.4px;" /></a>
+<div class="section" id="mb-system-quickstart">
+<h1>MB-System Quickstart<a class="headerlink" href="#mb-system-quickstart" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="running">
+<h2>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h2>
+<p>Users familiar
+with <a class="reference internal" href="../overview/gmt_overview.html"><em>GMT</em></a> and <a class="reference internal" href="../overview/gdal_overview.html"><em>GDAL</em></a> will
+be right at home with MB-System. In fact, MB-System makes heavy use of
+GMT for its map rendering. MB-System is a modular, command line driven
+suite of about 75 programs which work together to process massive (often
+terabytes) worth of multi-beam swath bathymetry and sidescan sonar data
+using automated scripts. Data files in dozens of data formats can be left
+co-mingled and intact on the drive and only those needed will be
+automatically selected, allowing for efficient processing and seamless mixing
+of datasets collected at different times, by different ships, in different
+data formats. Cartographic output and advanced 3D data cleaning software is also
+included.</p>
+<p>Open a terminal, then</p>
+<ul class="simple">
+<li>View information about a datafile: (similar to <cite>gdalinfo</cite>)</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>cd /usr/local/mbsystem/examples/
+cd mbinfo
+./mbinfo.cmd
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/mb-system_screenshot.png"><img alt="2D shaded relief" class="align-right" src="../../_images/mb-system_screenshot.png" style="width: 261.1px; height: 268.8px;" /></a>
+<ul class="simple">
+<li>Process and prepare 3D plots from the sample data files:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>cd /usr/local/mbsystem/examples/
+cd mbgrid
+export PATH=&quot;$PATH:.&quot;
+./mbgrid.cmd
+</pre></div>
+</div>
+<ul class="simple">
+<li>Process and prepare a 2D shaded relief image:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>cd /usr/local/mbsystem/examples/
+cd mbm_plot
+export PATH=&quot;$PATH:.&quot;
+./mbm_plot_5.cmd
+</pre></div>
+</div>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>The online HTML documentation can be found at</dt>
+<dd><a class="reference external" href="http://www.ldeo.columbia.edu/res/pi/MB-System/html/mbsystem_home.html">http://www.ldeo.columbia.edu/res/pi/MB-System/html/mbsystem_home.html</a></dd>
+<dt>The online HTML version of the Cookbook tutorial can be found at</dt>
+<dd><a class="reference external" href="http://www.ldeo.columbia.edu/res/pi/MB-System/mb-cookbook/">http://www.ldeo.columbia.edu/res/pi/MB-System/mb-cookbook/</a></dd>
+<dt>The documentation can be found on this LiveDVD at</dt>
+<dd><a class="reference external" href="../../mbsystem/docs/">/usr/share/doc/mbsystem-doc/docs/</a></dd>
+<dt>The PDF version of the cookbook is included on this disc at</dt>
+<dd><a class="reference external" href="../../mbsystem/mbcookbook.pdf">/usr/local/mbsystem/mbcookbook.pdf</a></dd>
+<dt>The data used in the cookbook examples can be found on this disc at</dt>
+<dd><a class="reference external" href="../../mbsystem/examples/">/usr/local/mbsystem/examples/</a></dd>
+</dl>
+<p>See also the <a class="reference external" href="http://grass.osgeo.org/wiki/MB-System">MB-System entry in the GRASS GIS wiki</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

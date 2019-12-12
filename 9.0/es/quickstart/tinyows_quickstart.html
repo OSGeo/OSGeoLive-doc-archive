@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guía de inicio rápido de TinyOWS &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Bienvenido a OSGeo-Live 9.0" href="../index.html" />
+    <link rel="next" title="uDig Inicio Rápido" href="udig_quickstart.html" />
+    <link rel="prev" title="TileMill Quickstart" href="tilemill_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://mapserver.org/trunk/tinyows/"><img alt="project logo" class="align-right" src="../../_images/logo-TinyOWS9.png" style="width: 40.0px; height: 40.0px;" /></a>
+<div class="section" id="guia-de-inicio-rapido-de-tinyows">
+<h1>Guía de inicio rápido de TinyOWS<a class="headerlink" href="#guia-de-inicio-rapido-de-tinyows" title="Permalink to this headline">¶</a></h1>
+<p>TinyOWS es un Servicio Web de Eventos Transaccional (WFS-T) de alto rendimiento,
+ligero y fácil de desplegar mediante una interfaz CGI o FastCGI
+y usando <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a> para el almacenamiento de datos.</p>
+<p>Esta guía describe como:</p>
+<blockquote>
+<div><ul class="simple">
+<li>mostrar una capa WFS en QGIS</li>
+<li>editar una capa WFS-T en QGIS</li>
+</ul>
+</div></blockquote>
+<div class="section" id="mostrar-una-capa-wfs-en-qgis">
+<h2>Mostrar una capa WFS en QGIS<a class="headerlink" href="#mostrar-una-capa-wfs-en-qgis" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Abrir el programa QGIS <em class="menuselection">Geospatial ‣ Desktop GIS ‣ Quantum GIS</em>.</li>
+<li>Pulsar <em class="menuselection">Capa ‣ Añadir capa PostGIS...</em>.<ul>
+<li>Primero mostramos la capa original en PostGIS.</li>
+</ul>
+</li>
+<li>Pulsar <em class="guilabel">Nuevo</em>.</li>
+<li>Escribir  <strong>pgrouting</strong> como nombre de la Conexión y Base de Datos.</li>
+<li>Pulsar <em class="guilabel">Aceptar</em>.</li>
+<li>Pulsar <em class="guilabel">Conectar</em>.</li>
+<li>Seleccionar <strong>ways</strong> en el listado de tablas.</li>
+<li>Presionar <em class="guilabel">Añadir</em>.</li>
+<li>Hacer zoom</li>
+<li>Seleccionar <em class="menuselection">Complementos -&gt; Administrar complementos -&gt; Complemento de WFS -&gt; Aceptar</em><ul>
+<li>Habilitar el &#8220;WFS Layer plugin&#8221;.</li>
+</ul>
+</li>
+<li>Hacer clic en <em class="menuselection">Capa ‣ Añadir capa WFS...</em>.<ul>
+<li>Ahora se añade la capa WFS basada en la misma tabla.</li>
+</ul>
+</li>
+<li>Pulsar <em class="guilabel">Nuevo</em>.</li>
+<li>Escribir <strong>tinyows</strong> como nombre y <strong>http://localhost/cgi-bin/tinyows</strong> como URL</li>
+<li>Pulsar <em class="guilabel">Aceptar</em>.</li>
+<li>Pulsar <em class="guilabel">Conectar</em>.</li>
+<li>Seleccionar <strong>ows:ways</strong> en la lista de capas.</li>
+<li>Habilitar la opción <em class="guilabel">Solicitar sólo objetos espaciales que solapen con la extensión de la vista actual</em>.</li>
+<li>Pulsar <em class="guilabel">Aceptar</em>.<ul>
+<li>Ahora la capa WFS layer es mostrada:</li>
+</ul>
+</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/tinyows_wfs_layer4.png"><img alt="../../_images/tinyows_wfs_layer4.png" src="../../_images/tinyows_wfs_layer4.png" style="width: 637.6px; height: 424.8px;" /></a>
+</div>
+<div class="section" id="editar-datos-con-wfs-t-en-qgis">
+<h2>Editar datos con WFS-T en QGIS<a class="headerlink" href="#editar-datos-con-wfs-t-en-qgis" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Hacer clic <em class="menuselection">Capa ‣ Conmutar Edición</em>.</li>
+<li>Hacer clic <em class="menuselection">Edición ‣ Herramienta de Nodos</em>.</li>
+<li>Mover un vértice (aspa) a otra posición.</li>
+<li>Hacer clic <em class="menuselection">Capa ‣ Guardar Edición</em>.</li>
+<li>Oculta la capa desmarcando <strong>tows:ways</strong> en el listado de capas.<ul>
+<li>El elemento editado se debería ver con un color diferente procedente directamente de la base de datos PostGIS.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="mas-informacion">
+<h2>Más información<a class="headerlink" href="#mas-informacion" title="Permalink to this headline">¶</a></h2>
+<p>Para aprender más sobre TinyOWS, un punto de partida es la <a class="reference external" href="http://mapserver.org/trunk/tinyows/">TinyOWS Documentation</a> en la página web de MapServer.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο γρήγορης εκκίνησης OpenJUMP &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Καλώς ήρθατε στο OSGeo-Live" href="../index.html" />
+    <link rel="next" title="Εγχειρίδιο Γρήγορης Εκκίνησης OpenLayers" href="openlayers_quickstart.html" />
+    <link rel="prev" title="Εγχειρίδιο Γρήγορης Εκκίνησης OpenCPN" href="opencpn_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="openjump">
+<h1>Εγχειρίδιο γρήγορης εκκίνησης OpenJUMP<a class="headerlink" href="#openjump" title="Permalink to this headline">¶</a></h1>
+<p>Το OpenJUMP είναι ένα πρόγραμμα GIS που επιτρέπει την εύκολη προβολή και επεξεργασία διανυσματικών δεδομένων GIS. Έχει επίσης και περιορισμένη υποστήριξη για την προβολή raster δεδομένων.</p>
+<p>Αυτός ο οδηγός περιγράφει πώς:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Το OpenJUMP θα φορτώσει ένα ESRI shapefile.</li>
+<li>Θα ρυθμιστεί η εμφάνιση του επιπέδου από το shapefile για ευκολότερη θέαση.</li>
+<li>Θα γίνει η επεξεργασία των γεωμετριών των χαρακτηριστικών σε ένα επίπεδο.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="id1">
+<h2>Εκκίνηση OpenJUMP<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Από το OSGeo Live-DVD: Εκίνηση του OpenJUMP μέσω του συνδέσμου στην επιφάνεια εργασίας ή μέσω του /usr/bin/openjump</p>
+<p>Γενικά: Για τα Windows, πλοηγηθείτε στον φάκελο bin του OpenJUMP και κλικάρετε δύο φορές το αρχείο openjump.exe ή το openjump.bat. Για το Linux, εκτελέστε το oj_linux.sh
+από ένα τερματικό. Για το MacOSX, κλικάρετε στο αντίστοιχο σύμβολο του OpenJUMP.</p>
+<p>(Παρακαλώ σημειώστε: Απαιτείται η εγκατάσταση της Java για την εκτέλεση του OpenJUMP.
+Μπορείτε να κατεβάσετε την Java για τον υπολογιστή σας από εδώ:
+<a class="reference external" href="http://java.com/en/download/index.jsp">http://java.com/en/download/index.jsp</a>)</p>
+</div>
+<div class="section" id="id2">
+<h2>Βασική επισκόπηση της διεπαφής του χρήστη<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Η διεπαφή του OpenJUMP έχει τέσσερα (4) βασικά τμήματα όπως τα περισσότερα GIS.
+(i) Το πρώτο είναι μια λίστα πάνω πάνω για πρόσβαση στις περισσότερες δυνατότητες. (ii) Το δεύτερο είναι μια κεντρική εργαλειοθήκη η οποία βρίσκεται ακριβώς κάτω από την προηγούμενη λίστα. Τα κουμπιά δίνουν πρόσβαση στις πιο σημαντικές συναρτήσης προβολής και πλοήγησης. (iii) Το τρίτο είναι ένα δενδροδιάγραμμα στα αριστερά που δείχνει τη λίστα των επιπέδων του τρέχοντος σχεδίου .
+(iv) Το τέταρτο είναι η θέαση των επιπέδων. Αυτό στην πραγματικότητα είναι ο χάρτης όπου δίνεται μια γραφική αναπαράσταση των χωρικών δεδομένων του κάθε επιπέδου. Τέλος υπάρχει χαμηλά μια γραμμή πληροφοριών που προβάλει τις πληροφορίες του κέρσορα, εκτελεί την επεξεργασία αναφορών και δείχνει τη χρήση μνήμης
+information bar at the bottom displaying mouse pointer coordinates, processing
+reports, and memory usage. Ένα παράθυρο σχεδίου περιέχει μια λίστα με τα επίπεδα και μια προβολή αυτών. Κάθε εκκίνηση του OpenJUMP μπορεί να περιέχει πολλαπλά σχέδια. Σε αυτή τη γρήγορη εκκίνηση, θα δουλεύουμε μόνο με ένα παράθυρο.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_012.png"><img alt="../../_images/openjump_ss_012.png" src="../../_images/openjump_ss_012.png" style="width: 563.2px; height: 400.95px;" /></a>
+</div>
+<div class="section" id="esri-shapefile">
+<h2>Άνοιγμα ενός ESRI Shapefile<a class="headerlink" href="#esri-shapefile" title="Permalink to this headline">¶</a></h2>
+<p>Αυτό το κεφάλαιο του οδηγού, εξηγεί πώς να ανοίξετε ένα shapefile.</p>
+<p>Στην πάνω λίστα του OpenJUMP, Επιλέξτε την λίστα [File]. Μετά επιλέξτε την επιλογή [Open File...]. Αυτό θα σας ανοίξει ένα πλαίσιο διαλόγου που σας επιτρέπει να ανοίξετε αρχεία που περιέχουν γεωχωρικά δεδομένα. Στο παράδειγμά μας, θέλετε να να αναζητήσετε ένα ESRI shapefile. Αναζητήστε ένα αρχείο με κατάληξη .shp. Επιλέξτε το αρχείο και επιλέξτε το κουμπί [Finish] στο διάλογο. Μετά από λίγη ώρα , θα μπορείτε να δείτε τα δεδομένα του shapefile στο Layer View. Θα δείτε επίσης ένα νέο επίπεδο που δημιουργήθηκε για τα δεδομένα σας στη Λίστα των επιπέδων (Layer List). To όνομα του επιπέδου θα ταυτίζεται με το όνομα του shapefile.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_022.png"><img alt="../../_images/openjump_ss_022.png" src="../../_images/openjump_ss_022.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>Μια πιο γρήγορη επιλογή είναι να σύρετε και να αφήσετε απευθείας το shapefile στο Layer view.</p>
+</div>
+<div class="section" id="id3">
+<h2>Τροποποιώντας αισθητικά ένα Επίπεδο<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Αυτό το κεφάλαιο του οδηγού εξηγεί με συντομία πως να επεξεργαστείτε την εμφάνιση ενός επιπέδου.</p>
+<p>Στη Layer List, κάντε δεξί κλικ* στο όνομα του επιπέδου. Αυτό θα εμφανίζει έναν αναδυόμενο διάλογο.
+Πηγαίνετε στη λίστα [Style] και επιλέξτε [Change Styles]. Ο διάλογος Change Styles
+έχει πέντε (5) που σας επιτρέπουν να αλλάξετε πώς προβάλλεται το επίπεδο στο Layer View. Αυτό περιλαμβάνει την αλλαγή στο χρώμα του περιγράμματος, το χρώμα γεμίσματος, το πάχος και το είδος της γραμμής, τη διαφάνεια του επιπέδου, την προσθήκη τίτλων και τον καθορισμό σε ποια μέγιστη και ελάγιστη κλίμακα προβάλλεται το επίπεδο.</p>
+<ul class="simple">
+<li>Οι χρήστες του MacOSX πατήστε το πλήκτρο <em class="guilabel">Apple</em> για να αποκτήσετε πρόσβαση σε αυτή τη λίστα.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_032.png"><img alt="../../_images/openjump_ss_032.png" src="../../_images/openjump_ss_032.png" style="width: 563.2px; height: 400.95px;" /></a>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_042.png"><img alt="../../_images/openjump_ss_042.png" src="../../_images/openjump_ss_042.png" style="width: 563.2px; height: 400.95px;" /></a>
+</div>
+<div class="section" id="id4">
+<h2>Επεξαργασία γεωμετριών σε ένα Επίπεδο<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Στη λίστα των επιπέδων, κάντε δεξί κλικ στο όνομα του επιπέδου. Αυτό θα εμφανίζει έναν αναδυόμενο διάλογο.
+Επιλέξτε το κουτί δίπλα στην αναφορά της λίστας Editable με το όνομα &#8220;Editable&#8221;. Αυτό θα ανοίξει μια νέα γραμμή εργαλείων πάνω από το Layer View στα δεξιά. Αυτή η γραμμή εργαλείων έχει ένα σύνολο από κουμπιά που μπορείτε να χρησιμοποιήσετε για να επεξεργαστείτε τη γεωμετρία ενός χαρακτηριστικού.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_052.png"><img alt="../../_images/openjump_ss_052.png" src="../../_images/openjump_ss_052.png" style="width: 563.2px; height: 400.95px;" /></a>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_062.png"><img alt="../../_images/openjump_ss_062.png" src="../../_images/openjump_ss_062.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>Ας δοκιμάσουμε μια γρήγορη επεξεργασία. Πρώτα θα πρέπει να διαλέξουμε μια γεωμετρια και μετά θα μετακινήσουμε ένα σημείο της γεωμετρίας. Για να συμβεί αυτό, πρώτα επιλέγουμε το κουμπί που δείχνει ένα κέρσορα ποντικιού στην γραμμή εργαλείων editing. Χρησιμοποιήστε το για να κλικάρετε και να επιλέξετε ένα και μόνο χαρακτηριστικό στο Layer View. Θα πρέπει να αλλάξει σε κίτρινο και μικρά κιτρινα τετράγωνα να εμφανιστούν σε κάθε γωνία της γεωμετρίας.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_072.png"><img alt="../../_images/openjump_ss_072.png" src="../../_images/openjump_ss_072.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>Στη συνέχεια, πατήστε στο κουμπί που δείχνει ένα μπλε σταυρό με ένα κίτρινο τετράγωνο στη μέση, το <em class="guilabel">Move Vertex Tool</em>
+(Περνώντας το δείχτη του ποντικιού πάνω από τα κουμπιά, σας δίνει μια περιγραφή του κουμπιού). Θα πρέπει τώρα να δείτε το δείκτη του ποντικιού άλλαξε σε ένα μικρό μαύρο κέρσορα όταν το κινείτε πάνω στο Layer View.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_082.png"><img alt="../../_images/openjump_ss_082.png" src="../../_images/openjump_ss_082.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>Δοκιμάστε αυτό να κινήσετε το διάνυσμα της γεωμετρίας που διαλέξατε κλικάρωντας στο διάνυσμα και τραβώντας το (κρατήστε πατημένο το αριστερό κλικ).</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_092.png"><img alt="../../_images/openjump_ss_092.png" src="../../_images/openjump_ss_092.png" style="width: 563.2px; height: 400.95px;" /></a>
+</div>
+<div class="section" id="id5">
+<h2>Άλλες πηγές εκμάθησης του OpenJUMP<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Αυτό είναι μόλις το πρώτο βήμα στο δρόμο να χρησιμοποιήσετε το OpenJUMP. Υπάρχει περισσότερο υλικό το οποίο μπορείτε να μελετήσετε.</p>
+<p>Μπορείτε να κατεβάσετε υλικό εκμάθησης για το OpenJUMP here:
+<a class="reference external" href="http://sourceforge.net/projects/jump-pilot/files/Documentation/">http://sourceforge.net/projects/jump-pilot/files/Documentation/</a></p>
+<p>Μπορείτε να διαβάσετε το wiki του OpenJUMP wiki εδώ:
+<a class="reference external" href="http://sourceforge.net/apps/mediawiki/jump-pilot/index.php?title=Main_Page">http://sourceforge.net/apps/mediawiki/jump-pilot/index.php?title=Main_Page</a></p>
+<p>Και μπορείτε να λάβετε βοήθεια γρήγορα, στη λίστα ηλεκτρονικού ταχυδρομείου των χρηστών OpenJUMP:
+<a class="reference external" href="http://groups.google.com/group/openjump-users">http://groups.google.com/group/openjump-users</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

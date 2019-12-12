@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>deegree 3 webservices quickstart &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 9.5 Inhaltsverzeichnis" href="../overview/overview.html" />
+    <link rel="next" title="EOxServer Quickstart" href="eoxserver_quickstart.html" />
+    <link rel="prev" title="Cesium Quickstart" href="cesium_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.deegree.org"><img alt="project logo" class="align-right" src="../../_images/logo-deegree3.png" style="width: 200.0px; height: 48.0px;" /></a>
+<div class="section" id="deegree-3-webservices-quickstart">
+<h1>deegree 3 webservices quickstart<a class="headerlink" href="#deegree-3-webservices-quickstart" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="projekt-beschreibung">
+<h2>Projekt Beschreibung<a class="headerlink" href="#projekt-beschreibung" title="Permalink to this headline">¶</a></h2>
+<p><em>deegree</em> ist ein Open Source Projekt zur Bereitstellung von Geodaten-Komponenten
+für die Java-Plattform.</p>
+<p>Verfügbare Komponenten sind:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Web-Services: WFS, WMS, WMTS, CSW, WPS</li>
+</ul>
+</div></blockquote>
+<p>Diese Quickstart-Anleitung beschreibt wie man...</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>deegree 3</em> startet</li>
+<li>die <em>deegree 3 services console</em> benutzt</li>
+<li>einen <em>deegree 3 workspace</em> benutzt und anpasst</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="uber-deegree-3">
+<h2>Über deegree 3<a class="headerlink" href="#uber-deegree-3" title="Permalink to this headline">¶</a></h2>
+<p><em>deegree 3</em> ist ein Java-Framework für GIS-Anwendungen und OGC-Service-Implementierungen. Es kann für den Aufbau webbasierter
+Geodateninfrastrukturen (GDIs) verwendet werden.</p>
+</div>
+<div class="section" id="deegree-3-starten">
+<h2>deegree 3 starten<a class="headerlink" href="#deegree-3-starten" title="Permalink to this headline">¶</a></h2>
+<p>Wählen Sie <em>&#8216;Start deegree&#8217;</em> aus dem Startmenü unter <em class="menuselection">Geospatial ‣ Web Services ‣ deegree</em> .
+Die Anwendung benötigt einen Moment um zu starten.</p>
+</div>
+<div class="section" id="deegree-3-services-console">
+<h2>deegree 3 services console<a class="headerlink" href="#deegree-3-services-console" title="Permalink to this headline">¶</a></h2>
+<p>Wenn Sie <em>deegree</em> zum ersten mal starten, öffnet sich der Internetbrowser Firefox.
+Bitte warten Sie, bis die <em>deegree 3 services console</em> angezeigt wird.
+Die <em>deegree 3 services console</em> ist eine webbasierte GUI zum Editieren
+der Konfigurationsdateien in den sogenannten <em>deegree workspaces</em>.</p>
+</div>
+<div class="section" id="deegree-3-workspaces">
+<h2>deegree 3 workspaces<a class="headerlink" href="#deegree-3-workspaces" title="Permalink to this headline">¶</a></h2>
+<p><em>deegree 3</em> hat ein einheitliches Konfigurationskonzept, das von allen <em>deegree 3</em>
+basierten Web Services unterstützt wird. Die verschiedenen
+Konfigurationen sind im so genannten <em>deegree workspace</em> definiert. Ein <em>deegree workspace</em>
+ist somit ein Konfigurationsverzeichnis mit einem standardisierten Layout. Der
+<em>deegree workspace</em> kann innerhalb und außerhalb einer Webapplikation gespeichert werden.</p>
+<p>Innerhalb der <em>deegree 3 services console</em> erhalten Sie eine Übersicht der
+mitgelieferten und vorkonfigurierten <em>deegree 3 workspaces</em>, indem Sie auf die
+Schaltfläche <em>&#8220;workspace&#8221;</em> (linke Seite) klicken. Sie befinden sich nun im
+<em>workspace</em>-Management von <em>deegree 3</em>. Hier haben Sie eine Übersicht über den
+zur Zeit aktiven <em>workspace</em>, weitere inaktive <em>workspaces</em> und offizielle <em>workspaces</em>,
+welche Sie importieren können (Internetzugang ist erforderlich). Es kann immer nur ein
+<em>workspace</em> aktiv sein.</p>
+<p>Starten Sie nun den <em>deegree-inspire-workspace</em>.</p>
+</div>
+<div class="section" id="deegree-3-workspaces-auf-der-osgeo-live-gis-disc">
+<h2>deegree 3 workspaces auf der OSGeo-Live GIS Disc<a class="headerlink" href="#deegree-3-workspaces-auf-der-osgeo-live-gis-disc" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><em>deegree-workspace-inspire</em></li>
+</ul>
+</div></blockquote>
+<p>Dieser <em>workspace</em> beinhaltet eine Basiskonfiguration von INSPIRE View- und
+Download-Services.
+Er besteht aus einem transaktionalem WFS (2.0.0 and 1.1.0) für alle Annex I Data
+Themes und einem WMS (1.3.0 and 1.1.1) der drei Ebenen der Annex I Data Themes
+anbietet.
+Als Daten werden einige harmonisierte niederländische Administrative Einheiten
+(Administrative Units) sowie Katasterpläne (Cadastral Parcels) und Adressen
+(Addresses) angeboten.
+Der WFS verhält sich hierbei als INSPIRE Download service (Direct Access) und
+liefert die Basisdaten als valides, harmonisiertes INSPIRE GML aus und
+unterstützt zahlreiche Anfragemöglichkeiten.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Dieser <em>workspace</em> lädt harmonisiertes INSPIRE GML aus lokalen Dateien in den
+Speicher, dies kann jedoch einfach auf PostGIS, Oracle Spatial oder Microsoft
+SQL Server Datenbanken als Backend umgestellt werden.</p>
+</div>
+<p>Nach der Aktivierung des <em>deegree-workspace-inspire</em> kann unter dem Link
+<em>&#8216;see layers&#8217;</em> ein simpler Map-Client eingesehen werden, der eine Basemap
+zeigt (gerendert von <a class="reference external" href="http://openstreetmap.org/">OpenStreetMap</a>).</p>
+<p>Ein Klick auf das <strong>+</strong> auf der rechten Seite öffnet eine Liste der verfügbaren
+Ebenen. Hier kann die vom deegree WMS angebotene INSPIRE Ebene aktiviert werden.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Der Karten-Client basiert auf <a class="reference external" href="http://openlayers.org/">OpenLayers</a>.
+Die Karte kann durch die gedrückte linke Maustaste bewegt werden.
+Der Zoom funktioniert entweder mit dem Mausrad oder mit den Steuerungselementen
+auf der linken Seite. Als Alternative kann durch halten der Umschalt-Taste und
+einem Mausklick ein Rechteck gezogen werden, auf das gezoomt wird.</p>
+</div>
+<p>Informationen und Step-By-Step Tutorials zur Konfiguration des INSPIRE workspaces finden Sie in
+ausführlicher Form in der  <em>deegree</em> <a class="reference external" href="http://download.deegree.org/documentation/3.3.13/html/lightly.html#example-workspace-1-inspire-network-services/">Dokumentation</a>.</p>
+</div>
+<div class="section" id="wie-geht-es-weiter">
+<h2>Wie geht es weiter?<a class="headerlink" href="#wie-geht-es-weiter" title="Permalink to this headline">¶</a></h2>
+<p>Dies war nur ein kurzer Überblick über die Funktionen von deegree. Weitere
+Informationen erhalten Sie über das deegree-Wiki, die Online-Demo und die
+deegree-Webseite.</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><em>deegree</em> Online Demo</p>
+<p>Abrufbar unter: <a class="reference external" href="http://demo.deegree.org">http://demo.deegree.org</a></p>
+</li>
+<li><p class="first"><em>deegree</em> Website</p>
+<p>Abrufbar unter: <a class="reference external" href="http://www.deegree.org">http://www.deegree.org</a></p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

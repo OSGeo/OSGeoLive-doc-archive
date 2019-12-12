@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Web Map Service (WMS) &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Standards" href="toc.html" />
+    <link rel="next" title="Web Processing Service (WPS)" href="wps_overview.html" />
+    <link rel="prev" title="Web Feature Service (WFS)" href="wfs_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-OGC-left3.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-left3.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/logo-OGC-right3.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right3.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="web-map-service-wms">
+<h1>Web Map Service (WMS)<a class="headerlink" href="#web-map-service-wms" title="Permalink to this headline">¶</a></h1>
+<p>The (OGC®) Web Map Service Interface Standard (WMS) provides a simple HTTP interface for requesting geo-registered map images from one or more distributed geospatial databases. The response to the request is one or more map images (returned as JPEG, PNG, etc) that can be displayed a browser and desktop applications. (<a class="reference external" href="http://www.opengeospatial.org/standards/wms">http://www.opengeospatial.org/standards/wms</a>)</p>
+<a class="reference internal image-reference" href="../../_images/wms3.jpg"><img alt="WMS in Context" src="../../_images/wms3.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>The WMS standard defines three operations:</p>
+<ul class="simple">
+<li>GetCapabilities (required): Obtain service-level metadata, which is a machine-readable (and human-readable) description of the WMS&#8217;s information content and acceptable request parameters.</li>
+<li>GetMap (required): Obtain a map image whose geospatial and dimensional parameters are well defined.</li>
+<li>GetFeatureInfo (optional): Ask for information about particular features shown on a map.</li>
+</ul>
+<p>This standard is now implemented in hundreds of products, many of which are registered at (<a class="reference external" href="http://www.opengeospatial.org/resource/products/compliant">http://www.opengeospatial.org/resource/products/compliant</a>).</p>
+<p>An excellent example of a portal that uses WMS is NC OneMap (<a class="reference external" href="http://www.nconemap.com/">http://www.nconemap.com/</a>): “NC OneMap relies on Web Map Services (WMS) to bring data together from multiple hosts. NC OneMap partners establish a WMS from their servers. This OGC standard allows data to be created and stored in numerous proprietary software configurations (ESRI, MapInfo, Intergraph, etc), but is viewable by all.”</p>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p>An OGC WMS Cookbook and other materials for developers can be found at <a class="reference external" href="http://www.opengeospatial.org/resource/cookbooks">http://www.opengeospatial.org/resource/cookbooks</a>.</p>
+<p>Other OGC portrayal service standards:</p>
+<ul class="simple">
+<li><a class="reference internal" href="wfs_overview.html"><em>Web Feature Service (WFS)</em></a></li>
+<li><a class="reference internal" href="wcs_overview.html"><em>Web Coverage Service (WCS)</em></a></li>
+<li>Web Map Tile Service</li>
+<li><a class="reference internal" href="gml_overview.html"><em>Geography Markup Language (GML)</em></a></li>
+<li><a class="reference internal" href="kml_overview.html"><em>KML Encoding Standard (KML)</em></a></li>
+<li><a class="reference internal" href="sld_overview.html"><em>Style Layer Descriptor (SLD)</em></a></li>
+<li>Symbology Encoding</li>
+<li><a class="reference internal" href="fe_overview.html"><em>Filter Encoding (FE)</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

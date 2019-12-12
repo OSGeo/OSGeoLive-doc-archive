@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Démarrage rapide R &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Bienvenue sur OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="Cesium Quickstart" href="cesium_quickstart.html" />
+    <link rel="prev" title="52°North WPS Quickstart" href="52nWPS_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <img alt="project logo" class="align-right" src="../../_images/logo-R.png" />
+<div class="section" id="demarrage-rapide-r">
+<h1>Démarrage rapide R<a class="headerlink" href="#demarrage-rapide-r" title="Permalink to this headline">¶</a></h1>
+<p>R est un environnement libre dédié au calcul statistique et à la création de graphiques</p>
+<p>Ce guide de démarrage rapide décrit comment :</p>
+<blockquote>
+<div><ul class="simple">
+<li>utiliser R pour des calculs arithmétiques simples</li>
+<li>charger des données depuis un shapefile et les afficher</li>
+<li>faire un changement de système de projection</li>
+<li>afficher des points sur une carte</li>
+</ul>
+</div></blockquote>
+<div class="section" id="demarrer-r">
+<h2>Démarrer R<a class="headerlink" href="#demarrer-r" title="Permalink to this headline">¶</a></h2>
+<p>Pour commencer deux solutions:</p>
+<blockquote>
+<div><ul class="simple">
+<li>choisir <code class="docutils literal"><span class="pre">R</span> <span class="pre">Statistics</span></code> dans le menu Outils spatial - une fenêtre de terminal apparaît dans laquelle R fonctionne.</li>
+<li>Entrer <code class="docutils literal"><span class="pre">R</span></code> comme ligne de commande dans le prompt du terminal. R démarrera dans ce terminal.</li>
+</ul>
+</div></blockquote>
+<p>Ne vous effrayez pas de la ligne de commande - c&#8217;est un outil d&#8217;une très grande puissance. Utilisez les flèches haut et bas
+pour rappeler des commandes que vous avez déjà effectuées, vous pouvez comme ça corriger des erreurs, ce qui pourra vous aider
+beaucoup. Taper CTRL-C si vous êtes bloqué en cours d&#8217;exécution pour abandonner l&#8217;action en cours et revenir au prompt.</p>
+</div>
+<div class="section" id="quitter-r">
+<h2>Quitter R<a class="headerlink" href="#quitter-r" title="Permalink to this headline">¶</a></h2>
+<p>Tout dans R est une fonction, y compris la fonction pour quitter . Tapez <code class="docutils literal"><span class="pre">q()</span></code> suivi de la touche entrée.
+Si vous ne saisissez que <code class="docutils literal"><span class="pre">q</span></code> vous verrez s&#8217;afficher le code source de la fonction <code class="docutils literal"><span class="pre">q</span></code>.</p>
+<p>R vous demandera si vous voulez sauvegarder votre espace de travail comme une image de données R.
+Quand vous redémarrerez R depuis un répertoire contenant un fichier <code class="docutils literal"><span class="pre">.RData</span></code> il devrait restaurer
+toutes les données telles que vous les aurez alors laissées.</p>
+</div>
+<div class="section" id="debuter-avec-r">
+<h2>Débuter avec R<a class="headerlink" href="#debuter-avec-r" title="Permalink to this headline">¶</a></h2>
+<p>R est essentiellement un programme en ligne de commande, bien que
+des interfaces graphiques soient disponibles. Vous tapez une ligne de code
+dans le prompt et pressez entrée, et l&#8217;interpréteur R l&#8217;évalue pour retourner
+le résultat.</p>
+<p>Vous pouvez commencer avec de l&#8217;arithmétique simple.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; 3*2
+[1] 6
+
+&gt; 1 + 2 * 3 / 4
+[1] 2.5
+
+&gt; sqrt(2)
+[1] 1.414214
+
+&gt; pi * exp(-1)
+[1] 1.155727
+</pre></div>
+</div>
+<p>Un grand nombre de fonctions arithmétiques, trigonométriques et statistiques sont
+intégrées dans R et des centaines d&#8217;autres sont disponibles depuis les packages dans
+les archives <cite>CRAN &lt;http://cran.r-project.org/&gt;</cite></p>
+<p>L&#8217;indicateur de prompt courant dans R est <code class="docutils literal"><span class="pre">&gt;</span></code>, mais il existe aussi le prompt de
+continuation <code class="docutils literal"><span class="pre">+</span></code>, qui apparaît si R attend plus d&#8217;entrées pour avoir une expression
+valide. Vous pouvez retrouver ce signe si vous avez oublié de fermer un crochet ou
+une parenthèse.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; sqrt(
++ 2
++ )
+[1] 1.414214
+</pre></div>
+</div>
+</div>
+<div class="section" id="construire-des-donnees">
+<h2>Construire des Données<a class="headerlink" href="#construire-des-donnees" title="Permalink to this headline">¶</a></h2>
+<p>Vous vous demandez peut-être ce que le mystérieux &#8216;un&#8217; entre crochets fait dans
+la sortie. C&#8217;est pour vous dire que le résultat est un nombre. R peut aussi
+stocker des &#8220;choses&#8221; dans un vecteur à une dimension, dans une matrice à deux dimensions,
+et dans des tableaux multi-dimensionnels. Il y a plusieurs fonctions pour générer ce
+genre de choses. Ici une simple séquence :</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; seq(1, 5, len=10)
+[1] 1.000000 1.444444 1.888889 2.333333 2.777778 3.222222 3.666667 4.111111
+[9] 4.555556 5.000000
+</pre></div>
+</div>
+<p>Maintenant vous pouvez voir que <code class="docutils literal"><span class="pre">[9]</span></code> est donné quand 4.555 est la neuvième valeur
+du vecteur.</p>
+<p>Si vous construisez une matrice vous avez alors les étiquettes des lignes et des colonnes.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; m=matrix(1:12, 3, 4)
+&gt; m
+     [,1] [,2] [,3] [,4]
+[1,]    1    4    7   10
+[2,]    2    5    8   11
+[3,]    3    6    9   12
+</pre></div>
+</div>
+<p>Les éléments des matrices (comme des vecteurs) peuvent être extrait en utilisant les crochets,
+avec les indices de lignes et de colonnes séparées par des virgules. Laissez un indice blanc si
+vous voulez une ligne ou une colonne entière qui sera alors présentées sous forme d&#8217;un vecteur.
+Utilisez un vecteur en indice pour sélectionner plusieurs lignes ou plusieurs colonnes pour former une
+petite matrice.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; m[2,4]
+[1] 11
+
+&gt; m[2,]
+[1]  2  5  8 11
+
+&gt; m[,3:4]
+     [,1] [,2]
+[1,]    7   10
+[2,]    8   11
+[3,]    9   12
+</pre></div>
+</div>
+<p>Les Data Frames sont des données structurées à la manière des structures de base de données
+comme PotgreSQL ou MySQL. Chaque ligne peut être prise comme un enregistrement, avec des étiquettes
+pour appeler les champs comme dans une base de données. Et comme dans une base de données chaque
+champ doit contenir le même type de données.</p>
+<p>Souvent les Data frames fonctionnent comme des matrices, mais vous pouvez aussi appeler les les colonnes
+ou les lignes en utilisant la notation $-notation :</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; d = data.frame(x=1:10, y=1:10, z=runif(10)) # z is 10 random numbers
+&gt; d
+        x  y          z
+    1   1  1 0.44128080
+    2   2  2 0.09394331
+    3   3  3 0.51097462
+    4   4  4 0.82683828
+    5   5  5 0.21826740
+    6   6  6 0.65600533
+    7   7  7 0.59798278
+    8   8  8 0.19003625
+    9   9  9 0.24004866
+    10 10 10 0.35972749
+
+&gt; d$z
+ [1] 0.44128080 0.09394331 0.51097462 0.82683828 0.21826740 0.65600533
+ [7] 0.59798278 0.19003625 0.24004866 0.35972749
+
+&gt; d$big = d$z &gt; 0.6  # d$big est un boolean avec les valeur true/false
+&gt; d[1:5,]
+  x y          z   big
+1 1 1 0.44128080 FALSE
+2 2 2 0.09394331 FALSE
+3 3 3 0.51097462 FALSE
+4 4 4 0.82683828  TRUE
+5 5 5 0.21826740 FALSE
+
+&gt; d$name = letters[1:10] # crée un nouveau champ contenant des caractères
+&gt; d[1:5,]
+  x y          z   big name
+  1 1 1 0.44128080 FALSE    a
+  2 2 2 0.09394331 FALSE    b
+  3 3 3 0.51097462 FALSE    c
+  4 4 4 0.82683828  TRUE    d
+  5 5 5 0.21826740 FALSE    e
+</pre></div>
+</div>
+</div>
+<div class="section" id="charger-des-donnees-cartographiques">
+<h2>Charger des Données Cartographiques<a class="headerlink" href="#charger-des-donnees-cartographiques" title="Permalink to this headline">¶</a></h2>
+<p>Il y a beaucoup de packages pour la manipulation de données spatiales et pour faire
+de la géostatistique. Quelques-uns sont inclus ici, et d&#8217;autres sont téléchargeables
+depuis le CRAN.</p>
+<p>Ici nous allons charger deux shapefiles - les pays et les zones peuplées depuis
+le jeu de données &#8220;the Natural Earth&#8221;. Nous utilisons deux packages add-on pour
+avoir des fonctionnalités spatiales.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; library(sp)
+&gt; library(maptools)
+
+&gt; countries = readShapeSpatial(&quot;/usr/local/share/data/natural_earth/10m_admin_0_countries.shp&quot;)
+&gt; places = readShapeSpatial(&quot;/usr/local/share/data/natural_earth/10m_populated_places_simple.shp&quot;)
+&gt; plot(countries)
+</pre></div>
+</div>
+<p>Nous donne une simple carte du monde :</p>
+<img alt="../../_images/r_plot1.png" src="../../_images/r_plot1.png" />
+<p>Quand un jeu de données OGR est lu dans R nous pouvons de cette manière récupérer
+un objet qui ressemble de plusieurs manières à un data frame. Nous pouvons
+juste utiliser le champ <code class="docutils literal"><span class="pre">ADMIN</span></code> pour récupère seulement le royaume uni.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; uk = countries[countries$ADMIN==&quot;United Kingdom&quot;,]
+&gt; plot(uk); axis(1); axis(2)
+</pre></div>
+</div>
+<img alt="../../_images/r_plot2.png" src="../../_images/r_plot2.png" />
+<p>Cela peut sembler un peu compliqué pour celui qui arrive ici sans être
+un peu familier avec les systèmes de coordonnées centrés sur nos latitudes. Actuellement
+l&#8217;objet n&#8217;a pas de système de coordonnées assigné - et nous pouvons le vérifier avec
+quelques fonctions :</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; proj4string(uk)
+[1] NA
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">NA</span></code> est un marqueur de données manquantes. Nous devons assigner un CRS à cet objet avant
+de pouvoir le transformer avec la fonction spTransform du package rgdal. Nous le transformons
+en l&#8217;EPSG:27700 qui est en vigueur dans le système de référence de Grande-Bretagne.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; proj4string(uk)=CRS(&quot;+init=epsg:4326&quot;)
+&gt; library(rgdal)
+&gt; ukos = spTransform(uk,CRS(&quot;+init=epsg:27700&quot;))
+&gt; proj4string(ukos)
+[1] &quot; +init=epsg:27700 +proj=tmerc +lat_0=49 +lon_0=-2 +k=0.9996012717 +x_0=400000 +y_0=-100000 +ellps=airy +datum=OSGB36 +units=m +no_defs
++towgs84=446.448,-125.157,542.060,0.1502,0.2470,0.8421,-20.4894&quot;
+
+&gt; plot(ukos);axis(1);axis(2)
+</pre></div>
+</div>
+<p>Cela va afficher la carte de base des données transformées. Maintenant nous voulons ajouter
+quelques points issus des données sur les zones peuplées. Encore une fois on découpe les données
+des points et leurs appliquons une transformation dans le système de coordonnées &#8220;rdnance Survey Grid&#8221;.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; ukpop = places[places$ADM0NAME==&quot;United Kingdom&quot;,]
+&gt; proj4string(ukpop)=CRS(&quot;+init=epsg:4326&quot;)
+&gt; ukpop = spTransform(ukpop,CRS(&quot;+init=epsg:27700&quot;))
+</pre></div>
+</div>
+<p>Nous ajoutons ces points à la carte, et ajustons l&#8217;échelle des symboles en utilisant
+la racine carrée de la population (pour avoir des symboles proportionnels), définissons
+la couleur de contour en rouge et la forme du point en &#8220;blob solid&#8221;.</p>
+<div class="highlight-python"><div class="highlight"><pre>&gt; points(ukpop,cex=sqrt(ukpop$POP_MAX/1000000),col=&quot;red&quot;,pch=19)
+&gt; title(&quot;UK Population centre sizes&quot;)
+</pre></div>
+</div>
+<p>et au final l&#8217;image apparaît.</p>
+<img alt="../../_images/r_plot3.png" src="../../_images/r_plot3.png" />
+</div>
+<div class="section" id="vignettes">
+<h2>Vignettes<a class="headerlink" href="#vignettes" title="Permalink to this headline">¶</a></h2>
+<p>Par le passé la documentation pour les packages R avait tendance à être laconique sur bien des points
+pour chaque fonction. Aujourd’hui les auteurs de packages sont très largement encouragés à écrire
+une &#8216;vignette&#8217; pour aider à la prise en main des fonctions de leurs packages. Si vous entrez juste
+<code class="docutils literal"><span class="pre">vignette()</span></code> sans arguments cela devrait vous renvoyer une liste de tous les arguments que peut
+prendre la fonction sur votre système. Essayez <code class="docutils literal"><span class="pre">vignette(&quot;sp&quot;)</span></code> pour une petite introduction technique
+aux structures spatiales dans R, ou <code class="docutils literal"><span class="pre">vignette(&quot;spdep&quot;)</span></code> pour une explication des analyses statistiques
+ou de l&#8217;auto-corrélation spatiale. La <code class="docutils literal"><span class="pre">vignette(&quot;gstat&quot;)</span></code> renvoie un tutoriel pour l&#8217;usage de ce package
+pour des interpolations spatiales et une introduction au Kriging.</p>
+</div>
+<div class="section" id="lecture-avancee">
+<h2>Lecture avancée<a class="headerlink" href="#lecture-avancee" title="Permalink to this headline">¶</a></h2>
+<p>Pour des informations générales au sujet de R essayez le site officiel : <a class="reference external" href="http://cran.r-project.org/doc/manuals/R-intro.html">Introduction to R</a>
+ou toute documentation venant des pages <a class="reference external" href="http://www.r-project.org/">R Project</a></p>
+<p>Pour plus d&#8217;informations sur les aspects spatiaux de R, le meilleur endroit pour commencer est probablement
+<a class="reference external" href="http://cran.r-project.org/web/views/Spatial.html">R Spatial Task View</a></p>
+<p>Vous serez peut-être aussi intéressé par la page <a class="reference external" href="http://r-spatial.sourceforge.net/">R-Spatial</a>
+sur sourceforge pour avoir quelques liens en plus y compris des informations sur la liste de diffusion
+R-sig-Geo.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

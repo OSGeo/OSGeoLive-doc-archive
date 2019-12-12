@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы с GpsPrune &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://gpsprune.activityworkshop.net/"><img alt="Логотип проекта" class="align-right" src="../../_images/logo-prune12.png" /></a>
+<div class="section" id="gpsprune">
+<h1>Начало работы с GpsPrune<a class="headerlink" href="#gpsprune" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Запуск<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Для запуска GpsPrune на Live DVD выберите иконку &#8220;GpsPrune&#8221; в меню <em>Navigation and Maps</em>. Для работы вам потребуется загрузить данные из файла или GPS-приёмника, используя <em>Gpsbabel</em>, получить координаты из Википедии или ввести координаты вручную. Проще всего начать с загрузки любого текстового, KML или KMZ-файла, используя меню <em class="menuselection">File ‣ Open file</em> и выбрав файл, который вы желаете загрузить. Подходящий GPX-файл со множеством треков можно найти на этом диске <tt class="file docutils literal"><span class="pre">~/data/vector/R/test_trk2.gpx</span></tt>.</p>
+<p>Сейчас вы должны видеть свой трек, окрашенный синим цветом, и путевые точки, обозначенные их именами. Если у вас есть подключение к сети, рекомендуем активировать карты щелчком по глобусу в верхней части окна карты или через меню <em class="menuselection">View ‣ Show Map</em>.</p>
+<p>Вы можете перемещаться по карте мышью и приближаться/удаляться, чтобы рассмотреть подробности. Щелчок по точке отобразит детальную информацию, включая высоту и временную метку, при доступности. Под картой есть график высот, который показывает профиль трека (при наличии данных о высотах). Щелчок по графику переведёт на соответствующую точку.</p>
+<div class="section" id="id2">
+<h3>Настройка отображения<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Вы можете изменить карту с помощью меню <em class="menuselection">Settings ‣ Set map background</em>. Можно выбрать из имеющихся карт или добавить свой сервер, если вам известен его URL. Можно подключить карту Cloudmade, если вам известен номер нужного стиля.</p>
+<p>Стандартные цвета можно изменить через меню <em class="menuselection">Settings ‣ Set colours</em>.</p>
+<p>Если вы сохраните свои настройки в меню <em class="menuselection">Settings ‣ Save settings</em>, они будут использованы и при следующих запусках GpsPrune. Однако помните, что файлы, сохраненные вами в файловой системе этого Live DVD, будут потеряны после выключения компьютера.</p>
+</div>
+<div class="section" id="id3">
+<h3>Загрузка карт<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Для сохранения загруженных тайлов карты на диск вы можете выбрать меню <em class="menuselection">Settings ‣ Save maps to disk</em> и указать директорию для сохранения изображений. Это ускоряет отображение, поскольку не требуется загружать те же изображения каждый раз. Опять же, это имеет больший смысл на установленной системе, чем на Live DVD.</p>
+</div>
+<div class="section" id="id4">
+<h3>Использование GpsPrune в других операционных системах<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>После ознакомления с GpsPrune на этом Live DVD, вы возможно, захотите использовать его на других системах, будь то другой дистрибутив Linux, или Mac OS X, или Windows. Некоторые дистрибутивы Linux включают GpsPrune в свои репозитории пакетов (поищите &#8220;Prune&#8221; или &#8220;GpsPrune&#8221;). Можно загрузить последнюю версию с домашней страницы проекта.</p>
+<p>Сама программа не требует установки, но надо установить JAVA Runtime версии 1.5 или выше. Вы можете расширить функционал GpsPrune, установив другое свободное ПО, такое, как <em>Gpsbabel</em>, <em>Gnuplot</em>, <em>Exiftool</em> или <em>Java3d</em>.</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Смотрите также<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Домашняя страница GpsPrune: <a class="reference external" href="http://gpsprune.activityworkshop.net/">http://gpsprune.activityworkshop.net/</a></li>
+<li>Скриншоты: <a class="reference external" href="http://gpsprune.activityworkshop.net/screenshots.html">http://gpsprune.activityworkshop.net/screenshots.html</a></li>
+<li>Руководства и инструкции: <a class="reference external" href="http://gpsprune.activityworkshop.net/how-tos.html">http://gpsprune.activityworkshop.net/how-tos.html</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

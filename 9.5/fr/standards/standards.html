@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Standards de l’Open Geospatial Consortium (OGC) &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Bienvenue sur OSGeo-Live 9.5" href="../index.html" />
+    <link rel="next" title="Catalogue Service for the Web (CSW)" href="csw_overview.html" />
+    <link rel="prev" title="zyGrib Quickstart" href="../quickstart/zygrib_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="standards-de-l-open-geospatial-consortium-ogc">
+<h1>Standards de l&#8217;Open Geospatial Consortium (OGC)<a class="headerlink" href="#standards-de-l-open-geospatial-consortium-ogc" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>L&#8217;Open Geospatial Consortium (OGC) a été fondé en 1994 pour rendre l&#8217;information géographique partie intégrale des infrastructures du monde de l&#8217;information. Les membres de l&#8217;OGC – des développeurs et des utilisateurs de ces technologies &#8211; développent de manière collaborative  des standards d&#8217;interfaces ouvertes avec des standards d&#8217;encodage associés, et aussi des &#8220;bonnes pratiques&#8221;, qui permettent aux développeurs de créer des systèmes d&#8217;informations qui puissent facilement échanger de l&#8217;information &#8220;géospatial&#8221; et des instructions avec d&#8217;autres systèmes d&#8217;information. Les besoins couvrent aussi bien des calendriers complexes et le contrôle de satellites d&#8217;observation de la Terre à l&#8217;affichage de simples images de carte sur le web et à l&#8217;encodage de position en quelques octets pour le géo-tagage et la messagerie. Un coup d&#8217;oeil sur les groupes de travail OGC par domaine (<a class="reference external" href="http://www.opengeospatial.org/projects/groups/wg">http://www.opengeospatial.org/projects/groups/wg</a>) montre la large étendue que couvre l&#8217;activité actuelle au sein de l&#8217;OGC.</p>
+</div>
+<div class="section" id="la-ligne-de-base-de-l-ogc-et-le-modele-de-reference-de-l-ogc">
+<h2>La ligne de base de l&#8217;OGC  et le modèle de référence de l&#8217;OGC<a class="headerlink" href="#la-ligne-de-base-de-l-ogc-et-le-modele-de-reference-de-l-ogc" title="Permalink to this headline">¶</a></h2>
+<p>Le modèle de base des standards OGC se compose des standards OGC (<a class="reference external" href="http://www.opengeospatial.org/standards">http://www.opengeospatial.org/standards</a>) pour les interfaces, les encodages, les profils, les schémas d&#8217;application, et les documents de bonnes pratiques. Le modèle de Référence de l&#8217;OGC (ORM en anglais) (<a class="reference external" href="http://www.opengeospatial.org/standards/orm">http://www.opengeospatial.org/standards/orm</a>) décrit les standards et les relations entre eux avec les standards ISO associés. L&#8217;ORM fournit une vue d&#8217;ensemble des standards OGC et sert comme une ressource utile pour la définition des architectures pour des applications spécifiques.</p>
+<p>En développant des applications de Web Services utilisant les standards OGC (et en apprenant leurs relations avec les standards OGC), cela aide à penser à la manière de publier, localiser et appeler (&#8220;publish, find, bind&#8221;) qui sont les fonctions clés pour les applications en environnement web.</p>
+<ul class="simple">
+<li>Publier: Les fournisseurs de services préviennent leurs ressources.</li>
+<li>Localiser: Les utilisateurs finaux et leurs applications peuvent découvrir des ressources au lancement.</li>
+<li>Appeler: Les utilisateurs finaux et leurs applications peuvent accéder et exercer les ressources au lancement.</li>
+</ul>
+<p>La plupart des services des standards OGC qui ont été développés dans les dernières années sont des standards pour un environnement de services web, et ces standards sont collectivement appelés comme Services Web OGC (OWS en anglais). La figure ci-dessous fournit le schéma d&#8217;architecture général pour les Services Web OGC. Ce schéma identifie les classes génériques de services qui participent dans différentes activités de géotraitements et de localisation.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="../../_images/publish_find_bind5.jpg"><img alt="Cadre de travail des services web des standards OGC de géotraitements" src="../../_images/publish_find_bind5.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+</div>
+<p>Les acronymes dans la figure sont définis ci-dessous. Certains d&#8217;entre eux sont des “standards OGC&#8221; et d&#8217;autres sont disponibles publiquement comme des “Discussion Papers&#8221;, &#8220;Requests&#8221; et &#8220;Recommendation Papers&#8221;. (Notez que parmi les standards de travail de travail ne sont pas encore publiques, mais sont accessibles par les membres de l&#8217;OGC.)</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="csw_overview.html">Catalogue Service for the Web (CSW)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fe_overview.html">Filter Encoding (FE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gml_overview.html">Geography Markup Language (GML)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kml_overview.html">KML Encoding Standard (KML)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensorml_overview.html">Sensor Model Language (SensorML)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sld_overview.html">Style Layer Descriptor (SLD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sos_overview.html">Sensor Observation Service (SOS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wcs_overview.html">Web Coverage Service (WCS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wfs_overview.html">Web Feature Service (WFS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wms_overview.html">Web Map Service (WMS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wps_overview.html">Web Processing Service (WPS)</a></li>
+</ul>
+</div>
+<ul class="simple">
+<li>Sensor Planning Service (SPS)</li>
+<li>Web Terrain Service (WTS)</li>
+<li>Grid Coverage Service</li>
+<li>Coordinate Transformation Service</li>
+<li>Web Coverage Processing Service (WCPS)</li>
+<li>Web Map Tile Service (WMTS)</li>
+<li>Simple Features (SF)</li>
+<li>Sensor Web Enablement (SWE)</li>
+<li>XML for Image and Map Annotation (XIMA)</li>
+<li>CityGML</li>
+<li>GeosciML</li>
+<li>GML in JPEG 2000</li>
+<li>Observations and Measurements (O&amp;M)</li>
+<li>Symbology Encoding</li>
+<li>Transducer Markup Language (TML)</li>
+</ul>
+</div>
+<div class="section" id="voir-aussi">
+<h2>Voir aussi :<a class="headerlink" href="#voir-aussi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Comprehensive list of OGC standards: <a class="reference external" href="http://www.opengeospatial.org/standards/">http://www.opengeospatial.org/standards/</a></li>
+<li>OGC tutorials presented at IGARSS 2010: <a class="reference external" href="http://www.ogcnetwork.net/node/1481">http://www.ogcnetwork.net/node/1481</a></li>
+<li>OGC Network Learn pages (<a class="reference external" href="http://www.ogcnetwork.net/learn">http://www.ogcnetwork.net/learn</a>).</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

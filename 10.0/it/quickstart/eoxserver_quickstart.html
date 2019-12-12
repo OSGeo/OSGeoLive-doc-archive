@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guida rapida su EOxServer &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.0 Contents" href="../overview/overview.html" />
+    <link rel="next" title="Guida rapida su GDAL/OGR" href="gdal_quickstart.html" />
+    <link rel="prev" title="Guida rapida sui servizi web di deegree 3" href="deegree_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://eoxserver.org/"><img alt="project logo" class="align-right" src="../../_images/logo-eoxserver-212.png" style="width: 590.2px; height: 99.45px;" /></a>
+<div class="section" id="guida-rapida-su-eoxserver">
+<h1><a class="toc-backref" href="#id1">Guida rapida su EOxServer</a><a class="headerlink" href="#guida-rapida-su-eoxserver" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2><a class="toc-backref" href="#id2">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>EOxServer è un server per rappresentare grandi archivi di dati Earth Observation (EO)
+e matadati attraverso Open Standards. È creato su un gruppo di software open source
+che include Python, <a class="reference internal" href="../overview/mapserver_overview.html"><em>MapServer</em></a>, Django/GeoDjango,
+<a class="reference internal" href="../overview/gdal_overview.html"><em>GDAL</em></a>, PROJ.4 e una database <a class="reference internal" href="../overview/spatialite_overview.html"><em>SpatiaLite</em></a>
+o <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a>.</p>
+<p>Questa guida rapida descrive come:</p>
+<ul class="simple">
+<li>Visualizzare, filtrare, crea subset, e scaricare dati EO attraverso EOxServer&#8217;s Web Client</li>
+<li>Registrare archivi di dati EO attraverso EOxServer&#8217;s Admin Client</li>
+</ul>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#guida-rapida-su-eoxserver" id="id1">Guida rapida su EOxServer</a><ul>
+<li><a class="reference internal" href="#overview" id="id2">Overview</a></li>
+<li><a class="reference internal" href="#demonstration-instance" id="id3">Demonstration Instance</a><ul>
+<li><a class="reference internal" href="#client-web" id="id4">Client Web</a></li>
+<li><a class="reference internal" href="#client-di-amministrazione" id="id5">Client di amministrazione</a></li>
+<li><a class="reference internal" href="#visualizzatore-dei-log" id="id6">Visualizzatore dei log</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ed-ora" id="id7">Ed ora?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Per maggiori informazioni vedere <a class="reference internal" href="../overview/eoxserver_overview.html"><em>EOxServer Overview</em></a>,
+la <a class="reference external" href="../../eoxserver-docs/EOxServer_documentation.pdf">documentazione in locale di EOxServer</a>,
+o la <a class="reference external" href="http://eoxserver.org/doc/">documentazione online di EOxServer</a>.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_documentation8.png"><img alt="EOxServer documentation" src="../../_images/eoxserver_documentation8.png" style="width: 512.0px; height: 384.0px;" /></a>
+</div>
+<div class="section" id="demonstration-instance">
+<h2><a class="toc-backref" href="#id3">Demonstration Instance</a><a class="headerlink" href="#demonstration-instance" title="Permalink to this headline">¶</a></h2>
+<p>L&#8217;icona <cite>EOxServer</cite> che si trova sotto <cite>Web Services</cite> lancia un browser che visualizza
+l&#8217;esempio dimostrativo disponibile all&#8217;indirizzo <a class="reference external" href="http://localhost/eoxserver/">http://localhost/eoxserver/</a>
+che fornisce alcuni dati di prova come <a class="reference external" href="https://eoxserver.org/demo_stable/">disponibile online</a>.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_start8.png"><img alt="EOxServer demonstration start" src="../../_images/eoxserver_start8.png" style="width: 512.0px; height: 384.0px;" /></a>
+<div class="section" id="client-web">
+<h3><a class="toc-backref" href="#id4">Client Web</a><a class="headerlink" href="#client-web" title="Permalink to this headline">¶</a></h3>
+<p>Il link al <strong>Web Client</strong> permette di vedere una lista di <cite>Serie di dati</cite> disponibili
+e <cite>Stitched Mosaics</cite>. L&#8217;esempio ha una <cite>Serie di dati</cite> già configurata denominata
+&#8220;MER FRS 1P RGB reduced&#8221; che contiene tre scene ENVISAT MERIS. Riferirsi alla <a class="reference external" href="http://eoxserver.org/doc/en/users/demonstration.html">documentazione
+online per l&#8217;esempio</a> per maggiori
+informazioni sui dati disponibili.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_webclient18.png"><img alt="EOxServer demonstration embedded client dataset series selection" src="../../_images/eoxserver_webclient18.png" style="width: 512.0px; height: 384.0px;" /></a>
+<p>Selezionando una lista di provider si visualizzeranno i contorni dei <cite>Dataset</cite> disponibili.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_webclient28.png"><img alt="EOxServer demonstration embedded client outlines" src="../../_images/eoxserver_webclient28.png" style="width: 512.0px; height: 384.0px;" /></a>
+<p>Usando i controlli standard di OpenLayers sarete in grado anche di vedere in anteprima i
+dati disponibili.Cliccare su <strong>(+</strong> in alto a destra della finestra per ottenere
+un&#8217;ulteriore lista di selezione; per effeuare zoom è possibile usare sia la rotellina del
+mouse oppure tenendo premuto il pulsante shift mentre tenendo premuto il
+pulsante destro si disegna un box nell&#8217;area della map.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_screenshot12.png"><img alt="EOxServer demonstration embedded client outlines and previews" src="../../_images/eoxserver_screenshot12.png" style="width: 512.0px; height: 384.0px;" /></a>
+<p>With the <strong>Date slider</strong> the <cite>Datasets</cite> shown can be limited to the time
+interval of interest.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_webclient38.png"><img alt="EOxServer demonstration embedded client date change" src="../../_images/eoxserver_webclient38.png" style="width: 512.0px; height: 384.0px;" /></a>
+<p>Il pulsante <strong>Download</strong> fornisce una lista dei <cite>Datasets</cite> scaricabili.
+Scaricabili significa che la Bounding Box impostata o l&#8217;estension della mappa attuale
+se non è impostata e l&#8217;intervallo di tempo impostato. Potete selezionare quale <cite>Datasets</cite>
+da scaricare in che dimensione, proiezione, formato e sottoinsieme di bande.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_webclient48.png"><img alt="EOxServer demonstration embedded client download selection" src="../../_images/eoxserver_webclient48.png" style="width: 512.0px; height: 384.0px;" /></a>
+<p><strong>Start Download</strong> inzia lo scaricamento attuale che può ottenere multipli file
+se multipli <cite>Dataset</cite> sono stati selezionati.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_webclient58.png"><img alt="EOxServer demonstration embedded client download" src="../../_images/eoxserver_webclient58.png" style="width: 512.0px; height: 384.0px;" /></a>
+</div>
+<div class="section" id="client-di-amministrazione">
+<h3><a class="toc-backref" href="#id5">Client di amministrazione</a><a class="headerlink" href="#client-di-amministrazione" title="Permalink to this headline">¶</a></h3>
+<p>Il link <strong>Client di amministrazione</strong> vi porterà alla pagina di accesso per il
+<cite>Client di amministrazione</cite> La password per l&#8217;utente <cite>admin</cite> è <cite>admin</cite>.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_adminclient18.png"><img alt="EOxServer demonstration admin client login" src="../../_images/eoxserver_adminclient18.png" style="width: 512.0px; height: 384.0px;" /></a>
+<p>Il <cite>Client di amministrazione</cite> è un client standard di amministrazione di Djangos
+che vi permetterà di configurare i dati disponibili. Sentitevi liberi di
+esplorare il client come più vi piace. Maggiori informazioni possono essere
+trovate nella <a class="reference external" href="http://eoxserver.org/doc/en/users/operators.html">guida degli operatori</a>.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_adminclient28.png"><img alt="EOxServer demonstration admin client start" src="../../_images/eoxserver_adminclient28.png" style="width: 512.0px; height: 384.0px;" /></a>
+<p>Per esempio è possibile visualizzare e modificare i <cite>Metadati di EO</cite> delle
+<cite>Serie di dati</cite> configurate.</p>
+<a class="reference internal image-reference" href="../../_images/eoxserver_adminclient38.png"><img alt="EOxServer demonstration admin client EO Metadata" src="../../_images/eoxserver_adminclient38.png" style="width: 512.0px; height: 384.0px;" /></a>
+</div>
+<div class="section" id="visualizzatore-dei-log">
+<h3><a class="toc-backref" href="#id6">Visualizzatore dei log</a><a class="headerlink" href="#visualizzatore-dei-log" title="Permalink to this headline">¶</a></h3>
+<p>Il link al <strong>visualizzatore dei log</strong> fornisce una semplice via per visualizzare
+gli ultimi log registrati.</p>
+<a class="reference internal image-reference" href="it/quickstart/../../images/screenshots/1024x768/eoxserver_logviewer.png"><img alt="EOxServer demonstration log viewer" src="it/quickstart/../../images/screenshots/1024x768/eoxserver_logviewer.png" /></a>
+</div>
+</div>
+<div class="section" id="ed-ora">
+<h2><a class="toc-backref" href="#id7">Ed ora?</a><a class="headerlink" href="#ed-ora" title="Permalink to this headline">¶</a></h2>
+<p>Questa è un semplice esempio, but potete fare molto di più con EOxServer. Il sito
+web del progetto contiene molte risorse per aiutarvi ad incominciare. Qui alcune
+risorse da controllare dopo aver letto questa guida:</p>
+<ul class="simple">
+<li>Leggere la <a class="reference external" href="http://eoxserver.org/doc/en/users/operators.html">Guida per gli operatori di EOxServer</a>.</li>
+<li>Leggere la <a class="reference external" href="http://eoxserver.org/doc/en/users/index.html">documentazione completa per gli utenti di EOxServer</a> incominciando da le
+<a class="reference external" href="http://eoxserver.org/doc/en/users/basics.html">basi di EOxServer</a>.</li>
+<li>Pronti a usare EOxServer? Quindi unitevi alla comunità attraverso le
+<a class="reference external" href="http://eoxserver.org/doc/en/users/mailing_lists.html">mailing lists</a>
+per scambiare idee, discutere potenziali miglioramenti del software e
+fare domande.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

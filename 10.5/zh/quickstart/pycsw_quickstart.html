@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pycsw 快速入门 &mdash; OSGeo-Live 10.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 10.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.5 包含内容一览" href="../overview/overview.html" />
+    <link rel="next" title="PyWPS Quickstart" href="pywps_quickstart.html" />
+    <link rel="prev" title="PostGIS 快速入门" href="postgis_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://pycsw.org/"><img alt="project logo" class="align-right" src="../../_images/logo-pycsw27.png" style="width: 102.4px; height: 102.4px;" /></a>
+<div class="section" id="pycsw">
+<h1>pycsw 快速入门<a class="headerlink" href="#pycsw" title="Permalink to this headline">¶</a></h1>
+<p>　　pycsw 是 OGC CSW 网络地理数据编录服务的 <a class="reference external" href="http://www.python.org/">Python</a> 实现。</p>
+<p>　　pycsw 针对的是 CSW 网络地理数据编录服务标准第 10 款 HTTP 交换协议的 2.0.2 版。其开发始于 2010 年，正式发布于 <a class="reference external" href="http://www.kralidis.ca/blog/2011/02/04/help-wanted-baking-a-csw-server-in-python/">2011</a> 年。</p>
+<p>　　pycsw 为发布和获取地理信息元数据提供支持。现有数据库的元数据可以通过 OGC:CSW 2.0.2 标准获取。</p>
+<p>　　pycsw 为 <a class="reference external" href="http://www.opensource.org/">开源软件</a> ，以 MIT 麻省理工开源协议发布，可运行与三大主要操作系统平台（Windows 、Linux 、Mac OS X）。</p>
+<p>　　pycsw 在 OSGeo-Live DVD 已经安装。本文涉及的内容有：</p>
+<ul class="simple">
+<li>安装 pycsw 软件</li>
+<li>使用测试工具测试 pycsw 安装配置状态</li>
+<li>编辑 pycsw 配置文件并使其配置在网页中显示</li>
+<li>使用 INSPIRE 元数据编辑器或 GIMED 创建符合 ISO 19139 标准的 XML 元数据</li>
+<li>在 pycsw 数据库导入创建的 XML 元数据文件</li>
+<li>安装 QGIS CSW 客户端插件</li>
+<li>在 QGIS 中通过 pycsw 编录服务查询数据</li>
+</ul>
+<div class="section" id="id1">
+<h2>软件安装<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>系统要求<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>　　pycsw 要求以下软件支持：</p>
+<ul class="simple">
+<li><a class="reference external" href="http://lxml.de/">lxml</a> （2.2.3 版或以上）　用于 XML 支持</li>
+<li><a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy</a> （0.0.5 版或以上） 用于数据库连接</li>
+<li><a class="reference external" href="http://trac.gispython.org/lab/wiki/Shapely">Shapely</a> （1.2.8 版或以上）　用于空间查询可几何操作支持</li>
+<li><a class="reference external" href="http://code.google.com/p/pyproj/">pyproj</a> （1.8.9 版或以上）　用于坐标转换</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>从源码安装<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>　　在以下地址 <a class="reference external" href="http://pycsw.org/download.html">下载 pycsw</a> 或复制 SVN 库：</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ svn co https://pycsw.svn.sourceforge.net/svnroot/pycsw pycsw
+</pre></div>
+</div>
+<p>　　注意 CGI 公共网关接口对安装的目录必须是开启的。例如在 Apache 中，若安装 pycsw 在 <code class="docutils literal"><span class="pre">/srv/www/htdocs/pycsw``（URL</span> <span class="pre">为</span> <span class="pre">``http://host/pycsw/csw.py</span></code>），则在 <code class="docutils literal"><span class="pre">httpd.conf</span></code> 输入：</p>
+<div class="highlight-none"><div class="highlight"><pre>&lt;Location /pycsw/&gt;
+ Options FollowSymLinks +ExecCGI
+ Allow from all
+ AddHandler cgi-script .py
+&lt;/Location&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="ubuntu-lubuntu-kubuntu">
+<h3>Ubuntu/Lubuntu/Kubuntu 系统下安装<a class="headerlink" href="#ubuntu-lubuntu-kubuntu" title="Permalink to this headline">¶</a></h3>
+<p>　　在 Ubuntu 或基于其的系统环境下安装 pycsw 可以使用位于 <code class="docutils literal"><span class="pre">pycsw/etc/dist</span></code> 的 OSGeo-Live 安装脚本：</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">cd</span> pycsw/etc/dist
+$ sudo ./install_pycsw.sh
+</pre></div>
+</div>
+<p>　　该脚本会将 pycsw 及所需软件（Apache, lxml, sqlalchemy, shapely, pyproj）安装至 <code class="docutils literal"><span class="pre">/var/www</span></code> 。</p>
+</div>
+<div class="section" id="opensuse">
+<h3>OpenSUSE 系统下安装<a class="headerlink" href="#opensuse" title="Permalink to this headline">¶</a></h3>
+<p>　　在 OpenSUSE 12.1 安装 OBS 软件包（以 <code class="docutils literal"><span class="pre">root</span></code> 用户执行）：</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ zypper -ar http://download.opensuse.org/repositories/Application:/Geo/OpenSUSE_12.1/ GEO
+$ zypper -ar http://download.opensuse.org/repositories/devel:/languages:/python/OpenSUSE_12.1/ python
+$ zypper refresh
+$ zypper install pycsw
+</pre></div>
+</div>
+<p>　　对于更早的 OpenSUSE 版本，修改其中的``12.1``，例如改为``11.4``。对于以后的版本可以使用``Factory``。滚动发布的版本为``Tumbleweed``。pycsw 包含在 OpenSUSE 官方的 Application::Geo 库中。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>测试工具<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>　　在 FireFox 中访问 <code class="docutils literal"><span class="pre">http://localhost/pycsw/tester/index.html</span></code> 或在 Web Services 应用组中选择 <code class="docutils literal"><span class="pre">pycsw</span> <span class="pre">tester</span></code> 可以启动软件环境测试工具。</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_startup13.png"><img alt="../../_images/pycsw_tester_startup13.png" src="../../_images/pycsw_tester_startup13.png" style="width: 481.5px; height: 378.0px;" /></a>
+<p>　　在左侧下拉菜单中可以看到一系列已定义的 POST 请求。这些请求是以 XML 文档保存的。</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_selection13.png"><img alt="../../_images/pycsw_tester_selection13.png" src="../../_images/pycsw_tester_selection13.png" style="width: 748.5px; height: 408.0px;" /></a>
+<p>　　例如，选择 &#8220;apiso/DescribeRecord&#8221; 这一项并单击 &#8220;Send&#8221; 按钮，可以在右侧面板得到返回的 ISO 标准的 Application Profile 记录：</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_describe_apiso_record13.png"><img alt="../../_images/pycsw_tester_describe_apiso_record13.png" src="../../_images/pycsw_tester_describe_apiso_record13.png" style="width: 746.25px; height: 408.75px;" /></a>
+<p>　　选择 &#8220;GetCapabilities-SOAP&#8221; 并点击 &#8220;Send&#8221; ，将发送一个 SOAP 简单对象访问协议用于获取其功能。</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_soap_capabillities13.png"><img alt="../../_images/pycsw_tester_soap_capabillities13.png" src="../../_images/pycsw_tester_soap_capabillities13.png" style="width: 746.25px; height: 408.0px;" /></a>
+<p>　　同时，用户可以搜索特定的数据记录。通过选择 &#8220;GetRecords-filter-bbox&#8221; 并编辑坐标可以就一定的空间范围检索。</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_getrecords_bbox_filter13.png"><img alt="../../_images/pycsw_tester_getrecords_bbox_filter13.png" src="../../_images/pycsw_tester_getrecords_bbox_filter13.png" style="width: 749.25px; height: 399.0px;" /></a>
+<p>　　用户可以尝试测试其它各种测试项目。参考下面的内容可以做出更具体的测试。</p>
+</div>
+<div class="section" id="capabilities">
+<h2>服务功能（Capabilities）文档与配置<a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h2>
+<p>　　pycsw 的功能文档页面在 <code class="docutils literal"><span class="pre">http://localhost/pycsw/csw.py?service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</span></code> 。</p>
+<p>　　在该文档中包含着该服务的元数据。通过编辑 <code class="docutils literal"><span class="pre">/var/www/pycsw/default.cfg</span></code> 中 <code class="docutils literal"><span class="pre">[metadata:main]</span></code> 下的内容可以修改元数据。对于需要 INSPIRE Discovery Service 服务（见后述）的用户，请在 <code class="docutils literal"><span class="pre">[metadata:inspire]</span></code> 下编辑元数据并保证 <code class="docutils literal"><span class="pre">enabled</span></code> 为 <code class="docutils literal"><span class="pre">true</span></code> 。</p>
+<p>　　详尽的配置说明请参考 pycsw <a class="reference external" href="http://pycsw.org/docs/documentation.html">文档</a> 。</p>
+</div>
+<div class="section" id="id5">
+<h2>创<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="european-open-source-metadata-editor-euosme">
+<h3>European Open Source Metadata Editor (EUOSME) 创建<a class="headerlink" href="#european-open-source-metadata-editor-euosme" title="Permalink to this headline">¶</a></h3>
+<p>　　pycsw 服务下的空间数据集或数据服务的元数据可以通过 INSPIRE 元数据标准的开源实现，European Open Source Metadata Editor (EUOSME) 编辑器来操作。该程序可以在 <code class="docutils literal"><span class="pre">http://inspire-geoportal.ec.europa.eu/editor/</span></code> 获得。其源码库位于 <code class="docutils literal"><span class="pre">https://joinup.ec.europa.eu/svn/euosme/trunk</span></code> 。</p>
+<p>　　首先，用户需要选择各个选项卡，输入必需的元数据条目。这些信息包括数据所有者名称、关键字、数据源地址、数据覆盖地理范围（地名或坐标范围）等。</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_euosme_metadata_input13.png"><img alt="../../_images/pycsw_euosme_metadata_input13.png" src="../../_images/pycsw_euosme_metadata_input13.png" style="width: 831.75px; height: 485.25px;" /></a>
+<p>　　输入后点击“validation”按键可以测试数据是否符合 INSPIRE 元数据规范。</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_euosme_save_metadata13.png"><img alt="../../_images/pycsw_euosme_save_metadata13.png" src="../../_images/pycsw_euosme_save_metadata13.png" style="width: 830.25px; height: 485.25px;" /></a>
+<p>　　若测试通过，元数据可以存储为 XML 文档，可由文本编辑器或浏览器查看和编辑。</p>
+</div>
+<div class="section" id="gimed">
+<h3>GIMED<a class="headerlink" href="#gimed" title="Permalink to this headline">¶</a></h3>
+<p>　　 <a class="reference external" href="http://sourceforge.net/projects/gimed/">GIMED</a> 是一款用于编辑 INSPIRE 元数据 XML 文档的编辑器。安装 GIMED 可在命令行输入：</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ wget http://downloads.sourceforge.net/project/gimed/GIMED_v1.3.0.tar.gz
+$ tar zxvf GIMED_v1.3.0.tar.gz
+$ mono ./GIMED_v1.3.0/bin/GIMED.exe
+</pre></div>
+</div>
+<p>　　用户可以同操作 EUOSME 一样输入和编辑元数据，无需网络连接。</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_gimed13.png"><img alt="../../_images/pycsw_gimed13.png" src="../../_images/pycsw_gimed13.png" style="width: 831.0px; height: 484.5px;" /></a>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>载<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>库<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>　　pycsw 支持以下数据库：</p>
+<ul class="simple">
+<li>SQLite3</li>
+<li>PostgreSQL</li>
+<li>MySQL</li>
+</ul>
+<p>　　在 OSGeo-Live 已经配置了一个简单的 SQLite 数据库。它位于 <code class="docutils literal"><span class="pre">/var/www/pycsw/data/cite</span></code> 。</p>
+<p>　　新建数据库操作：</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">cd</span> /path/to/pycsw
+$ <span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+$ python ./sbin/setup_db.py sqlite:////path/to/records.db
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>载<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">cd</span> /path/to/pycsw
+$ <span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+$ python ./sbin/load_records.py /path/to/records sqlite:////path/to/records.db
+</pre></div>
+</div>
+<p>　　以上操作从 <code class="docutils literal"><span class="pre">/path/to/records</span></code> 载入全部 <code class="docutils literal"><span class="pre">*.xml</span></code> 文件，生成 <code class="docutils literal"><span class="pre">records.db</span></code> 。这个数据库可以以符合 OGC:CSW Table 53 的请求检索。</p>
+</div>
+</div>
+<div class="section" id="qgis-csw">
+<h2>QGIS CSW 客户<a class="headerlink" href="#qgis-csw" title="Permalink to this headline">¶</a></h2>
+<p>　　单纯的 HTTP request/response 机制对用户不友好。有多款 CSW 服务客户端可以方便用户进行 CSW 查询，例如 <a class="reference external" href="http://inspire-geoportal.ec.europa.eu/discovery/discovery/">INSPIRE Geoportal</a> 和 <a class="reference internal" href="../overview/geonetwork_overview.html"><em>GeoNetwork</em></a> 。</p>
+<p>　　本文使用 <a class="reference internal" href="../overview/qgis_overview.html"><em>QGIS</em></a> <a class="reference external" href="https://sourceforge.net/apps/trac/qgiscommunitypl/wiki/qgcsw">OGC Catalogue Service Client</a> 这一插件。</p>
+<p>　　插件安装：</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">cd</span> ~
+$ <span class="nb">cd</span> .qgis/python/plugins
+$ svn co https://qgiscommunitypl.svn.sourceforge.net/svnroot/qgiscommunitypl/python/plugins/qgcsw/trunk qgcsw
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>检<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>QGIS CSW<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>　　从 Desktop GIS group 启动 QGIS 并选择 &#8220;Manage Plugins&#8221;。</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_qgis_plugin13.png"><img alt="../../_images/pycsw_qgis_plugin13.png" src="../../_images/pycsw_qgis_plugin13.png" style="width: 831.75px; height: 485.25px;" /></a>
+<p>　　启用 CSW 插件。</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_qgis_plugin_enable13.png"><img alt="../../_images/pycsw_qgis_plugin_enable13.png" src="../../_images/pycsw_qgis_plugin_enable13.png" style="width: 414.75px; height: 301.5px;" /></a>
+<p>　　从工具栏选择 CSW 按钮启动客户端。</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_qgis_csw_plugin_open13.png"><img alt="../../_images/pycsw_qgis_csw_plugin_open13.png" src="../../_images/pycsw_qgis_csw_plugin_open13.png" style="width: 371.25px; height: 484.5px;" /></a>
+<p>　　按 &#8220;New&#8221; 新建服务并输入 <code class="docutils literal"><span class="pre">http://localhost/pycsw/csw.py</span></code> 添加 pycsw 示例服务。</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_qgis_csw_plugin_add_server13.png"><img alt="../../_images/pycsw_qgis_csw_plugin_add_server13.png" src="../../_images/pycsw_qgis_csw_plugin_add_server13.png" style="width: 374.25px; height: 484.5px;" /></a>
+<p>　　通过 &#8220;Add default servers&#8221; 可以配置默认服务。&#8221;Server info&#8221; 用于显示服务器信息。</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_qgis_csw_plugin_server_info13.png"><img alt="../../_images/pycsw_qgis_csw_plugin_server_info13.png" src="../../_images/pycsw_qgis_csw_plugin_server_info13.png" style="width: 371.25px; height: 484.5px;" /></a>
+<p>　　在编录中可以使用坐标范围或字符串检索。</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_qgis_csw_plugin_search13.png"><img alt="../../_images/pycsw_qgis_csw_plugin_search13.png" src="../../_images/pycsw_qgis_csw_plugin_search13.png" style="width: 613.5px; height: 485.25px;" /></a>
+</div>
+<div class="section" id="id11">
+<h3>测试<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>　　利用测试程序也可以进行数据检索。例如以下使用字符串 &#8220;imagery&#8221; 检索得到相应的由 EUOSME 创建的 XML 文档。</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_discovery13.png"><img alt="../../_images/pycsw_tester_discovery13.png" src="../../_images/pycsw_tester_discovery13.png" style="width: 786.75px; height: 342.0px;" /></a>
+<p>　　进一步的教程请见 pycsw 网站的 <a class="reference external" href="http://pycsw.org/docs/documentation.html">文档</a> 。</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

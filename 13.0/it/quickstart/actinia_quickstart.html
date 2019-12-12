@@ -1,0 +1,798 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Actinia Quickstart &#8212; OSGeoLive 13.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '13.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Indice" href="../genindex.html" />
+    <link rel="search" title="Cerca" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Cesium Quickstart" href="cesium_quickstart.html" />
+    <link rel="prev" title="R for Spatial Data Quickstart" href="R_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://actinia.mundialis.de/"><img alt="../../_images/logo_actinia.png" class="align-right" src="../../_images/logo_actinia.png" /></a>
+<div class="section" id="actinia-quickstart">
+<h1><a class="toc-backref" href="#id2">Actinia Quickstart</a><a class="headerlink" href="#actinia-quickstart" title="Link a questa intestazione">¶</a></h1>
+<p>Actinia is an open source REST API for scalable, distributed, high performance
+processing of geographical data that uses GRASS GIS for computational tasks.
+Actinia provides a REST API to process satellite images, time series of
+satellite images, raster and vector data.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#actinia-quickstart" id="id2">Actinia Quickstart</a><ul>
+<li><a class="reference internal" href="#quick-tour" id="id3">Quick tour</a><ul>
+<li><a class="reference internal" href="#sample-query-with-curl" id="id4">Sample query with curl</a></li>
+<li><a class="reference internal" href="#data-management-example" id="id5">Data management example</a></li>
+<li><a class="reference internal" href="#landsat-and-sentinel-2-ndvi-computation-example" id="id6">Landsat and Sentinel-2 NDVI computation example</a></li>
+<li><a class="reference internal" href="#ways-to-use-actinia" id="id7">Ways to use actinia</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#introduction-to-ace-actinia-command-execution" id="id8">Introduction to ace - actinia command execution</a><ul>
+<li><a class="reference internal" href="#requirements-and-setup" id="id9">Requirements and setup</a><ul>
+<li><a class="reference internal" href="#needed-python-libraries" id="id10">Needed Python libraries</a></li>
+<li><a class="reference internal" href="#authentication-settings" id="id11">Authentication settings</a><ul>
+<li><a class="reference internal" href="#notes-on-the-usage-of-external-data-sources" id="id12">Notes on the usage of external data sources</a></li>
+<li><a class="reference internal" href="#available-data" id="id13">Available data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#list-locations-mapsets-and-maps" id="id14">List locations, mapsets and maps</a></li>
+<li><a class="reference internal" href="#acessing-maps-in-a-different-mapset" id="id15">Acessing maps in a different mapset</a></li>
+<li><a class="reference internal" href="#job-management" id="id16">Job management</a></li>
+<li><a class="reference internal" href="#inspecting-the-rest-call-prior-to-submission" id="id17">Inspecting the REST call prior to submission</a></li>
+<li><a class="reference internal" href="#available-export-formats" id="id18">Available export formats</a></li>
+<li><a class="reference internal" href="#displaying-a-map-map-rendering" id="id19">Displaying a map - map rendering</a></li>
+<li><a class="reference internal" href="#examples-for-ephemeral-processing" id="id20">Examples for ephemeral processing</a></li>
+<li><a class="reference internal" href="#command-line-examples" id="id21">Command line examples</a></li>
+<li><a class="reference internal" href="#script-examples" id="id22">Script examples</a><ul>
+<li><a class="reference internal" href="#example-1-computing-slope-and-aspect-and-univariate-statistics-from-an-elevation-model" id="id23">Example 1: computing slope and aspect and univariate statistics from an elevation model</a></li>
+<li><a class="reference internal" href="#example-2-orthophoto-image-segmentation-with-export" id="id24">Example 2: Orthophoto image segmentation with export</a><ul>
+<li><a class="reference internal" href="#examples-for-persistent-processing" id="id25">Examples for persistent processing</a></li>
+<li><a class="reference internal" href="#super-admin-tasks" id="id26">Super admin tasks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#creation-of-new-locations" id="id27">Creation of new locations</a></li>
+<li><a class="reference internal" href="#installing-of-grass-gis-addons-extensions" id="id28">Installing of GRASS GIS addons (extensions)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#further-reading" id="id29">Further reading</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="quick-tour">
+<h2><a class="toc-backref" href="#id3">Quick tour</a><a class="headerlink" href="#quick-tour" title="Link a questa intestazione">¶</a></h2>
+<p>To run actinia on OSGeoLive, you will send HTTP GET, PUT, POST and DELETE requests
+to the actinia server.</p>
+<div class="section" id="sample-query-with-curl">
+<h3><a class="toc-backref" href="#id4">Sample query with curl</a><a class="headerlink" href="#sample-query-with-curl" title="Link a questa intestazione">¶</a></h3>
+<p>Example: query of actinia version on OSGeoLive actinia server:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">u</span> <span class="n">actinia</span><span class="o">-</span><span class="n">gdi</span><span class="p">:</span><span class="n">actinia</span><span class="o">-</span><span class="n">gdi</span> <span class="s1">&#39;http://localhost:8088/api/v1/version&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="data-management-example">
+<h3><a class="toc-backref" href="#id5">Data management example</a><a class="headerlink" href="#data-management-example" title="Link a questa intestazione">¶</a></h3>
+<ul class="simple">
+<li>List all locations that are available in the actinia persistent
+database:</li>
+</ul>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="s2">&quot;http://localhost:8088/api/v1/locations&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;authorization: Basic …&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>List all mapsets in the location LL:</li>
+</ul>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="s2">&quot;https://actinia.mundialis.de/api/v1/locations/LL/mapsets&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;authorization: Basic …&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>List all space-time raster datasets (STRDS) in location LL and mapset
+Sentinel_timeseries:</li>
+</ul>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="s2">&quot;https://actinia.mundialis.de/api/v1/locations/LL/mapsets/Sentinel_timeseries/strds&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;authorization: Basic …&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>List all raster map layers of the STRDS:</li>
+</ul>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">GET</span> <span class="s2">&quot;https://actinia.mundialis.de/api/v1/locations/LL/mapsets/Sentinel_timeseries/strds/S2A_B04/raster_layers&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;authorization: Basic …&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="landsat-and-sentinel-2-ndvi-computation-example">
+<h3><a class="toc-backref" href="#id6">Landsat and Sentinel-2 NDVI computation example</a><a class="headerlink" href="#landsat-and-sentinel-2-ndvi-computation-example" title="Link a questa intestazione">¶</a></h3>
+<ul class="simple">
+<li>Compute the NDVI of the top of athmosphere (TOAR) corrected Landsat4
+scene LC80440342016259LGN00:</li>
+</ul>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="s2">&quot;https://actinia.mundialis.de/api/v1/landsat_process/LC80440342016259LGN00/TOAR/NDVI&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;authorization: Basic …&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>NDVI computation of Sentinel-2A scene
+S2A_MSIL1C_20170212T104141_N0204_R008_T31TGJ_20170212T104138:</li>
+</ul>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="s2">&quot;https://actinia.mundialis.de/api/v1/sentinel2_process/ndvi/S2A_MSIL1C_20170212T104141_N0204_R008_T31TGJ_20170212T104138&quot;</span> <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;authorization: Basic …&quot;</span>
+</pre></div>
+</div>
+<p>The results of the asynchronous computations are available as GeoTIFF
+file in a cloud storage for download.</p>
+</div>
+<div class="section" id="ways-to-use-actinia">
+<h3><a class="toc-backref" href="#id7">Ways to use actinia</a><a class="headerlink" href="#ways-to-use-actinia" title="Link a questa intestazione">¶</a></h3>
+<p>Providing a REST API, actinia can be used in different ways:</p>
+<ul class="simple">
+<li><cite>curl</cite> or similar command line tools</li>
+<li>the <cite>Postman</cite> extension for browsers</li>
+<li>open a GRASS GIS session and use the <cite>ace</cite> (actinia command execution) tool</li>
+<li>other interfaces to REST API</li>
+</ul>
+<p>In this quickstart, we make use of GRASS GIS to conveniently launch
+commands from the session to the actinia server (which itself uses GRASS GIS).
+The idea is to rapidly develop a workflow locally on small data sets to
+then execute it on the server.</p>
+</div>
+</div>
+<div class="section" id="introduction-to-ace-actinia-command-execution">
+<h2><a class="toc-backref" href="#id8">Introduction to ace - actinia command execution</a><a class="headerlink" href="#introduction-to-ace-actinia-command-execution" title="Link a questa intestazione">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">ace</span></code> tool (<a class="reference external" href="https://github.com/mundialis/actinia_core/tree/master/scripts">details</a>)
+allows the execution of a single GRASS GIS command or a
+list of GRASS GIS commands on an actinia REST service
+(<a class="reference external" href="https://actinia.mundialis.de/">https://actinia.mundialis.de/</a>). In addition it provides job management,
+the ability to list locations, mapsets and map layer the user has access
+to as well as the creation and deletion of mapsets.</p>
+<p>Th <code class="docutils literal"><span class="pre">ace</span></code> tool must be executed in an active GRASS GIS session and will
+use the current location of this session to access the actinia service.</p>
+<p>The current location setting can be overridden by the
+<code class="docutils literal"><span class="pre">--location</span> <span class="pre">LOCATION_NAME</span></code> option. All commands will be executed per
+default in an <strong>ephemeral</strong> database. Hence, generated output must be
+exported using augmented GRASS commands.</p>
+<p>The option <code class="docutils literal"><span class="pre">--persistent</span> <span class="pre">MAPSET_NAME</span></code> allows the execution of commands
+in the <strong>persistent</strong> user database. It can be used with
+<code class="docutils literal"><span class="pre">--location</span> <span class="pre">LOCATION_NAME</span></code>option.</p>
+<div class="section" id="requirements-and-setup">
+<h3><a class="toc-backref" href="#id9">Requirements and setup</a><a class="headerlink" href="#requirements-and-setup" title="Link a questa intestazione">¶</a></h3>
+<div class="section" id="needed-python-libraries">
+<h4><a class="toc-backref" href="#id10">Needed Python libraries</a><a class="headerlink" href="#needed-python-libraries" title="Link a questa intestazione">¶</a></h4>
+<p>In case not yet present on the system, the following Python libraries
+are needed:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">requests</span> <span class="n">simplejson</span> <span class="n">click</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="authentication-settings">
+<h4><a class="toc-backref" href="#id11">Authentication settings</a><a class="headerlink" href="#authentication-settings" title="Link a questa intestazione">¶</a></h4>
+<p>The user must setup the following environmental variables to specify the
+actinia server and credentials:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="c1"># set credentials and REST server URL</span>
+<span class="n">export</span> <span class="n">ACTINIA_USER</span><span class="o">=</span><span class="s1">&#39;demouser&#39;</span>
+<span class="n">export</span> <span class="n">ACTINIA_PASSWORD</span><span class="o">=</span><span class="s1">&#39;gu3st!pa55w0rd&#39;</span>
+<span class="n">export</span> <span class="n">ACTINIA_URL</span><span class="o">=</span><span class="s1">&#39;https://actinia.mundialis.de/latest&#39;</span>
+</pre></div>
+</div>
+<div class="section" id="notes-on-the-usage-of-external-data-sources">
+<h5><a class="toc-backref" href="#id12">Notes on the usage of external data sources</a><a class="headerlink" href="#notes-on-the-usage-of-external-data-sources" title="Link a questa intestazione">¶</a></h5>
+<p>GRASS GIS commands can be augmented with actinia specific extensions.
+The <code class="docutils literal"><span class="pre">+</span></code> operator can be specified for an input parameter to import a
+web located resource and to specify the export of an output parameter.</p>
+<p>See <em>Example 1</em> and other examples below.</p>
+</div>
+<div class="section" id="available-data">
+<h5><a class="toc-backref" href="#id13">Available data</a><a class="headerlink" href="#available-data" title="Link a questa intestazione">¶</a></h5>
+<p>Importantly, the name of the local location and mapset must correspond
+to that on the actinia REST server.</p>
+<p>Currently available datasets are (organized by projections):</p>
+<ul class="simple">
+<li>North Carolina sample dataset (NC State-Plane metric CRS, EPSG:
+3358):<ul>
+<li>base cartography (<code class="docutils literal"><span class="pre">nc_spm_08/PERMANENT</span></code>; source:
+<a class="reference external" href="https://grassbook.org/datasets/datasets-3rd-edition/">https://grassbook.org/datasets/datasets-3rd-edition/</a>)</li>
+<li>Landsat subscenes (<code class="docutils literal"><span class="pre">nc_spm_08/landsat</span></code>; source:
+<a class="reference external" href="https://grass.osgeo.org/download/sample-data/">https://grass.osgeo.org/download/sample-data/</a>)</li>
+</ul>
+</li>
+<li>Latitude-Longitude location (LatLong WGS84, EPSG:4326):<ul>
+<li>empty (<code class="docutils literal"><span class="pre">latlong/PERMANENT/</span></code>)</li>
+<li>16-days NDVI, MOD13C1, V006, CMG 0.05 deg res.
+(<code class="docutils literal"><span class="pre">latlong/modis_ndvi_global/</span></code>; source:
+<a class="reference external" href="https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13c1_v006">https://lpdaac.usgs.gov/dataset_discovery/modis/modis_products_table/mod13c1_v006</a>)</li>
+<li>LST growing degree days asia 2017 (<code class="docutils literal"><span class="pre">latlong/asia_gdd_2017/</span></code>;
+source: <a class="reference external" href="https://www.mundialis.de/en/temperature-data/">https://www.mundialis.de/en/temperature-data/</a>)</li>
+<li>LST tropical days asia 2017 (<code class="docutils literal"><span class="pre">latlong/asia_tropical_2017/</span></code>)</li>
+<li>LST temperature daily asia 2017, including min, max and avg
+(<code class="docutils literal"><span class="pre">latlong/asia_lst_daily_2017/</span></code>)</li>
+</ul>
+</li>
+<li>Europe (EU LAEA CRS, EPSG:3035):<ul>
+<li>EU DEM 25m V1.1 (<code class="docutils literal"><span class="pre">eu_laea/PERMANENT/</span></code>; source:
+<a class="reference external" href="https://land.copernicus.eu/imagery-in-situ/eu-dem">https://land.copernicus.eu/imagery-in-situ/eu-dem</a>)</li>
+<li>CORINE Landcover 2012, g100_clc12_V18_5 (<code class="docutils literal"><span class="pre">eu_laea/corine_2012/</span></code>;
+source:
+<a class="reference external" href="https://land.copernicus.eu/pan-european/corine-land-cover/clc-2012">https://land.copernicus.eu/pan-european/corine-land-cover/clc-2012</a>)</li>
+</ul>
+</li>
+<li>World Mollweide (EPSG 54009):<ul>
+<li>GHS_POP_GPW42015_GLOBE_R2015A_54009_250_v1_0
+(<code class="docutils literal"><span class="pre">world_mollweide/pop_jrc</span></code>; source:
+<a class="reference external" href="https://ghsl.jrc.ec.europa.eu/ghs_pop.php">https://ghsl.jrc.ec.europa.eu/ghs_pop.php</a>)</li>
+</ul>
+</li>
+</ul>
+<p>Note that only selected datasets are available to the demo user (access
+is managed on a per-user base).</p>
+</div>
+</div>
+</div>
+<div class="section" id="list-locations-mapsets-and-maps">
+<h3><a class="toc-backref" href="#id14">List locations, mapsets and maps</a><a class="headerlink" href="#list-locations-mapsets-and-maps" title="Link a questa intestazione">¶</a></h3>
+<p>In order to list the locations the user has access to, run</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">locations</span>
+<span class="p">[</span><span class="s1">&#39;latlong&#39;</span><span class="p">,</span> <span class="s1">&#39;nc_spm_08&#39;</span><span class="p">,</span> <span class="s1">&#39;utm_32n&#39;</span><span class="p">,</span> <span class="s1">&#39;latlong&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The following command lists mapsets of current location in the active
+GRASS GIS session (nc_spm_08):</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="c1"># running ace in the &quot;nc_spm_08&quot; location:</span>
+<span class="n">ace</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">mapsets</span>
+<span class="p">[</span><span class="s1">&#39;PERMANENT&#39;</span><span class="p">,</span> <span class="s1">&#39;landsat&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>All following commands can be executed in any active GRASS GIS location,
+since the location name at the actinia server is explicitly provided. In
+case the location option is not provided, the active location will be
+used. The following command lists mapsets of the provided location
+<strong>latlong</strong>:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">latlong</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">mapsets</span>
+<span class="p">[</span><span class="s1">&#39;PERMANENT&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>To list all raster maps available in the specified mapset belonging to
+the provided location <strong>latlong</strong>, run:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">latlong</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">raster</span> <span class="n">PERMANENT</span>
+<span class="p">[</span><span class="s1">&#39;dem_gmted&#39;</span><span class="p">,</span> <span class="s1">&#39;hwsd_stghws1a&#39;</span><span class="p">,</span> <span class="s1">&#39;lulc_globc&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>To list all vector maps available in the specified mapset belonging to
+the current or a provided location, run:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">latlong</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">vector</span> <span class="n">PERMANENT</span>
+<span class="p">[</span><span class="s1">&#39;world_countries&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>List all raster maps in a location/mapset different from the current
+session location:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">raster</span> <span class="n">PERMANENT</span>
+
+<span class="p">[</span><span class="s1">&#39;aspect&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;basin_50K&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;boundary_county_500m&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;cfactorbare_1m&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;cfactorgrow_1m&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;el_D782_6m&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;el_D783_6m&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;el_D792_6m&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;el_D793_6m&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;elev_lid792_1m&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;elev_ned_30m&#39;</span><span class="p">,</span>
+ <span class="o">...</span>
+ <span class="s1">&#39;lsat7_2002_70&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;lsat7_2002_80&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ncmask_500m&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;ortho_2001_t792_1m&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;roadsmajor&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;slope&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;soilsID&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;soils_Kfactor&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;streams_derived&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;towns&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;urban&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;zipcodes&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;zipcodes_dbl&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="acessing-maps-in-a-different-mapset">
+<h3><a class="toc-backref" href="#id15">Acessing maps in a different mapset</a><a class="headerlink" href="#acessing-maps-in-a-different-mapset" title="Link a questa intestazione">¶</a></h3>
+<p>Simply use <code class="docutils literal"><span class="pre">&#64;name_of_mapset</span></code>.</p>
+</div>
+<div class="section" id="job-management">
+<h3><a class="toc-backref" href="#id16">Job management</a><a class="headerlink" href="#job-management" title="Link a questa intestazione">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">ace</span></code> tool can list jobs, choose from <code class="docutils literal"><span class="pre">all</span></code>, <code class="docutils literal"><span class="pre">accepted</span></code>,
+<code class="docutils literal"><span class="pre">running</span></code>, <code class="docutils literal"><span class="pre">terminated</span></code>, <code class="docutils literal"><span class="pre">finished</span></code>, <code class="docutils literal"><span class="pre">error</span></code>.</p>
+<p>Show finished job(s) (note: the actual response may differ):</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">jobs</span> <span class="n">finished</span>
+
+<span class="n">resource_id</span><span class="o">-</span><span class="mi">7</span><span class="n">a94b416</span><span class="o">-</span><span class="mi">6</span><span class="n">f19</span><span class="o">-</span><span class="mi">40</span><span class="n">c0</span><span class="o">-</span><span class="mi">96</span><span class="n">c2</span><span class="o">-</span><span class="n">e62ce133ff89</span> <span class="n">finished</span> <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">17</span> <span class="mi">11</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span><span class="mf">58.965602</span>
+<span class="n">resource_id</span><span class="o">-</span><span class="mi">87965</span><span class="n">ced</span><span class="o">-</span><span class="mi">7242</span><span class="o">-</span><span class="mi">43</span><span class="n">d2</span><span class="o">-</span><span class="n">b6da</span><span class="o">-</span><span class="mi">5</span><span class="n">ded47b10702</span> <span class="n">finished</span> <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">18</span> <span class="mi">08</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mf">29.959495</span>
+<span class="n">resource_id</span><span class="o">-</span><span class="n">b633740f</span><span class="o">-</span><span class="n">e0c5</span><span class="o">-</span><span class="mi">4549</span><span class="o">-</span><span class="n">a663</span><span class="o">-</span><span class="mi">9</span><span class="n">d58f9499531</span> <span class="n">finished</span> <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">18</span> <span class="mi">08</span><span class="p">:</span><span class="mi">52</span><span class="p">:</span><span class="mf">36.669777</span>
+<span class="n">resource_id</span><span class="o">-</span><span class="mi">0</span><span class="n">f9d6382</span><span class="o">-</span><span class="n">b8d2</span><span class="o">-</span><span class="mi">4</span><span class="n">ff8</span><span class="o">-</span><span class="n">b41f</span><span class="o">-</span><span class="mi">9</span><span class="n">b16e4d6bfe2</span> <span class="n">finished</span> <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">17</span> <span class="mi">11</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mf">00.283710</span>
+</pre></div>
+</div>
+<p>Show running job(s):</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">jobs</span> <span class="n">running</span>
+<span class="n">resource_id</span><span class="o">-</span><span class="mi">30</span><span class="n">fff8d6</span><span class="o">-</span><span class="mi">5294</span><span class="o">-</span><span class="mi">4</span><span class="n">f03</span><span class="o">-</span><span class="n">a2f9</span><span class="o">-</span><span class="n">fd7c857bf153</span> <span class="n">running</span> <span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">18</span> <span class="mi">21</span><span class="p">:</span><span class="mi">58</span><span class="p">:</span><span class="mf">04.107389</span>
+</pre></div>
+</div>
+<p>Show details about a specific job:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">info</span><span class="o">-</span><span class="n">job</span> <span class="n">resource_id</span><span class="o">-</span><span class="mi">30</span><span class="n">fff8d6</span><span class="o">-</span><span class="mi">5294</span><span class="o">-</span><span class="mi">4</span><span class="n">f03</span><span class="o">-</span><span class="n">a2f9</span><span class="o">-</span><span class="n">fd7c857bf153</span>
+
+<span class="p">{</span><span class="s1">&#39;accept_datetime&#39;</span><span class="p">:</span> <span class="s1">&#39;2018-12-18 21:47:41.094534&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;accept_timestamp&#39;</span><span class="p">:</span> <span class="mf">1545169661.0945334</span><span class="p">,</span>
+ <span class="s1">&#39;api_info&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;endpoint&#39;</span><span class="p">:</span> <span class="s1">&#39;asyncephemeralexportresource&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;method&#39;</span><span class="p">:</span> <span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="s1">&#39;/api/v1/locations/latlong/processing_async_export&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;request_url&#39;</span><span class="p">:</span> <span class="s1">&#39;http://actinia.mundialis.de/api/v1/locations/latlong/processing_async_export&#39;</span><span class="p">},</span>
+ <span class="s1">&#39;datetime&#39;</span><span class="p">:</span> <span class="s1">&#39;2018-12-18 21:58:14.133485&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;http_code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+ <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Running executable v.rast.stats with parameters &#39;</span>
+            <span class="s2">&quot;[&#39;map=canada_provinces&#39;, &#39;layer=1&#39;, &#39;raster=srtmgl ... &quot;</span>
+            <span class="s2">&quot;average,range,stddev,percentile&#39;, &#39;percentile=95&#39;] for 631.702 &quot;</span>
+            <span class="s1">&#39;seconds&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;process_chain_list&#39;</span><span class="p">:</span> <span class="p">[],</span>
+ <span class="s1">&#39;progress&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;num_of_steps&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;step&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+ <span class="s1">&#39;resource_id&#39;</span><span class="p">:</span> <span class="s1">&#39;resource_id-30fff8d6-5294-4f03-a2f9-fd7c857bf153&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;running&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;time_delta&#39;</span><span class="p">:</span> <span class="mf">633.0389630794525</span><span class="p">,</span>
+ <span class="s1">&#39;timestamp&#39;</span><span class="p">:</span> <span class="mf">1545170294.1334834</span><span class="p">,</span>
+ <span class="s1">&#39;urls&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;resources&#39;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;https://actinia.mundialis.de/api/v1/resources/markus/resource_id-30fff8d6-5294-4f03-a2f9-fd7c857bf153&#39;</span><span class="p">},</span>
+ <span class="s1">&#39;user_id&#39;</span><span class="p">:</span> <span class="s1">&#39;markus&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="inspecting-the-rest-call-prior-to-submission">
+<h3><a class="toc-backref" href="#id17">Inspecting the REST call prior to submission</a><a class="headerlink" href="#inspecting-the-rest-call-prior-to-submission" title="Link a questa intestazione">¶</a></h3>
+<p>To generate the actinia process chain JSON request simply add the
+–dry-run flag:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span> <span class="n">r</span><span class="o">.</span><span class="n">slope</span><span class="o">.</span><span class="n">aspect</span> <span class="n">elevation</span><span class="o">=</span><span class="n">elevation</span> <span class="n">slope</span><span class="o">=</span><span class="n">myslope</span>
+</pre></div>
+</div>
+<p>which will deliver the output:</p>
+<div class="code json highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;list&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;r.slope.aspect&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;r.slope.aspect_1804289383&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;inputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;elevation&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;elevation&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;format&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;degrees&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;precision&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;FCELL&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;zscale&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;min_slope&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0&quot;</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;slope&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;myslope&quot;</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="available-export-formats">
+<h3><a class="toc-backref" href="#id18">Available export formats</a><a class="headerlink" href="#available-export-formats" title="Link a questa intestazione">¶</a></h3>
+<p>At time the following export formats are currently supported:</p>
+<ul class="simple">
+<li>raster: <code class="docutils literal"><span class="pre">GTiff</span></code></li>
+<li>vector: <code class="docutils literal"><span class="pre">ESRI_Shapefile</span></code>, <code class="docutils literal"><span class="pre">GeoJSON</span></code>, <code class="docutils literal"><span class="pre">GML</span></code></li>
+<li>table: <code class="docutils literal"><span class="pre">CSV</span></code>, <code class="docutils literal"><span class="pre">TXT</span></code></li>
+</ul>
+<p>The vector formats will be extended in future versions of actina with
+Geopackage and SQLite formats.</p>
+</div>
+<div class="section" id="displaying-a-map-map-rendering">
+<h3><a class="toc-backref" href="#id19">Displaying a map - map rendering</a><a class="headerlink" href="#displaying-a-map-map-rendering" title="Link a questa intestazione">¶</a></h3>
+<p>It is very easy (and fast) to render a map:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># check amount of pixels, just FYI</span>
+<span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">latlong</span> <span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="n">globcover</span><span class="nd">@globcover</span>
+<span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">latlong</span> <span class="o">--</span><span class="n">render</span><span class="o">-</span><span class="n">raster</span> <span class="n">globcover</span><span class="nd">@globcover</span>
+</pre></div>
+</div>
+<div class="figure" id="id1">
+<img alt="ESA Globcover map shown by actinia" src="../../_images/esa_globcover_rendered_by_ace.png" />
+<p class="caption"><span class="caption-text">ESA Globcover map shown by actinia</span></p>
+</div>
+</div>
+<div class="section" id="examples-for-ephemeral-processing">
+<h3><a class="toc-backref" href="#id20">Examples for ephemeral processing</a><a class="headerlink" href="#examples-for-ephemeral-processing" title="Link a questa intestazione">¶</a></h3>
+<p>Ephemeral processing is the default processing approach of actinia. Each
+single command or all commands in a shell script, will be executed in an
+ephemeral mapset. This mapset will be removed after processing. The
+output of GRASS GIS modules can be marked for export, to store the
+computational result for download and further analysis.</p>
+</div>
+<div class="section" id="command-line-examples">
+<h3><a class="toc-backref" href="#id21">Command line examples</a><a class="headerlink" href="#command-line-examples" title="Link a questa intestazione">¶</a></h3>
+<p>Run the module <code class="docutils literal"><span class="pre">g.list</span></code> in the location defined by the active GRASS
+GIS session in an ephemeral mapset, that has only the PERMANENT mapset
+in its search path:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="n">g</span><span class="o">.</span><span class="n">list</span> <span class="n">raster</span>
+
+<span class="n">Resource</span> <span class="n">status</span> <span class="n">accepted</span>
+<span class="n">Polling</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">actinia</span><span class="o">.</span><span class="n">mundialis</span><span class="o">.</span><span class="n">de</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">resources</span><span class="o">/</span><span class="n">demouser</span><span class="o">/</span><span class="n">resource_id</span><span class="o">-</span><span class="n">db96cd83</span><span class="o">-</span><span class="n">dbc2</span><span class="o">-</span><span class="mi">40</span><span class="n">c6</span><span class="o">-</span><span class="n">b550</span><span class="o">-</span><span class="mf">20e265</span><span class="n">e51c1b</span>
+<span class="n">Resource</span> <span class="n">poll</span> <span class="n">status</span><span class="p">:</span> <span class="n">finished</span>
+<span class="n">Processing</span> <span class="n">successfully</span> <span class="n">finished</span>
+<span class="n">Resource</span> <span class="n">status</span> <span class="n">finished</span>
+<span class="o">--------------------------------------------------------------------------</span>
+<span class="n">aspect</span>
+<span class="n">basin_50K</span>
+<span class="n">boundary_county_500m</span>
+<span class="n">cfactorbare_1m</span>
+<span class="n">cfactorgrow_1m</span>
+<span class="n">el_D782_6m</span>
+<span class="n">el_D783_6m</span>
+<span class="n">el_D792_6m</span>
+<span class="n">el_D793_6m</span>
+<span class="n">elev_lid792_1m</span>
+<span class="n">elev_ned_30m</span>
+<span class="n">elev_srtm_30m</span>
+<span class="n">elev_state_500m</span>
+<span class="n">elevation</span>
+<span class="n">elevation_shade</span>
+<span class="n">facility</span>
+<span class="n">geology_30m</span>
+<span class="n">lakes</span>
+<span class="n">landclass96</span>
+<span class="n">landcover_1m</span>
+<span class="n">landuse96_28m</span>
+<span class="n">lsat7_2002_10</span>
+<span class="n">lsat7_2002_20</span>
+<span class="n">lsat7_2002_30</span>
+<span class="n">lsat7_2002_40</span>
+<span class="n">lsat7_2002_50</span>
+<span class="n">lsat7_2002_61</span>
+<span class="n">lsat7_2002_62</span>
+<span class="n">lsat7_2002_70</span>
+<span class="n">lsat7_2002_80</span>
+<span class="n">ncmask_500m</span>
+<span class="n">ortho_2001_t792_1m</span>
+<span class="n">roadsmajor</span>
+<span class="n">slope</span>
+<span class="n">soilsID</span>
+<span class="n">soils_Kfactor</span>
+<span class="n">streams_derived</span>
+<span class="n">towns</span>
+<span class="n">urban</span>
+<span class="n">zipcodes</span>
+<span class="n">zipcodes_dbl</span>
+
+<span class="p">{</span><span class="s1">&#39;resources&#39;</span><span class="p">:</span> <span class="p">[],</span>
+ <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;https://actinia.mundialis.de/api/v1/resources/demouser/resource_id-db96cd83-dbc2-40c6-b550-20e265e51c1b&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Run the module <code class="docutils literal"><span class="pre">g.region</span></code> in a new ephemeral location, to show the
+default region of a temporary mapset:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="n">g</span><span class="o">.</span><span class="n">region</span> <span class="o">-</span><span class="n">p</span>
+
+<span class="n">Resource</span> <span class="n">status</span> <span class="n">accepted</span>
+<span class="n">Polling</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">actinia</span><span class="o">.</span><span class="n">mundialis</span><span class="o">.</span><span class="n">de</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">resources</span><span class="o">/</span><span class="n">demouser</span><span class="o">/</span><span class="n">resource_id</span><span class="o">-</span><span class="n">b398b4dd</span><span class="o">-</span><span class="n">a47c</span><span class="o">-</span><span class="mi">4443</span><span class="o">-</span><span class="n">a07d</span><span class="o">-</span><span class="mi">7814</span><span class="n">cc737973</span>
+<span class="n">Resource</span> <span class="n">poll</span> <span class="n">status</span><span class="p">:</span> <span class="n">finished</span>
+<span class="n">Processing</span> <span class="n">successfully</span> <span class="n">finished</span>
+<span class="n">Resource</span> <span class="n">status</span> <span class="n">finished</span>
+<span class="o">--------------------------------------------------------------------------</span>
+<span class="n">projection</span><span class="p">:</span> <span class="mi">99</span> <span class="p">(</span><span class="n">Lambert</span> <span class="n">Conformal</span> <span class="n">Conic</span><span class="p">)</span>
+<span class="n">zone</span><span class="p">:</span>       <span class="mi">0</span>
+<span class="n">datum</span><span class="p">:</span>      <span class="n">nad83</span>
+<span class="n">ellipsoid</span><span class="p">:</span>  <span class="n">a</span><span class="o">=</span><span class="mi">6378137</span> <span class="n">es</span><span class="o">=</span><span class="mf">0.006694380022900787</span>
+<span class="n">north</span><span class="p">:</span>      <span class="mi">320000</span>
+<span class="n">south</span><span class="p">:</span>      <span class="mi">10000</span>
+<span class="n">west</span><span class="p">:</span>       <span class="mi">120000</span>
+<span class="n">east</span><span class="p">:</span>       <span class="mi">935000</span>
+<span class="n">nsres</span><span class="p">:</span>      <span class="mi">500</span>
+<span class="n">ewres</span><span class="p">:</span>      <span class="mi">500</span>
+<span class="n">rows</span><span class="p">:</span>       <span class="mi">620</span>
+<span class="n">cols</span><span class="p">:</span>       <span class="mi">1630</span>
+<span class="n">cells</span><span class="p">:</span>      <span class="mi">1010600</span>
+
+<span class="p">{</span><span class="s1">&#39;resources&#39;</span><span class="p">:</span> <span class="p">[],</span>
+ <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;https://actinia.mundialis.de/api/v1/resources/demouser/resource_id-b398b4dd-a47c-4443-a07d-7814cc737973&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="script-examples">
+<h3><a class="toc-backref" href="#id22">Script examples</a><a class="headerlink" href="#script-examples" title="Link a questa intestazione">¶</a></h3>
+<div class="section" id="example-1-computing-slope-and-aspect-and-univariate-statistics-from-an-elevation-model">
+<h4><a class="toc-backref" href="#id23">Example 1: computing slope and aspect and univariate statistics from an elevation model</a><a class="headerlink" href="#example-1-computing-slope-and-aspect-and-univariate-statistics-from-an-elevation-model" title="Link a questa intestazione">¶</a></h4>
+<p>The following commands (to be stored in a script and executed with
+<code class="docutils literal"><span class="pre">ace</span></code>) will import a raster layer from an internet source as raster
+map <code class="docutils literal"><span class="pre">elev</span></code>, sets the computational region to the map and computes the
+slope. Additional information about the raster layer are requested with
+<code class="docutils literal"><span class="pre">r.info</span></code>.</p>
+<p>Store the following script as text file <code class="docutils literal"><span class="pre">ace_dtm_statistics.sh</span></code>:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="c1"># grass77 ~/grassdata/nc_spm_08/user1/</span>
+<span class="c1"># Import the web resource and set the region to the imported map</span>
+<span class="n">g</span><span class="o">.</span><span class="n">region</span> <span class="n">raster</span><span class="o">=</span><span class="n">elev</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">storage</span><span class="o">.</span><span class="n">googleapis</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">graas</span><span class="o">-</span><span class="n">geodata</span><span class="o">/</span><span class="n">elev_ned_30m</span><span class="o">.</span><span class="n">tif</span> <span class="o">-</span><span class="n">ap</span>
+<span class="c1"># Compute univariate statistics</span>
+<span class="n">r</span><span class="o">.</span><span class="n">univar</span> <span class="nb">map</span><span class="o">=</span><span class="n">elev</span>
+<span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="n">elev</span>
+<span class="c1"># Compute the slope of the imported map and mark it for export as geotiff file</span>
+<span class="n">r</span><span class="o">.</span><span class="n">slope</span><span class="o">.</span><span class="n">aspect</span> <span class="n">elevation</span><span class="o">=</span><span class="n">elev</span> <span class="n">slope</span><span class="o">=</span><span class="n">slope_elev</span><span class="o">+</span><span class="n">GTiff</span>
+<span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="n">slope_elev</span>
+</pre></div>
+</div>
+<p>Save the script in the text file to <code class="docutils literal"><span class="pre">/tmp/ace_dtm_statistics.sh</span></code> and
+run the saved script as</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">script</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ace_dtm_statistics</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>The results are provided as REST resources.</p>
+<p>To generate the actinia process chain JSON request simply add the
+–dry-run flag</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">dry</span><span class="o">-</span><span class="n">run</span> <span class="o">--</span><span class="n">script</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ace_dtm_statistics</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>The output should look like this:</p>
+<div class="code json highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;list&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;g.region&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;g.region_1804289383&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;flags&quot;</span><span class="p">:</span> <span class="s2">&quot;pa&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;inputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;import_descr&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;https://storage.googleapis.com/graas-geodata/elev_ned_30m.tif&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;raster&quot;</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;raster&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;elev&quot;</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;r.univar&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;r.univar_1804289383&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;inputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;map&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;elev&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;percentile&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;90&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;separator&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;pipe&quot;</span><span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;r.info&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;r.info_1804289383&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;inputs&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;map&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;elev&quot;</span><span class="p">}]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;r.slope.aspect&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;r.slope.aspect_1804289383&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;inputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;elevation&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;elev&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;format&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;degrees&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;precision&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;FCELL&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;zscale&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;min_slope&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0&quot;</span><span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;export&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;GTiff&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;raster&quot;</span><span class="p">},</span>
+          <span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;slope&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;slope_elev&quot;</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;module&quot;</span><span class="p">:</span> <span class="s2">&quot;r.info&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;r.info_1804289383&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;inputs&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;map&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;slope_elev&quot;</span><span class="p">}]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2-orthophoto-image-segmentation-with-export">
+<h4><a class="toc-backref" href="#id24">Example 2: Orthophoto image segmentation with export</a><a class="headerlink" href="#example-2-orthophoto-image-segmentation-with-export" title="Link a questa intestazione">¶</a></h4>
+<p>Store the following script as text file <code class="docutils literal"><span class="pre">/tmp/ace_segmentation.sh</span></code>:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="c1"># grass77 ~/grassdata/nc_spm_08/user1/</span>
+<span class="c1"># Import the web resource and set the region to the imported map</span>
+<span class="c1"># we apply a trick for the import of multi-band GeoTIFFs:</span>
+<span class="c1"># install with: g.extension importer</span>
+<span class="n">importer</span> <span class="n">raster</span><span class="o">=</span><span class="n">ortho2010</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">apps</span><span class="o">.</span><span class="n">mundialis</span><span class="o">.</span><span class="n">de</span><span class="o">/</span><span class="n">workshops</span><span class="o">/</span><span class="n">osgeo_ireland2017</span><span class="o">/</span><span class="n">north_carolina</span><span class="o">/</span><span class="n">ortho2010_t792_subset_20cm</span><span class="o">.</span><span class="n">tif</span>
+<span class="c1"># The importer has created three new raster maps, one for each band in the geotiff file</span>
+<span class="c1"># stored them in an image group</span>
+<span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="nb">map</span><span class="o">=</span><span class="n">ortho2010</span><span class="o">.</span><span class="mi">1</span>
+<span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="nb">map</span><span class="o">=</span><span class="n">ortho2010</span><span class="o">.</span><span class="mi">2</span>
+<span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="nb">map</span><span class="o">=</span><span class="n">ortho2010</span><span class="o">.</span><span class="mi">3</span>
+<span class="c1"># Set the region and resolution</span>
+<span class="n">g</span><span class="o">.</span><span class="n">region</span> <span class="n">raster</span><span class="o">=</span><span class="n">ortho2010</span><span class="o">.</span><span class="mi">1</span> <span class="n">res</span><span class="o">=</span><span class="mi">1</span> <span class="o">-</span><span class="n">p</span>
+<span class="c1"># Note: the RGB bands are organized as a group</span>
+<span class="n">i</span><span class="o">.</span><span class="n">segment</span> <span class="n">group</span><span class="o">=</span><span class="n">ortho2010</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.25</span> <span class="n">output</span><span class="o">=</span><span class="n">ortho2010_segment_25</span><span class="o">+</span><span class="n">GTiff</span> <span class="n">goodness</span><span class="o">=</span><span class="n">ortho2010_seg_25_fit</span><span class="o">+</span><span class="n">GTiff</span>
+<span class="c1"># Finally vectorize segments with r.to.vect and export as a GeoJSON file</span>
+<span class="n">r</span><span class="o">.</span><span class="n">to</span><span class="o">.</span><span class="n">vect</span> <span class="nb">input</span><span class="o">=</span><span class="n">ortho2010_segment_25</span> <span class="nb">type</span><span class="o">=</span><span class="n">area</span> <span class="n">output</span><span class="o">=</span><span class="n">ortho2010_segment_25</span><span class="o">+</span><span class="n">GeoJSON</span>
+</pre></div>
+</div>
+<p>Run the script saved in a text file as</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">script</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ace_segmentation</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>The results are provided as REST resources.</p>
+<div class="section" id="examples-for-persistent-processing">
+<h5><a class="toc-backref" href="#id25">Examples for persistent processing</a><a class="headerlink" href="#examples-for-persistent-processing" title="Link a questa intestazione">¶</a></h5>
+<p>GRASS GIS commands can be executed in a user specific persistent
+database. The user must create a mapset in an existing location. This
+mapsets can be accessed via <code class="docutils literal"><span class="pre">ace</span></code>. All processing results of commands
+run in this mapset, will be stored persistently. Be aware that the
+processing will be performed in an ephemeral database that will be moved
+to the persistent storage using the correct name after processing.</p>
+<p>To create a new mapset in the <strong>nc_spm_08</strong> location with the name
+<strong>test_mapset</strong> the following command must be executed</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">create</span><span class="o">-</span><span class="n">mapset</span> <span class="n">test_mapset</span>
+</pre></div>
+</div>
+<p>Run the commands from the statistic script in the new persistent mapset</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">persistent</span> <span class="n">test_mapset</span> <span class="o">--</span><span class="n">script</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">ace_dtm_statistics</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>Show all raster maps that have been created with the script in
+test_mapset</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">persistent</span> <span class="n">test_mapset</span> <span class="n">g</span><span class="o">.</span><span class="n">list</span> <span class="nb">type</span><span class="o">=</span><span class="n">raster</span> <span class="n">mapset</span><span class="o">=</span><span class="n">test_mapset</span>
+</pre></div>
+</div>
+<p>Show information about raster map elev and slope_elev</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">persistent</span> <span class="n">test_mapset</span> <span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="n">elev</span><span class="nd">@test_mapset</span>
+<span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">persistent</span> <span class="n">test_mapset</span> <span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="n">slope_elev</span><span class="nd">@test_mapset</span>
+</pre></div>
+</div>
+<p>Delete the test_mapset</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">nc_spm_08</span> <span class="o">--</span><span class="n">delete</span><span class="o">-</span><span class="n">mapset</span> <span class="n">test_mapset</span>
+</pre></div>
+</div>
+<p>If the active GRASS GIS session has identical location/mapset settings,
+then an alias can be used to avoid the persistent option in each single
+command call:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">acp</span><span class="o">=</span><span class="s2">&quot;ace --persistent `g.mapset -p`&quot;</span>
+</pre></div>
+</div>
+<p>We assume that in the active GRASS GIS session the current location is
+<strong>nc_spm_08</strong> and the current mapset is <strong>test_mapset</strong>. Then the
+commands from above can be executed in the following way:</p>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="n">ace</span> <span class="o">--</span><span class="n">create</span><span class="o">-</span><span class="n">mapset</span> <span class="n">test_mapset</span>
+<span class="n">acp</span> <span class="o">--</span><span class="n">script</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">ace_dtm_statistics</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">acp</span> <span class="n">g</span><span class="o">.</span><span class="n">list</span> <span class="nb">type</span><span class="o">=</span><span class="n">raster</span> <span class="n">mapset</span><span class="o">=</span><span class="n">test_mapset</span>
+<span class="n">acp</span> <span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="n">elev</span><span class="nd">@test_mapset</span>
+<span class="n">acp</span> <span class="n">r</span><span class="o">.</span><span class="n">info</span> <span class="n">slope_elev</span><span class="nd">@test_mapset</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="super-admin-tasks">
+<h5><a class="toc-backref" href="#id26">Super admin tasks</a><a class="headerlink" href="#super-admin-tasks" title="Link a questa intestazione">¶</a></h5>
+</div>
+</div>
+</div>
+<div class="section" id="creation-of-new-locations">
+<h3><a class="toc-backref" href="#id27">Creation of new locations</a><a class="headerlink" href="#creation-of-new-locations" title="Link a questa intestazione">¶</a></h3>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="c1"># create new location</span>
+<span class="n">ace</span> <span class="o">--</span><span class="n">create</span><span class="o">-</span><span class="n">location</span> <span class="n">latlon</span> <span class="mi">4326</span>
+<span class="c1"># create new mapset within location</span>
+<span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">latlon</span> <span class="o">--</span><span class="n">create</span><span class="o">-</span><span class="n">mapset</span> <span class="n">user1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-of-grass-gis-addons-extensions">
+<h3><a class="toc-backref" href="#id28">Installing of GRASS GIS addons (extensions)</a><a class="headerlink" href="#installing-of-grass-gis-addons-extensions" title="Link a questa intestazione">¶</a></h3>
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span><span class="c1"># list existing addons, see also</span>
+<span class="c1"># https://grass.osgeo.org/grass7/manuals/addons/</span>
+<span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">latlon</span> <span class="n">g</span><span class="o">.</span><span class="n">extension</span> <span class="o">-</span><span class="n">l</span>
+
+<span class="c1"># install machine learning addon r.learn.ml</span>
+<span class="n">ace</span> <span class="o">--</span><span class="n">location</span> <span class="n">latlon</span> <span class="n">g</span><span class="o">.</span><span class="n">extension</span> <span class="n">r</span><span class="o">.</span><span class="n">learn</span><span class="o">.</span><span class="n">ml</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="further-reading">
+<h2><a class="toc-backref" href="#id29">Further reading</a><a class="headerlink" href="#further-reading" title="Link a questa intestazione">¶</a></h2>
+<ul class="simple">
+<li>Visit the actinia website at <a class="reference external" href="https://actinia.mundialis.de">https://actinia.mundialis.de</a></li>
+<li>Neteler, M., Gebbert, S., Tawalika, C., Bettge, A., Benelcadi, H., Löw, F., Adams, T, Paulsen, H. (2019). Actinia: cloud based geoprocessing. In Proc. of the 2019 conference on Big Data from Space (BiDS’2019) (pp. 41–44). EUR 29660 EN, Publications Office of the European Union 5, Luxembourg: P. Soille, S. Loekken, and S. Albani (Eds.). (<a class="reference external" href="https://doi.org/10.5281/zenodo.2631917">DOI</a>)</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

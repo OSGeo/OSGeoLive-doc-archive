@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guida rapida su MapServer &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 9.5 Contents" href="../overview/overview.html" />
+    <link rel="next" title="Guida rapida su MapSlicer" href="mapslicer_quickstart.html" />
+    <link rel="prev" title="Guida rapida su MapProxy" href="mapproxy_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://mapserver.org/"><img alt="Project logo" class="align-right" src="../../_images/logo-mapserver-new16.png" style="width: 45.5px; height: 65.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project16.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="guida-rapida-su-mapserver">
+<h1>Guida rapida su MapServer<a class="headerlink" href="#guida-rapida-su-mapserver" title="Permalink to this headline">¶</a></h1>
+<p>MapServer è un&#8217;applicazione server <cite>Open Source &lt;http://www.opensource.org&gt;</cite> che ti
+permette di pubblicare immagini di mappe geografiche e dati vettoriali attraverso
+internet utilizzando <a class="reference external" href="http://www.opengeospatial.org/standards">standards OGC</a> come <a class="reference external" href="http://www.opengeospatial.org/standards/wms">WMS</a> e <a class="reference external" href="http://www.opengeospatial.org/standards/wfs">WFS</a>.</p>
+<p>Questa guida rapida descrive come:</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mapserver-quickstart-configure-with-mapfile-it"><em>Configura MapServer utilizzando il file di configurazione &#8220;mapfile&#8221;</em></a></li>
+<li><a class="reference internal" href="#mapserver-quickstart-wms-request-it"><em>Riprodurre una mappa immagine con MapServer usando una richiesta WMS GetMap</em></a></li>
+<li><a class="reference internal" href="#mapserver-quickstart-add-new-layer-it"><em>Aggiungere un nuovo layer al mapfile per fornire uno shapefile locale</em></a></li>
+<li><a class="reference internal" href="#mapserver-quickstart-styling-di-un-layer-it"><em>Definire lo stile di un layer usando la configurazione del mapfile</em></a></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<div class="section" id="configura-mapserver-utilizzando-il-file-di-configurazione-mapfile">
+<span id="mapserver-quickstart-configure-with-mapfile-it"></span><h2>Configura MapServer utilizzando il file di configurazione &#8220;mapfile&#8221;<a class="headerlink" href="#configura-mapserver-utilizzando-il-file-di-configurazione-mapfile" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Cosa imparerò?</strong> In questa sezione imparerai cos&#8217;è un mapfile e come
+configurarlo per permettere a MapServer di restituire uno shapefile come immagine
+usando una richiesta WMS.</p>
+</div>
+<div class="section" id="cos-e-un-mapfile">
+<h3>Cos&#8217;è un MapFile?<a class="headerlink" href="#cos-e-un-mapfile" title="Permalink to this headline">¶</a></h3>
+<p>Il <a class="reference external" href="http://mapserver.org/mapfile/index.html">Mapfile</a> è il file di configurazione
+che MapServer usa per rappresentare dati geospaziali come immagini o dati vettoriali.
+Il suo scopo principale è di definire quali layer possono essere rappresentati, come
+leggere i dati necessari e come restituirli (es. color, symbol, label, etc...).</p>
+<hr class="docutils" />
+<ol class="arabic simple">
+<li>Apri qualsiasi editor di testo (Mousepad è l&#8217;editor di testo di default sul dvd:
+<em class="menuselection">Applications ‣ Accessories ‣ Mousepad</em>).</li>
+<li>Crea il file &#8220;mapserver_quickstart.map&#8221; nella tua directory home: <tt class="file docutils literal"><span class="pre">/home/user/mapserver_quickstart.map</span></tt></li>
+</ol>
+<p>Inseriscici il seguente contenuto:</p>
+<div class="highlight-python"><div class="highlight"><pre>MAP
+  NAME &quot;MAPSERVER QUICKSTART&quot;
+  EXTENT -137 29 -53 88
+  UNITS DD
+  SHAPEPATH &quot;/home/user/data/natural_earth2/&quot;
+  SIZE 800 600
+
+  IMAGETYPE PNG24
+
+  PROJECTION
+    &quot;init=epsg:4326&quot;
+  END
+
+  WEB
+    METADATA
+      ows_enable_request &quot;*&quot;
+    END
+  END
+
+  LAYER
+    NAME &quot;Admin Countries&quot;
+    STATUS ON
+    TYPE POLYGON
+    DATA &quot;ne_10m_admin_0_countries&quot;
+    CLASS
+      STYLE
+        COLOR 246 241 223
+        OUTLINECOLOR 0 0 0
+      END
+    END
+  END
+
+END
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">L&#8217;esempio utilizza il dataset natural earth, che è già installato nel dvd:
+<tt class="file docutils literal"><span class="pre">~/data/natural_earth2</span></tt> (percorso breve a <tt class="file docutils literal"><span class="pre">/usr/local/share/data/natural_earth2</span></tt>)</p>
+</div>
+<p>Ogni oggetto in un mapfile inizia con il suo nome (per esempio <strong>MAP</strong>) e termina con
+un <strong>END</strong>. Un mapfile inizia sempre con l&#8217;oggetto <strong>MAP</strong> e dovrebbe contenere una
+lista di oggetti <strong>LAYER</strong> che il mapfile può leggere e rappresentare. Nel nostro mapfile
+abbiamo per il momento definito un solo layer.</p>
+<dl class="docutils">
+<dt>Dai uno sguardo ad alcuni degli oggetti (e proprietà) definiti nel nostro mapfile:</dt>
+<dd><ul class="first last simple">
+<li>EXTENT : definisce la bounding box di default per questa configurazione</li>
+<li>LAYER : definisce l&#8217;accesso e mostra le proprietà per un dataset spaziale. Aggiungeremo
+un altro layer in seguito.</li>
+<li>SHAPEPATH : definisce un percorso di base per i dati basati sul file (es. shapefiles
+o immagini tiff).</li>
+</ul>
+</dd>
+</dl>
+<p>Se osserviamo più da vicino il <strong>LAYER</strong> nel nostro mapfile, noteremo che contiene una
+serie di proprietà e oggetti. Tra questi:</p>
+<blockquote>
+<div><ul class="simple">
+<li>STATUS : se il layer può essere rappresentato (<em>ON</em>), non può essere rappresentato
+(<em>OFF</em>) o se deve essere sempre rappresentato (<em>DEFAULT</em>).</li>
+<li>TYPE : il tipo di geometria che MapServer deve utilizzare  quando riproduce i dati
+come un immagine; nel nostro mapfile i dati saranno rappresentati come <em>polygons</em>.</li>
+<li>DATA : il nome del file di dati spaziali che questo layer, in questo caso uno shapefile.</li>
+<li>CLASS : determina come rappresentare un layer (styling).  Affronteremo questo oggetto
+con maggior dettaglio più avanti.</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Una lista completa degli oggetti e delle proprietà disponibili che può contenere
+il <a class="reference external" href="http://mapserver.org/mapfile/index.html">Mapfile</a> si trova nella
+documentazione di MapServer.</p>
+</div>
+</div>
+</div>
+<div class="section" id="riprodurre-una-immagine-di-una-mappa-con-mapserver-usando-la-linea-di-comando">
+<span id="mapserver-quickstart-richiesta-wms"></span><h2>Riprodurre una immagine di una mappa con MapServer usando la linea di comando<a class="headerlink" href="#riprodurre-una-immagine-di-una-mappa-con-mapserver-usando-la-linea-di-comando" title="Permalink to this headline">¶</a></h2>
+<p>Nonostante MapServer sia orientato verso le applicazioni web, può anche produrre
+immagini statiche tramite la linea di comando. Questo può essere utile se siete alla
+ricerca di una mappatura ripetitiva o durante il debugging.</p>
+<p>Apri un terminale (Applications/Accessories/Terminal Emulator) e digita</p>
+<blockquote>
+<div>shp2img -m mapserver_quickstart.map -o mymap.png</div></blockquote>
+<p>Se il comando viene eseguito con successo potrai vedere la tua mappa nel <tt class="file docutils literal"><span class="pre">/home/user/mymap.png</span></tt> .</p>
+</div>
+<div class="section" id="riprodurre-una-mappa-immagine-con-mapserver-usando-una-richiesta-wms-getmap">
+<span id="mapserver-quickstart-wms-request-it"></span><h2>Riprodurre una mappa immagine con MapServer usando una richiesta WMS <strong>GetMap</strong><a class="headerlink" href="#riprodurre-una-mappa-immagine-con-mapserver-usando-una-richiesta-wms-getmap" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Cosa imparerò?</strong> Imparerai come riprodurre un immagine con layer dal mapfile
+con MapServer utilizzando una richiesta OGC WMS.</p>
+</div>
+<p>Apri un web browser e inserisci l&#8217;URL seguente:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Admin%20Countries&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=PNG&amp;WIDTH=800&amp;HEIGHT=600
+</pre></div>
+</div>
+<p>Cosa significa quanto sopra?  In parole semplici è un <a class="reference external" href="http://www.opengeospatial.org/standards/wms">Web Map Service (WMS)</a> La richiesta <strong>GetMap</strong> che dice a
+MapServer di &#8220;<em>usare il mapfile seguente per riprodurre i layer specificat come un&#8217;immagine</em>
+<em>png sulla base di alcuni parametri forniti dall&#8217;utente come la dimensione dell&#8217;immagine, *
+*l&#8217;estensione geografica, proiezione, ecc.</em>&#8221; Tutti i layer specificati nella proprietà
+&#8220;<em>&amp;LAYERS=...</em>&#8221; che hanno <em>STATUS ON</em> nel mapfile insieme a tutti i layer con <em>STATUS DEFAULT</em>
+saranno riprodotti.  Il risultato dovrebbe assomigliare al seguente:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_map7.png"><img alt="../../_images/mapserver_map7.png" src="../../_images/mapserver_map7.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">tutti i parametri della richiesta sono specifici del WMS eccetto
+&#8220;<em>?map=/home/user/mapserver_quickstart.map</em>&#8221;, che è specifico di MapServer.</p>
+</div>
+</div>
+<div class="section" id="aggiungere-un-nuovo-layer-al-mapfile-per-fornire-uno-shapefile-locale">
+<span id="mapserver-quickstart-add-new-layer-it"></span><span id="mapserver-quickstart-aggiungere-un-nuovo-layer"></span><h2>Aggiungere un nuovo layer al mapfile per fornire uno shapefile locale<a class="headerlink" href="#aggiungere-un-nuovo-layer-al-mapfile-per-fornire-uno-shapefile-locale" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Cosa imparerò?</strong> Imparerai ad aggiungere un nuovo oggetto layer al tuo mapfile.</p>
+</div>
+<p>Aggiungeremo un nuovo layer al mapfile. Dopo l&#8217;ultima dichiarazione <em>END</em> nel mapfile,
+aggiungi la configurazione del layer seguente:</p>
+<div class="highlight-python"><div class="highlight"><pre>LAYER
+  NAME &quot;Lakes&quot;
+  STATUS ON
+  TYPE POLYGON
+  DATA &quot;ne_10m_lakes&quot;
+  CLASS
+    STYLE
+      COLOR 153 179 204
+    END
+  END
+ END
+</pre></div>
+</div>
+<p>Ora abbiamo definito due layer nel nostro mapfile. Si noti che questo nuovo layer che
+abbiamo appena aggiunto ha la proprietà &#8220;STATUS ON&#8221;. Ciò significa che se non viene
+specificatamente richiesto, non sarà restituito.</p>
+<p>Prendiamo la nostra precedente richiesta WMS <strong>GetMap</strong> e aggiungiamo il nostro nuovo
+layer &#8220;Lakes&#8221; all&#8217;immagine riprodotta. Abbiamo semplicemente bisogno di aggiungere il
+nome del nuovo layer alla lista della proprietà &#8220;LAYERS&#8221;, in questo modo:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Admin%20Countries,Lakes&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=PNG&amp;WIDTH=800&amp;HEIGHT=600
+</pre></div>
+</div>
+<p>L&#8217;immagine restituita da MapServer assomiglia alla nostra mappa precedente ma con
+l&#8217;aggiunta dei laghi del nostro nuovo layer:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes7.png"><img alt="../../_images/mapserver_lakes7.png" src="../../_images/mapserver_lakes7.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="definire-lo-stile-di-un-layer-usando-la-configurazione-del-mapfile">
+<span id="mapserver-quickstart-styling-di-un-layer-it"></span><h2>Definire lo stile di un layer usando la configurazione del mapfile<a class="headerlink" href="#definire-lo-stile-di-un-layer-usando-la-configurazione-del-mapfile" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><strong>Cosa imparerò?</strong> vedrai un esempio di elementi di stile all&#8217;interno di un layer
+che dipendono da alcune sue proprietà dei dati.</p>
+</div>
+<p>In un MapFile, un layer può contenere un infinito numero di oggetti CLASS. Questi sono
+utilizzati per definire lo stile degli elementi contenuti nel file di dati spaziali (DATA).
+Ad esempio se guardiamo più da vicino il file di dati &#8220;ne_10m_lakes&#8221; usando uno strumento come
+<a class="reference external" href="http://www.gdal.org/ogrinfo.html">ogrinfo</a>, vedremo la definizione delle geometrie e degli
+attributi che contiene. I valori di questi attributi possono essere utilizzati come un mezzo
+per rappresentare diversamente gli elementi contenuti in dataset utilizzando diversi oggetti CLASS.</p>
+<p>Nel nostro dataset &#8220;ne_10m_lakes&#8221;, abbiamo un attributo <em>ScaleRank</em>, che sembra essere correlato
+alle dimensioni del lago. Possiamo utilizzare i valori di questo attributo per rappresentare in
+modo diverso i laghi. Nell&#8217;oggetto LAYER aggiungeremo un altro oggetto CLASS appena prima di
+quello corrente, in questo modo:</p>
+<div class="highlight-python"><div class="highlight"><pre>LAYER
+ NAME &quot;Lakes&quot;
+ STATUS DEFAULT
+ TYPE POLYGON
+ DATA &quot;ne_10m_lakes&quot;
+ CLASSITEM &quot;ScaleRank&quot;
+ CLASS
+   EXPRESSION /0|1/
+   STYLE
+     COLOR 153 179 204
+     OUTLINECOLOR 0 0 0
+   END
+ END
+ CLASS
+   STYLE
+     COLOR 153 179 204
+   END
+ END
+END
+</pre></div>
+</div>
+<p>Cosa fa il nostro nuovo oggetto CLASS?  Fondamentalmente dice a MapServer di rappresentare
+gli elementi che hanno la proprietà &#8220;ScaleRank&#8221; uguale a 0 o a 1 con un una linea di contorno
+nera. Gli oggetti Class sono sempre letti dall&#8217;alto al basso per ogni feature da rappresentare.
+Quando una feature risponde all&#8216;&#8220;EXPRESSION&#8221; specificata in una class, questa class viene
+utilizzata per definire lo stile della feature stessa. Se la feature non risponde a una classe,
+viene valutata quella sucessiva. Se una feature non risponde a nessuna class allora non viene
+rappresentata e se l&#8217;ultima class in un layer non contiene alcun oggetto &#8220;EXPRESSION&#8221; allora
+questa classe viene assunta come di default. La proprietà &#8220;CLASSITEM&#8221; dice a MapServer quale
+attributo utilizzare per la valutazione dell&#8217;EXPRESSIONs definite nell&#8217;oggetto CLASS.</p>
+<p>Il risultato di questa nuova aggiunta dovrebbe mostrare i laghi più grandi nella nostra mappa
+con una linea di contorno nera, come nell&#8217;immagine di seguito:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes_scalerank7.png"><img alt="../../_images/mapserver_lakes_scalerank7.png" src="../../_images/mapserver_lakes_scalerank7.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Impara di più su <a class="reference external" href="http://mapserver.org/mapfile/expressions.html">EXPRESSIONS</a> in MapServer.</p>
+</div>
+</div>
+<div class="section" id="che-altro">
+<h2>Che altro?<a class="headerlink" href="#che-altro" title="Permalink to this headline">¶</a></h2>
+<p>Questo è un esempio semplice ma puoi fare molto molto di più. Il sito web del progetto MapServer
+contiene molte risorse per aiutarti ad iniziare. Qui ce ne sono alcune da considerare in seguito:</p>
+<ul class="simple">
+<li>Leggi <a class="reference external" href="http://mapserver.org/introduction.html#introduction">Introduzione a MapServer</a>.</li>
+<li>Dai uno sguardo al <a class="reference external" href="http://www.mapserver.org/tutorial/index.html">tutorial di MapServer</a>
+che contiene diversi esempi di mapfile.</li>
+<li>Guarda <a class="reference external" href="http://www.mapserver.org/ogc/index.html">OGC Support and Configuration</a> per sapere
+di più sugli standard OGC in MapServer (WMS, WFS, SLD, WFS Filter Encoding, WCS, SOS, etc.).</li>
+<li>Pronto a usare MapServer?  Allora aggiungiti alla comunity sulla
+<a class="reference external" href="http://www.mapserver.org/community/lists.html">Mailing Lists</a> per scambiarsi idee, discutere
+potenziali miglioramenti del software e porre domande.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

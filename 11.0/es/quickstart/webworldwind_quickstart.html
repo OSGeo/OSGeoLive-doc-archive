@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guía de inicio rápido de Web World Wind &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Quickstarts" href="toc.html" />
+    <link rel="next" title="Guía de inicio rápido de ZOO Project" href="zoo-project_quickstart.html" />
+    <link rel="prev" title="OSGeo-Live Quickstart for VMWare Player" href="vmware_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://webworldwind.org/"><img alt="project logo" class="align-right" src="../../_images/logoNasaWWW.png" /></a>
+<div class="section" id="guia-de-inicio-rapido-de-web-world-wind">
+<h1>Guía de inicio rápido de Web World Wind<a class="headerlink" href="#guia-de-inicio-rapido-de-web-world-wind" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="para-empezar">
+<h2>Para empezar<a class="headerlink" href="#para-empezar" title="Permalink to this headline">¶</a></h2>
+<p>Web World Wind es una API de globo virtual 3D para HTML5 y Javascript. Las páginas web incluyen Web World Wind para crear uno o más globos vituales en dichas páginas.</p>
+<p>Es muy fácil empezar a usar Web World Wind. No hay que descargar nada, simplemente incluir un pequeño script en una página HTML, como en este ejemplo:</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;!DOCTYPE html&gt;
+&lt;!-- Este es un ejemplo muy simple de uso de Web World Wind. --&gt;
+&lt;html&gt;
+&lt;head lang=&quot;en&quot;&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Ejemplo de World Wind&lt;/title&gt;
+    &lt;!-- incluir la bibliotecta deWeb World Wind. --&gt;
+    &lt;script src=&quot;http://worldwindserver.net/webworldwind/worldwindlib.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div style=&quot;position: absolute; top: 50px; left: 50px;&quot;&gt;
+    &lt;!-- Crea un lienzo (*canvas*) para  Web World Wind. --&gt;
+    &lt;canvas id=&quot;canvasOne&quot; width=&quot;1024&quot; height=&quot;768&quot;&gt;
+        Su navegador no soporta Canvas HTML5.
+    &lt;/canvas&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    // Registra un &quot;escuchador&quot; de eventos (*event listener*) y lo llama cuando se carga la página
+    window.addEventListener(&quot;load&quot;, eventWindowLoaded, false);
+
+    // Define el event listener para inicializar Web World Wind.
+    function eventWindowLoaded() {
+        // Crea un World Window para el lienzo.
+        var wwd = new WorldWind.WorldWindow(&quot;canvasOne&quot;);
+
+        // Añade algunas capas de imagen al globo World Window.
+        wwd.addLayer(new WorldWind.BMNGOneImageLayer());
+        wwd.addLayer(new WorldWind.BingAerialWithLabelsLayer());
+
+        // Añade una brújula, un visor de coordenadas y algunos controles de visualizaciión al World Window.
+        wwd.addLayer(new WorldWind.CompassLayer());
+        wwd.addLayer(new WorldWind.CoordinatesDisplayLayer(wwd));
+        wwd.addLayer(new WorldWind.ViewControlsLayer(wwd));
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<p>Este ejemplo primero incluye la librería  Web World Wind library, worldwindlib.js, después crea un lienzo HTML5s, finalmente define un script que crea elWorld Window y lo rellena con dos capas de imágen y tres capas de controles. Clic este enlace para ver la página web que se ha creado n una ventana nueva. La página contiene un globo virtual 3D. Intenta Intentar hacer zoom con la rueda del ratón o en un dispositvo móvil con el gesto de pellizcar. Arrastrar el ratón o el dedo para desplazarse alrededor del globo. Arrastrar el botón derecho del ratón o dos dedos hacia arriba para inclinar el globo.</p>
+</div>
+<div class="section" id="ejecutar-de-forma-local-dentro-de-un-servidor">
+<h2>Ejecutar de forma local dentro de un servidor<a class="headerlink" href="#ejecutar-de-forma-local-dentro-de-un-servidor" title="Permalink to this headline">¶</a></h2>
+<p>Para ejecutar localmente una aplicación Web World Wind, navegar a:</p>
+<blockquote>
+<div><a class="reference external" href="http://localhost/WebWorlWindexamples/BasicExample.html">http://localhost/WebWorlWindexamples/BasicExample.html</a></div></blockquote>
+<p>y se debería ver este mismo ejemplo Web World Wind example en el navegador web.</p>
+</div>
+<div class="section" id="ficheros-fuente">
+<h2>Ficheros fuente<a class="headerlink" href="#ficheros-fuente" title="Permalink to this headline">¶</a></h2>
+<p>Abriendo:</p>
+<div class="highlight-python"><div class="highlight"><pre>/var/www/html/WebWorldWind
+</pre></div>
+</div>
+<p>se pueden encontrar más ejemplos junto con los archivos fuente.</p>
+<div class="line-block">
+<div class="line">Web World Wind proporciona muchas más funcionalidades que las disponibles en este sencillo ejemplo. La página de Ejemplos ilustra muchas de ests funcionalidades a través de ejemplos simples. La Guía de Desarrollo describe la funcionalidad de Web World Wind en detalle. La página de Despliegue, explica como desplegar Web World Wind en una página web.</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

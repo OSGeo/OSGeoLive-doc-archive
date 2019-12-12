@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы c OpenJUMP &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="c-openjump">
+<h1>Начало работы c OpenJUMP<a class="headerlink" href="#c-openjump" title="Permalink to this headline">¶</a></h1>
+<p>OpenJUMP&nbsp;— это ГИС, позволяющая просматривать и редактировать пространственные векторные данные.
+В OpenJUMP имеется также возможность просмотра растровых данных.</p>
+<p>Данное &#8220;введение&#8221; описывает, как:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Открыть шейп-файлы в OpenJUMP;</li>
+<li>Пприменить оформление к слою, созданному из шейп-файла, для удобного просмотра;</li>
+<li>редактировать геометрию слоя.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="openjump">
+<h2>Запуск OpenJUMP<a class="headerlink" href="#openjump" title="Permalink to this headline">¶</a></h2>
+<p>В OSGeo-Live: щёлкните по ссылке OpenJUMP из меню или запустите /usr/bin/openjump.</p>
+<p>Общая информация: для Windows перейдите в папку <em>bin</em> директории <em>OpenJUMP</em> и дважды кликните на
+openjump.exe или openjump.bat. Для Linux запустите файл oj_linux.sh. Для MacOSX кликните по значку OpenJUMP.</p>
+<p>(Помните: для работы OpenJUMP необходим Java runtime environment. Вы можете загрузить Java runtime environment на ваш компьютер отсюда: <a class="reference external" href="http://java.com/en/download/index.jsp">http://java.com/en/download/index.jsp</a>)</p>
+</div>
+<div class="section" id="id1">
+<h2>Базовый обзор интерфейса<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Интрфейс OpenJUMP, как и в многих других ГИС, состоит из четырёх основных компонентов.
+(i) Первый&nbsp;— панель меню, содержащая большую часть функционала.
+(ii) Второй компонент&nbsp;— основная панель инструментов, находящаяся под панелью меню. Кнопки дают доступ к самым важным функциям отображения и навигации.
+(iii) Третий&nbsp;— дерево слоев, находящееся слева, которое показывает список слоев активного проекта.
+(iv) Четвертый&nbsp;— вид карты, графически отображающий пространственные данные каждого из слоёв. В самом низу находится панель, на которой отображаются координаты текущего положения указателя мыши, отчёты обработки данных и использование памяти.</p>
+<p>Окно проекта содержит список слоёв и Вид карты. Каждая сессия OpenJUMP может содержать множество проектов.
+Здесь будет рассмотрена работа с одним окном.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_019.png"><img alt="../../_images/openjump_ss_019.png" src="../../_images/openjump_ss_019.png" style="width: 563.2px; height: 400.95px;" /></a>
+</div>
+<div class="section" id="id2">
+<h2>Открытие шейп-файла<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Этот раздел кратко описывает, как открыть ESRI Shapefile.</p>
+<p>Выберите меню [File] на панели меню, затем выберите опцию [Open File...]. Появится диалоговое окно, с помощью которого вы сможете открыть файлы, содержащие пространственые данные.
+В данном примере вы подгрузите ESRI Shapefile. Найдите файл с расширением .shp, выберите его и кликните по кнопке [Finish] в диалоговом окне. Через некоторое время вы сможете увидеть данные в Виде слоёв.
+Вы также увидите новый слой, созданный из ваших данных, в списке слоёв. Имя слоя будет соответствовать имени шейп-файла.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_029.png"><img alt="../../_images/openjump_ss_029.png" src="../../_images/openjump_ss_029.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>Другой, более быстрый способ&nbsp;— перетащить нужный шейп-файл прямо в Вид карты.</p>
+</div>
+<div class="section" id="id3">
+<h2>Оформление слоя<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Этот раздел описывает, как изменить оформление слоя.</p>
+<p>Правой клавишей мыши кликните по имени слоя в Списке слоёв. В появившемся меню [Style] выберите стиль, а затем нажмите [Change Styles]. Окно &#8220;Смена оформления&#8221; состоит из пяти вкладок, позволяющих изменять отображение слоя в Виде слоёв:
+цвета, заливки, стили линий, их толщину, прозрачность, подписи, а также указывать минимальний и  максимальный
+масштабы, на которых слой отображается.</p>
+<ul class="simple">
+<li>Пользователи MacOS X  должны нажать кнопку <em class="guilabel">Apple</em>, чтобы попасть в это меню.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_039.png"><img alt="../../_images/openjump_ss_039.png" src="../../_images/openjump_ss_039.png" style="width: 563.2px; height: 400.95px;" /></a>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_049.png"><img alt="../../_images/openjump_ss_049.png" src="../../_images/openjump_ss_049.png" style="width: 563.2px; height: 400.95px;" /></a>
+</div>
+<div class="section" id="id4">
+<h2>Редактирование геометрии слоя<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Правой клавишей мыши кликните по имени слоя в списке слоёв.
+В меню &#8220;Редактирование&#8221; поставьте флажок возле пункта меню &#8220;Editable&#8221;.
+Справа над Видом слоёв появится плавающая панель с набором кнопок, позволяющих редактировать геометрию объектов.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_059.png"><img alt="../../_images/openjump_ss_059.png" src="../../_images/openjump_ss_059.png" style="width: 563.2px; height: 400.95px;" /></a>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_069.png"><img alt="../../_images/openjump_ss_069.png" src="../../_images/openjump_ss_069.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>Давайте попробуем быстро отредактировать объект, выбрав его, а затем перестив одну из точек этого объекта.
+Чтобы сделать это, кликните по кнопке в виде указателя мыши на панели редактирования.
+Используйте её, чтобы выбирать объект в один клик в Виде слоёв.
+После этого объект будет выделен жёлтым цветом с небольшими желтыми квадратами возле каждой точки (вершины) геометрии объекта.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_079.png"><img alt="../../_images/openjump_ss_079.png" src="../../_images/openjump_ss_079.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>Далее кликните по кнопке в виде прицела с желтым квадратом посередине <em class="guilabel">Move Vertex Tool</em>.
+(Проведите мышкой над кнопками, чтобы увидеть всплывающую подсказку).
+Указатель мыши сменится на небольшой прицел, когда вы будете проводить им над Видом слоя.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_089.png"><img alt="../../_images/openjump_ss_089.png" src="../../_images/openjump_ss_089.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>Используя этот инструмент, попробуйте переместить вершину выбранной геометрии, кликая на ней и перетягивая её с зажатой левой клавишей мыши.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_099.png"><img alt="../../_images/openjump_ss_099.png" src="../../_images/openjump_ss_099.png" style="width: 563.2px; height: 400.95px;" /></a>
+</div>
+<div class="section" id="id5">
+<h2>Другие источники для обучения OpenJUMP<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Это только первый шаг на пути использования OpenJUMP. Существует ещё много материалов для изучения.</p>
+<p>Вы можете загрузить учебные материалы OpenJUMP тут:
+<a class="reference external" href="http://sourceforge.net/projects/jump-pilot/files/Documentation/">http://sourceforge.net/projects/jump-pilot/files/Documentation/</a></p>
+<p>Вы можете почитать OpenJUMP-вики тут:
+<a class="reference external" href="http://sourceforge.net/apps/mediawiki/jump-pilot/index.php?title=Main_Page">http://sourceforge.net/apps/mediawiki/jump-pilot/index.php?title=Main_Page</a></p>
+<p>Вы сможете получить быструю помощь через список рассылки пользователей OpenJUMP:
+<a class="reference external" href="http://groups.google.com/group/openjump-users">http://groups.google.com/group/openjump-users</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

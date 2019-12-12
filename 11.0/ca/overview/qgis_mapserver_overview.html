@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Servidor QGIS &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Benvinguts a OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="Quantum GIS (QGIS)" href="qgis_overview.html" />
+    <link rel="prev" title="pycsw" href="pycsw_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.qgis.org"><img alt="project logo" class="align-right" src="../../_images/logo-QGIS.png" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="servidor-qgis">
+<h1>Servidor QGIS<a class="headerlink" href="#servidor-qgis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="servei-web">
+<h2>Servei web<a class="headerlink" href="#servei-web" title="Permalink to this headline">¶</a></h2>
+<p>El servidor QGIS proporciona un Web Map Service (WMS) emprant les mateixes llibreries que l&#8217;aplicació Quantum GIS (QGIS) d&#8217;escriptori.
+Els mapes i les plantilles d&#8217;impressió creats a QGIS d&#8217;escriptori es poden publicar com mapes a la web, simplement copiant el fitxer de projecte de QGIS al directori del servidor. Els mapes web resultants tenen el mateix aspecte que a l&#8217;escriptori.
+El servidor de QGIS normalment s&#8217;executa com un mòdul CGI/FastCGI dins del servidor web Apache.</p>
+<a class="reference internal image-reference" href="../../_images/qgis-mapserver-screenshot.jpg"><img alt="project logo" class="align-right" src="../../_images/qgis-mapserver-screenshot.jpg" style="width: 409.6px; height: 266.0px;" /></a>
+<div class="section" id="caracteristiques-principals">
+<h3>Característiques principals<a class="headerlink" href="#caracteristiques-principals" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Implementació de Web Map Service (WMS)</li>
+<li>Sortida en PDF</li>
+<li>Creació de mapes WYSIWYG amb QGIS</li>
+<li>Simbolització cartogràfica avançada</li>
+<li>Suporta Styled Layer Descriptor (SLD)</li>
+</ul>
+</div>
+<div class="section" id="estandards-implementats">
+<h3>Estàndards implementats<a class="headerlink" href="#estandards-implementats" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>OGC Web Map Service (WMS) 1.3.0</li>
+<li>OGC Styled Layer Descriptor (SLD) 1.0</li>
+</ul>
+</div>
+<div class="section" id="detalls">
+<h3>Detalls<a class="headerlink" href="#detalls" title="Permalink to this headline">¶</a></h3>
+<p><strong>Lloc web:</strong> <a class="reference external" href="http://www.qgis.org/">http://www.qgis.org/</a></p>
+<p><strong>Llicència:</strong> GPL</p>
+<p><strong>Versió de programari:</strong> 1.8.0</p>
+<p><strong>Sistemes operatius:</strong> Windows, Linux</p>
+<p><strong>Suport comercial:</strong> <a class="reference external" href="http://www.sourcepole.com/">http://www.sourcepole.com/</a></p>
+</div>
+<div class="section" id="guia-rapida">
+<h3>Guia ràpida<a class="headerlink" href="#guia-rapida" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/qgis_mapserver_quickstart.html"><em>Documentació de la guia ràpida</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

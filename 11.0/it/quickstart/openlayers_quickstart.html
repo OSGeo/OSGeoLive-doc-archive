@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guida rapida OpenLayers &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Benvenuti in OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="Guida rapida su OpenStreetMap" href="osm_quickstart.html" />
+    <link rel="prev" title="OpenJUMP Quickstart" href="openjump_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="guida-rapida-openlayers">
+<h1><a class="toc-backref" href="#id1">Guida rapida OpenLayers</a><a class="headerlink" href="#guida-rapida-openlayers" title="Permalink to this headline">¶</a></h1>
+<a class="reference external image-reference" href="http://openlayers.org/"><img alt="project logo" class="align-right" src="../../_images/logo-OpenLayers.png" style="width: 100.0px; height: 100.8px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 150.0px; height: 53.0px;" /></a>
+<p>Questo tutorial descrive alcune passaggi base richiesti per iniziare a lavorare
+con OpenLayers3: creare una mappa base, aggiungere layer raster e vettoriali
+e stilizzare gli elementi.</p>
+<p>OpenLayers3 è una libreria per mappe molto leggere per client web e mobile
+che usa le tecnologie dei browser moderni, tipo HTML5, WebGL e CSS3.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#guida-rapida-openlayers" id="id1">Guida rapida OpenLayers</a><ul>
+<li><a class="reference internal" href="#concetti-chiave" id="id2">Concetti chiave</a></li>
+<li><a class="reference internal" href="#una-mappa-elementare" id="id3">Una mappa elementare</a></li>
+<li><a class="reference internal" href="#aggiungere-layers-raster" id="id4">Aggiungere layers raster</a></li>
+<li><a class="reference internal" href="#aggiungere-layers-vettoriali" id="id5">Aggiungere layers vettoriali</a></li>
+<li><a class="reference internal" href="#stile-degli-elementi" id="id6">Stile degli elementi</a></li>
+<li><a class="reference internal" href="#lavorare-con-gli-eventi" id="id7">Lavorare con gli eventi</a></li>
+<li><a class="reference internal" href="#ed-ora" id="id8">Ed ora?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="concetti-chiave">
+<h2><a class="toc-backref" href="#id2">Concetti chiave</a><a class="headerlink" href="#concetti-chiave" title="Permalink to this headline">¶</a></h2>
+<p>Prima di iniziare a lavorare con OpenLayers è bene capire i concetti chiave
+di OpenLayers:</p>
+<dl class="docutils">
+<dt><strong>Map</strong></dt>
+<dd>La <em>map</em> è un componente chiave di OpenLayers. Per un <em>map</em> da visualizzare,
+sono necessari una <em>view</em>, uno o più <em>layers</em> e un contenitore di destinazione.</dd>
+<dt><strong>View</strong></dt>
+<dd>La <em>view</em> determina come la mappa è renderizzata. È usata per impostare la
+risoluzione, le coordinate del centro, ecc. È come una camera attraverso
+il quale si accede al contenuto della mappa.</dd>
+<dt><strong>Layers</strong></dt>
+<dd><em>Layers</em> possono essere alla mappa in ordine impilato, questo fa si che,
+i layers più in basso sono renderizzati prima dei layers più in alto.
+Layers possono essere sia <em>layers raster</em> (images), che <em>layers vettoriali</em>
+(punti/linee/poligoni).</dd>
+<dt><strong>Source</strong></dt>
+<dd>Ogni layer ha una <em>source</em>, che conosce come caricare il contenuto del layer.
+Nel caso di <em>layers vettoriali</em>, la sorgente è letta da dati vettoriali
+usando una classe <em>format</em> (per esempio GeoJSON o KML) e riempe il layer
+con un numero di <em>features</em>.</dd>
+<dt><strong>Features</strong></dt>
+<dd><em>Features</em> rappresentano cose del mondo reale e possono essere renderizzate
+con differenti <em>geometries</em> (come punti, linee o poligoni) usando un dato
+<em>style</em>, che determina il suo aspetto (spessore delle linee, colore di
+riempiemento, etc).</dd>
+</dl>
+</div>
+<div class="section" id="una-mappa-elementare">
+<h2><a class="toc-backref" href="#id3">Una mappa elementare</a><a class="headerlink" href="#una-mappa-elementare" title="Permalink to this headline">¶</a></h2>
+<p>In questo passaggio si creerà una mappa base.</p>
+<p>Creare un file nella cartella /home/user/ denominato basic-map.html , e
+copia il testo seguente nel file.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Basic map<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width&quot;</span><span class="p">&gt;</span>
+
+        <span class="c">&lt;!-- OpenLayers CSS --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;http://ol3js.org/en/master/build/ol.css&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
+
+        <span class="c">&lt;!-- Custom styles --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+          <span class="nn">#map</span> <span class="p">{</span>
+            <span class="nb">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+            <span class="nb">height</span><span class="o">:</span> <span class="m">500px</span><span class="p">;</span>
+          <span class="p">}</span>
+        <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Basic map<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;map&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+        <span class="c">&lt;!-- OpenLayers JS--&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://ol3js.org/en/master/build/ol.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+        <span class="c">&lt;!-- App code --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+          <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">Map</span><span class="p">({</span>
+            <span class="nx">target</span><span class="o">:</span> <span class="s1">&#39;map&#39;</span><span class="p">,</span>
+            <span class="nx">renderer</span><span class="o">:</span> <span class="s1">&#39;canvas&#39;</span><span class="p">,</span>
+            <span class="nx">layers</span><span class="o">:</span> <span class="p">[</span>
+              <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
+                <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">OSM</span><span class="p">()</span>
+              <span class="p">})</span>
+            <span class="p">],</span>
+            <span class="nx">view</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">View</span><span class="p">({</span>
+              <span class="nx">center</span><span class="o">:</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">proj</span><span class="p">.</span><span class="nx">transform</span><span class="p">([</span><span class="mf">2.1833</span><span class="p">,</span> <span class="mf">41.3833</span><span class="p">],</span> <span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span> <span class="s1">&#39;EPSG:3857&#39;</span><span class="p">),</span>
+              <span class="nx">zoom</span><span class="o">:</span> <span class="mi">6</span>
+            <span class="p">})</span>
+          <span class="p">});</span>
+        <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p><strong>Es. 1</strong>: Struttura codice basilare</p>
+<p>Ora provate ad aprire basic-map.html da un browser web. Dovreste vedere questo:</p>
+<a class="reference internal image-reference" href="../../_images/openlayers-basic-map.png"><img alt="../../_images/openlayers-basic-map.png" src="../../_images/openlayers-basic-map.png" style="width: 711.0px; height: 620.0px;" /></a>
+<p>Nota:</p>
+<ul class="simple">
+<li>Il codice segue le best practice di caricare codice JavaScipt alla fine
+del file html.</li>
+<li>Una mappa OpenLayers ha bisogno di essere attaccata ad un elemento HTML DOM,
+perciò è stato creato un elemento <code class="docutils literal"><span class="pre">&lt;div&gt;</span></code> identificato dal tag <em>map</em>.</li>
+<li>Mappe sono rappresentate dalla classe <code class="docutils literal"><span class="pre">ol.Map</span></code>. Si specifica l&#8217;elemento
+DOM nel quale renderizzare la mappa usando la proprietà <strong>target</strong>.</li>
+<li>OpenLayers permette la visualizzazione delle mappe usando tre meccanismi
+differenti: Canvas, WebGL e DOM. Qui si seleziona <em>canvas</em> usando la
+proprietà <strong>renderer</strong>.</li>
+<li>Una mappa mostra i dati contenuti in un layer, per questo è stata creato
+un layer di tile, reppresentato dalla classe <code class="docutils literal"><span class="pre">ol.layer.Tile</span></code>, che carica
+contenuto dal progetto OpenStreetMap, usando la classe sorgente <code class="docutils literal"><span class="pre">ol.source.OSM</span></code>.</li>
+<li>Alla fine, si imposta la posizione iniziale della <em>camera</em> usando la classe
+<code class="docutils literal"><span class="pre">ol.View</span></code>, il livello di zoom iniziale e la posizione centrale.</li>
+</ul>
+</div>
+<div class="section" id="aggiungere-layers-raster">
+<h2><a class="toc-backref" href="#id4">Aggiungere layers raster</a><a class="headerlink" href="#aggiungere-layers-raster" title="Permalink to this headline">¶</a></h2>
+<p>I layer raster più usati sono i layer di tiles, forniti per esempio da
+OpenStreetMap, MapQuest, Bing, ecc. Layers di tile sono rappresentati dalla
+classe <code class="docutils literal"><span class="pre">ol.layer.Tile</span></code> e devono usare una sorgente che conosce come caricare
+tile da un provider, tipo <code class="docutils literal"><span class="pre">ol.source.OSM</span></code> o <code class="docutils literal"><span class="pre">ol.source.MapQuest</span></code>:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">osm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
+  <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">OSM</span><span class="p">()</span>
+<span class="p">});</span>
+
+<span class="kd">var</span> <span class="nx">mq</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Tile</span><span class="p">({</span>
+  <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">MapQuest</span><span class="p">({</span>
+    <span class="nx">layer</span><span class="o">:</span> <span class="s1">&#39;osm&#39;</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><strong>Es. 2:</strong> Creare layer raster</p>
+<p>I layers possono essere aggiunti alla mappa in due modi:</p>
+<ol class="arabic simple">
+<li>Quando si inizializza <code class="docutils literal"><span class="pre">ol.Map</span></code>, usando la proprietà <code class="docutils literal"><span class="pre">layers</span></code>:</li>
+</ol>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">Map</span><span class="p">({</span>
+  <span class="p">...</span>
+  <span class="nx">layers</span><span class="o">:</span> <span class="p">[</span><span class="nx">osm</span><span class="p">,</span> <span class="nx">mq</span><span class="p">]</span>
+  <span class="p">...</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><strong>Ex. 3:</strong> Aggiungere i layer all&#8217;inizializzazione della mappa</p>
+<ol class="arabic simple" start="2">
+<li>Aggiungendo manualmente con il metodo <code class="docutils literal"><span class="pre">map.addLayer()</span></code>:</li>
+</ol>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">osm</span><span class="p">);</span>
+<span class="nx">map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">mq</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Ex. 4:</strong> Aggiungere i layer manualmente</p>
+</div>
+<div class="section" id="aggiungere-layers-vettoriali">
+<h2><a class="toc-backref" href="#id5">Aggiungere layers vettoriali</a><a class="headerlink" href="#aggiungere-layers-vettoriali" title="Permalink to this headline">¶</a></h2>
+<p>I layers vettoriali sono rappresentati da <code class="docutils literal"><span class="pre">ol.layer.Vector</span></code> deve usare
+una sorgente adatta per leggere il formato vettoriale, come <code class="docutils literal"><span class="pre">ol.source.GeoJSON</span></code>,
+<code class="docutils literal"><span class="pre">ol.source.KML</span></code> o <code class="docutils literal"><span class="pre">ol.source.TopoJSON</span></code>.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">vectorLayer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
+  <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">GeoJSON</span><span class="p">({</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;url_to_geojson_file&#39;</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><strong>Ex. 5:</strong> Leggere un layer vettoriale GeoJSON</p>
+<a class="reference internal image-reference" href="../../_images/openlayers-vector.png"><img alt="../../_images/openlayers-vector.png" src="../../_images/openlayers-vector.png" style="width: 518.0px; height: 277.0px;" /></a>
+<p>Notare che nel precedente codice bisogna cambiare <code class="docutils literal"><span class="pre">url_to_file</span></code> in modo che
+punti ad un valido file GeoJSON situato nel vostro server.
+È da sapere che la sicurezza di Javascript non permetterà di caricare sorgenti
+di dataset da un URL esterno in un dominio differente.</p>
+<p>Le features possono anche essere create manualmente. In questo caso bisogna
+creare una geometria che rappresenti la feature:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="c1">// Geometries</span>
+<span class="kd">var</span> <span class="nx">point</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">geom</span><span class="p">.</span><span class="nx">Point</span><span class="p">(</span>
+    <span class="nx">ol</span><span class="p">.</span><span class="nx">proj</span><span class="p">.</span><span class="nx">transform</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">50</span><span class="p">],</span> <span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span> <span class="s1">&#39;EPSG:3857&#39;</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">geom</span><span class="p">.</span><span class="nx">Circle</span><span class="p">(</span>
+    <span class="nx">ol</span><span class="p">.</span><span class="nx">proj</span><span class="p">.</span><span class="nx">transform</span><span class="p">([</span><span class="mf">2.1833</span><span class="p">,</span> <span class="mf">41.3833</span><span class="p">],</span> <span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span> <span class="s1">&#39;EPSG:3857&#39;</span><span class="p">),</span>
+    <span class="mi">1000000</span>
+<span class="p">);</span>
+
+<span class="c1">// Features</span>
+<span class="kd">var</span> <span class="nx">pointFeature</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">Feature</span><span class="p">(</span><span class="nx">point</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">circleFeature</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">Feature</span><span class="p">(</span><span class="nx">circle</span><span class="p">);</span>
+
+<span class="c1">// Source</span>
+<span class="kd">var</span> <span class="nx">vectorSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
+    <span class="nx">projection</span><span class="o">:</span> <span class="s1">&#39;EPSG:4326&#39;</span>
+<span class="p">});</span>
+<span class="nx">vectorSource</span><span class="p">.</span><span class="nx">addFeatures</span><span class="p">([</span><span class="nx">pointFeature</span><span class="p">,</span> <span class="nx">circleFeature</span><span class="p">]);</span>
+
+<span class="c1">// Vector layer</span>
+<span class="kd">var</span> <span class="nx">vectorLayer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
+  <span class="nx">source</span><span class="o">:</span> <span class="nx">vectorSource</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><strong>Ex. 6:</strong> Aggiungere features manualmente</p>
+</div>
+<div class="section" id="stile-degli-elementi">
+<h2><a class="toc-backref" href="#id6">Stile degli elementi</a><a class="headerlink" href="#stile-degli-elementi" title="Permalink to this headline">¶</a></h2>
+<p>Gle elementi con layer vettoriali possono essere vestiti.
+Lo stile è determinato da una combinazione di riempiemento, tratto, testo
+e immagine, che sono tutti opzionali. Inoltre, uno stile può essere applicato
+a un layer, che determina lo stile di tutte le features contenute, o ad un
+elemento individuale.</p>
+<p>Uno stile è rappresentato dalla classe <code class="docutils literal"><span class="pre">ol.style.Style</span></code> che ha proprietà
+per impostare il <code class="docutils literal"><span class="pre">fill</span></code>, <code class="docutils literal"><span class="pre">stroke</span></code>, <code class="docutils literal"><span class="pre">text</span></code> e <code class="docutils literal"><span class="pre">image</span></code> da applicare.
+Il prossimo esempio mostra i limiti amministrativi del Mondo raffigurati
+utilizzando un verde per il riempiemento e il bordo:</p>
+<a class="reference internal image-reference" href="../../_images/openlayers-styling.png"><img alt="../../_images/openlayers-styling.png" src="../../_images/openlayers-styling.png" style="width: 555.0px; height: 283.0px;" /></a>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">limitsLayer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
+  <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">StaticVector</span><span class="p">({</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;data/world_limits.json&#39;</span><span class="p">,</span>
+    <span class="nx">format</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">format</span><span class="p">.</span><span class="nx">TopoJSON</span><span class="p">(),</span>
+    <span class="nx">projection</span><span class="o">:</span> <span class="s1">&#39;EPSG:3857&#39;</span>
+  <span class="p">}),</span>
+  <span class="nx">style</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Style</span><span class="p">({</span>
+    <span class="nx">fill</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Fill</span><span class="p">({</span>
+      <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;rgba(55, 155, 55, 0.3)&#39;</span>
+    <span class="p">}),</span>
+    <span class="nx">stroke</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Stroke</span><span class="p">({</span>
+      <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;rgba(55, 155, 55, 0.8)&#39;</span><span class="p">,</span>
+      <span class="nx">width</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="p">}),</span>
+    <span class="nx">image</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Circle</span><span class="p">({</span>
+      <span class="nx">radius</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="nx">fill</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">Fill</span><span class="p">({</span>
+        <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;rgba(55, 155, 55, 0.5)&#39;</span><span class="p">,</span>
+      <span class="p">})</span>
+    <span class="p">})</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><strong>Ex. 7:</strong> Dare uno stile agli elementi</p>
+<p>Nel codice, si carica un file TopoJSON e stilizzato attraverso la proprietà <code class="docutils literal"><span class="pre">style</span></code>.
+Si imposta <code class="docutils literal"><span class="pre">fill</span></code> e <code class="docutils literal"><span class="pre">stroke</span></code>, richiesto per linee e poligoni, e un
+<code class="docutils literal"><span class="pre">image</span></code> (in questo caso un cerchio) usato per le features puntuali.</p>
+</div>
+<div class="section" id="lavorare-con-gli-eventi">
+<h2><a class="toc-backref" href="#id7">Lavorare con gli eventi</a><a class="headerlink" href="#lavorare-con-gli-eventi" title="Permalink to this headline">¶</a></h2>
+<p>La maggior parte dei componenti, tipo mappa, layers o controlli, innescano
+eventi per notificare cambiamenti. Per esempio si può ricevere notifiche ogni
+volta che il mouse è stato mosso sulla mappa, quando una feature è aggiunta ad
+un layer vettoriale, ecc.</p>
+<p>Gli eventi possone essre registrati facilmente su un oggetto con il metodo <code class="docutils literal"><span class="pre">on()</span></code>
+e rimossi con <code class="docutils literal"><span class="pre">un()</span></code>.</p>
+<p>Il codice che segue registra un evento sulla mappa, ed è notificato ogni
+volta che il puntatore è mosso. Con la funzione callback si ottengono le
+coordinate del puntatore e stampate nella console del browser con due sistemi
+di proiezioni diversi.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;pointermove&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">coord3857</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">coordinate</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">coord4326</span> <span class="o">=</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">proj</span><span class="p">.</span><span class="nx">transform</span><span class="p">(</span><span class="nx">coord3857</span><span class="p">,</span> <span class="s1">&#39;EPSG:3857&#39;</span><span class="p">,</span> <span class="s1">&#39;EPSG:4326&#39;</span><span class="p">);</span>
+
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">coord3857</span><span class="p">,</span> <span class="nx">coord4326</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p><strong>Ex. 8:</strong> Stampare la posizione del puntatore.</p>
+</div>
+<div class="section" id="ed-ora">
+<h2><a class="toc-backref" href="#id8">Ed ora?</a><a class="headerlink" href="#ed-ora" title="Permalink to this headline">¶</a></h2>
+<p>Alcune volte la via più semplice per imparare come funziona OpenLayers
+è vedere gli esempi e il loro codice sorgente. È possibile trovare esempi su
+OpenLayers3 installati su: <a class="reference external" href="../../openlayers/examples">http://localhost/openlayers/examples</a>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

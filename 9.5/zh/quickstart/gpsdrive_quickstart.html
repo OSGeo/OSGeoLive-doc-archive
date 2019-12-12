@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GPSDrive 快速入门文档 &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 9.5" href="../index.html" />
+    <link rel="next" title="GPSPrune 快速入门文档" href="gpsprune_quickstart.html" />
+    <link rel="prev" title="GMT 快速入门文档" href="gmt_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.GPSdrive.de"><img alt="project logo" class="align-right" src="../../_images/logo-gpsdrive25.png" style="width: 128.0px; height: 117.0px;" /></a>
+<div class="section" id="gpsdrive">
+<h1>GPSDrive 快速入门文档<a class="headerlink" href="#gpsdrive" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>运行 GPSDrive<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>　　使用 GPSDrive 前，可能需要安装 <a class="reference external" href="http://savannah.nongnu.org/projects/gpsd">GPSd</a> 用于获取 GPS 数据。缺少该项支持的情况下，GPSDrive 只能提供地图浏览功能。</p>
+<p>　　<a class="reference internal" href="../overview/osm_dataset_overview.html"><em>Open Street Map</em></a> 切片可用 <a class="reference internal" href="../overview/mapnik_overview.html"><em>Mapnik</em></a> 函数库渲染。这些数据存储在一个 <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a> 数据库中。其网络切片服务也可以读取。</p>
+<p>　　使用“espeak”软件可以实现语音提示。</p>
+<div class="section" id="gps">
+<h3>配置 GPS 连接<a class="headerlink" href="#gps" title="Permalink to this headline">¶</a></h3>
+<p>　　连接 GPS 电缆后，使用以下命令开启 GPSd 服务：</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo dpkg-reconfigure GPSd
+</pre></div>
+</div>
+<p>　　和</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo /etc/init.d/gpsd start
+</pre></div>
+</div>
+<p>　　对于蓝牙连接的 GPS 用户，请注意 GPSd no-probe 开关的帮助信息（这也是 GPSd 没有被配置为自动开启的原因）。</p>
+<ul class="simple">
+<li>&#8216;xGPS&#8217; 可以用于检查 GPSd 数据连接。</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>无 GPS 的地图浏览<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>　　在没有 GPS 连接的条件下，按 &#8216;e&#8217; 可进入浏览模式。方向键用于移动，鼠标右键可选择导航点。</p>
+</div>
+<div class="section" id="id3">
+<h3>帮助文档<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>　　使用 &#8216;<strong>man GPSdrive</strong>&#8216; 或 &#8216;<strong>GPSdrive &#8211;help</strong>&#8216; 命令可显示帮助文档。</p>
+<p>　　帮助文档中包含了车载或 PDA 模式的信息，适用于在小屏幕上使用的情况。</p>
+</div>
+<div class="section" id="id4">
+<h3>显示设置<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>　　除了 Preferences 菜单提供的 car/PDA/desktop 模式外，也可以设置屏幕上各个数值窗口的内容。点击显示的位置并选择所需项目即可。通过 &#8216;<strong>d</strong>&#8216; 和 &#8216;<strong>m</strong>&#8216; 可以开关附加显示。</p>
+</div>
+<div class="section" id="mapnik-open-street-map">
+<h3>以 Mapnik 渲染 Open Street Map<a class="headerlink" href="#mapnik-open-street-map" title="Permalink to this headline">¶</a></h3>
+<p>　　在本地有 PostGIS 运行的情况下（比如 Live 系统中安装的实例），GPSDrive 可以从 OpenStreetMap.org 调用数据，利用 Mapnik 快速渲染。Live 中配置的该 PostgreSQL 数据库名为“osm_local_smerc”。</p>
+<p>　　Live 中的 OSM 数据只包含特定的一个城市，故用户可能希望添加自己的 Planet.osm 数据。这里可以利用 <cite>osm2pgsql</cite> 程序或在 <em>Map Control</em> 界面关闭 <em>Mapnik Mode</em> 而使用下载的切片。</p>
+</div>
+<div class="section" id="id5">
+<h3>检索<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>　　使用 <em>Find</em> 可以检索 SQLite 数据库中存储的周边兴趣点。6.0 版本的 Live 中包含了 OSM 的英国 Nottingham 切片。一个检索请求示例是“列出 Nottingham 市政厅周边 2 千米内所有的酒吧”。</p>
+</div>
+<div class="section" id="id6">
+<h3>地图下载<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>　　使用 <em class="menuselection">Options ‣ Maps ‣ Download</em> 可下载地图切片。Open Street Map 和 NASA OnEarth T-WMS 是内建支持的网络数据源。GPSDrive 也支持通过一些命令行指令批量下载一个区域的数据。</p>
+</div>
+<div class="section" id="id7">
+<h3>朋友位置服务<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>　　在 Preferences 菜单可以选择 Friendsd 位置共享服务。这将会把你的地理位置上传至一个公共服务器。你也可以使用自己的服务器以保护隐私。输入一个用户名并点击“Lookup”可连接至服务器。勾选“Enable friends service”并关闭。当显示比例在 1:1千万 以上时，设定的朋友的位置会显示。</p>
+</div>
+<div class="section" id="id8">
+<h3>语音提示<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>　　GPSDrive 可以在导航过程中接近目的地等事件发生时给与语音提示。这个功能依赖于 eSpeak 软件。该软件在 Live 默认关闭以节省空间，开启方法是以 root 编辑 <strong>/etc/default/speech-dispatcher</strong> ，设置 <strong>RUN=yes</strong> ，并以 <cite>sudo service speech-dispatcher start</cite> 启动服务。GPSDrive 会自动发现这项服务。在 Preferences 的 Speech 部分可以对其进行开关和设置。</p>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>其它信息<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><em>GPSDrive</em> 官方网站: <a class="reference external" href="http://www.GPSdrive.de">http://www.GPSdrive.de</a></li>
+<li>帮助支持页面: <a class="reference external" href="http://gpsdrive.sf.net">http://gpsdrive.sf.net</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

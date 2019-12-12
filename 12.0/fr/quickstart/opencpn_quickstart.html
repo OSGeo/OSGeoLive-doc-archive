@@ -1,0 +1,139 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Guide de démarrage rapide d’OpenCPN &#8212; OSGeoLive 12.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '12.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="OpenJUMP GIS Quickstart" href="openjump_quickstart.html" />
+    <link rel="prev" title="ncWMS Quickstart" href="ncWMS_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.opencpn.org"><img alt="../../_images/logo_opencpn.png" class="align-right" src="../../_images/logo_opencpn.png" /></a>
+<div class="section" id="opencpn-quickstart">
+<h1>Guide de démarrage rapide d’OpenCPN<a class="headerlink" href="#opencpn-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
+<p>OpenCPN est un navigateur et dessinateur de carte concis (CPN). Comme toujours, n’utilisez jamais un logiciel ou un équipement électronique comme vos seuls moyens de navigation et garder un œil par la fenêtre.</p>
+<div class="section" id="running">
+<h2>Lancement<a class="headerlink" href="#running" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="setting-up-your-charts">
+<h3>Paramétrer vos cartes<a class="headerlink" href="#setting-up-your-charts" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Avant de démarrer OpenCPN sur le LiveDVD vous devez activer les données d’exemple. C’est une condition de redistribution des cartes nautiques gratuites du NOAA. La première fois que vous lancez OpenCPN depuis <span class="menuselection">Geospatial ‣ Navigation and Maps</span> menu ou l’icone sur le bureau, il vous sera présenté l’option de le faire automatiquement.</p>
+<p>Vous pouvez télécharger des cartes nautiques américaines supplémentaires de la NOAA à cette adresse: <a class="reference external" href="http://www.charts.noaa.gov">http://www.charts.noaa.gov</a></p>
+</div>
+<div class="section" id="setting-up-your-gps">
+<h3>Paramétrer votre GPS<a class="headerlink" href="#setting-up-your-gps" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Si vous avez un  GPS connecté vous souhaiterez sans doute démarrer le service gpsd. Pour cela lancez:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">dpkg</span><span class="o">-</span><span class="n">reconfigure</span> <span class="n">gpsd</span>
+</pre></div>
+</div>
+<p>et</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">init</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">gpsd</span> <span class="n">start</span>
+</pre></div>
+</div>
+<p>BlueTooth GPS users should take special care to read up about the no-probe
+option.</p>
+<ul class="simple">
+<li>“<cite>xgps</cite>’est un bon programme pour vérifier que Gpsd vois correctement votre GPS.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li>La documentation est accessible depuis le  <a class="reference external" href="../../opencpn/help_en_US.html">menu Help</a>, ou en ligne à cette adresse: <a class="reference external" href="http://www.opencpn.org/ocpn/opencpn_manual">http://www.opencpn.org/ocpn/opencpn_manual</a></li>
+<li><a class="reference external" href="../../opencpn/tips.html">Astuces pour démarrer</a></li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h2>Voir aussi:<a class="headerlink" href="#see-also" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La météo courante et les données prévisionnelles de vagues peuvent être téléchargées et drapées par dessus vos cartes à l’aide du plugin GRIB. Le logiciel <a class="reference internal" href="../overview/zygrib_overview.html"><span class="doc">zyGrib</span></a> (aussi sur ce disque) est un moyen facile de faire cela. Voir le guide de démarrage rapide <a class="reference internal" href="zygrib_quickstart.html"><span class="doc">zyGrib</span></a> pour les détails. Activez le plugin depuis l’onglet le plus à droite du menu de configuration d’OpenCPN ; une nouvelle icone de manche à air à l’extrémité droite de la barre d’outils principales.</p>
+<p>Si vous sauvegardez le fichier zyGrib dans votre répertoire personnel, naviguez jusqu’au dossier <code class="file docutils literal"><span class="pre">/home</span></code> et sélectionnez le répertoire <code class="docutils literal"><span class="pre">user</span></code>  comme répertoire de données GRIB. Puis clic droit dans le fond du fichier pour afficher les fichiers cachés, incluant le dossier <code class="docutils literal"><span class="pre">.zygrib</span></code> qui contient les fichiers GRIB téléchargés.</p>
+<p>Il n’y a pas besoin de décompresser le fichier.  Cliquez sur le  «&nbsp;&gt;&nbsp;» à gauche du nom de fichier et sélectionnez dans la liste des prévisions disponibles.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

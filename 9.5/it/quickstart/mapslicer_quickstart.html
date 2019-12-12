@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guida rapida su MapSlicer &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 9.5 Contents" href="../overview/overview.html" />
+    <link rel="next" title="1. MapWindow GIS Lite" href="mapwindow_quickstart.html" />
+    <link rel="prev" title="Guida rapida su MapServer" href="mapserver_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-mapslicer16.png"><img alt="project logo" class="align-right" src="../../_images/logo-mapslicer16.png" style="width: 128.0px; height: 128.0px;" /></a>
+<div class="section" id="guida-rapida-su-mapslicer">
+<h1>Guida rapida su MapSlicer<a class="headerlink" href="#guida-rapida-su-mapslicer" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://wiki.osgeo.org/wiki/MapSlicer">MapSlicer</a> offre un semplice strumento per dividere una mappa
+georiferita in diverse parti (tile). I tile possono essere presentati come una sovrapposizione
+georiferita su un server web.
+Segue le specifiche <a class="reference external" href="http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification">Tile Map Service (TMS)</a>
+della fondazione <a class="reference external" href="http://www.osgeo.org/">Open Source Geospatial Foundation (OSGeo)</a> .</p>
+<ul class="simple">
+<li><strong>Opzioni input</strong>: Qualsiasi immagine georiferita, p.es. TIFF, JPEG da ArcGIS, QGIS.</li>
+<li><strong>Opzioni output</strong>: Una serie di cartelle con le immagini che possono essere copiate su un server web
+per essere presentati come una sovrapposizione georiferita.</li>
+<li><strong>Punti di forza</strong>: MapSlicer e` semplice, e` software libero, con un semplice wizard, descritto di seguito,
+per guidarti attraverso le opzioni.</li>
+</ul>
+<p>MapSlicer approfitta del fatto che <a class="reference external" href="http://maps.google.com/">Google Maps</a> , <a class="reference external" href="http://maps.bing.com">Microsoft Bing</a> , <a class="reference external" href="http://maps.yahoo.com/">Yahoo Maps</a> , e altri provider di mappe online, compreso <a class="reference external" href="http://www.openstreetmap.org/">OpenStreetMap</a>  usano la stessa proiezione e profilo di tiling e quindi i tile sono compatibili. MapSlicer prepara i tile usando questa specifica come un modo facile e veloce per preparare una mappa georiferita per un mash up su una pagina web.</p>
+<div class="section" id="avviare-mapslicer">
+<h2>Avviare MapSlicer<a class="headerlink" href="#avviare-mapslicer" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Avvia MapSlicer dal menu Geospatial, sotto il menu secondario Spatial Tools.</li>
+<li>Seleziona <strong>Tile Profile</strong>. Scegli <em>Image Based Tiles (raster)</em> for standard web publishing. Clicca <em>Continue</em>.</li>
+</ol>
+<img alt="../../_images/mapslicer17.jpg" class="align-center" src="../../_images/mapslicer17.jpg" />
+<ol class="arabic simple" start="3">
+<li>Scegli il <strong>Source Data Files</strong>. Sfoglia per selezionare l&#8217;immagine raster che vuoi dividere. E` anche possibile scegliere un colore per i NODATA che appariranno trasparenti nell&#8217;immagine risultante. Clicca <em>Continue</em>.</li>
+</ol>
+<img alt="../../_images/mapslicer27.jpg" class="align-center" src="../../_images/mapslicer27.jpg" />
+<ol class="arabic simple" start="4">
+<li>Specifica il <strong>sistema di riferimento (Spatial Reference System / Coordinate System)</strong> dell&#8217;immagine. Specifica il codice id-number dal database EPSG. Clicca <em>Continue</em>.</li>
+</ol>
+<img alt="../../_images/mapslicer37.jpg" class="align-center" src="../../_images/mapslicer37.jpg" />
+<ol class="arabic simple" start="5">
+<li>Specifica i dettagli riguardo le <strong>Tile Pyramid</strong>. Le impostazioni automatiche per i livelli di zoom e il formato del file sono spesso le migliori. Clicca <em>Continue</em>.</li>
+</ol>
+<img alt="../../_images/mapslicer47.jpg" class="align-center" src="../../_images/mapslicer47.jpg" />
+<ol class="arabic simple" start="6">
+<li>Specifica i dettagli riguardo la <strong>cartella di destinazione e indirizzi (Destination folder and Addresses / URLs)</strong> per l&#8217;insieme di tile. Se non le conosci, possono essere aggiunte nei file di default <em>googlemaps.html</em> e <em>openlayers.html</em> dopo la separazione in tile. Clicca <em>Continue</em>.</li>
+</ol>
+<img alt="../../_images/mapslicer57.jpg" class="align-center" src="../../_images/mapslicer57.jpg" />
+<ol class="arabic simple" start="7">
+<li>Spunta <strong>Visualizzatori che devono essere generati (Viewers that should be generated)</strong>. In automatico, viene generato un file <em>openlayers.html</em>. Clicca <em>Continue</em>.</li>
+</ol>
+<img alt="../../_images/mapslicer67.jpg" class="align-center" src="../../_images/mapslicer67.jpg" />
+<ol class="arabic simple" start="8">
+<li>Specifica i <strong>Dettagli per generare i visualizzatori (Details for generating the Viewers)</strong>, come il titolo, il copyright, e le chiavi API. Se non le conosci, possono essere aggiunte nei file di default <em>googlemaps.html / openlayers.html</em> dopo la separazione in tile. Clicca <em>Continue</em>.</li>
+</ol>
+<img alt="../../_images/mapslicer77.jpg" class="align-center" src="../../_images/mapslicer77.jpg" />
+<ol class="arabic simple" start="9">
+<li>Clicca <strong>Render</strong> per cominciare a rappresentare l&#8217;immagine.</li>
+</ol>
+<img alt="../../_images/mapslicer84.jpg" class="align-center" src="../../_images/mapslicer84.jpg" />
+<ol class="arabic simple" start="10">
+<li>Una volta completato, MapSlicer fornisce un link al gruppo di tile completo.</li>
+</ol>
+<img alt="../../_images/mapslicer94.jpg" class="align-center" src="../../_images/mapslicer94.jpg" />
+<ol class="arabic simple" start="11">
+<li>Apri il file <em>openlayers.html</em> in un browser per visualizzare il gruppo di tile come sovrapposizione sulla mappa online. Per pubblicare sul web, copia l&#8217;intero gruppo di tile e tutte le cartelle secondarie in un server web, e modifica i file googlemaps.html o openlayers.html come richiesto.</li>
+</ol>
+<img alt="../../_images/mapslicer104.jpg" class="align-center" src="../../_images/mapslicer104.jpg" />
+</div>
+<div class="section" id="utilizzare-gdal2tiles-per-creare-un-database-mbtiles">
+<h2>Utilizzare gdal2tiles per creare un database MBTiles<a class="headerlink" href="#utilizzare-gdal2tiles-per-creare-un-database-mbtiles" title="Permalink to this headline">¶</a></h2>
+<p>MapSlicer non e` altro che un&#8217;interfaccia grafica per lo script <cite>gdal2tiles.py</cite>.
+Sul disco della Live e` anche presente una versione aggiornata di <cite>gdal2tiles.py</cite>.
+I tile tree creati con questo programma possono essere usati con il programma
+<cite>mb-util</cite> per creare un database mbtiles, da utilizzare con i software per
+smartphone come <a class="reference external" href="http://geopaparazzi.github.io/geopaparazzi/">Geopaparazzi</a>.</p>
+<p>Per creare un database SQLite MBTiles dal nuovo tile tree appena creato, apri un
+terminale e</p>
+<div class="highlight-python"><div class="highlight"><pre>cp data/raster/bluemarble.tif .
+mapslicer    # (select /home/user/bluemarble.tif for input, JPEG as format)
+mb-util --scheme=tms --image_format=jpg bluemarble bluemarble.mbtiles
+qgis bluemarble.mbtiles
+</pre></div>
+</div>
+<p>Consulta <cite>gdal2tiles.py &#8211;help</cite> e <cite>mb-util &#8211;help</cite> per ulteriori informazioni su questi programmi.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης OTB &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Καλώς ήρθατε στο OSGeo-Live" href="../index.html" />
+    <link rel="next" title="Εγχειρίδιο Γρήγορης Εκκίνησης pgRouting" href="pgrouting_quickstart.html" />
+    <link rel="prev" title="Εγχειρίδιο Γρήγορης Εκκίνησης Ossim" href="ossim_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-otb5.png"><img alt="project logo" class="align-right" src="../../_images/logo-otb5.png" style="width: 131.2px; height: 100.0px;" /></a>
+<div class="section" id="otb">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης OTB<a class="headerlink" href="#otb" title="Permalink to this headline">¶</a></h1>
+<p>Το ORFEO Toolbox (OTB) είναι ένα σύνολο εργαλείων (βιβλιοθληκη) υψηλών επιδόσεων για ανάλυση εικόνας και συγκεκριμένα στοχεύει σε εφαρμογές Τηλεπισκόπησης.</p>
+<p>Αυτό το εγχειρίδιο περιγράφει το πως:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Να λάβετε πληροφορίες μεταδεδομένων από μια εικόνα</li>
+<li>Να πραγματοποιήσετε μαθηματικές πράξεις μεταξύ καναλιών εικόνων</li>
+<li>Να ανοίξετε εικόνες μέσω της εφαρμογής monteverdi, να εκτελέσετε κατάτμηση εικόνας (μέσω του αλγορίθμου mean-shift) και να οπτικοποιήσετε το αποτέλεσμα</li>
+</ul>
+</div></blockquote>
+<p>Το πακέτο λογισμικού OTB-Applications παρέχει πολλές και ενδιαφέρουσες εφαρμογές για την διαχείρηση εικόνων. Όλα αυτά τα εργαλεία είναι διαθέσιμα μέσω:</p>
+<blockquote>
+<div><ul class="simple">
+<li>CLI : εντολές κονσόλας</li>
+<li>QT GUI : σε ανεξάρτητο γραφικό περιβάλλον</li>
+<li>QGIS plugin : σαν πρόσθετο στο λογισμικό Quantum GIS</li>
+</ul>
+</div></blockquote>
+<div class="section" id="id1">
+<h2>Εμφάνιση μεταδεδομένων από μια εικόνα<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Μπορείτε να λάβετε όλες τις πληροφορίες που περιέχουν τα μεταδεδομένα μιας εικόνας με την εντολή : <cite>otbReadImageInfo-cli</cite>
+Η μοναδική παράμετρος είναι το όνομα αρχείου της εικόνας, για παράδειγμα : <cite>otbReadImageInfo-cli -in qb_RoadExtract.tif</cite></p>
+</div>
+<div class="section" id="id2">
+<h2>Πράξεις καναλιών εικόνας<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Η εφαρμογή <cite>otbBandMath-cli</cite> παρέχει έναν αποτελεσματικό τρόπο για την εφαρμογή μαθηματικών τελεστών σε εικόνες με ένα κανάλι.
+Η σύνταξη είναι αρκετά απλή, για παράδειγμα η αφαίρεση δυο καναλιών για να μελετήσουμε τις διαφορές των εικόνων SpotBefore.tif και SpotAfter.tif, απλά χρησιμοποιήστε την εντολή : <cite>otbBandMath-cli -ims SpotBefore.tif SpotAfter.tif -out difference.tif -exp &#8220;im1b1-im2b1&#8221;</cite>
+Η εφαρμογή είναι ικανή να εκτελέσει περίπλοκες μαθηματικές πράξεις σε εικόνες (κατωφλίωση, λογαριθμική ενίσχυση...).
+Αυτός ο ψηφιακός υπολογιστής εικόνων παρέχεται με έτοιμες ενσωματωμένες ρουτίνες υπολογισμού σύνθετων εκφράσεων. Για παράδειγμα, ενώ οι τηλεπισκοπικές απεικονίσεις καταγράφουν φυσικές τιμές, είναι δυνατόν να εξαχθούν δείκτες με φυσική σημασία όπως ο NDVI (Normalized Difference Vegetation Index) για τη βλάστηση. Με την εφαρμογή / υπολογιστή μπορείτε να υπολογίσετε τον NDVI σε μια πολυφασματική εικόνα με την εκτέλεση της παρακάτω εντολής:
+<cite>otbBandMath-cli -ims qb_RoadExtract.tif -out ndvi.tif -exp &#8220;ndvi(im1b3,im1b4)&#8221;</cite></p>
+</div>
+<div class="section" id="monteverdi">
+<h2>Εκτέλεση κατάτμησης με την εφαρμογή Monteverdi<a class="headerlink" href="#monteverdi" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Ξεκινήστε το Monteverdi από το εικονίδιο στο φάκελο &#8220;XXX&#8221; στην επιφάνεια εργασίας</p>
+</li>
+<li><p class="first">Επιλέξτε μια ψηφιακή εικόνα με τη χρήση <em class="menuselection">File ‣ Open Dataset ‣ /home/user/otb/qb_RoadExtract.tif</em></p>
+</li>
+<li><p class="first">Εκτελέστε το  <em class="menuselection">Filtering ‣ Mean Shift clustering</em></p>
+</li>
+<li><p class="first">Επιλέξτε την αρχική εικόνα (Reader0) από το παράθυρο επιλογής εικόνας εισόδου</p>
+</li>
+<li><p class="first">Βεβαιωθείτε ότι μπορείτε να αλλάξετε τις παραμέτρους της κατάτμησης και να δείτε το αποτέλεσμα στην περιοχή ενδιαφέροντος κάνοντας κλικ στο &#8220;Run&#8221;</p>
+</li>
+<li><p class="first">Επιλέξτε &#8220;Close&#8221; όταν είσαστε ικανοποιημένοι από το αποτέλεσμα.</p>
+</li>
+<li><p class="first">Στο κεντρικό παράθυρο, κάντε δεξί κλίκ στο &#8220;Clustered Image&#8221; στην εικόνα αποτελέσματος &#8220;MeanShift0&#8221; και επιλέξτε &#8220;Display in viewer&#8221;</p>
+<a class="reference internal image-reference" href="el/quickstart/../../images/screenshots/800x600/otb-mean_shift.jpg"><img alt="el/quickstart/../../images/screenshots/800x600/otb-mean_shift.jpg" src="el/quickstart/../../images/screenshots/800x600/otb-mean_shift.jpg" /></a>
+</li>
+</ul>
+</div>
+<div class="section" id="svm-monteverdi">
+<h2>Εκτέλεση επιβλεπόμενης ταξινόμησης βασισμένης στον αλγόριθμο SVM με το Monteverdi<a class="headerlink" href="#svm-monteverdi" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Ξεκινήστε το Monteverdi από το εικονίδιο στο φάκελο &#8220;XXX&#8221; στην επιφάνεια εργασίας</p>
+</li>
+<li><p class="first">Επιλέξτε μια ψηφιακή εικόνα με τη χρήση <em class="menuselection">File ‣ Open Dataset ‣ /home/user/otb/qb_RoadExtract.tif</em></p>
+</li>
+<li><p class="first">Πηγαίνετε στο  <em class="menuselection">Learning ‣ SVM classification</em></p>
+</li>
+<li><p class="first">Επιλέξτε την αρχική εικόνα (Reader0) από το παράθυρο επιλογής εικόνας εισόδου</p>
+</li>
+<li><p class="first">Μπορείτε να προσθέσετε κατηγορίες (κουμπί <cite>Add Class</cite>), να επιλέξετε δείγματα εκπαίδευσης με τη σχεδίαση πολυγώνων στην εφαρμογή</p>
+</li>
+<li><p class="first">Πηγαίνετε στο <em class="menuselection">Setup ‣ SVM</em> για να θέσετε τις παραμέτρους του αλγορίθμου ταξινόμησης</p>
+</li>
+<li><p class="first">Κάντε κλίκ στο κουμπί <cite>Learn</cite> για τη δημιουργία ενός μοντέλου εκπαίδευσης από τις κατηγορίες εισόδου</p>
+</li>
+<li><p class="first">Κάντε κλίκ στο κουμπί <cite>Display</cite> για να δείτε το αποτέλεσμα της επιβλεπόμενης ταξινόμησης για ολόκληρη την εικόνα</p>
+<a class="reference internal image-reference" href="../../_images/otb-svm.jpg"><img alt="../../_images/otb-svm.jpg" src="../../_images/otb-svm.jpg" style="width: 800.0px; height: 600.0px;" /></a>
+</li>
+</ul>
+<p>Για την πλήρη διαδικασία δείτε το <a class="reference external" href="http://www.orfeo-toolbox.org/otb/monteverdi.html">άρθρο</a>.</p>
+</div>
+<div class="section" id="id4">
+<h2>Τι ακολουθεί:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Εγχειρίδια OTB</p>
+<p>Ακολουθήστε τα <a class="reference external" href="http://www.orfeo-toolbox.org/SoftwareGuide/SoftwareGuidepa2.html#x17-49000II">εγχειρίδια</a> για να μάθετε περισσότερα για το OTB.</p>
+</li>
+<li><p class="first">Εγχειρίδια στο DVD</p>
+<p>Δείτε επίσης τα <a class="reference external" href="file:///usr/local/share/otb/">εγχειρίδια</a> σε αυτό το DVD.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

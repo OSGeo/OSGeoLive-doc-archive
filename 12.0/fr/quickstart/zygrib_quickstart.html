@@ -1,0 +1,129 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Guide de démarrage rapide de zyGrib &#8212; OSGeoLive 12.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '12.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Téléchargement" href="../download.html" />
+    <link rel="prev" title="Guide de démarrage de ZOO Project" href="zoo-project_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.zygrib.org"><img alt="../../_images/logo_zygrib.png" class="align-right" src="../../_images/logo_zygrib.png" /></a>
+<div class="section" id="zygrib-quickstart">
+<h1>Guide de démarrage rapide de zyGrib<a class="headerlink" href="#zygrib-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="running">
+<h2>Lancement<a class="headerlink" href="#running" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="getting-data">
+<h3>Obtention des données<a class="headerlink" href="#getting-data" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Après le lancement du programme vous sera présenté une carte du monde. Aucune donnée de prévisions météo GRIB n’est livrée avec ce disque, vous devrez  en télécharger, ce qui nécessitera une connexion internet. Comme les données GRIB sont souvent utilisées par les marins au large, il existe un certain nombre de services bas débit de courrier électronique et radio-modem  pour ceux sans une connexion internet stable. C’est-à-dire que tout en exigeant un lien quelconque avec le monde extérieur comme source de données, cette connexion n’est pas nécessaire à l’exécution à la différence de nombreux autres programmes de cartographie web.</p>
+<p>Vous pouvez obtenir des données GRIB provenant de nombreuses sources, mais dans un but pratique, les auteurs de zyGrib maintiennent un serveur de données. La première chose à faire est de vérifier que la connexion au serveur est opérationnelle. Cliquez sur l’icône en forme de prise d’alimentation près de l’extrémité droite de la barre d’outils, après un moment qu’il devrait vous dire que la connexion est OK.</p>
+<p>Nous nous intéressons généralement aux conditions météorologiques locales, donc avec le prochain clic gauche de la souris, créez une carte sur la carte avec un cliqué-glissé sur une partie du monde qui vous intéresse. Le golfe du Mexique ou la pointe sud de l’Afrique ont souvent des vents dynamiques. Avec votre rectangle tracé sur la carte, cliquez sur l’icône <code class="docutils literal"><span class="pre">zoom-to-box</span></code> de la barre des tâches (la loupe avec le petit rectangle en dessous) et marquer à nouveau une zone d’intérêt avec un cliqué-glissé, mais cette fois-ci, couvrant la plupart ou la totalité de la carte zoomée.</p>
+<p>Maintenant, sélectionnez&nbsp;<span class="menuselection">File ‣ Download GRIB</span>  et sélectionnez les fonctionnalités que vous voulez télécharger. Si  vous avez un doute, les valeurs par défaut sont suffisantes. Lorsque vous êtes prêt, cliquez sur le bouton <code class="docutils literal"><span class="pre">Download</span></code> en bas et enregistrez le fichier sur le disque.</p>
+<p>Si tout va bien, vous devriez maintenant voir une carte météorologique avec un curseur de temps sur le fond, fixe pour le moment. Vous pouvez utiliser la molette de la souris pour zoomer en avant si vous le souhaitez.</p>
+</div>
+<div class="section" id="changing-views">
+<h3>Changer d’affichage<a class="headerlink" href="#changing-views" title="Lien permanent vers ce titre">¶</a></h3>
+<p>En déplaçant la souris sur la carte, vous verrez les conditions exactes sous le curseur apparaître dans le volet de gauche.</p>
+<p>Vous pouvez modifier le temps en déplaçant le curseur le long de la partie inférieure, ou dans le menu déroulant en haut à gauche de la fenêtre.</p>
+<p>Dans le menu “”Weather map”“, vous pouvez sélectionner la variable à visualiser. Sélectionnez par exemple&nbsp;<span class="menuselection">Weather map ‣ Cloud cover</span> et la vue devrait changer.</p>
+<p>Si vous avez téléchargé les données pour le golfe du Mexique, vous serez intéressé d’afficher les données CAPE. «&nbsp;CAPE&nbsp;» signifie Convective Available Potential Energy  (Energie convective potentielle disponible) au niveau du sol. C’est une mesure de l’instabilité atmosphérique et des valeurs élevées (1000 s de J/kg) indique un risque d’orages et/ou de tornades.</p>
+<p>Si vous avez téléchargé les données pour l’Afrique du Sud, la couverture nuageuse  peut être plus intéressante.</p>
+</div>
+<div class="section" id="creating-an-animation">
+<h3>Création d’une animation<a class="headerlink" href="#creating-an-animation" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Lorsque vous cliquez sur l’icône la plus à droite dans la barre d’outils (une fusée), une nouvelle fenêtre s’ouvrira et une animation sera générée. Ne bougez pas pendant son exécution parcours la séquence de temps pour la première fois. Quand c’est fait, il va revenir au début de la série temporelle, et de là vous pouvez lire, mettre en pause et revenir en arrière comme vous le souhaitez. Vous pouvez également enregistrer chaque image comme un fichier image pour un encodage ultérieur dans un AVI, MPEG ou une animation GIF &lt;<a class="reference external" href="http://grass.osgeo.org/wiki/Movies">http://grass.osgeo.org/wiki/Movies</a>&gt;`_.</p>
+<p>Lorsque vous avez terminé cliquez sur le bouton rouge pour fermer.</p>
+</div>
+</div>
+<div class="section" id="see-also">
+<h2>Voir aussi:<a class="headerlink" href="#see-also" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le <a class="reference internal" href="../overview/opencpn_overview.html"><span class="doc">logiciel OpenCPN</span></a> (aussi sur ce disque) a un plugin de superposition GRIB qui vous pouvez essayer avec votre fichier GRIB nouvellement téléchargé. Voir le <a class="reference internal" href="opencpn_quickstart.html"><span class="doc">guide de démarrage rapide d’OpenCPN quickstart</span></a> pour plus de détails.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

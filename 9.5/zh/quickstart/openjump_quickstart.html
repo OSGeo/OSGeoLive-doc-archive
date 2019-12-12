@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OpenJUMP 快速入门 &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 9.5" href="../index.html" />
+    <link rel="next" title="OpenLayers 快速入门" href="openlayers_quickstart.html" />
+    <link rel="prev" title="OpenCPN 快速入门文档" href="opencpn_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="openjump">
+<h1>OpenJUMP 快速入门<a class="headerlink" href="#openjump" title="Permalink to this headline">¶</a></h1>
+<p>　　OpenJUMP 是一套桌面 GIS 应用程序，用于浏和编辑矢量数据。它同时具备一定的栅格数据支持。</p>
+<p>　　本文叙述：</p>
+<blockquote>
+<div><ul class="simple">
+<li>在 OpenJUMP 开启 ESRI shp 文件；</li>
+<li>设置新图层的显示样式方便浏览；</li>
+<li>对要素进行几何编辑。</li>
+</ul>
+</div></blockquote>
+<div class="section" id="id1">
+<h2>启动 OpenJUMP<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>　　OSGeo Live：在桌面点击 OpenJUMP 或运行 /usr/bin/openjump；</p>
+<p>　　一般安装：在 Windows 下，启动 OpenJUMP bin 文件夹的 openjump.exe 或 openjump.bat 。在 Linux 下，启动 oj_linux.sh 。在 MacOSX 下，点击 OpenJUMP 应用图标。</p>
+<p>　　注：该软件需要 Java 运行环境。在 <a class="reference external" href="http://java.com/en/download/index.jsp">http://java.com/en/download/index.jsp</a> 可以下载该环境。Live 系统使用的 OpenJDK 可在 <a class="reference external" href="http://openjdk.java.net">http://openjdk.java.net</a> 下载。</p>
+</div>
+<div class="section" id="id2">
+<h2>基本界面操作<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>　　OpenJUMP 的主要图形界面同许多 GIS 系统一样，由四个部分组成。(i) 第一个为顶部的菜单栏，提供了众多命令。(ii) 第二个是菜单栏下方的主要工具栏，提供重要的显示与导航功能。(iii) 第三个是左侧的图层列表窗口。(iv) 第四个为主要显示区，显示各个图层的空间数据。最下方的状态栏给出了光标位置、操作结果提示和内存消耗。一个项目窗口包含了一个图层列表和一个主显示。每一个 OpenJUMP 实例可以显示多个项目窗口。</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_0111.png"><img alt="../../_images/openjump_ss_0111.png" src="../../_images/openjump_ss_0111.png" style="width: 563.2px; height: 400.95px;" /></a>
+</div>
+<div class="section" id="esri-shp">
+<h2>开启 ESRI Shp 文件<a class="headerlink" href="#esri-shp" title="Permalink to this headline">¶</a></h2>
+<p>　　本节叙述如何打开 ESRI shp 文件。</p>
+<p>　　在 OpenJUMP 的顶部工具栏中，选择 [File] 文件菜单中的 [Open File...] 打开文件。这将开启一个窗口用于选择文件。这里打开一个任意的 .shp 文件并点击 [Finish] 完成。稍候该文件的内容将显示于主显示区，图层列表会显示一个以文件名命名的新图层。</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_0211.png"><img alt="../../_images/openjump_ss_0211.png" src="../../_images/openjump_ss_0211.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>　　直接拖拽数据文件也可以实现载入。</p>
+</div>
+<div class="section" id="id3">
+<h2>图层样式配置<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>　　本节叙述如何配置图层样式。</p>
+<p>　　在图层列表中右键单击*图层名，在弹出菜单的 [Style] 样式中点击 [Change Styles] 开启样式配置面板。其中包含 5 个选项卡。这里可以改变线条颜色、填充颜色、线形、透明度、标签、显示比例范围。</p>
+<ul class="simple">
+<li>MacOSX 中可以按 <em class="guilabel">Apple</em> 键。</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_0311.png"><img alt="../../_images/openjump_ss_0311.png" src="../../_images/openjump_ss_0311.png" style="width: 563.2px; height: 400.95px;" /></a>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_0411.png"><img alt="../../_images/openjump_ss_0411.png" src="../../_images/openjump_ss_0411.png" style="width: 563.2px; height: 400.95px;" /></a>
+</div>
+<div class="section" id="id4">
+<h2>要素几何编辑<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>　　在图层列表中选中图层右击。选中“Editable”可编辑选项。在顶部将显示一个新的浮动工具栏，其中包含一系列工具用于地理要素的几何编辑。</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_0511.png"><img alt="../../_images/openjump_ss_0511.png" src="../../_images/openjump_ss_0511.png" style="width: 563.2px; height: 400.95px;" /></a>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_0611.png"><img alt="../../_images/openjump_ss_0611.png" src="../../_images/openjump_ss_0611.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>　　尝试简单的编辑。这里需要选中一个要素并拖拽其中的节点。选择编辑工具条中形如一般光标的工具，点击选中主面板中的一个要素。目标将显示为明黄色，各个节点会以方框显示。</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_0711.png"><img alt="../../_images/openjump_ss_0711.png" src="../../_images/openjump_ss_0711.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>　　选择蓝色十字中央显示黄色方框的工具，即 <em class="guilabel">Move Vertex Tool</em> 按钮（光标悬浮与工具上会显示提示）。光标在主面板应显示为黑色十字。</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_0811.png"><img alt="../../_images/openjump_ss_0811.png" src="../../_images/openjump_ss_0811.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>　　选中节点并拖拽可以移动节点。</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_0911.png"><img alt="../../_images/openjump_ss_0911.png" src="../../_images/openjump_ss_0911.png" style="width: 563.2px; height: 400.95px;" /></a>
+</div>
+<div class="section" id="id5">
+<h2>进一步学习 OpenJUMP<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>　　以上是最基本的功能示例。通过下面的文档可以学习更多有关 OpenJUMP 系统的内容。</p>
+<p>　　OpenJUMP 教程：
+　　<a class="reference external" href="http://sourceforge.net/projects/jump-pilot/files/Documentation/">http://sourceforge.net/projects/jump-pilot/files/Documentation/</a></p>
+<p>　　OpenJUMP wiki：
+　　<a class="reference external" href="http://sourceforge.net/apps/mediawiki/jump-pilot/index.php?title=Main_Page">http://sourceforge.net/apps/mediawiki/jump-pilot/index.php?title=Main_Page</a></p>
+<p>　　OpenJUMP 用户右键列表：
+　　<a class="reference external" href="http://groups.google.com/group/openjump-users">http://groups.google.com/group/openjump-users</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

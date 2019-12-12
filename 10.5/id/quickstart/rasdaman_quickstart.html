@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Rasdaman Quickstart &mdash; OSGeo-Live 10.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 10.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Quickstarts" href="toc.html" />
+    <link rel="next" title="SAGA GIS Quickstart" href="saga_quickstart.html" />
+    <link rel="prev" title="QGIS Quickstart" href="qgis_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.rasdaman.org" id="rasdaman-quickstart"><img alt="project logo" class="align-right" src="../../_images/logo-rasdaman15.png" style="width: 128.0px; height: 128.0px;" /></a>
+<div class="section" id="id1">
+<h1>Rasdaman Quickstart<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Rasdaman is a Big Data Engine for flexible ad-hoc analytics on multi-dimensional spatio-temporal sensor, image, simulation, and statistics data of unlimited size.
+The Web Coverage Processing Service (WCPS) query language is an Open Geospatial Consortium (OGC) standard wich allows filtering and processing of multi-dimensional raster
+coverages, such as sensor, simulation, image, and statistics data using web services. The WCPS queries are translated to rasdaman query language, rasql, and are executed
+on rasdaman. This quick start shows how to access and manipulate an example 2D coverage using WCPS language.</p>
+<div class="section" id="running-wcps-queries">
+<h2>Running WCPS Queries<a class="headerlink" href="#running-wcps-queries" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Either:</dt>
+<dd><ul class="first last simple">
+<li>Go to <a class="reference external" href="http://localhost:8080/rasdaman/ows">WCPS servlet page</a> and enter you query in the query boxes and press send.</li>
+<li>Add your query in this url: <a class="reference external" href="http://localhost:8080/rasdaman/ows?query=your_query">http://localhost:8080/rasdaman/ows?query=your_query</a> and run it using a browser.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="running-coverage">
+<h2>Running Coverage<a class="headerlink" href="#running-coverage" title="Permalink to this headline">¶</a></h2>
+<p>The example coverage which will be used in the seqeul is a 6 MB image as bellow:</p>
+<a class="reference internal image-reference" href="../../_images/rasdaman_ndvi14.png"><img alt="../../_images/rasdaman_ndvi14.png" src="../../_images/rasdaman_ndvi14.png" style="width: 479.0px; height: 269.0px;" /></a>
+</div>
+<div class="section" id="access-a-coverage">
+<h2>Access A Coverage<a class="headerlink" href="#access-a-coverage" title="Permalink to this headline">¶</a></h2>
+<p>The WCPS query to access the full coverage is as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>for c in (NIR) return encode(c, &quot;png&quot;)
+</pre></div>
+</div>
+<p>Click on <a class="reference external" href="http://localhost:8080/rasdaman/ows?query=for%20c%20in%20(NIR)%20return%20encode%28c,%20%22png%22%29">coverage</a> to execute it on the browser.</p>
+</div>
+<div class="section" id="select-a-subset-of-the-coverage">
+<h2>Select a Subset of the Coverage<a class="headerlink" href="#select-a-subset-of-the-coverage" title="Permalink to this headline">¶</a></h2>
+<p>The WCPS query to access a subset of the coverage is as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>for c in (NIR) return encode(c[i(0:500),j(0:500)], &quot;png&quot;)
+</pre></div>
+</div>
+<p>Click on the <a class="reference external" href="http://localhost:8080/rasdaman/ows?query=for%20c%20in%20(NIR)%20return%20encode%28c[i(0:500),j(0:500)],%20%22png%22%29">subsetting</a> to execute it on the browser.</p>
+<p>The query result is an image as follows:</p>
+<a class="reference internal image-reference" href="../../_images/rasdaman_ndvi24.png"><img alt="../../_images/rasdaman_ndvi24.png" src="../../_images/rasdaman_ndvi24.png" style="width: 479.0px; height: 125.25px;" /></a>
+</div>
+<div class="section" id="band-extraction-from-the-coverage">
+<h2>Band Extraction from the Coverage<a class="headerlink" href="#band-extraction-from-the-coverage" title="Permalink to this headline">¶</a></h2>
+<p>The WCPS query to access the red band of the coverage is as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>for c in (NIR) return encode(c.red, &quot;png&quot;)
+</pre></div>
+</div>
+<p>Click on <a class="reference external" href="http://localhost:8080/rasdaman/ows?query=for%20c%20in%20(NIR)%20return%20encode%28c.red,%20%22png%22%29">band extraction</a> to execute it on the browser.</p>
+<p>You should see the following image in the browser:</p>
+<a class="reference internal image-reference" href="../../_images/rasdaman_ndvi34.png"><img alt="../../_images/rasdaman_ndvi34.png" src="../../_images/rasdaman_ndvi34.png" style="width: 479.0px; height: 269.0px;" /></a>
+</div>
+<div class="section" id="arithmetic-operation-extracting-ndvi-of-the-coverage">
+<h2>Arithmetic Operation: Extracting NDVI of the Coverage<a class="headerlink" href="#arithmetic-operation-extracting-ndvi-of-the-coverage" title="Permalink to this headline">¶</a></h2>
+<p>The NDVI (Normalized Difference Vegetation Index) is a measure for the probability of vegetation in remote sensing, i.e., the closer to +1 a pixel is, the more likely it is plants.
+The WCPS query to derive NDVI from the coverage is as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre>for c in ( NIR ) return encode( ( (char) ( ( ( ((float)c).0-((float)c).1 ) / ( (float)c.0+((float)c).1 )) &gt; 0 ) * 255), &quot;png&quot; )
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/rasdaman_ndvi44.png"><img alt="../../_images/rasdaman_ndvi44.png" src="../../_images/rasdaman_ndvi44.png" style="width: 479.0px; height: 269.0px;" /></a>
+</div>
+<div class="section" id="further-reading-and-links">
+<h2>Further Reading and Links<a class="headerlink" href="#further-reading-and-links" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>Learn more about the OGC  <a class="reference external" href="http://www.opengeospatial.org/standards/wcps">Web Coverage Processing Service</a> (WCPS) Language standard (which was heavily inspired by rasdaman); a good starting point is the         <a class="reference external" href="http://earthlook.org/standards">documentation and tutorials page</a>  and <a class="reference external" href="http://localhost/rasdaman-demo/demo/client/query-sandbox.html">WCPS Query SandBox</a>.</li>
+<li>Interested in coverage data and services in general? Visit OGC&#8217;s <a class="reference external" href="http://external.opengeospatial.org/twiki_public/CoveragesDWG/WebHome">Coverages Domain Working Group wiki</a>.</li>
+<li>Read <a class="reference external" href="http://rasdaman.org/browser/manuals_and_examples/manuals/doc-guides/ql-guide.pdf">rasql query language guide</a> to learn about rasdaman query language.</li>
+<li>Go to the <a class="reference external" href="http://localhost/rasdaman-demo">multi-dimensional demo</a> to explore interactive 1-D to 4-D rasdaman demos. The small ones are part of OSGeo-Live, those utilizing larger sets (beyond this drive&#8217;s capacity) forward to the <a class="reference external" href="http://standards.rasdaman.org">OGC standards showcase site</a> .</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

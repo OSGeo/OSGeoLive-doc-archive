@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы с deegree 3 &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.deegree.org"><img alt="логотип проекта" class="align-right" src="../../_images/logo-deegree.png" style="width: 200.0px; height: 48.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="deegree-3">
+<h1>Начало работы с deegree 3<a class="headerlink" href="#deegree-3" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Описание проекта<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><em>deegree</em> — программный продукт с открытым исходным кодом для инфраструктур пространственных данных и геопространственных веб-приложений.</p>
+<p>Доступные компоненты:</p>
+<ul class="simple">
+<li>Веб-сервисы — WFS, WMS, WMTS, CSW, WPS</li>
+</ul>
+<p>Данное «введение» описывает:</p>
+<dl class="docutils">
+<dt>Этот документ описывает:</dt>
+<dd><ul class="first last simple">
+<li>как запустить веб-сервисы <em>deegree 3</em> с Live DVD;</li>
+<li>как использовать консоль сервисов <em>deegree 3</em> для запуска примеров конфигураций;</li>
+<li>как найти подробную информацию.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h2>Информация о <em>deegree 3</em><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><em>deegree 3</em> — новое поколение Java-фреймворка <em>degree</em> для ГИС-приложений и</dt>
+<dd>реализаций сервисов OGC. Это приложение может быть использовано для построения
+инфраструктуры пространственных данных (GDI).</dd>
+</dl>
+</div>
+<div class="section" id="deegree">
+<h2>Запуск сервисов deegree<a class="headerlink" href="#deegree" title="Permalink to this headline">¶</a></h2>
+<p>Выберите &#8220;Start deegree&#8221; из меню запуска.
+Запуск приложения может занять некоторое время.</p>
+</div>
+<div class="section" id="id3">
+<h2>Консоль сервисов deegree<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>После первого запуска должен запуститься браузер (если этого не произошло, откройте его вручную и введите <a class="reference external" href="http://localhost:8033">http://localhost:8033</a>). Подождите, пока не появится консоль сервисов <em>deegree 3</em>. Консоль представляет собой простое веб-приложение для редактирования конфигурационных файлов в так называемом &#8220;рабочем пространстве&#8221; deegree.</p>
+</div>
+<div class="section" id="id4">
+<h2>Рабочее пространство сервисов <em>deegree 3</em><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><em>deegree 3</em> основан на концепции общей конфигурации, разделяемой всеми приложениями <em>deegree 3</em> (веб сервисами, веб-приложениями, настольными приложениями, инструментами командной строки). Различные аспекты настройки основываются на &#8220;рабочем пространстве&#8221; deegree&nbsp;— директории конфигурации со стандартной структурой. С помощью консоли <em>deegree 3</em> можно просмотреть уже предоставленные рабочие пространства, нажав на ссылку &#8220;workspaces&#8221; (слева).</p>
+<p>После этого вы попадёте в раздел управления рабочими пространствами сервисной консоли. Вверху показывается текущее активное рабочее пространство (в заданный момент времени активно одно рабочее пространство). Показываются также неактивные локальные рабочие пространства и официальные пространства, которые можно импортировать (если есть доступ в Интернет).</p>
+<p>Пожалуйста, запустите <em>deegree-inspire-workspace</em>.</p>
+</div>
+<div class="section" id="deegree-3-osgeo-live">
+<h2>Рабочее пространство сервисов <em>deegree 3</em> на диске OSGeo-Live<a class="headerlink" href="#deegree-3-osgeo-live" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><em>deegree-workspace-inspire</em></li>
+</ul>
+</div></blockquote>
+<p>На OSGeo-Live DVD поставляется пример рабочего пространства INSPIRE (настроенные
+сервисы «Просмотр» и «Загрузка»). Пример состоит из транзакционного WFS (2.0.0 и
+1.1.0) для всех Annex I Data Themes и WMS (1.3.0 and 1.1.1), который хранит 3
+слоя для Annex I Data Themes.</p>
+<p>Включены некоторые упрощённые административные единицы Дании, кадастровые районы
+и адреса. Сервис WFS в данном примере действует как сервис загрузки INSPIRE (прямой доступ) и выдаёт валидный, улучшенный формат INSPIRE GML.</p>
+<p>Дополнительно поддерживаются несколько типов и форм запросов.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Данное рабочее пространство загружает гармонизированный INSPIRE GML из локальных файлов. Бекенд можно легко сменить на PostGIS, Oracle Spatial или Microsoft SQL Server.</p>
+</div>
+<p>После активации <em>deegree-workspace-inspire</em> вы можете открыть простой клиент
+нажатием на <em>&#8216;see layers&#8217;</em>. Сервис настроен на визуализацию данных и подложки (отрисовка <a class="reference external" href="http://openstreetmap.org/">OpenStreetMap</a>).</p>
+<p>Нажмите на <strong>+</strong> в правой части, откроется список, показывающий все доступные
+слои. Вы можете активировать слой INSPIRE, хранящийся в deegree WMS.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Картографический клиент базируется на <a class="reference external" href="http://openlayers.org/">OpenLayers</a>.
+Вы можете перемещаться по карте, удерживая нажатой левую кнопку мыши и двигаясь. Изменение масштаба карты возможно через колесо мыши или с помощью элементов навигации слева.</p>
+</div>
+<p>Дополнительную информацию и пошаговые руководства о рабочих наборах INSPIRE вы можете найти в <a class="reference external" href="http://download.deegree.org/documentation/3.3.20/html/lightly.html#example-workspace-1-inspire-network-services">документации</a>.</p>
+</div>
+<div class="section" id="id6">
+<h2>Что дальше?<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Это была только краткая информация об особенностях <em>deegree 3</em>. На официальном
+сайте вы найдёте больше информации и демо-примеров.</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><em>deegree</em> онлайн демо</p>
+<p>Available here: <a class="reference external" href="http://demo.deegree.org">http://demo.deegree.org</a></p>
+</li>
+<li><p class="first">веб-сайт <em>deegree</em></p>
+<p>Available here: <a class="reference external" href="http://www.deegree.org">http://www.deegree.org</a></p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

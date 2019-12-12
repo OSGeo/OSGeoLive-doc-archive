@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GeoKettle &mdash; OSGeo-Live 10.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 10.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.5 Contents" href="overview.html" />
+    <link rel="next" title="Geomajas" href="geomajas_overview.html" />
+    <link rel="prev" title="GDAL/OGR" href="gdal_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.geokettle.org/"><img alt="project logo" class="align-right" src="../../_images/logo-geokettle16.png" /></a>
+<div class="section" id="geokettle">
+<h1>GeoKettle<a class="headerlink" href="#geokettle" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="extract-transform-load-etl">
+<h2>Extract Transform Load (ETL)<a class="headerlink" href="#extract-transform-load-etl" title="Permalink to this headline">¶</a></h2>
+<p>GeoKettle è una versione &#8220;con supporto spaziale&#8221; di <a class="reference external" href="http://kettle.pentaho.com">Pentaho Data Integration</a>
+(anche conosciuto come Kettle). È un potente, strumento spaziale ETL (Extract,
+Transform and Load) per metadata-driven dedicato all&#8217;integrazione di diverse sorgenti
+dei dati per creare e aggiornare database spaziali, data warehouses e servizi web.</p>
+<p>GeoKettle permette l&#8217;Estrazione di dati dalla sorgente, la Transformazione dei dati
+al fine di correggere gli errori, pulire i dati, cambiare la struttura dei dati,
+rendere i dati conformi agli standard, e Caricare i dati trasformati in un DataBase
+Management System (DBMS), file GIS o servizio web geospaziale di destinazione. GeoKettle
+è particolarmente utile per automatizzare complessi e ripetitivi processamenti di dati
+senza produrre il codice specifico, convertendo tra i formati dei dati, migrandi dati
+tra diversi database, feeding data into databases, etc.</p>
+<p>Nel dominio geospaziale, Geokettle viene comparato a FME, uno strumento ETL spaziale
+proprietario. GeoKettle è stabile, veloce, conforme agli standard, con centinaia di
+funzioni e supporto per la scrittura/lettura di molti formati di file, servizi e DBMS.
+GeoKettle è usato da diverse organizzazione in tutto il monto, incluso agenzia governative,
+banche, assicurazioni e  and geospatial system integrators.</p>
+<a class="reference internal image-reference" href="../../_images/geokettle-overview8.png"><img alt="project logo" class="align-right" src="../../_images/geokettle-overview8.png" style="width: 512.0px; height: 384.0px;" /></a>
+<div class="section" id="caratteristiche-principali">
+<h3>Caratteristiche principali<a class="headerlink" href="#caratteristiche-principali" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Estrae dati da:<ul>
+<li>35 e più tipologie di database: MySQL, PostgreSQL/PostGIS, Oracle, ...</li>
+<li>File XML</li>
+<li>File XLS</li>
+<li>File Xbase (dBase, Foxpro, etc)</li>
+<li>File systems information</li>
+<li>Generated data</li>
+<li>File MS Access</li>
+<li>LDAP</li>
+<li>SOLAP (Spatial OLAP) system: GeoMondrian</li>
+<li>Formati di dati geospaziali: Shapefile, GML 3.1.1, KML 2.2, tutti i formati supportati da OGR</li>
+<li>OGC Web services: Web Feature Service (WFS), Sensor Observation Service (SOS), Catalogue Web Service (CSW)</li>
+</ul>
+</li>
+<li>Transformazione dei dati:<ul>
+<li>Motore basato su data transfer (no code generator)</li>
+<li>Looking up data in databases, files or memory</li>
+<li>Calculating</li>
+<li>Scripting: Javascript, SQL, RegExp</li>
+<li>Splitting</li>
+<li>Mapping</li>
+<li>Selecting</li>
+<li>Partitioning</li>
+<li>Filtering</li>
+<li>Merging</li>
+<li>Joining</li>
+<li>Duplicating</li>
+<li>Clustering (MPP)</li>
+<li>Pivotting</li>
+<li>Analisi di dati geospaziali: buffer, centroid, distance, intersection, union, ...</li>
+<li>Eleborazione geografica avanzata: clipping, delaunay, simplify/smooth geometry, split features, ...</li>
+<li>Può eseguire qualsiasi Web Processing Service (WPS)</li>
+<li>Aggregazione spaziale</li>
+<li>Anteprima cartografica</li>
+</ul>
+</li>
+<li>Carica dati nei seguenti formati di destinazione:<ul>
+<li>Database: MySQL, PostgreSQL/PostGIS, Oracle, ...</li>
+<li>Popolazione di data warehouse</li>
+<li>Formati di dati geospaziali: Shapefile, GML 3.1.1, KML 2.2, tutti i formati supportati da OGR</li>
+<li>Servizi OGC Web: Catalogue Web Service (CSW), Web Feature Service (WFS), ...</li>
+<li>Partitioned loading</li>
+<li>Bulk loading</li>
+<li>Parallel loading</li>
+<li>Clustering</li>
+</ul>
+</li>
+<li>Ambienti:<ul>
+<li>GUI completa chiamata &#8220;Spoon&#8221; per modificare ogni opzione di trasformazione</li>
+<li>Strumenti da linea di comando: eseguono lavori e trasformazione</li>
+<li>Server web: esecuzione remote e clustering perfect in ambienti di cloud computing per elaborazione
+di set di dati molto grandi</li>
+<li>API di sviluppo per Java</li>
+<li>Plugin eco-system</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="standard-implementati">
+<h3>Standard implementati<a class="headerlink" href="#standard-implementati" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>OGC standards compliant (SFS, WFS-T, WPS, CSW, SOS, GML, KML)</li>
+</ul>
+</div>
+<div class="section" id="dettagli">
+<h3>Dettagli<a class="headerlink" href="#dettagli" title="Permalink to this headline">¶</a></h3>
+<p><strong>Sito Web:</strong> <a class="reference external" href="http://www.geokettle.org/">http://www.geokettle.org/</a></p>
+<p><strong>Licenza:</strong> GNU Lesser General Public License (LGPL) version 2.1</p>
+<p><strong>Versione Software:</strong> 2.6</p>
+<p><strong>Piattaforme Supportate:</strong> Windows, Linux, Mac, Solaris</p>
+<p><strong>Interfacce API:</strong> Java, Javascript</p>
+<p><strong>Supporto:</strong> <a class="reference external" href="http://www.spatialytics.org">http://www.spatialytics.org</a> &amp; <a class="reference external" href="http://www.spatialytics.com">http://www.spatialytics.com</a></p>
+</div>
+<div class="section" id="guida-rapida">
+<h3>Guida rapida<a class="headerlink" href="#guida-rapida" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/geokettle_quickstart.html"><em>Documentazione introduttiva</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GpsPrune Quickstart &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Benvinguts a OSGeo-Live 9.5" href="../index.html" />
+    <link rel="next" title="GRASS GIS 7 Quickstart" href="grass_quickstart.html" />
+    <link rel="prev" title="GpsDrive Quickstart" href="gpsdrive_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://gpsprune.activityworkshop.net/"><img alt="project logo" class="align-right" src="../../_images/logo-gpsprune.png" /></a>
+<div class="section" id="gpsprune-quickstart">
+<h1>GpsPrune Quickstart<a class="headerlink" href="#gpsprune-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>GpsPrune is a java application for viewing and editing coordinate data.  It can be used for preparing data for GPS devices and for analyzing the data recorded by them.</p>
+<p>In this Quick Start, we will load and view a data file included on this live DVD, and access some online information to supplement it.  It will be useful therefore if you have some kind of internet connection for this demonstration.</p>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>To run GpsPrune on the live DVD, select the icon &#8220;GpsPrune&#8221; in the Navigation and Maps menu.  This will then give you the empty window shown below.</p>
+<a class="reference internal image-reference" href="../../_images/gpsprune_emptywindow.png"><img alt="../../_images/gpsprune_emptywindow.png" src="../../_images/gpsprune_emptywindow.png" style="width: 471.35px; height: 325.05px;" /></a>
+<p>We will now load a file by using the menu command <em class="menuselection">File ‣ Open file</em> and selecting the file to load.  This can be a GPX file, a KML or KMZ file, or even a comma-separated or tab-separated file if you have one.  A suitable GPX file containing a couple of tracks can be found on the disc at <tt class="file docutils literal"><span class="pre">~/data/vector/R/test_trk2.gpx</span></tt> so we will load this one.</p>
+<img alt="../../_images/gpsprune_trackselect.png" src="../../_images/gpsprune_trackselect.png" />
+<p>Because this file contains two tracks, we are offered the choice of which one(s) to load.  We choose just the first one and press OK.</p>
+<p>Now you should see the track marked in blue against a white background.  If this track had any waypoints (which it doesn&#8217;t), then they would be shown too, marked with their names.  Below the main map display is an altitude chart, which shows the profile of the track
+if it contains altitudes.</p>
+<a class="reference internal image-reference" href="../../_images/gpsprune_test_trk2.png"><img alt="../../_images/gpsprune_test_trk2.png" src="../../_images/gpsprune_test_trk2.png" style="width: 523.6px; height: 371.8px;" /></a>
+<p>Now, assuming you have a network connection, you can activate the map by clicking the globe
+icon at the top of the main map display, or with the menu option <em class="menuselection">View ‣ Show Map</em>.</p>
+<a class="reference internal image-reference" href="../../_images/gpsprune_mapnik.png"><img alt="../../_images/gpsprune_mapnik.png" src="../../_images/gpsprune_mapnik.png" style="width: 523.6px; height: 371.8px;" /></a>
+<p>You can drag the map around with the mouse, and zoom in and out with the mousewheel or by double-clicking.  Dragging with the right mouse button defines a rectangle to zoom to, and the right-click menu offers further options.  Clicking on a point will show the details including altitude and timestamp if available.  You can also click on the altitude profile to select the corresponding point.</p>
+<div class="section" id="customizing-the-display">
+<h3>Customizing the display<a class="headerlink" href="#customizing-the-display" title="Permalink to this headline">¶</a></h3>
+<p>You can change the map with the menu option <em class="menuselection">Settings ‣ Set map background</em>.
+Let&#8217;s have a look at an alternative map source by selecting the second one, &#8220;Cyclemap&#8221;.  This uses the maps from OpenCycleMap to show additional information useful for hiking and cycling such as contour lines and cycle routes.</p>
+<a class="reference internal image-reference" href="../../_images/gpsprune_cyclemap.png"><img alt="../../_images/gpsprune_cyclemap.png" src="../../_images/gpsprune_cyclemap.png" style="width: 523.6px; height: 371.8px;" /></a>
+</div>
+<div class="section" id="wikipedia">
+<h3>Wikipedia<a class="headerlink" href="#wikipedia" title="Permalink to this headline">¶</a></h3>
+<p>Now let&#8217;s find out some more information about where this track is.  We can do this by selecting a point, and then choosing the menu option <em class="menuselection">Track ‣ Get nearby Wikipedia articles</em>.  This shows a list of articles whose coordinates are nearest to the selected point.  Clicking one of these entries in the list will show more information in the box below.</p>
+<img alt="../../_images/gpsprune_wikipedialist.png" src="../../_images/gpsprune_wikipedialist.png" />
+<p>You can then use the button <cite>Load</cite> to load that point into GpsPrune, or <cite>Show webpage</cite> to load the Wikipedia page in a browser.</p>
+</div>
+<div class="section" id="gpsies">
+<h3>Gpsies<a class="headerlink" href="#gpsies" title="Permalink to this headline">¶</a></h3>
+<p>Finally, let&#8217;s download another track from the same area.  We can use the menu command <em class="menuselection">Track ‣ Get Gpsies tracks</em> to search for tracks on the website gpsies.com.  Again, we get a list of matching entries, and we can select one to view the description.</p>
+<img alt="../../_images/gpsprune_gpsieslist.png" src="../../_images/gpsprune_gpsieslist.png" />
+<p>Click the <cite>Load</cite> button to load the track, and select to append this track to the data we&#8217;ve already got.  Now we can see both tracks in the same view.</p>
+</div>
+<div class="section" id="measuring-distances">
+<h3>Measuring distances<a class="headerlink" href="#measuring-distances" title="Permalink to this headline">¶</a></h3>
+<p>To find out how long the climb is, we&#8217;ll click on the point at the start of the climb, just north of Dunedin, and select <em class="menuselection">Range ‣ Set range start</em>.  Then select the top of the climb by clicking on the highest point of the altitude profile, and select <em class="menuselection">Range ‣ Set range end</em>.  We can now see in the &#8220;Range details&#8221; section that this part of the track is 8.55 km long, climbs 346 m and descends just 10 m.</p>
+<a class="reference internal image-reference" href="../../_images/gpsprune_rangedetails.png"><img alt="../../_images/gpsprune_rangedetails.png" src="../../_images/gpsprune_rangedetails.png" style="width: 523.6px; height: 371.8px;" /></a>
+</div>
+<div class="section" id="using-gpsprune-on-other-systems">
+<h3>Using GpsPrune on other systems<a class="headerlink" href="#using-gpsprune-on-other-systems" title="Permalink to this headline">¶</a></h3>
+<p>After trying out GpsPrune on this live DVD, you may want to use it on another system, whether it&#8217;s another Linux system or Mac OSX or Windows.  Some linux distributions include GpsPrune in their normal software libraries (just search for &#8220;Prune&#8221; or &#8220;GpsPrune&#8221;), or you can just download the latest copy from the home page.</p>
+<p>It doesn&#8217;t need to be installed, but it does need a java runtime to be installed, version 1.5 or higher.  You can extend GpsPrune&#8217;s functionalities by installing other free software, such as <em>Gpsbabel</em>, <em>Gnuplot</em>, <em>Exiftool</em> or <em>Java3d</em>.</p>
+<p>Once you&#8217;ve installed GpsPrune on your permanent system, you can save your settings with the menu option <em class="menuselection">Settings ‣ Save settings</em>.  Then they will be remembered for the next time you run GpsPrune.  However, note that when using this live DVD, all files that you save in the regular file system are lost when you shut down the computer.</p>
+<p>You can also save the downloaded map tiles to disk by selecting the menu option <em class="menuselection">Settings ‣ Save maps to disk</em> and selecting a directory in which to save the images.  This helps to speed up the display as it doesn&#8217;t have to download the images again.</p>
+</div>
+</div>
+<div class="section" id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>GpsPrune home page: <a class="reference external" href="http://gpsprune.activityworkshop.net/">http://gpsprune.activityworkshop.net/</a></li>
+<li>Screenshots: <a class="reference external" href="http://gpsprune.activityworkshop.net/screenshots.html">http://gpsprune.activityworkshop.net/screenshots.html</a></li>
+<li>How-tos and instructions: <a class="reference external" href="http://gpsprune.activityworkshop.net/how-tos.html">http://gpsprune.activityworkshop.net/how-tos.html</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

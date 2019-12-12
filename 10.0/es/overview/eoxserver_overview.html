@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>EOxServer &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Overviews" href="toc.html" />
+    <link rel="next" title="GDAL/OGR" href="gdal_overview.html" />
+    <link rel="prev" title="deegree" href="deegree_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://eoxserver.org/"><img alt="project logo" class="align-right" src="../../_images/logo-eoxserver-26.png" /></a>
+<div class="section" id="eoxserver">
+<h1>EOxServer<a class="headerlink" href="#eoxserver" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="servicio-web">
+<h2>Servicio Web<a class="headerlink" href="#servicio-web" title="Permalink to this headline">¶</a></h2>
+<p>EOxServer es un servidor para datos de Earth Observation (EO). Para ser más precisos, es una Aplicación Python y un framework para presentar datos y metadatos de EO.</p>
+<p>La misión de EOxServer: Proporcionar un entorno de desarrollo de software abierto para facilitar la provisión online the grandes archivos de datos de observación terrestre, a través de Servicios Estandar Abiertos, para que puedan ser explotados eficientemente por los usuarios.</p>
+<ul class="simple">
+<li>Software abierto: licencia estilo MIT</li>
+<li>Entorno: Enteramente basado en Software libre (Python, <a class="reference internal" href="mapserver_overview.html"><em>MapServer</em></a>,
+Django/GeoDjango, <a class="reference internal" href="gdal_overview.html"><em>GDAL</em></a>, <a class="reference internal" href="spatialite_overview.html"><em>SpatiaLite</em></a> o
+<a class="reference internal" href="postgis_overview.html"><em>PostGIS</em></a>, y PROJ.4)</li>
+<li>Facilita provisión online: Interface gráfica de usuario Admin y registro de datos a través de línea de comando.</li>
+<li>Grandes archivos de datos de Observación Terrestre: Operadores registran datos raster existentes
+Archivos</li>
+<li>Servicios Estandar Abiertos: Abiertos en el sentido de que están disponibles libremente
+Geospatial Consortium (OGC); WMS, WCS, EO-WMS, EO-WCS</li>
+<li>Explotación eficiente por parte de los usuarios: sub-setting definidos por el usuario; vista y descarga</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/eoxserver_screenshot6.png"><img alt="EOxServer embedded client screen shot" class="align-right" src="../../_images/eoxserver_screenshot6.png" style="width: 512.0px; height: 384.0px;" /></a>
+<div class="section" id="caracteristicas-fundamentales">
+<h3>Características Fundamentales<a class="headerlink" href="#caracteristicas-fundamentales" title="Permalink to this headline">¶</a></h3>
+<p>Las características disponibles son:</p>
+<ul class="simple">
+<li>Soporte para GML AP – Coberturas para RectifiedGridCoverages</li>
+<li>Soporte para especificación WCS 2.0 adoptada (Incluye GetCapabilities,
+DescribeCoverage, y petición GetCoverage, KVP-, y protocolo XML/POST
+binding)</li>
+<li>Soporte anticipado de extensiones previstas: formato Coverage, GeoTIFF
+encoding, predefined (o EPSG) CRSs, scaling &amp; interpolation, y
+acceso no-referenciado. Por &#8220;anticipado&#8221; queremos decir reflejar el último
+Debates WCS.SWG  así como seguir las partes relevantes de las versiones previas
+1.1 y 1.0 de WCS.</li>
+<li>Soporte para coberturas 2-D EO derivadas de gmlcov:RectifiedGridCoverage</li>
+<li>Soporte para coberturas 2-D EO derivadas de gmlcov:ReferenceableGridCoverage</li>
+<li>Soporte de series de Dataset como una colección de coberturas EO por ejemplo en un tiempo.
+series</li>
+<li>Soporte para new DescribeEOCoverageSet operación en Series de Dataset y EO
+Coberturas</li>
+<li>Soporte para mosaico &#8216;Stitched&#8217; de coberturas rectificadas EO incluyendo el concepto de
+contributingFootprint</li>
+<li>Soporte de metadatos EO Metadata (extracción y evaluación en operaciones DescribeEOCoverageSet
+* Bindings de protocolo soportados:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>KVP</li>
+<li>XML/POST (utilizado junto con proxy SOAP2POST para soportar binding de protocolo XML/SOAP
+binding)</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Formatos de cobertura soportados:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>GeoTIFF</li>
+<li>Formatos soportados por la librería GDAL (se tiene que verificar soporte para
+cada formato requerido separadamente)</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>Soporte de EO-WMS para coberturas EO</li>
+</ul>
+</div>
+<div class="section" id="estandares-implementados">
+<h3>Estandares Implementados<a class="headerlink" href="#estandares-implementados" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Soporte para numerosos estándares Open Geospatial Consortium  (OGC)<ul>
+<li>WCS, EO-WCS</li>
+<li>WMS, EO-WMS</li>
+<li>GML, GMLCOV, EO-O&amp;M</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="demo">
+<h3>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost/eoxserver/">Local</a></li>
+<li><a class="reference external" href="https://eoxserver.org/demo_stable/">En línea</a></li>
+</ul>
+</div>
+<div class="section" id="documentacion">
+<h3>Documentación<a class="headerlink" href="#documentacion" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../../eoxserver-docs/EOxServer_documentation.pdf">Documentación EOxServer 0.2.1</a></li>
+</ul>
+</div>
+<div class="section" id="detalles">
+<h3>Detalles<a class="headerlink" href="#detalles" title="Permalink to this headline">¶</a></h3>
+<p><strong>Sitio Web:</strong> <a class="reference external" href="http://eoxserver.org/">http://eoxserver.org/</a></p>
+<p><strong>Licencia:</strong> <a class="reference external" href="http://eoxserver.org/doc/copyright.html#license">Estilo MIT</a></p>
+<p><strong>Versión del Software:</strong> 0.4.0</p>
+<p><strong>Plataformas Soportadas:</strong> Windows, Linux, Mac:</p>
+<p><strong>Interfaces API:</strong> Python</p>
+<p><strong>Soporte:</strong> <a class="reference external" href="http://eoxserver.org/doc/en/users/basics.html#where-can-i-get-support">http://eoxserver.org/doc/en/users/basics.html#where-can-i-get-support</a></p>
+</div>
+<div class="section" id="guia-de-inicio-rapido">
+<h3>Guía de inicio rápido<a class="headerlink" href="#guia-de-inicio-rapido" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/eoxserver_quickstart.html"><em>Documentación Guía de inicio rápido</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

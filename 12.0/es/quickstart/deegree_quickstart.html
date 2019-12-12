@@ -1,0 +1,231 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>deegree Quickstart &#8212; OSGeoLive 12.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '12.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Guía Rápida de EOxServer" href="eoxserver_quickstart.html" />
+    <link rel="prev" title="Guía de Inicio Rápido de Cesium" href="cesium_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.deegree.org"><img alt="../../_images/logo_deegree.png" class="align-right" src="../../_images/logo_deegree.png" /></a>
+<a class="reference external image-reference" href="target:http://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="deegree-quickstart">
+<h1><a class="toc-backref" href="#id1">deegree Quickstart</a><a class="headerlink" href="#deegree-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>deegree is a Java application for serving maps (and vector data) for other clients to show.</p>
+<p>This Quick Start describes how to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>start deegree webservices</li>
+<li>configure deegree webservices via the deegree services console</li>
+<li>use the <em>deegree-inspire-workspace</em> as a starting point</li>
+</ul>
+</div></blockquote>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#deegree-quickstart" id="id1">deegree Quickstart</a><ul>
+<li><a class="reference internal" href="#project-description" id="id2">Project description</a></li>
+<li><a class="reference internal" href="#about-deegree-3" id="id3">About deegree 3</a></li>
+<li><a class="reference internal" href="#start-deegree-3-webservices" id="id4">Start deegree 3 webservices</a></li>
+<li><a class="reference internal" href="#deegree-3-services-console" id="id5">deegree 3 services console</a></li>
+<li><a class="reference internal" href="#deegree-3-workspaces" id="id6">deegree 3 workspaces</a></li>
+<li><a class="reference internal" href="#deegree-3-workspaces-on-osgeolive-gis-disc" id="id7">deegree 3 workspaces on OSGeoLive GIS Disc</a></li>
+<li><a class="reference internal" href="#want-more" id="id8">Want more?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="project-description">
+<h2><a class="toc-backref" href="#id2">Project description</a><a class="headerlink" href="#project-description" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><em>deegree</em> is open source software for spatial data infrastructures and the
+geospatial web.</p>
+<p>Available components are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Web-Services: WFS, WMS, WMTS, CSW, WPS</li>
+</ul>
+</div></blockquote>
+<p>This quickstart describes how to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Start <em>deegree 3 webservices</em> on the Live DVD</li>
+<li>Use the <em>deegree 3 services console</em> to activate example configurations</li>
+<li>Find more information</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="about-deegree-3">
+<h2><a class="toc-backref" href="#id3">About deegree 3</a><a class="headerlink" href="#about-deegree-3" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><em>deegree 3</em> is the new generation of the deegree Java framework for GIS
+applications and OGC-service implementations.
+It can be used to build web-based geospatial-data-infrastructures (GDI).</p>
+</div>
+<div class="section" id="start-deegree-3-webservices">
+<h2><a class="toc-backref" href="#id4">Start deegree 3 webservices</a><a class="headerlink" href="#start-deegree-3-webservices" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Choose <em>“Start deegree”</em> from
+the <span class="menuselection">Geospatial ‣ Web Services ‣ deegree</span> menu.
+The application will take a few moments to start up.</p>
+</div>
+<div class="section" id="deegree-3-services-console">
+<h2><a class="toc-backref" href="#id5">deegree 3 services console</a><a class="headerlink" href="#deegree-3-services-console" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>When you start <em>deegree</em> for the first time, firefox should open (otherwise open
+it manually and point your browser to <a class="reference external" href="http://localhost:8033">http://localhost:8033</a>). Please wait until
+you can see the <em>deegree 3 services console</em>.
+This is a simple web-based GUI for editing the configuration files of the
+so-called <em>deegree workspace</em>.</p>
+</div>
+<div class="section" id="deegree-3-workspaces">
+<h2><a class="toc-backref" href="#id6">deegree 3 workspaces</a><a class="headerlink" href="#deegree-3-workspaces" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><em>deegree 3</em> uses configurations conformant to all <em>deegree 3</em> based webservices.
+Those configurations are stored in the so called workspace.</p>
+<p>Inside the <em>deegree services console</em> you find a section to manage the included
+and ready-to-use workspaces.
+To enter this section, click on <em>“workspaces”</em> on the left side.</p>
+<p>You are now in the workspace management of the running <em>deegree</em> instance.
+You can see which workspace is currently active (only one can be active at a
+time) workspace, inactive locally available workspaces and offical workspaces
+which can be imported if you have a internet connection.</p>
+<p>Please start the <em>deegree-inspire-workspace</em> now.</p>
+</div>
+<div class="section" id="deegree-3-workspaces-on-osgeolive-gis-disc">
+<h2><a class="toc-backref" href="#id7">deegree 3 workspaces on OSGeoLive GIS Disc</a><a class="headerlink" href="#deegree-3-workspaces-on-osgeolive-gis-disc" title="Enlazar permanentemente con este título">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><em>deegree-workspace-inspire</em></li>
+</ul>
+</div></blockquote>
+<p>This workspace includes an example configuration for INSPIRE View- and
+Download-Services.
+It consists of a transactional WFS (2.0.0 and 1.1.0) for all Annex I Data Themes
+and a WMS (1.3.0 and 1.1.1) which serves three layers of those Annex I Data
+Themes.
+Included are some harmonized dutch administrative units, cadastral parcels and
+addresses.
+The WFS in this example acts as an INSPIRE Download service (direct access) and
+outputs valid, harmonized INSPIRE GML.
+Additionally it supports multiple request types and queries.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">This workspace loads harmonized INSPIRE GML from local files.
+This can easily changed to PostGIS, Oracle Spatial or Microsoft SQL Server as
+backend.</p>
+</div>
+<p>After activating the <em>deegree-workspace-inspire</em> you can open a simple
+map-client by clicking on <em>“see layers”</em>.
+The service is configured to visualize the data and a basemap (rendered by
+<a class="reference external" href="http://openstreetmap.org/">OpenStreetMap</a>).</p>
+<p>A click on the <strong>+</strong> on the right side opens a layer tree showing all available
+layers. You can activate the INSPIRE layer served by the deegree WMS here.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">The map client is based on <a class="reference external" href="http://openlayers.org/">OpenLayers</a>.
+You can pan through the map holding the left mouse button and drag the map.
+Zooming is possible via mouse wheel or the navigation elements on the left side.</p>
+</div>
+<p>More information and step-by-step tutorials about the INSPIRE workspace can be
+found in the deegree <a class="reference external" href="http://download.deegree.org/documentation/3.4.1/html/lightly.html#example-workspace-1-inspire-network-services">documentation</a>.</p>
+</div>
+<div class="section" id="want-more">
+<h2><a class="toc-backref" href="#id8">Want more?</a><a class="headerlink" href="#want-more" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>This was just a short intro on the features of deegree 3.
+There is more information in the demo installations and on the deegree website.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">deegree online demo</p>
+<p>Available here: <a class="reference external" href="http://demo.deegree.org">http://demo.deegree.org</a></p>
+</li>
+<li><p class="first">deegree website</p>
+<p>Available here: <a class="reference external" href="http://www.deegree.org">http://www.deegree.org</a></p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

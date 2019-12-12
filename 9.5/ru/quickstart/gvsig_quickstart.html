@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы с gvSIG &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-gvSIG24.png"><img alt="../../_images/logo-gvSIG24.png" class="align-right" src="../../_images/logo-gvSIG24.png" style="width: 64.0px; height: 64.5px;" /></a>
+<div class="section" id="gvsig">
+<h1>Начало работы с gvSIG<a class="headerlink" href="#gvsig" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Описание проекта<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>gvSIG&nbsp;— настольная географическая информационная система (ГИС), предназначенная
+для сбора, хранения, обработки, анализа и развёртывания любой географически
+привязанной информации для решения комплексных проблем управления и
+планирования. gvSIG известна дружественным к пользователю интерфейсом, дающим
+возможность доступа к наиболее распространенным форматам данных, как векторным,
+так и растровым. gvSIG имеет обширный набор средств для работы с географической
+информацией (инструменты запросов, создание макетов, геообработка, сетевой анализ
+и т.д.), которые делают её идеальным инструментом для пользователей, работающих
+в сфере ГИС.
+<a class="reference external" href="http://www.gvsig.org/web/projects/gvsig-desktop/description2/view?set_language=en">gvSIG</a> 2011</p>
+</div>
+<div class="section" id="id2">
+<h2>Это руководство описывает, как:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Запускать gvSIG и создавать Вид (View);</li>
+<li>выбирать проекцию для Вида;</li>
+<li>добавлять растровые и векторные данные в окно Вида;</li>
+<li>выполнять навигацию по окну Виду;</li>
+<li>изменять представление слоёв в Виде;</li>
+<li>делать выборку определённых объектов в векторном файле и экспортировать их в другой файл;</li>
+<li>создавать карту с сеткой;</li>
+<li>сохранять текущий проект.</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>Запуск gvSIG и создание Вида<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Выберите gvSIG из меню приложений. Запуск программы занимает обычно около минуты.</p>
+<ol class="arabic simple">
+<li>По умолчанию gvSIG откроется с пустым файлом проекта с документом &#8216;View&#8217;.</li>
+<li>Нажмите на кнопку [New] для создания Вида.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_001.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_001.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_001.png" /></a>
+</div>
+<div class="section" id="id4">
+<h2>Выбор проекции для Вида<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>Открытие окна свойств Вида<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Выберите новый созданный Вид. По умолчанию он называется <tt class="docutils literal"><span class="pre">Untitled</span> <span class="pre">-</span> <span class="pre">0</span></tt>, но может иметь название <tt class="docutils literal"><span class="pre">Untitled</span> <span class="pre">-</span> <span class="pre">1</span></tt>, если вы прежде его создали и удалили.</li>
+<li>Нажмите кнопку [Properties] для открытия диалогового окна <strong>View properties</strong>.</li>
+<li>Нажмите кнопку [...] после &#8216;Current projection&#8217;. Откроется диалоговое окно <strong>New CRS</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_002.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_002.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_002.png" /></a>
+</div>
+<div class="section" id="id6">
+<h3>Выбор системы координат<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Используя выпадающий список для &#8216;Type&#8217;, выберите EPSG-код.</li>
+<li>Введите код EPSG для выбора необходимой системы координат. Для этого примера мы используем код EPSG:4326, который соответствует системе координат WGS84. Затем нажмите на кнопку [Search]. В списке выберите систему координат в таблице ниже окна поиска.</li>
+<li>Нажмите [OK] для возврата в окно <strong>View Properties</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_003.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_003.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_003.png" /></a>
+</div>
+<div class="section" id="id7">
+<h3>Сохранение свойств Вида<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Обратите внимание, что Вид теперь имеет систему координат EPSG:4326 и что единицы карты изменились на градусы.</li>
+<li>Нажмите [OK], чтобы вернуться в <strong>Project Manager</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_004.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_004.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_004.png" /></a>
+</div>
+<div class="section" id="id8">
+<h3>Открытие Вида<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Выберите созданный новый Вид.</li>
+<li>Нажмите кнопку [Open] для открытия <em>Вида</em>.</li>
+<li>Окно Вида состоит из трёх частей.</li>
+<li>В верхнем левом окне содержится список векторных или растровых слоёв, используемых в Виде (т.н. TOC).</li>
+<li>В нижнем левом окне отображается расположение текущего фрагмента по отношению ко всей рабочей области (обзор).</li>
+<li>Окно справа&nbsp;— главная область, где отображаются растровые и векторные данные.</li>
+<li>Нажмите на иконку &#8216;Maximise window&#8217; для отображения окна во весь экран.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_005.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_005.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_005.png" /></a>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>Добавление растровых и векторных данных в текущий Вид<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>Открытие диалогового окна добавления слоя<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Нажмите кнопку &#8216;Add layer&#8217; на главной панели инструментов для открытия диалогового окна <strong>Add layer</strong>.</li>
+<li>Выберите [Add] в диалоговом окне <strong>Add layer</strong>. Первая закладка <em>File</em>, далее появится диалоговое окно <strong>Open</strong> для открытия файла.</li>
+<li>Перейдите в каталог <tt class="docutils literal"><span class="pre">/usr/local/share/data/natural_earth/HYP_50M_SR_W</span></tt>.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_006.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_006.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_006.png" /></a>
+</div>
+<div class="section" id="id11">
+<h3>Выбор растрового слоя<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Выберите <em>gvSIG Raster Driver</em> из выпадающего меню типа файлов. По умолчанию
+используется драйвер shape-файлов и каталог может показаться пустым.</li>
+<li>Выберите <tt class="docutils literal"><span class="pre">HYP_50M_SR_W.tif</span></tt>.</li>
+<li>Нажмите кнопку [OK] для возвращения в диалоговое окно <strong>Add layer</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_007.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_007.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_007.png" /></a>
+</div>
+<div class="section" id="id12">
+<h3>Выбор векторных файлов<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>В список диалогового окна <strong>Add layer</strong> уже добавлен растровый слой.</li>
+<li>Нажмите кнопку [Add] для добавления нескольких векторных слоёв. Появится диалоговое окно <strong>Open</strong>.</li>
+<li>Нажмите кнопку [Up one level] в меню для изменения пути к каталогу <tt class="docutils literal"><span class="pre">/usr/local/share/data/natural_earth</span></tt>.</li>
+<li>Выберите <em>gvSIG shp driver</em> из выпадающего меню типов файлов.</li>
+<li>Выберите <tt class="docutils literal"><span class="pre">10m_admin_1_states_provinces.shp</span></tt>, <tt class="docutils literal"><span class="pre">10m_populated_places_simple.shp</span></tt> и <tt class="docutils literal"><span class="pre">10m_rivers_lake_centerlines.shp</span></tt> слои из списка. Удерживайте нажатой клавишу Ctrl для выбора нескольких файлов.</li>
+<li>Нажмите кнопку [OK] для возврата в диалоговое окно <strong>Add layer</strong>.</li>
+<li>Нажмите кнопку [OK] в диалоговом окне <strong>Add layer</strong> перехода в окно Вида.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_008.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_008.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_008.png" /></a>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>Вид&nbsp;— базовая навигация<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h3>Увеличение до выбранного региона<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<p>Перейдя назад в главное окно, вы увидите, что векторные слои накладываются на
+растровый слой. Цвета, показанные на рисунке ниже, могут отличаться от цветов
+у вас на экране.</p>
+<ol class="arabic simple">
+<li>По умолчанию выбран инструмент <em>Zoom in</em> (увеличение) на главной панели инструментов.</li>
+<li>Используйте указатель мыши для рисования прямоугольной области вокруг юго-восточной Австралии. Для этого выберите верхний левый угол ограничительной рамки, удерживая нажатой левую кнопку мыши, перетащите правый нижний угол ограничивающего прямоугольника над выбранной областью. Отпустите левую кнопку мыши&nbsp;— теперь у вас определена приблизительная область навигации.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_009.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_009.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_009.png" /></a>
+</div>
+<div class="section" id="id15">
+<h3>Мелкомасштабная навигация<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>Вид будет автоматически меняться для отображения области с выбранным масштабом.</p>
+<ol class="arabic simple">
+<li>Ширину панели со списком слоёв можно изменять с помощью мыши, чтобы увидеть полные имена файлов.</li>
+<li>Используя выделенные инструменты сделайте, чтобы штат Виктория был в центре области отображения.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_010.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_010.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_010.png" /></a>
+</div>
+</div>
+<div class="section" id="id16">
+<h2>Вид&nbsp;— изменения отображения слоёв<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id17">
+<h3>Создание полигона без &#8220;заливки&#8221;<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Выберите слой <tt class="docutils literal"><span class="pre">10m_admin_1_states_provinces.shp</span></tt>, используя левую кнопку мыши и нажмите правую кнопку мыши.</li>
+<li>Выберите подменю <em>Properties</em>.</li>
+<li>Появится диалоговое окно <strong>Layer properties</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_011.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_011.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_011.png" /></a>
+</div>
+<div class="section" id="id18">
+<h3>Изменение символики векторного слоя<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Выберите закладку <em>Symbols</em> в верхней части диалогового окна <strong>Layers properties</strong>.</li>
+<li>Нажмите кнопку [Choose symbol] для открытия диалогового окна <strong>Symbol selector</strong>.</li>
+<li>Снимите опцию <em>Fill color</em> для отображения полигонов без &#8220;заливки&#8221;.</li>
+<li>Нажмите кнопку [OK] для возвращения в диалоговое окно <strong>Layers properties</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_012.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_012.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_012.png" /></a>
+</div>
+<div class="section" id="id19">
+<h3>Изменение подписей для векторного слоя<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Выберите закладку <em>Labelling</em> в верхней части диалогового окна <strong>Layers properties</strong>.</li>
+<li>Измените атрибуты текста как показано на рисунке, затем нажмите на кнопку [Accept].</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_013.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_013.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_013.png" /></a>
+</div>
+<div class="section" id="id20">
+<h3>Результат<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p>Заметим, что мы получили очень простой Вид, показывающий точечный, линейный и полигональный
+векторные слои, наложенные поверх растрового слоя. Это также просто отобразить
+аэрофотосъемку или цифровую модель рельефа как фоновый слой для векторных данных
+или показать другие векторные данные разных форматов.</p>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_014.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_014.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_014.png" /></a>
+</div>
+<div class="section" id="id21">
+<h3>Упражнение: изменить символику и подпись для точечного и линейного слоя<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>По типу предыдущих нескольких шагов измените символ, цвет и подпись рек и городов
+в соответствии с рисунком, показанным ниже.</p>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_015.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_015.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_015.png" /></a>
+</div>
+</div>
+<div class="section" id="id22">
+<h2>Простой анализ: выбор городов в регионе<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id23">
+<h3>Выбор региона<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Выберите слой <tt class="docutils literal"><span class="pre">10m_admin_1_states_provinces.shp</span></tt>, используя левую кнопку мыши.</li>
+<li>Нажмите кнопку &#8216;Select by point&#8217; на главной панели инструментов.</li>
+<li>Выберите полигон, который соответствует штату Виктория. Полигон окрасится в жёлтый цвет (по умолчанию), или другой цвет в зависимости от пользовательских настроек.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_016.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_016.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_016.png" /></a>
+</div>
+<div class="section" id="id24">
+<h3>Выбор городов, находящихся в регионе<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Выберите слой <tt class="docutils literal"><span class="pre">10m_populated_places_simple.shp</span></tt>, используя левую кнопку мыши.</li>
+<li>Выберите <tt class="docutils literal"><span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Selection</span> <span class="pre">&gt;</span> <span class="pre">Selection</span> <span class="pre">by</span> <span class="pre">layer</span></tt> для открытия диалогового окна <strong>Selection by Layer</strong></li>
+<li>Измените критерий выбора в выпадающем списке в левой стороне диалогового окна <strong>Selection by Layer</strong>. Нажмите кнопку [New set] для выбора городов в выбранном полигоне.</li>
+<li>Нажмите кнопку [Cancel] в диалоговом окне <strong>Selection by Layer</strong> для возвращения в окно Вида.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_017.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_017.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_017.png" /></a>
+</div>
+<div class="section" id="id25">
+<h3>Снятие выделения с полигона<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Выберите слой <tt class="docutils literal"><span class="pre">10m_admin_1_states_provinces.shp</span></tt>, используя левую кнопку мыши.</li>
+<li>Нажмите кнопку &#8216;Clear selection&#8217; на главной панели инструментов.</li>
+<li>Вы увидите, что выбраны только города в штате Виктория.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_018.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_018.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_018.png" /></a>
+</div>
+<div class="section" id="id26">
+<h3>Экспорт выбранных городов в новый шейп-файл<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Выберите слой <tt class="docutils literal"><span class="pre">10m_populated_places_simple.shp</span></tt>, используя левую кнопку мыши.</li>
+<li>Выберите <tt class="docutils literal"><span class="pre">Layer</span> <span class="pre">&gt;</span> <span class="pre">Export</span> <span class="pre">to...</span> <span class="pre">&gt;</span> <span class="pre">SHP</span></tt>.</li>
+<li>Появится диалоговое окно <strong>Export to...</strong>. gvSIG сообщит, что только выбранные 26 объектов будут экспортированы в шейп-файл. Нажмите кнопку [Yes].</li>
+<li>Появится диалоговое окно <strong>Save</strong>. Напишите имя файла и выберите каталог для сохранения файла. Нажмите кнопку [Save]. Заметьте: если у вас уже есть файл с таким именем, то появится предупреждение.</li>
+<li>Появится диалоговое окно <strong>Add layer</strong>. Нажмите кнопку [Yes] для добавления нового шейп-файла в список слоёв.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_019.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_019.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_019.png" /></a>
+</div>
+<div class="section" id="id27">
+<h3>Отображение одних городов в регионе<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Как только вернётесь в окно Вида, сделайте неактивным слой <tt class="docutils literal"><span class="pre">10m_populated_places_simple.shp</span></tt> в списке слоёв.</li>
+<li>Измените символику и подписи для слоя <tt class="docutils literal"><span class="pre">test.shp</span></tt>, как показано на рисунке ниже.</li>
+<li>Теперь в окне Вида отображаются только города, которые находятся в штате Виктория.</li>
+<li>Нажмите кнопку &#8216;Close window&#8217;, чтобы вернуться в <strong>Project manager</strong> . Теперь мы можем создать карту, используя этот Вид.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_020.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_020.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_020.png" /></a>
+</div>
+</div>
+<div class="section" id="id28">
+<h2>Как создать карту<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id29">
+<h3>Создание новой карты<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Выберите тип документа <em>Map</em> в диалоговом окне <strong>Project Manager</strong>.</li>
+<li>Нажмите кнопку [New] для создания карты.</li>
+<li>Выберите вновь созданную карту. По умолчанию она будет называться <tt class="docutils literal"><span class="pre">Untitled</span> <span class="pre">-</span> <span class="pre">0</span></tt>.</li>
+<li>Нажмите кнопку [Open].</li>
+<li>Пустая карта появится в отдельном окне с названием <tt class="docutils literal"><span class="pre">Map:</span> <span class="pre">Untitled</span> <span class="pre">-</span> <span class="pre">0</span></tt>. Обратите внимание на ряд особенностей на рисунке. Вы можете заметить сетку и специальные линии (&#8220;направляющие&#8221;)&nbsp;— всё это используется для привязки элементов во время редактирования карты.</li>
+<li>Нажмите кнопку &#8216;Maximise window&#8217; для отображения карты во всей части экрана.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_021.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_021.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_021.png" /></a>
+</div>
+<div class="section" id="view">
+<h3>Вставка сетки в View<a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Нажмите кнопку &#8216;Insert view&#8217; в главном меню.</li>
+<li>Создайте область просмотра, представляющую собой охват карты на странице. Для этого нажмите на пустую карту и, удерживая левую кнопку мыши, протяните немного в пределах области просмотра, затем отпустите левую кнопку мыши для завершения. Это откроет диалоговое окно <strong>Properties of view framework</strong>.</li>
+<li>Выберите <em>Вид</em>, созданный ранее.</li>
+<li>Нажмите опцию <em>Show Grid</em> (это создаст сетку).</li>
+<li>Нажмите кнопку [Configure] для открытия диалогового окна <strong>Grid settings</strong>.</li>
+<li>В диалоговом окне <strong>Grid settings</strong> измените интервал сетки до 1.0 (т.е. 1 градус между параллелями и меридианами).</li>
+<li>Выберите формат сетки (используйте линии, а не точки для удобства просмотра).</li>
+<li>Увеличьте размер шрифта до 14 пунктов.</li>
+<li>Нажмите кнопку [Ok] для возвращения в диалоговое окно <strong>Properties of view framework</strong>, затем нажмите кнопку [Accept] для выхода и возврата в окно карты.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_022.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_022.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_022.png" /></a>
+</div>
+<div class="section" id="id30">
+<h3>Что ещё можно сделать для карты?<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Выберите <tt class="docutils literal"><span class="pre">Map</span> <span class="pre">&gt;</span> <span class="pre">Properties</span></tt> в главном меню для открытия диалогового окна
+<strong>Map Properties</strong>. Деактивируйте флажок <em>Visualise Grid</em>, затем нажмите кнопку [OK].
+Направляющие линии и сетка используются во время редактирования карты
+и сейчас должны быть удалены со страницы, так что изображение карты должно
+соответствовать тому, что показано на рисунке ниже.</li>
+<li>Дополнительные элементы, такие, как масштабная линейка и указатель на север,
+могут быть добалены в карту, используя кнопки на главной панели инструментов
+или в меню <tt class="docutils literal"><span class="pre">Map</span></tt>.</li>
+<li>Карта может быть напечатана или экспортирована в форматы PDF или Postscript.</li>
+<li>Нажмите кнопку &#8216;Close window&#8217; для возвращения в окно <strong>Project manager</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_023.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_023.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_023.png" /></a>
+</div>
+</div>
+<div class="section" id="id31">
+<h2>Сохранение проекта и закрытие gvSIG<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Проект может быть сохранён для дальнейшего использования через
+меню <tt class="docutils literal"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">as...</span></tt>.</li>
+<li>Из проекта можно выйти или закрыть его, используя меню <tt class="docutils literal"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Exit</span></tt>.</li>
+</ol>
+<a class="reference internal image-reference" href="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_024.png"><img alt="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_024.png" src="ru/quickstart/../../images/screenshots/1024x768/gvsig_qs_024.png" /></a>
+</div>
+<div class="section" id="id32">
+<h2>Что дальше?<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h2>
+<p>Справка на английском и обучающие материалы доступны на сайте
+<a class="reference external" href="http://www.gvsig.org/web/docusr/learning/">gvSIG</a>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

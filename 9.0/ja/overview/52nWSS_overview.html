@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>52°North WSS &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 9.0 コンテンツ" href="overview.html" />
+    <link rel="next" title="R 空間解析機能" href="R_overview.html" />
+    <link rel="prev" title="52°North WPS" href="52nWPS_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://52north.org/security" id="nwss-overview-ja"><img alt="project logo" class="align-right" src="../../_images/logo_52North_16014.png" /></a>
+<div class="section" id="north-wss">
+<h1>52°North WSS<a class="headerlink" href="#north-wss" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="web">
+<h2>地理情報Webセキュリティサーバ<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h2>
+<p>52North Web Security Service (WSS) では地理情報サービスやそのリソースへの
+ロールベース認証にでのアクセス制限を簡単に実現できます。</p>
+<p>52North WSS を用いると以下のようなアクセス方針も設定可能です:</p>
+<ul class="simple">
+<li>外部のユーザーはGetMapでのレイヤAとBへのWMSアクセスのみ許可。</li>
+</ul>
+<p>もしくは</p>
+<ul class="simple">
+<li>BBOXで指定した範囲内のみで GetFeatureInfo を可能とする*</li>
+</ul>
+<p>52North WSS は Apache Tomcat サーブレットのコンテナとして動作する Java アプリケーションです。
+多数の OGC ウェブサービスのプロキシとして動作し、全てのリクエストを受け付けて、方針に即して運用します。
+そのため、既に動作しているサービスに手を加える必要はありません。方針とユーザーは一般的な管理インターフェースで設定する
+XML の設定ファイルで設定を行います。</p>
+<a class="reference internal image-reference" href="../../_images/52n_wss_mgmt7.png"><img alt="Screenshot of WSS Management UI" class="align-right" src="../../_images/52n_wss_mgmt7.png" style="width: 716.8px; height: 311.5px;" /></a>
+<div class="section" id="id1">
+<h3>主な機能<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><strong>権限付与</strong></p>
+<p>現在サポートしている保護は以下のような物を含みます</p>
+<ul class="simple">
+<li>WMS: レイヤ、地理的範囲</li>
+<li>WFS: 地物の種類、地物とその属性、地理的範囲</li>
+<li>SOS: 提供、手順、地理的範囲、現在値</li>
+<li>WPS: プロセス</li>
+</ul>
+<p><strong>認証</strong></p>
+<p>52North WSS はユーザーによって異なる認証方式を選択できます。</p>
+<ul class="simple">
+<li>HTTPベーシック認証</li>
+<li>SAMLプロトコルによる認証</li>
+<li>その他</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>詳細<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>ウェブサイト:</strong> <a class="reference external" href="http://52north.org/communities/security">http://52north.org/communities/security</a></li>
+<li><strong>ライセンス:</strong> GNU GPL v2.0</li>
+<li><strong>バージョン:</strong> WSS 2.2.0</li>
+<li><strong>対応プラットフォーム:</strong> Windows, Linux, Mac</li>
+<li><strong>API:</strong> Java</li>
+<li><strong>コミュニティサポート:</strong> <a class="reference external" href="http://52north.org/">http://52north.org/</a></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>クイックスタート<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../quickstart/52nWSS_quickstart.html">Quickstart documentation</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

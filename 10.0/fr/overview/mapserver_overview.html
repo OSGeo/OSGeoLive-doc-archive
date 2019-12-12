@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MapServer &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.0 Contenus" href="overview.html" />
+    <link rel="next" title="MapSlicer" href="mapslicer_overview.html" />
+    <link rel="prev" title="MapProxy" href="mapproxy_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://mapserver.org/"><img alt="Logo du projet" class="align-right" src="../../_images/logo-mapserver-new10.png" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="Projet OSGeo" class="align-right" src="../../_images/OSGeo_project10.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="mapserver">
+<h1>MapServer<a class="headerlink" href="#mapserver" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="services-web">
+<h2>Services Web<a class="headerlink" href="#services-web" title="Permalink to this headline">¶</a></h2>
+<p>MapServer est un moteur de rendu de données cartographiques <a class="reference external" href="http://www.opensource.org">Opensource</a> écrit en C. Au delà de la possibilité d&#8217;explorer des données SIG, MapServer vous permet de créer des &#8220;image maps&#8221; géographiques, qui sont des cartes permettant de diriger des utilisateurs vers du contenu web. Par exemple, <a class="reference external" href="http://www.dnr.state.mn.us/maps/compass.html">le compas pour les loisirs</a> du département des ressources naturelles du Minnesota fournit aux utilisateurs plus de 10 000 pages web, rapports et cartes via une seule application. La même aplication sert aussi de &#8220;moteur de carte&#8221; pour d&#8217;autres parties du site, fournissant un contexte spatial là où c&#8217;est nécessaire.</p>
+<p>MapServer a été originellement développé par le projet ForNet de l’Université du Minnesota (UMN) en coopération avec la NASA et le département du Minnesota des Ressources Naturels (MNDNR). Plus tard il a été hébergé par le projet TerraSIP, un projet sponsorisé par la NASA entre l&#8217;UMN et un consortium d’organismes de gestion des sols.</p>
+<p>MapServer est maintenant un projet de l&#8217;<a class="reference external" href="http://www.osgeo.org">OSGeo</a>, et maintenu par un nombre croissant de développeurs (proche de 20) tout autour du monde. Il est soutenu par un groupe d’organisations diverses qui financent les améliorations et la maintenance, et est administré au sein de l’OSGeo par le Comité de Gouvernance de Projet composé de développeurs et d’autres contributeurs.</p>
+<div class="section" id="caracteristiques-principales">
+<h3>Caractéristiques principales<a class="headerlink" href="#caracteristiques-principales" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/mapserver5.png"><img alt="Capture d'écran" class="align-right" src="../../_images/mapserver5.png" style="width: 512.0px; height: 383.5px;" /></a>
+<ul class="simple">
+<li>Sorties cartographiques avancées<ul>
+<li>Éxécution de l’application et du dessin des objets fonction de l’échelle</li>
+<li>Étiquetage des géométries incluant la médiation des collisions des étiquettes</li>
+<li>Support des polices TrueType pour les étiquettes et les symboles</li>
+<li>Automatisation d’éléments de cartes (barre d’échelle, carte de référence et légende)</li>
+<li>Cartographie thématique en utilisant des classes basées sur des logiques ou des expressions régulières</li>
+<li>Support de moteur de rendu différents avec des pilotes pour AGG, Cairo, GD, OpenGL et d&#8217;autres</li>
+<li>Gestion spéciale pour générer des sorties tuilées</li>
+</ul>
+</li>
+<li>Support de requêtes spatiales sophistiquées<ul>
+<li>Identifier les objets par attributs, point, rectangle englobant ou géometrie sur une ou plusieurs couches</li>
+<li>Support pour l&#8217;interrogation sur des raster</li>
+<li>Sortie customisable complétement en s&#8217;appuyant sur un sytème de modèle</li>
+<li>Génération de sortie basée sur des appels à OGR</li>
+</ul>
+</li>
+<li>Support d&#8217;environnement de développement et de scriptage populaires<ul>
+<li>CGI/FastCGI</li>
+<li>PHP, Python, Perl, Ruby, Java, et .NET</li>
+</ul>
+</li>
+<li>Support multiplates-formes<ul>
+<li>Linux, Windows, Mac OS X, Solaris, et plus</li>
+</ul>
+</li>
+<li>Une multitude de formats de données raster et vecteur<ul>
+<li>Support natif pour les shapefiles ESRI, PostGIS, ArcSDE d&#8217;ESRI et Oracle Spatial</li>
+<li>De nombreux autres formats via GDAL et OGR</li>
+</ul>
+</li>
+<li>Support de projection de carte<ul>
+<li>Reprojection de cartes à la volée avec plusieurs milliers de projections grâce à la bibliothèque Proj.4</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="standards-implementes">
+<h3>Standards implémentés<a class="headerlink" href="#standards-implementes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Support de nombreux standards de l&#8217;Open Geospatial Consortium  (OGC):<ul>
+<li>WMS (client/serveur), WFS non transactionnel (client/serveur), WMC, WCS, Filter Encoding, SLD, GML, SOS, OM</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="demo">
+<h3>Démo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost/mapserver_demos/itasca/">Itasca</a></li>
+</ul>
+</div>
+<div class="section" id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../../mapserver/doc/index.html">Documentation MapServer 6.0.3</a></li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Détails<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h3>
+<p><strong>Site web:</strong> <a class="reference external" href="http://www.mapserver.org/">http://www.mapserver.org/</a></p>
+<p><strong>Licence:</strong> <a class="reference external" href="http://mapserver.org/copyright.html#license">Licence style MIT</a></p>
+<p><strong>Version du logiciel:</strong> 6.0.3</p>
+<p><strong>Plates-formes supportées:</strong> Windows, Linux, Mac</p>
+<p><strong>Interfaces de l&#8217;API:</strong> C, PHP, Python, Perl, Ruby, Java, and .NET</p>
+<p><strong>Support:</strong> <a class="reference external" href="http://mapserver.org/community/">http://mapserver.org/community/</a></p>
+</div>
+<div class="section" id="guide-de-demarrage-rapide">
+<h3>Guide de démarrage rapide<a class="headerlink" href="#guide-de-demarrage-rapide" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/mapserver_quickstart.html"><em>Documentation du guide de démarrage rapide</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

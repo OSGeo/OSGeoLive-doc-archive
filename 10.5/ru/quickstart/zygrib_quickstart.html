@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы с zyGrib &mdash; OSGeo-Live 10.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 10.5
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.zygrib.org"><img alt="project logo" class="align-right" src="../../_images/logo-zygrib25.png" style="width: 192.0px; height: 192.0px;" /></a>
+<div class="section" id="zygrib">
+<h1>Начало работы с zyGrib<a class="headerlink" href="#zygrib" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Запуск<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Получение данных<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>После запуска программы вы увидите карту мира. На диске прогнозных данных
+GRIB нет, вам предстоит получить их самостоятельно, для этого потребуется
+подключение к сети Интернет. Поскольку чаще всего данные GRIB используются
+моряками, у них нет стабильного широкополосного подключения к Интернет,
+Они довольствуются радиомодемами и электронной почтой. В связи с этим,
+программе достаточно единичных соединений с внешним миром, постоянного подключения,
+в отличие от многих других программ веб-картографии, ей не требуется.</p>
+<p>Вы можете получить данные GRIB из многих источников, но, удобства ради,
+авторы zyGrib поддерживают сервер данных. Первое, что нужно сделать, это
+убедиться, что подключение к серверу работает. Щёлкните по значку с
+электрической вилкой в правой части панели инструментов, вы должны
+получить сообщение о том, что подключение в порядке.</p>
+<p>Обычно нас интересует локальное состояние погоды, так что мы выделяем на карте
+левой кнопкой мыши интересующую часть мира. В Мексиканском заливе или
+Южном крае Африки часто бывают динамичные ветра. Выделив рамку на карте,
+щёлкните значок <em>zoom-to-box</em> (увеличительное стекло с маленьким
+прямоугольником под ним) и вновь выделите левой кнопкой нужную область,
+но в этот раз захватите возможно большую отображаемую часть.</p>
+<p>Теперь выберите <span class="menuselection">File ‣ Download GRIB</span> и укажите данные,
+которые хотите загрузить. Допустим, вас устроит стандартный набор.
+Нажмите кнопку <code class="docutils literal"><span class="pre">Download</span></code> внизу и сохраните файл на диск.</p>
+<p>Если всё сделано правильно, вы увидите карту погоды со шкалой времени внизу,
+установленной на текущее время. Если хотите, можете масштабировать карту
+колесом мыши.</p>
+</div>
+<div class="section" id="id3">
+<h3>Изменение просмотра<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Двигая мышью по карте, вы будете видеть состояние погоды под курсором
+на панели слева.</p>
+<p>Вы можете менять время, двигая слайдер внизу, или из выпадающего списка
+в левой верхней части окна.</p>
+<p>В меню <code class="docutils literal"><span class="pre">Weather</span> <span class="pre">map</span></code> вы можете выбрать предмет визуализации. Например, выбрав
+<span class="menuselection">Weather map ‣ Cloud cover</span>, вы увидите облачность.</p>
+<p>Если вы загрузили данные для Мексиканского залива, вам будет интересно
+взглянуть на данные CAPE (Convective Available Potential Energy) на уровне земли. Это параметр
+атмосферной нестабильности, и его высокие значения (тысячи Дж/кг) говорят
+о возможной грозе и/или торнадо.</p>
+<p>В Южной Африке гораздо интересней посмотреть на облачность.</p>
+</div>
+<div class="section" id="id4">
+<h3>Создание анимации<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Если вы щёлкнете по самому правому значку на панели инструментов (с ракетой),
+откроется новое окно, в котором будет генерироваться анимация. В первый раз наберитесь
+терпения и дождитесь окончания процесса. По завершении анимация вернётся
+в начало, и теперь вы сможете запускать и останавливать её как пожелаете.
+Также вы можете сохранить каждый кадр в виде файла с изображением для
+последующего кодирования в AVI, MPEG или в анимированный GIF,
+<a class="reference external" href="http://grass.osgeo.org/wiki/Movies">используя другие программы</a>.</p>
+<p>Когда всё будет готово, щёлкните по красной кнопке, чтобы закрыть приложение.</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Смотрите также<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../overview/opencpn_overview.html"><em>Программа OpenCPN</em></a> (также есть на диске)
+имеет плагин GRIB, с которым вы можете попробовать только что загруженный GRIB-файл.
+Смотрите <a class="reference internal" href="opencpn_quickstart.html"><em>начало работы с OpenCPN</em></a> для
+дополнительной информации.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

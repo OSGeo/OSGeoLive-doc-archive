@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TileMill Quickstart &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.0 Contenus" href="../overview/overview.html" />
+    <link rel="next" title="TinyOWS Quickstart" href="tinyows_quickstart.html" />
+    <link rel="prev" title="SpatiaLite Quickstart" href="spatialite_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-tilemill11.png"><img alt="project logo" class="align-right" src="../../_images/logo-tilemill11.png" style="width: 96.0px; height: 96.0px;" /></a>
+<div class="section" id="tilemill-quickstart">
+<h1><a class="toc-backref" href="#id1">TileMill Quickstart</a><a class="headerlink" href="#tilemill-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>TileMill is a tool to quickly and easily design maps for the web using custom data. It is built on the powerful open-source map rendering library Mapnik ( the same software OpenStreetMap and MapQuest use to make some of their maps ) and uses CartoCSS as a stylesheet language.</p>
+<p>This Quick Start describes how to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Add layers from a PostGIS connection</li>
+<li>Customize styles</li>
+<li>Configure Tooltips</li>
+<li>Write a legend</li>
+<li>Export maps</li>
+</ul>
+</div></blockquote>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#tilemill-quickstart" id="id1">TileMill Quickstart</a><ul>
+<li><a class="reference internal" href="#create-a-project" id="id2">Create a project</a></li>
+<li><a class="reference internal" href="#add-new-layers-to-the-project" id="id3">Add new layers to the project</a></li>
+<li><a class="reference internal" href="#set-default-visualization-for-the-project" id="id4">Set default visualization for the project</a></li>
+<li><a class="reference internal" href="#styling-data" id="id5">Styling data</a></li>
+<li><a class="reference internal" href="#conditional-styles" id="id6">Conditional styles</a></li>
+<li><a class="reference internal" href="#tooltips" id="id7">Tooltips</a></li>
+<li><a class="reference internal" href="#legends" id="id8">Legends</a></li>
+<li><a class="reference internal" href="#exporting-the-map" id="id9">Exporting the map</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id10">Things to Try</a></li>
+<li><a class="reference internal" href="#what-next" id="id11">What Next?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="create-a-project">
+<h2><a class="toc-backref" href="#id2">Create a project</a><a class="headerlink" href="#create-a-project" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Start TileMill and click on the “New project” button on the main screen.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/tilemill_newproject5.png"><img alt="../../_images/tilemill_newproject5.png" src="../../_images/tilemill_newproject5.png" style="width: 422.8px; height: 172.2px;" /></a>
+<p>2- Enter de following data in the form, and click “Add”:</p>
+<a class="reference internal image-reference" href="../../_images/tilemill_projectinfo5.png"><img alt="../../_images/tilemill_projectinfo5.png" src="../../_images/tilemill_projectinfo5.png" style="width: 417.2px; height: 214.2px;" /></a>
+<p><strong>Filename:</strong>   tilemill_quickstart</p>
+<p><strong>Name:</strong>       TileMill Quickstart OSGeo Live</p>
+<p><strong>Description:</strong>        Quickstart from OSGeo Live</p>
+<p><strong>Default Data:</strong>       Leave selected</p>
+<ol class="arabic simple" start="3">
+<li>Click on the new project to open it. The project contains a default layer called&nbsp;#countries&nbsp;styled with some example CartoCSS code.</li>
+</ol>
+</div>
+<div class="section" id="add-new-layers-to-the-project">
+<h2><a class="toc-backref" href="#id3">Add new layers to the project</a><a class="headerlink" href="#add-new-layers-to-the-project" title="Permalink to this headline">¶</a></h2>
+<p>We can add new layers from File, SQLite or PostGIS. Let&#8217;s say we want to add layers from OSM data stored in PostGIS. In this tutorial we assume that we already know the tables, fields and types of data we want to represent in the map. We can do this previous analysis either querying PostGIS directly  using pgAdminIII, or by means of any desktop GIS with PostGIS connection, like QGIS or Open Jump.</p>
+<ol class="arabic simple">
+<li>As are going to add layers from PostGis data. First, we click on layer button ( <img alt="LAYER" src="../../_images/tilemill_layerbtn5.png" />) and press on &#8216;+ Add layer&#8217; button. In the &#8216;Add layer&#8217; form, we first select the source data type, PostGIS:</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/tilemill_addpostgis5.png"><img alt="../../_images/tilemill_addpostgis5.png" src="../../_images/tilemill_addpostgis5.png" style="width: 416.5px; height: 351.4px;" /></a>
+<ol class="arabic simple" start="2">
+<li>Add roads layer from PostGIS, given the following data, and click on &#8216;Save &amp; Style&#8217;:</li>
+</ol>
+<p><strong>ID:</strong> osm_roads</p>
+<p><strong>Class:</strong>      osmroads</p>
+<p><strong>Connection:</strong> host=localhost port=5432 user=user password=user dbname=osm_local</p>
+<p><strong>Table or subquery:</strong>  planet_osm_roads</p>
+<p><strong>Unique key field:</strong>   osm_id</p>
+<p><strong>Geometry field:</strong>     way</p>
+<p><strong>SRS:</strong>        Select WGS84</p>
+<ol class="arabic simple" start="3">
+<li>Add  a lines layer from PostGIS, given the following data, and click on &#8216;Save &amp; Style&#8217;:Click on &#8216;Save &amp; Style&#8217;:</li>
+</ol>
+<p><strong>ID:</strong> osm_line</p>
+<p><strong>Class:</strong>      osmline</p>
+<p><strong>Connection:</strong> host=localhost port=5432 user=user password=user dbname=osm_local</p>
+<p><strong>Table or subquery:</strong>  planet_osm_line</p>
+<p><strong>Unique key field:</strong>   osm_id</p>
+<p><strong>Geometry field:</strong>     way</p>
+<p><strong>SRS:</strong>        Select WGS84</p>
+<ol class="arabic simple" start="4">
+<li>Add  a points layer from PostGIS, given the following data, and click on &#8216;Save &amp; Style&#8217;:</li>
+</ol>
+<p><strong>ID:</strong> osm_points</p>
+<p><strong>Class:</strong>      osmpoints</p>
+<p><strong>Connection:</strong> host=localhost port=5432 user=user password=user dbname=osm_local</p>
+<p><strong>Table or subquery:</strong>  (select osm_id, amenity, way from planet_osm_point where amenity is not null) AS amen</p>
+<p><strong>Unique key field:</strong>   osm_id</p>
+<p><strong>Geometry field:</strong>     way</p>
+<p><strong>SRS:</strong>        Select WGS84</p>
+<p>In the osm_points layer we are importing a subset of points of the table planet_osm_point table in osm_local dataset, considering only those points with not empty amenity value.</p>
+</div>
+<div class="section" id="set-default-visualization-for-the-project">
+<h2><a class="toc-backref" href="#id4">Set default visualization for the project</a><a class="headerlink" href="#set-default-visualization-for-the-project" title="Permalink to this headline">¶</a></h2>
+<p>In order to set the dafault values for the working area, click on <img alt="TOOLS" src="../../_images/tilemill_confbtn5.png" /> buttom. Now you can center the working area, and set the center point. You can also type the center and bounds values directly in the form.</p>
+<a class="reference internal image-reference" href="../../_images/tilemill_project_settings5.png"><img alt="../../_images/tilemill_project_settings5.png" src="../../_images/tilemill_project_settings5.png" style="width: 709.8px; height: 472.5px;" /></a>
+</div>
+<div class="section" id="styling-data">
+<h2><a class="toc-backref" href="#id5">Styling data</a><a class="headerlink" href="#styling-data" title="Permalink to this headline">¶</a></h2>
+<p>TileMill uses a language called CartoCSS to determine the look of a map. Colors, sizes, and shapes can all be manipulated by applying their relative CartoCS parameters in the stylesheet panel to the right of the map. Read the&nbsp;CartoCSS manual&nbsp;for a more detailed introduction to the language.
+As new PostGIS layers have been imported using “Save&amp;Style” button, they have automatically been added several styling parameters to your stylesheet and gave them an initial value:</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>#osm_point</dt>
+<dd><p class="first last">This is the layer to which the styles are applied.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>marker-width</dt>
+<dd><p class="first last">This determines the size of the markers, in pixels. You can experiment with changing this by typing in a different number.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>marker-fill</dt>
+<dd><p class="first last">This is the color of the inside of the marker. There are two methods for changing color values. You can either type in a new value, or you can use the color swatches at the bottom of the CartoCSS panel</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>marker-line-color</dt>
+<dd><p class="first last">This is the color of the border of the marker.</p>
+</dd>
+</dl>
+</li>
+</ol>
+<dl class="docutils">
+<dt>5.- marker-allow-overlap</dt>
+<dd>This allows markers to be placed on top of each other. If this is not specified or set to false, potentially overlapping markers will not be displayed.</dd>
+</dl>
+<p>Any of this values can be changed and visualized after saving the project.</p>
+</div>
+<div class="section" id="conditional-styles">
+<h2><a class="toc-backref" href="#id6">Conditional styles</a><a class="headerlink" href="#conditional-styles" title="Permalink to this headline">¶</a></h2>
+<p>Conditional CartoCSS styles allow you to change the appearance of the features on your map, based on data attributes. Here we will customize osm_points and osm_roads, in order to highlight some types of feature, given certain values.
+We will apply different styles to points depending on whether they represent &#8216;post_box&#8217;, &#8216;pub&#8217;or &#8216;bicyle_parking&#8217;, as we know in advance that those are given values in the field &#8216;amenity&#8217; of the table.
+We will define a different style to lines that represent &#8216;cycleway&#8217;, as we know in advance that &#8216;cycleway&#8217; is a given value in the field &#8216;highway&#8217; of the table.
+This is our code after changing certain style values and coding some conditional styles:</p>
+<div class="highlight-python"><div class="highlight"><pre>Map {
+  background-color: #b8dee6;
+}
+
+#countries {
+  ::outline {
+    line-color: #8b9091;
+    line-width: 2;
+    line-join: round;
+  }
+  polygon-fill: #fff;
+}
+
+#osm_roads {
+  line-width:1;
+  line-color:#8b9091; //168
+}
+
+
+#osm_line {
+  line-width:1;
+  line-color:#8b9091;
+  [highway=&#39;cycleway&#39;] { //red
+    line-color:#ff2525; //ff2525
+    line-width:3;
+    }
+}
+
+#osm_poinst {
+  marker-width:6;
+  marker-fill:#8b9091; //f45
+  marker-line-color:#813;
+  marker-allow-overlap:true;
+  [amenity=&#39;post_box&#39;] { //orange
+    marker-fill:#ffc425;
+    marker-line-color:#a67c0c;
+    }
+  [amenity=&#39;pub&#39;] { //green
+    marker-fill:#39e639;
+    marker-line-color:#008500;
+    }
+  [amenity=&#39;bicycle_parking&#39;] { //blue
+    marker-fill:#85c5d3;
+    marker-line-color:#180773;
+    }
+}
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/tilemill_customizedview5.png"><img alt="../../_images/tilemill_customizedview5.png" src="../../_images/tilemill_customizedview5.png" style="width: 630.0px; height: 466.2px;" /></a>
+</div>
+<div class="section" id="tooltips">
+<h2><a class="toc-backref" href="#id7">Tooltips</a><a class="headerlink" href="#tooltips" title="Permalink to this headline">¶</a></h2>
+<p>Tooltips allow you to make maps interactive with dynamic content that appears when a user hovers over or clicks on a map. They can contain HTML and are useful for revealing additional data, images, and other content.</p>
+<p>1. Open the Templates &nbsp;panel by clicking on the pointer button on the bottom left ( <img alt="POINTER" src="../../_images/tilemill_pointerbtn5.png" />
+)</p>
+<ol class="arabic simple" start="2">
+<li>Click on the “Teaser” tab. Teaser content appears when you hover over a feature and Full content appears when you click on a feature. You can use the Location field to define a URL to be loaded when a feature is clicked.</li>
+<li>Select the &#8216;osm_point&#8217; layer to use it for interaction. TileMill only supports one interactive layer at a time.</li>
+<li>The data fields for the layer are displayed wrapped in curly&nbsp;Mustache&nbsp;tags. These tags will be replaced by data when you interact with the map. Locate the fields you want to use.</li>
+<li>Write your template using the Mustache tags. Paste the following code into the Teaser field and use the preview to make sure it looks good:</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre>Type:{{{amenity}}}&lt;br/&gt;
+Name:{{{name}}}
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/tilemill_teaser_frm5.png"><img alt="../../_images/tilemill_teaser_frm5.png" src="../../_images/tilemill_teaser_frm5.png" style="width: 322.0px; height: 479.5px;" /></a>
+<ol class="arabic simple" start="6">
+<li>Click “Save” to save your settings and refresh the map. Close the panel by clicking the close button (X) or by pressing the ESC key. Move your mouse over some points to see the tooltips.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/tilemill_tooltip5.png"><img alt="../../_images/tilemill_tooltip5.png" src="../../_images/tilemill_tooltip5.png" style="width: 210.0px; height: 98.0px;" /></a>
+</div>
+<div class="section" id="legends">
+<h2><a class="toc-backref" href="#id8">Legends</a><a class="headerlink" href="#legends" title="Permalink to this headline">¶</a></h2>
+<p>A legend is permanently on a map and is useful for displaying titles, descriptions, and keys for what is being mapped. It can be styled using HTML, or it can simply contain an image.</p>
+<p>Let’s add a legend that describes the theme of the map.</p>
+<ol class="arabic simple">
+<li>Open the Templates panel by clicking on the pointer button in the bottom left</li>
+<li>The Legend tab is open by default.</li>
+<li>Enter your legend text/html in the Legend field:</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre>&lt;strong&gt;OSGeo Live TileMill Quick Start&lt;/strong&gt;&lt;br/&gt;Points locate different amenities in Nottingham&lt;/br&gt;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/tilemill_legend_text5.png"><img alt="../../_images/tilemill_legend_text5.png" src="../../_images/tilemill_legend_text5.png" style="width: 632.1px; height: 466.2px;" /></a>
+<ol class="arabic simple">
+<li>Click save and close the panel. You will now see your legend in the bottom right corner of the map.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/tilemill_legend5.png"><img alt="../../_images/tilemill_legend5.png" src="../../_images/tilemill_legend5.png" style="width: 258.3px; height: 134.4px;" /></a>
+</div>
+<div class="section" id="exporting-the-map">
+<h2><a class="toc-backref" href="#id9">Exporting the map</a><a class="headerlink" href="#exporting-the-map" title="Permalink to this headline">¶</a></h2>
+<p>TileMill can export maps to MBTiles, PNG, PDF, SVG, or Mapnik XML formats. A full listing and overview is in the <a class="reference external" href="http://mapbox.com/tilemill/docs/manual/exporting/">Exporting documentation</a></p>
+<p>If you want to export to MBTiles:</p>
+<ol class="arabic simple">
+<li>Click the “Export” button. A drop down menu will appear.</li>
+<li>Click “MBTiles”. The window will transition to the export tool.</li>
+<li>Choose a “Filename”“. The name of the project will be placed here by default.</li>
+<li>Select Zoom levels. Set the furthest zoom to 1 by dragging the left end to the right. Set the closest zoom to 6 by dragging the right end to the left.</li>
+<li>Select the “Center” of the map. This determines the starting center and zoom level of the map when it is first loaded. You can manually enter these values or click a point in the map preview. Zoom to level three and click the center of the United States.</li>
+<li>Select the map “Bounds”. This is the area of the map to be exported. By default the entire world is selected. If your map is allocated to a smaller region of the globe, you can save processing time and disk space by cropping to that area. This can be done by manually entering values in the Bounds fields, or by holding the SHIFT key and clicking and dragging on the map. Leave the default value.</li>
+<li>Click “Export”.</li>
+<li>When the export process is complete, the progress bar will be replaced by a Save button. This will save a copy of the file locally to a specified location.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/tilemill_viewexports5.png"><img alt="../../_images/tilemill_viewexports5.png" src="../../_images/tilemill_viewexports5.png" style="width: 279.3px; height: 137.2px;" /></a>
+<p>You can return to the Welcome view at any time by selecting the <span class="menuselection">Help ‣ Welcome</span> from the menu bar.</p>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id10">Things to Try</a><a class="headerlink" href="#things-to-try" title="Permalink to this headline">¶</a></h2>
+<p>Here are some additional challenges for you to try:</p>
+<ol class="arabic simple">
+<li>Try changing fixed or conditional styles on your own</li>
+<li>Try importing data from other sources, like .CSV file or sqlite ( You can follow <a class="reference external" href="http://mapbox.com/tilemill/docs/crashcourse/introduction/">on-line TileMill crashcourse documentation</a>)</li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id11">What Next?</a><a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<p>This is only the first step on the road to using TileMill. There is a lot more great material (and ability) left for you to discover:</p>
+<ul class="simple">
+<li>Get more help from the environment, click on help button (<img alt="HELP" src="../../_images/tilemill_helpbtn5.png" />)</li>
+</ul>
+<ul class="simple">
+<li>Learn more about cartocss language on <a class="reference external" href="http://mapbox.com/carto/api/2.1.0/">API Documentation</a></li>
+<li>Learn how to run <a class="reference external" href="http://mapbox.com/tilemill/docs/guides/ubuntu-service/">TileMill as an Ubuntu Service</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

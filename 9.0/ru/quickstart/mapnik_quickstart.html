@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы с Mapnik &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-mapnik21.png"><img alt="project logo" class="align-right" src="../../_images/logo-mapnik21.png" style="width: 192.0px; height: 56.0px;" /></a>
+<div class="section" id="mapnik">
+<h1>Начало работы с Mapnik<a class="headerlink" href="#mapnik" title="Permalink to this headline">¶</a></h1>
+<p><strong>Mapnik</strong> представляет собой библиотеку картографического рендеринга, главной
+задачей которой является создание красивых карт. Эта легко расширяемая
+и удобная в использовании библиотека может быть использована при
+разработке как настольных, так и веб-приложений.</p>
+<div class="section" id="mapnik-python">
+<h2>Mapnik и Python<a class="headerlink" href="#mapnik-python" title="Permalink to this headline">¶</a></h2>
+<p>Mapnik и его питоновские биндинги установлены и готовы к использованию на
+данном диске.</p>
+<p>Для создания тестовой карты с использованием Mapnik наберите в командной
+строке <cite>python</cite> и введите следующую последовательность команд:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">mapnik</span><span class="o">,</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">mapnik</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">style</span> <span class="o">=</span> <span class="s">&#39;/usr/local/share/mapnik/demo/population.xml&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapnik</span><span class="o">.</span><span class="n">load_map</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">style</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="o">.</span><span class="n">zoom_all</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapnik</span><span class="o">.</span><span class="n">render_to_file</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="s">&#39;map.png&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;xdg-open map.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Вышеприведённый код задействует XML-файл, содержащий описание
+слоёв и используемых стилей карты. Вы можете создать такой файл в QGIS,
+воспользовавшись плагином Quantumnik: <a class="reference external" href="http://bitbucket.org/springmeyer/quantumnik/">http://bitbucket.org/springmeyer/quantumnik/</a>.</p>
+</div>
+</div>
+<div class="section" id="mapnik-openlayers">
+<h2>Mapnik и OpenLayers<a class="headerlink" href="#mapnik-openlayers" title="Permalink to this headline">¶</a></h2>
+<p>На данном диске также доступен пример, иллюстрирующий использование
+<strong>Mapnik</strong> для создания тайлов согласно схеме, применяемой в OSM/Google, в связке
+с приложением на базе OpenLayers.</p>
+<p>Данный пример использует тайловый сервер <strong>TileLite</strong>, разработанный специально для
+Mapnik.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Дополнительную информацию о TileLite можно найти по адресу: <a class="reference external" href="http://bitbucket.org/springmeyer/tilelite/">http://bitbucket.org/springmeyer/tilelite/</a></li>
+</ul>
+</div></blockquote>
+<p>Для запуска примера выполните следующие шаги:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Выберите <em class="menuselection">Desktop ‣ Spatial Tools ‣ Start Mapnik &amp; TileLite</em></li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p class="first">Сервер должен запуститься в терминальном окне (которое, оставаясь открытым,
+выводит различную отладочную информацию).</p>
+</li>
+<li><p class="first">Если терминальное окно не открывается, попробуйте переустановить
+TileLite и запустить его из командной строки:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo easy_install tilelite
+$ liteserv.py /usr/local/share/mapnik/demo/population.xml
+</pre></div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple">
+<li>Чтобы убедиться в том, что сервер запущен, перейдите на страницу приветствия
+TileLite, расположенную по адресу <a class="reference external" href="http://localhost:8012">http://localhost:8012</a></li>
+<li>Затем перейдите на страницу примера TileLite OpenLayers &#8220;World Population&#8221;:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Эта страница расположена по адресу <a class="reference external" href="../../mapnik/local.html">http://localhost/mapnik/local.html</a></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="id1">
+<h2>Что дальше?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Руководства Mapnik</p>
+<p>Изучите <a class="reference external" href="https://github.com/mapnik/mapnik/wiki/MapnikTutorials">руководства</a>, чтобы узнать подробнее о Mapnik.</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">Изучите файлы на DVD</p>
+<p>Файлы доступны <a class="reference external" href="file:///usr/local/share/mapnik/">здесь</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

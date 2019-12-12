@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης GeoServer &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Περιεχόμενα OSGeo-Live 10.0" href="../overview/overview.html" />
+    <link rel="next" title="Εγχειρίδιο Γρήγορης Εκκίνησης GMT" href="gmt_quickstart.html" />
+    <link rel="prev" title="Εγχειρίδιο Γρήγορης Εκκίνησης Geopublisher" href="geopublisher_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <img alt="project logo" class="align-right" id="geoserver-quickstart-el" src="../../_images/logo-GeoServer5.png" />
+<div class="section" id="geoserver">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης GeoServer<a class="headerlink" href="#geoserver" title="Permalink to this headline">¶</a></h1>
+<p>Ο GeoServer είναι μια εφαρμογή Java. Είναι ένας εξυπηρετητής χαρτών και δεδομένων ώστε αυτά να οπτικοποιούνται σε λογισμικά πελάτες.</p>
+<p>Οι συγκεκριμένες οδηγίες περιγράφουν πώς:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Προσθέτουμε μια πηγή δεδομένων (διανυσματικών ή εικονιστικών) στον GeoServer</li>
+<li>Εφαρμόζουμε χρώμα στα χαρακτηριστικά του χάρτη με τη χρήση στύλ</li>
+<li>Δοκιμάζουμε τα επίπεδα πληροφορίας σε μια δοκιμαστική διαδικτυακή εφαρμογή</li>
+<li>Μαθαίνουμε σχετικά με τους πελάτες που μπορούν να απεικονίσουν τους χάρτες που δημιουργούνται</li>
+</ul>
+</div></blockquote>
+<div class="section" id="gs">
+<h2>Εκκίνηση GeoServer<a class="headerlink" href="#gs" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Επιλέξτε το εικονίδιο <span class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</span>.</li>
+<li>Η εφαρμογή θα ξεκινήσει σε λίγες στιγμές Πηγαίνετε στην κεντρική ιστοσελίδα του GeoServer στο <a class="reference external" href="http://localhost:8082/geoserver/web">http://localhost:8082/geoserver/web</a></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/geoserver-login2.png"><img alt="../../_images/geoserver-login2.png" class="align-left" src="../../_images/geoserver-login2.png" style="width: 90%;" /></a>
+</div>
+<div class="section" id="id1">
+<h2>Πρώτες οθόνες<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Όταν ξεκινήσετε την σελίδα του GeoServer θα δείτε την παραπάνω οθόνη, το πρώτο πράγμα που χρειάζεται να κάνετε είναι να για εισάγετε τα στοιχεία του χρήστη σας με τη χρήση του ονόματος χρήστη και κωδικού πρόσβασης. Θα δείτε στη συνέχεια την <em>σελίδα διαχείρησης</em></p>
+<a class="reference internal image-reference" href="../../_images/geoserver-welcome2.png"><img alt="../../_images/geoserver-welcome2.png" class="align-left" src="../../_images/geoserver-welcome2.png" style="width: 90%;" /></a>
+<p>Ο σύνδεσμος <strong>Layer Preview</strong> στο κάνω αριστερό μενού σας επιτρέπει να δείτε μια προεπισκόπηση των επιπέδων των δεδομένων που είναι φορτωμένα στον εξυπηρετητή.</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-layerpreview2.png"><img alt="../../_images/geoserver-layerpreview2.png" class="align-left" src="../../_images/geoserver-layerpreview2.png" style="width: 90%;" /></a>
+<p>Κυλίστε στο κάτω μέρος της οθόνης και κάντε κλικ στον σύνδεσμο <strong>OpenLayers</strong> στην γραμμή <strong>tiger-ny</strong>, αυτό θα ανοίξει ένα νέο παράθυρο με μερικά δοκιμαστικά δεδομένα μέσα του.</p>
+<a class="reference internal image-reference" href="../../_images/geoserver-preview2.png"><img alt="../../_images/geoserver-preview2.png" class="align-left" src="../../_images/geoserver-preview2.png" style="width: 90%;" /></a>
+<p>Μπορείτε να μεγενθύνετε στον χάρτη με τρείς τρόπους:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Με κλικ στη μπάρα μεγέθυνσης αριστερά, όσο ψηλότερα κάνετε κλίκ σε αυτή τόσο μεγαλύτερη μεγέθυνση πετυχαίνετε.</li>
+<li>Με τη χρήση της ρόδας του ποντικιού σας, η κίνηση πρός τα πάνω κάνει μεγέθυνση και η κίνηση προς τα κάτω κάνει σμίκρυνση.</li>
+<li>Ζωγραφίζοντας ένα πολύγωνο στο χάρτη ενώ ταυτόχρονα κρατάτε πατημένο το κουμπί  <code class="kbd docutils literal"><span class="pre">shift</span> <span class="pre">key</span></code> - αυτό θα σας μεγενθύνει στην περιοχή που επιλέξατε με το πολύγωνο (ή όσο κοντά γίνεται με βάση την οθόνη σας).</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple">
+<li>Πειραματιστείτε με αυτή την απεικόνιση σε μερικές άλλες δοκιμαστικές εφαρμογές.  Όταν τελειώσετε με αυτή την εκμάθηση, μπορείτε να συνεχίσετε στο πως θα προσθέσετε νέα δεδομένα.</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>Φόρτωση δεδομένων<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Δεν θα μπορέσετε να εκτελέσετε τα επόμενα βήματα εαν
+εργάζεστε σε σύστημα αρχείων με δυνατότητα μόνο ανάγνωσης (όπως στο live DVD). Θα χρειαστεί
+είτε να εγκαταστήσετε το GeoServer από το DVD στον
+σκληρό σας δίσκο ή να δημιουργήσετε ένα σύστημα βασισμένο σε στίκ USB.</p>
+</div>
+<p>Σε αυτό το παράδειγμα θα χρησιμοποιήσουμε τα δεδομένα <a class="reference internal" href="../overview/naturalearth_overview.html"><em>Natural Earth</em></a>
+τα οποία περιλαμβάνονται στο DVD (<code class="file docutils literal"><span class="pre">/usr/local/share/data/natural_earth/</span></code>).</p>
+<p>Αρχικά χρειάζεται να αντιγράψουμε τα δεδομένα στο φάκελο δεδομένων του GeoServer
+(<code class="file docutils literal"><span class="pre">/usr/lib/geotools-2.0.2/data_dir/data</span></code>). Δημιουργήσαμε ένα φάκελο
+με όνομα <code class="file docutils literal"><span class="pre">naturalearth</span></code>. Χρησιμοποιήσαμε ένα παράθυρο τερματικού, αλλά εσείς μπορείτε να επιλέξετε
+και μια εφαρμογή διαχείρισης αρχείων αν το προτιμάτε.</p>
+<div class="highlight-python"><div class="highlight"><pre>cd /usr/lib/geotools-2.0.2/data_dir/data
+mkdir naturalearth
+cp /usr/local/share/data/natural_earth/* naturalearth
+</pre></div>
+</div>
+<p>Τώρα χρειαζόμαστε να δημιουργήσουμε μια αποθήκη (Store) για τα δεδομένα μας. Από τη σελίδα διαχείρισης GeoServer πηγαίνετε στο
+<span class="guilabel">Stores</span> και επιλέξτε <span class="guilabel">Add new Store</span>. Θα δείτε αυτή την σελίδα:</p>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/geoserver-newstore2.png"><img alt="../../_images/geoserver-newstore2.png" src="../../_images/geoserver-newstore2.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text"><em>Η σελίδα της νέας αποθήκης δεδομένων</em></span></p>
+</div>
+<p>Επιλέξτε το <span class="guilabel">Directory of spatial files</span>, και θα δείτε το επόμενο:</p>
+<div class="figure align-center" id="id7">
+<img alt="../../_images/geoserver-new-vector2.png" src="../../_images/geoserver-new-vector2.png" />
+<p class="caption"><span class="caption-text"><em>Συμπληρώνοντας την σελίδα νέας αποθήκης δεδομένων</em></span></p>
+</div>
+<p>Πληκτρολογήστε ένα όνομα για την νέα αποθήκη - χρησιμοποιήσαμε το <em>Natural Earth</em> και συμπληρώστε την διεύθυνση
+για τα δεδομένα - σε αυτή την περίπτωση <code class="file docutils literal"><span class="pre">data/naturaleath</span></code>. Η διεύθυνση
+των δεδομένων πρέπει να είναι σχετική με την θέση του φακέλου δεδομένων του GeoServer. Πιέστε <span class="guilabel">save</span>.</p>
+<div class="figure align-center" id="id8">
+<a class="reference internal image-reference" href="../../_images/geoserver-naturalearth2.png"><img alt="../../_images/geoserver-naturalearth2.png" src="../../_images/geoserver-naturalearth2.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text"><em>Η αποθήκη δεδομένων Natural Earth</em></span></p>
+</div>
+<p>Πιέστε <span class="guilabel">publish</span> δίπλα από το επίπεδο που επιθυμείτε για να ολοκληρώσετε την προσθήκη των δεδομένων. Αυτό θα σας οδηγήσει στην σελίδα των επιπέδων (<em>Layers</em>):</p>
+<div class="figure align-center" id="id9">
+<a class="reference internal image-reference" href="../../_images/geoserver-publish2.png"><img alt="../../_images/geoserver-publish2.png" src="../../_images/geoserver-publish2.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text"><em>Η σελίδα επιλογής επιπέδων</em></span></p>
+</div>
+<p>Εαν κυλήσετε τη σελίδα θα προσέξετε ότι ο GeoServer έχει συμπληρώσει πολλά πεδία για εσάς. Όταν φτάσετε το  <span class="guilabel">Coordinate Reference System</span>
+θα παρατηρήσετε ότι κάτω από το <em>Native SRS</em> έχει την ένδειξη UNKNOWN
+και θα χρειαστεί να συμπληρώσετε το επόμενο πεδίο (<em>declared SRS</em>) για να σιγουρευτήτε πως ο GeoServer
+γνωρίζει που βρίσκονται τα δεδομένα. Για την ώρα εμπιστευθείτε μας και πληκτρολογήστε epsg:4326 στο πεδίο,
+ή πηγαίνετε στο <cite>http://prj2epsg.org/search</cite> και συμπληρώστε το κείμενο που βλέπετε
+αν κάνετε κλικ δίπλα στην ένδειξη &#8220;UNKNOWN&#8221;.
+Στη συνέχεια πιέστε το <span class="guilabel">Compute from data</span> και <span class="guilabel">Compute from
+native bounds</span> ώστε να συμπληρωθούν αυτόματα τα όρια της έκτασης των δεδομένων. Στο τέλος επιλέξτε <span class="guilabel">save</span>
+και έχετε δημοσιεύσει το πρώτο σας επίπεδο.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Εαν δείτε το επίπεδο αυτό στην προεπισκόπηση δεν εμφανίζεται πολύ ωραία
+γιατί χρησιμοποιεί το προεπιλεγμένο στύλ. Στη επόμενη παράγραφο
+θα δούμε πως να παράγουμε πιο ωραίο αισθητικό αποτέλεσμα.</p>
+</div>
+<div class="section" id="id3">
+<h3>Δημιουργία στύλ<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Για τη διαμόρφωση στύλ ενός επιπέδου χάρτη στον GeoServer χρησιμοποιείται ένα πρότυπο του OGC που ονομάζεται
+Styled Layer Descriptors (SLD). Αυτό αναπαρίσταται σε αρχεία XML
+τα οποία περιγράφουν τους κανόνες που χρησιμοποιούνται για να εφαρμοστούν συμβολισμοί στα δεδομένα.</p>
+<p>Για αρχή δημιουργήθηκε το σύνολο δεδομένων Γης και Ωκεανών.
+Μπορείτε να δημιουργήσετε SLD αρχεία με τη χρήση ενός επεξεργαστή κειμένου, αλλά ορισμένες φορές
+ένα γραφικό περιβάλλον είναι καλύτερο. Υπάρχουν πολλές εναλλακτικές γι αυτό. Επιλέξαμε να χρησιμοποιήσουμε το
+uDig (<a class="reference external" href="http://udig.refractions.net/">http://udig.refractions.net/</a>) το οποίο μας επιτρέπει
+να ανοίγουμε τα shapefiles κατευθείαν και να δημιουργούμε απλά στύλ
+με τη χρήση γραφικού περιβάλλοντος, αλλά επίσης και με έναν απλό επεξεργαστή κειμένου αν χρειαστεί.</p>
+<div class="section" id="ug">
+<h4>Χρησιμοποιώντας το uDig για τη δημιουργία απλών στύλ<a class="headerlink" href="#ug" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Για περισσότερες λεπτομέρειες για τη χρήση του uDig δείτε το <a class="reference internal" href="udig_quickstart.html"><em>uDig quickstart</em></a></p>
+</div>
+<p>Ανοίγουμε το uDig και προσθέτουμε τα shapefiles (με τη χρήση του κουμπιού
+add data πάνω αριστερά). Προσθέτουμε τα επίπεδα 10m_land
+και 10m_ocean στο παράθυρο του χάρτη. Το uDig αυτόματα εφαρμόζει ένα απλό στύλ
+για να μπορείτε να δείτε τα δεδομένα.</p>
+<div class="figure align-center" id="id10">
+<a class="reference internal image-reference" href="../../_images/geoserver-udig_startup2.png"><img alt="../../_images/geoserver-udig_startup2.png" src="../../_images/geoserver-udig_startup2.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text"><em>Βασικό στύλ στο UDig</em></span></p>
+</div>
+<p>Προφανώς δεν θέλουμε να κρατήσουμε πορτοκαλί χρώμα στον ωκεανό. Επομένως στην  <a class="reference internal" href="#layer-list-el"><span>λίστα επιπέδων</span></a> επιλέξτε το κουμπί στύλ (μοιάζει με παλέτα ζωγράφου).</p>
+<div class="figure align-center" id="id11">
+<span id="layer-list-el"></span><img alt="../../_images/geoserver-layer-chooser2.png" src="../../_images/geoserver-layer-chooser2.png" />
+<p class="caption"><span class="caption-text"><em>Το παράθυρο λίστας επιπέδων</em></span></p>
+</div>
+<p>Αυτό θα ανοίξει το <a class="reference internal" href="#style-pane-el"><span>παράθυρο στύλ</span></a> - και σε αυτό το παράθυρο μπορείτε να επιλέξετε ένα
+ωραίο μπλέ για τους ωκεανούς κάνοντας κλίκ στο χρωματιστό κουτί
+επιλέγοντας το χρώμα με το κατάλληλο εργαλείο που εμφανίζεται. Επιπλέον
+μπορείτε να αυξήσετε την αδιαφάνεια στο 100% για να εμφανίζεται καλύτερα το χρώμα.</p>
+<div class="figure align-center" id="id12">
+<span id="style-pane-el"></span><img alt="../../_images/geoserver-style-pane2.png" src="../../_images/geoserver-style-pane2.png" />
+<p class="caption"><span class="caption-text"><em>Το παράθυρο στύλ</em></span></p>
+</div>
+<p>Με το τέλος της διαδικασίας επιλέξτε <code class="docutils literal"><span class="pre">OK</span></code> και το uDig εμφανίζει τις αλλαγές.</p>
+<div class="figure align-center" id="id13">
+<a class="reference internal image-reference" href="../../_images/geoserver-blue-ocean2.png"><img alt="../../_images/geoserver-blue-ocean2.png" src="../../_images/geoserver-blue-ocean2.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text"><em>Μπλέ Ωκεανοί</em></span></p>
+</div>
+<p>Τελικά, μπορείτε να επαναλάβετε τα παραπάνω βήματα για να αλλάξετε το χρώμα για το επίπεδο της ξηράς.
+Επιπλέον μπορείτε να ορίσετε δική σας απόχρωση αν τα βασικά χρώματα δεν σας ικανοποιούν από το <code class="docutils literal"><span class="pre">define</span> <span class="pre">custom</span> <span class="pre">colors</span></code>.</p>
+<div class="figure align-center" id="id14">
+<img alt="../../_images/geoserver-custom-colour2.png" src="../../_images/geoserver-custom-colour2.png" />
+<p class="caption"><span class="caption-text"><em>Ορίζοντας καλύτερο χρώμα για την ξηρά</em></span></p>
+</div>
+<p>Με αυτές τις αλλαγές έχουμε καλύτερο αποτέλεσμα στο χάρτη</p>
+<div class="figure align-center" id="id15">
+<a class="reference internal image-reference" href="../../_images/geoserver-basic-world2.png"><img alt="../../_images/geoserver-basic-world2.png" src="../../_images/geoserver-basic-world2.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text"><em>Ένας βασικός χάρτης της Γής</em></span></p>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>Μεταφέροντας το στύλ στον GeoServer<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>Τώρα χρειάζεται να μεταφέρουμε τα στύλ στον GeoServer - στο παράθυρο στύλ
+υπάρχει κουμπί εξαγωγής (export) το οποίο μας επιτρέπει να σώσουμε το στύλ σε αρχείο SLD. Σώζουμε και τα 2 στύλ μπορούμε να μεταφερθούμε στον GeoServer
+στη σελίδα διαχείρισης και επιλέγοντας το κουμπί <code class="docutils literal"><span class="pre">Styles</span></code> (στο τέλος της περιοχής <code class="docutils literal"><span class="pre">Data</span></code>). Επιλέγουμε τον σύνδεσμο <code class="docutils literal"><span class="pre">Add</span> <span class="pre">New</span> <span class="pre">Style</span></code>, στο κάτω μέρος αυτής της σελίδας
+και υπάρχει ένα πλαίσιο μεταφόρτωσης και ενα κουμπί περιήγησης. Πιέζοντας το κουμπί εντοπίζουμε τα αρχεία SLD που σώσαμε προηγουμένως. Όταν τα εντοπίσουμε, κάνουμε κλικ στο σύνδεσμο μεταφόρτωσης (δίπλα στο κουμπί περιήγησης) και το αρχείο εμφανίζεται τον επεξεργαστή.</p>
+<div class="figure align-center" id="id16">
+<a class="reference internal image-reference" href="../../_images/geoserver-add-style2.png"><img alt="../../_images/geoserver-add-style2.png" src="../../_images/geoserver-add-style2.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text"><em>Προσθέτοντας ένα στύλ στον GeoServer</em></span></p>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Προσθέτοντας το στύλ στο επίπεδο<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Κάνουμε κλικ στο σύνδεσμο <span class="guilabel">Layers</span> στο μενού στα σριστερά του παραθύρου του
+GeoServer. Κάνουμε κλίκ στο επίπεδο (π.χ. <em>10m_land</em>), και έπειτα επιλέγουμε τη σελίδα
+<span class="guilabel">Publishing</span> και αλάζουμε το πλαίσιο <span class="guilabel">Default Style</span>
+στο όνομα του στύλ σε αυτό που μεταφορτώσαμε προηγουμένως.
+Στη συνέχεια πηγαίνοντας στη σελίδα προεπισκόπησης ελέγχουμε αν ο χάρτης μας δείχνει ωραίος.</p>
+<p>There are example style files for all of the example Natural Earth
+layers in <code class="file docutils literal"><span class="pre">/usr/local/share/geoserver</span></code>.</p>
+</div>
+</div>
+<div class="section" id="wms">
+<h2>Εφαρμογές πελάτες για επίπεδα WMS<a class="headerlink" href="#wms" title="Permalink to this headline">¶</a></h2>
+<p>Υπάρχουν πολλές εφαρμογές που μπορούν να εμφανίσουν τα επίπεδα WMS που σερβίρει ο
+GeoServer. Αυτή είναι μια μικρή λίστα με μερικά από αυτά</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="../overview/udig_overview.html"><em>uDig</em></a></li>
+<li><a class="reference internal" href="../overview/openlayers_overview.html"><em>OpenLayers</em></a></li>
+<li><a class="reference internal" href="../overview/atlasstyler_overview.html"><em>Atlas Styler</em></a></li>
+<li><a class="reference internal" href="../overview/mapbender_overview.html"><em>MapBender</em></a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

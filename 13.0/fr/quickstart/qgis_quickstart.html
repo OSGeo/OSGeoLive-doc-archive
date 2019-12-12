@@ -1,0 +1,328 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Guide de démarrage avec QGIS &#8212; OSGeoLive 13.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '13.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Rasdaman Quickstart" href="rasdaman_quickstart.html" />
+    <link rel="prev" title="QGIS Server Quickstart" href="qgis_mapserver_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.qgis.org"><img alt="../../_images/logo_qgis.png" class="align-right" src="../../_images/logo_qgis.png" /></a>
+<a class="reference external image-reference" href="target:http://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="qgis-quickstart">
+<h1><a class="toc-backref" href="#id1">Guide de démarrage avec QGIS</a><a class="headerlink" href="#qgis-quickstart" title="Lien permanent vers ce titre">¶</a></h1>
+<p>QGIS est un logiciel SIG bureautique convivial qui vous permet de visualiser, gérer, éditer, analyser les données et composer des cartes imprimables.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#qgis-quickstart" id="id1">Guide de démarrage avec QGIS</a><ul>
+<li><a class="reference internal" href="#opening-qgis-for-the-first-time" id="id2">Ouverture de QGIS pour la première fois</a></li>
+<li><a class="reference internal" href="#starting-a-new-project" id="id3">Démarrage d’un nouveau projet</a></li>
+<li><a class="reference internal" href="#open-an-existing-project" id="id4">Ouvrir un projet existant</a></li>
+<li><a class="reference internal" href="#navigation-tools" id="id5">Outils de navigation</a></li>
+<li><a class="reference internal" href="#styling-layers" id="id6">Styliser les couches</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id7">Choses à essayer</a></li>
+<li><a class="reference internal" href="#what-next" id="id8">Ensuite ?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="opening-qgis-for-the-first-time">
+<h2><a class="toc-backref" href="#id2">Ouverture de QGIS pour la première fois</a><a class="headerlink" href="#opening-qgis-for-the-first-time" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Objectif d’apprentissage :</p>
+<ul class="simple">
+<li>Ouvrez QGIS</li>
+<li>Identifier les parties de l’interface</li>
+</ul>
+<p>QGIS peut être ouvert à partir du dossier “Desktop GIS” sur le bureau OSGeoLive. Suivez les étapes ci-dessous pour lancer QGIS.</p>
+<ol class="arabic simple">
+<li>Ouvrez le dossier “Desktop SIG”.</li>
+<li>Double clic sur l’icône “QGIS”.</li>
+</ol>
+<p>L’utilisateur verra QGIS lancer avec un projet vide. Les différentes parties de l’interface QGIS sont énumérées ci-dessous.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_interface.png"><img alt="Open a QGIS project" src="../../_images/qgis_interface.png" style="width: 855.4px; height: 539.7px;" /></a>
+</div></blockquote>
+<ol class="arabic simple">
+<li>Barre de menu : Accès à diverses fonctionnalités QGIS à l’aide d’un menu hiérarchique standard.</li>
+<li>Barres d’outils : Pour l’interaction avec la carte, les couches, les attributs et les sélections.</li>
+<li>Panneau de navigateur : Navigateur de fichiers spatiaux permettant de glisser et de déposer du contenu dans le cadre de la carte.</li>
+<li>Panneau de couches : Contrôle les couches de la carte, leur ordre et leur visibilité.</li>
+<li>Barre d’état : Informations générales sur la carte et l’accès à une barre de recherche universelle.</li>
+</ol>
+</div>
+<div class="section" id="starting-a-new-project">
+<h2><a class="toc-backref" href="#id3">Démarrage d’un nouveau projet</a><a class="headerlink" href="#starting-a-new-project" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Objectif d’apprentissage :</p>
+<ul class="simple">
+<li>Démarrer un nouveau projet QGIS</li>
+<li>Ajouter des couches vectorielles à un projet</li>
+<li>Ajouter des couches de raster à un projet</li>
+<li>Enregistrer un projet</li>
+</ul>
+<p>Après avoir ouvert QGIS pour la première fois, un projet vide vous sera présenté auquel vous pouvez ajouter des couches.</p>
+<ol class="arabic">
+<li><p class="first">Rendez-vous au menu “Projet” de la barre de menu.</p>
+</li>
+<li><p class="first">Sélectionnez “Nouveau”.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_new_project.png"><img alt="QGIS new project" src="../../_images/qgis_new_project.png" style="width: 760.2px; height: 499.1px;" /></a>
+</li>
+</ol>
+<p>Maintenant, avec un projet QGIS vide, nous pouvons commencer à ajouter des données au projet.</p>
+<p>Commençons par ajouter une couche vectorielle à la carte. Des couches peuvent être ajoutées à QGIS à l’aide du panneau du navigateur, situé à gauche de l’écran.</p>
+<ol class="arabic simple">
+<li>Allez dans le panneau du navigateur sur la gauche de l’écran.</li>
+<li>Naviguez dans l’arbre de dossier  jusqu’à “home/data/natural-earth2”.</li>
+<li>Sélectionnez “ne_10m_admin_0_countries.shp”.</li>
+<li>Faites glisser la couche du panneau du navigateur et déposez-la dans le cadre de la carte.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_browser_panel.png"><img alt="QGIS browser add vector layer" src="../../_images/qgis_browser_panel.png" style="width: 930.3px; height: 616.7px;" /></a>
+</div></blockquote>
+<p>Une fois que la couche a été déposée dans la carte, l’utilisateur verra une couche montrant les pays.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_add_vector_layer.png"><img alt="QGIS vector layer" src="../../_images/qgis_add_vector_layer.png" style="width: 900.9px; height: 533.4px;" /></a>
+<p>Essayons maintenant d’ajouter une couche raster au projet. Encore une fois, nous allons utiliser le panneau de navigateur.</p>
+<ol class="arabic simple">
+<li>Allez dans le panneau du navigateur sur la gauche de l’écran.</li>
+<li>Naviguez dans l’arbre de dossier  jusqu’à “home/data/natural-earth2”.</li>
+<li>Sélectionnez “HYP_50M_SR_W.tif”.</li>
+<li>Faites glisser la couche du panneau du navigateur et déposez-la dans le cadre de la carte.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/qgis_browser_panel_raster.png"><img alt="QGIS browser add raster layer" src="../../_images/qgis_browser_panel_raster.png" style="width: 930.3px; height: 616.7px;" /></a>
+<p>Une fois que la couche a été déposée sur la carte, l’utilisateur verra une couche raster montrant la couverture terrestre et la bathymétrie.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_add_raster_layer.png"><img alt="QGIS raster layer" src="../../_images/qgis_add_raster_layer.png" style="width: 930.3px; height: 616.7px;" /></a>
+<p>Maintenant que nous avons ajouté du contenu à notre projet, nous pouvons enregistrer ce projet afin que nous puissions y revenir plus tard.</p>
+<p>Pour enregistrer le projet QGIS, suivez les étapes suivantes :</p>
+<ol class="arabic">
+<li><p class="first">Rendez-vous au menu “Projet” de la barre de menu.</p>
+</li>
+<li><p class="first">Sélectionnez “Enregistrer”.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_save_project.png"><img alt="QGIS save" src="../../_images/qgis_save_project.png" style="width: 930.3px; height: 616.7px;" /></a>
+</li>
+<li><p class="first">Choisissez l’emplacement “/home/user/desktop” pour enregistrer le projet.</p>
+</li>
+<li><p class="first">Appelez le projet “Mon projet QGIS”.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_save_project_location.png"><img alt="QGIS project location" src="../../_images/qgis_save_project_location.png" style="width: 443.8px; height: 309.4px;" /></a>
+</li>
+<li><p class="first">Cliquez ensuite sur “Enregistrer”.</p>
+</li>
+</ol>
+<p>Vous saurez que le projet a été enregistré parce qu’il y aura un fichier de projet sur le bureau appelé “Mon projet QGIS” et le haut de votre document de projet ne sera plus lu comme “sans titre”, mais plutôt se lira comme “Mon projet QGIS”.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_saved_project.png"><img alt="QGIS saved project" src="../../_images/qgis_saved_project.png" style="width: 930.3px; height: 616.7px;" /></a>
+</div>
+<div class="section" id="open-an-existing-project">
+<h2><a class="toc-backref" href="#id4">Ouvrir un projet existant</a><a class="headerlink" href="#open-an-existing-project" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Objectif d’apprentissage :</p>
+<ul class="simple">
+<li>Comprendre ce qu’est un projet QGIS</li>
+<li>Ouvrir un projet existant</li>
+<li>Interagir avec les couches</li>
+</ul>
+<p>Un projet QGIS enregistre des couches, des styles, des étendues de carte et des paramètres pour une utilisation ultérieure. Ces informations sont stockées sous la forme d’un fichier de projet QGIS et ont une extension de “.qgs” ou “.qgz”, avec “.qgz” étant le futur format de fichier par défaut dans QGIS.</p>
+<p>Ouvrons un projet QGIS existant et jetons un coup d’œil à son fonctionnement.</p>
+<ol class="arabic simple">
+<li>Ouvrez QGIS. Notez que lorsque QGIS est ouvert, un utilisateur sera présenté avec une liste de projets récents à choisir. C’est un moyen rapide d’entrer dans des projets récents.</li>
+<li>Rendez-vous au menu “Projet” de la barre de menu.</li>
+<li>Sélectionnez “Ouvrir”.</li>
+<li>Naviguez vers “/home/user/qgis-example”.</li>
+<li>Sélectionnez le projet “QGIS-NaturalEarth-Example.qgs”.</li>
+<li>Cliquez ensuite sur “Ouvrir”.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/qgis_project_open.png"><img alt="QGIS Open project" src="../../_images/qgis_project_open.png" style="width: 443.8px; height: 309.4px;" /></a>
+<p>Cela ouvrira un projet QGIS avec un certain nombre de jeux de données Natural Earth, comme indiqué ci-dessous. Ce projet contient un certain nombre de couches dans le panneau de couches et affiche le contenu spatial dans le cadre de la carte.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_project_open_result.png"><img alt="QGIS Open project result" src="../../_images/qgis_project_open_result.png" style="width: 855.4px; height: 539.7px;" /></a>
+<p>Les couches peuvent être activées ou désactivées en cliquant sur la case à cocher à côté du nom de la couche dans le panneau de couches. Lorsqu’une couche est activée dans le panneau de calque, le cadre de la carte est mis à jour pour afficher la couche. Un gros plan du panneau de calque est montré ci-dessous.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_layer_panel.png"><img alt="QGIS layer panel" src="../../_images/qgis_layer_panel.png" style="width: 210.0px; height: 227.5px;" /></a>
+<p>Interagissons avec le panneau de calque et changeons la visibilité de certaines couches de carte.</p>
+<ol class="arabic simple">
+<li>Cliquez sur la case à cocher à côté de la couche “ne_10m_populated_places”  pour l’afficher.</li>
+<li>Cliquez sur la case à cocher à côté de la couche “Water” pour désactiver la couche.</li>
+</ol>
+<p>Remarquez comment le cadre de la carte a été mis à jour pour refléter les changements dans la liste de calques. Nous pouvons maintenant voir la couche “ne_10m_populated_places” comme des points, mais ne pouvons plus voir les rivières et les lacs qui sont dans la couche “Water”.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_layer_visibility.png"><img alt="QGIS result of layer visibility changes" src="../../_images/qgis_layer_visibility.png" style="width: 855.4px; height: 539.7px;" /></a>
+<p>En plus de contrôler la visibilité des couches, nous pouvons également modifier l’ordre dans lequel les couches sont dessinées dans le panneau de couches. Cela se fait en sélectionnant une couche dans le panneau de couches et en la faisant glisser vers le haut ou vers le bas de la liste. L’ordre sur lequel les couches apparaissent dans la liste de couches est l’ordre sur lequel elles s’appuieront dans le cadre de la carte.</p>
+<p>Pour modifier l’ordre des couches :</p>
+<ol class="arabic simple">
+<li>Faites un clic gauche sur la couche “HYP_50M_SR_W”.</li>
+<li>Tout en maintenant le bouton de la souris appuyé, glissez la couche vers le haut de la liste.</li>
+</ol>
+<p>Remarquez comment la couche raster est maintenant au-dessus de toutes les autres couches dans le panneau de couche. Cela rend maintenant la couche raster sur le dessus de toutes les autres couches dans le cadre de la carte.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_modified_layer_order.png"><img alt="QGIS modified the order of layers" src="../../_images/qgis_modified_layer_order.png" style="width: 930.3px; height: 616.7px;" /></a>
+<p>Essayez de déplacer la couche “HYP_50M_SR_W” vers le bas de la liste de couches. Ce serait une position plus appropriée pour une couche de carte comme celle-ci.</p>
+</div>
+<div class="section" id="navigation-tools">
+<h2><a class="toc-backref" href="#id5">Outils de navigation</a><a class="headerlink" href="#navigation-tools" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Objectifs d’apprentissage :</p>
+<ul class="simple">
+<li>Identifier la barre d’outils de navigation</li>
+<li>Modifier l’étendue de la carte</li>
+</ul>
+<p>La barre d’outils de navigation comme indiqué ci-dessous permet aux utilisateurs de se déplacer autour de la carte et de modifier l’étendue de la carte.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_navigation_toolbar.png"><img alt="QGIS navigation toolbar" src="../../_images/qgis_navigation_toolbar.png" style="width: 336.0px; height: 51.8px;" /></a>
+<p>Pour ce guide de démarrage rapide, nous nous concentrerons sur les bases de la navigation qui peuvent être réalisées avec seulement cinq outils. Ces outils sont énumérés ci-dessous, avec le numéro correspondant à l’image de la barre d’outils ci-dessus pour afficher l’emplacement sur la barre d’outils.</p>
+<ol class="arabic simple">
+<li>Déplacement : Permet à la carte d’être déplacée vers un nouvel emplacement.</li>
+<li>Zoom avant : Permet de zoomer dans l’étendue de la carte.</li>
+<li>Zoom arrière : permet de zoomer en dehors de la carte.</li>
+<li>Zoom sur toute l’étendue : Modifie l’étendue de la carte pour s’adapter à l’étendue de toutes les couches dans le cadre de la carte.</li>
+<li>Zoom sur la couche : Modifie l’étendue de la carte pour s’adapter à l’étendue de la couche mise en évidence dans le panneau de couches.</li>
+</ol>
+<p>Essayons de modifier l’étendue de la carte avec l’outil de zoom, ce qui permettra à l’utilisateur de zoomer plus près d’une zone d’intérêt.</p>
+<ol class="arabic simple">
+<li>Sélectionnez l’outil “Zoom in” à partir de la barre d’outils de navigation.</li>
+<li>Déplacez le curseur sur le cadre de la carte.</li>
+<li>Cliquez et maintenez le bouton gauche de la souris.</li>
+<li>Tout en tenant le bouton de la souris, déplacez le curseur en diagonale dans n’importe quelle direction. Notez que cela dessine un rectangle qui est la zone qui sera zoomée.</li>
+<li>Relâchez le bouton de la souris lorsque vous êtes satisfait de la zone créée.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Le processus d’utilisation de l’outil de zoom arrière est le même que l’outil de zoom. Le résultat est tout le contraire.</p>
+</div>
+<p>Maintenant, regardons l’outil de zoom sur toute l’étendue. Cet outil va zoomer la carte à une emprise qui s’adaptera à toutes les couches de la carte. Pour utiliser cet outil, cliquez sur le bouton “Zoom sur toute l’étendue”.</p>
+<p>Enfin, essayez l’outil de zoom sur l’étendue d’une couche. Pour utiliser cet outil, suivez les étapes suivantes :</p>
+<ol class="arabic simple">
+<li>Cliquez sur un nom de couche dans le panneau de couche.</li>
+<li>Cliquez sur le bouton “Zoom sur la couche”.</li>
+</ol>
+<p>La carte doit zoomer sur l’emprise de la couche sélectionnée (“active”).</p>
+</div>
+<div class="section" id="styling-layers">
+<h2><a class="toc-backref" href="#id6">Styliser les couches</a><a class="headerlink" href="#styling-layers" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Objectifs d’apprentissage :</p>
+<ul class="simple">
+<li>Accédez au panneau de style</li>
+<li>Modifier la couleur d’une couche</li>
+</ul>
+<p>Les couches peuvent être stylisées dans QGIS à l’aide du panneau de style. Le panneau de style n’est pas visible par défaut, mais facilement accessible via un bouton en haut du panneau de couche comme indiqué ci-dessous.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_dock_button.png"><img alt="QGIS style dock" src="../../_images/qgis_style_dock_button.png" style="width: 932.4px; height: 616.7px;" /></a>
+<p>Le bouton ci-dessus agit comme une bascule de sorte que le panneau de style peut être facilement caché de la vue en cliquant sur le même bouton à nouveau. Lorsque le panneau de style est activé, il apparaît sur le côté droit de l’écran prêt à styliser la couche active mise en valeur dans le panneau de couche.</p>
+<p>Avec le panneau de style ouvert, nous pouvons modifier l’apparence de la couche montrée en haut du panneau de style.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_dock_layer.png"><img alt="QGIS style dock layer" src="../../_images/qgis_style_dock_layer.png" style="width: 286.3px; height: 294.7px;" /></a>
+<p>Avec le panneau de style maintenant ouvert, nous pouvons modifier la couleur et la largeur des lignes dans la couche “ne_10m_rivers_lakes_centrelines”. Essayons d’abord de modifier la couleur.</p>
+<ol class="arabic">
+<li><p class="first">Cliquez sur l’échantillon “Couleur” ci-dessous. Cela vous permettra de choisir une couleur différente.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_dock_color.png"><img alt="QGIS style dock color" src="../../_images/qgis_style_dock_color.png" style="width: 298.2px; height: 225.4px;" /></a>
+</li>
+<li><p class="first">Dans la palette “Choix d’une couleur”, déplacez le curseur vers votre couleur préférée.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_color_palette.png"><img alt="QGIS color palette" src="../../_images/qgis_style_color_palette.png" style="width: 284.2px; height: 224.7px;" /></a>
+</li>
+<li><p class="first">Cliquez ensuite sur la flèche arrière pour revenir à l’aperçu du rendu du symbole.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_back.png"><img alt="QGIS style return" src="../../_images/qgis_style_back.png" style="width: 281.4px; height: 128.1px;" /></a>
+</li>
+<li><p class="first">L’aperçu du symbole sera mis à jour avec la nouvelle couleur, tout comme la couche dans le cadre de la carte.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_result.png"><img alt="QGIS style result" src="../../_images/qgis_style_result.png" style="width: 865.9px; height: 562.8px;" /></a>
+</li>
+</ol>
+<p>Dans le panneau de style, nous pouvons également modifier la taille des entités de la carte. Pour modifier l’épaisseur des lignes, suivez ces étapes :</p>
+<ol class="arabic">
+<li><p class="first">Assurez-vous que la cocuhe “ne_10m_rivers_lakes_centrelines” est sélectionnée en haut du panneau de style.</p>
+</li>
+<li><p class="first">Dans le panneau de style, entrez la valeur “0.5” dans le champ “largeur”.</p>
+<a class="reference internal image-reference" href="../../_images/qgis_style_width.png"><img alt="QGIS style width" src="../../_images/qgis_style_width.png" style="width: 865.9px; height: 562.8px;" /></a>
+</li>
+</ol>
+<p>Notez l’augmentation de la largeur de la ligne dans l’aperçu du symbole, et ainsi que les lignes qui sont dans le cadre de la carte.</p>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id7">Choses à essayer</a><a class="headerlink" href="#things-to-try" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li>Étendez les fonctionnalités de QGIS avec les <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/user_manual/plugins/plugins.html">Plugins</a>.</li>
+<li>Commencez à manipuler les données avec la <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/user_manual/processing/toolbox.html">Boite à outils de traitements</a>.</li>
+<li>Utilisez QGIS pour afficher le contenu d’une <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/training_manual/spatial_databases/index.html">base de données PostGIS</a>.</li>
+<li>Essayez de publier votre carte QGIS sur le Web à l’aide de`QGIS Map Server &lt;../overview/qgis_mapserver_overview.html&gt;`_. dans le menu <span class="menuselection">Geospatial ‣ Web Services</span></li>
+</ul>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id8">Ensuite ?</a><a class="headerlink" href="#what-next" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour en savoir plus sur QGIS, un bon point de départ est la <a class="reference external" href="http://docs.qgis.org/">Documentation page</a> sur la page d’accueil QGIS et le ebook  <a class="reference external" href="https://docs.qgis.org/3.4/en/docs/gentle_gis_introduction/index.html">A Gentle Introduction to GIS</a> .</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

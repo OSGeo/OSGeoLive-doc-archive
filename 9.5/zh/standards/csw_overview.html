@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Catalogue Service for the Web (CSW) 网络地理数据编录服务 &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Open Geospatial Consortium 开放地理空间信息联盟标准" href="standards.html" />
+    <link rel="next" title="Filter Encoding (FE) 过滤器编码" href="fe_overview.html" />
+    <link rel="prev" title="Open Geospatial Consortium 开放地理空间信息联盟标准" href="standards.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-OGC-left12.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-left12.png" style="width: 144.0px; height: 73.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/logo-OGC-right12.png"><img alt="OGC logo" class="align-right" src="../../_images/logo-OGC-right12.png" style="width: 79.0px; height: 73.0px;" /></a>
+<div class="section" id="catalogue-service-for-the-web-csw">
+<h1>Catalogue Service for the Web (CSW) 网络地理数据编录服务<a class="headerlink" href="#catalogue-service-for-the-web-csw" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="../../_images/csw12.jpg"><img alt="CSW in Context" src="../../_images/csw12.jpg" style="width: 563.2px; height: 422.4px;" /></a>
+<p>　　OGC Catalogue Service 接口标准规定了一套用于发布和发现地理信息数据集元数据和服务的服务开发规范。数据提供者使用空间位置和主题区分不同的数据集，使得客户端可以有效地获取所需数据。</p>
+<p>　　OGC CSW 模型的描述包括：</p>
+<ul class="simple">
+<li>ISO 19115/19139 元数据描述 (<a class="reference external" href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=32557">http://www.iso.org/iso/catalogue_detail.htm?csnumber=32557</a>)。它针对 ISO 标准的元数据信息，使用 XML 编码 ISO 19139 (<a class="reference external" href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=32557">http://www.iso.org/iso/catalogue_detail.htm?csnumber=32557</a>) 和 HTTP 协议。该模型在应用较广，例如 Spatial Data Infrastructure for North Rhine Westphalia 联邦德国使用的系统。</li>
+<li>CSW-ebRIM Registry Service 登记服务 (<a class="reference external" href="http://portal.opengeospatial.org/files/?artifact_id=31137">http://portal.opengeospatial.org/files/?artifact_id=31137</a>)。它适用于使用 OASIS ebXML 登记服务模型 (ebRIM 3.0) 的 CSW 系统，使得人类和软件用户能够在开放的分布式系统中定位和获取利用信息。它为获取、存储和管理多种资源描述信息提供了方案。其扩展机制允许内容根据专门业务需求调整。</li>
+<li>CSW 39.50 协议规范了一套基于消息机制的客户端-服务器系统，基于 ANSI/NISO Z39.50 Application Service Definition 应用服务定义信息标准协议第三版实现。每个服务操作的模型都与 ANSI/NISO/ISO 标准的服务对应。(<a class="reference external" href="http://lcweb.loc.gov/z3950/agency/document.html">http://lcweb.loc.gov/z3950/agency/document.html</a>)</li>
+</ul>
+<p>　　这个标准目前主要的工作是重新构建编录的核心内容，使得一套统一且定义完善的核心数据能够被广泛使用，同时又支持多种不同的应用的专门扩展。</p>
+<div class="section" id="id1">
+<h2>其它信息<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Cat: ebRIM App Profile: Earth Observation Products 地球观测数据产品</li>
+<li>ISO 23950 (2003). &#8220;Information Retrieval (Z39.50): Application Service Definition and Protocol Specification&#8221; 信息获取服务定义与协议标准</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

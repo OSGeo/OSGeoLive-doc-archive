@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы с Leaflet &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="leaflet">
+<h1>Начало работы с Leaflet<a class="headerlink" href="#leaflet" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Запуск<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Перед началом работы вы должны запустить TileLite. Он находится в меню <strong>Geospatial\Spatial Tools\Start Mapnik &amp; TileLite</strong> на диске OSGeo-Live.
+Это обеспечит работу тайлов, которые будут использоваться в данной демонстрации.</p>
+<p>Посмотрите <a class="reference external" href="http://localhost/leaflet-demo.html">пример</a>.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Если вы читаете данное руководство не на диске OSGeo Live, то, возможно, вам лучше прочитать оригинальную статью <a class="reference external" href="http://leafletjs.com/examples/quick-start.html">http://leafletjs.com/examples/quick-start.html</a>, так как в данном руководстве акцент сделан на тайлы TileLite c DVD-диска.</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Начальная подготовка вашей страницы<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Перед тем как начать писать код для карты, вам следует выполнить ряд действий для подготовки вашей страницы:</p>
+<ul class="simple">
+<li>Добавьте ссылку на файлы стилей Leaflet (CSS) в блоке &#8220;head&#8221; вашей страницы</li>
+</ul>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;/leaflet/leaflet.css&quot;</span> <span class="nt">/&gt;</span>
+<span class="c">&lt;!--[if lte IE 8]&gt;</span>
+<span class="c">    &lt;link rel=&quot;stylesheet&quot; href=&quot;/leaflet/leaflet.ie.css&quot; /&gt;</span>
+<span class="c">&lt;![endif]--&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Добавьте ссылку на JavaScript-файл Leaflet:</li>
+</ul>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/leaflet/leaflet.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Вставьте  <strong>div</strong>-элемент с указанием конкретного <strong>id</strong> там, где вы хотите разместить карту:</li>
+</ul>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;map&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Убедитесь, что контейнер карты имеет определенную высоту, например, установив ее в CSS:</li>
+</ul>
+<div class="highlight-css"><div class="highlight"><pre><span class="nf">#map</span> <span class="p">{</span> <span class="k">height</span><span class="o">:</span> <span class="m">180px</span><span class="p">;</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Теперь всё готово для инициализации карты и выполнения некоторых действия с ней.</p>
+</div>
+<div class="section" id="id3">
+<h2>Настройка карты<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Давайте создадим карту Европы с указанием на ней места проведения конференции FOSS4G 2013. Во-первых, мы должны инициализировать карту и установить отображение на ней наших географических координат и масштаба:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="s1">&#39;map&#39;</span><span class="p">).</span><span class="nx">setView</span><span class="p">([</span><span class="mf">45.52875</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.6632</span><span class="p">],</span> <span class="mi">5</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>По умолчанию (даже если мы не задаем какие-либо опции при создании экземпляра карты), все действия мыши и касаний на карте включены, она имеет зум и атрибуты управления.</p>
+<p>Обратите внимание, что вызов <strong>setView</strong>, также как и большинство других методов Leaflet, которые не возвращают явное значение, возвращает объект <strong>map</strong>, что позволяет строить цепочки методов, похожие на JQuery.</p>
+<p>Далее мы добавим тайловый слой на карту.
+Для этого мы будем использовать тайловые изображения из TileLite с данного Live DVD. Отметим, что использование таких карт как OpenStreetMap в качестве картографической подложки даст больше практического опыта.</p>
+<p>Создание тайлового слоя, как правило, включает в себя установку шаблона URL для тайловых изображений, текста копирайта и максимального уровня масштабирования слоя:</p>
+<div class="highlight-javascript"><div class="highlight"><pre>L.tileLayer(&#39;http://localhost:8012/{z}/{x}/{y}.png,{}).addTo(map);
+</pre></div>
+</div>
+<p>Если у вас есть доступ в Интернет, то вы можете использовать и другие тайловые сервисы карт в качестве картографической подложки:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s1">&#39;http://{s}.tile.cloudmade.com/API-key/997/256/{z}/{x}/{y}.png&#39;</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">maxZoom</span><span class="o">:</span> <span class="mi">18</span><span class="p">,</span>
+<span class="nx">attribution</span><span class="o">:</span> <span class="s1">&#39;Map data &amp;copy; &lt;a href=&quot;http://openstreetmap.org&quot;&gt;OpenStreetMap&lt;/a&gt; contributors, &lt;a href=&quot;http://creativecommons.org/licenses/by-sa/2.0/&quot;&gt;CC-BY-SA&lt;/a&gt;, Imagery © &lt;a href=&quot;http://cloudmade.com&quot;&gt;CloudMade&lt;/a&gt;&#39;</span>
+<span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Убедитесь, что весь JavaScript-код вызывается после <strong>div</strong> и включения файла <strong>leaflet.js</strong>. Вот и всё! У вас есть работающая карта на Leaflet.</p>
+<p>Стоит отметить, что Leaflet не привязан к конкретным поставщикам тайловых карт, а также не содержит специфичного кода для кого-то конкретного из них, так что вы свободны в выборе других поставщиков, если есть такая необходимость.</p>
+</div>
+<div class="section" id="id4">
+<h2>Маркеры, круги и полигоны<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Помимо тайловых слоёв, вы можете легко добавить и другие объекты на карту, в том числе маркеры, полилинии, полигоны, круги и всплывающие окна.
+Давайте добавим маркер:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">marker</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">marker</span><span class="p">([</span><span class="mf">45.52875</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.6632</span><span class="p">]).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Добавление круга то же самое (за исключением указания размера радиуса в метрах в качестве второго аргумента), но позволяет вам настраивать вид отображения объекта, передавая дополнительные параметры в качестве последнего аргумента при создании объекта:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">circle</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">circle</span><span class="p">([</span><span class="mf">44.056287</span><span class="p">,</span> <span class="o">-</span><span class="mf">123.07572</span><span class="p">],</span> <span class="mi">25000</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
+    <span class="nx">fillColor</span><span class="o">:</span> <span class="s1">&#39;#f03&#39;</span><span class="p">,</span>
+    <span class="nx">fillOpacity</span><span class="o">:</span> <span class="mf">0.5</span>
+<span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Добавить полигон тоже несложно:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">polygon</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">polygon</span><span class="p">([</span>
+    <span class="p">[</span><span class="mf">46.01</span><span class="p">,</span> <span class="o">-</span><span class="mf">130.01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">40.81</span><span class="p">,</span> <span class="o">-</span><span class="mf">128.76</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">44.15</span><span class="p">,</span> <span class="o">-</span><span class="mf">133.23</span><span class="p">]</span>
+<span class="p">]).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Работа со всплывающими окнами<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Всплывающие окна, как правило, используются, когда вы хотите прикрепить некоторую информацию к конкретному объекту на карте. Для этого в Leaflet есть очень удобный инструмент:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">popup</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">popup</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">setLatLng</span><span class="p">([</span><span class="mf">45.52875</span><span class="p">,</span> <span class="o">-</span><span class="mf">122.6632</span><span class="p">])</span>
+    <span class="p">.</span><span class="nx">setContent</span><span class="p">(</span><span class="s2">&quot;I am a standalone popup.&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">openOn</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Здесь мы используем <strong>openOn</strong> вместо <strong>AddTo</strong>, потому что он выполняет автоматическое закрытие ранее открытого всплывающего окна при открытии нового, что добавляет удобство использования.</p>
+</div>
+<div class="section" id="id6">
+<h2>Обработка событий<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Каждый раз, когда что-то происходит в Leaflet, например, пользователь нажимает на маркер или изменяет масштаб карты, соответствующий объект передает событие, которое вы можете отслеживать с помощью функции. Это позволяет реагировать на действия пользователя:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">function</span> <span class="nx">onMapClick</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;You clicked the map at &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">latlng</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">onMapClick</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Каждый объект имеет свой собственный набор событий (подробности в разделе <a class="reference external" href="http://leafletjs.com/reference.html">документация</a>). Первый аргумент функции — это событие объекта. Оно содержит полезную информацию о событии, которое произошло. Например, событие объекта по клику на карте (<strong>e</strong> в приведенном выше примере) обладает параметром latlng, который содержит данные о координатах этого места.</p>
+<p>Давайте усовершенствуем наш пример с использованием всплывающего окна вместо предупреждения:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">popup</span> <span class="o">=</span> <span class="nx">L</span><span class="p">.</span><span class="nx">popup</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">onMapClick</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">popup</span>
+         <span class="p">.</span><span class="nx">setLatLng</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">latlng</span><span class="p">)</span>
+         <span class="p">.</span><span class="nx">setContent</span><span class="p">(</span><span class="s2">&quot;You clicked the map at &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">latlng</span><span class="p">.</span><span class="nx">toString</span><span class="p">())</span>
+          <span class="p">.</span><span class="nx">openOn</span><span class="p">(</span><span class="nx">map</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">map</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">onMapClick</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Попробуйте нажать на карту, и вы увидите координаты во всплывающем окне. Посмотрите полный <a class="reference external" href="http://localhost/leaflet-demo.html">пример</a>.</p>
+<p>Итак, вы изучили базовые возможности Leaflet, и можете начать создание своего картографического приложения прямо сейчас! Не забудьте заглянуть в раздел <a class="reference external" href="http://leafletjs.com/reference.html">документация</a> и посмотреть другие <a class="reference external" href="http://leafletjs.com/examples.html">примеры</a>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

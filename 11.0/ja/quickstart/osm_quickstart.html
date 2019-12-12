@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OpenStreetMap Quickstart &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 11.0 へようこそ" href="../index.html" />
+    <link rel="next" title="Ossim Quickstart" href="ossim_quickstart.html" />
+    <link rel="prev" title="OpenLayers Quickstart" href="openlayers_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="https://www.openstreetmap.org"><img alt="project logo" class="align-right" src="../../_images/logo-osm.png" style="width: 128.0px; height: 128.0px;" /></a>
+<div class="section" id="openstreetmap-quickstart">
+<h1>OpenStreetMap Quickstart<a class="headerlink" href="#openstreetmap-quickstart" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<p>OpenStreetMap is a free street level map of the world, created by an ever
+growing community of mappers. Anyone can edit OpenStreetMap.
+The <a class="reference external" href="http://learnosm.org">Learn OSM website</a> provides easy to understand,
+step-by-step guides for you to get started with contributing to OpenStreetMap
+and using OpenStreetMap and using OpenStreetMap data.
+The Learn OSM guide at the link above shows step by step how to navigate
+the OpenStreetMap website, view and print maps, and sign up for a user
+account. After you have your own username and password, you will be able
+to add your first points to the map, learn how to do street surveys and
+work with aerial imagery.</p>
+<p>The remainder of this quickstart introduces some of the on-line and off-line software
+used to edit and render OSM data.</p>
+</div>
+<div class="section" id="programs">
+<h2>Programs<a class="headerlink" href="#programs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id">
+<h3>iD<a class="headerlink" href="#id" title="Permalink to this headline">¶</a></h3>
+<p><strong>iD</strong> is the default on-line editor for OpenStreetMap (OSM). iD is fast and
+easy to use, and allows mapping from various data sources such as ground survey,
+satellite and aerial imageries, GPS traces or street-level imagery.</p>
+<ul class="simple">
+<li>Start page: <a class="reference external" href="https://www.openstreetmap.org/edit">https://www.openstreetmap.org/edit</a></li>
+</ul>
+<div class="section" id="further-reading">
+<h4>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Documentation: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/ID">https://wiki.openstreetmap.org/wiki/ID</a></li>
+<li>Tutorial: <a class="reference external" href="http://learnosm.org/en/beginner/id-editor/">http://learnosm.org/en/beginner/id-editor/</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="josm">
+<h3>JOSM<a class="headerlink" href="#josm" title="Permalink to this headline">¶</a></h3>
+<p><strong>JOSM</strong> (Java OpenStreetMap Editor) is an advanced editor for OpenStreetMap
+(OSM) written in Java. It is more powerful and complex than iD, can be used
+for bulk editing, off-line or on an unreliable Internet connection. It can be
+extended with plugins, custom presets and more extensions.</p>
+<ul class="simple">
+<li>Homepage: <a class="reference external" href="https://josm.openstreetmap.de">https://josm.openstreetmap.de</a></li>
+</ul>
+<div class="section" id="id1">
+<h4>Further reading<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>User guide: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/JOSM/Guide">https://wiki.openstreetmap.org/wiki/JOSM/Guide</a></li>
+<li>Tutorial: <a class="reference external" href="http://learnosm.org/en/josm/start-josm/">http://learnosm.org/en/josm/start-josm/</a></li>
+<li>JOSM plugin collection: <a class="reference external" href="https://josm.openstreetmap.de/wiki/Plugins">https://josm.openstreetmap.de/wiki/Plugins</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="merkaartor">
+<h3>Merkaartor<a class="headerlink" href="#merkaartor" title="Permalink to this headline">¶</a></h3>
+<p><strong>Merkaartor</strong> is a map editor for OpenStreetMap which uses the Qt toolkit.
+It&#8217;s a bit more user friendly than JOSM, but has a few less features.</p>
+<ul class="simple">
+<li>Homepage: <a class="reference external" href="http://merkaartor.be">http://merkaartor.be</a></li>
+<li>Online help: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/Merkaartor/Documentation">https://wiki.openstreetmap.org/wiki/Merkaartor/Documentation</a></li>
+</ul>
+</div>
+<div class="section" id="qgis">
+<h3>QGIS<a class="headerlink" href="#qgis" title="Permalink to this headline">¶</a></h3>
+<p>OpenStreetMap data can be loaded in <strong>QGIS</strong> as vector layer, as a core
+functionality or through plugins like QuickOSM.</p>
+<ul class="simple">
+<li>QuickOSM: <a class="reference external" href="http://plugins.qgis.org/plugins/QuickOSM/">http://plugins.qgis.org/plugins/QuickOSM/</a></li>
+<li>Online help: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/QGIS#QGIS_2:_Importing_OSM_vector_layers">https://wiki.openstreetmap.org/wiki/QGIS#QGIS_2:_Importing_OSM_vector_layers</a></li>
+<li>Tutorial: <a class="reference external" href="http://learnosm.org/en/osm-data/osm-in-qgis/">http://learnosm.org/en/osm-data/osm-in-qgis/</a></li>
+</ul>
+</div>
+<div class="section" id="osmosis">
+<h3>Osmosis<a class="headerlink" href="#osmosis" title="Permalink to this headline">¶</a></h3>
+<p><strong>Osmosis</strong> is a highly capable utility program for performing many tasks at
+a raw level on OSM data. This includes data import and export to databases,
+sorting, cleaning, and creating data dumps.</p>
+<ul class="simple">
+<li>Documentation: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/Osmosis#Usage">https://wiki.openstreetmap.org/wiki/Osmosis#Usage</a></li>
+<li>Tutorial: <a class="reference external" href="http://learnosm.org/en/osm-data/osmosis/">http://learnosm.org/en/osm-data/osmosis/</a></li>
+</ul>
+</div>
+<div class="section" id="osm2pgsql">
+<h3>osm2pgsql<a class="headerlink" href="#osm2pgsql" title="Permalink to this headline">¶</a></h3>
+<p><strong>osm2pgsql</strong> is a utility program that converts OpenStreetMap (.osm) data
+into a format that can be loaded into PostgreSQL (PostGIS). It is often
+used to render OSM data visually using Mapnik, as Mapnik can query
+PostgreSQL for map data, but does not work directly with OSM files.</p>
+<ul class="simple">
+<li>Homepage: <a class="reference external" href="https://wiki.openstreetmap.org/wiki/Osm2pgsql">https://wiki.openstreetmap.org/wiki/Osm2pgsql</a></li>
+<li>Tutorial: <a class="reference external" href="http://learnosm.org/en/osm-data/osm2pgsql/">http://learnosm.org/en/osm-data/osm2pgsql/</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

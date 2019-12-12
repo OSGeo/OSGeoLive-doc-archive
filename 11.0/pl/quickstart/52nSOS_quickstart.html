@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>52°North SOS Quickstart &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Witaj w OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="Wprowadzenie do 52°North WPS" href="52nWPS_quickstart.html" />
+    <link rel="prev" title="zyGrib" href="../overview/zygrib_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://52north.org/sos"><img alt="52°North - exploring horizons - logo" class="align-right" src="../../_images/logo_52North_160.png" style="width: 128.0px; height: 126.0px;" /></a>
+<div class="section" id="north-sos-quickstart">
+<h1><a class="toc-backref" href="#id1">52°North SOS Quickstart</a><a class="headerlink" href="#north-sos-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>The 52°North SOS is a web service, that enables to provision of interoperable access
+to (spatial) observation data and associated metadata.</p>
+<p>This Quick Start describes how to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Query the 52°North SOS Capabilities to determine what queries it supports.</li>
+<li>Query details about an Observation from the SOS.</li>
+<li>Use the lightweight visualisation tool &#8220;Helgoland&#8221; delivered with
+the SOS to explore the available data.</li>
+<li>Explore the REST API endpoint for client developers.</li>
+</ul>
+</div></blockquote>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#north-sos-quickstart" id="id1">52°North SOS Quickstart</a><ul>
+<li><a class="reference internal" href="#getting-started" id="id2">Getting Started</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id3">Things to Try</a></li>
+<li><a class="reference internal" href="#what-next" id="id4">What Next?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="getting-started">
+<h2><a class="toc-backref" href="#id2">Getting Started</a><a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Select <span class="menuselection">Geospatial ‣ Web Services ‣ 52North ‣ Start 52North SOS</span> to start the 52°North SOS.</p>
+</li>
+<li><p class="first">This will open the 52°North SOS client welcome page in firefox at
+<a class="reference external" href="http://localhost:8080/52nSOS/">http://localhost:8080/52nSOS/</a> (see Fig. 1).</p>
+<a class="reference internal image-reference" href="../../_images/52n_sos_start.png"><img alt="52°North SOS client welcome page" class="align-center" src="../../_images/52n_sos_start.png" style="width: 716.8px; height: 537.6px;" /></a>
+<p><strong>Fig. 1</strong>: 52°North SOS client - welcome page.</p>
+</li>
+<li><p class="first">Once you know <a class="reference external" href="http://localhost:8080/52nSOS/sos?REQUEST=GetCapabilities&amp;SERVICE=SOS&amp;ACCEPTVERSIONS=2.0.0">the capabilities of a SOS</a>,
+(see Fiq. 2) you can craft appropriate queries. Again, this is made easier
+by selecting sample queries from the test client pull down list. Using the
+information from the capabilities, you can adjust the available example
+queries.</p>
+<a class="reference internal image-reference" href="../../_images/52n_sos_get_capabilities.png"><img alt="52°North SOS client - test client with GetCapabilities request" class="align-center" src="../../_images/52n_sos_get_capabilities.png" style="width: 717.5px; height: 537.6px;" /></a>
+<p><strong>Fig. 2</strong>: 52°North SOS client - test client with GetCapabilities request.</p>
+</li>
+<li><p class="first">To get the available observation data within the time
+interval from 2017-02-28T23:45:00.000+00:00 to 2017-03-01T23:45:00.000+00:00
+for each time series, insert the following request after selecting service
+&#8220;SOS&#8221; &#8211;&gt; version &#8220;2.0.0&#8221; &#8211;&gt; binding &#8220;SOAP&#8221; &#8211;&gt; operation &#8220;GetObservation&#8221;
+in the <a class="reference external" href="http://localhost:8080/52nSOS/client">test
+client&#8217;s</a> in the field request:</p>
+</li>
+</ol>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;env:Envelope</span>
+    <span class="na">xmlns:env=</span><span class="s">&quot;http://www.w3.org/2003/05/soap-envelope&quot;</span>
+    <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.w3.org/2003/05/soap-envelope http://www.w3.org/2003/05/soap-envelope/soap-envelope.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;env:Body&gt;</span>
+        <span class="nt">&lt;sos:GetObservation</span> <span class="na">service=</span><span class="s">&quot;SOS&quot;</span> <span class="na">version=</span><span class="s">&quot;2.0.0&quot;</span>
+            <span class="na">xmlns:sos=</span><span class="s">&quot;http://www.opengis.net/sos/2.0&quot;</span>
+            <span class="na">xmlns:fes=</span><span class="s">&quot;http://www.opengis.net/fes/2.0&quot;</span>
+            <span class="na">xmlns:gml=</span><span class="s">&quot;http://www.opengis.net/gml/3.2&quot;</span>
+            <span class="na">xmlns:swe=</span><span class="s">&quot;http://www.opengis.net/swe/2.0&quot;</span>
+            <span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span>
+            <span class="na">xmlns:swes=</span><span class="s">&quot;http://www.opengis.net/swes/2.0&quot;</span>
+            <span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.opengis.net/sos/2.0 http://schemas.opengis.net/sos/2.0/sos.xsd&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;sos:temporalFilter&gt;</span>
+                <span class="nt">&lt;fes:During&gt;</span>
+                    <span class="nt">&lt;fes:ValueReference&gt;</span>phenomenonTime<span class="nt">&lt;/fes:ValueReference&gt;</span>
+                    <span class="nt">&lt;gml:TimePeriod</span> <span class="na">gml:id=</span><span class="s">&quot;tp_1&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;gml:beginPosition&gt;</span>2017-02-28T23:45:00.000+00:00<span class="nt">&lt;/gml:beginPosition&gt;</span>
+                        <span class="nt">&lt;gml:endPosition&gt;</span>2017-03-01T23:45:00.000+00:00<span class="nt">&lt;/gml:endPosition&gt;</span>
+                    <span class="nt">&lt;/gml:TimePeriod&gt;</span>
+                <span class="nt">&lt;/fes:During&gt;</span>
+            <span class="nt">&lt;/sos:temporalFilter&gt;</span>
+        <span class="nt">&lt;/sos:GetObservation&gt;</span>
+    <span class="nt">&lt;/env:Body&gt;</span>
+<span class="nt">&lt;/env:Envelope&gt;</span>
+</pre></div>
+</div>
+<p><strong>Listing 1:</strong> Request of observations.</p>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id3">Things to Try</a><a class="headerlink" href="#things-to-try" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Try some of the other example queries from the pull down list.</p>
+</li>
+<li><p class="first">Try tweaking some of these queries to get different information.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Try the <a class="reference external" href="http://localhost:8080/52nSOS/admin/index">SOS administrator</a> using</dt>
+<dd><p class="first last">username &#8220;user&#8221; and password &#8220;user&#8221;.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Try Helgoland - the <a class="reference external" href="http://localhost:8080/52nSOS/static/client/helgoland/#/map">Viewer Client</a> (see Fiq. 3).</p>
+</li>
+<li><p class="first">Try other sample data by performing the following steps:</p>
+<ol class="arabic simple">
+<li>Open the SOS administrator <a class="reference external" href="http://localhost:8080/52nSOS/admin/datasource">database maintenance page</a>.</li>
+<li>Empty the database using the &#8220;Clear Datasource&#8221; button (this will delete
+the example data. You can restart OSGeoLive to get the data back.).</li>
+<li>Insert dynamically generated sample data by clicking the &#8220;Insert
+sample data&#8221; button. Please be informed that this operation might take
+some minutes.</li>
+<li>Open <a class="reference external" href="http://localhost:8080/52nSOS/static/client/helgoland/#/map">Helgoland</a>
+again and explore the generated sample data.</li>
+</ol>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/52n_sos_viewclient.png"><img alt="52°North SOS client - JavaScript client with time series data" class="align-center" src="../../_images/52n_sos_viewclient.png" style="width: 716.8px; height: 508.9px;" /></a>
+<p><strong>Fig. 3</strong>: 52°North SOS client - JavaScript client with time series data.</p>
+<ul class="simple">
+<li>Try the <a class="reference external" href="http://localhost:8080/52nSOS/api/">REST API</a> (see Listing 2):</li>
+</ul>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;services&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Service Provider&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;A service provider offers timeseries data.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;stations&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Station&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;A station is the place where measurement takes place.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;timeseries&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Timeseries&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;Represents a sequence of data values measured over time.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;categories&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Category&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;A category group available timeseries.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;offerings&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Offering&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;An organizing unit to filter resources.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;features&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;An organizing unit to filter resources.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;procedures&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Procedure&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;An organizing unit to filter resources.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;phenomena&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Phenomenon&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;An organizing unit to filter resources.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;platforms&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Platforms&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;A sensor platform where observations are made.&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nx">id</span><span class="o">:</span> <span class="s2">&quot;geometries&quot;</span><span class="p">,</span>
+        <span class="nx">label</span><span class="o">:</span> <span class="s2">&quot;Geometries&quot;</span><span class="p">,</span>
+        <span class="nx">description</span><span class="o">:</span> <span class="s2">&quot;A geometry where observations are made or that was observed.&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Listing 2:</strong> Output of REST API endpoint.</p>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id4">What Next?</a><a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<p>To learn more about the 52°North SOS and/or the 52°North Sensor Web Community,
+potential starting points are:</p>
+<ul class="simple">
+<li>52°North <a class="reference internal" href="../overview/52nSOS_overview.html"><em>SOS overview</em></a>,</li>
+<li>52°North Sensor Web mailing list: <a class="reference external" href="mailto:swe&#37;&#52;&#48;52north&#46;org">swe<span>&#64;</span>52north<span>&#46;</span>org</a>,</li>
+<li>52°North <a class="reference external" href="http://sensorweb.forum.52north.org/">Sensor Web community forum</a>,</li>
+<li>52°North <a class="reference external" href="http://sensorweb.demo.52north.org/SOSclient/">SOS Client</a>,</li>
+<li>52°North <a class="reference external" href="http://52north.org/communities/sensorweb/sos/">SOS Web site</a>, or</li>
+<li>The website of the <a class="reference external" href="http://52north.org/communities/sensorweb/">52°North Sensor Web Community</a>.</li>
+</ul>
+<p>The development of this version of the 52°North SOS was supported by different
+projects, organizations, and persons. More details can be found in the
+<a class="reference external" href="http://localhost:8080/52nSOS/index">52°North SOS client</a>.</p>
+<p>When the SOS is not available, please check if the tomcat servlet engine is
+running. Use the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>user@osgeolive:~$ sudo systemctl status tomcat8.service | grep Active
+Active: active (running) since Wed 2017-06-21 12:00:42 UTC; 42min ago  &lt;-- Tomcat is running
+[...]
+Active: inactive (dead)                                                &lt;-- Tomcat not runing, so please start:
+user@osgeolive:~$ sudo systemctl start tomcat8.service
+Active: active (running) since Wed 2017-06-21 12:52:42 UTC; 3s ago     &lt;-- Tomcat is running, now
+</pre></div>
+</div>
+<p><strong>Listing 3:</strong> Tomcat Status and Start (password for sudo: user).</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

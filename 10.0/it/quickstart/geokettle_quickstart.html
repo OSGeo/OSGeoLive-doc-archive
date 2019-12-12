@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guida rapida GeoKettle &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.0 Contents" href="../overview/overview.html" />
+    <link rel="next" title="Guida rapida su Geomajas" href="geomajas_quickstart.html" />
+    <link rel="prev" title="Guida rapida su GDAL/OGR" href="gdal_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.geokettle.org/"><img alt="project logo" class="align-right" src="../../_images/logo-geokettle17.png" style="width: 102.4px; height: 102.4px;" /></a>
+<div class="section" id="guida-rapida-geokettle">
+<h1><a class="toc-backref" href="#id1">Guida rapida GeoKettle</a><a class="headerlink" href="#guida-rapida-geokettle" title="Permalink to this headline">¶</a></h1>
+<p>GeoKettle è un versione di Pentaho Data Integration (meglio conosciuto come Kettle)
+con il supporto “spaziale”. È uno strumento potente, metadata-driven spaziale ETL
+(Extract, Transform and Load) dedicato all&#8217;integrazione di differenti sorgenti di dati
+per costruire e aggiornare database geospaziali, data warehouses e servizi web.</p>
+<p>GeoKettle abilita l&#8217;Estrazione di dati da sorgenti, la Trasformazione di dati al fine
+di correggere errori, pulire dati, cambiare la struttura dei dati, rendere i dati
+compatibili con gli standard, e Caricare i dati trasformati in un DataBase Management
+System (DBMS), file GIS, o servizio web geospaziale. GeoKettle è particolarmente
+utile per processamenti automatici complessi e ripetitivi di dati senza produrre
+codice specifico, convertendo formati di dati, migrazione tra database, inserimento
+di dati in database, ecc.</p>
+<p>Questa guida rapida descrive come:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Caricare una trasformazione esistente di dati</li>
+<li>Creare una trasformazione di dati</li>
+</ul>
+</div></blockquote>
+<div class="contents topic" id="contenuti">
+<p class="topic-title first">Contenuti</p>
+<ul class="simple">
+<li><a class="reference internal" href="#guida-rapida-geokettle" id="id1">Guida rapida GeoKettle</a><ul>
+<li><a class="reference internal" href="#avviare-geokettle" id="id2">Avviare GeoKettle</a></li>
+<li><a class="reference internal" href="#workbench" id="id3">Workbench</a></li>
+<li><a class="reference internal" href="#caricare-un-trasformazione-esistente" id="id4">Caricare un trasformazione esistente</a></li>
+<li><a class="reference internal" href="#creare-una-nuova-trasformazione-dei-dati" id="id5">Creare una nuova trasformazione dei dati</a></li>
+<li><a class="reference internal" href="#cose-da-provare" id="id6">Cose da provare</a></li>
+<li><a class="reference internal" href="#ed-ora" id="id7">Ed ora?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="avviare-geokettle">
+<h2><a class="toc-backref" href="#id2">Avviare GeoKettle</a><a class="headerlink" href="#avviare-geokettle" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Scegliere <span class="menuselection">Spatial Tools ‣ GeoKettle</span> dal menu di avvio Geospatial</li>
+<li>Aspettare, l&#8217;applicazione impiegherà alcuni momenti per avviarsi</li>
+</ol>
+<p>#. Si visualizzerà la seguente finestra. Riempire le informazione sul repository o
+semplicemente cliccare il bottone &#8220;No repository&#8221;&nbsp;per entrare ter the GeoKettle&#8217;s workbench</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_welcome8.png"><img alt="../../_images/geokettle_welcome8.png" src="../../_images/geokettle_welcome8.png" style="width: 652.8px; height: 477.6px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="workbench">
+<h2><a class="toc-backref" href="#id3">Workbench</a><a class="headerlink" href="#workbench" title="Permalink to this headline">¶</a></h2>
+<p>Come illustrato nel seguente screenshot, the Workbench window è composta di
+diversi pannelli.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_workbench8.png"><img alt="../../_images/geokettle_workbench8.png" src="../../_images/geokettle_workbench8.png" style="width: 819.2px; height: 572.0px;" /></a>
+</div></blockquote>
+<p>La parte sinistra funziona come catalogo contenente tutti i passaggi che possono
+comporre una trasformazione di dati. La parte destra del workbench è l&#8217;area dove
+la trasformazione stessa sarà disegnata ed eseguita/testata.</p>
+<p>I contenuti di questi pannelli saranno descritti dopo insieme alla dimostrazione del
+loro uso.</p>
+</div>
+<div class="section" id="caricare-un-trasformazione-esistente">
+<h2><a class="toc-backref" href="#id4">Caricare un trasformazione esistente</a><a class="headerlink" href="#caricare-un-trasformazione-esistente" title="Permalink to this headline">¶</a></h2>
+<p>Per caricare una trasformazione esistente, selezionare <span class="menuselection">File ‣ Open</span>.
+Naviga fino alla sottodirectory degli esempi di trasformazione
+<code class="file docutils literal"><span class="pre">/opt/geokettle/samples/transformations/geokettle</span></code>, quindi selezionare uno degli
+esempi di trasformazione disponibili e cliccare <span class="guilabel">OK</span>. Le trasformazioni in
+GeoKettle sono salvate in file con l&#8217;estensione <cite>*.ktr</cite>.</p>
+<p>La seguente figura mostra la trasformazione di esempio «&nbsp;intersezione ».</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_intersection_transformation8.png"><img alt="../../_images/geokettle_intersection_transformation8.png" src="../../_images/geokettle_intersection_transformation8.png" style="width: 819.2px; height: 539.2px;" /></a>
+</div></blockquote>
+<p>Una descrizione della trasformazione e direttive opzionali possone essere
+viste in gianno nell&#8217;area dei suggerimenti.</p>
+<p>Prima di iniziare la trasformazione, si dovrà specificare quale shapefile usare.
+Per fare ciò, doppio click su ogni passaggio del «&nbsp;GIS file input&nbsp;» per far
+apparire la seguenti finestra.</p>
+<blockquote>
+<div><img alt="../../_images/geokettle_shapefile_input_step8.png" src="../../_images/geokettle_shapefile_input_step8.png" />
+</div></blockquote>
+<p>Inserire il nome dello shapefile includendo l&#8217;estensione <cite>*.shp</cite> o lasciare così
+com&#8217;è per utilizzare i dati di esempio e cliccare <span class="guilabel">OK</span>.</p>
+<p>Ora si è pronti per avviare la trasformazione. Per fare ciò, cliccare semplicemente
+il pulsante esegui nella barra degli strumenti sopra la trasformazione.</p>
+</div>
+<div class="section" id="creare-una-nuova-trasformazione-dei-dati">
+<h2><a class="toc-backref" href="#id5">Creare una nuova trasformazione dei dati</a><a class="headerlink" href="#creare-una-nuova-trasformazione-dei-dati" title="Permalink to this headline">¶</a></h2>
+<p>Avviare GeoKettle e accedere the workbench nello stesso modo avete fatto quando
+avete caricato la trasformazione esistente (vedere la sezione precedente).</p>
+<p>Per creare una nupva trasformazione, selezionare <span class="menuselection">File ‣ New ‣ Transformation</span>.
+Si può specificare il nome della trasformazione salvandolo con un nome diverso
+(selezionare&nbsp;<span class="menuselection">File ‣ Save as...</span>).</p>
+<p>Come mostrato nella figura seguente, tutti i passaggi disponibili sono elencate
+per categoria nell&#8217;area a sinistra del workbench. Espandi una categoria per
+vedere i passaggi disponibili.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_your_transformation8.png"><img alt="../../_images/geokettle_your_transformation8.png" src="../../_images/geokettle_your_transformation8.png" style="width: 640.0px; height: 489.6px;" /></a>
+</div></blockquote>
+<p>Per aggiungere un nuovo passaggio alla trasformazione, trascinarla dal pannello
+<strong>Steps</strong> a quello <strong>transformation</strong>. A questo punto personalizzare questo
+nuovo passaggio aggiunto alla trasformazione facendo un doppio click.</p>
+<p><strong>Hops</strong></p>
+<p>Un hop, rappresentate una freccia tra 2 passaggi, definisce il dataflow tra questi
+passaggi. Come mostrato nella figura seguente, aggiungendo un hop da <strong>Table Input</strong>
+a <strong>Add sequence</strong> significa che l&#8217;output ottenuto di <strong>Table Input</strong> sarò spedito al
+passaggio <strong>Add sequence</strong> per ulteriori analisi e ecc.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_hop8.png"><img alt="../../_images/geokettle_hop8.png" src="../../_images/geokettle_hop8.png" style="width: 480.0px; height: 139.8px;" /></a>
+</div></blockquote>
+<p>Per creare un nuovo hop, selezionare 2 passaggi, tasto destro su uno di loro
+e selezionare <span class="menuselection">New hop</span>. Un&#8217;altra via di fare ciò è di premere
+e tenere <code class="kbd docutils literal"><span class="pre">Ctrl</span></code> mentre si selezionano i 2 passaggi.</p>
+<p>Qualsiasi hop può essere editato in qualsiasi tempo facendo doppio click su
+di esso o cliccando col destro su esso e selezionare <span class="menuselection">Edit hop</span>
+nel menu del popup.</p>
+<p><strong>Impostare la trasformazione</strong></p>
+<p>La maggiore parte dei passaggi in una trasformazione richiederà parametrizzazione
+personalizzata prima di essere usabile. Doppio click su ogni passaggio per
+visualizzare una finestra nel quale si potrà vedere e specificare ogni
+valore richiesto dal parametro.</p>
+<p><strong>Eseguire una trasformazione</strong></p>
+<p>Quando eseguendo una trasformazione, un nuovo pannello apparirà sotto quello
+dove la trasformazione è disegnata. Questo pannello (anche chiamato pannello
+<strong>Execution Results</strong>) contiene informazioni sul ation about data flow
+attraverso tutti i passaggi che compongono la trasformazione.</p>
+<p>Il pannello <strong>Step Metrics</strong> (mostrato nella prossima figura) sarà visualizzato
+inizialmente. In questo pannello è possibile vedere informazioni generali
+riguardo il dataflow della trasformazione così come il numero di righe lette,
+scritte, in input e in output per ogni passaggio. La colonna <strong>Active</strong> informa
+gli utenti se il passaggio è iniziato, si sta eseguendo, finito, stoppato, ecc.
+Il tempo passato dall&#8217;inizio dello passaggio è mostrato nella colonna <strong>Time</strong>,
+così come la velocità media (colonna <strong>Speed</strong>) del passaggio (righe/secondi).</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_running_transformation8.png"><img alt="../../_images/geokettle_running_transformation8.png" src="../../_images/geokettle_running_transformation8.png" style="width: 716.8px; height: 461.3px;" /></a>
+</div></blockquote>
+<p><strong>Anteprima di una trasformazione</strong></p>
+<p>Provando ad eseguire una trasformazione potrebbe ritornare errors nel pannello
+<strong>Execution Results</strong> (vedere la prossima figura). Quindi controllare il contenuto
+del pannello <strong>Logging</strong>. C&#8217;è sempre molte informazioni utili che informano con la
+sorgente e la motivazione dell&#8217;errore. Modificare i parametri del passaggio con
+errori e riavviare la trasformazione.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_transformation_fail8.png"><img alt="../../_images/geokettle_transformation_fail8.png" src="../../_images/geokettle_transformation_fail8.png" style="width: 716.8px; height: 442.4px;" /></a>
+</div></blockquote>
+<p>Ad aiutare a trovare la sorgente di un errore, si può anche vedere in anteprima
+i risultati di una trasformazione da un passaggio precedente nel flusso di lavoro.
+Per fare ciò, tasto destro sul passaggio, e selezionare <span class="menuselection">Preview</span>
+nel menu del popup che appare. Questo, mostra in via di tabella e cartografica che
+mostra i dati a questo punto senza dover eseguire la trasformazione intera.</p>
+</div>
+<div class="section" id="cose-da-provare">
+<h2><a class="toc-backref" href="#id6">Cose da provare</a><a class="headerlink" href="#cose-da-provare" title="Permalink to this headline">¶</a></h2>
+<p>Di seguito alcune ulteriori sfide per voi da provare:</p>
+<ol class="arabic simple">
+<li>Esplorare la diversità di tutti i passaggi che GeoKettle fornisce</li>
+<li>Provare il debugger GeoKettle al fine ti analizzare una trasformazione con errori</li>
+<li>Provare a costruire una trasformazione con i vostri dati</li>
+</ol>
+</div>
+<div class="section" id="ed-ora">
+<h2><a class="toc-backref" href="#id7">Ed ora?</a><a class="headerlink" href="#ed-ora" title="Permalink to this headline">¶</a></h2>
+<p>Visionate la documentazione disponibile sulla <a class="reference external" href="http://docs.spatialytics.com/doku.php?id=en:spatialytics_etl">sito</a> di Spatialytics.
+Non esistare a chiedere aiuto sul <a class="reference external" href="http://forum.spatialytics.com">forum</a> di Spatialytics.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

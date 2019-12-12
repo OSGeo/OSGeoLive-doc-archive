@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>仮想マシン内での OSGeo-Live 起動クイックスタート &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 9.0 コンテンツ" href="../overview/overview.html" />
+    <link rel="next" title="OSGeo-Live Quickstart for VMWare Player" href="vmware_quickstart.html" />
+    <link rel="prev" title="Virtual Box 向け OSGeo-Live クイックスタート" href="virtualbox_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <div class="section" id="osgeo-live">
+<h1>仮想マシン内での OSGeo-Live 起動クイックスタート<a class="headerlink" href="#osgeo-live" title="Permalink to this headline">¶</a></h1>
+<p>ここでは、 OSGeo-Live を VirtualBox の仮想マシン内で動作させる1つの方法について記載します。他の方法については、以下の&#8221;参照&#8221;の章のリンクにしたがってください。</p>
+<div class="section" id="id1">
+<h2>仮想マシンの利点<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>VM の反応速度は、DVD のものより大分速く、ホストマシンに直接インストールした場合に匹敵します。</li>
+<li>全ての設定の変更、ソフトウェアのアップデート、保存ファイルは、&#8221;通常&#8221;のコンピュータと同様に、永続化されます。このため、</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>システムのカスタマイズとアップデートが可能です</li>
+<li>VM 内に作業状態を保存することが可能です</li>
+<li>追加のソフトウェアのインストールが可能です</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li>インストールした仮想マシンのバックアップが可能です。</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>動作環境<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>RAM: 最低 2 GB。Lubuntu システムは 1 GB の RAM で動作しますが、ホストシステムのために、少なくとも同じサイズのメモリが必要となります。このため、合計 2 GB がスムーズな操作のために必要となります。</li>
+<li>ハードディスクの空き容量: 仮想ディスクファイル (vmdk): <a class="reference external" href="http://live.osgeo.org/en/download.html">live.osgeo.org</a> は、解凍後、だいたい 10 GB となります。また、作業のためには、仮想マシン内でさらに容量が必要となります。このため、20 GB が推奨となります。</li>
+<li>CPU: どんな CPU でも構いませんが、&#8221;仮想化テクノロジー&#8221; をサポートしたものが速くなります。 <a class="reference external" href="http://www.intel.com/support/processors/sb/cs-030729.htm">こちら</a> から、お手持ちのコンピュータの CPU を確認することも可能です。</li>
+</ul>
+<p>この 4〜5 年で製造されたマシンのほとんどは、この要件を満たしています。</p>
+</div>
+<div class="section" id="id4">
+<h2>手順<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><strong>ダウンロード</strong></p>
+<p><a class="reference external" href="http://www.virtualbox.org/">Virtual Box</a> をダウンロードしてインストールしてください。Windows ではインストーラを実行します。もしくは、Ubuntu のような Linux システムでは以下のようにします。</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">virtualbox-ose</span></tt></div></blockquote>
+<p>さらに、OSGeo の仮想ディスクファイル (vmdk) を <a class="reference external" href="http://live.osgeo.org/en/download.html">live.osgeo.org</a> からダウンロードします。
+&#8220;Download virtual machine&#8221; ボタンをクリックします。それから、ダウンロードしたファイルを解凍します (<a class="reference external" href="http://www.7-zip.org">7zip</a> を使用します)。</p>
+<p><strong>仮想マシンの作成</strong></p>
+<p>VirtualBox アプリケーションを起動し、新しい VM を作成するために New ボタンをクリックし、Next をクリックします。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox7.png"><img alt="../../_images/virtualbox7.png" src="../../_images/virtualbox7.png" style="width: 389.0px; height: 289.0px;" /></a>
+</div></blockquote>
+<p>イメージに OSGeo-Live のような名前を付け、&#8221;Operating System&#8221; に Linux、&#8221;Version&#8221; に Ubuntu を選択します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_select_name7.png"><img alt="../../_images/virtualbox_select_name7.png" src="../../_images/virtualbox_select_name7.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>次の画面でメモリを 1024 MB に設定します (ホストコンピュータが 4GB 以上の場合はより大きな値を設定できます)。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_memory7.jpg"><img alt="../../_images/vmdk_memory7.jpg" src="../../_images/vmdk_memory7.jpg" style="width: 416.0px; height: 274.95px;" /></a>
+</div></blockquote>
+<p>続けて、次の画面で &#8220;Use existing hard disk&#8221; を選択します。フォルダアイコンのボタンをクリックし、保存した osgeo-live-vm-6.0.vmdk ファイルを選択し、Next と Create を押下します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_disk7.jpg"><img alt="../../_images/vmdk_disk7.jpg" src="../../_images/vmdk_disk7.jpg" style="width: 416.0px; height: 274.95px;" /></a>
+</div></blockquote>
+<p>VM が作成されたら、Settings ボタンをクリックします。&#8221;General&#8221; セクションで Advanced タブを選択し、Mini toolbar で &#8220;Show at top of screen&#8221; をクリックして選択します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_general_advanced7.jpg"><img alt="../../_images/vmdk_general_advanced7.jpg" src="../../_images/vmdk_general_advanced7.jpg" style="width: 416.0px; height: 341.25px;" /></a>
+</div></blockquote>
+<p>&#8220;Display&#8221; セクションで、ビデオメモリを 32 か 64 MB に増やします。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_display7.jpg"><img alt="../../_images/vmdk_display7.jpg" src="../../_images/vmdk_display7.jpg" style="width: 416.0px; height: 341.25px;" /></a>
+</div></blockquote>
+<p>さらに、&#8221;Shared Folders&#8221; セクションに移動し、&#8221;Add folder&#8221; (右側の緑の &#8220;+&#8221; アイコン) をクリックし、VM 内部で共有したいホストコンピュータのディレクトリを指定します。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_shared_folders7.jpg"><img alt="../../_images/vmdk_shared_folders7.jpg" src="../../_images/vmdk_shared_folders7.jpg" style="width: 416.0px; height: 343.85px;" /></a>
+</div></blockquote>
+<p>&#8220;Folder path&#8221; と &#8220;Folder name&#8221; が決まったら、OK をクリックし、再度 OK をクリックして、設定ウィンドウを終了して閉じます。</p>
+<p><strong>仮想マシンの起動</strong></p>
+<p>Start (緑の矢印) ボタンをクリックして、VM を起動しましょう。</p>
+<p>OSGeo システムが起動したら、VirtualBox の &#8220;Guest Additions&#8221; を追加して、ビデオパフォーマンスを向上させたり、上記で設定した共有フォルダを有効化することが可能です。Guest Adition のインストーラは、Oracle の VirtualBox アプリケーションとともに、ISOファイルとして供給され、自由なオープンソースソフトウェアとしてライセンスされていません。この ISO は VM 内で CD としてマウントされ、インストーラはそこから実行します。以下のようにして実行します:</p>
+<p>VirtualBox ウィンドウ内で、 <em class="menuselection">Devices</em> メニューを開き、 <em class="menuselection">Install Guest Additions</em> をクリックします。これにより、OSGeo Live VM 内で、Guest Additions が CD ドライブとしてマウントされます。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/vmdk_guest_additions2.jpg"><img alt="../../_images/vmdk_guest_additions2.jpg" src="../../_images/vmdk_guest_additions2.jpg" style="width: 512.0px; height: 418.4px;" /></a>
+</div></blockquote>
+<p>CD フォルダが表示されたら、ターミナルを開き、以下のコマンドを実行します:</p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">build-essential</span> <span class="pre">linux-headers-generic</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">cd</span> <span class="pre">/media/VBOXADDITIONS_4.1.18_78361/</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:/media/VBOXADDITIONS_4.1.18_78361$</span> <span class="pre">sudo</span> <span class="pre">./VBoxLinuxAdditions.run</span></tt></p>
+<p>しばらく待つと処理が完了します。VM を再起動すると、フルスクリーンモードとなり、共有フォルダがマウントされます。上記の例では、VM の設定で共有フォルダパスをホストシステム上の &#8220;GIS&#8221; という名前にしています。VM 内でマウントする場合は、ターミナルウィンドウを開き、以下を実行します:</p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">mkdir</span> <span class="pre">GIS</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">user&#64;osgeolive:~$</span> <span class="pre">sudo</span> <span class="pre">mount</span> <span class="pre">-t</span> <span class="pre">vboxsf</span> <span class="pre">-o</span> <span class="pre">uid=user,rw</span> <span class="pre">GIS</span> <span class="pre">/home/user/GIS</span></tt></p>
+<p>これで、ホストマシンで選択されたフォルダが、user のホームディレクトリ内の &#8220;GIS&#8221; フォルダでも利用可能になりました。</p>
+</div>
+<div class="section" id="id6">
+<h2>参照:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>OSGeo wiki ページ:</dt>
+<dd><p class="first last"><a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Virtual_Machine">Other ways to create a Virtual Machine</a></p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><a class="reference internal" href="osgeolive_quickstart.html"><em>OSGeo-Live クイックスタート</em></a></p>
+</li>
+<li><p class="first"><a class="reference internal" href="osgeolive_install_quickstart.html"><em>ハードディスクに OSGeo-Live をインストールして使用する</em></a></p>
+</li>
+<li><p class="first"><a class="reference internal" href="usb_quickstart.html"><em>OSGeo-Live を起動できる ブータブル USB flash ドライブの作成</em></a></p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

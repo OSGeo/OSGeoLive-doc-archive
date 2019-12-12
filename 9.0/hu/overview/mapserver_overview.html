@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MapServer &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://mapserver.org/"><img alt="projekt logo" class="align-right" src="../../_images/logo-mapserver-new12.png" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Projekt" class="align-right" src="../../_images/OSGeo_project12.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="mapserver">
+<h1>MapServer<a class="headerlink" href="#mapserver" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="web-szolgaltatas">
+<h2>Web szolgáltatás<a class="headerlink" href="#web-szolgaltatas" title="Permalink to this headline">¶</a></h2>
+<p>A MapServer egy C-ben írt <a class="reference external" href="http://www.opensource.org">nyílt forráskódú</a>
+térinformatikai adatmegjelenítő motor. Az adatok böngészésén túl a MapServer
+&#8220;térinformatikai kép térképek&#8221; létrehozását is lehetővé teszi, ez olyan térkép,
+mely különböző web tartalmakra irányíthatja a felhasználót. Például a Minnesota DNR <a class="reference external" href="http://www.dnr.state.mn.us/maps/compass.html">Rekreációs iránytű</a>
+alkalmazás több mint 10,000 weblapot kínál a felhasználóknak, egyetlen
+alkalmazáson keresztül. Ugyanez az alkalmazás &#8220;térkép motorként&#8221; szolgálja ki az
+oldal többi részét és térbeli tartalmat szolgáltat ahol szükséges.</p>
+<p>A MapServert eredetileg a Minnesota Egyetem (UMN) Természetes Erőforrások
+tanszékén (MNDNR) fejlesztették, a NASA-val együttmüködésben a ForNet projekt
+keretében. Később a TerraSIP projekt kezelésébe került, melyet a
+NASA szponzorált és az UMN mellett egy termőföld kezelésben érdekelt konzorcium
+vett benne részt.</p>
+<p>Napjainkban az <a class="reference external" href="http://www.osgeo.org">OSGeo</a> egy projektje és a világon
+mindenfelé megtalálható, növekvő számú fejlesztő (közel 20) tartja karban. A
+szervezetek sokszínü csoportja biztosít támogatást, alapfejlesztést és
+karbantartást, az OSGeo-n belüli irányításról a MapServer Projekt Irányító
+Bizottság gondoskodik, mely fejlesztőkből és közreműködőkből áll.</p>
+<div class="section" id="alapfunkciok">
+<h3>Alapfunkciók<a class="headerlink" href="#alapfunkciok" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/mapserver6.png"><img alt="képernyőkép" class="align-right" src="../../_images/mapserver6.png" style="width: 512.0px; height: 383.5px;" /></a>
+<ul class="simple">
+<li>Fejlett térképi kimenet<ul>
+<li>Méretarány függő megjelenítés és alkalmazás végrehajtás</li>
+<li>Címkézés és címke egybeesés vizsgálat</li>
+<li>TrueType font támogatás a címkézéshez és a szimbólumokhoz</li>
+<li>Automatikus térkép elemek (lépték vonalzó, áttekintő térkép és jelmagyarázat)</li>
+<li>Tematikus térkép logikai vagy szabályos kifejezés alapján kialakított osztályokra</li>
+<li>Lecserélhető megjelenítő AGG, Cairo, GD, OpenGL és még további meghajtókkal</li>
+<li>Speciális szolgáltatás a csempe output generálásához</li>
+<li>Maszk rétegek</li>
+<li>Pontos szimbólum elhelyezés</li>
+<li>Összetett többszörös címke/szimbólum definíciók</li>
+<li>Vektor mezők</li>
+<li>Nyilazott címkék</li>
+<li>SVG szimbólumok</li>
+<li>Több font támogatás</li>
+</ul>
+</li>
+<li>Kifinomult térbeli lekérdezések<ul>
+<li>Elemek azonosítása attrbútum, pont, befoglaló idom vagy geometria alapján, egy vagy több rétegen</li>
+<li>Raszter lekérdezések</li>
+<li>Teljesen testreszabható sablon alapú kimenet</li>
+<li>OGR alapú lekérdezés kimenet</li>
+</ul>
+</li>
+<li>Népszerű szkript és fejlesztő környezetek támogatása<ul>
+<li>CGI/FastCGI</li>
+<li>PHP, Python, Perl, Ruby, Java és .NET</li>
+</ul>
+</li>
+<li>Platform függetlenség<ul>
+<li>Linux, Windows, Mac OS X, Solaris és még továbbiak</li>
+</ul>
+</li>
+<li>Vektor és raszter formátumok sokasága<ul>
+<li>Natív támogatás ESRI shape fájl, PostGIS, ESRI ArcSDE és Oracle Spatial adatforrásokhoz</li>
+<li>Sok további formátum GDAL és OGR könyvtáron keresztül</li>
+</ul>
+</li>
+<li>Térkép vetületek<ul>
+<li>Röptében történő vetületi átszámítások több ezer vetület között a Proj.4 könyvtárral</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="implementalt-szabvanyok">
+<h3>Implementált szabványok<a class="headerlink" href="#implementalt-szabvanyok" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Számos Open Geospatial Consortium (OGC) szabvány támogatása<ul>
+<li><tt class="xref doc docutils literal"><span class="pre">../standards/wms_overview</span></tt> (kliens/szerver), <tt class="xref doc docutils literal"><span class="pre">../standards/wfs_overview</span></tt> (nem tranzakciós, kliens/szerver), WMC, <tt class="xref doc docutils literal"><span class="pre">../standards/wcs_overview</span></tt>, <tt class="xref doc docutils literal"><span class="pre">../standards/fe_overview</span></tt>, <tt class="xref doc docutils literal"><span class="pre">../standards/sld_overview</span></tt>, <tt class="xref doc docutils literal"><span class="pre">../standards/gml_overview</span></tt>, SOS, OM</li>
+</ul>
+</li>
+<li>INSPIRE View Service kompatibilis</li>
+</ul>
+</div>
+<div class="section" id="demo">
+<h3>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost/mapserver_demos/itasca/">Itasca</a></li>
+</ul>
+</div>
+<div class="section" id="documentacio">
+<h3>Documentáció<a class="headerlink" href="#documentacio" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../../mapserver/doc/index.html">MapServer 6.4 Dokumentáció</a></li>
+</ul>
+</div>
+<div class="section" id="reszletek">
+<h3>Részletek<a class="headerlink" href="#reszletek" title="Permalink to this headline">¶</a></h3>
+<p><strong>Honlap:</strong> <a class="reference external" href="http://www.mapserver.org/">http://www.mapserver.org/</a></p>
+<p><strong>Licenc:</strong> <a class="reference external" href="http://mapserver.org/copyright.html#license">MIT-style license</a></p>
+<p><strong>Program verzió:</strong> 6.4.1</p>
+<p><strong>Támogatott platformok:</strong> Windows, Linux, Mac</p>
+<p><strong>API Interfészek:</strong> C, PHP, Python, Perl, Ruby, Java, és .NET</p>
+<p><strong>Támogatás:</strong> <a class="reference external" href="http://mapserver.org/community/">http://mapserver.org/community/</a></p>
+</div>
+<div class="section" id="gyorstalpalo">
+<h3>Gyorstalpaló<a class="headerlink" href="#gyorstalpalo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><tt class="xref doc docutils literal"><span class="pre">Gyorstalpaló</span> <span class="pre">dokumentáció</span></tt></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>QGIS: начало работы &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.qgis.org"><img alt="Лого проекта" class="align-right" src="../../_images/logo-QGIS23.png" style="width: 128.0px; height: 137.0px;" /></a>
+<div class="section" id="qgis">
+<h1>QGIS: начало работы<a class="headerlink" href="#qgis" title="Permalink to this headline">¶</a></h1>
+<p>Quantum GIS (QGIS) — это дружественная к пользователю настольная ГИС с открытым
+исходным кодом, позволяющая отображать, редактировать и анализировать данные,
+управлять ими, а также создавать печатные карты.</p>
+<p>Этот документ описывает, как:</p>
+<blockquote>
+<div><ul class="simple">
+<li>обновить существующий проект QGIS;</li>
+<li>создать новый проект QGIS с простым векторным слоем.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="id1">
+<h2>Редактирование проекта QGIS<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Нажмите <em class="menuselection">Desktop ‣ Desktop GIS ‣ Quantum GIS</em>.</p>
+</li>
+<li><p class="first">Выберите в меню <em class="menuselection">File ‣ Open Project...</em>.</p>
+</li>
+<li><p class="first">Укажите файл <tt class="file docutils literal"><span class="pre">QGIS-NaturalEarth-Example.qgs</span></tt> и нажмите <em class="guilabel">Open</em>.</p>
+<ul class="simple">
+<li>Вы должны увидеть карту мира.</li>
+</ul>
+</li>
+<li><p class="first">В списке слоёв установите галку напротив <strong>10m_populated_places_simple</strong></p>
+<ul>
+<li><p class="first">Отобразятся города:</p>
+<a class="reference internal image-reference" href="../../_images/qgis23.png"><img alt="../../_images/qgis23.png" src="../../_images/qgis23.png" style="width: 510.5px; height: 411.5px;" /></a>
+</li>
+</ul>
+</li>
+<li><p class="first">Дважды щёлкните на <strong>10m_rivers_lake_centerlines</strong> в списке слоёв.</p>
+</li>
+<li><p class="first">Измените цвет в Outline Options на другой оттенок голубого.</p>
+</li>
+<li><p class="first">Нажмите <em class="guilabel">OK</em>.</p>
+<ul class="simple">
+<li>Реки должны отобразиться другим цветом.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>Создание нового проекта QGIS<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Выберите <em class="menuselection">File ‣ New Project</em>.</li>
+<li>Нажмите <em class="menuselection">Layer ‣ Add Vector Layer...</em>.</li>
+<li>Перейдите к набору данных <tt class="file docutils literal"><span class="pre">/home/user/data/natural_earth/10m_admin_0_countries.shp</span></tt>.</li>
+<li>Нажмите <em class="guilabel">Open</em>.<ul>
+<li>Вы должны увидеть границы стран мира.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="postgis">
+<h2>Подключение к пространственной базе данных PostGIS<a class="headerlink" href="#postgis" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Выберите <em class="menuselection">File ‣ New Project</em>.</li>
+<li>Выберите <em class="menuselection">Layer ‣ Add PostGIS Layers...</em>.<ul>
+<li>Доступны две базы данных <em>Natural Earth</em> и <em>OpenStreetMap</em>.</li>
+</ul>
+</li>
+<li>Выберите базу данных <em>OpenStreetMap</em> и нажмите <em class="guilabel">Connect</em>.<ul>
+<li>Появится список таблиц базы данных.</li>
+</ul>
+</li>
+<li>Выберите <tt class="docutils literal"><span class="pre">planet_osm_roads</span></tt> и нажмите <em class="guilabel">Add</em>.<ul>
+<li>Более подробное упражнение можно найти в <a class="reference internal" href="postgis_quickstart.html"><em>PostGIS Quickstart</em></a>.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="grass">
+<h2>Использование инструментов GRASS<a class="headerlink" href="#grass" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Выберите <em class="menuselection">File ‣ New Project</em>.</li>
+<li>Выберите <em class="menuselection">Plugins ‣ Manage Plugins</em>.</li>
+<li>Введите <tt class="docutils literal"><span class="pre">grass</span></tt> в окно фильтра и выделите модуль <cite>GRASS</cite>. Затем нажмите <em class="guilabel">Ok</em>.<ul>
+<li>Появится вложенное меню <cite>GRASS</cite> в меню <cite>Plugin</cite>, а также новая панель инструментов.</li>
+</ul>
+</li>
+<li>Выберите <em class="menuselection">Plugins ‣ GRASS ‣ Open mapset</em>.<ul>
+<li>Путь к базе данных GRASS будет автоматически установлен в <cite>~/grassdata</cite>.</li>
+</ul>
+</li>
+<li>Выберите область <cite>nc_basic_smp</cite> и набор данных <cite>user1</cite>, затем нажмите <em class="guilabel">Ok</em>.</li>
+<li>Выберите <em class="menuselection">Plugins ‣ GRASS ‣ Add GRASS raster layer</em>.<ul>
+<li>Из набора данных PERMANENT выберите карту <cite>elevation_shade</cite> и нажмите <em class="guilabel">Ok</em>.</li>
+</ul>
+</li>
+<li>Выберите <em class="menuselection">Plugins ‣ GRASS ‣ Add GRASS raster layer</em>.<ul>
+<li>Из набора данных PERMANENT выберите карту <cite>elevation</cite> и нажмите <em class="guilabel">Ok</em>.</li>
+<li>Дважды щёлкните на слое <cite>elevation</cite> в списке слоёв QGIS и установите его
+прозрачность в 65%.</li>
+</ul>
+</li>
+<li>Выберите <em class="menuselection">Plugins ‣ GRASS ‣ Add GRASS vector layer</em>.<ul>
+<li>Из набора данных PERMANENT выберите карту <cite>roadsmajor</cite> и нажмите <em class="guilabel">Ok</em>.</li>
+</ul>
+</li>
+</ol>
+<p>Вы также можете использовать множество аналитических модулей GRASS.</p>
+<ol class="arabic simple">
+<li>Выберите <em class="menuselection">Plugins ‣ GRASS ‣ Open GRASS tools</em>.<ul>
+<li>Появится длинный список инструментов анализа.</li>
+</ul>
+</li>
+<li>Введите <tt class="docutils literal"><span class="pre">nviz</span></tt> в поле фильтра и выберите <cite>NVIZ</cite>. Возможно, вам нужно
+будет изменить размер окна, потянув его за угол.</li>
+<li>В появившейся вкладке модуля выберите карту <cite>elevation</cite> в качестве
+источника данных о высоте. Затем отключите кнопку с изображением
+прямогольника с красными углами справа от названия карты, чтобы
+использовать границы и разрешение карты. Правильно заданная рабочая
+область — ключевое действие в обработке растров в GRASS.</li>
+<li>Выберите векторный слой <cite>roadsmajor</cite> и нажмите <em class="guilabel">Run</em>.</li>
+<li>После того как откроется окно NVIZ, максимизируйте его и при помощи
+ползунка в окне компаса установите точку обзора.</li>
+<li>Выберите <em class="menuselection">Visualize ‣ Raster surfaces</em> и установите
+разрешение <cite>fine</cite> в 1, затем нажмите зеленую кнопку <em class="guilabel">DRAW</em>
+в верхней левой части окна и дождитесь окончания отрисовки.</li>
+</ol>
+</div>
+<div class="section" id="sextante">
+<h2>Использование инструментов Sextante<a class="headerlink" href="#sextante" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Выберите <em class="menuselection">Plugins ‣ Manage Plugins</em>.</li>
+<li>Введите <tt class="docutils literal"><span class="pre">sextante</span></tt> в поле фильтра и выберите модуль <cite>SEXTANTE</cite>. Нажмите <em class="guilabel">Ok</em>.<ul>
+<li>Появится новый пункт меню <cite>Analysis</cite>.</li>
+</ul>
+</li>
+<li>Выберите <em class="menuselection">Analysis ‣ Sextante Toolbox</em>.<ul>
+<li>В правой части окна появится новая панель с различными инструментами
+анализа.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="openstreetmap">
+<h2>Использование модуля OpenStreetMap<a class="headerlink" href="#openstreetmap" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Запустите эмулятор терминала из меню Xubutu <em class="menuselection">Applications ‣ Accessories</em>.<ul>
+<li>Скопируйте данные OSM в домашний каталог:</li>
+</ul>
+</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre>cp data/osm/feature_city_CBD.osm.bz2 .
+bzip2 -d feature_city_CBD.osm.bz2
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>В QGIS, выберите <em class="menuselection">File ‣ New Project</em>.</li>
+<li>Зайдите в <em class="menuselection">Plugins ‣ Manage Plugins</em>.</li>
+<li>Введите <tt class="docutils literal"><span class="pre">open</span></tt> в поле фильтра и выберите модуль <cite>OpenStreetMap</cite>. Нажмите <em class="guilabel">Ok</em>.<ul>
+<li>В меню <cite>Web</cite> появится новое подменю, также появится новая панель инструментов.</li>
+</ul>
+</li>
+<li>Зайдите в <em class="menuselection">Web ‣ OpenStreetMap ‣ Load OSM from file</em>.</li>
+<li>Укажите файл <cite>feature_city_CBD.osm</cite>, который вы только что скопировали
+в домашний каталог.</li>
+<li>Активируйте переключатели <cite>name</cite>, <cite>highway</cite> и <cite>amenity</cite>.</li>
+<li>Выберите тип отрисовки <em class="guilabel">Medium scale</em> и нажмите <em class="guilabel">Ok</em>.</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>Что дальше?<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Обучающие материалы, посвященные более сложным аспектам использования QGIS,
+собраны в <a class="reference external" href="../../qgis/tutorials/en/">OSGeo-Live QGIS tutorials</a>.</p>
+<p>Начать изучение QGIS можно со страницы <a class="reference external" href="http://www.qgis.org/en/documentation.html">Documentation</a> её сайта.</p>
+<p>OSGeo-Live содержит руководства <a class="reference external" href="../../qgis/qgis-1.0.0_a-gentle-gis-introduction_en.pdf">A Gentle Introduction to GIS</a>  и
+<a class="reference external" href="../../qgis/QGIS-1.8-UserGuide-en.pdf">QGIS User Guide</a>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

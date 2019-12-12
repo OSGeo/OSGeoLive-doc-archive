@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>istSOS Quickstart &mdash; OSGeo-Live 10.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 10.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.5 Contents" href="../overview/overview.html" />
+    <link rel="next" title="Jupyter Notebook Quickstart" href="jupyter_quickstart.html" />
+    <link rel="prev" title="Getting Started with Iris" href="iris_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://istsos.org"><img alt="project logo" class="align-right" src="../../_images/logo-istsos21.png" /></a>
+<div class="section" id="istsos-quickstart">
+<h1>istSOS Quickstart<a class="headerlink" href="#istsos-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>istSOS is sensor data management tool that allows collection, maintenance and publishing of monitoring observations using the Open Geospatial Consortium (OGC) <a class="reference internal" href="../standards/sos_overview.html"><em>Sensor Observation Service (SOS)</em></a> standard.</p>
+<p>This QuickStart describes how to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Add new observations using a python script and the RestFul API.</li>
+<li>View and edit data with the administration interface.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="add-new-observations">
+<h2>Add new observations<a class="headerlink" href="#add-new-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">First we will create a text file with sensor data, formatted according to &#8220;text/csv, subtype=istSOS&#8221;. The file uses a Comma Separated Values (CSV) format. The first line contains header information, including URI names of the observed properties. The following lines contain the data.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Open a text editor by selecting <span class="menuselection">Accessories ‣ Leafpad</span>.</li>
+<li>Copy and paste the follwing text into the text editor window:</li>
+</ol>
+<div class="highlight-rest"><div class="highlight"><pre>urn:ogc:def:parameter:x-istsos:1.0:time:iso8601,urn:ogc:def:parameter:x-istsos:1.0:meteo:air:temperature
+2014-06-03T14:30:00.00Z,22.20
+2014-06-03T14:40:00.00Z,22.00
+2014-06-03T14:50:00.00Z,21.70
+2014-06-03T15:00:00.00Z,21.20
+2014-06-03T15:10:00.00Z,20.70
+2014-06-03T15:20:00.00Z,20.20
+2014-06-03T15:30:00.00Z,19.60
+2014-06-03T15:40:00.00Z,19.20
+2014-06-03T15:50:00.00Z,18.20
+2014-06-03T16:00:00.00Z,18.00
+2014-06-03T16:10:00.00Z,17.20
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p class="first">Save the file as &#8220;T_LUGANO_20140603161000000.dat&#8221; on the Desktop. The filename convention being used is: PROCEDURENAME_YYYYMMDDhhmmssfff.dat</p>
+</li>
+<li><p class="first">Open a terminal by selecting <span class="menuselection">Accessories ‣ LXTerminal</span>.</p>
+</li>
+<li><p class="first">In the terminal, enter: &#8220;cd /usr/share/istsos/&#8221; and press ENTER</p>
+</li>
+<li><p class="first">Write &#8220;python scripts/csv2istsos.py -p T_LUGANO -u <a class="reference external" href="http://localhost/istsos">http://localhost/istsos</a> -s demo -w ~/Desktop&#8221; and press ENTER</p>
+</li>
+<li><p class="first">You should see a message &#8220;Insert observation success: True&#8221;</p>
+</li>
+<li><p class="first">Click <span class="menuselection">Geospatial ‣ Webservices ‣ istSOS</span>.</p>
+</li>
+<li><p class="first">Click the ENTER button in the administration page</p>
+</li>
+<li><p class="first">Click <span class="menuselection">Data Management ‣ Data Viewer</span>.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Select the following:</dt>
+<dd><ul class="first last simple">
+<li>Service = demo</li>
+<li>Offering = temporary</li>
+<li>Procedure T_LUGANO</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Click the Add button</p>
+</li>
+<li><p class="first">Click the Plot button and check that the data have been added (watch out at your time zone!)</p>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/istsos_viewer10.png"><img alt="../../_images/istsos_viewer10.png" src="../../_images/istsos_viewer10.png" style="width: 512.0px; height: 384.0px;" /></a>
+</div>
+<div class="section" id="edit-data-with-the-calculator">
+<h2>Edit data with the CALCULATOR<a class="headerlink" href="#edit-data-with-the-calculator" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Click <span class="menuselection">Geospatial ‣ Webservices ‣ istSOS</span>.</p>
+</li>
+<li><p class="first">Click <span class="menuselection">Data Management ‣ Data Viewer</span>.</p>
+</li>
+<li><p class="first">Select the following: Service = demo, Offering = temporary</p>
+</li>
+<li><p class="first">Select and add the following procedures: BELLINZONA​, LOCARNO​ and ​T_LUGANO</p>
+</li>
+<li><p class="first">On the right panel choose the Property: ​air­temperature</p>
+</li>
+<li><p class="first">Press “​Plot​”, the last week of measurements is loaded and displayed</p>
+</li>
+<li><p class="first">On the left panel select the “​Editor​” tab</p>
+</li>
+<li><p class="first">Select ​T_LUGANO​ from the combo list</p>
+</li>
+<li><p class="first">press “​Start editing​”, the grid is now displayed</p>
+</li>
+<li><p class="first">At the bottom­right corner of the chart there are 3 buttons “Day”, “Week” and “All”:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Click on “​Day​”, the chart is zoomed to contain only one day of data</li>
+<li>Drag the timeline bar on the right where you will see that T_LUGANO has no data</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Click on the chart to select the last observation before the “​nodata​” hole, a green line is displayed and in the ​Editing Grid​ the corresponding row is selected.</p>
+</li>
+<li><p class="first">Now go to the ​&#8221;Editing Grid​&#8221; panel</p>
+<blockquote>
+<div><ul class="simple">
+<li>Click the first row where data are ​NaN​,</li>
+<li>Scroll to the last ​NaN​ record and holding the ​SHIFT​ Key click on it</li>
+<li>The press the “​Calculator​” button</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>WIth the ​Calculator​ we are able to correct an interval of data in a single action. It is possible to set a numeric value or also use a function using data from the other loaded procedures.
+Let’s build a function that make the average of the data from BELLINZONA and LOCARNO and then removes two degrees:</p>
+<blockquote>
+<div><div class="highlight-rest"><div class="highlight"><pre>((BELLINZONA+LOCARNO)/2)-2
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple">
+<li>Copy the formula in the calculator and select the quality index as QI 500 (manually adjusted).</li>
+<li>Press the enter button and check your new data with gap filled (Press Save if yyou want to permanently save the updates in the database!)</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/istsos_calculator10.png"><img alt="../../_images/istsos_calculator10.png" src="../../_images/istsos_calculator10.png" style="width: 512.0px; height: 384.0px;" /></a>
+</div>
+<div class="section" id="what-next">
+<h2>What Next?<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>To learn more about istSOS, a starting point is the <a class="reference external" href="http://istsos.org/en/trunk/doc/index.html">istSOS Documentation</a></dt>
+<dd>and the <a class="reference external" href="http://istsos.org/tutorial/">istSOS Tutorial</a>.</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

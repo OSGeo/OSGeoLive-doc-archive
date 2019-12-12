@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>WorldWind Java SDK Quickstart &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.0 Contents" href="../overview/overview.html" />
+    <link rel="next" title="ZOO Project Quickstart" href="zoo-project_quickstart.html" />
+    <link rel="prev" title="Web World Wind Quickstart" href="webworldwind_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://goworldwind.org/"><img alt="project logo" class="align-right" src="../../_images/logoNasaJWW21.png" /></a>
+<div class="section" id="worldwind-java-sdk-quickstart">
+<h1>WorldWind Java SDK Quickstart<a class="headerlink" href="#worldwind-java-sdk-quickstart" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="get-started">
+<h2>Get Started<a class="headerlink" href="#get-started" title="Permalink to this headline">¶</a></h2>
+<p>WorldWind is an SDK (software development kit) that software engineers can use to build their own applications. To run a WorldWind demo application, visit the Demos page. Follow these instructions to download, run, and deploy an application using WorldWind.</p>
+<div class="line-block">
+<div class="line">Key files and folders in the WorldWind Java SDK:</div>
+</div>
+<ul class="simple">
+<li>build.xml: Apache ANT build file for the WorldWind Java SDK.</li>
+<li>src: Contains all Java source files for the WorldWind Java SDK.</li>
+<li>lib-external/gdal: Contains the GDAL native binaries libraries that may optionally be distributed with WorldWind.</li>
+</ul>
+<div class="line-block">
+<div class="line">Links to important WorldWind sites that will help you get started using the WorldWind Java SDK in your application:</div>
+</div>
+<ul class="simple">
+<li>WorldWind Developer&#8217;s Guide: <a class="reference external" href="http://goworldwind.org/">http://goworldwind.org/</a></li>
+<li>WorldWind Main Website:  <a class="reference external" href="http://worldwind.arc.nasa.gov/java/">http://worldwind.arc.nasa.gov/java/</a></li>
+<li>WorldWind Forum:  <a class="reference external" href="http://forum.worldwindcentral.com/forumdisplay.php?f=37">http://forum.worldwindcentral.com/forumdisplay.php?f=37</a></li>
+<li>WorldWind API Documentation: <a class="reference external" href="http://builds.worldwind.arc.nasa.gov/worldwind-releases/2.0/docs/api/index.html">http://builds.worldwind.arc.nasa.gov/worldwind-releases/2.0/docs/api/index.html</a></li>
+<li>WorldWind Bug Base: <a class="reference external" href="http://issues.worldwind.arc.nasa.gov/jira/browse/WWJ">http://issues.worldwind.arc.nasa.gov/jira/browse/WWJ</a></li>
+</ul>
+<div class="section" id="running-a-basic-demo-application">
+<h3>Running a Basic Demo Application<a class="headerlink" href="#running-a-basic-demo-application" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>To run the basic demo:</dt>
+<dd><ol class="first last arabic simple">
+<li>Open a terminal.</li>
+<li>cd to the WorldWind release folder.</li>
+<li>chmod +x run-demo.bash</li>
+<li>./run-demo.bash gov.nasa.worldwindx.examples.ApplicationTemplate</li>
+</ol>
+</dd>
+</dl>
+</div>
+<div class="section" id="create-and-run-your-application-using-worldwind">
+<h3>Create and Run Your Application Using WorldWind<a class="headerlink" href="#create-and-run-your-application-using-worldwind" title="Permalink to this headline">¶</a></h3>
+<p>Create an app by reviewing the programming examples in WorldWind/src/gov/nasa/worldwindx/examples.</p>
+<div class="line-block">
+<div class="line">Start with SimplestPossibleExample and ApplicationTemplate, then refer to the Examples page for more advanced topics.</div>
+<div class="line">Here are examples of running your app from the command-line, assuming your app?s JAR file is MyApp.jar, and your main class is worldwinddemo.MyBasicDemo.</div>
+</div>
+<p>Run:</p>
+<div class="highlight-python"><div class="highlight"><pre>java -Xmx1024m -cp MyApp.jar:worldwind.jar:worldwindx.jar:jogl-all.jar:gluegen-rt.jar:gdal.jar worldwinddemo.MyBasicDemo
+</pre></div>
+</div>
+<p><em>Note: All *.dll, *.jnilib, and *.so files in the WorldWind folder must be in the same folder as MyApp.jar.</em></p>
+<div class="section" id="deploy-an-application-using-java-web-start">
+<h4>Deploy an Application Using Java Web Start<a class="headerlink" href="#deploy-an-application-using-java-web-start" title="Permalink to this headline">¶</a></h4>
+<p><strong>1. Create a Java Web Start Application JNLP File</strong></p>
+<p>Modify the template JNLP file WorldWind/webstart/JavaWebStartTemplate.jnlp to fit your app.</p>
+<div class="line-block">
+<div class="line"><strong>2. Add WorldWind Libraries to Your Application JNLP.</strong></div>
+<div class="line">Insert the following XML extension elements in the resources block of your app?s JNLP file, depending on your app?s needs:</div>
+</div>
+<p>WorldWind Core Library (required):</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;extension name=&quot;worldwind&quot; href=&quot;http://worldwind.arc.nasa.gov/java/2.0.0/webstart/worldwind.jnlp&quot;/&gt;
+</pre></div>
+</div>
+<p>WorldWind Extensions Library (required if your app uses the gov.nasa.worldwindx package):</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;extension name=&quot;worldwindx&quot; href=&quot;http://worldwind.arc.nasa.gov/java/2.0.0/webstart/worldwindx.jnlp&quot;/&gt;
+</pre></div>
+</div>
+<p>GDAL Library (optional, include if your app uses WorldWind?s data import feature):</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;extension name=&quot;gdal&quot; href=&quot;http://worldwind.arc.nasa.gov/java/2.0.0/webstart/gdal.jnlp&quot;/&gt;
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>3.  Prepare Your Application?s JAR Files</strong></div>
+<div class="line">JAR files used by a Java Web Start application must be signed by a recognized authority, and must specify the Permissions manifest attribute. WorldWind?s JAR files have already been signed and contain the necessary manifest attributes. See Oracle?s documentation on Signing JAR Files and JAR File Manfiest Attributes for Security.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>4. Deploy Your Application</strong></div>
+<div class="line">Determine a URL to host your app at, such as <a class="reference external" href="http://myworldwinddemo.org/">http://myworldwinddemo.org/</a>. Set your JNLP file?s codebase attribute to this URL, then host your JNLP file and any JAR files referenced by your JNLP at this URL. See Oracle?s documentation on Rich Internet Application Deployment for more information.</div>
+</div>
+</div>
+<div class="section" id="deploy-an-applet-using-java-web-start">
+<h4>Deploy an Applet Using Java Web Start<a class="headerlink" href="#deploy-an-applet-using-java-web-start" title="Permalink to this headline">¶</a></h4>
+<p><strong>1. Create a Java Web Start Applet JNLP File</strong>
+Modify the template JNLP file WorldWind/webstart/JavaWebStartAppletTemplate.jnlp to fit your applet.</p>
+<div class="line-block">
+<div class="line"><strong>2. Add WorldWind Libraries to Your Applet JNLP</strong></div>
+<div class="line">Complete your applet?s JNLP file by following step #2 in the above section Deploy an Application Using Java Web Start.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>3. Prepare Your Applet?s JAR Files</strong></div>
+<div class="line">JAR files used by a Java Applet must be signed by a recognized authority, must specify the Permissions manifest attribute, and must specify the Caller-Allowable-Codebase manifest attribute in order to enable Java-to-Javascript communication. WorldWind?s JAR files have already been signed and contain the necessary manifest attributes. See Oracle?s documentation on Signing JAR Files and JAR File Manfiest Attributes for Security.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>4. Publish your Applet</strong></div>
+<div class="line">Add the Java Applet to an HTML document hosted at the same URL as your JNLP file using the syntax below. The HTML document defines the Applet attributes that affect its dimensions and enable Java-to-Javascript communication. The JNLP file defines the Applet?s code and its dependencies. See Oracle?s documentation on Rich Internet Application Deployment for more information..</div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>&lt;script src=&quot;http://www.java.com/js/deployJava.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+    var attributes = {id:&#39;myApplet&#39;, mayscript:&#39;true&#39;, width:&#39;800px&#39;, height:&#39;600px&#39;};
+    var parameters = {jnlp_href:&#39;MyApp.jnlp&#39;};
+    deployJava.runApplet(attributes, parameters, &#39;1.6&#39;); // runApplet automatically looks for JRE 1.6+
+&lt;/script&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

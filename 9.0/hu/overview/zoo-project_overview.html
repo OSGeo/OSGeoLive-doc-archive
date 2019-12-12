@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ZOO-Projekt &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://zoo-project.org/"><img alt="project logo" class="align-right" src="../../_images/logo-Zoo6.png" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Incubation Project" class="align-right" src="../../_images/OSGeo_incubation6.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="zoo-projekt">
+<h1>ZOO-Projekt<a class="headerlink" href="#zoo-projekt" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="wps-szerver">
+<h2>WPS Szerver<a class="headerlink" href="#wps-szerver" title="Permalink to this headline">¶</a></h2>
+<p>A ZOO-projekt egy fejlesztő-barát Web Processing Service (WPS) keretrendszert
+biztosít Web Processing Service-k létrehozására és láncolására.
+A WPS hálóztos hozzáférést biztosít olyan függvényekhez, melyek térbeli
+algoritmusokat futtatnak.
+A ZOO-projekt több programnyelvet támogat és két, egyszerű térbeli eszközöket
+biztosító demó alkalmazással szállítják (egy megosztott C könyvtár  és egy
+Python modul), melyek a <a class="reference internal" href="geos_overview.html"><em>GEOS</em></a> és a
+<a class="reference internal" href="gdal_overview.html"><em>OGR</em></a> könyvtárakra épülnek.</p>
+<p>A ZOO három részből áll:</p>
+<a class="reference internal image-reference" href="../../_images/zoo-project-demo-212.png"><img alt="screenshot" class="align-right" src="../../_images/zoo-project-demo-212.png" style="width: 483.6px; height: 224.4px;" /></a>
+<p><em>ZOO rendszermag</em> : Egy hatékony szerver oldali C rendszermag, mely lehetővé
+teszi a különböző programnyelveken kódolt web szolgáltatások kezelését és
+láncolását.</p>
+<p><em>ZOO szolgáltatások</em> : Különböző nyílt forráskódú könyvtárakra alapozott
+minta web szolgáltatások növekvő gyűjteménye.</p>
+<p><em>ZOO API</em> : Egy szerver oldali JavaScript API, mely képes a ZOO szolgáltatások
+meghívására és láncolására és egyszerűbbé teszi a fejlesztést és a láncolási
+folyamatot.</p>
+<p>A ZOO a &#8216;WPS szolgáltatás magra&#8217; épül, mely a ZOO rendszermagot alkotja
+(másnéven ZOO mag). Ez utóbbi dinamikus könyvtárakat tud betölteni és igény
+szerinti web szolgáltatásként kezelni. A ZOO mag C nyelven készül, de
+számos elterjedt programnyelvet támogat, abból a célból, hogy számos
+könyvtárhoz tudjon kapcsolódni és mindenek előtt a web szolgáltatás fejlesztő
+munkáját egyszerűsítse.</p>
+<p>A ZOO szolgáltatás egy link, mely egy meta adat fájlból (.zcfg) és az
+implementációnak megfelelő kódból áll. A meta adat fájl írja le az összes
+elérhető függvényt, melyeket egy &#8216;WPS Exec Request&#8217;-tel hívhatunk meg, és a
+tervezett input/outputot is. A szolgáltatások tartalmazzák az algoritmusokat
+és a függvényeket és C/C++, Fortran, Java, Python, PHP és JavaScript
+nyelveken implementálhatjuk.</p>
+<div class="section" id="alapfunkciok">
+<h3>Alapfunkciók<a class="headerlink" href="#alapfunkciok" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Többnyelvű WPS szerver</li>
+<li>Egyszerű Web szolgáltatás létrehozása és közzététele</li>
+<li>Egyszerű WPS láncolás a ZOO API-val</li>
+</ul>
+</div>
+<div class="section" id="implementalt-szabvanyok">
+<h3>Implementált szabványok<a class="headerlink" href="#implementalt-szabvanyok" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>OGC WPS 1.0.0</li>
+</ul>
+</div>
+<div class="section" id="demo">
+<h3>Demó<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost/zoo-demo/spatialtools.html">Demo using simple C Services Provider based GEOS and OGR libraries</a></li>
+<li><a class="reference external" href="http://localhost/zoo-demo/spatialtools-py.html">Demo using simple Python Services Provider based GEOS and OGR libraries</a></li>
+<li><a class="reference external" href="http://localhost/zoo-demo/spatialtools.html">Simple html form to process your request to the ZOO Kernel</a></li>
+</ul>
+</div>
+<div class="section" id="reszletek">
+<h3>Részletek<a class="headerlink" href="#reszletek" title="Permalink to this headline">¶</a></h3>
+<p><strong>Honlap:</strong> <a class="reference external" href="http://zoo-project.org">http://zoo-project.org</a></p>
+<p><strong>Licenc:</strong> MIT x/11</p>
+<p><strong>Program verzió:</strong> 1.3.0</p>
+<p><strong>Támogatott platformok:</strong> Windows, Linux, Mac</p>
+<p><strong>Támogatott program nyelvek:</strong> C, Python, Java, PHP, Fortran, Javascript</p>
+<p><strong>Támogatás:</strong> <a class="reference external" href="http://zoo-project.org/trac">http://zoo-project.org/trac</a></p>
+</div>
+<div class="section" id="gyorstalpalo">
+<h3>Gyorstalpaló<a class="headerlink" href="#gyorstalpalo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><tt class="xref doc docutils literal"><span class="pre">Gyorstalpaló</span> <span class="pre">dokumentáció</span></tt></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

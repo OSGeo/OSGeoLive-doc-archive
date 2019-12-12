@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Mapnik &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Benvinguts a OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="MapProxy" href="mapproxy_overview.html" />
+    <link rel="prev" title="Mapbender" href="mapbender_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://mapnik.org/"><img alt="logotip del projecte" class="align-right" src="../../_images/logo-mapnik.png" /></a>
+<div class="section" id="mapnik">
+<h1>Mapnik<a class="headerlink" href="#mapnik" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motor-de-renderitzacio-cartografic">
+<h2>Motor de renderització cartogràfic<a class="headerlink" href="#motor-de-renderitzacio-cartografic" title="Permalink to this headline">¶</a></h2>
+<p>Mapnik és un conjunt d&#8217;eines en C++ per al desenvolupament d&#8217;aplicacions
+cartogràfiques amb acabats de gran qualitat estètica incloent el suavitzat de
+línies i contorns (anti-aliasing), la ubicació intel·ligent de les etiquetes,
+així com l&#8217;ús de símbols escalables en format SVG (Scalable Vector Graphics).
+El seu ús més conegut és la renderització de les capes base de cartografia
+d&#8217;OpenStreetMap.</p>
+<p>Mapnik s&#8217;acostuma a incrustar dintre d&#8217;aplicacions en Python que permeten la
+generació de mapes en internet, encara que les darreres millores també permeten
+la creació i la impressió de mapes amb gran resolució.</p>
+<a class="reference internal image-reference" href="../../_images/mapnik-screenshot-barcelona.png"><img alt="screenshot" class="align-right" src="../../_images/mapnik-screenshot-barcelona.png" style="width: 409.2px; height: 275.2px;" /></a>
+<p>Bàsicament es tracta d&#8217;una col·lecció d&#8217;objectes geogràfics (map, layer,
+datasource, feature, geometry) independent d&#8217;una interfície gràfica (&#8220;windowing
+systems&#8221;) que permet el desplegament en qualsevol servidor.</p>
+<p>Està pensada per a un bon funcionament a nivell d&#8217;entorns multi-fil
+(multi-thread) i s&#8217;orienta principalment,encara que no de manera exclusiva, a
+desenvolupament web.</p>
+<p>L&#8217;existència de llibreries d&#8217;alt nivell en Python, com per exemple boost.python,
+faciliten el ràpid desenvolupament d&#8217;aplicacions que usen zope3, django, etc.</p>
+<p>Mapnik és multiplataforma. Els diferents mòduls estan disponibles per
+la majoria de les distribucions en Linux i els programes d&#8217;instal·lació
+són d&#8217;ús comú per Mac OS X i Windows.</p>
+<div class="section" id="detalls">
+<h3>Detalls<a class="headerlink" href="#detalls" title="Permalink to this headline">¶</a></h3>
+<p><strong>Lloc web:</strong> <a class="reference external" href="http://www.mapnik.org/">http://www.mapnik.org/</a></p>
+<p><strong>Llicències:</strong> LGPL (GNU Lesser General Public Licence)</p>
+<p><strong>Versió del programari:</strong> 2.2.0</p>
+<p><strong>Plataformes suportades:</strong> Windows, Linux, Mac</p>
+<p><strong>Interfícies de desenvolupament:</strong> C++, Python</p>
+</div>
+<div class="section" id="guia-d-inici-rapid">
+<h3>Guia d&#8217;inici ràpid<a class="headerlink" href="#guia-d-inici-rapid" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/mapnik_quickstart.html"><em>Documentació de la guia d&#8217;inici ràpid</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

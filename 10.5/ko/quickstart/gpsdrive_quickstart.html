@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GpsDrive Quickstart &mdash; OSGeo-Live 10.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 10.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.5 Contents" href="../overview/overview.html" />
+    <link rel="next" title="GpsPrune Quickstart" href="gpsprune_quickstart.html" />
+    <link rel="prev" title="GMT Quickstart" href="gmt_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.gpsdrive.de"><img alt="project logo" class="align-right" src="../../_images/logo-gpsdrive21.png" style="width: 128.0px; height: 117.0px;" /></a>
+<div class="section" id="gpsdrive-quickstart">
+<h1>GpsDrive Quickstart<a class="headerlink" href="#gpsdrive-quickstart" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="running">
+<h2>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h2>
+<p>You will most likely want to install
+the <a class="reference external" href="http://savannah.nongnu.org/projects/gpsd">gpsd</a> package so that you can talk
+to your GPS; without that GpsDrive is just a nice map viewer.</p>
+<p>OpenStreetMap tiles will be generated automatically using the
+the <a class="reference internal" href="../overview/mapnik_overview.html"><em>Mapnik</em></a> library to
+render <a class="reference internal" href="../overview/osm_dataset_overview.html"><em>OpenStreetMap</em></a> map data stored
+in a preloaded <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a> database.
+Static map tiles may also be downloaded from the internet without any extra installation.
+Verbal output is supported if the &#8220;espeak&#8221; software is installed.</p>
+<div class="section" id="setting-up-your-gps">
+<h3>Setting up your GPS<a class="headerlink" href="#setting-up-your-gps" title="Permalink to this headline">¶</a></h3>
+<p>If you have a GPS connected you will want to start the gpsd service.
+To do that run:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo dpkg-reconfigure gpsd
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo /etc/init.d/gpsd start
+</pre></div>
+</div>
+<p>BlueTooth GPS users should take special care to read up about the no-probe
+option (for this reason we have not started gpsd automatically).</p>
+<ul class="simple">
+<li>&#8216;xgps&#8217; is a good program to check that Gpsd can see your GPS ok.</li>
+</ul>
+</div>
+<div class="section" id="using-without-a-gps-as-a-mapbook">
+<h3>Using without a GPS as a mapbook<a class="headerlink" href="#using-without-a-gps-as-a-mapbook" title="Permalink to this headline">¶</a></h3>
+<p>If you don&#8217;t have a GPS connected you can turn on Explore Mode
+with the &#8216;e&#8217; key and then use the arrow keys to move around.
+Right-click to set the destination target.</p>
+</div>
+<div class="section" id="quick-help">
+<h3>Quick help<a class="headerlink" href="#quick-help" title="Permalink to this headline">¶</a></h3>
+<p>For help type &#8216;<strong>man gpsdrive</strong>&#8216; and &#8216;<strong>gpsdrive &#8211;help</strong>&#8216; at
+a Terminal prompt. This will show how to switch to Car or PDA
+mode which may be useful if you are working with a small screen
+like on a netbook.</p>
+</div>
+<div class="section" id="customizing-the-display">
+<h3>Customizing the display<a class="headerlink" href="#customizing-the-display" title="Permalink to this headline">¶</a></h3>
+<p>Besides the options given in the Preferences menu and the different
+car/PDA/desktop modes offered from the command line, you can change the
+displayed dashboard meters. Just click on one of the three dashboard
+positions and select a new item. You can toggle on and off the dashboard
+and map controls with the &#8216;<strong>d</strong>&#8216; and &#8216;<strong>m</strong>&#8216; keys.</p>
+</div>
+<div class="section" id="mapnik-rendering-of-openstreetmap-data">
+<h3>Mapnik rendering of OpenStreetMap data<a class="headerlink" href="#mapnik-rendering-of-openstreetmap-data" title="Permalink to this headline">¶</a></h3>
+<p>If you have a local PostGIS database running (for example the one that comes
+with this Live DVD) you can setup GpsDrive to render very pretty street maps
+on the fly from OpenStreetMap.org data using the Mapnik renderer. The
+PostgreSQL database it looks for on this disc is called &#8220;osm_local&#8221;.
+As this OpenStreetMap extract has only been loaded for the city hosting
+the FOSS4G conference, you may wish to add your own Planet.osm data with the
+<cite>osm2pgsql</cite> program or switch off <em>Mapnik Mode</em> from the <em>Map Control</em>
+window and use the built-in or downloaded static map tiles.</p>
+</div>
+<div class="section" id="finding-amenities">
+<h3>Finding amenities<a class="headerlink" href="#finding-amenities" title="Permalink to this headline">¶</a></h3>
+<p>With the <em>Find POI</em> tool you can search out for the nearest points of interest
+loaded into your SQLite waypoint database. To get you started OpenStreetMap
+data for the featured city has been loaded. e.g. <em>Find all pubs within 2 km
+of the conference hall</em>. If you don&#8217;t see the <em>Find POI</em> button in the bottom
+of the left side toolbar try maximizing the window or pressing the &#8220;more&#8221;
+arrow button just above the compass. Set &#8220;max. Distance&#8221; to 2.0 km from the
+current position, and POI-Types to <span class="menuselection">Food ‣ Pub</span>. Then click
+the <em>Find</em> button in the top right of the dialog window. Look down the list
+of pubs, select one which looks interesting, and click on
+the <em>Select target</em> button.</p>
+</div>
+<div class="section" id="downloading-maps">
+<h3>Downloading maps<a class="headerlink" href="#downloading-maps" title="Permalink to this headline">¶</a></h3>
+<p>Use the <span class="menuselection">Options ‣ Maps ‣ Download</span> tool to preview
+and download new map tiles. Currently the OpenStreetMap web-tiles and
+NASA OnEarth T-WMS server are available as sources. There are a few command
+line programs which come with GpsDrive which will let you bulk-download
+a set of tiles covering your local area. You will need to disable Mapnik
+mode in the <em>Map Control</em> window to view these static maps.</p>
+</div>
+<div class="section" id="keeping-tabs-on-your-friends">
+<h3>Keeping tabs on your friends<a class="headerlink" href="#keeping-tabs-on-your-friends" title="Permalink to this headline">¶</a></h3>
+<p>In the Preferences menu you can turn on the Friendsd service. This
+transmits your position to a central server and lets your friends know
+where you are. It comes with a program to run a private server if you
+don&#8217;t want the whole world seeing where you are. To enable this service
+go into the Preferences menu and select the Friends tab. Type in a name
+for yourself and click on the [Lookup] button to get the IP address of
+the default friendsd server. Finally tick the Enable friends service box
+and press [Close]. Icons showing where your friends are and where they are
+headed will be shown at scales less than 1:10 million. There seem to be
+a lot of friendly types in Europe.</p>
+</div>
+<div class="section" id="verbal-instructions">
+<h3>Verbal instructions<a class="headerlink" href="#verbal-instructions" title="Permalink to this headline">¶</a></h3>
+<p>GpsDrive can give you verbal warnings when you are nearing your
+destination, etc. To try this out you must start the eSpeak software
+which has been disabled by default on this Live-Disc to save memory.
+To switch it on you will have to edit (as root) the
+<strong>/etc/default/speech-dispatcher</strong> file and set <strong>RUN=yes</strong>.
+Then launch the service with &#8220;<cite>sudo service speech-dispatcher start</cite>&#8221;.
+GpsDrive will automatically find it at run time if it is switched on.
+In the Speech tab of the Preferences menu you can enable/disable it,
+change the voice, and verbosity level.</p>
+</div>
+</div>
+<div class="section" id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><em>GpsDrive</em>: <a class="reference external" href="http://www.gpsdrive.de">http://www.gpsdrive.de</a></li>
+<li>Help and support pages: <a class="reference external" href="http://gpsdrive.sf.net">http://gpsdrive.sf.net</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

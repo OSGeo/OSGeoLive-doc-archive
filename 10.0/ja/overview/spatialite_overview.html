@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SpatiaLite &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.0 コンテンツ" href="overview.html" />
+    <link rel="next" title="TileMill" href="tilemill_overview.html" />
+    <link rel="prev" title="Sahana Eden" href="sahana_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.gaia-gis.it/gaia-sins/"><img alt="project logo" class="align-right" src="../../_images/logo-spatialite18.png" /></a>
+<div class="section" id="spatialite">
+<h1>SpatiaLite<a class="headerlink" href="#spatialite" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>地理空間情報データベース<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>SpatiaLite は地理空間情報を扱う関数を追加した SQLite データベースエンジンです。</p>
+<p>SQLite は動作が軽く、シンプルで堅牢、簡単に使える人気のあるデータベース管理システム(DBMS)です。それぞれのデータベースは一つのファイルに格納されます。コピー、圧縮や、Windows、Linux、MacOS 等のOS間の移行も簡単にできます。</p>
+<a class="reference internal image-reference" href="../../_images/spatialite9.jpg"><img alt="screenshot" class="align-right" src="../../_images/spatialite9.jpg" style="width: 513.5px; height: 386.5px;" /></a>
+<div class="section" id="id2">
+<h3>主な機能<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>SQLite で OGC の仕様に準拠した空間データを扱えるようにしたものが SpatiaLite の拡張です。</p>
+<p>ハイライト:</p>
+<ul class="simple">
+<li>ユーザフレンドリーな GUI</li>
+<li>標準の WKT 及び WKB フォーマット</li>
+<li>SQL 空間関数 - AsText()、GeomFromText()、Area()、PointN() など</li>
+<li>GEOS 経由で提供される OpenGis 空間解析関数 - Overlaps()、Touches()、Union()、Buffer() など</li>
+<li>OpenGis の仕様に沿った完全な空間メタデータ</li>
+<li>多くのジオメトリ記法 - EWKT、GML、KML、GeoJSON</li>
+<li>シェープファイルのインポート、エクスポート</li>
+<li>PROJ.4 と EPSG 測地系パラメータデータセットを利用した測地系変換</li>
+<li>GNU libiconv によるロケール、文字コード</li>
+<li>SQLite の RTree 拡張を利用した地理空間インデックス</li>
+<li>シェープファイルに VIRTUAL TABLE としてアクセスすると、インポートや変換なしにシェープファイルに SQL クエリを発行可能</li>
+<li>外部の CSV/タブ区切りテキストや xls スプレッドシートに VIRTUAL TABLE としてアクセス</li>
+<li>XML ドキュメントやストアド BLOB 圧縮バイナリオブジェクトへの、&#8221;well formed&#8221; 構文、及び XSF スキーマ妥当性検証チェック付きアクセス。特別に ISOメタデータ、SLD/SE スタイル、SVG グラフィックスをサポート。XML ドキュメントは標準の XPath 構文でクエリ可能。</li>
+<li>外部 WFS サーバへのクエリ。</li>
+<li>外部の DXF ファイル(全バージョン)のパースと、検出したレイヤとジオメトリの格納。</li>
+<li>DXF ファイルの生成とエクスポート</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>詳細<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><strong>ウェブサイト:</strong> <a class="reference external" href="http://www.gaia-gis.it/gaia-sins/">http://www.gaia-gis.it/gaia-sins/</a></p>
+<p><strong>ライセンス:</strong> MPL v1.1 and GPL v3</p>
+<p><strong>ソフトウェアバージョン:</strong> 4.3.0a</p>
+<p><strong>対応プラットフォーム:</strong> Linux、Mac、Windows</p>
+<p><strong>API インタフェース:</strong> C++</p>
+</div>
+<div class="section" id="id4">
+<h3>クイックスタート<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/spatialite_quickstart.html"><em>クイックスタート文書</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

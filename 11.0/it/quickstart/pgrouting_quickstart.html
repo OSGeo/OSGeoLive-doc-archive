@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guida rapida su pgRouting &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Benvenuti in OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="Guida rapida a PostGIS" href="postgis_quickstart.html" />
+    <link rel="prev" title="Guida rapida su OTB" href="otb_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.pgrouting.org"><img alt="pgRouting logo" class="align-right" src="../../_images/logo-pgRouting.png" style="width: 128.0px; height: 124.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Community Project" class="align-right" src="../../_images/OSGeo_community.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="guida-rapida-su-pgrouting">
+<h1>Guida rapida su pgRouting<a class="headerlink" href="#guida-rapida-su-pgrouting" title="Permalink to this headline">¶</a></h1>
+<p>pgRouting è un&#8217;estensione e aggiunge funzionalità di routing e altre analisi di reti ai database
+<a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a>/<a class="reference external" href="http://www.postgresql.org">PostgreSQL</a>.</p>
+<p>Questa guida rapida descrive come aprire un database con la linea di comando ed eseguire
+una semplice interrogazione per il percordo più corto con un set di dati campione.</p>
+<div class="section" id="eseguire-pgrouting">
+<h2>Eseguire pgRouting<a class="headerlink" href="#eseguire-pgrouting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Aprire una finestra <span class="menuselection">Applications ‣ Accessories ‣ Terminal</span> e
+collegarsi al database <code class="docutils literal"><span class="pre">pgrouting</span></code>:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>psql -U user pgrouting
+</pre></div>
+</div>
+<ul class="simple">
+<li>Digitare <strong class="command">\d</strong> che vi mostrerà tutte le tabelle disponibili:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>                List of relations
+ Schema |        Name         |   Type   | Owner
+--------+---------------------+----------+-------
+ public | classes             | table    | user
+ public | geography_columns   | view     | user
+ public | geometry_columns    | view     | user
+ public | nodes               | table    | user
+ public | raster_columns      | view     | user
+ public | raster_overviews    | view     | user
+ public | relation_ways       | table    | user
+ public | relations           | table    | user
+ public | spatial_ref_sys     | table    | user
+ public | types               | table    | user
+ public | vertices_tmp        | table    | user
+ public | vertices_tmp_id_seq | sequence | user
+ public | way_tag             | table    | user
+ public | ways                | table    | user
+(14 rows)
+</pre></div>
+</div>
+<ul class="simple">
+<li>Eseguire la funzione per il percorso più corto Dijkstra:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>SELECT seq, id1 AS node, id2 AS edge, cost
+        FROM pgr_dijkstra(&#39;
+                SELECT gid::int as id, source::int, target::int,
+                        length::float8 as cost FROM ways&#39;,
+                100, 600, false, false
+        );
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre> seq | node | edge  |        cost
+-----+------+-------+---------------------
+   0 |  100 |   115 |  0.0605959823538948
+   1 |   99 |  2972 |   0.197600739218643
+   2 | 2151 |  3783 |  0.0139212050887606
+ ... |  ... |   ... |                 ...
+  52 |  599 |   732 |  0.0390125147117973
+  53 |  600 |    -1 |                   0
+(54 rows)
+</pre></div>
+</div>
+<ul class="simple">
+<li>Per ottenere la geometria del percorso, collegare il risultato con le geometrie della strada:</li>
+</ul>
+<div class="highlight-python"><div class="highlight"><pre>SELECT seq, id2 AS edge, rpad(b.the_geom,60,&#39; &#39;) AS &quot;the_geom (truncated)&quot;
+        FROM pgr_dijkstra(&#39;
+                SELECT gid::int as id, source::int, target::int,
+                        length::float8 as cost FROM ways&#39;,
+                100, 600, false, false
+        ) a INNER JOIN ways b ON (a.id2 = b.gid) ORDER BY seq;
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre> seq | edge  |                     the_geom (truncated)
+-----+-------+--------------------------------------------------------------
+   0 |   115 | 0102000020E610000002000000012D0208C4B0F2BFBD2DA237267A4A40E5
+   1 |  2972 | 0102000020E610000002000000622B0DA1EFB3F2BF65236B685E7A4A4001
+   2 |  3783 | 0102000020E610000002000000BD4571D8C7B4F2BFB2648EE55D7A4A4062
+ ... |   ... |                                                          ...
+  52 |   732 | 0102000020E6100000020000006B48DC63E903F3BF84CCDFCECF7B4A40E9
+(53 rows)
+</pre></div>
+</div>
+<ul class="simple">
+<li>Con il comando <strong class="command">\q</strong> uscirete dalla shell di PostgreSQL.</li>
+</ul>
+</div>
+<div class="section" id="e-poi">
+<h2>E poi?<a class="headerlink" href="#e-poi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>pgRouting Website</strong> - Visitate il sito web del progetto <a class="reference external" href="http://www.pgrouting.org">http://www.pgrouting.org</a>
+per imparare di più su pgRouting.</li>
+<li><strong>Workshop Documentation</strong> - Trova la documentazione aggiornata in <a class="reference external" href="http://docs.pgrouting.org">http://docs.pgrouting.org</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

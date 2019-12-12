@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Getting Started with IPython Notebook &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 9.0" href="../index.html" />
+    <link rel="next" title="Getting Started with Iris" href="iris_quickstart.html" />
+    <link rel="prev" title="OSGeo-Live 语言与国际化说明" href="internationalisation_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://ipython.org/"><img alt="project logo" class="align-center" src="../../_images/logo-ipython13.png" style="width: 520.0px; height: 67.0px;" /></a>
+<div class="section" id="getting-started-with-ipython-notebook">
+<h1>Getting Started with IPython Notebook<a class="headerlink" href="#getting-started-with-ipython-notebook" title="Permalink to this headline">¶</a></h1>
+<p>The IPython Notebook is a web-based graphical interface to Notebook documents.
+This Quick Start describes how to:</p>
+<blockquote>
+<div><ul class="simple">
+<li>start the IPython Notebook</li>
+<li>load sample data from a netCDF file</li>
+<li>draw the data into a map, using various projections</li>
+</ul>
+</div></blockquote>
+<div class="section" id="starting-ipython">
+<h2>Starting IPython<a class="headerlink" href="#starting-ipython" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s look at two ways to use IPython Notebook: local (the default); and
+remote using a web browser on another computer. The second option is
+useful when running <strong>OSGeo Live</strong> in a Virtual Machine (VM).</p>
+<div class="section" id="local-ipython-notebook">
+<h3>Local IPython Notebook<a class="headerlink" href="#local-ipython-notebook" title="Permalink to this headline">¶</a></h3>
+<p>Use the application launch menu in the lower left corner.</p>
+<ul class="simple">
+<li>Choose  <em>Geospatial</em> -&gt; <em>Spatial Tools</em> -&gt; <em>Start IPython Notebook</em></li>
+</ul>
+<p>A terminal window will open and a startup log will begin to scroll.
+Next</p>
+<ul class="simple">
+<li>Choose   <em>Geospatial</em> -&gt; <em>Spatial Tools</em> -&gt; <em>IPython Notebook</em></li>
+</ul>
+<p>A web browser is automatically launched pointing to the localhost URL at
+the IPython port number (you should see the Notebook main page).
+When IPython is launched, the current directory is read for Notebooks.
+Any sub-directory is shown in the listing (&#8220;<em>tree</em>&#8221;). The user can
+navigate up and down the tree by clicking on a directory, or open a Notebook
+listed by clicking on it. On the computer, Notebook files are just a single text
+file ending in suffix .ipynb, and are displayed by their filename.
+Renaming a Notebook simply changes the filename. Creating a new directory will automatically become visible in the IPython Notebook tree browser.</p>
+</div>
+<div class="section" id="remote-ipython-notebook">
+<h3>Remote IPython Notebook<a class="headerlink" href="#remote-ipython-notebook" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>open a terminal window by clicking on the green terminal icon</li>
+<li>execute <cite>ipython notebook &#8212;ip=* &#8212;matplotlib=inline &#8212;no-browser &#8211;port=8883</cite></li>
+<li>determine the IP address of your computer or VM, for example using:
+<em>ifconfig -a | grep 192</em></li>
+</ul>
+<p>Use a web browser from another computer and enter the IP address from above,
+along with the IPython Notebook port &#8216;:8888&#8217;. e.g.  192.168.1.13:8883</p>
+<p>Note: the default http port number for IPython Notebook is 8888. On the
+OSGeo-Live the Notebook port is set to 8883 to prevent address conflicts
+with other web applications that use this common number.</p>
+</div>
+</div>
+<div class="section" id="using-the-ipython-notebook">
+<h2>Using the IPython Notebook<a class="headerlink" href="#using-the-ipython-notebook" title="Permalink to this headline">¶</a></h2>
+<p>With the IPython Notebook main page open, you should see the directory tree browser interface, including a directory called <tt class="docutils literal"><span class="pre">OSGeo-live</span></tt>, and a Notebook called <tt class="docutils literal"><span class="pre">cartopy-simple.ipynb</span></tt>.
+Click on the link titled <tt class="docutils literal"><span class="pre">cartopy_simple.ipynb</span></tt>. A new tab should open in the
+web browser, showing the Notebook interface. Try moving the mouse over
+each button in the toolbar and hold it there, to see the tooltip titles. Also
+take a moment to click on the menus to begin to become familiar with their contents.</p>
+<p>Take particular note of the <strong>Help</strong> menu. You can try the clever User Interface Tour and open the Keyboard Shortcuts
+cheatsheet, however you will need an active Internet connection to use the other Help topics.</p>
+<p>The Notebook interface is a list of <em>cells</em>. Each cell has a type, for
+example a heading or python code, and consists of one or more lines of text, code, inline image tags or other script. Any cell of type code can be executed by making it <em>active</em> and then clicking on the <em>run</em> button, or using the Run keyboard shortcut Shift-Return.</p>
+<p>Try clicking on the first code cell, which includes <strong>Import numpy as np</strong>
+and executing it. You should see no error messages, and the next cell downwards
+becomes active.</p>
+<p>To start this Quickstart, it is useful to clear all the stored output in the Notebook. Choose <em>Cell</em> -&gt; <em>All Output</em> -&gt; <em>Clear</em> . All output in the Notebook is now removed.</p>
+<div class="section" id="importing-data-with-python-netcdf4">
+<h3>Importing Data with Python netCDF4<a class="headerlink" href="#importing-data-with-python-netcdf4" title="Permalink to this headline">¶</a></h3>
+<p>The first Notebook code cell imports important libraries to the active Python interpreter. The second cell assigns a string pathname into variable <tt class="docutils literal"><span class="pre">my_example_nc_file</span></tt>, and then initializes a netCDF4 Dataset object <tt class="docutils literal"><span class="pre">fh</span></tt>.
+Finally, the third cell reads three Dataset object variables into local
+numpy ndarrays. For more information about numpy, see <a class="reference external" href="http://www.numpy.org/">http://www.numpy.org/</a> .</p>
+<p>When you click in the cell with the heading <strong>Import Cartopy, Display Example Maps</strong> notice the cell type in the toolbar area changes to <em>Markdown</em>.</p>
+</div>
+<div class="section" id="display-data-using-cartopy">
+<h3>Display Data using Cartopy<a class="headerlink" href="#display-data-using-cartopy" title="Permalink to this headline">¶</a></h3>
+<p>Click or navigate to the next code cell, which begins with <tt class="docutils literal"><span class="pre">%matplotlib</span> <span class="pre">inline</span></tt>.
+This is an IPython Notebook Cell &#8220;Magic&#8221; - special commands interpreted by the Notebook
+to change the environment or behavior of the Notebook. This directive tells the
+Notebook to place <strong>matplotlib</strong> graphics directly in the window contents, instead of creating a new window. Execute the cell to import matplotlib and cartopy.</p>
+<p>In the rest of the Notebook, each cell will draw the sample netCDF data in a different mapping projection. Try executing each cell, and see the results projected in different ways.</p>
+</div>
+<div class="section" id="general-ipython-notebook-tutorial">
+<h3>General IPython Notebook Tutorial<a class="headerlink" href="#general-ipython-notebook-tutorial" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://ipython.org/ipython-doc/stable/interactive/tutorial.html">http://ipython.org/ipython-doc/stable/interactive/tutorial.html</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

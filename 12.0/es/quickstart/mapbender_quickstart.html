@@ -1,0 +1,493 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Gía de Inicio Rápido de Mapbender &#8212; OSGeoLive 12.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '12.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Índice" href="../genindex.html" />
+    <link rel="search" title="Búsqueda" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Guía de Inicio Rapido de Mapnik" href="mapnik_quickstart.html" />
+    <link rel="prev" title="libLAS Inicio Rápido" href="liblas_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.mapbender.org"><img alt="../../_images/logo_mapbender.png" class="align-right" src="../../_images/logo_mapbender.png" /></a>
+<a class="reference external image-reference" href="target:http://www.osgeo.org"><img alt="../../_images/OSGeo_project.png" class="align-right" src="../../_images/OSGeo_project.png" /></a>
+<div class="section" id="mapbender-quickstart">
+<h1><a class="toc-backref" href="#id1">Gía de Inicio Rápido de Mapbender</a><a class="headerlink" href="#mapbender-quickstart" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Mapbender es un marco de geoportal basado en web para publicar, registrar, ver, navegar, controlar y otorgar acceso seguro a servicios de infraestructura de datos espaciales.</p>
+<p>Será necesario nada más que un navegador web estándar para este Inicio Rápido.</p>
+<p>Esta Guía de Inicio Rápido describe cómo:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Iniciar Mapbender</li>
+<li>crear una aplicación</li>
+<li>Cargar un Web Map Service (WMS OGC)</li>
+<li>configurar WMS</li>
+<li>crear una aplicación individual</li>
+<li>crear un usuario y un grupo y asignar aplicaciones a ellos</li>
+</ul>
+</div></blockquote>
+<p>Se trata de cómo puede parecerse a una aplicación de Mapbender:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender_screenshot.png"><img alt="../../_images/mapbender_screenshot.png" src="../../_images/mapbender_screenshot.png" style="width: 557.2px; height: 399.7px;" /></a>
+</div></blockquote>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#mapbender-quickstart" id="id1">Gía de Inicio Rápido de Mapbender</a><ul>
+<li><a class="reference internal" href="#installation" id="id2">Instalación</a></li>
+<li><a class="reference internal" href="#start-mapbender" id="id3">Iniciar Mapbender</a></li>
+<li><a class="reference internal" href="#start-mapbender-in-the-developer-mode-app-dev-php" id="id4">Inicie Mapbender en modo desarrollador app_dev.php</a></li>
+<li><a class="reference internal" href="#welcome-page" id="id5">Página de bienvenida</a></li>
+<li><a class="reference internal" href="#application-overview" id="id6">Vista General de aplicación</a></li>
+<li><a class="reference internal" href="#create-an-individual-application" id="id7">Crear una aplicación individual</a></li>
+<li><a class="reference internal" href="#copy-or-rename-an-application" id="id8">Copiar o cambiar el nombre de una aplicación</a></li>
+<li><a class="reference internal" href="#delete-an-application" id="id9">Eliminar una aplicación</a></li>
+<li><a class="reference internal" href="#export-import-applications-and-sources" id="id10">Exportar / importar fuentes y aplicaciones</a></li>
+<li><a class="reference internal" href="#management-of-data-sources" id="id11">Gestión de Fuentes de Datos</a></li>
+<li><a class="reference internal" href="#service-repository-overview" id="id12">Vista General del Servicio de Repositorio</a></li>
+<li><a class="reference internal" href="#loading-web-map-services" id="id13">Cargar Servicios Mapas Web</a></li>
+<li><a class="reference internal" href="#add-service-to-application" id="id14">Añadir Servicio a la Aplicación</a></li>
+<li><a class="reference internal" href="#configure-your-wms" id="id15">Configure su WMS</a></li>
+<li><a class="reference internal" href="#add-elements-to-your-application" id="id16">Agregar Elementos a la aplicación</a></li>
+<li><a class="reference internal" href="#try-it-yourself" id="id17">Inténtelo usted mismo</a></li>
+<li><a class="reference internal" href="#user-and-group-management" id="id18">Gestión de usuario y grupo</a></li>
+<li><a class="reference internal" href="#create-a-user" id="id19">Crear un usuario</a></li>
+<li><a class="reference internal" href="#create-a-group" id="id20">Crear un grupo de</a></li>
+<li><a class="reference internal" href="#assign-users-to-group" id="id21">Asignar usuarios al grupo</a></li>
+<li><a class="reference internal" href="#roles" id="id22">Roles</a></li>
+<li><a class="reference internal" href="#assign-an-application-to-a-user-group" id="id23">Asignar una Aplicación a un Usuario/Grupo</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id24">Cosas para probar</a></li>
+<li><a class="reference internal" href="#what-next" id="id25">¿Qué sigue?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h2><a class="toc-backref" href="#id2">Instalación</a><a class="headerlink" href="#installation" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para la instalación de Mapbender echar un vistazo a <a class="reference external" href="https://doc.mapbender.org/en/installation.html">https://doc.mapbender.org/en/installation.html</a>.</p>
+</div>
+<div class="section" id="start-mapbender">
+<h2><a class="toc-backref" href="#id3">Iniciar Mapbender</a><a class="headerlink" href="#start-mapbender" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>Elejir  <span class="menuselection">Geospatial ‣ Browser Clients ‣ Mapbender</span>  del menú de inicio, o visite  <a class="reference external" href="http://localhost/mapbender/app.php">http://localhost/mapbender/app.php</a></li>
+<li>La aplicación tomará unos momentos para comenzar</li>
+</ol>
+<p>Si tiene alguna dificultad ejecutando Mapbender, por favor compruebe si están ejecutando el servidor de web Apache y la base de datos PostgreSQL. O si usa SQLite como base de datos, compruebe si usted tiene acceso de escritura al archivo.</p>
+</div>
+<div class="section" id="start-mapbender-in-the-developer-mode-app-dev-php">
+<h2><a class="toc-backref" href="#id4">Inicie Mapbender en modo desarrollador app_dev.php</a><a class="headerlink" href="#start-mapbender-in-the-developer-mode-app-dev-php" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Symfony ofrece un modo de desarrollador con mucha información sobre su aplicación (registro, excepciones, consultas de base de datos, uso de memoria, tiempo y mucho más). Este modo sólo está disponible desde localhost.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_app_dev.png"><img alt="../../_images/mapbender3_app_dev.png" src="../../_images/mapbender3_app_dev.png" style="width: 736.4px; height: 494.2px;" /></a>
+</div></blockquote>
+<ol class="arabic simple">
+<li>Iniciar el modo de desarrollador: <a class="reference external" href="http://localhost/mapbender/app_dev.php">http://localhost/mapbender/app_dev.php</a></li>
+<li>Echar un vistazo a la información que se ofrece en el modo de desarrollador.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_symfony_profiler.png"><img alt="../../_images/mapbender3_symfony_profiler.png" src="../../_images/mapbender3_symfony_profiler.png" style="width: 560.0px; height: 402.5px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="welcome-page">
+<h2><a class="toc-backref" href="#id5">Página de bienvenida</a><a class="headerlink" href="#welcome-page" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>La página de bienvenida enlista aplicaciones que son públicos y pueden ser utilizadas por todos los usuarios. Esas aplicaciones se enumeran con una captura de pantalla, un título y una descripción.</li>
+<li>Puede abrir una palicación haciendo click en el título, la captura de pantalla o el botón de inicio.</li>
+<li>Antes de que puede administrar con Mapbender tiene que iniciar sesión para obtener acceso a la administración.</li>
+<li>Haga click en Login en la parte superior derecha para abrir la página de inicio de sesión.</li>
+<li>Se puede acceder con el usuario que se generó en la instalación. Puede ser <span class="guilabel">root</span>  y la contraseña <span class="guilabel">root</span> (Usuario y contraseña predeterminados que se obtienen después de la instalación de Mapbender en OSGeoLive. Por favor, cambie la contraseña de root si desea ejecutar un entorno productivo. Por favor no eliminar el usuario  <span class="guilabel">root</span>.).</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_welcome.png"><img alt="../../_images/mapbender3_welcome.png" src="../../_images/mapbender3_welcome.png" style="width: 775.6px; height: 583.1px;" /></a>
+</div></blockquote>
+<p>Después de un inicio de sesión exitoso, es dirigido a  <span class="guilabel">Mapbender administration</span>.</p>
+</div>
+<div class="section" id="application-overview">
+<h2><a class="toc-backref" href="#id6">Vista General de aplicación</a><a class="headerlink" href="#application-overview" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Tras el inicio de sesión, usted es dirigido a <span class="guilabel">Applications</span> con una lista de aplicaciones a las que puede acceder.</p>
+<p>La Vista General de la Aplicación proporciona la siguiente funcionalidad:</p>
+<blockquote>
+<div><ul class="simple">
+<li>título y descripción</li>
+<li>captura de pantalla para la aplicación (si se proporciona)</li>
+<li>Enlace a la aplicación</li>
+<li>botón para duplicar la aplicación</li>
+<li>botón para editar la aplicación</li>
+<li>botón para publicar/despublicar la aplicación</li>
+<li>botón para eliminar la aplicación</li>
+<li>botón para crear una nueva aplicación</li>
+<li>con el campo de texto de filtro puede buscar aplicaciones</li>
+</ul>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_application_overview.png"><img alt="../../_images/mapbender3_application_overview.png" src="../../_images/mapbender3_application_overview.png" style="width: 775.6px; height: 583.1px;" /></a>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="create-an-individual-application">
+<h2><a class="toc-backref" href="#id7">Crear una aplicación individual</a><a class="headerlink" href="#create-an-individual-application" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Cree una nueva aplicación proporcionando información básica sobre su aplicación. Después, utilice el modo de edición para añadir elementos, capas y seguridad.</p>
+<ol class="arabic simple">
+<li>elija <span class="menuselection">Applications ‣ New Application</span></li>
+<li>defina un título y una descripción para la aplicación</li>
+<li>defina un título de URL que se utilizará en la URL para abrir la aplicación. Puede ser el mismo que el título</li>
+<li>suba un archivo de imagen como la captura de pantalla para ver la Vista General de la aplicación</li>
+<li>elija una plantilla para su aplicación</li>
+<li>Seleccione el botón <strong>Crear</strong> para crear la aplicación</li>
+<li>Haga clic en <span class="menuselection">Edit-Button</span> en la nueva aplicación para editar la aplicación</li>
+<li>la aplicación está configurada. Ahora necesita un WMS que se mostrará en su aplicación. Esto se describe en la sección <strong>Gestión de WMS</strong>.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_create_application.png"><img alt="../../_images/mapbender3_create_application.png" src="../../_images/mapbender3_create_application.png" style="width: 775.6px; height: 583.1px;" /></a>
+</div></blockquote>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Por favor, tome en cuenta que la configuración de estilo-, ícono- y diseño tiene hacerse en archivos-rama y css, el momento. Leer más sobre generación de plantillas en <a class="reference external" href="https://doc.mapbender.org/en/customization/templates.html">https://doc.mapbender.org/en/customization/templates.html</a>.</p>
+</div>
+</div>
+<div class="section" id="copy-or-rename-an-application">
+<h2><a class="toc-backref" href="#id8">Copiar o cambiar el nombre de una aplicación</a><a class="headerlink" href="#copy-or-rename-an-application" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>También puede crear una nueva aplicación de copia de una aplicación existente. Se pueden copiar todas las aplicaciones con acceso de escritura. Proporciona un botón para duplicar la aplicación con todos los servicios. La nueva aplicación obtendrá un nombre derivado que puede ser cambiado en el paso siguiente.</p>
+</div>
+<div class="section" id="delete-an-application">
+<h2><a class="toc-backref" href="#id9">Eliminar una aplicación</a><a class="headerlink" href="#delete-an-application" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Puede eliminar una aplicación de la opción de menú <span class="menuselection">Applications</span> with the <span class="menuselection">x-button</span>.</p>
+</div>
+<div class="section" id="export-import-applications-and-sources">
+<h2><a class="toc-backref" href="#id10">Exportar / importar fuentes y aplicaciones</a><a class="headerlink" href="#export-import-applications-and-sources" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Puede exportar aplicaciones como JSON o YAML con <span class="menuselection">Applications ‣ Export</span>.  Usted puede elegir una o más aplicaciones para exportar y también puede exportar las fuentes que se publican en las aplicaciones.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_application_export.png"><img alt="../../_images/mapbender3_application_export.png" src="../../_images/mapbender3_application_export.png" style="width: 682.5px; height: 212.1px;" /></a>
+</div></blockquote>
+<p>El exportfile contiene todas las definiciones de la aplicación/es (fuentes) y pueden ser importado a través de <span class="menuselection">Applications ‣ Import</span>  en otra instalación de Mapbender3 o en la misma instalación.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_application_import.png"><img alt="../../_images/mapbender3_application_import.png" src="../../_images/mapbender3_application_import.png" style="width: 682.5px; height: 205.8px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="management-of-data-sources">
+<h2><a class="toc-backref" href="#id11">Gestión de Fuentes de Datos</a><a class="headerlink" href="#management-of-data-sources" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Mapbender puede manejar OGC WMS. La administración proporciona una interfaz de administración para las fuentes (de momento sólo WMS).</p>
+</div>
+<div class="section" id="service-repository-overview">
+<h2><a class="toc-backref" href="#id12">Vista General del Servicio de Repositorio</a><a class="headerlink" href="#service-repository-overview" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>Diríjase a <span class="guilabel">Services</span> y eche un vistazo al Servicio de Repositorio.</li>
+<li>Obtendrá una  Vista General de las Fuentes que se cargan en su  Mapbender.</li>
+<li>Tipo, Título, Descripción, se ofrece la primera información acerca de los servicios.</li>
+<li>Haga clic en el botón  <span class="menuselection">View-Button</span>  y obtendrá más información sobre la fuente.</li>
+<li>Con el botón <span class="menuselection">Delete-Button</span> puede eliminar la fuente del repositorio.</li>
+</ol>
+</div>
+<div class="section" id="loading-web-map-services">
+<h2><a class="toc-backref" href="#id13">Cargar Servicios Mapas Web</a><a class="headerlink" href="#loading-web-map-services" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Puede cargar Servicios de Mapas Web (WMS) de OGC para su aplicación.</p>
+<p>Un WMS devuelve un archivo XML cuando el documento getCapabilities se solicita. Esta información se analiza por Mapbender y Mapbender obtiene toda la información necesaria sobre el servicio de este XML</p>
+<div class="admonition tip">
+<p class="first admonition-title">Truco</p>
+<p class="last">Primero debe verificar el documento Capabilities en su navegador antes de intentar cargarlo con Mapbender</p>
+</div>
+<ol class="arabic simple">
+<li>Elegir el elemento en el menú <span class="menuselection">Services ‣ Add Service</span> o utilice el  +-Button. Enlace a la URL getCapabilities de WMS en el campo de texto <span class="menuselection">Serviceurl</span>.</li>
+<li>Introduzca nombre de usuario y contraseña si su servicio requiere autenticación.</li>
+<li>Pulse <strong>Cargar</strong> para cargar el Servicio del repositorio.</li>
+<li>Después del registro exitoso del servicio de Mapbender se mostrará una Vista General sobre la información que fue proporcionada por el servicio.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_wms_load.png"><img alt="../../_images/mapbender3_wms_load.png" src="../../_images/mapbender3_wms_load.png" style="width: 785.4px; height: 592.9px;" /></a>
+</div></blockquote>
+<p>Aquí está un ejemplo WMS:</p>
+<p>WhereGroup OSM WMS
+<a class="reference external" href="https://osm-demo.wheregroup.com/service">https://osm-demo.wheregroup.com/service</a></p>
+</div>
+<div class="section" id="add-service-to-application">
+<h2><a class="toc-backref" href="#id14">Añadir Servicio a la Aplicación</a><a class="headerlink" href="#add-service-to-application" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Después de la carga exitosa de un WMS usted desea agregar su WMS a una aplicación.</p>
+<ol class="arabic simple">
+<li>Elija <span class="menuselection">Applications ‣ edit-Button ‣ Layers ‣ Edit-Button</span>.</li>
+<li>Haga click en  <span class="menuselection">+-button</span> para agregar un conjunto de capas, que representa una colección de capas (un nombre posible podría ser lo principal)</li>
+<li>Ahora puede añadir capas al conjunto de capas</li>
+<li>Haga click en  <span class="menuselection">+-button</span> en su nuevo conjunto de capas para agregar un Servicio.</li>
+<li>Puede cambiar el orden de los Servicios en su aplicación arrastrando y soltando.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_add_source_to_application.png"><img alt="../../_images/mapbender3_add_source_to_application.png" src="../../_images/mapbender3_add_source_to_application.png" style="width: 785.4px; height: 592.9px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="configure-your-wms">
+<h2><a class="toc-backref" href="#id15">Configure su WMS</a><a class="headerlink" href="#configure-your-wms" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Puede configurar el WMS para su aplicación específica. Tal vez no desea proporcionar todas las capas o quieres cambiar el orden o títulos de la capa o desactivar la información de la característica o cambiar la escala máxima de una capa.</p>
+<ol class="arabic simple">
+<li>Elija <span class="menuselection">Applications ‣ edit-Button ‣ Layers ‣ edit-Button</span> para configurar la Instancia de Servicio.</li>
+<li>Usted verá una tabla con las capas del Servicio.</li>
+<li>Puede cambiar el orden de las capas arrastrando y soltando</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapbender3_wms_application_settings.png"><img alt="../../_images/mapbender3_wms_application_settings.png" src="../../_images/mapbender3_wms_application_settings.png" style="width: 785.4px; height: 592.9px;" /></a>
+<p>Configuración del servicio</p>
+<ul class="simple">
+<li>formato - elija el formato para getMap-Requests</li>
+<li>infoformat - elija el formato para getFeatureInfo-Requests</li>
+<li>exceptionformat - elegir el formato para excepciones</li>
+<li>opacidad - elija el porcentaje de opacidad</li>
+<li>visible - predeterminado. El servicio debe ser visible</li>
+<li>Fuante base - activada para los servicios que deben ser administrados por BaseSourceSwitcher</li>
+<li>proxy - si activa el servicio se solicitará por Mapbender y no directamente</li>
+<li>transparencia - El valor estándar está activado, desactivado si el servicio se solicita sin un fondo transparente (solicite getMap con TRANSPARENT = FALSE)</li>
+<li>mosaico - usted puede solicitar un WMS en teselas, el predeterminado o es tesela (puede ser una buena opción si tu mapa es muy grande y el servicio WMS no es compatible con la anchura y altura)</li>
+<li>Ordenamiento de capas - el ordenamiento de capas se puede cambiar en la aplicación</li>
+<li>Factor BBOX</li>
+<li>tesela de búfer</li>
+</ul>
+<p>Configuración de capa</p>
+<ul class="simple">
+<li>título - título de la capa de información de  Servicio</li>
+<li>activo (encendido/apagado) - activar/desactivar una capa para esta aplicación individual</li>
+<li>seleccionar en - seleccionable en el explorador de geodatos</li>
+<li>Seleccione permitir - la capa está activa cuando se inicia la aplicación</li>
+<li>información sobre -la capa proporciona solicitudes de información de características, la información predeterminada activa la funcionalidad de información de características</li>
+<li>información permite</li>
+<li>escala mínima/ escala máxima - el rango de la escala en que se debe mostrar la capa, 0 significa que no hay limitación de escala</li>
+<li>alternar - abrir la carpeta al inicio de la aplicación</li>
+<li>reordenar - permite reordenar las capas arrastrando y soltando durante el uso de la aplicación</li>
+<li>…-&gt; abre un cuadro de diálogo con más información</li>
+<li>nombre</li>
+<li>estilo - si un WMS ofrece que más de un estilo, usted puede elegir un estilo diferente al predeterminado</li>
+</ul>
+</div>
+<div class="section" id="add-elements-to-your-application">
+<h2><a class="toc-backref" href="#id16">Agregar Elementos a la aplicación</a><a class="headerlink" href="#add-elements-to-your-application" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Mapbender ofrece un conjunto de elementos. Puede Agregar los elementos a su aplicación. Tiene diferentes regiones (Barra de Herramientas, Sidepane, Contenido, Pie de Página) a las que usted puede agregar elementos.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_application_add_element.png"><img alt="../../_images/mapbender3_application_add_element.png" src="../../_images/mapbender3_application_add_element.png" style="width: 785.4px; height: 592.9px;" /></a>
+</div></blockquote>
+<ol class="arabic simple">
+<li>Elija <span class="menuselection">Applications ‣ edit-Button ‣ Layers ‣ Button +</span> para obtener una Vista General de los elementos que Mapbender3&nbsp; proporciona</li>
+<li>Elija un elemento de la lista.</li>
+<li>Tenga en cuenta que tiene distintas áreas en su aplicación. Asegúrese de agregar el elemento a una región que haga sentido.</li>
+<li>Configurar el elemento. Aviso: Al seleccionar un elemento por ejemplo <strong>mapa</strong> puede ver que el elemento tiene un conjunto de atributos. Cada elemento ofrece atributos individuales para la configuración.</li>
+<li>Usted puede cambiar la posición del elemento a través de arrastrar y soltar</li>
+<li>Eche un vistazo a su aplicación.  Puede abrirla desde <span class="menuselection">Applications ‣ Applications Overview</span></li>
+</ol>
+<p>Ahora usted debe tener una idea de lo fácil que es cambiar una aplicación de Mapbender sin cambios en el código.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_application_elements.png"><img alt="../../_images/mapbender3_application_elements.png" src="../../_images/mapbender3_application_elements.png" style="width: 785.4px; height: 592.9px;" /></a>
+</div></blockquote>
+<p>Ejemplos de elementos que Mapbender3 ofrece:</p>
+<ul class="simple">
+<li>Sobre el cuadro de diálogo</li>
+<li>Indicador de actividad</li>
+<li>BaseSourceSwitcher o Conmutador de Fuente Base</li>
+<li>Botón</li>
+<li>Pantalla de Coordenadas</li>
+<li>Utilidad de Coordenadas</li>
+<li>Derechos de autor</li>
+<li>Información de funciones</li>
+<li>Posición GPS</li>
+<li>HTML</li>
+<li>Leyenda</li>
+<li>Layertree - tabla de contenido</li>
+<li>Mapa</li>
+<li>Vista General</li>
+<li>PrintClient</li>
+<li>Línea/Área de Regla</li>
+<li>Selector de Escala</li>
+<li>ScaleBar</li>
+<li>Búsqueda Simple</li>
+<li>Búsqueda de Enrutador</li>
+<li>Selector de SRS</li>
+<li>Selector de sistema de referencia espacial (SRS Selector)</li>
+<li>Barra de herramientas de navegación (Zoombar)</li>
+<li>Cargador WMS</li>
+<li>Editor  WMC</li>
+<li>Cargador WMC</li>
+<li>Lista WMC</li>
+</ul>
+<p>Encontrará información detallada sobre cada elemento de la “Documentación de elementos de Mapbender  &lt;<a class="reference external" href="https://doc.mapbender.org/en/functions.html">https://doc.mapbender.org/en/functions.html</a>&gt;`_.</p>
+</div>
+<div class="section" id="try-it-yourself">
+<h2><a class="toc-backref" href="#id17">Inténtelo usted mismo</a><a class="headerlink" href="#try-it-yourself" title="Enlazar permanentemente con este título">¶</a></h2>
+<ul class="simple">
+<li>Añadir un elemento de mapa al contenido de su aplicación</li>
+<li>Añadir un Layertree al contenido de su aplicación</li>
+<li>Agregar un botón que abre el Layertree a la parte superior de la aplicación</li>
+<li>Añadir la Barra de Herramientas de Navegación al contenido</li>
+<li>Añadir un Copyright y cambiar el texto de derechos de autor</li>
+<li>Añadir un Selector SRS a pie de página</li>
+</ul>
+</div>
+<div class="section" id="user-and-group-management">
+<h2><a class="toc-backref" href="#id18">Gestión de usuario y grupo</a><a class="headerlink" href="#user-and-group-management" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Un acceso a Mapbender requiere autenticación. Sólo públicas aplicaciones se pueden utilizar por todo el mundo.</p>
+<p>Un usuario tiene permisos tener acceso a uno o a un conjunto de aplicaciones y servicios.</p>
+</div>
+<div class="section" id="create-a-user">
+<h2><a class="toc-backref" href="#id19">Crear un usuario</a><a class="headerlink" href="#create-a-user" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>Para crear un usuario, vaya a <span class="guilabel">New User</span> o haga clic en <span class="menuselection">+-Button</span>.</li>
+<li>Elegir un nombre y una contraseña para tu usuario.</li>
+<li>Proporcionar una dirección de correo electrónico para el usuario.</li>
+<li>Guardar el nuevo usuario.</li>
+<li>Puede proporcionar más información sobre el usuario en la pestaña <span class="menuselection">Profile</span>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapbender3_create_user.png"><img alt="../../_images/mapbender3_create_user.png" src="../../_images/mapbender3_create_user.png" style="width: 785.4px; height: 592.9px;" /></a>
+</div>
+<div class="section" id="create-a-group">
+<h2><a class="toc-backref" href="#id20">Crear un grupo de</a><a class="headerlink" href="#create-a-group" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>Crear un grupo by <span class="guilabel">New Group</span>.</li>
+<li>Definir un nombre y una descripción para su grupo.</li>
+<li>Guarde su nuevo grupo.</li>
+</ol>
+</div>
+<div class="section" id="assign-users-to-group">
+<h2><a class="toc-backref" href="#id21">Asignar usuarios al grupo</a><a class="headerlink" href="#assign-users-to-group" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>Asignar un usuario a un grupo por <span class="guilabel">Users –&gt; Groups</span>.</li>
+<li>Elegir uno o más usuarios que desea agregar al grupo en <span class="menuselection">Users</span>.</li>
+<li>Asignar un usuario a un grupo por <span class="menuselection">Users ‣ Edit-Button‣ Groups</span>.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_assign_user_to_group.png"><img alt="../../_images/mapbender3_assign_user_to_group.png" src="../../_images/mapbender3_assign_user_to_group.png" style="width: 785.4px; height: 592.9px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="roles">
+<h2><a class="toc-backref" href="#id22">Roles</a><a class="headerlink" href="#roles" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Mapbender otorga diferentes derechos. Se refieren al Symfony ACL System  <a class="reference external" href="http://symfony.com/doc/2.8/cookbook/security/acl_advanced.html#built-in-permission-map">http://symfony.com/doc/2.8/cookbook/security/acl_advanced.html#built-in-permission-map</a></p>
+<ul class="simple">
+<li>vista - Si a alguien se le permite ver el objeto.</li>
+<li>editar - si a alguien se le permite realizar cambios en el objeto.</li>
+<li>eliminar - si a alguien se le permite eliminar el objeto.</li>
+<li>operador - si a alguien se le permite llevar a cabo todas las acciones anteriores.</li>
+<li>maestro - si alguien se permite llevar a cabo todas las acciones anteriores y además se le permite conceder cualquiera de los permisos anteriores a otros.</li>
+<li>propietario - si alguien posee el objeto. Un propietario puede realizar cualquiera de las anteriores acciones y otorgar permisos maestro y propietario.</li>
+</ul>
+<ol class="arabic simple">
+<li>Asignar roles a un usuario por <span class="menuselection">Users ‣ Edit your User ‣ Security</span>.</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_roles.png"><img alt="../../_images/mapbender3_roles.png" src="../../_images/mapbender3_roles.png" style="width: 785.4px; height: 592.9px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="assign-an-application-to-a-user-group">
+<h2><a class="toc-backref" href="#id23">Asignar una Aplicación a un Usuario/Grupo</a><a class="headerlink" href="#assign-an-application-to-a-user-group" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li>Edite su aplicación por <span class="menuselection">Application ‣ Edit-Button</span>.</li>
+<li>Elija <span class="menuselection">Security</span></li>
+<li>Configurar los permisos como vista, editar, eliminar, operador, dueño, propietario</li>
+<li>Asignar un usuario/grupo a la aplicación</li>
+<li>¡Pruebe su configuración!</li>
+<li>Cierre sesión de Mapbender por <span class="menuselection">Logout</span>.</li>
+<li>Inicie sesión como el nuevo usuario</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_security.png"><img alt="../../_images/mapbender3_security.png" src="../../_images/mapbender3_security.png" style="width: 785.4px; height: 592.9px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id24">Cosas para probar</a><a class="headerlink" href="#things-to-try" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Aquí están algunos retos adicionales para que los pruebe:</p>
+<ol class="arabic simple">
+<li>Intente cargar algunos WMS en su aplicación. Intente configurar su WMS.</li>
+<li>Intentar crear una aplicación individual.</li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id25">¿Qué sigue?</a><a class="headerlink" href="#what-next" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Esto es sólo el primer paso en el camino al uso de Mapbender. Hay mucha más funcionalidad que puede probar.</p>
+<p>Sitio Web de Mapbender</p>
+<blockquote>
+<div><a class="reference external" href="https://mapbender.org/">https://mapbender.org/</a></div></blockquote>
+<p>Encuentre tutoriales en</p>
+<blockquote>
+<div><p><a class="reference external" href="https://doc.mapbender.org">https://doc.mapbender.org</a></p>
+<p><a class="reference external" href="https://api.mapbender.org">https://api.mapbender.org</a></p>
+</div></blockquote>
+<p>Involúcrese en el proyecto</p>
+<blockquote>
+<div><a class="reference external" href="https://www.mapbender.org/Community">https://www.mapbender.org/Community</a></div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

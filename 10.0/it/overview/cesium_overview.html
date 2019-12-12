@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Cesium &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.0 Contents" href="overview.html" />
+    <link rel="next" title="deegree" href="deegree_overview.html" />
+    <link rel="prev" title="Cartaro" href="cartaro_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://cesiumjs.org"><img alt="project logo" class="align-right" src="../../_images/logo-cesium8.png" /></a>
+<div class="section" id="cesium">
+<h1>Cesium<a class="headerlink" href="#cesium" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="d-globes-and-2d-maps-in-a-browser">
+<h2>3D Globes and 2D Maps in a Browser<a class="headerlink" href="#d-globes-and-2d-maps-in-a-browser" title="Permalink to this headline">¶</a></h2>
+<p>Cesium è una  libreria JavaScript per creare globi 3D e mappe 2D in un browser web
+senza nessun plugins. Usa WebGL per l&#8217;acceleratore hardware grafico, ed è cross-platform,
+cross-browser, e sviluppato per la visualizzazione di dati dinamici.</p>
+<a class="reference internal image-reference" href="../../_images/cesiumjs_3in18.png"><img alt="Cesium example" class="align-right" src="../../_images/cesiumjs_3in18.png" style="width: 550.0px; height: 330.5px;" /></a>
+<div class="section" id="caratteristiche-principali">
+<h3>Caratteristiche principali<a class="headerlink" href="#caratteristiche-principali" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Visualizzazione geospaziale dinamica:<ul>
+<li>Create data-driven, time-dynamic scenes with <a class="reference external" href="https://github.com/AnalyticalGraphicsInc/cesium/wiki/CZML-Guide">CZML</a>.</li>
+<li>Visualizza terreni di tutto il mondo ad alta risoluzione.</li>
+<li>Renderizza layer immagini utilizzando gli standard WMS, TMS, OpenStreetMaps, Bing, e Esri.</li>
+<li>Renderizza dati vettoriali da GeoJSON e TopoJSON.</li>
+<li>Renderizza modelli 3D utilizzando COLLADA e glTF.</li>
+<li>Usate i <a class="reference external" href="http://cesiumjs.org/plugins/index.html">plugins</a> per estendere Cesium.</li>
+</ul>
+</li>
+<li>Costruito per Performance e Precisione:<ul>
+<li>Ottimizzato WebGL utilizza la grafica con accelerazione hardware efficientemente con dosaggi e tagli.</li>
+<li>Renderizza un vasto range di geometrie incluso linee, poligoni, billboards, etichett, estrusioni, e corridoi.</li>
+<li>Controlla la camera e crea flight paths.</li>
+<li>Usa standard widgets per controllare il tempo dell&#8217;animazione, seleziona i layer, e fare lo zoom ad una località.</li>
+</ul>
+</li>
+<li>Una API, Tre Visualizzazioni:<ul>
+<li>Cesium supporta globi 3D, mappe 2D, e Visualizzazione Columbus 2.5D con le stesse API.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="standard-implementati">
+<h3>Standard implementati<a class="headerlink" href="#standard-implementati" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>WMS e WMTS</li>
+</ul>
+</div>
+<div class="section" id="dettagli">
+<h3>Dettagli<a class="headerlink" href="#dettagli" title="Permalink to this headline">¶</a></h3>
+<p><strong>Sito Web:</strong> <a class="reference external" href="http://cesiumjs.org">http://cesiumjs.org</a></p>
+<p><strong>Licenza:</strong> Apache 2.0 license</p>
+<p><strong>Versione Software:</strong> 1.4</p>
+<p><strong>Piattaforme Supportate:</strong>  Independente dalla piattaforma, dipende solo da un browser che supporta WebGL</p>
+<p><strong>Supporto della Comunità:</strong> Mailing list <a class="reference external" href="mailto:cesium-dev&#37;&#52;&#48;googlegroups&#46;com">cesium-dev<span>&#64;</span>googlegroups<span>&#46;</span>com</a></p>
+</div>
+<div class="section" id="guida-rapida">
+<h3>Guida Rapida<a class="headerlink" href="#guida-rapida" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/cesium_quickstart.html"><em>Documentazione introduttiva</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

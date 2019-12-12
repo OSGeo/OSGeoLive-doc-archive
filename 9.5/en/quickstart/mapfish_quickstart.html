@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MapFish Quickstart &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 9.5 Contents" href="../overview/overview.html" />
+    <link rel="next" title="MapGuide Quick Start" href="mapguide_quickstart.html" />
+    <link rel="prev" title="Mapbender3 Quickstart" href="mapbender_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.mapfish.org"><img alt="project logo" class="align-right" src="../../_images/logo-mapfish7.png" style="width: 180.0px; height: 96.0px;" /></a>
+<div class="section" id="mapfish-quickstart">
+<h1>MapFish Quickstart<a class="headerlink" href="#mapfish-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>MapFish is a flexible and complete framework for building rich web-mapping
+applications. It emphasizes high productivity, and high-quality development.</p>
+<p>This Quickstart describes how to</p>
+<ul class="simple">
+<li>run the MapFish sample application installed on this live DVD</li>
+<li>install MapFish, and</li>
+<li>create MapFish applications.</li>
+</ul>
+<div class="section" id="run-the-sample-application">
+<h2>Run the sample application<a class="headerlink" href="#run-the-sample-application" title="Permalink to this headline">¶</a></h2>
+<p>To run the sample application click
+on <em class="menuselection">Browser Clients ‣ MapFish ‣ MapFish Start</em>. This
+will open a FireFox tab pointing to the application served by mod_wsgi in
+apache (<a class="reference external" href="http://localhost/mapfishsample/osgeolive/wsgi/">http://localhost/mapfishsample/osgeolive/wsgi/</a>).</p>
+<p>This demo application has the following features: Query, Editing, Search, and
+Printing.
+To see the MapFish REST protocol in action you can open the Firebug debugger
+and look at the requests/responses exchanged between the browser and the
+MapFish web services.
+<em class="menuselection">Tools ‣ Web Developer ‣ Toggle Tools</em></p>
+</div>
+<div class="section" id="install-mapfish">
+<h2>Install MapFish<a class="headerlink" href="#install-mapfish" title="Permalink to this headline">¶</a></h2>
+<p>To install MapFish, download the installation script, and execute it from a
+terminal:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ wget http://www.mapfish.org/downloads/go-mapfish-framework-2.2.py
+
+$ python go-mapfish-framework-2.2.py --no-site-packages venv
+</pre></div>
+</div>
+<p>The above command creates the virtual Python environment in the <tt class="docutils literal"><span class="pre">venv</span></tt>
+directory, fetches MapFish and its dependencies and install them all in the
+virtual environment.</p>
+<p>You can then activate the virtual Python environment and check that MapFish
+has been successfully installed:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ source venv/bin/activate
+
+(venv) $ paster create --list-templates
+</pre></div>
+</div>
+<p>The above command should produce the following output:</p>
+<div class="highlight-python"><div class="highlight"><pre>Available templates:
+basic_package:   A basic setuptools-enabled package
+mapfish:         MapFish application template
+mapfish_client:  MapFish client plugin template
+paste_deploy:    A web application deployed through paste.deploy
+pylons:          Pylons application template
+pylons_minimal:  Pylons minimal application template
+</pre></div>
+</div>
+<p>Ok, the framework is properly installed. You can now follow the next section
+to create a MapFish application using this installation.</p>
+</div>
+<div class="section" id="create-a-mapfish-application">
+<h2>Create a MapFish application<a class="headerlink" href="#create-a-mapfish-application" title="Permalink to this headline">¶</a></h2>
+<p>After having activated the virtual Python environment, you can generate your
+first MapFish application named for exemple MyMapFishApp:</p>
+<div class="highlight-python"><div class="highlight"><pre>(venv) $ paster create -t mapfish MyMapFishApp sqlalchemy=true
+</pre></div>
+</div>
+<p>Then you can also install the JavaScript librairies in the application:</p>
+<div class="highlight-python"><div class="highlight"><pre>(venv) $ paster create --no-interactive -t mapfish_client MyMapFishApp
+</pre></div>
+</div>
+<p>The above commands should have created the MapFish application in the
+<tt class="docutils literal"><span class="pre">MyMapFishApp</span></tt> directory.</p>
+<p>At this point you should be able to run the application with:</p>
+<div class="highlight-python"><div class="highlight"><pre>(venv) $ cd MyMapFishApp
+(venv) $ paster serve development.ini
+</pre></div>
+</div>
+<p>Open <a class="reference external" href="http://localhost:5000">http://localhost:5000</a> in your browser. You should see a minimal
+application that includes a map with two <a class="reference external" href="http://www.openstreetmap.org/">OSM layers</a>, a toolbar above the map, and a layer tree.</p>
+<p>The MapFish framework offers more than that. In particular it allows easily
+creating RESTful web services for creating, reading, updating and deleting
+features. Please visit <a class="reference external" href="http://mapfish.org/doc/2.2/quickstart.html">http://mapfish.org/doc/2.2/quickstart.html</a> to learn
+how to create such RESTful web services and <a class="reference external" href="http://mapfish.org">http://mapfish.org</a> to learn more
+about MapFish.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

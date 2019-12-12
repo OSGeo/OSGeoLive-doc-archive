@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MapSlicer 快速入门文档 &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 9.5" href="../index.html" />
+    <link rel="next" title="1. MapWindow GIS Lite" href="mapwindow_quickstart.html" />
+    <link rel="prev" title="MapServer 快速入门文档" href="mapserver_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-mapslicer26.png"><img alt="project logo" class="align-right" src="../../_images/logo-mapslicer26.png" style="width: 128.0px; height: 128.0px;" /></a>
+<div class="section" id="mapslicer">
+<h1>MapSlicer 快速入门文档<a class="headerlink" href="#mapslicer" title="Permalink to this headline">¶</a></h1>
+<p>　　 <a class="reference external" href="https://wiki.osgeo.org/wiki/MapSlicer">MapSlicer</a> 提供了一套简单的解决方案，用于对任何具备地理参考的地图图像生成切片。这些切片可以用于网络地图服务。它遵循 <a class="reference external" href="http://www.osgeo.org/">Open Source Geospatial Foundation (OSGeo)</a> 的 <a class="reference external" href="http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification">Tile Map Service (TMS)</a> 标准。</p>
+<ul class="simple">
+<li><strong>数据输入</strong>: 任何具备地理配准信息的栅格图像，例如 TIFF 、JPEG 等。可以利用 ArcGIS 、QGIS 等 GIS 系统准备数据。</li>
+<li><strong>数据输出</strong>: 一组目录包含图像切片，可导入网络服务中。部分示例位于  。</li>
+<li><strong>软件特点</strong>: MapSlicer 是一款简单易用的自由/开源软件。它提供方便的向导服务用于用户进行配置。</li>
+</ul>
+<p>　　MapSlicer 的开发者注意到 <a class="reference external" href="http://maps.google.com/">Google Maps</a> 、 <a class="reference external" href="http://maps.bing.com">Microsoft Bing Maps</a> 、 <a class="reference external" href="http://maps.yahoo.com/">Yahoo Maps</a> 及包括 <a class="reference external" href="http://www.openstreetmap.org/">Open Street Map</a>  在内的一系列服务使用了同样的投影系统和切片格网，切片数据可以兼容。在 <a class="reference external" href="http://www.maptiler.org/google-maps-coordinates-tile-bounds-projection/">Tiles à la Google Maps</a> 页面可以看到对此的详细说明。MapSlicer 可以使用这一切片格网定义进行快速的切片服务配置。</p>
+<div class="section" id="id2">
+<h2>启动 MapSlicer<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>下载 MapSlicer 或直接在 Live 系统启动。</li>
+<li>选择 <strong>Tile Profile 切片格网定义</strong> 。选择 <em>Google Maps Compatible (Spherical Mercator)</em> 适合标准的地图服务。若需要生成 KML 文件用于 Google Earth 等软件，请选择 <em>Google Earth (KML SuperOverlay)</em> 。点击 <em>Continue</em> 继续。</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer112.jpg"><img alt="../../_images/mapslicer112.jpg" class="align-center" src="../../_images/mapslicer112.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="3">
+<li>选择 <strong>Source Data Files 源文件</strong> 。指定需要制作切片的影象即可。 点击 <em>Continue</em> 继续。</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer212.jpg"><img alt="../../_images/mapslicer212.jpg" class="align-center" src="../../_images/mapslicer212.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="4">
+<li>定义 <strong>Spatial Reference System / Coordinate System 坐标投影系统</strong> 。定义可以使用 EPSG/ESRI 投影库的 ID 号。比如 <a class="reference external" href="http://help.maptiler.org/coordinates/europe/uk">EPSG:27700 with TOWGS84</a> 是英国范围内常用的一个投影。点击*Continue* 继续。</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer312.jpg"><img alt="../../_images/mapslicer312.jpg" class="align-center" src="../../_images/mapslicer312.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="5">
+<li>确定 <strong>Tile Pyramid 切片层级</strong> 的具体设置。默认的比例和文件格式一般能够满足要求。点击 <em>Continue</em> 继续。</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer412.jpg"><img alt="../../_images/mapslicer412.jpg" class="align-center" src="../../_images/mapslicer412.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="6">
+<li>设定 <strong>Destination folder and Addresses / URLs 目标路径</strong> 。如果不能明确的话，可以在生成切片后将其加入 <em>googlemaps.html</em> 、<em>openlayers.html</em> 等配置。点击 <em>Continue</em> 继续。</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer512.jpg"><img alt="../../_images/mapslicer512.jpg" class="align-center" src="../../_images/mapslicer512.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="7">
+<li>勾选 <strong>Viewers that should be generated 目标视图</strong> 。默认配置为 <em>googlemaps.html</em> 和 <em>openlayers.html</em> 。若需要，可以生成一个 KML 图层用于 Google Earth 。点击 <em>Continue</em> 继续。</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer612.jpg"><img alt="../../_images/mapslicer612.jpg" class="align-center" src="../../_images/mapslicer612.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="8">
+<li>设置 <strong>Details for generating the Viewers 视图配置细节</strong> 。这里设计名称、版权声明、API Key 等。若不能明确，可以在生成切片后再编辑 <em>googlemaps.html / openlayers.html</em> 文件。点击 <em>Continue</em> 继续。</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer712.jpg"><img alt="../../_images/mapslicer712.jpg" class="align-center" src="../../_images/mapslicer712.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="9">
+<li>点击 <strong>Render</strong> 开始渲染切片。完成后，MapSlicer 将显示存储切片的路径。于浏览器中打开 <em>googlemaps.html</em> / <em>openlayers.html</em> 等文件即可查看生成切片叠加于底图之上的显示效果。发布切片数据时，只需将生成数据全部导入服务器中，并相应配置 googlemaps.html 、openlayers.html 等文件即可。</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

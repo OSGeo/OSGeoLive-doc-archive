@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guida rapida su Cartaro &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.0 Contents" href="../overview/overview.html" />
+    <link rel="next" title="Guida rapida su Cesium" href="cesium_quickstart.html" />
+    <link rel="prev" title="Guida rapida su AtlasStyler" href="atlasstyler_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://cartaro.org"><img alt="project logo" class="align-right" src="../../_images/logo-cartaro17.png" style="width: 125.0px; height: 125.0px;" /></a>
+<div class="section" id="guida-rapida-su-cartaro">
+<h1><a class="toc-backref" href="#id1">Guida rapida su Cartaro</a><a class="headerlink" href="#guida-rapida-su-cartaro" title="Permalink to this headline">¶</a></h1>
+<p>Cartaro è un Content Management System (CMS) abilitato a dati geografici, per
+gestire e pubblicare contenuti geospaziali e non-geospaziali.</p>
+<p>Questo tutorial vi guiderà attraverso i seguenti tasks:</p>
+<ol class="arabic simple">
+<li>Creare un nuovo contenuto di tipo spaziale</li>
+<li>Configurare Cartaro per visualizzare il nuovo tipo di contenuto</li>
+<li>Aggiungere un nuovo contenuto geospaziali</li>
+</ol>
+<p>All tasks will be performed using the example of a touristic web portal with the goal to map lakes.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#guida-rapida-su-cartaro" id="id1">Guida rapida su Cartaro</a><ul>
+<li><a class="reference internal" href="#avviare-cartaro" id="id2">Avviare Cartaro</a></li>
+<li><a class="reference internal" href="#front-page" id="id3">Front Page</a></li>
+<li><a class="reference internal" href="#creare-un-nuovo-tipo-di-contenuto" id="id4">Creare un nuovo tipo di Contenuto</a></li>
+<li><a class="reference internal" href="#configurare-geoserver" id="id5">Configurare GeoServer</a><ul>
+<li><a class="reference internal" href="#creare-un-nuovo-layer-in-geoserver" id="id6">Creare un nuovo layer in GeoServer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configurare-openlayers-per-attivare-il-layer-geoserver-in-una-mappa" id="id7">Configurare OpenLayers per attivare il layer GeoServer in una mappa</a></li>
+<li><a class="reference internal" href="#aggiungere-contenuto-spaziale" id="id8">Aggiungere contenuto spaziale</a></li>
+<li><a class="reference internal" href="#cose-da-provare" id="id9">Cose da provare</a></li>
+<li><a class="reference internal" href="#ed-ora" id="id10">Ed ora ?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="avviare-cartaro">
+<h2><a class="toc-backref" href="#id2">Avviare Cartaro</a><a class="headerlink" href="#avviare-cartaro" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Avviare OSGeoLive DVD</li>
+<li>Scegliere <span class="menuselection">Geospatial ‣ Browser Clients ‣ Start Cartaro</span> per avviare Cartaro</li>
+<li>La pagine web Cartaro <a class="reference external" href="http://localhost/cartaro">http://localhost/cartaro</a> si aprirà automaticamente</li>
+</ol>
+</div>
+<div class="section" id="front-page">
+<h2><a class="toc-backref" href="#id3">Front Page</a><a class="headerlink" href="#front-page" title="Permalink to this headline">¶</a></h2>
+<p>Quando la pagina di Cartaro è aperta, si vedrà l&#8217;immagine seguente. La prima pagina contiene una mappa globale con le capitali come esempio.</p>
+<a class="reference internal image-reference" href="../../_images/cartaro_frontpage17.png"><img alt="../../_images/cartaro_frontpage17.png" class="align-center" src="../../_images/cartaro_frontpage17.png" style="width: 529.2px; height: 352.8px;" /></a>
+<ul class="simple">
+<li>Fate <strong>Log in</strong> nell&#8217;angolo in alto a destra per accedere all&#8217;interfaccia di amministrazione con <em>admin</em> come nome utente e <em>geoserver</em> come password. Ora si vedrà la barra di amministrazione in alto.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/cartaro_userpage8.png"><img alt="../../_images/cartaro_userpage8.png" class="align-center" src="../../_images/cartaro_userpage8.png" style="width: 532.2px; height: 372.6px;" /></a>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Si può ritornare alla pagina iniziale cliccando sull&#8217;icona dedicata nell&#8217;angolo in alto a sinistra.</p>
+</div>
+</div>
+<div class="section" id="creare-un-nuovo-tipo-di-contenuto">
+<h2><a class="toc-backref" href="#id4">Creare un nuovo tipo di Contenuto</a><a class="headerlink" href="#creare-un-nuovo-tipo-di-contenuto" title="Permalink to this headline">¶</a></h2>
+<p>I tipi del contenuto e i campi definiscono la struttura di un contenuto specifico (esempio il tipo di contenuto <em>Capital</em> contiene i campi &#8220;name&#8221; e &#8220;location&#8221; per generare gli elementi del contenuto per le rispettive capitali visualizzate sulla mappa).
+Per creare un nuovo tipo di contenuto, seguire i punti di seguito.</p>
+<ul class="simple">
+<li>Scegliere <span class="menuselection">Structure ‣ Content types</span> nella barra del menu e cliccare <strong>Add content type</strong></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/cartaro_addcontenttype7.png"><img alt="../../_images/cartaro_addcontenttype7.png" class="align-center" src="../../_images/cartaro_addcontenttype7.png" style="width: 709.6px; height: 258.4px;" /></a>
+<ul class="simple">
+<li>Digitare un nuome per il nuovo tipo di contenuto e descriverlo se si vuole</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/cartaro17.png"><img alt="../../_images/cartaro17.png" class="align-center" src="../../_images/cartaro17.png" style="width: 554.5px; height: 605.0px;" /></a>
+<ul class="simple">
+<li>Finire cliccando su <strong>Save and add fields</strong></li>
+<li>Aggiungere un campo per il tipo di contenuto inserendo un nome descrittivo. Se si vuole creare un campo spaziale con il nome <em>Geometry</em>. Selezionare  <em>Geospatial data</em>  come tipo del campo e <em>OpenLayers Map</em> come widget.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/cartaro27.png"><img alt="../../_images/cartaro27.png" class="align-center" src="../../_images/cartaro27.png" style="width: 784.7px; height: 443.8px;" /></a>
+<ul class="simple">
+<li>Finire cliccando su <strong>Save</strong></li>
+<li>Scegliere le impostazione dei campi nella nuova finestra: Selezionare il tipo di geometria che descrive la tipologia di informazione spaziale che volete descrivere. Scegliere <em>Polygon</em> per seguire questo esempio.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/cartaro37.png"><img alt="../../_images/cartaro37.png" class="align-center" src="../../_images/cartaro37.png" style="width: 788.2px; height: 459.9px;" /></a>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Leggere il testo sotto il campo a tendina <em>Geometry type</em> per trovare la tipologia di geometria che risponde alle proprie necessità.</p>
+</div>
+<ul class="simple">
+<li>Finire cliccando su <strong>Save field settings</strong></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/cartaro47.png"><img alt="../../_images/cartaro47.png" class="align-center" src="../../_images/cartaro47.png" style="width: 775.6px; height: 1073.1px;" /></a>
+<ul class="simple">
+<li>Premere <em>Save settings</em> per finire la creazione del campo</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/cartaro57.png"><img alt="../../_images/cartaro57.png" class="align-center" src="../../_images/cartaro57.png" style="width: 788.9px; height: 480.2px;" /></a>
+<ul class="simple">
+<li>Sotto il pannello <em>Manage fields</em> si può creare ulteriore campi non spaziali. Non si vuole crearne di nuovi in questo esempio.</li>
+</ul>
+</div>
+<div class="section" id="configurare-geoserver">
+<h2><a class="toc-backref" href="#id5">Configurare GeoServer</a><a class="headerlink" href="#configurare-geoserver" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../overview/geoserver_overview.html"><em>GeoServer</em></a> è usato per fornire layers attraverso <a class="reference internal" href="../standards/wfs_overview.html"><em>Web Feature Service (WFS)</em></a> e <a class="reference internal" href="../standards/wms_overview.html"><em>Web Map Service (WMS)</em></a> con il campo spaziale dal tipo di contenuto appena creato.</p>
+<ul class="simple">
+<li>Scegliere <span class="menuselection">Structure ‣ GeoServer</span> dalla barra del menu per visitare la pagina di configurazione di GeoServer</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/cartaro_geoserver_entry8.png"><img alt="../../_images/cartaro_geoserver_entry8.png" class="align-center" src="../../_images/cartaro_geoserver_entry8.png" style="width: 712.6px; height: 272.3px;" /></a>
+<div class="section" id="creare-un-nuovo-layer-in-geoserver">
+<h3><a class="toc-backref" href="#id6">Creare un nuovo layer in GeoServer</a><a class="headerlink" href="#creare-un-nuovo-layer-in-geoserver" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Usare layers di GeoServer per pubblicare i dati spaziali.</li>
+<li>Scegliere di nuovo <span class="menuselection">Structure ‣ GeoServer</span> dalla barra del menu per visitare la pagina di configurazione di GeoServer</li>
+<li>Selezionare <span class="menuselection">Layers</span> e cliccare <strong>Add</strong> per aggiugere un nuovo layer</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/cartaro_geoserver_addnewlayer7.png"><img alt="../../_images/cartaro_geoserver_addnewlayer7.png" class="align-center" src="../../_images/cartaro_geoserver_addnewlayer7.png" style="width: 537.6px; height: 247.8px;" /></a>
+<ol class="arabic simple">
+<li>Digitare un adatto titolo al layer (esempio lakes).</li>
+<li>Selezionare il tipo di layer. Si seleziona <em>PostGIS Field</em> per operazioni spaziali avanzate e per archiviare i geodati.</li>
+<li>Come sorgente selezionare i tipo di contenuto che sarà stato associato con il nuovo layer.</li>
+<li>Selezionare <em>Provide an OpenLayers WFS layer</em>  nella sezione OpenLayers.</li>
+<li>Finire configurazione cliccando su <strong>Save</strong></li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/cartaro77.png"><img alt="../../_images/cartaro77.png" class="align-center" src="../../_images/cartaro77.png" style="width: 612.15px; height: 966.9px;" /></a>
+<ul class="simple">
+<li>Congratulazioni! Il nuovo layer GeoServer è stato aggiunto a GeoServer.</li>
+</ul>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Ora si può accedere al campo spaziale del tipo di contenuto tramite WFS o WMS con altre applicazioni (esempio con <a class="reference internal" href="../overview/qgis_overview.html"><em>QGis</em></a>)</p>
+</div>
+</div>
+</div>
+<div class="section" id="configurare-openlayers-per-attivare-il-layer-geoserver-in-una-mappa">
+<h2><a class="toc-backref" href="#id7">Configurare OpenLayers per attivare il layer GeoServer in una mappa</a><a class="headerlink" href="#configurare-openlayers-per-attivare-il-layer-geoserver-in-una-mappa" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../overview/openlayers_overview.html"><em>OpenLayers</em></a> è usato per visualizzare il nuovo layer su una mappa. Si associera il layer di GeoServer con la mappa di OpenLayers.</p>
+<ul class="simple">
+<li>Andare in <span class="menuselection">Structure ‣ OpenLayers ‣ Maps</span>  per vedere la pagine di configurazione di OpenLayers</li>
+<li>Cercare <em>frontmap</em> - una mappa pre-generata di default, e selezionare <strong>Edit</strong> nella parte destra.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/cartaro_openl_maps_frontmapedit7.png"><img alt="../../_images/cartaro_openl_maps_frontmapedit7.png" class="align-center" src="../../_images/cartaro_openl_maps_frontmapedit7.png" style="width: 622.3px; height: 493.5px;" /></a>
+<ul class="simple">
+<li>La pagina di configurazione della frontmap appare come visualizzato nello screenshot di seguito.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/cartaro_openlayers_frontmapediting7.png"><img alt="../../_images/cartaro_openlayers_frontmapediting7.png" class="align-center" src="../../_images/cartaro_openlayers_frontmapediting7.png" style="width: 619.5px; height: 615.3px;" /></a>
+<ul class="simple">
+<li>Selezionare <span class="menuselection">Layers &amp; Styles</span> nella barra laterale di sinistra per aggiungere il layer creato alla frontmap.</li>
+<li>Cercare il layer di GeoServer creato (&#8216;lakes&#8217; in questo esempio)</li>
+<li>Selezionare i bottoni per <em>Enabled</em>, <em>Activated</em> e <em>In Switcher</em> per attivare il nuovo layer <em>lakes</em> nella mappa</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/cartaro_openl_layersstylessettings7.png"><img alt="../../_images/cartaro_openl_layersstylessettings7.png" class="align-center" src="../../_images/cartaro_openl_layersstylessettings7.png" style="width: 713.3px; height: 605.5px;" /></a>
+<ul class="simple">
+<li>Finire la configurazione cliccando su <strong>Save</strong> in fondo alla pagina</li>
+</ul>
+</div>
+<div class="section" id="aggiungere-contenuto-spaziale">
+<h2><a class="toc-backref" href="#id8">Aggiungere contenuto spaziale</a><a class="headerlink" href="#aggiungere-contenuto-spaziale" title="Permalink to this headline">¶</a></h2>
+<p>Dopo aver creato il tipo di contenuto e configurato GeoServer e OpenLayers si può ora aggiungere molti elementi di questo tipo come si vuole.</p>
+<ul class="simple">
+<li>Scegliere <span class="menuselection">Content</span> dalla barra del menu per vedere tutti gli elementi del contenuto esistenti con l&#8217;installazione di Cartaro</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/cartaro_contentlist7.png"><img alt="../../_images/cartaro_contentlist7.png" class="align-center" src="../../_images/cartaro_contentlist7.png" style="width: 858.9px; height: 606.9px;" /></a>
+<ul class="simple">
+<li>Selezionare <strong>Add content</strong> per aggiugere contenuto e scegliere il nuovo tipo di contenuto nella finestra che apparirà (non visualizzato). Nella pagina di configurazione del nuovo elemento del contenuto (chiamato nodo nel linguaggio di Drupal) seguite le seguenti impostazioni:</li>
+</ul>
+<ol class="arabic simple">
+<li>Digitare un nome</li>
+<li>Si può disegnare la geometria del elemento del contenuto. Scegliere il simbolo disegna nell&#8217;angolo in alto a destra della mappa. Notare che i suggerimenti sono mostrati quando si è sopra alle icone della barra degli strumenti. Cliccare sulla mappa per creare una nuova geometria. Finire di disegnare con un doppio click.</li>
+<li><strong>Salvare</strong> la geometria.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Solo una geometria per elemento del contenuto può essere disegnato nella configurazione di esempio. Creare ulteriori elementi di contenuto per aggiugere più poligoni.</p>
+</div>
+<a class="reference internal image-reference" href="../../_images/cartaro87.png"><img alt="../../_images/cartaro87.png" class="align-center" src="../../_images/cartaro87.png" style="width: 861.7px; height: 627.2px;" /></a>
+<ul class="simple">
+<li>Dovreste essere in grado di vedere il nuovo elemento</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/cartaro_addedcontent_lakefr7.png"><img alt="../../_images/cartaro_addedcontent_lakefr7.png" class="align-center" src="../../_images/cartaro_addedcontent_lakefr7.png" style="width: 439.5px; height: 461.0px;" /></a>
+<ul class="simple">
+<li>Per vedere il nuovo elemento del contenuto nella frontmap, cliccare l&#8217;icona della home nell&#8217;angolo in alto a sinistra</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/cartaro_addedcontent_frontmap7.png"><img alt="../../_images/cartaro_addedcontent_frontmap7.png" class="align-center" src="../../_images/cartaro_addedcontent_frontmap7.png" style="width: 446.0px; height: 312.0px;" /></a>
+<p>Congratulazioni, si ha appena finito questa guida rapida. Il primo elemento del contenuto è ora pronto. Per aggiungere ulteriori elementi al contenuto basta semplicemente ripetere i passaggi di questa sessione di nuovo.</p>
+</div>
+<div class="section" id="cose-da-provare">
+<h2><a class="toc-backref" href="#id9">Cose da provare</a><a class="headerlink" href="#cose-da-provare" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Usare il <strong>Layer Assistant</strong> per includere layer esterni <span class="menuselection">Structure ‣ Open Layers ‣ Layers ‣ Add using assistant</span></li>
+<li>Cambiare il comportamento della mappa di default e create la vostra</li>
+<li>Provare differenti tipologie di geometrie e costruire tipo di contenuti più complessi</li>
+</ul>
+</div>
+<div class="section" id="ed-ora">
+<h2><a class="toc-backref" href="#id10">Ed ora ?</a><a class="headerlink" href="#ed-ora" title="Permalink to this headline">¶</a></h2>
+<p>Il tutorial ha dato la prima impressione circa le possibilità di Cartaro. Ma c&#8217;è molto altro da scoprire.</p>
+<p>Il prossimo passo potrebbe essere di installare Cartaro nel vostro server. Basta visitare <a class="reference external" href="http://cartaro.org/documentation/getting-started">http://cartaro.org/documentation/getting-started</a> per imparare come fare.</p>
+<p>Nel contesto di questo tutorial, controllare la documentazione su <a class="reference external" href="http://cartaro.org/blog/21-layer-creation-assistant/">Layer Assistant</a> o sullo <a class="reference external" href="http://cartaro.org/blog/14-how-use-qgis-great-looking-symbols-cartaro/">Styling</a></p>
+<p>La nostra documentazione web può essere trovata qui <a class="reference external" href="http://cartaro.org/documentation">http://cartaro.org/documentation</a></p>
+<blockquote>
+<div>Disponibile su <a class="reference external" href="http://cartaro.org">http://cartaro.org</a></div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

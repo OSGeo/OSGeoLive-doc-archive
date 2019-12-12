@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>R per dati spaziali &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 9.5 Contents" href="overview.html" />
+    <link rel="next" title="AtlasStyler" href="atlasstyler_overview.html" />
+    <link rel="prev" title="52°North WSS" href="52nWSS_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://cran.r-project.org"><img alt="project logo" class="align-right" src="../../_images/logo-R15.png" /></a>
+<div class="section" id="r-per-dati-spaziali">
+<h1>R per dati spaziali<a class="headerlink" href="#r-per-dati-spaziali" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="programma-di-statistica">
+<h2>Programma di statistica<a class="headerlink" href="#programma-di-statistica" title="Permalink to this headline">¶</a></h2>
+<p>R è un potente ambiente software, utilizzato in molti campi, per il calcolo
+statistico e rappresentazioni grafiche che eccelle nell&#8217;analisi ed elaborazione
+di serie di dati geografici. Le funzioni di analisi geospaziali in R sono
+disponibili nei pacchetti di R (moduli che estendono le potenzialità di R), che
+forniscono l&#8217;accesso a un gran numero di algoritmi, tradizionali e
+d&#8217;avanguardia, spesso prima che siano disponibili in altri software sia
+open source che proprietari. R e i suoi pacchetti possono elaborare punti, linee,
+poligoni e dati grigliati. Si può effettuare un&#8217;ampia gamma di operazioni come:
+classificazioni di immagini, analisi statistiche per inferire le relazioni
+spaziali e i modelli ditributivi degli elementi, e altre elencate in fondo alla
+pagina nelle caratteristiche principali. Le funzioni disponibili attraverso R
+completano le funzionalità avanzate dei programmi di GIS e di trattamento delle
+immagini.</p>
+<p>L&#8217;interfaccia di base di R è una finestra a riga di comando che fornisce
+un&#8217;eccellente flessibilità e controllo, ma tende ad allungare i tempi di
+apprendimento rispetto ai programmi con interfaccia grafica (GUI).
+Fortunatamente R ha una buona documentazione sul sito web che facilita il
+processo di apprendimento. Spesso vengono usati degli script per automatizzare
+le fasi di elaborazione ma esistono anche GUI, la migliore potrebbe essere
+RStudio (<a class="reference external" href="http://www.rstudio.com">http://www.rstudio.com</a>).</p>
+<p>R è un&#8217;implementazione del linguaggio di programmazione S e c&#8217;è una buona
+compatibilità di R con <em>legacy S</em> e il codice S-Plus, così come con le moderne
+versioni commerciali di S, TIBCO Spotfire S+. Ciò rende possibile la
+conversione di diverse versioni del codice S per eseguirle su R senza dover
+modificare il codice principale.</p>
+<a class="reference internal image-reference" href="../../_images/r-screenshot6.png"><img alt="project logo" class="align-right" src="../../_images/r-screenshot6.png" style="width: 497.0px; height: 382.5px;" /></a>
+<div class="section" id="caratteristiche-principali">
+<h3>Caratteristiche principali<a class="headerlink" href="#caratteristiche-principali" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Linguaggio di programmazione orientato agli oggetti rivolto alla Statistica e ad applicazioni matematiche intensive simili</li>
+<li>Centinaia di pacchetti aggiuntivi per la statistica spaziale forniti dalla comunità</li>
+<li>Classi per dati spaziali</li>
+<li>Manipolazione di dati spaziali</li>
+<li>Lettura e scrittura di dati spaziali</li>
+<li>Analisi della distribuzione geografica di punti (<em>Point pattern analysis</em>)</li>
+<li>Geostatistica</li>
+<li>Mappe sanitarie e analisi di dati areali</li>
+<li>Regressione spaziale</li>
+<li>Analisi ecologiche</li>
+<li>Potenti algoritmi per il processamento di raster</li>
+</ul>
+</div>
+<div class="section" id="dettagli">
+<h3>Dettagli<a class="headerlink" href="#dettagli" title="Permalink to this headline">¶</a></h3>
+<p><strong>Sito:</strong> <a class="reference external" href="http://cran.r-project.org">http://cran.r-project.org</a></p>
+<p><strong>Licenza:</strong> GPL</p>
+<p><strong>Software Version:</strong> 3.2.1</p>
+<p><strong>Piattaforme supportate:</strong> Windows, Linux, Mac, Unix</p>
+<p><strong>Supporto della comunità:</strong> <a class="reference external" href="http://cran.r-project.org/web/views/Spatial.html">http://cran.r-project.org/web/views/Spatial.html</a></p>
+</div>
+<div class="section" id="guida-rapida">
+<h3>Guida rapida<a class="headerlink" href="#guida-rapida" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/R_quickstart.html"><em>Documentazione introduttiva</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

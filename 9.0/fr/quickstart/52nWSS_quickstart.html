@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>52°North WSS Quickstart &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Bienvenue sur OSGeo-Live 9.0" href="../index.html" />
+    <link rel="next" title="Getting Started with IPython Notebook" href="IPython_quickstart.html" />
+    <link rel="prev" title="52°North WPS Quickstart" href="52nWPS_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://52north.org/security"><img alt="52°North - exploring horizons - logo" class="align-right" src="../../_images/logo_52North_16011.png" style="width: 128.0px; height: 126.0px;" /></a>
+<div class="section" id="north-wss-quickstart">
+<h1><a class="toc-backref" href="#id1">52°North WSS Quickstart</a><a class="headerlink" href="#north-wss-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>The 52°North WSS is a web service that allows policy-based access to OGC Web Services acting as a proxy.</p>
+<p>This Quick Start describes how to:</p>
+<ul class="simple">
+<li>start the WSS management interface</li>
+<li>protect a local WMS instance</li>
+<li>register new users</li>
+<li>asign permissions to existent users</li>
+<li>load protected services</li>
+</ul>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#north-wss-quickstart" id="id1">52°North WSS Quickstart</a><ul>
+<li><a class="reference internal" href="#getting-started" id="id2">Getting Started</a></li>
+<li><a class="reference internal" href="#wss-manager" id="id3">WSS manager</a></li>
+<li><a class="reference internal" href="#secure-a-wms" id="id4">Secure a WMS</a><ul>
+<li><a class="reference internal" href="#create-a-new-enforcement-point" id="id5">Create a new enforcement point</a></li>
+<li><a class="reference internal" href="#create-a-new-user" id="id6">Create a new user</a></li>
+<li><a class="reference internal" href="#adjust-new-user-policies" id="id7">Adjust new user policies</a></li>
+<li><a class="reference internal" href="#restart-tomcat" id="id8">Restart Tomcat</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#load-a-protected-ogc-service" id="id9">Load a protected OGC Service</a></li>
+<li><a class="reference internal" href="#things-to-try" id="id10">Things to try</a></li>
+<li><a class="reference internal" href="#what-next" id="id11">What Next?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="getting-started">
+<h2><a class="toc-backref" href="#id2">Getting Started</a><a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>For this OSGeo-Live distribution, the 52°North WSS is already set up to protect an instance of each supported OGC service: WMS, WFS, WPS, and SOS.</p>
+<p>To get a list of protected services follow these steps:</p>
+<ol class="arabic">
+<li><p class="first">Go to <em class="menuselection">Geospatial ‣ Web Services ‣ 52North ‣ Start 52North WSS</em> to start the 52°North WSS or use this <a class="reference external" href="http://localhost:8080/wss/site/manage.html">direct link</a>.</p>
+</li>
+<li><p class="first">The 52°North WSS management interface will open in a browser window. Click <em>Manage WSS</em> (<strong>1</strong>) to get a list of those services, that can be connected using the WSS.</p>
+<a class="reference internal image-reference" href="../../_images/52nWSS_start_manager1.png"><img alt="../../_images/52nWSS_start_manager1.png" src="../../_images/52nWSS_start_manager1.png" style="width: 560.0px; height: 396.9px;" /></a>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If it&#8217;s requested, authenticate as user/user</p>
+</div>
+</div>
+<div class="section" id="wss-manager">
+<h2><a class="toc-backref" href="#id3">WSS manager</a><a class="headerlink" href="#wss-manager" title="Permalink to this headline">¶</a></h2>
+<p>For each protected service, called <em>Enforcement Point</em>, the table contains the base links to the service by authentication method (<em>httpauth</em>, <em>saml</em>, <em>WSS</em>, ...).
+The table has the following columns:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/52nWSS_manager_interface1.png"><img alt="../../_images/52nWSS_manager_interface1.png" src="../../_images/52nWSS_manager_interface1.png" style="width: 662.9px; height: 369.6px;" /></a>
+</div></blockquote>
+<ul class="simple">
+<li>Enforcement Point Identifier</li>
+<li>Protected OGC Service base URL</li>
+<li>OGC Service Type</li>
+<li>Available authentication methods</li>
+<li>Available actions</li>
+</ul>
+</div>
+<div class="section" id="secure-a-wms">
+<h2><a class="toc-backref" href="#id4">Secure a WMS</a><a class="headerlink" href="#secure-a-wms" title="Permalink to this headline">¶</a></h2>
+<p>In this section we&#8217;re going to protect a local WMS instance.</p>
+<div class="section" id="create-a-new-enforcement-point">
+<h3><a class="toc-backref" href="#id5">Create a new enforcement point</a><a class="headerlink" href="#create-a-new-enforcement-point" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Start the <a class="reference internal" href="../overview/geoserver_overview.html"><em>GeoServer</em></a> WMS included in the OSGeo-Live DVD by selecting <em class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</em>. GeoServer takes up to a minute to start, and will open a browser window once finished.</p>
+</li>
+<li><p class="first">Press the <cite>Create</cite> link (<strong>1</strong>) in the manager main window</p>
+<a class="reference internal image-reference" href="../../_images/52nWSS_create_enforcement_point1.png"><img alt="../../_images/52nWSS_create_enforcement_point1.png" src="../../_images/52nWSS_create_enforcement_point1.png" style="width: 662.9px; height: 369.6px;" /></a>
+</li>
+<li><p class="first">Fill the new protected server properties</p>
+<ul class="simple">
+<li><cite>ID</cite> : geoserver_localhost (<strong>1</strong>),</li>
+<li><cite>Protected Service URL</cite> : <a class="reference external" href="http://localhost:8082/geoserver/ows">http://localhost:8082/geoserver/ows</a>? (<strong>2</strong>)</li>
+<li><cite>Type</cite> : WMS (<strong>3</strong>)</li>
+<li><cite>Autenthication Scheme</cite> : HTTP Basic (<strong>4</strong>)</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/52nWSS_create_new_enforcement_point_properties1.png"><img alt="../../_images/52nWSS_create_new_enforcement_point_properties1.png" src="../../_images/52nWSS_create_new_enforcement_point_properties1.png" style="width: 663.6px; height: 356.3px;" /></a>
+</li>
+<li><p class="first">Press the <em class="guilabel">Create</em> button to create the new <cite>Enforcement Point</cite>. A new row will appear in the manager main window</p>
+<a class="reference internal image-reference" href="../../_images/52nWSS_new_enforcement_point_added1.png"><img alt="../../_images/52nWSS_new_enforcement_point_added1.png" src="../../_images/52nWSS_new_enforcement_point_added1.png" style="width: 705.6px; height: 368.9px;" /></a>
+</li>
+</ol>
+</div>
+<div class="section" id="create-a-new-user">
+<h3><a class="toc-backref" href="#id6">Create a new user</a><a class="headerlink" href="#create-a-new-user" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Open a new terminal emulator by selecting the menu option <em class="menuselection">Applications ‣ Accessories ‣ Terminal Emulator</em></p>
+</li>
+<li><p class="first">Edit the file <tt class="file docutils literal"><span class="pre">users.xml</span></tt> present at the directory <tt class="file docutils literal"><span class="pre">/var/lib/tomcat6/webapps/wss/WEB-INF/classes/</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ cd /var/lib/tomcat6/webapps/wss/WEB-INF/classes/
+$ sudo medit users.xml
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add a new user called <cite>livedvd</cite> by adding the next text as a new entry at &lt;UserRepository&gt; level (<strong>1</strong>):</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;User  username=&quot;livedvd&quot; password=&quot;livedvd&quot; realname=&quot;LiveDVD&quot;&gt;
+  &lt;Role name=&quot;livedvd&quot;/&gt;
+&lt;/User&gt;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/52nWSS_users_xml1.png"><img alt="../../_images/52nWSS_users_xml1.png" src="../../_images/52nWSS_users_xml1.png" style="width: 565.6px; height: 439.6px;" /></a>
+</li>
+<li><p class="first">Save the changes and exit medit</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The users.xml file is only available to users with access to root privileges, which is achieved when using the &#8220;sudo&#8221; command. You will need to use the password &#8220;user&#8221; if prompted.</p>
+</div>
+</div>
+<div class="section" id="adjust-new-user-policies">
+<h3><a class="toc-backref" href="#id7">Adjust new user policies</a><a class="headerlink" href="#adjust-new-user-policies" title="Permalink to this headline">¶</a></h3>
+<p>Now we will set up the following access policies for the newly protected WMS:</p>
+<ul class="simple">
+<li>User <cite>livedvd</cite> -&gt; Full access to all the layers from the WMS</li>
+<li>Users <cite>bob</cite> and <cite>guest</cite> -&gt; Access only to the layer <cite>tasmania</cite></li>
+<li>Other users -&gt; Access not authorized to the WMS</li>
+</ul>
+<ol class="arabic">
+<li><p class="first">Return to the terminal emulator window.</p>
+</li>
+<li><p class="first">Edit the file <tt class="file docutils literal"><span class="pre">permissions.xml</span></tt> present at the directory <tt class="file docutils literal"><span class="pre">/var/lib/tomcat6/webapps/wss/WEB-INF/classes/</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo medit permissions.xml
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add a new permission set called <cite>Geoserver localhost</cite> by adding the following text as a new entry at &lt;SimplePermissions&gt; level (<strong>1</strong>):</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;PermissionSet name=&quot;Geoserver localhost&quot;&gt;
+  &lt;ResourceDomain value=&quot;http://localhost:8080/wss/service/geoserver_localhost/*&quot;/&gt;
+  &lt;ActionDomain value=&quot;http://localhost:8080/wss/service/geoserver_localhost/*&quot;/&gt;
+  &lt;SubjectDomain value=&quot;urn:n52:security:subject:role&quot;/&gt;
+  &lt;Permission name=&quot;livedvd_all_geoserver&quot;&gt;
+    &lt;Resource value=&quot;layers/*&quot;/&gt;
+    &lt;!-- Any layers --&gt;
+    &lt;Action value=&quot;operations/*&quot;/&gt;
+    &lt;!-- Any operations --&gt;
+    &lt;Subject value=&quot;livedvd&quot;/&gt;
+  &lt;/Permission&gt;
+  &lt;Permission name=&quot;bobAndGuest_most_GetMap_GetCaps_geoserver&quot;&gt;
+    &lt;Resource value=&quot;layers/tasmania&quot;/&gt;
+    &lt;Action value=&quot;operations/GetCapabilities&quot;/&gt;
+    &lt;Action value=&quot;operations/GetMap&quot;/&gt;
+    &lt;Subject value=&quot;bob&quot;/&gt;
+    &lt;Subject value=&quot;guest&quot;/&gt;
+  &lt;/Permission&gt;
+&lt;/PermissionSet&gt;
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/52nWSS_permissions_xml1.png"><img alt="../../_images/52nWSS_permissions_xml1.png" src="../../_images/52nWSS_permissions_xml1.png" style="width: 565.6px; height: 439.6px;" /></a>
+</li>
+<li><p class="first">Save the changes and exit medit</p>
+</li>
+</ol>
+</div>
+<div class="section" id="restart-tomcat">
+<h3><a class="toc-backref" href="#id8">Restart Tomcat</a><a class="headerlink" href="#restart-tomcat" title="Permalink to this headline">¶</a></h3>
+<p>In order to load the users and permissions changes, it&#8217;s necessary to restart the Tomcat service:</p>
+<ol class="arabic">
+<li><p class="first">Return to the terminal emulator window.</p>
+</li>
+<li><p class="first">Restart the tomcat service:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ sudo service tomcat6 restart
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="load-a-protected-ogc-service">
+<h2><a class="toc-backref" href="#id9">Load a protected OGC Service</a><a class="headerlink" href="#load-a-protected-ogc-service" title="Permalink to this headline">¶</a></h2>
+<p>In order to request the capabilities of the protected Geoserver WMS, follow the next steps:</p>
+<ol class="arabic">
+<li><p class="first">Type <a class="reference external" href="http://localhost:8080/wss/service/geoserver_localhost/httpauth?SERVICE=WMS&amp;REQUEST=GetCapabilities">http://localhost:8080/wss/service/geoserver_localhost/httpauth?SERVICE=WMS&amp;REQUEST=GetCapabilities</a> in a browser</p>
+</li>
+<li><p class="first">Authenticate as <cite>livedvd</cite>/<cite>livedvd</cite> to get access with full permissions or authenticate as <cite>bob</cite>/<cite>bob</cite> to access the service under limited permissions (only <cite>tasmania</cite> layer will be available)</p>
+<a class="reference internal image-reference" href="../../_images/52nWSS_authorization_required1.png"><img alt="../../_images/52nWSS_authorization_required1.png" src="../../_images/52nWSS_authorization_required1.png" style="width: 494.9px; height: 142.1px;" /></a>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you&#8217;d like to request the capabilities with a different user account you have to restart the browser in order to invalidate current user cached credentials</p>
+</div>
+<p>To further test the protected service, load <a class="reference external" href="http://localhost:8080/wss/service/geoserver_localhost/httpauth">http://localhost:8080/wss/service/geoserver_localhost/httpauth</a> as WMS into any desktop mapping client that supports HTTP
+Basic Authentication. Follow the next steps for <a class="reference internal" href="../overview/qgis_overview.html"><em>QGis</em></a>:</p>
+<ol class="arabic">
+<li><p class="first">From the start menu, select <em class="menuselection">Geospatial ‣ Desktop GIS ‣ Quantum GIS</em></p>
+</li>
+<li><p class="first">The application will take a few seconds to start (a splash screen is shown while loading)</p>
+</li>
+<li><p class="first">Press the <em class="guilabel">Add WMS Layer</em> button from the main toolbar (<strong>1</strong>)</p>
+<a class="reference internal image-reference" href="../../_images/52nWSS_qgis_add_wms_layer1.png"><img alt="../../_images/52nWSS_qgis_add_wms_layer1.png" src="../../_images/52nWSS_qgis_add_wms_layer1.png" style="width: 560.0px; height: 140.0px;" /></a>
+</li>
+<li><p class="first">Press the <em class="guilabel">New</em> button (<strong>1</strong>) in order to create a new WMS connection</p>
+<a class="reference internal image-reference" href="../../_images/52nWSS_qgis_new_wms_connection1.png"><img alt="../../_images/52nWSS_qgis_new_wms_connection1.png" src="../../_images/52nWSS_qgis_new_wms_connection1.png" style="width: 546.7px; height: 396.9px;" /></a>
+</li>
+<li><p class="first">Set the connection properties and press <em class="guilabel">Ok</em> button (<strong>5</strong>) to create the connection</p>
+<ul class="simple">
+<li><cite>Name</cite> : geoserver (<strong>1</strong>),</li>
+<li><cite>URL</cite> : <a class="reference external" href="http://localhost:8080/wss/service/geoserver_localhost/httpauth">http://localhost:8080/wss/service/geoserver_localhost/httpauth</a> (<strong>2</strong>)</li>
+<li><cite>User name</cite> : livedvd (<strong>3</strong>)</li>
+<li><cite>Password</cite> : livedvd (<strong>4</strong>)</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/52nWSS_livedvd_wms_connection_properties1.png"><img alt="../../_images/52nWSS_livedvd_wms_connection_properties1.png" src="../../_images/52nWSS_livedvd_wms_connection_properties1.png" style="width: 360.5px; height: 245.0px;" /></a>
+</li>
+<li><p class="first">Press the <em class="guilabel">Connect</em> button (<strong>1</strong>) to load the WMS layers. The full list of layers will be available for the user <cite>livedvd</cite></p>
+<a class="reference internal image-reference" href="../../_images/52nWSS_qgis_livedvd_wms_layers1.png"><img alt="../../_images/52nWSS_qgis_livedvd_wms_layers1.png" src="../../_images/52nWSS_qgis_livedvd_wms_layers1.png" style="width: 546.7px; height: 396.9px;" /></a>
+</li>
+<li><p class="first">Press the <em class="guilabel">Edit</em> button (<strong>1</strong>) to edit the connection properties</p>
+<a class="reference internal image-reference" href="../../_images/52nWSS_qgis_edit_wms_connection1.png"><img alt="../../_images/52nWSS_qgis_edit_wms_connection1.png" src="../../_images/52nWSS_qgis_edit_wms_connection1.png" style="width: 546.7px; height: 396.9px;" /></a>
+</li>
+<li><p class="first">Set the connection properties again and press <em class="guilabel">Ok</em> button (<strong>3</strong>) to edit the connection</p>
+<ul class="simple">
+<li><cite>User name</cite> : bob (<strong>1</strong>)</li>
+<li><cite>Password</cite> : bob (<strong>2</strong>)</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/52nWSS_bob_wms_connection_properties1.png"><img alt="../../_images/52nWSS_bob_wms_connection_properties1.png" src="../../_images/52nWSS_bob_wms_connection_properties1.png" style="width: 360.5px; height: 245.0px;" /></a>
+</li>
+<li><p class="first">Press the <em class="guilabel">Connect</em> button (<strong>1</strong>) to reload the WMS layers. Only <cite>tasmania</cite> layer will be available for the user <cite>bob</cite></p>
+<a class="reference internal image-reference" href="../../_images/52nWSS_qgis_bob_wms_layers1.png"><img alt="../../_images/52nWSS_qgis_bob_wms_layers1.png" src="../../_images/52nWSS_qgis_bob_wms_layers1.png" style="width: 546.7px; height: 396.9px;" /></a>
+</li>
+</ol>
+</div>
+<div class="section" id="things-to-try">
+<h2><a class="toc-backref" href="#id10">Things to try</a><a class="headerlink" href="#things-to-try" title="Permalink to this headline">¶</a></h2>
+<p>Here are some additional challenges for you to try:</p>
+<ol class="arabic simple">
+<li>Protect a WFS from the local Geoserver instance</li>
+<li>Add more users to a protected OGC service</li>
+<li>Modify the access policies to any of the other protected services for the user <cite>livedvd</cite></li>
+</ol>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id11">What Next?</a><a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<p>Visit the 52°North <a class="reference external" href="http://52north.org/communities/security/general/user_guide_intro.html">User Guide</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

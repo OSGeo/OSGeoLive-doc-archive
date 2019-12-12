@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guida rapida a PostGIS &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 9.0 Contents" href="../overview/overview.html" />
+    <link rel="next" title="Guida rapida pycsw" href="pycsw_quickstart.html" />
+    <link rel="prev" title="Guida rapida su pgRouting" href="pgrouting_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://postgis.net"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS14.png" style="width: 26.1px; height: 38.4px;" /></a>
+<div class="section" id="guida-rapida-a-postgis">
+<h1><a class="toc-backref" href="#id1">Guida rapida a PostGIS</a><a class="headerlink" href="#guida-rapida-a-postgis" title="Permalink to this headline">¶</a></h1>
+<p>PostGIS aggiunge funzionalità spaziali al database relazionale di PostgreSQL. Amplia
+PostgreSQL in modo tale da poter immagazzinare, interrogare e manipolare i dati spaziali.
+In questa guida rapida utilizzeremo &#8216;PostgreSQL&#8217; per descrivere funzioni basilari dei database,
+e &#8216;PostGIS&#8217; per descrivere le funzionalità spaziali addizionali disponibili in PostGIS.</p>
+<p>Questa guida rapida descrive come:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Creare ed interrogare un database spaziale da linea di comando e dall&#8217;interfaccia
+grafica di <a class="reference internal" href="../overview/qgis_overview.html"><em>Quantum GIS</em></a> .</li>
+<li>Gestire i dati dall&#8217;interfaccia <tt class="docutils literal"><span class="pre">pgAdmin</span></tt>.</li>
+</ul>
+</div></blockquote>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#guida-rapida-a-postgis" id="id1">Guida rapida a PostGIS</a><ul>
+<li><a class="reference internal" href="#architettura-client-server" id="id2">Architettura Client-server</a></li>
+<li><a class="reference internal" href="#creare-un-database-spaziale" id="id3">Creare un database spaziale</a></li>
+<li><a class="reference internal" href="#creare-una-tabella-spaziale-il-metodo-complicato" id="id4">Creare una Tabella Spaziale Il metodo complicato</a></li>
+<li><a class="reference internal" href="#interrogazioni-semplici" id="id5">Interrogazioni semplici</a></li>
+<li><a class="reference internal" href="#interrogazioni-spaziali" id="id6">Interrogazioni Spaziali</a></li>
+<li><a class="reference internal" href="#creare-una-mappa" id="id7">Creare una mappa</a></li>
+<li><a class="reference internal" href="#creare-una-tabella-spaziale-il-metodo-semplice" id="id8">Creare una Tabella Spaziale Il metodo semplice</a></li>
+<li><a class="reference internal" href="#conoscere-pgadmin-iii" id="id9">Conoscere pgAdmin III</a></li>
+<li><a class="reference internal" href="#eseguire-un-interrogazione-sql-da-pgadmin-iii" id="id10">Eseguire un&#8217;interrogazione SQL da pgAdmin III</a></li>
+<li><a class="reference internal" href="#cose-da-provare" id="id11">Cose da provare</a></li>
+<li><a class="reference internal" href="#prossimo-passo" id="id12">Prossimo passo?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="architettura-client-server">
+<h2><a class="toc-backref" href="#id2">Architettura Client-server</a><a class="headerlink" href="#architettura-client-server" title="Permalink to this headline">¶</a></h2>
+<p>PostgreSQL, come molti databases, funziona come un server in un sistema client-server.
+Il client fa una richiesta al server che restituisce una risposta. Questo è lo stesso modo
+in cui lavora internet - il browser è un client e un server web restituisce la pagina
+web. Con PostgreSQL le richieste sono nel linguaggio SQL e la risposta di solito
+è una tabella di dati derivati dal database.</p>
+<p>Nulla impedisce al server di essere nello stesso computer del client, e questo permette
+di utilizzare PostgreSQL su una singola macchina. Il client si connette al server
+tramite la connessione di rete interna &#8216;loopback&#8217;, e non è visibile agli altri computer
+a meno che non sia configurato in modo tale da esserlo.</p>
+</div>
+<div class="section" id="creare-un-database-spaziale">
+<h2><a class="toc-backref" href="#id3">Creare un database spaziale</a><a class="headerlink" href="#creare-un-database-spaziale" title="Permalink to this headline">¶</a></h2>
+<p>I clients da linea di comando funzionano attraverso una finestra di un emulatore di Terminale.
+Avviare un emulatore di Terminale dal menù Application della sezione Accessories. Si aprirà
+una finestra per l&#8217;inserimento di comandi Unix. Digitare:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">psql</span> <span class="o">-</span><span class="n">V</span>
+</pre></div>
+</div>
+<p>e spingere invio per vedere il numero di versione di PostgreSQL.</p>
+<p>Un singolo server PostgreSQL permette di organizzare il lavoro riarrangiandolo in database
+separati. Ogni database è un&#8217;entità indipendente, con le proprie tabelle, viste, utenti, etc.
+Quando ci si connette al server PostgreSQL occorre specificare un database.</p>
+<p>Si può ottenre una lista di databases presenti nel server tramite il comando:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">psql</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+<p>Si possono vedere diversi databases usati in alcuni progetti nel sistema.
+Per l&#8217;utilizzo in questa guida rapida ne verrà creato uno nuovo.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">La lista utilizza un impaginatore standard unix - premere lo spazio per passare
+alla pagina successiva, <tt class="kbd docutils literal"><span class="pre">b</span></tt> per tornare indietro, <tt class="kbd docutils literal"><span class="pre">q</span></tt>
+per uscire, h per l&#8217;aiuto.</p>
+</div>
+<p>PostgreSQL fornisce un programma per la creazione di databases, <tt class="docutils literal"><span class="pre">createdb</span></tt>. Prima di aggiungere le estensioni
+di PostGIS, occorre creare un database. Il database si chiamerà <tt class="docutils literal"><span class="pre">demo</span></tt>.
+Quindi il comando è:</p>
+<div class="highlight-python"><div class="highlight"><pre>createdb demo
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Solitamente si può avere l&#8217;aiuto per gli strumenti da linea di comando utilizzando l&#8217;opzione <tt class="docutils literal"><span class="pre">--help</span></tt>.</p>
+</div>
+<p>Se ora si lancia <tt class="docutils literal"><span class="pre">psql</span> <span class="pre">-l</span></tt> si dovrebbe vedere il proprio database <tt class="docutils literal"><span class="pre">demo</span></tt> nella lista.
+Non è stata ancora aggiunta l&#8217;estensione PostGIS, ma nella prossima sezione si spiegherà come farlo.</p>
+<p>Si possono creare databases PostGIS usando il linguaggio SQL. Per prima cosa bisogna cancellare
+il database appena creato usando il comando <tt class="docutils literal"><span class="pre">dropdb</span></tt>, poi utilizzare il comando <tt class="docutils literal"><span class="pre">psql</span></tt>
+per avere un traduttore di comandi SQL:</p>
+<div class="highlight-python"><div class="highlight"><pre>dropdb demo
+psql -d postgres
+</pre></div>
+</div>
+<p>Questo procedimento connette al sistema database principale chiamato <tt class="docutils literal"><span class="pre">postgres</span></tt>.
+Ora si inserisce il comando SQL per creare un nuovo database:</p>
+<div class="highlight-python"><div class="highlight"><pre>postgres=# CREATE DATABASE demo;
+</pre></div>
+</div>
+<p>Ora occorre spostare la propria connessione dal <tt class="docutils literal"><span class="pre">postgres</span></tt> database al nuovo <tt class="docutils literal"><span class="pre">demo</span></tt> database.
+Nel futuro ci si può connettere a quest&#8217;ultimo direttamente con il comando <tt class="docutils literal"><span class="pre">psql</span> <span class="pre">-d</span> <span class="pre">demo</span></tt>,
+ma qui si fornisce un modo pulito per spostarsi senza uscire dalla linea di comando <tt class="docutils literal"><span class="pre">psql</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre>postgres=# \c demo
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Premere <tt class="kbd docutils literal"><span class="pre">CTRL</span></tt> + <tt class="kbd docutils literal"><span class="pre">C</span></tt> se il prompt dei comandi psql continua ad apparire
+dopo aver premuto invio. Pulirà il proprio input e si riavvia. Probabilmente sta
+aspettando un apice di chiusura, un punto e virgola, or qualcosa.</p>
+</div>
+<p>Si dovrebbe vedere un avviso, ed il prompt dei comandi cambierà facendo vedere che
+ci si è connessi al <tt class="docutils literal"><span class="pre">demo</span></tt> database.</p>
+<p>Poi, aggiungere PostGIS 2.0:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# create extension postgis;
+</pre></div>
+</div>
+<p>Per verificare che il comando abbia funzionato , digitare <tt class="docutils literal"><span class="pre">\dt</span></tt> per elencare le
+tabelle contenute nel database. Si dovrebbe vedere qualcosa di simile a questo:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# \dt
+             List of relations
+ Schema |       Name       | Type  | Owner
+--------+------------------+-------+-------
+ public | spatial_ref_sys  | table | user
+(1 row)
+</pre></div>
+</div>
+<p>Questa tabella è usata da PostGIS. La tabella <tt class="docutils literal"><span class="pre">spatial_ref_sys</span></tt> contiene informazioni
+sui sistemi di riferimento spaziali validi, e si possono utilizzare alcuni comandi SQL
+per darci un&#8217;occhiata veloce:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT srid,auth_name,proj4text FROM spatial_ref_sys LIMIT 10;
+
+ srid | auth_name |          proj4text
+------+-----------+--------------------------------------
+ 3819 | EPSG      | +proj=longlat +ellps=bessel +towgs...
+ 3821 | EPSG      | +proj=longlat +ellps=aust_SA +no_d...
+ 3824 | EPSG      | +proj=longlat +ellps=GRS80 +towgs8...
+ 3889 | EPSG      | +proj=longlat +ellps=GRS80 +towgs8...
+ 3906 | EPSG      | +proj=longlat +ellps=bessel +no_de...
+ 4001 | EPSG      | +proj=longlat +ellps=airy +no_defs...
+ 4002 | EPSG      | +proj=longlat +a=6377340.189 +b=63...
+ 4003 | EPSG      | +proj=longlat +ellps=aust_SA +no_d...
+ 4004 | EPSG      | +proj=longlat +ellps=bessel +no_de...
+ 4005 | EPSG      | +proj=longlat +a=6377492.018 +b=63...
+(10 rows)
+</pre></div>
+</div>
+<p>Ciò conferma che si tratta di un database spaziale. La vista <tt class="docutils literal"><span class="pre">geometry_columns</span></tt> ha il
+compito di dire a PostGIS quali tabelle sono di tipo spaziale. Questo è il prossimo passo.</p>
+</div>
+<div class="section" id="creare-una-tabella-spaziale-il-metodo-complicato">
+<h2><a class="toc-backref" href="#id4">Creare una Tabella Spaziale Il metodo complicato</a><a class="headerlink" href="#creare-una-tabella-spaziale-il-metodo-complicato" title="Permalink to this headline">¶</a></h2>
+<p>Ora che avete un database spaziale si possono fare alcune tabelle spaziali.</p>
+<p>Per prima cosa bisogna creare una tabella nel database ordinaria per contenere alcuni dati di città.
+Questa tabella ha tre campi - uno per l&#8217;ID numerico che identifica la città,
+uno per il nome della città, e un altro per la colonna delle geometrie:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# CREATE TABLE cities ( id int4 primary key, name varchar(50), the_geom geometry(POINT,4326) );
+</pre></div>
+</div>
+<p>Per convenzione questa colonna delle geometrie viene chiamata
+<tt class="docutils literal"><span class="pre">geom</span></tt> (la vecchia convenzione PostGIS era <tt class="docutils literal"><span class="pre">the_geom</span></tt>). Questa dice a PostGIS il tipo di geometria
+di ogni oggetto (punti, linee, poligoni etc), quante dimensioni
+(in questo caso, se avesse 3 o 4 dimensioni bisognerebbe usare POINTZ, POINTM, o POINTZM),
+e il sistema di riferimento spaziale. Per le citta sono state usate coordinate EPSG:4326.</p>
+<p>Ora se si controlla la tabella delle città si dovrebbe vedere la nuova colonna, e si
+dovrebbe ricevere l&#8217;informazione che la tabella attualmente non contiene righe.</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT * from cities;
+ id | name | the_geom
+----+------+----------
+(0 rows)
+</pre></div>
+</div>
+<p>Per aggiungere righe alla tabella si utilizzano alcune istruzioni SQL. Per inserire le geometrie nella
+colonna delle geometrie utilizzare la funzione PostGIS <tt class="docutils literal"><span class="pre">ST_GeomFromText</span></tt> per convertirle
+da un formato testuale che fornisce le coordinate e l&#8217;id del sistema di riferimento spaziale:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# INSERT INTO cities (id, the_geom, name) VALUES (1,ST_GeomFromText(&#39;POINT(-0.1257 51.508)&#39;,4326),&#39;London, England&#39;);
+demo=# INSERT INTO cities (id, the_geom, name) VALUES (2,ST_GeomFromText(&#39;POINT(-81.233 42.983)&#39;,4326),&#39;London, Ontario&#39;);
+demo=# INSERT INTO cities (id, the_geom, name) VALUES (3,ST_GeomFromText(&#39;POINT(27.91162491 -33.01529)&#39;,4326),&#39;East London,SA&#39;);
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Utilizzare le frecce della tastiera per richiamare e modificare linee di comando precedenti.</p>
+</div>
+<p>Come si può vedere il procedimento diventa velocemente sempre più fastidioso. Fortunatamente
+ci sono altri metodi per avere dati nelle tabelle PostGIS che sono molto più semplici.
+Ma ora ci sono tre città nel database, e si può lavorare con queste.</p>
+</div>
+<div class="section" id="interrogazioni-semplici">
+<h2><a class="toc-backref" href="#id5">Interrogazioni semplici</a><a class="headerlink" href="#interrogazioni-semplici" title="Permalink to this headline">¶</a></h2>
+<p>Tutte le operazioni SQL più comuni possono essere applicate per la selezione di dati da una tabella PostGIS:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT * FROM cities;
+ id |      name       |                      the_geom
+----+-----------------+----------------------------------------------------
+  1 | London, England | 0101000020E6100000BBB88D06F016C0BF1B2FDD2406C14940
+  2 | London, Ontario | 0101000020E6100000F4FDD478E94E54C0E7FBA9F1D27D4540
+  3 | East London,SA  | 0101000020E610000040AB064060E93B4059FAD005F58140C0
+(3 rows)
+</pre></div>
+</div>
+<p>Questo comando fornisce una versione esadecimale codificata delle coordinate, non così utile per gli umani.</p>
+<p>Se si vuole dare nuovamente un&#8217;occhiata alle geometrie in formato WKT, si
+possono usare le funzioni ST_AsText(the_geom) o ST_AsEwkt(the_geom). Si possono anche
+usare ST_X(the_geom), ST_Y(the_geom) per avere il valore numerico delle coordinate:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT id, ST_AsText(the_geom), ST_AsEwkt(the_geom), ST_X(the_geom), ST_Y(the_geom) FROM cities;
+ id |          st_astext           |               st_asewkt                |    st_x     |   st_y
+----+------------------------------+----------------------------------------+-------------+-----------
+  1 | POINT(-0.1257 51.508)        | SRID=4326;POINT(-0.1257 51.508)        |     -0.1257 |    51.508
+  2 | POINT(-81.233 42.983)        | SRID=4326;POINT(-81.233 42.983)        |     -81.233 |    42.983
+  3 | POINT(27.91162491 -33.01529) | SRID=4326;POINT(27.91162491 -33.01529) | 27.91162491 | -33.01529
+(3 rows)
+</pre></div>
+</div>
+</div>
+<div class="section" id="interrogazioni-spaziali">
+<h2><a class="toc-backref" href="#id6">Interrogazioni Spaziali</a><a class="headerlink" href="#interrogazioni-spaziali" title="Permalink to this headline">¶</a></h2>
+<p>PostGIS aggiunge molte funzioni con funzionalità spaziale a
+PostgreSQL. Si è già vista ST_GeomFromText che converte WKT in
+geometria. La maggior parte di queste funzioni iniziano con ST (che sta per tipologia spaziale) e sono elencate  in una sezione
+della documentazione di PostGIS. Ora se ne userà una per rispondere a una domanda
+pratica - quanto distano tra loro queste tre Londra, in metri,
+considerando una Terra sferica?</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT p1.name,p2.name,ST_Distance_Sphere(p1.the_geom,p2.the_geom) FROM cities AS p1, cities AS p2 WHERE p1.id &gt; p2.id;
+      name       |      name       | st_distance_sphere
+-----------------+-----------------+--------------------
+ London, Ontario | London, England |   5875766.85191657
+ East London,SA  | London, England |   9789646.96784908
+ East London,SA  | London, Ontario |   13892160.9525778
+ (3 rows)
+</pre></div>
+</div>
+<p>Questo comando fornisce la distanza, in metri, tra ogni coppia di città.
+Da notare come la parte &#8216;WHERE&#8217; del comando non fa restituire le distanze
+tra una città e sè stessa (che sarebbero tutte pari a 0) o le distanze contrarie
+rispetto a quelle della tabella qui sopra (da London, England a London, Ontario è la stessa
+distanza che da London, Ontario a London, England). Provare il comando senza la prate &#8216;WHERE&#8217;
+e vedere cosa succede.</p>
+<p>Si possono anche calcolare le distanze usando uno sferoide mediante una funzione diversa e specificando
+il nome dello sferoide, il semi-asse maggiore e l&#8217;inverso dei parametri di appiattimento:</p>
+<div class="highlight-python"><div class="highlight"><pre>demo=# SELECT p1.name,p2.name,ST_Distance_Spheroid(
+        p1.the_geom,p2.the_geom, &#39;SPHEROID[&quot;GRS_1980&quot;,6378137,298.257222]&#39;
+        )
+       FROM cities AS p1, cities AS p2 WHERE p1.id &gt; p2.id;
+      name       |      name       | st_distance_spheroid
+-----------------+-----------------+----------------------
+ London, Ontario | London, England |     5892413.63776489
+ East London,SA  | London, England |     9756842.65711931
+ East London,SA  | London, Ontario |     13884149.4140698
+(3 rows)
+</pre></div>
+</div>
+</div>
+<div class="section" id="creare-una-mappa">
+<h2><a class="toc-backref" href="#id7">Creare una mappa</a><a class="headerlink" href="#creare-una-mappa" title="Permalink to this headline">¶</a></h2>
+<p>Per creare una mappa da dati PostGIS, occorre avere un client che riesce a leggere i dati.
+La maggior parte dei programmi GIS desktop open sourece possono farlo - per esempio
+Quantum GIS, gvSIG, uDig. Ora si mostrerà come creare una mappa da Quantum GIS.</p>
+<p>Avviare Quantum GIS dal menù Desktop GIS e scegliere <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">PostGIS</span> <span class="pre">layers</span></tt> dal menù Layer.
+I parametri per connettersi ai dati Natural Earth in PostGIS sono già definiti nel meù a tendina
+Connections. Qui si possono definire nuove connessioni server, e salvare i settaggi
+per richiamarle facilmente. Cliccare <tt class="docutils literal"><span class="pre">Edit</span></tt> se si vuole vedere quali sono questi parametri
+per Natural Earth, oppure cliccare solo <tt class="docutils literal"><span class="pre">Connect</span></tt> per continuare:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_addlayers6.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_addlayers6.png" style="width: 300.0px; height: 252.0px;" /></a>
+<p>Verrà restituita una lista delle tabelle spaziali presenti nel database:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_listtables6.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables6.png" style="width: 300.0px; height: 252.0px;" /></a>
+<p>Scegliere la tabella ne_10m_lakes e cliccare <tt class="docutils literal"><span class="pre">Add</span></tt> in basso (non <tt class="docutils literal"><span class="pre">Load</span></tt> in alto
+- che carica i parametri di connessione al database), e dovrebbe essere caricato
+in QGIS:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_lakesmap6.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap6.png" style="width: 512.0px; height: 371.5px;" /></a>
+<p>Ora è possibile vedere una mappa dei laghi. QGIS non sa che sono laghi, quindi
+potrebbe non colorarli di blu - utilizzare la documentazione di QGIS per capire
+come cambiarlo. Zoommare su un gruppo famoso di laghi in Canada.</p>
+</div>
+<div class="section" id="creare-una-tabella-spaziale-il-metodo-semplice">
+<h2><a class="toc-backref" href="#id8">Creare una Tabella Spaziale Il metodo semplice</a><a class="headerlink" href="#creare-una-tabella-spaziale-il-metodo-semplice" title="Permalink to this headline">¶</a></h2>
+<p>La maggior parte degli strumenti desktop di OSGeo hanno funzioni per importare dati
+spaziali sottoforma di files, come ad esempio shapefiles, nei databases di PostGIS.
+Nuovamente si userà QGIS per mostrare questa procedura.</p>
+<p>Si possono importare shapefiles in QGIS mediante un semplice PostGIS Manager plugin.
+Per caricarlo, andare nel menù Plugins, selezionare <tt class="docutils literal"><span class="pre">Fetch</span> <span class="pre">Python</span> <span class="pre">Plugins</span></tt>.
+Successivamente QGIS scaricherà la lista più recente dei plugins dal repository
+(è necessaria una connessione internet funzionante per questo passaggio). Cercare il
+plugin <tt class="docutils literal"><span class="pre">PostGIS</span> <span class="pre">Manager</span></tt> e cliccare il pulsante <tt class="docutils literal"><span class="pre">Install</span> <span class="pre">plugin</span></tt>.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_getmanager6.png"><img alt="Fetch PostGIS Manager Plugin" class="align-center" src="../../_images/postgis_getmanager6.png" style="width: 403.5px; height: 215.0px;" /></a>
+<p>Ora nel menù Database dovrebbe esserci la dicitura PostGIS Manager che permette
+di avviare il gestore database. Si può anche cliccare il pulsante con il logo PostGIS
+(l&#8217;elefante con il mondo) nella barra degli strumenti.</p>
+<p>Si connetterà quindi al database Natural Earth. Lasciare
+la password vuota se la chiede. Si vedrà la finestra principale del gestore. Sulla
+sinistra si può selezionare le tabelle dal database e usare le schede sulla destra
+per avere informazioni su di esse. La scheda Preview mostra una piccola mappa. Qui è
+stato selezionato il layer ne_10m_populated_places e zoommato su una piccola isola:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_managerpreview6.png"><img alt="PostGIS Manager Preview" class="align-center" src="../../_images/postgis_managerpreview6.png" style="width: 354.0px; height: 264.0px;" /></a>
+<p>Ora si utilizzerà il PostGIS Manager per importare uno shapefile nel database.
+Si utilizzeranno i dati della sindrome della morte improvvisa del lattante (SIDS) del
+North Carolina che sono compresi in con un add-on del pacchetto R statistics.</p>
+<p>Dal menù <tt class="docutils literal"><span class="pre">Data</span></tt> scegliere l&#8217;opzione <tt class="docutils literal"><span class="pre">Load</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">shapefile</span></tt>.
+Cliccare il pulsante <tt class="docutils literal"><span class="pre">...</span></tt> e sfogliare fino allo shapefile <tt class="docutils literal"><span class="pre">sids.shp</span></tt> nel pacchetto
+di R <tt class="docutils literal"><span class="pre">maptools</span></tt> (situato in /usr/local/lib/R/site-library/):</p>
+<a class="reference internal image-reference" href="../../_images/postgis_browsedata5.png"><img alt="Find the shapefile" class="align-center" src="../../_images/postgis_browsedata5.png" style="width: 394.0px; height: 306.5px;" /></a>
+<p>Lasciare tutto il resto come è e cliccare <tt class="docutils literal"><span class="pre">Load</span></tt></p>
+<a class="reference internal image-reference" href="../../_images/postgis_importsids6.png"><img alt="Import a shapefile" class="align-center" src="../../_images/postgis_importsids6.png" style="width: 217.0px; height: 320.0px;" /></a>
+<p>Lo shapefile dovrebbe essere importato in PostGIS senza errori. Chiudere PostGIS manager e
+tornare alla finestra principale di QGIS.</p>
+<p>Ora caricare i dati SIDS nella mappa usando l&#8217;opzione &#8216;Add PostGIS Layer&#8217;.
+Riarrangiando e ricolorando un po&#8217; i layers, si dovrebbe essere in grado di produrre
+una mappa coropletica dei contatori della sindrome della morte improvvisa del lattante nel North Carolina:</p>
+<a class="reference internal image-reference" href="../../_images/postgis_sidsmap6.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap6.png" style="width: 512.0px; height: 371.5px;" /></a>
+</div>
+<div class="section" id="conoscere-pgadmin-iii">
+<h2><a class="toc-backref" href="#id9">Conoscere pgAdmin III</a><a class="headerlink" href="#conoscere-pgadmin-iii" title="Permalink to this headline">¶</a></h2>
+<p>Si può utilizzare il client database grafico <tt class="docutils literal"><span class="pre">pgAdmin</span> <span class="pre">III</span></tt> dal menù Databases per
+interrogare e modificare database non-spaziali. Questo è il client ufficiale per
+PostgreSQL, e permette di utilizzare SQL per manipolare le tabelle dei dati.
+pgAdmin III si può trovare ed essere lanciato dalla cartella Databases, presente
+in OSGeo Live Desktop.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_pgadmin_main_window3.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_pgadmin_main_window3.png" style="width: 511.0px; height: 370.5px;" /></a>
+<p>Qui, c&#8217;è l&#8217;opzione per creare una nuova connessione al server PostgreSQL, o ad un server esistente.
+In questo caso, ci si connette al server predefinito <tt class="docutils literal"><span class="pre">local</span></tt>.</p>
+<p>Una volta stabilita la connessione, si può vedere l&#8217;elenco dei databases già esistenti nel sistema.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_adminscreen03.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_adminscreen03.png" style="width: 512.5px; height: 371.0px;" /></a>
+<p>La &#8220;X&#8221; rossa sull&#8217;immagine della maggior parte dei databases, indica che non ci si
+è mai connessi a nessuno di essi (si è connessi solo al database di default <tt class="docutils literal"><span class="pre">postgres</span></tt>).
+A questo punto si possono vedere solo i databases presenti nel sistema. Ci si può connettere,
+con un doppio click sul nome del database. Farlo per il database natural_earth2.</p>
+<p>Ora si può vedere come la X rossa sia scomparsa e sia comparso un &#8220;+&#8221; sulla sinistra.
+Cliccandolo apparirà uno schema ad albero, che mostra il contenuto del database.</p>
+<p>Andare al sottinsieme <tt class="docutils literal"><span class="pre">schemas</span></tt>, ed espanderlo. Successivamente espandere
+lo schema <tt class="docutils literal"><span class="pre">public</span></tt>. Esplorando ed espandendo le
+<tt class="docutils literal"><span class="pre">Tables</span></tt>, è possibile vedere tutte le tabelle contenute in questo schema.</p>
+<a class="reference internal image-reference" href="../../_images/postgis_adminscreen16.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_adminscreen16.png" style="width: 512.0px; height: 371.5px;" /></a>
+</div>
+<div class="section" id="eseguire-un-interrogazione-sql-da-pgadmin-iii">
+<h2><a class="toc-backref" href="#id10">Eseguire un&#8217;interrogazione SQL da pgAdmin III</a><a class="headerlink" href="#eseguire-un-interrogazione-sql-da-pgadmin-iii" title="Permalink to this headline">¶</a></h2>
+<p>pgAdmin III, permette di eseguire interrogazioni su un database relazionale.</p>
+<p>Per eseguire un&#8217;interrogazione sul database, occorre cliccare il pulsante <tt class="docutils literal"><span class="pre">SQL</span></tt> dalla
+barra degli strumenti principale (quella con la lente di ingrandimento gialla).</p>
+<p>Si andrà a calcolare il rapporto della SIDS rispetto alle nascite per ogni città nel 1974.
+Dopodichè si ordineranno i risultati, basandosi sui rapporti calcolati. Per fare ciò,
+bisogna eseguire la seguente interrogazione (inserirla nell&#8217;editor di testo della finestra SQL):</p>
+<p>select name, 1000*sid74/bir74 as rate from sids order by rate.</p>
+<p>Successivamente, cliccare il pulsante a forma di freccia verde, che punta verso destra (esegui interrogazione).</p>
+<a class="reference internal image-reference" href="../../_images/postgis_adminscreen26.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_adminscreen26.png" style="width: 512.0px; height: 371.5px;" /></a>
+</div>
+<div class="section" id="cose-da-provare">
+<h2><a class="toc-backref" href="#id11">Cose da provare</a><a class="headerlink" href="#cose-da-provare" title="Permalink to this headline">¶</a></h2>
+<p>Qui ci sono alcuni esercizi aggiuntivi da provare:</p>
+<ol class="arabic simple">
+<li>Provare ulteriori funzioni spaziali come <tt class="docutils literal"><span class="pre">st_buffer(the_geom)</span></tt>, <tt class="docutils literal"><span class="pre">st_transform(the_geom,25831)</span></tt>,
+<tt class="docutils literal"><span class="pre">st_x(the_geom)</span></tt> - si può trovare la documentazione completa al link <a class="reference external" href="http://postgis.net/documentation/">http://postgis.net/documentation/</a></li>
+<li>Esportare le tabelle come shapefiles con <tt class="docutils literal"><span class="pre">pgsql2shp</span></tt> da linea di comando.</li>
+<li>Provare <tt class="docutils literal"><span class="pre">ogr2ogr</span></tt> da linea di comando per importare/esportare i dati nel/dal proprio database.</li>
+</ol>
+</div>
+<div class="section" id="prossimo-passo">
+<h2><a class="toc-backref" href="#id12">Prossimo passo?</a><a class="headerlink" href="#prossimo-passo" title="Permalink to this headline">¶</a></h2>
+<p>Questo è solo il primo passo lungo la strada per usare PostGIS. Ci sono molte più funzionalità
+che si possono provare.</p>
+<p>Home page del progetto PostGIS</p>
+<blockquote>
+<div><a class="reference external" href="http://postgis.net">http://postgis.net</a></div></blockquote>
+<p>Documentazione di PostGIS</p>
+<blockquote>
+<div><a class="reference external" href="http://postgis.net/documentation/">http://postgis.net/documentation/</a></div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

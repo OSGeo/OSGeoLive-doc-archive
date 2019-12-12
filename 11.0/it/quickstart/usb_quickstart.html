@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Creare un OSGeo-Live dispositivo USB avviabile &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Benvenuti in OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="OSGeo-Live 11.0 Contents" href="../overview/overview.html" />
+    <link rel="prev" title="Guida rapida per eseguire OSGeo-Live in un macchina virtuale" href="virtualization_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="creare-un-osgeo-live-dispositivo-usb-avviabile">
+<h1>Creare un OSGeo-Live dispositivo USB avviabile<a class="headerlink" href="#creare-un-osgeo-live-dispositivo-usb-avviabile" title="Permalink to this headline">¶</a></h1>
+<p>Qui verrà descritto come creare un OSGeo-Live dispositivo USB avviabile.
+Avviare da una dispositivo flash è più veloce di un DVD, e il dispositivo
+USB può essere configurato per immagazzinare dati tra le sessioni.</p>
+<p>Sono stati trovati una serie di quirks and tricks al fine di creare con
+successo un dispositivo USB. È stato documentato quello che si conosce,
+ma ci sono più tricks e issues. Si controlli gli ultimi tips qui: <a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB</a></p>
+<div class="section" id="requisiti">
+<h2>Requisiti<a class="headerlink" href="#requisiti" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Un dispositivo USB da 4 GB, se si usa osgeo-live-mini (senza gli eseguibili Windows e Mac)</li>
+<li>Un dispositivo USB da 8 GB, se si usa osgeo-live (con gli eseguibili Windows e Mac)</li>
+<li>Un OSGeo-Live DVD o immagine ISO (scaricate da: <a class="reference external" href="http://live.osgeo.org/en/download.html">http://live.osgeo.org/en/download.html</a>)</li>
+</ul>
+</div>
+<div class="section" id="creare-un-dispositivo-usb-avviabile-da-ubuntu">
+<h2>Creare un dispositivo USB avviabile da Ubuntu<a class="headerlink" href="#creare-un-dispositivo-usb-avviabile-da-ubuntu" title="Permalink to this headline">¶</a></h2>
+<p>(Questo è il processo raccomandato per creare un USB, ed è anche applicabile
+alle derivate di Ubuntu, come Lubuntu o OSGeo-Live.)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">La versione di Ubuntu che si sta utilizzando, dev&#8217;essere la stessa o
+più nuova della versione di Lubuntu che si sta andando ad installare
+all&#8217;interno del dispositivo USB. Se installate OSGeo-Live 5.0/5.5 in
+un USB, dovrete avere un sistema operativo con Ubuntu 11.04 o più recente.</p>
+</div>
+<p>Scaricate osgeo-live o osgeo-live-mini nell&#8217;hard disk del vostro computer.</p>
+<p>Inserire il dispositivo USB nel vostro computer.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/usb_select.png"><img alt="../../_images/usb_select.png" src="../../_images/usb_select.png" style="width: 305.2px; height: 294.0px;" /></a>
+</div></blockquote>
+<p>Selezionare <span class="menuselection">System Tools ‣ Startup Disk Creator</span>, o
+cercate <cite>Startup Disk Creator</cite> dal desktop di Unity.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/usb_set_params.png"><img alt="../../_images/usb_set_params.png" src="../../_images/usb_set_params.png" style="width: 333.2px; height: 375.2px;" /></a>
+</div></blockquote>
+<p>Selezionare l&#8217;immagine ISO di osgeo-live o osgeo-live-mini che avete scaricato precedentemente.</p>
+<p>Selezionare il dispositivo USB. Se avete spazio extra potete aggiustare
+lo slider per creare archiazione persistente sul drive USB (raccomandato).
+Per attivare questa opzione dovrete avere un penna USB da almeno 8GB.</p>
+<p>Selezionare <span class="guilabel">Make Startup Disk</span></p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/usb_installing.png"><img alt="../../_images/usb_installing.png" src="../../_images/usb_installing.png" style="width: 302.4px; height: 100.8px;" /></a>
+</div></blockquote>
+<p>Aspettare circa 20 minuti per la creazione del dispositivo USB.</p>
+</div>
+<div class="section" id="creare-un-dispositivo-usb-avviabile-da-windows">
+<h2>Creare un dispositivo USB avviabile da Windows<a class="headerlink" href="#creare-un-dispositivo-usb-avviabile-da-windows" title="Permalink to this headline">¶</a></h2>
+<p>Inserire il dispositivo USB nel vostro computer.</p>
+<p>Scaricare ed eseguire Universal USB Installer da: <a class="reference external" href="http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/">http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/</a></p>
+<blockquote>
+<div><img alt="../../_images/usb_penlinux_licence.png" src="../../_images/usb_penlinux_licence.png" />
+</div></blockquote>
+<p>Accettare i termini della licenza.</p>
+<blockquote>
+<div><img alt="../../_images/usb_penlinux_selection.png" src="../../_images/usb_penlinux_selection.png" />
+</div></blockquote>
+<p>Step 1: Distribuzione: Selezionare la distribuzione xubuntu i386 usata per
+l&#8217;immagine osgeo-live. (per OSGeo-Live 5.5, selezionare xubuntu 11.04 Desktop i386)</p>
+<p>Step 2: Selezionare l&#8217;ultima immagine ISO osgeo-live che avete scaricato
+localmente. Nota: Bisognerà inserire manualmente il percorso al file ISO,
+poichè il pulsante <span class="guilabel">Browse</span> trova solo file ISO di Lubuntu.</p>
+<p>Step 3: Selezionare il vostro dispositivo USB</p>
+<p>Step 4: Selezionare &#8220;Persistence&#8221; se volete ricordare lo stato tra le sessioni.</p>
+<p>Selezionare <span class="guilabel">Create</span></p>
+<blockquote>
+<div><img alt="../../_images/usb_penlinux_installing.png" src="../../_images/usb_penlinux_installing.png" />
+</div></blockquote>
+<p>Aspettare circa 20 minuti per la creazione del dispositivo USB.</p>
+</div>
+<div class="section" id="creare-un-dispositivo-usb-avviabile-in-sistemi-operativi-differenti">
+<h2>Creare un dispositivo USB avviabile in sistemi operativi differenti<a class="headerlink" href="#creare-un-dispositivo-usb-avviabile-in-sistemi-operativi-differenti" title="Permalink to this headline">¶</a></h2>
+<p>Step 1: Installare UNetbootin (downloaded from: <a class="reference external" href="http://unetbootin.sourceforge.net/">http://unetbootin.sourceforge.net/</a>).</p>
+<p>Step 2: Inserire il dispositivo USB nel vostro computer.</p>
+<p>Step 3: Avviare UNetbootin, selezionare Diskimage (il dispositivo USB è selezionato automaticamente).</p>
+<p>Step 4: Selezionare il file ISO di OSGeo-Live.</p>
+<p>Selezionare <span class="guilabel">OK</span></p>
+<blockquote>
+<div><img alt="../../_images/unetbootin_live_osgeo.png" src="../../_images/unetbootin_live_osgeo.png" />
+</div></blockquote>
+</div>
+<div class="section" id="impostart-l-ordine-di-boot-del-bios">
+<h2>Impostart l&#8217;ordine di boot del BIOS:<a class="headerlink" href="#impostart-l-ordine-di-boot-del-bios" title="Permalink to this headline">¶</a></h2>
+<p>La maggior parte computers non sono impostati di default per avviare da dispositivi USB.</p>
+<p>Per effettuare ciò, avviare il vostro computer, e digitare la key
+appropriata quando prompted per entrare dentro il BIOS (solitamente premendo
+&lt;Delete&gt; key o a &lt;Function Key&gt; o simile).</p>
+<p>Selezionare l&#8217;avvio da dispositivo USB.</p>
+<p>Nota, alcuni computers richiedono che il dispositivo USB sia inserito nel
+computer al fine di selezionarlo.</p>
+<p>Nota, anche i dispositivi USB sono spesso elencati sotto gli hard disk
+invece che sotto i dispositivi rimuovibili.</p>
+</div>
+<div class="section" id="eseguire">
+<h2>Eseguire:<a class="headerlink" href="#eseguire" title="Permalink to this headline">¶</a></h2>
+<p>Eseguire secondo: <a class="reference internal" href="osgeolive_quickstart.html"><em>Introduzione a OSGeo-Live</em></a></p>
+</div>
+<div class="section" id="problemi-conosciuti">
+<h2>Problemi conosciuti:<a class="headerlink" href="#problemi-conosciuti" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>I computer Mac non avviano dai dispositivi USB, usare il LiveDVD</li>
+</ul>
+</div>
+<div class="section" id="vedere-anche">
+<h2>Vedere anche:<a class="headerlink" href="#vedere-anche" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="osgeolive_quickstart.html"><em>Introduzione a OSGeo-Live</em></a></li>
+<li><a class="reference internal" href="virtualbox_quickstart.html"><em>OSGeo-Live Introduzione per Virtual Box</em></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><em>Installare OSGeo-Live nel Hard Disk</em></a></li>
+<li>Se avete problemi, segnalateli in questa pagina wiki: <a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB</a> e discutetene nella mailing list: <a class="reference external" href="http://lists.osgeo.org/mailman/listinfo/live-demo">http://lists.osgeo.org/mailman/listinfo/live-demo</a></li>
+<li>Per maggiori opzioni di boot da USB, vedere <a class="reference external" href="http://pendrivelinux.com">http://pendrivelinux.com</a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

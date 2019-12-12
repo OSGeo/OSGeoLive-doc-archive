@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης QGIS Server &mdash; OSGeo-Live 10.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 10.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Περιεχόμενα OSGeo-Live 10.5" href="../overview/overview.html" />
+    <link rel="next" title="Εγχειρίδιο Γρήγορης Εκκίνησης QGIS" href="qgis_quickstart.html" />
+    <link rel="prev" title="PyWPS Quickstart" href="pywps_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-qgis_mapserver2.png" id="qgis-mapserver-quickstart"><img alt="project logo" class="align-right" id="qgis-mapserver-quickstart" src="../../_images/logo-qgis_mapserver2.png" style="width: 60.0px; height: 60.0px;" /></a>
+<div class="section" id="qgis-server">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης QGIS Server<a class="headerlink" href="#qgis-server" title="Permalink to this headline">¶</a></h1>
+<p>Ο εξυπηρετητής QGIS Server παρέχει την υλοποίηση μιας διαδικτυακής υπηρεσίας WMS βασισμένη σε βιβλιοθήκες από το λογισμικό Quantum GIS (QGIS).</p>
+<p>Αυτό το εγχειρίδιο περιγράφει πως:</p>
+<blockquote>
+<div><ul class="simple">
+<li>να γίνει ενημέρωση ενός υπάρχοντος χώρου εργασίας QGIS (project) και δημοσίευσή του σε έναν εξυπηρετητή QGIS Server</li>
+<li>να γίνει δημιουργία ενός νέου χώρου εργασίας QGIS και να δημιουργηθεί μια υπηρεσία WMS απευθείας σε έναν περιηγητή</li>
+</ul>
+</div></blockquote>
+<div class="section" id="geoext">
+<h2>Εκκίνηση εφαρμογής GeoExt<a class="headerlink" href="#geoext" title="Permalink to this headline">¶</a></h2>
+<p>Το OSGeo-Live περιλαμβάνει ένα παράδειγμα εφαρμογής οπτικοποίησης δεδομένων μέσω διαδικυου, βασισμένη στο περιβάλλον GeoExt που είναι υλοποιημένο σε γλώσσα Javascript και χρησιμοποιεί τον εξυπηρετητή QGIS Server για παρουσίαση του χάρτη.</p>
+<ul class="simple">
+<li>Κάντε κλίκ <span class="menuselection">Desktop ‣ Spatial Tools ‣ QGIS Mapserver</span></li>
+</ul>
+<p>Θα πρέπει να μπορείτε να δείτε έναν παγκόσμιο χάρτη σε ένα παράθυρο του περιηγητή σας.</p>
+<img alt="../../_images/qgis_mapserver_browser2.jpg" src="../../_images/qgis_mapserver_browser2.jpg" />
+<p>Στη συνέχεια θα αλλάξουμε το στύλ του χάρτη μέσω του λογισμικού QGIS.</p>
+</div>
+<div class="section" id="qgis">
+<h2>Επεξεργασία χώρου εργασίας QGIS<a class="headerlink" href="#qgis" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Κάντε κλίκ <span class="menuselection">Geospatial ‣ Desktop GIS ‣ Quantum GIS</span>.</li>
+<li>Επιλέξτε <span class="menuselection">File ‣ Open Project...</span> από το μενού.</li>
+<li>Επιλέξτε <code class="file docutils literal"><span class="pre">QGIS-NaturalEarth-Example.qgs</span></code> και πιέστε <span class="guilabel">Open</span>.<ul>
+<li>Θα πρέπει να δείτε τον ίδιο παγκόσμιο χάρτη μέσα στο QGIS.
+Θα αλλάξουμε το στύλ του ποταμού και θα δούμε το αποτέλεσμα στον περιηγητή.</li>
+</ul>
+</li>
+<li>Κάντε διπλό κλίκ <strong>10m_rivers_lake_centerlines</strong> στο δέντρο των επιπέδων.</li>
+<li>Αλλάξτε το χρώμα στις επιλογές χρώματος ορίου σε έναν άλλο τόνο του μπλέ.</li>
+<li>Πιέστε <span class="guilabel">OK</span>.<ul>
+<li>Οι ποταμοί είναι πλέον χρωματισμένοι σε νέο χρώμα.</li>
+</ul>
+</li>
+<li>Αποθηκεύστε την εργασία με <span class="menuselection">File ‣ Save Project</span>.</li>
+<li>Κλείστε και ανοίξτε πάλι τον περιηγητή</li>
+<li>Κάντε μεγέθυνση<ul>
+<li>Θα πρέπει να βλέπετε τώρα τους ποταμούς με διαφορετικό χρώμα.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h2>Δημιουργία νέου χώρου εργασίας QGIS<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Ανοίξτε το QGIS</li>
+<li>Επιλέξτε <span class="menuselection">File ‣ New Project</span>.</li>
+<li>Κάντε κλίκ <span class="menuselection">Layer ‣ Add Vector Layer...</span>.</li>
+<li>Βρείτε το αρχείο <code class="file docutils literal"><span class="pre">/home/user/data/natural_earth/10m_admin_0_countries.shp</span></code>.</li>
+<li>Πιέστε <span class="guilabel">Open</span>.<ul>
+<li>Θα πρέπει να δείτε όλες τις χώρες του κόσμου.</li>
+</ul>
+</li>
+<li>Αποθηκεύστε την εργασία με την επιλογή <span class="menuselection">File ‣ Save Project</span>.</li>
+<li>Χρησιμοποιήστε το όνομα αρχείου  <code class="file docutils literal"><span class="pre">/home/user/world.qgs</span></code> και πιέστε <span class="guilabel">Save</span>.</li>
+<li>Ανοίξτε στον περιηγητή την διεύθυνση <a class="reference external" href="http://localhost/cgi-bin/qgis_mapserv?map=/home/user/world.qgs&amp;SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetMap&amp;BBOX=-91.901820,-180.000000,83.633800,180.000000&amp;CRS=EPSG:4326&amp;WIDTH=722&amp;HEIGHT=352&amp;LAYERS=10m_admin_0_countries&amp;STYLES=default&amp;FORMAT=image/png&amp;DPI=96&amp;TRANSPARENT=true">WMS</a>.<ul>
+<li>Θα πρέπει να δείτε όλες τις χώρες του κόσμου αυτή τη φορά από τον εξυπηρετητή QGIS Server.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>Τι ακολουθεί;<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Για να μάθετε περισσότερα για το λογισμικό QGIS Server, μπορείτε να παρακολουθήσετε τα άρθρα στους ιστοχώρους <a class="reference external" href="http://linfiniti.com/2010/08/qgis-mapserver-a-wms-server-for-the-masses/">Linfiniti</a> ή <a class="reference external" href="http://www.3liz.com/blog/rldhont/index.php/2010/12/03/355-qgis-mapserver-an-wysiwyg-open-source-wms-server">3LIZ</a>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

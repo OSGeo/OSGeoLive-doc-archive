@@ -1,0 +1,168 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fi">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Zoo projektin pika-aloitus &#8212; OSGeoLive 13.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '13.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Sisällysluettelo" href="../genindex.html" />
+    <link rel="search" title="Etsi" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="zyGrib Quickstart" href="zygrib_quickstart.html" />
+    <link rel="prev" title="OSGeoLive Quickstart for Running in a Virtual Machine" href="virtualization_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://zoo-project.org/"><img alt="../../_images/logo_zoo-project.png" class="align-right" src="../../_images/logo_zoo-project.png" /></a>
+<a class="reference external image-reference" href="target:http://www.osgeo.org"><img alt="../../_images/OSGeo_incubation.png" class="align-right" src="../../_images/OSGeo_incubation.png" /></a>
+<div class="section" id="zoo-project-quickstart">
+<h1><a class="toc-backref" href="#id1">Zoo projektin pika-aloitus</a><a class="headerlink" href="#zoo-project-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>ZOO-projekti tarjoaa kehittäjäystävällisen Web Processing Service (WPS) -rakenteet WPS:n luomiseen ja ketjuttamiseen. WPS tarjoaa verkossa pääsyn toimintoihin jotka suorittavat paikkatietoalgoritmeja.</p>
+<p>Tämä pika-aloitus kuvailee kuinka:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Käytä prosesseja WFS: ään web-selaimesta.</li>
+</ul>
+</div></blockquote>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#zoo-project-quickstart" id="id1">Zoo projektin pika-aloitus</a><ul>
+<li><a class="reference internal" href="#running" id="id2">Suorittaminen</a><ul>
+<li><a class="reference internal" href="#ogr-spatial-tools" id="id3">OGR spatiaaliset työkalut</a></li>
+<li><a class="reference internal" href="#cgal-triangulations" id="id4">CGAL kolmiointi</a></li>
+<li><a class="reference internal" href="#otb-applications" id="id5">OTB sovellutukset</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#what-next" id="id6">Mitä seuraavaksi?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="running">
+<h2><a class="toc-backref" href="#id2">Suorittaminen</a><a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Suorittaaksesi ZOO projektin demon OSGeoLive DVD:tä klikkaa ”Zoo Project” linkkiä jonka löydät valikon ”Geospatial” &gt; ”Web Services” otsikkovalinnoista.</li>
+<li>Selain avaa Zoo projektin esittelyn aloitussivun. Täällä voit päättää mitä esittelyä haluat käyttää.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/zoo-project_screenshot.png"><img alt="screenshot" class="align-center" src="../../_images/zoo-project_screenshot.png" style="width: 512.0px; height: 296.5px;" /></a>
+<div class="section" id="ogr-spatial-tools">
+<h3><a class="toc-backref" href="#id3">OGR spatiaaliset työkalut</a><a class="headerlink" href="#ogr-spatial-tools" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Klikkaa kartalla valitaksesi ominaisuuden <a class="reference internal" href="../overview/geoserver_overview.html"><span class="doc">GeoServer</span></a> WFS palvelimelta, ominaisuus näytetään sinisellä, tämän jälkeen klikkaa yksinkertaista geometria prosessia kuten Buffer, Centroid, ConvexHull tai Boundary ja tulokset näytetään keltaisella.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/zoo-demo-3.png"><img alt="screenshot" class="align-center" src="../../_images/zoo-demo-3.png" style="width: 512.0px; height: 289.0px;" /></a>
+<ul class="simple">
+<li>Nyt valitse toinen ominaisuus läheltä ensimmäistä valintaasi ja klikkaa monigeometrian prosessin näppäintä Union, Intersection, Symmetric Difference tai Difference saadaksesi näkyviin tulokset kartalla punaisena.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/zoo-demo-4.png"><img alt="screenshot" class="align-center" src="../../_images/zoo-demo-4.png" style="width: 512.0px; height: 287.5px;" /></a>
+</div>
+<div class="section" id="cgal-triangulations">
+<h3><a class="toc-backref" href="#id4">CGAL kolmiointi</a><a class="headerlink" href="#cgal-triangulations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>CGAL sovellutuksessa tulee Sinun yksinkertaisesti painaa Voronoi tai Delaunay näppäintä näyttääksesi WPS palvelun suorituksen tulokset kuten on näytetty alla.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/zoo-demo-5.png"><img alt="screenshot" class="align-center" src="../../_images/zoo-demo-5.png" style="width: 512.0px; height: 288.0px;" /></a>
+</div>
+<div class="section" id="otb-applications">
+<h3><a class="toc-backref" href="#id5">OTB sovellutukset</a><a class="headerlink" href="#otb-applications" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>OTB esittelyn demonstraation liitännässä, Sinun on täytettävä lomake vasemmalla konfiguroidaksesi WPS palvelun suorituksen. Kun olet valinnut arvot prosessointiisi voit painaa Execute näppäintä lomakkeella alhaalla vasemmalla. Jos valitsit image/png tulosteen tulosteen tyypiksi, näet prosessointisi tulokset näytettävän kartalla. Näet alla esimerkin KMeansClassification suorituksesta kun image/png on valittu tulosteen tyypiksi.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/zoo-demo-1.png"><img alt="screenshot" class="align-center" src="../../_images/zoo-demo-1.png" style="width: 512.0px; height: 289.0px;" /></a>
+</div>
+</div>
+<div class="section" id="what-next">
+<h2><a class="toc-backref" href="#id6">Mitä seuraavaksi?</a><a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Voit käyttää ZOO WPS -palvelimen ominaisuuksia:</dt>
+<dd><a class="reference external" href="http://localhost/cgi-bin/zoo_loader.cgi?Request=GetCapabilities&amp;Service=WPS">http://localhost/cgi-bin/zoo_loader.cgi?Request=GetCapabilities&amp;Service=WPS</a></dd>
+</dl>
+</li>
+<li>Lisäkysymyksillä voit ottaa yhteyttä Zoo Projektin postituslistalla: <a class="reference external" href="mailto:zoo-discuss&#37;&#52;&#48;lists&#46;osgeo&#46;org">zoo-discuss<span>&#64;</span>lists<span>&#46;</span>osgeo<span>&#46;</span>org</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

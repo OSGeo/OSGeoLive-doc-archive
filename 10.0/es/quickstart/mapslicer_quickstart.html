@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Inicio Rápido de MapSlicer &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Quickstarts" href="toc.html" />
+    <link rel="next" title="1. MapWindow GIS Lite" href="mapwindow_quickstart.html" />
+    <link rel="prev" title="Guía de inicio rápido de MapServer" href="mapserver_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-mapslicer9.png"><img alt="project logo" class="align-right" src="../../_images/logo-mapslicer9.png" style="width: 128.0px; height: 128.0px;" /></a>
+<div class="section" id="inicio-rapido-de-mapslicer">
+<h1>Inicio Rápido de MapSlicer<a class="headerlink" href="#inicio-rapido-de-mapslicer" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://wiki.osgeo.org/wiki/MapSlicer">MapSlicer</a> Provee una forma sencilla de crear un conjunto de mosaicos a partir de cualquier mapa de imagen georeferenciado. Los mosaicos pueden ser representados como una capa de mapas georeferenciados en un servidor web. De acuerdo a la especificación de la <a class="reference external" href="http://www.osgeo.org/">Open Source Geospatial Foundation&#8217;s (OSGeo&#8217;s)</a> <a class="reference external" href="http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification">Tile Map Service (TMS)</a>.</p>
+<ul class="simple">
+<li><strong>Opciones de Origen</strong>: Cualquier archivo de imagen georeferenciado, eg. a TIFF, JPEG from ArcGIS, QGIS.</li>
+<li><strong>Opciones de Salida</strong>: Un conjunto de directorios con mosaicos de imagenes que pueden ser copiadas a un servidor web para representación como capa georeferenciada.</li>
+<li><strong>Fortalezas</strong>: MapSlicer es simple, gratis, software de fuente abierta, con un aistente fácil, descrito a continuación, para guía a través de las opciones.</li>
+</ul>
+<p>MapSlicer toma ventaja del hecho de que  <a class="reference external" href="http://maps.google.com/">Google Maps</a> , <a class="reference external" href="http://maps.bing.com">Microsoft Bing</a> , <a class="reference external" href="http://maps.yahoo.com/">Yahoo Maps</a> , y otros proveedores de mapas online como <a class="reference external" href="http://www.openstreetmap.org/">OpenStreetMap</a>  utilizan la misma proyección y la misma forma, por lo tanto los mosaicos son compatibles. La página <a class="reference external" href="http://www.maptiler.org/google-maps-coordinates-tile-bounds-projection/">Tiles à la Google Maps</a> describe e ilustra acerca de esto. MapSlicer prepara los mosaicos usando esta especificación como una forma fácil y rápida de preparar un mapa georeferenciado en una página web híbrida.</p>
+<div class="section" id="inicio-de-mapslicer">
+<h2>Inicio de MapSlicer<a class="headerlink" href="#inicio-de-mapslicer" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Descarga MapSlicer a tu computadora o inicialo directamente desde este LiveDVD.</li>
+<li>Selecciona <strong>Tile Profile</strong>. Elige <em>Google Maps Compatible (Spherical Mercator)</em> para una publicación web standard. Elige <em>Google Earth (KML SuperOverlay)</em> si también deseas generar un archivo kml para Google Earth. Clic en <em>Continue</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer14.jpg"><img alt="../../_images/mapslicer14.jpg" class="align-center" src="../../_images/mapslicer14.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="3">
+<li>Elige los <strong>Archivos de origen de datos</strong>. navega para seleccionar la imagen raster de la cual crear mosaicos. Tambien es posible seleccionar un color (Sin datos) que aparecerá como transparente en la imagen resultante. Clic en <em>Continue</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer24.jpg"><img alt="../../_images/mapslicer24.jpg" class="align-center" src="../../_images/mapslicer24.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="4">
+<li>Especifica el <strong>Sistema de Referencia Espacial / Sistema de Coordenadas</strong> de la imagen. Especifica el numero de id de la base de datos EPSG/ESRI. Si tienes datos por ejemplo de Reino Unido la transformación debería incluir el parametro <a class="reference external" href="http://help.maptiler.org/coordinates/europe/uk">EPSG:27700 con TOWGS84</a>. Clic en <em>Continue</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer34.jpg"><img alt="../../_images/mapslicer34.jpg" class="align-center" src="../../_images/mapslicer34.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="5">
+<li>Especifica los detalles acerca de la <strong>Pirámide de mosaicos</strong>. Los parámetros normales de niveles de zoom y formato de archivo son normalmente los mejor. Clic en <em>Continue</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer44.jpg"><img alt="../../_images/mapslicer44.jpg" class="align-center" src="../../_images/mapslicer44.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="6">
+<li>Especifica los detalles sobre <strong>Carpetas de destino y direcciones / URLs</strong> para el conjunto de mosaicos. Si no los conoces, pueden ser agregados por defecto a archivos de <em>googlemaps.html</em> y <em>openlayers.html</em> después de la generación de los mosaicos. Clic en <em>Continue</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer54.jpg"><img alt="../../_images/mapslicer54.jpg" class="align-center" src="../../_images/mapslicer54.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="7">
+<li>Marca las  <strong>visualizaciones que deberian ser generados</strong>. Por defecto, son generados un archivo <em>googlemaps.html</em> y <em>openlayers.html</em>. también puedes seleccionar crear un archivo kml de superposición para Google Earth. Clic en <em>Continue</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer64.jpg"><img alt="../../_images/mapslicer64.jpg" class="align-center" src="../../_images/mapslicer64.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="8">
+<li>Especifica los <strong>Detalles para generar las visualizaciones</strong>, como el titulo, Derechos de copia, y licencia de las API. Si no los conoces, pueden ser agregados a los archivos por defecto de <em>googlemaps.html / openlayers.html</em> despues de la generación de los mosaicos. Clic en <em>Continue</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer74.jpg"><img alt="../../_images/mapslicer74.jpg" class="align-center" src="../../_images/mapslicer74.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="9">
+<li>Click en <strong>Render</strong> para iniciar la preparación de la imagen. Cuando termine, MapSlicer muestra un link al conjunto de mosaicos terminado. Abre el archivo <em>googlemaps.html</em> o <em>openlayers.html</em>  en un navegador para ver el conjunto de mosaicos superpuesta en el mapa en vivo. Para publicarlo en la web, solo copia el conjunto de mosaicos entero y todos los subdirectorios a un servidor web, y edita el archivo googlemaps.html o openlayers.html como lo desees.</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

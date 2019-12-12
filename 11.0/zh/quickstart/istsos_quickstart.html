@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>istSOS Quickstart &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="JOSM Quickstart" href="josm_quickstart.html" />
+    <link rel="prev" title="The iD Editor" href="ideditor_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://istsos.org"><img alt="project logo" class="align-right" src="../../_images/logo-istsos.png" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Community Project" class="align-right" src="../../_images/OSGeo_community.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="istsos-quickstart">
+<h1>istSOS Quickstart<a class="headerlink" href="#istsos-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>istSOS is an OGC <a class="reference external" href="http://www.opengeospatial.org/standards/sos">SOS</a> server implementation written in <a class="reference external" href="https://www.python.org/">Python</a>.
+istSOS allows for managing and dispatch observations from monitoring sensors according to the Sensor Observation Service standard.</p>
+<p>The project provides also a Graphical user Interface that allows for easing the daily operations and a RESTFull Web api for automatizing administration procedures.</p>
+<p>istSOS is released under the GPLv2 licence, and runs on all major platforms
+(Windows, Linux, Mac OS X), even though it has been used in production in linux environment only.</p>
+<div class="section" id="create-postgis-database">
+<h2>Create postgis database<a class="headerlink" href="#create-postgis-database" title="Permalink to this headline">¶</a></h2>
+<p>Open a terminal and execute the following commands:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo -u postgres createdb -E UTF8 istsos
+sudo -u postgres psql -d istsos -c &#39;CREATE EXTENSION postgis&#39;
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-up-an-istsos-service-instance">
+<h2>Setting up an istSOS service instance<a class="headerlink" href="#setting-up-an-istsos-service-instance" title="Permalink to this headline">¶</a></h2>
+<p>With istSOS you can organize your sensor data in different instances. Every instance has its own database schema independent from other instances. You can even deploy other databases over your network according to your needs.</p>
+<p>The first steps into istSOS setup is to configure the default configuration options. These options will then be automatically used for your convenience by every new istSOS instance created.</p>
+<p><strong>1) Open the Web Admin interface</strong></p>
+<p>Open a browser and go to <a class="reference external" href="http://localhost/istsos/admin">http://localhost/istsos/admin</a></p>
+<p><strong>2) Configure your database connection</strong></p>
+<p>From the toolbar buttons menu press the &#8220;Database&#8221; button and fill in the database configuration options:</p>
+<div class="highlight-python"><div class="highlight"><pre>user: postgres
+password: postgres
+host: localhost
+port: 5432
+DB name: istsos
+</pre></div>
+</div>
+<p><strong>3) Configure the default Service provider information</strong></p>
+<p>Press the &#8220;Service provider&#8221; button and fill it using your institutional information.</p>
+<p><strong>4) Configure the default Service identification information</strong></p>
+<p>Press the &#8220;Service identification&#8221; button and fill up with custom metadata that describe the service usage.</p>
+<p><strong>5) Configure your service coordinates system</strong></p>
+<p>Press the &#8220;Coordinates system&#8221; button to manage the Coordiante Reference System (CRS).</p>
+<p><em>Default EPSG code</em>: this will be the native Coordinate Reference Systems of your geometries in the database.</p>
+<p><em>Permitted EPSG</em>: here you can configure which other Coordinate Reference Systems your system will support and reproject if requested.</p>
+<p><strong>6) Configure your getobservation request options</strong></p>
+<p>From the toolbar buttons menu press the &#8220;GetObservation Configuration&#8221; button to
+set maximum time interval per getObservation requests (zero for no limits) and aggregation no-data value.</p>
+<p><strong>7) Configure your service proxy address</strong></p>
+<p>The Proxy URL field is the base URL seen beyond a reverse proxy.</p>
+</div>
+<div class="section" id="create-a-new-service">
+<h2>Create a new service<a class="headerlink" href="#create-a-new-service" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have configured istSOS, it&#8217;s time to create a new service instance.</p>
+<p><strong>1) Create a new service</strong></p>
+<p>From the toolbar buttons menu press the &#8220;new service&#8221; button:</p>
+<p>Choose the name of your instance. In this workshop use the name <strong>demo</strong>.</p>
+<p>In the EPSG field you can set the database native projection. Leaving it empty,
+the default one will be used.</p>
+<p>Clicking on the &#8220;Customize database&#8221; box, you are able
+to change the default database configuration for
+this new istSOS instance.</p>
+<p><strong>2) Press “next”</strong></p>
+<p>As you pressed the “next” button, the server status panel is displayed.
+If something&#8217;s gone wrong during the creation you will see here an alert.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The istSOS “demo” instance has inherited all the configuration options from the default configuration. If, for any reason you decide to modify them, the changes will affect only this instance.</p>
+</div>
+</div>
+<div class="section" id="add-a-new-procedure">
+<h2>Add a new procedure<a class="headerlink" href="#add-a-new-procedure" title="Permalink to this headline">¶</a></h2>
+<p>From the “services” drop down button of the admin interface (<a class="reference external" href="http://localhost/istsos/admin">http://localhost/istsos/admin</a> ) choose the desired instance.</p>
+<p>From the toolbar buttons menu press the &#8220;New procedure&#8221; button.</p>
+<p>Fill in the form using appropriate information.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Once a procedure is created the outputs (observed properties) cannot be changed.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>Optional parameters:</em> Fill at your own need and willing</p>
+</div>
+<p class="rubric"><em>Example</em> (minimal configuration)</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Name: T_LUGANO</td>
+</tr>
+<tr class="row-even"><td>Description: temperature weather station in Lugano</td>
+</tr>
+<tr class="row-odd"><td>Keywords: weather, meteorological, IST</td>
+</tr>
+<tr class="row-even"><td>System type: insitu-fixed-point</td>
+</tr>
+<tr class="row-odd"><td>Sensor type: PTC thermistors of the &#8220;switching&#8221; type</td>
+</tr>
+<tr class="row-even"><td>FOI name: LUGANO</td>
+</tr>
+<tr class="row-odd"><td>EPSG: 4326</td>
+</tr>
+<tr class="row-even"><td>Coordinates: x: 8.96127 y: 46.02723 z: 344.1</td>
+</tr>
+</tbody>
+</table>
+<p><em>Outputs (confirm the outputs pressing the &#8220;add&#8221; button):</em></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Observed property: <a class="reference external" href="urn:ogc:def:parameter:x-istsos:1.0:meteo:air:temperature">urn:ogc:def:parameter:x-istsos:1.0:meteo:air:temperature</a></td>
+</tr>
+<tr class="row-even"><td>Unit of measure: °C</td>
+</tr>
+<tr class="row-odd"><td>Description (optional): conversion from resistance to temperature</td>
+</tr>
+<tr class="row-even"><td>quality index check (optional): Between / from -40 to +60</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Register the new sensor (procedure) pressing the &#8220;submit&#8221; button.</p>
+</div>
+</div>
+<div class="section" id="add-new-observations">
+<h2>Add new observations<a class="headerlink" href="#add-new-observations" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">First we will create a text file with sensor data, formatted according to &#8220;text/csv, subtype=istSOS&#8221;. The file uses a Comma Separated Values (CSV) format. The first line contains header information, including URI names of the observed properties. The following lines contain the data.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Open a text editor by selecting <span class="menuselection">Accessories ‣ Leafpad</span>.</li>
+<li>Copy and paste the follwing text into the text editor window:</li>
+</ol>
+<div class="highlight-rest"><div class="highlight"><pre>urn:ogc:def:parameter:x-istsos:1.0:time:iso8601,urn:ogc:def:parameter:x-istsos:1.0:meteo:air:temperature
+2014-06-03T14:30:00.00Z,22.20
+2014-06-03T14:40:00.00Z,22.00
+2014-06-03T14:50:00.00Z,21.70
+2014-06-03T15:00:00.00Z,21.20
+2014-06-03T15:10:00.00Z,20.70
+2014-06-03T15:20:00.00Z,20.20
+2014-06-03T15:30:00.00Z,19.60
+2014-06-03T15:40:00.00Z,19.20
+2014-06-03T15:50:00.00Z,18.20
+2014-06-03T16:00:00.00Z,18.00
+2014-06-03T16:10:00.00Z,17.20
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p class="first">Save the file as &#8220;T_LUGANO_20140603161000000.dat&#8221; on the Desktop. The filename convention being used is: PROCEDURENAME_YYYYMMDDhhmmssfff.dat</p>
+</li>
+<li><p class="first">Open a terminal by selecting <span class="menuselection">Accessories ‣ LXTerminal</span>.</p>
+</li>
+<li><p class="first">In the terminal, enter: &#8220;cd /usr/share/istsos/&#8221; and press ENTER</p>
+</li>
+<li><p class="first">Write &#8220;python scripts/csv2istsos.py -p T_LUGANO -u <a class="reference external" href="http://localhost/istsos">http://localhost/istsos</a> -s demo -w ~/Desktop&#8221; and press ENTER</p>
+</li>
+<li><p class="first">You should see a message &#8220;Insert observation success: True&#8221;</p>
+</li>
+<li><p class="first">Click <span class="menuselection">Geospatial ‣ Webservices ‣ istSOS</span>.</p>
+</li>
+<li><p class="first">Click the ENTER button in the administration page</p>
+</li>
+<li><p class="first">Click <span class="menuselection">Data Management ‣ Data Viewer</span>.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Select the following:</dt>
+<dd><ul class="first last simple">
+<li>Service = demo</li>
+<li>Offering = temporary</li>
+<li>Procedure T_LUGANO</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Click the &#8220;Add&#8221; button</p>
+</li>
+<li><p class="first">Click the &#8220;Plot&#8221; button and check that the data have been added (watch out at your time zone!)</p>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/istsos_viewer.png"><img alt="../../_images/istsos_viewer.png" src="../../_images/istsos_viewer.png" style="width: 512.0px; height: 384.0px;" /></a>
+</div>
+<div class="section" id="what-next">
+<h2>What Next?<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>To learn more about istSOS, a starting point is the <a class="reference external" href="http://istsos.org/en/trunk/doc/index.html">istSOS Documentation</a></dt>
+<dd>and the <a class="reference external" href="http://istsos.org/tutorial/">istSOS Tutorial</a>.</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

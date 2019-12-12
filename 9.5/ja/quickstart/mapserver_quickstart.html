@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MapServer クイックスタート &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 9.5 コンテンツ" href="../overview/overview.html" />
+    <link rel="next" title="MapSlicer Quickstart" href="mapslicer_quickstart.html" />
+    <link rel="prev" title="MapProxy Quickstart" href="mapproxy_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://mapserver.org/"><img alt="Project logo" class="align-right" src="../../_images/logo-mapserver-new18.png" style="width: 45.5px; height: 65.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project18.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="mapserver">
+<h1>MapServer クイックスタート<a class="headerlink" href="#mapserver" title="Permalink to this headline">¶</a></h1>
+<p>MapServer は <a class="reference external" href="http://www.opensource.org">オープンソース</a> のサーバベースアプリケーションです。 <a class="reference external" href="http://www.opengeospatial.org/standards/wms">WMS</a> や <a class="reference external" href="http://www.opengeospatial.org/standards/wfs">WFS</a> など <a class="reference external" href="http://www.opengeospatial.org/standards">OGC 標準</a> の地理情報の画像、ベクタデータ配信に使うことができます。</p>
+<p>このクイックスタートでは以下の点について説明しています:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#mapserver-quickstart-configure-with-mapfile-ja"><em>MapServer を設定する</em></a></li>
+<li><a class="reference internal" href="#mapserver-quickstart-wms-request-ja"><em>WMS の GetMap リクエストで地図画像をレンダリングする</em></a></li>
+<li><a class="reference internal" href="#mapserver-quickstart-cmd-ja"><em>コマンドラインから地図画像をレンダリングする</em></a></li>
+<li><a class="reference internal" href="#mapserver-quickstart-add-new-layer-ja"><em>shp ファイルを新しいレイヤとして追加する</em></a></li>
+<li><a class="reference internal" href="#mapserver-quickstart-styling-a-layer-ja"><em>レイヤのスタイルを設定する</em></a></li>
+</ul>
+</div></blockquote>
+<div class="section" id="mapserver-quickstart-configure-with-mapfile-ja">
+<span id="id2"></span><h2>MapServer を設定する<a class="headerlink" href="#mapserver-quickstart-configure-with-mapfile-ja" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">ここでは、WMS リクエストを使って shp ファイルを画像として MapServer で配信するために必要な mapfile の設定について学びます。</p>
+</div>
+<div class="section" id="mapfile">
+<h3>Mapfile とは<a class="headerlink" href="#mapfile" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://mapserver.org/mapfile/index.html">Mapfile</a> は MapSrver の設定ファイルです。時空間データを、画像やベクタデータとしてレンダリングする際に使用します。このファイルでは主にレイヤを定義し、必要なデータをどこからどのように読み込み、どうやって表示するかを設定します。（色、シンボル、ラベル等）</p>
+</div>
+<div class="section" id="id4">
+<h3>初めてのマップファイル作成<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>テキストエディタを開いてください（Live DVD では、 Mousepad をインストールしてあります。メニューから <em class="menuselection">Applications ‣ Accessories ‣ Mousepad</em> を選択してください）</li>
+<li>ホームディレクトリに以下の内容で &#8220;mapserver_quickstart.map&#8221; を作成してください。 <tt class="file docutils literal"><span class="pre">/home/user/mapserver_quickstart.map</span></tt></li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre>MAP
+  NAME &quot;MAPSERVER QUICKSTART&quot;
+  EXTENT -137 29 -53 88
+  UNITS DD
+  SHAPEPATH &quot;/home/user/data/natural_earth2/&quot;
+  SIZE 800 600
+
+  IMAGETYPE PNG24
+
+  PROJECTION
+    &quot;init=epsg:4326&quot;
+  END
+
+  WEB
+    METADATA
+      ows_enable_request &quot;*&quot;
+    END
+  END
+
+  LAYER
+    NAME &quot;Admin Countries&quot;
+    STATUS ON
+    TYPE POLYGON
+    DATA &quot;ne_10m_admin_0_countries&quot;
+    CLASS
+      STYLE
+        COLOR 246 241 223
+        OUTLINECOLOR 0 0 0
+      END
+    END
+  END
+
+END
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">この例では Natural Earth データセットを使用します。DVD の <tt class="file docutils literal"><span class="pre">~/data/natural_earth2</span></tt> にインストールしてあります。（ <tt class="file docutils literal"><span class="pre">/usr/local/share/data/natural_earth2</span></tt> にショートカットがあります）</p>
+</div>
+<p>mapfile の各オブジェクトは、 <strong>MAP</strong> のように名前で始まり、 <strong>END</strong> で終わります。 mapfile は常に <strong>MAP</strong> オブジェクトで始まり、 MapServer が読み込んで表示する <strong>LAYER</strong> オブジェクトのリストを持つべきです。今回はレイヤを一つだけ定義した mapfile になっています。</p>
+<dl class="docutils">
+<dt>mapfile のオブジェクトやプロパティについて見てみましょう:</dt>
+<dd><ul class="first last simple">
+<li>EXTENT : この設定でのデフォルト範囲の設定</li>
+<li>LAYER : 時空間データセットへのアクセスと表示の設定を行います。後ほど別のレイヤを追加します。</li>
+<li>SHAPEPATH : 表示したい shp ファイルや tiff 画像へのパスのベースとなるパス</li>
+</ul>
+</dd>
+<dt>mapfile の <strong>LAYER</strong> を詳しく見るとほかにも以下のようなプロパティを含んでいます。</dt>
+<dd><ul class="first last simple">
+<li>STATUS : レイヤを表示する (<em>ON</em>)、表示しない (<em>OFF</em>) もしくは常に表示する (<em>DEFAULT</em>)</li>
+<li>TYPE : MapServer がレンダリング画像として使用するジオメトリの種類。 作成した mapfile ではポリゴン (POLYGON) として表示します。</li>
+<li>DATA : レイヤとして使用するファイルの名称。今回は shp ファイルを指定しています。</li>
+<li>CLASS : レイヤを描画するスタイル。後程このオブジェクトについてより詳しく説明します。</li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">使用できるプロパティの完全なリストは MapServer ドキュメントのページ <a class="reference external" href="http://mapserver.org/mapfile/index.html">Mapfile</a> に記載されています。</p>
+</div>
+</div>
+</div>
+<div class="section" id="wms-getmap">
+<span id="mapserver-quickstart-wms-request-ja"></span><h2>WMS の <strong>GetMap</strong> リクエストで地図画像をレンダリングする<a class="headerlink" href="#wms-getmap" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">ここでは、OGC WMS リクエストを使って、 mapfile から MapServer でレイヤをレンダリングする方法を学びます。</p>
+</div>
+<p>ブラウザを開き、以下の URL を入力してください</p>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Admin%20Countries&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=PNG&amp;WIDTH=800&amp;HEIGHT=600
+</pre></div>
+</div>
+<p>これは、 <a class="reference external" href="http://www.opengeospatial.org/standards/wms">Web Map Service (WMS)</a> の <strong>GetMap</strong> リクエストです。mapserver に「以下のマップファイルを使って指定したれレイヤを png 画像で、サイズ、レンダリングする地物、投影法等のパラメータを指定してレンダリングする」というリクエストをしています。</p>
+<p>&#8220;<em>&amp;LAYERS=...</em>&#8221; で指定した全てのレイヤのうち、 mapfile で <em>STATUS ON</em> のものと、 <em>STATUS DEFAULT</em> のレイヤをレンダリングします。このリクエストの結果は以下の様になります。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_map8.png"><img alt="../../_images/mapserver_map8.png" src="../../_images/mapserver_map8.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">リクエストにのパラメータは &#8220;<em>?map=/home/user/mapserver_quickstart.map</em>&#8221; を除いて全て WMS の仕様にあるものです。</p>
+</div>
+</div>
+<div class="section" id="mapserver-quickstart-cmd-ja">
+<span id="id6"></span><h2>コマンドラインから地図画像をレンダリングする<a class="headerlink" href="#mapserver-quickstart-cmd-ja" title="Permalink to this headline">¶</a></h2>
+<p>MapServer はウェブアプリケーション用に作られていますが、コマンドラインからも画像を作成できます。これは何度も地図を作成してみたり、デバッグする際に便利です。</p>
+<p>Applications/Accessories/Terminal からターミナルを開き、次のようにタイプしてください。</p>
+<blockquote>
+<div>shp2img -m mapserver_quickstart.map -o mymap.png</div></blockquote>
+<p>コマンドの実行に成功すると、レンダリングした地図が <a class="reference external" href="file:///home/user/mymap.png">file:///home/user/mymap.png</a> に作成されます。</p>
+</div>
+<div class="section" id="shp">
+<span id="mapserver-quickstart-add-new-layer-ja"></span><h2>shp ファイルを新しいレイヤとして追加する<a class="headerlink" href="#shp" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">ここでは、mapfile に新しいレイヤを追加し、定義する方法について学びます</p>
+</div>
+<p>mapfile に新しいレイヤを追加します。mapfile にある最後の <em>END</em> ステートメントの直前に、以下のレイヤ設定を追加してください。:</p>
+<div class="highlight-python"><div class="highlight"><pre>LAYER
+  NAME &quot;Lakes&quot;
+  STATUS ON
+  TYPE POLYGON
+  DATA &quot;ne_10m_lakes&quot;
+  CLASS
+    STYLE
+      COLOR 153 179 204
+    END
+  END
+END
+</pre></div>
+</div>
+<p>これで mapfile に二つ目のレイヤが追加できます。追加したレイヤは &#8220;STATUS ON&#8221; プロパティとなっています。これは、リクエストしない限りレンダリングしないことを意味します。</p>
+<p><strong>GetMap</strong> リクエストの内容を確認し、追加した &#8220;Lakes&#8221; レイヤの画像がレンダリングされるかどうかを確かめてみましょう。単純に &#8220;LAYERS&#8221; の引数に、追加したレイヤの名前を以下のように加えます。:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Admin%20Countries,Lakes&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=PNG&amp;WIDTH=800&amp;HEIGHT=600
+</pre></div>
+</div>
+<p>MapServer でレンダリングすると、先程の結果と良く似ていますが、追加した湖のレイヤを追加した画像になります。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes8.png"><img alt="../../_images/mapserver_lakes8.png" src="../../_images/mapserver_lakes8.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="mapserver-quickstart-styling-a-layer-ja">
+<span id="id7"></span><h2>レイヤのスタイルを設定する<a class="headerlink" href="#mapserver-quickstart-styling-a-layer-ja" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">レイヤ内の要素を、データの属性によってスタイル変更する方法について学びます</p>
+</div>
+<p>mapfile では、レイヤオブジェクトはいくつでもクラスオブジェクトを追加できます。これは、データに含まれる要素のスタイル/見栄えの変更に使用します。例えば、 &#8220;10m_lakes&#8221; のデータを、 <a class="reference external" href="http://www.gdal.org/ogrinfo.html">ogrinfo</a> を使って見てみましょう。ジオメトリと属性の定義を見ることができます。これら属性値を使って各要素を描画する際に異なるクラスを割り当てられます。</p>
+<p>&#8220;ne_10m_lakes&#8221; のデータセットには、湖の大きさに関連すると思われる <em>ScaleRank</em> 属性があります。これをつかって湖をすこし違うようにレンダリングしてみましょう。レイヤオブジェクトの中に、既に作成したものに続けて、新しい CLASS オブジェクトを以下のように作成します。:</p>
+<div class="highlight-python"><div class="highlight"><pre>LAYER
+  NAME &quot;Lakes&quot;
+  STATUS ON
+  TYPE POLYGON
+  DATA &quot;ne_10m_lakes&quot;
+  CLASSITEM &quot;ScaleRank&quot;
+  CLASS
+    EXPRESSION /0|1/
+    STYLE
+      COLOR 153 179 204
+      OUTLINECOLOR 0 0 0
+    END
+  END
+  CLASS
+    STYLE
+      COLOR 153 179 204
+    END
+  END
+END
+</pre></div>
+</div>
+<p>新しいクラスオブジェクトは、 MapServer に &#8220;ScaleRank&#8221; が &#8220;0&#8221; か &#8220;1&#8221; の時には、黒い境界線で書くように指示しています。</p>
+<p>クラスオブジェクトは各フィーチャー（地物）を描画する際に、毎回上から順に読み込まれ、フィーチャーがクラスに指定した &#8220;EXPRESSION&#8221; と一致する属性を持つ場合、指定した方法でレンダリングを行います。フィーチャーがクラスに指定した条件と一致しないときには次のクラスのチェックに移り、全てのクラスをチェックして一致が無く、かつ最後のクラスが &#8220;EXPRESSION&#8221; を持たない場合には、そのクラスをデフォルトとして振る舞います。LAYER の &#8220;CLASSITEM&#8221; プロパティでは、そのクラスが EXPRESSION でチェックする属性を指定します。</p>
+<p>この変更を加えると、大きな湖は黒い境界線で描くようになります。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes_scalerank8.png"><img alt="../../_images/mapserver_lakes_scalerank8.png" src="../../_images/mapserver_lakes_scalerank8.png" style="width: 560.0px; height: 420.0px;" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">MapServer の様々な <a class="reference external" href="http://mapserver.org/mapfile/expressions.html">EXPRESSIONS</a> について調べてみてください。</p>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>次のステップ<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>以上、大変簡単な例を紹介しました。まだまだできることはたくさんあります。MapServer のプロジェクトウェブサイトに有用な情報を掲載しているので参考にして下さい。いくつかそのリンクを掲載しておきます。</p>
+<ul class="simple">
+<li>MapServer の導入 -  <a class="reference external" href="http://mapserver.org/introduction.html#introduction">Introduction to MapServer</a>.</li>
+<li>MapServer チュートリアル - <a class="reference external" href="http://www.mapserver.org/tutorial/index.html">MapServer Tutorial</a> より多くの mapfile の例を掲載しています。</li>
+<li><a class="reference external" href="http://www.mapserver.org/ogc/index.html">OGC 準拠と設定</a> では WMS, WFS, SLD, WFS Filter Encoding, WCS, SOS など MapServer の OGC 標準屁の準拠について記載しています</li>
+<li>MapServer が動作させられたら是非、コミュニティ <a class="reference external" href="http://www.mapserver.org/community/lists.html">メーリングリスト</a> に参加してください。アイデアの交換やソフトウェアの性能向上などに関しての議論を行っています。</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

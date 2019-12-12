@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>EOxServer &mdash; OSGeo-Live 9.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 9.5 包含内容一览" href="overview.html" />
+    <link rel="next" title="GDAL/OGR" href="gdal_overview.html" />
+    <link rel="prev" title="deegree" href="deegree_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://eoxserver.org/"><img alt="project logo" class="align-right" src="../../_images/logo-eoxserver-217.png" /></a>
+<div class="section" id="eoxserver">
+<h1>EOxServer<a class="headerlink" href="#eoxserver" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="web">
+<h2>Web 服务<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h2>
+<p>　　EOxServer 是一款用于存储地球观测（Earth Observation / EO）数据的服务器软件。它是一套基于 Python 语言的 EO 数据及元数据服务框架。</p>
+<p>　　EOxServer 的研发目标是为支持和简化网络上通过各种公共标准交换的海量 EO 数据的存储提供一个开源的框架，使用户更容易地应用和分析数据。</p>
+<ul class="simple">
+<li>开源协议：MIT 麻省理工学院标准协议</li>
+<li>软件框架：完全基于开源工程（Python, MapServer,
+Django/GeoDjango, GDAL, SpatiaLite, PostGIS, PROJ.4）</li>
+<li>高效的数据服务：基于命令行界面或 GUI 的数据注册管理</li>
+<li>海量地球观测数据存储：包含现有的公共栅格数据集</li>
+<li>基于开放标准的服务：开放地理信息协会（OGC）标准; WMS, WCS, EO-WMS, EO-WCS</li>
+<li>高效的数据利用：用户可自定义数据获取范围，并浏览和下载。</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/eoxserver_screenshot17.png"><img alt="EOxServer embedded client screen shot" class="align-right" src="../../_images/eoxserver_screenshot17.png" style="width: 512.0px; height: 384.0px;" /></a>
+<div class="section" id="id1">
+<h3>核心功能<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>EOxServer 的核心功能包括：</p>
+<ul class="simple">
+<li>支持 GML AP 的 RectifiedGridCoverages 规则化格网</li>
+<li>支持 WCS 网络数据服务 2.0 标准，其核心功能包括 GetCapabilities 功能查询、DescribeCoverage 数据描述、GetCoverage requests 数据获取、KVP- 数据连接、XML/POST 协议支持等</li>
+<li>预先准备部分未发布的扩展，包括 Coverage 数据格式，GeoTIFF 栅格标准编码，未正式发布的（包括 EPSG 地理信息技术委员会的）坐标参考，重采样和插值，非指针数据定位等。这是通过对 WCS SWG 标准工作组最新进展及 WCS 1.0/1.1 标准相关部分的追踪实现的。</li>
+<li>支持通过 gmlcov:RectifiedGridCoverage 方法获取基于二维重采样规则化格网的数据</li>
+<li>支持通过 gmlcov:ReferenceableGridCoverage 方法获取基于二维非线性格网参照的数据</li>
+<li>支持地球观测数据系列的存储，如基于时间的系列</li>
+<li>支持对数据及其系列进行 DescribeEOCoverageSet 数据集搜索操作</li>
+<li>支持规则化格网下的数据融合，并且支持 contributingFootprint 数据使用范围描述</li>
+<li>支持地球观测元数据的获取和评价</li>
+<li>协议支持包括：<ul>
+<li>KVP 关键字对</li>
+<li>XML/POST（通过 SOAP2POST 代理实现 XML/SOAP）</li>
+</ul>
+</li>
+<li>数据格式支持：<ul>
+<li>GeoTIFF</li>
+<li>所有 GDAL 支持格式（具体各个格式有待验证）</li>
+</ul>
+</li>
+<li>支持地球观测数据的 EO-WMS 网络地图服务</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>标准支持<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>支持多种 OGC 开放地理信息联盟标准
+* WCS, EO-WCS
+* WMS, EO-WMS
+* GML, GMLCOV, EO-O&amp;M</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>演示<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://localhost/eoxsever/">OSGeo Live 本地</a></li>
+<li><a class="reference external" href="https://eoxserver.org/demo_stable/">线上演示</a></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h3>文档<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="../../eoxserver-docs/EOxServer_documentation.pdf">EOxServer 0.2.0 文档</a></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>其它信息<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p><strong>官方网站：</strong> <a class="reference external" href="http://eoxserver.org/">http://eoxserver.org/</a></p>
+<p><strong>开源协议：</strong> <a class="reference external" href="http://eoxserver.org/doc/copyright.html#license">MIT 麻省理工学院协议</a></p>
+<p><strong>软件版本：</strong> 0.4.0</p>
+<p><strong>支持平台：</strong> Linux, Windows, Mac</p>
+<p><strong>API 接口：</strong> Python</p>
+<p><strong>社区支持：</strong> <a class="reference external" href="http://eoxserver.org/doc/en/users/basics.html#where-can-i-get-support">http://eoxserver.org/doc/en/users/basics.html#where-can-i-get-support</a></p>
+</div>
+<div class="section" id="id7">
+<h3>快速开始<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/eoxserver_quickstart.html"><em>Quickstart documentation</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

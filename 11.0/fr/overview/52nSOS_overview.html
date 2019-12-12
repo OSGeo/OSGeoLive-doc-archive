@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>52°North SOS &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Bienvenue sur OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="52°North WPS" href="52nWPS_overview.html" />
+    <link rel="prev" title="OSGeo-Live 11.0 Contenus" href="overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://52north.org/sos"><img alt="52°North - exploring horizons (Logo du projet)" class="align-right" src="../../_images/logo_52North_160.png" /></a>
+<div class="section" id="north-sos">
+<h1>52°North SOS<a class="headerlink" href="#north-sos" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="service-web">
+<h2>Service Web<a class="headerlink" href="#service-web" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../standards/sos_overview.html"><em>Sensor Observation Service (SOS)</em></a> de 52°North supporte
+la lecture en directe et la capture de données compressées depuis des capteurs in-situ et distants.
+Un capteur peut aussi bien être une caméra sur un satellite qu&#8217;une échelle pour mesurer le niveau d&#8217;eau
+dans un courant, une station météo ou de mesure de la qualité de l&#8217;air.</p>
+<a class="reference internal image-reference" href="../../_images/52n_sos_overview.png"><img alt="Capture d'écran du client javascript de 52°North SOS" class="align-right" src="../../_images/52n_sos_overview.png" style="width: 614.4px; height: 460.8px;" /></a>
+<div class="section" id="caracteristiques">
+<h3>Caractéristiques<a class="headerlink" href="#caracteristiques" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first"><strong>Client web</strong>: l&#8217;application SOS est livrée avec une application basée sur des technologies web.
+Elle fournit les moyens d&#8217;administrer et de configurer l&#8217;instance de service,
+ainsi que des requêtes pour les opérations SOS;
+des requêtes appropriées à titre d&#8217;exemple sont fournies.</p>
+</li>
+<li><p class="first"><strong>Helgoland</strong>: SOS contient aussi l&#8217;application Helgoland pour l&#8217;exploration,
+l&#8217;analyse et la visualisation de données issues de réseaux de capeurs dans divers champs d&#8217;applications,
+Par exemple, l&#8217;hydrologie, la météorologie, la surveillance de l&#8217;environnement, la gestion du trafic.</p>
+</li>
+<li><p class="first"><strong>Specifications</strong>: 52°North SOS implémente les spécifications actuelles version 2.0.0 et la
+version 1.0.0 précédente (sans opération transactionnelle).
+Les opérations implémentées pour chaque version du standard sont listées ci-dessous.</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>INSPIRE Download Service Extension</strong>: A partir de la version 4.2.0, une</dt>
+<dd><p class="first last">extension permet à SOS d&#8217;être utiliser comme service de téléchargement INSPIRE.
+Des informations de contexte sont fournis sur <a class="reference external" href="http://blog.52north.org/2014/01/30/52north-supports-the-jrc-in-developing-an-inspire-download-service-based-on-sos/">le post de blog</a>
+et dans le <a class="reference external" href="https://wiki.52north.org/bin/view/SensorWeb/SensorObservationServiceIVDocumentation#INSPIRE_Download_Service_extensi">wiki</a> .</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Air Quality Data e-Reporting Extension</strong>: A partir de la version 4.3.0, une</dt>
+<dd><p class="first last">extension est disponible pour fournir des flux de données sur la qualité de l&#8217;air. Les données sont compatibles E1a,
+E1b et E2a(l&#8217;instance d&#8217;OSGeo-Live n&#8217;est toutefois pas configurée pour).
+L&#8217;<a class="reference external" href="https://wiki.52north.org/bin/view/SensorWeb/AqdEReporting#Installation">installation et la configuration</a>
+sont documentées dans le wiki de 52°North.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>RESTful API for Timeseries</strong>: A compter de la version 4.1.1., une version</dt>
+<dd><p class="first last">packagée est disponible, qui fournit directement l&#8217;<a class="reference external" href="https://wiki.52north.org/bin/view/SensorWeb/SensorWebClientRESTInterface">API RESTful</a>.
+Ainsi, les séries temporelles peuvent être requêtées via RESTful avec des requêtes encodées en JSON.
+Plus de détails sont inclus dans la documentation
+<a class="reference external" href="http://localhost:8080/52nSOS/static/doc/api-doc/">SOS webapp</a>.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>Lire plus</strong>: les <a class="reference external" href="https://wiki.52north.org/bin/view/SensorWeb/SensorObservationServiceIVDocumentation#Features">détails des fonctionnalités implémentées</a>
+peuvent être trouvés sue le wiki de 52°North.</p>
+</li>
+</ul>
+<div class="section" id="sos-operations">
+<h4>SOS Operations<a class="headerlink" href="#sos-operations" title="Permalink to this headline">¶</a></h4>
+<p><strong>Requêtes</strong>:</p>
+<ul class="simple">
+<li>GetCapabilities: pour demander une description automatique du service interrogé.</li>
+<li>DescribeSensor: pour demander les informations sur le capteur.</li>
+<li>GetFeatureOfInterest/ GetFeatureOfInterestTime (from 1.0): pour demander des entités (par exemple la localisation des capteurs / mesures).</li>
+<li>GetObservationById / GetObservation: pour demander les données des issues des capteurs.</li>
+<li>GetResult (depuis les spécifications version 2.0):  pour demander les données des issues des capteurs.</li>
+<li>GetResultTemplate (depuis les spécifications version 2.0):  pour demander  un modèle de la structure du résultat
+qui sera retourné pour une requête GetResult.</li>
+<li>GetDataAvailability (à partir de <a class="reference external" href="http://docs.opengeospatial.org/bp/14-004r1/14-004r1.html#38">SOS 2.0 Hydrology Profile - OGC Best Practice</a>): pour
+demander la disponibilité des données pour certaines configurations.</li>
+</ul>
+<p><strong>Opérations SOS transactionnelles</strong>:</p>
+<ul class="simple">
+<li>InsertSensor (depuis les spécifications version 2.0): pour insérer les métadonnées de nouveaux capteurs.</li>
+<li>InsertObservation (depuis les spécifications version 2.0):  pour ajouter de nouvelles observations.</li>
+<li>UpdateSensorDescription (depuis les spécifications version 2.0): for updating the description of a sensor.</li>
+<li>DeleteSensor (depuis les spécifications version 2.0): pour supprimer un capteur/procédure et toutes les
+propositions et observations liées.</li>
+<li>DeleteObservation (depuis les spécifications version 2.0): pour supprimer une observation.</li>
+<li>InsertResultTemplate (depuis les spécifications version 2.0): pour insérer un modèle de résultat.</li>
+<li>InsertResult (depuis les spécifications version 2.0): pour insérer des résultats.</li>
+<li>InsertFeatureOfInterest pour l&#8217;insertion d&#8217;entités</li>
+<li>DeleteResultTemplate pour la suppression de modèles de résultat par indentifiant
+ou des paires proposition / propriété observée.</li>
+</ul>
+<p>Pour ces requêtes, les opérateurs de filtrage suivants sont possibles:</p>
+<ul class="simple">
+<li>Filtre spatial: BBOX, en utilisant un rectangle englobant.</li>
+<li>Filtre temporel: During, avec une période.</li>
+<li>Filtre temporel: TEquals, avec une heure donnée.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="standards-associes">
+<h3>Standards associés<a class="headerlink" href="#standards-associes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../standards/sos_overview.html"><em>Sensor Observation Service (SOS)</em></a></li>
+<li><a class="reference internal" href="../standards/gml_overview.html"><em>Geography Markup Language (GML)</em></a></li>
+<li><a class="reference internal" href="../standards/sensorml_overview.html"><em>Sensor Model Language (SensorML)</em></a></li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Détails<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h3>
+<p><strong>Site web:</strong> <a class="reference external" href="http://52north.org/communities/sensorweb/sos">http://52north.org/communities/sensorweb/sos</a></p>
+<p><strong>Licence:</strong> Licence GNU General Public (GPL) version 2</p>
+<p><strong>Version du logiciel:</strong> SOS 4.4.0</p>
+<p><strong>Plates-formes supportées:</strong> Windows, Linux, Mac</p>
+<p><strong>Versions de Java supportées:</strong> 7+, (bundle version: 8+)</p>
+<p><strong>Interface de l&#8217;API:</strong> Java, HTTP + JSON/XML/SOAP/KVP</p>
+<p><strong>Support commercial:</strong> <a class="reference external" href="http://52north.org/">http://52north.org/</a></p>
+<p><strong>Support communautaire:</strong> <a class="reference external" href="http://sensorweb.forum.52north.org/">http://sensorweb.forum.52north.org/</a></p>
+<p><strong>Site web communautaire:</strong> <a class="reference external" href="http://52north.org/communities/sensorweb/">http://52north.org/communities/sensorweb/</a></p>
+</div>
+<div class="section" id="guide-de-demarrage-rapide">
+<h3>Guide de démarrage rapide<a class="headerlink" href="#guide-de-demarrage-rapide" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/52nSOS_quickstart.html"><em>Guide de démarrage rapide</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

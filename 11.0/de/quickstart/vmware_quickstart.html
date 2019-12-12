@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OSGeo-Live Quickstart für VMWare Player &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Quickstarts" href="toc.html" />
+    <link rel="next" title="Web World Wind Quickstart" href="webworldwind_quickstart.html" />
+    <link rel="prev" title="OSGeo-Live Quickstart für Virtual Box" href="virtualbox_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="osgeo-live-quickstart-fur-vmware-player">
+<h1>OSGeo-Live Quickstart für VMWare Player<a class="headerlink" href="#osgeo-live-quickstart-fur-vmware-player" title="Permalink to this headline">¶</a></h1>
+<p>OSGeo-Live kann auf einem Host-Rechner installiert und als &#8220;Gast&#8221;-Betriebssystem gestartet werden. Der Host kann sowohl Windows als auch Linux sein. Hierfür erforderlich ist eine installierte Software, wie zum Beispiel VMWare Player, um die virtuelle Maschine (VM) starten zu können. Folgend sind die Schritte dokumentiert, um die OSGeo-Live als VM aufzusetzen.</p>
+<div class="section" id="warum-die-osgeo-live-als-vm-laufen-lassen">
+<h2>Warum die OSGeo-Live als VM laufen lassen?<a class="headerlink" href="#warum-die-osgeo-live-als-vm-laufen-lassen" title="Permalink to this headline">¶</a></h2>
+<p>Wird OSGeo-Live als VM verwendet, besteht für den Anwender die Möglichkeit, die Arbeiten abzuspeichern, das Live-System zu aktualisieren oder weitere Software zu installieren. Hinzu kommt, dass der virtuelle Computer besser auf User-Interaktion anspricht, als wenn OSGeo-Live von der DVD gestartet wird. Die OSGeo-Live VM erzeugt eine voll funktionsfähige Computer-Umgebung, Im Gegensatz zur OSGeo-Live DVD werden alle Dateien und Daten sowie Einstellungen gespeichert und sind nach dem Neustart weiterhin verfügbar. Aufgrund der Platform ist es nicht nur möglich, OSGeo-Live für Präsentationen und Schulungen zu nutzen, sondern wirklich in GIS-Welt einzudringen und zu arbeiten.</p>
+</div>
+<div class="section" id="anforderungen">
+<h2>Anforderungen<a class="headerlink" href="#anforderungen" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hardware">
+<h3>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h3>
+<p>Der Host-Computer sollte mindestens 2GB Arbeitsspeicher verfügen, wovon 1GB von der VM genutzt werden können. Auch hier gilt, je mehr desto besser, was die Performance entsprechend verbessert. Sie können die Größe des Speichers später noch anpassen.
+Den freien Festplattenspeicher betreffend, sollten mindestens 25GB vorhanden sein. Steht mehr zur Verfügung, können Sie in der VM mehr für Ihre Arbeit verwenden.
+Ebenso sollte die CPU des Host-Systems VM&#8217;s unterstützen (die meisten Computer der letzten 5 Jahre wurden mit VT-Virtualization Technology ausgeliefert).</p>
+</div>
+<div class="section" id="software">
+<h3>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h3>
+<p>Laden Sie die VM Version von OSGeo-Live herunter. Es wird 7 ZIP benötigt, um das Archiv zu entpacken. Natürlich wird auch der VMWare Player benötigt. Berücksichtigen Sie, dass der VMWare Player nicht OpenSource ist, auch wenn er kostenlos heruntergeladen werden kann. Darüber hinaus ist eine Registrierung erforderlich sowie eine Zustimmung zu den Lizenzbedingungen, um die Software herunterladen und nutzen zu können.</p>
+<p><a class="reference external" href="http://download.osgeo.org/livedvd/release/5.5/osgeo-live-vm-5.5.7z">OSGeo-Live VM</a></p>
+<p><a class="reference external" href="http://www.7-zip.org/download.html">7 ZIP Download Seite</a></p>
+<p><a class="reference external" href="https://www.vmware.com/tryvmware/?p=player&amp;lp=1">VMWare Player Registrierung &amp; Download:</a></p>
+<p>Entpacken Sie das Zip-Archivs <cite>osgeo-live-vm</cite> mit folgendem Kommando</p>
+<div class="highlight-python"><div class="highlight"><pre>7z e osgeo-live-vm-5.5.7z
+</pre></div>
+</div>
+<p>Oder verwenden Sie das 7 ZIP Programm mit Dialogunterstützung. Installieren Sie ebenso die VMWare Player Software.</p>
+</div>
+</div>
+<div class="section" id="einrichten-der-vm">
+<h2>Einrichten der VM<a class="headerlink" href="#einrichten-der-vm" title="Permalink to this headline">¶</a></h2>
+<p>Um die OSGeo-Live VM nutzen zu können, ist es erforderlich, eine Konfiguration <strong>vmx</strong> zu erstellen. Am einfachsten geht dies über folgenden Link:</p>
+<p><a class="reference external" href="http://www.easyvmx.com/easyvmx.shtml">EasyVMX Webseite:</a></p>
+<dl class="docutils">
+<dt>Klicken Sie auf die easyvmx Schaltfläche und geben Sie folgende Einstellungen bei den entsprechenden Eingabefeldern an:</dt>
+<dd><ul class="first last simple">
+<li>Virtual Machine Name: osgeolive-5.5 (Verwenden Sie den Namen der vmdk Datei)</li>
+<li>Select GuestOS: Ubuntu</li>
+<li>Memory Size: 1024 MB (mindestens)</li>
+<li>Virtual Machine Description: OSGeo-Live 5.5</li>
+<li>Network Interface Card: (Standardeinstellungen belassen)</li>
+<li>Hardisk Drives: Disk#1 Disk Size 20GB (mindestens) und aktivieren Sie SCSI</li>
+<li>Sound and IO: alle Optionen deaktivieren</li>
+</ul>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_form.png"><img alt="../../_images/vmware_easyvmx_form.png" src="../../_images/vmware_easyvmx_form.png" style="width: 600.0px; height: 498.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_disk.png"><img alt="../../_images/vmware_easyvmx_disk.png" src="../../_images/vmware_easyvmx_disk.png" style="width: 600.0px; height: 498.0px;" /></a>
+<p>Klicken Sie auf die Schaltfläche &#8220;Create Experimental Virtual Machine&#8221;. Es wird eine formatierte <strong>vmx</strong> Datei von der Webseite bereitgestellt, die die oben eingegebenen Einstellungen beinhaltet. Die Datei ist in dem Verzeichnis Ihres Computers abzulegen, wo zuvor die die OSGeo vmdk Datei aus dem ZIP Archiv entpackt wurde. Die in der folgenden Ansicht zu sehenden Zeilen, beginnend ab <code class="docutils literal"><span class="pre">#!/usr/bin/vmplayer</span></code> bis <code class="docutils literal"><span class="pre">#</span> <span class="pre">END</span> <span class="pre">OF</span> <span class="pre">EasyVMX!</span> <span class="pre">CONFIG</span></code> sind zu kopieren und in eine neue Datei <cite>osgeolive-5.5.vmx</cite> einzufügen.</p>
+<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_output.png"><img alt="../../_images/vmware_easyvmx_output.png" src="../../_images/vmware_easyvmx_output.png" style="width: 600.0px; height: 498.0px;" /></a>
+<p>Der Dateiname (ohne der Extension vmx) sollte dem der vmdk Datei entsprechen. Bitte prüfen Sie sorgfältig die Datei, besonders die Zeile für die SCSI Definition <code class="docutils literal"><span class="pre">scsi0:0.fileName</span> <span class="pre">=</span></code>. Stellen Sie sicher, dass der referenzierte Dateiname dem der vmdk Datei entspricht. Speichern Sie anschließend die neue Datei in das gleiche Verzeichnis der vmdk Datei.</p>
+<p>Sie können nun den VMWare Player starten und im Menü über <strong>Open a Virtual Machine</strong> die vmdk Datei auswählen, die im Verzeichnis zu finden ist, wo zuvor die vmx Datei gespeichert worden ist. Die neue VM sollte nun in der Liste des VMWare Players erscheinen. Wählen Sie <strong>Play Virtual Machine</strong> und die VM sollte booten.</p>
+<a class="reference internal image-reference" href="../../_images/vmware_open.png"><img alt="../../_images/vmware_open.png" src="../../_images/vmware_open.png" style="width: 540.0px; height: 474.3px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_play.png"><img alt="../../_images/vmware_play.png" src="../../_images/vmware_play.png" style="width: 540.0px; height: 474.3px;" /></a>
+</div>
+<div class="section" id="wenn-die-vm-lauft">
+<h2>Wenn die VM läuft<a class="headerlink" href="#wenn-die-vm-lauft" title="Permalink to this headline">¶</a></h2>
+<p>Als ersten Schritt sollten Sie die VMWare Tools installieren. Sobald diese installiert worden sind, können Sie die Display-Einstellungen anpassen und optimieren. Ebenso ist es dann möglich, Verzeichnisse des Host-Systems gemeinsam über Freigaben, sogenannten <strong>shared folders</strong> zu nutzen. Die Installation der VMWare Tools erfolget über folgendes Kommando in einem Terminal:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install open-vm-dkms open-vm-toolbox
+</pre></div>
+</div>
+<p>Im Fenster des VMWare Players wählen Sie <span class="menuselection">Virtual Machine ‣ Virtual Machine Settings</span> wechseln Sie in den Optionen Tab und klicken Sie anschließend auf die Shared Folder Einstellungen. Hier können Sie mit &#8220;+&#8221; neue Verzeichnisse hinzufügen. Für den Fall, dass Sie unter Windows das Verzeichnis <cite>C:\Users\your_name\Downloads</cite> nutzen wollen, navigieren Sie zum entsprechenden Verzeichnis und geben Sie der Freigabe den Namen &#8220;Downloads&#8221;. Anschließend die Konfiguration übernehmen und speichern, fertig.</p>
+<a class="reference internal image-reference" href="../../_images/vmware_shared.png"><img alt="../../_images/vmware_shared.png" src="../../_images/vmware_shared.png" style="width: 640.0px; height: 527.2px;" /></a>
+<p>Im Terminal der VM sollten noch zwei Kommandos aufgerufen werden, um diese Freigabe nutzen zu können:</p>
+<div class="highlight-python"><div class="highlight"><pre>sudo mkdir /mnt/Downloads
+sudo mount -t vmhgfs .host:/Downloads /mnt/Downloads
+</pre></div>
+</div>
+<p>Viel Spaß ...</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

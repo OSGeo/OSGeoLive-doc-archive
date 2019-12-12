@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>QGIS Quickstart &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.0 Inhaltsverzeichnis" href="../overview/overview.html" />
+    <link rel="next" title="rasdaman Quickstart" href="rasdaman_quickstart.html" />
+    <link rel="prev" title="QGIS Server Quickstart" href="qgis_mapserver_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.qgis.org"><img alt="project logo" class="align-right" src="../../_images/logo-QGIS3.png" /></a>
+<div class="section" id="qgis-quickstart">
+<h1>QGIS Quickstart<a class="headerlink" href="#qgis-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>QGIS ist ein benutzerfreundliches, quelloffenes Geographisches Informationssystem, mit dem man Geodaten visualisieren, managen, editieren und analysieren sowie druckfertige Karten erstellen kann.</p>
+<p>Dieser Quickstart Guide beschreibt folgende Schritte:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Bearbeiten eines existierenden QGIS Projektes</li>
+<li>Erstellen eines neuen QGIS Projektes mit einem einfachen Vektor-Layer</li>
+</ul>
+</div></blockquote>
+<div class="section" id="bearbeiten-eines-qgis-projektes">
+<h2>Bearbeiten eines QGIS Projektes<a class="headerlink" href="#bearbeiten-eines-qgis-projektes" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first"><span class="menuselection">Applications ‣ Desktop GIS ‣ Quantum GIS</span> im Startmenü des Desktops wählen</p>
+</li>
+<li><p class="first">Wählen Sie <span class="menuselection">Datei ‣ Projekt öffnen...</span> in der Menu-Zeile</p>
+</li>
+<li><p class="first">Selektieren Sie die Datei <code class="file docutils literal"><span class="pre">QGIS-NaturalEarth-Example.qgs</span></code> und klicken Sie <span class="guilabel">Öffnen</span>.</p>
+<ul class="simple">
+<li>Sie sollten darauf eine Weltkarte sehen</li>
+</ul>
+</li>
+<li><p class="first">Setzen Sie einen Haken bei <strong>10m_populated_places_simple</strong> im Layer-Fenster</p>
+<ul>
+<li><p class="first">Es werden Städte der Welt angezeigt:</p>
+<a class="reference internal image-reference" href="../../_images/qgis3.png"><img alt="Map in QGIS" src="../../_images/qgis3.png" style="width: 716.8px; height: 520.8px;" /></a>
+</li>
+</ul>
+</li>
+<li><p class="first">Machen Sie einen Doppelklick auf <strong>10m_rivers_lake_centerlines</strong> im Layer-Fenster</p>
+</li>
+<li><p class="first">Ändern Sie unter <span class="guilabel">Stil</span> einen anderen Blauton als Farbe</p>
+</li>
+<li><p class="first">Klicken Sie auf die Schaltfläche <span class="guilabel">OK</span></p>
+<ul>
+<li><p class="first">Die Flüsse werden jetzt in der gewählten Farbe dargestellt</p>
+<a class="reference internal image-reference" href="../../_images/qgis_zoom_toolbar.png"><img alt="Map in QGIS" src="../../_images/qgis_zoom_toolbar.png" style="width: 289.1px; height: 30.8px;" /></a>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="neues-qgis-projekt-erstellen">
+<h2>Neues QGIS Projekt erstellen<a class="headerlink" href="#neues-qgis-projekt-erstellen" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Wählen Sie <span class="menuselection">Datei ‣ Neues Projekt</span></p>
+</li>
+<li><p class="first">Wählen Sie <span class="menuselection">Layer ‣ Vektorlayer hinzufügen...</span></p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/qgis_add_layer.png"><img alt="Add layer" src="../../_images/qgis_add_layer.png" style="width: 714.7px; height: 521.5px;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">Klicken Sie auf die Schaltfläche <span class="guilabel">Durchsuchen</span> und wählen Sie den Datensatz <code class="file docutils literal"><span class="pre">/home/user/data/natural_earth/10m_admin_0_countries.shp</span></code></p>
+</li>
+<li><p class="first">Klicken Sie auf die Schaltfläche <span class="guilabel">Öffnen</span></p>
+<ul>
+<li><p class="first">Sie sollten jetzt alle Länder der Welt sehen</p>
+<a class="reference internal image-reference" href="../../_images/qgis_countries.png"><img alt="Add layer result" src="../../_images/qgis_countries.png" style="width: 716.8px; height: 520.8px;" /></a>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="weitere-informationen">
+<h2>Weitere Informationen<a class="headerlink" href="#weitere-informationen" title="Permalink to this headline">¶</a></h2>
+<p>Weitere Tutorials mit fortgeschrittenen Funktionen von QGIS sind als <a class="reference external" href="../../qgis/tutorials/de/">OSGeo-Live QGIS tutorials</a> auf dieser Live_DVD verfügbar.</p>
+<p>Um mehr über QGIS zu erfahren, dient die Seite <a class="reference external" href="http://www.qgis.org/de/docs/index.html">QGIS Dokumentation</a> auf der QGIS Webseite als Ausgangspunkt.
+Die englische Einführung <a class="reference external" href="http://docs.qgis.org/2.8/de/docs/gentle_gis_introduction/">A Gentle Introduction to GIS</a> und der <a class="reference external" href="http://docs.qgis.org/2.8/de/docs/user_manual/">QGIS User Guide</a> sind als PDF auf dieser Live-DVD enthalten <a class="reference external" href="../../qgis/QGIS-2.2-UserGuide-en.pdf">[1]</a> <a class="reference external" href="../../qgis/QGIS-1.8-UserGuide-en.pdf">[2]</a>.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

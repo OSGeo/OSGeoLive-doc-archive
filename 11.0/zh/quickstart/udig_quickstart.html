@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>uDig 快速入门 &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Quickstarts" href="toc.html" />
+    <link rel="next" title="OSGeo-Live Quickstart for Running in a Virtual Machine" href="virtualization_quickstart.html" />
+    <link rel="prev" title="Quickstarts" href="toc.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-uDig.png"><img alt="project logo" class="align-right" src="../../_images/logo-uDig.png" style="width: 76.8px; height: 79.2px;" /></a>
+<div class="section" id="udig">
+<h1><a class="toc-backref" href="#id9">uDig 快速入门</a><a class="headerlink" href="#udig" title="Permalink to this headline">¶</a></h1>
+<p>　　uDig（User Friendly Internet Desktop GIS）是一款用于浏览和编辑地理信息的桌面 GIS 系统。</p>
+<p>　　本文演示：</p>
+<blockquote>
+<div><ul class="simple">
+<li>从 shp 文件和 <a class="reference internal" href="../standards/wms_overview.html"><em>Web Map Service (WMS)</em></a> 导入数据</li>
+<li>基本工具操作</li>
+<li>配置要素样式的颜色</li>
+</ul>
+</div></blockquote>
+<div class="contents topic" id="id1">
+<p class="topic-title first">目录</p>
+<ul class="simple">
+<li><a class="reference internal" href="#udig" id="id9">uDig 快速入门</a><ul>
+<li><a class="reference internal" href="#id2" id="id10">启动 uDig</a></li>
+<li><a class="reference internal" href="#id3" id="id11">欢迎界面</a></li>
+<li><a class="reference internal" href="#id4" id="id12">主界面</a></li>
+<li><a class="reference internal" href="#id5" id="id13">文件</a></li>
+<li><a class="reference internal" href="#map" id="id14">Map</a></li>
+<li><a class="reference internal" href="#wms" id="id15">网络地图服务（WMS）</a></li>
+<li><a class="reference internal" href="#id6" id="id16">样式</a></li>
+<li><a class="reference internal" href="#id7" id="id17">其它尝试</a></li>
+<li><a class="reference internal" href="#id8" id="id18">其它信息</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id10">启动 uDig</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>从桌面 <span class="menuselection">Geospatial ‣ Desktop GIS ‣ uDig</span> 启动。</li>
+<li>系统初始化将花费一些时间。</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/udig_Quickstart1Splash.png"><img alt="../../_images/udig_Quickstart1Splash.png" src="../../_images/udig_Quickstart1Splash.png" style="width: 350.0px; height: 224.0px;" /></a>
+<p>　　若启动软件有任何问题，请查看 <a class="reference external" href="http://udig.refractions.net/files/docs/latest/user/Running%20uDig.html">Running uDig</a> 文档。</p>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id11">欢迎界面</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>首次启动时，欢迎界面将展示教程、文档和项目网站信息。</li>
+<li>点击箭头形的 Workbench 图标（右上角）开启主界面。</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_welcome.png"><img alt="../../_images/udig_welcome.png" src="../../_images/udig_welcome.png" style="width: 711.2px; height: 514.5px;" /></a>
+</div></blockquote>
+<p>　　在主界面菜单栏选择 <span class="menuselection">Help ‣ Welcome</span> 可以回到欢迎界面。</p>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id12">主界面</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>　　主界面提供了一种编辑面板（显示地图）和信息面板（显示与地图和要素有关的信息）。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_workbench.png"><img alt="../../_images/udig_workbench.png" src="../../_images/udig_workbench.png" style="width: 718.9px; height: 524.3px;" /></a>
+</div></blockquote>
+<p>　　一个典型的 uDig 会话如下：</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>图层 (1),</li>
+<li>项目 (2),</li>
+<li>编录 (3),</li>
+<li>地图 (4).</li>
+</ol>
+</div></blockquote>
+<p>　　其具体功能详见后述。</p>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id13">文件</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>　　首先，读取 Live 系统上内建的数据集。</p>
+<ol class="arabic simple">
+<li>从菜单选择 <span class="menuselection">Layer ‣ Add</span> 打开 <strong>Add Data</strong> 界面。</li>
+<li>从数据来源（data sources）选择 <strong>Files</strong> 。</li>
+<li>点击 <span class="guilabel">Next</span> 打开文件对话框。</li>
+<li>在 OSGeo-Live DVD 包含的示例数据位于：<ul>
+<li><code class="file docutils literal"><span class="pre">~/data</span></code> (a short cut to <code class="file docutils literal"><span class="pre">/usr/local/share/data</span></code>)</li>
+</ul>
+</li>
+<li>从 <code class="file docutils literal"><span class="pre">natural_earth2</span></code> 选择：<ul>
+<li><code class="file docutils literal"><span class="pre">ne_10m_admin_0_countries.shp</span></code></li>
+</ul>
+</li>
+<li>点击 <span class="guilabel">Open</span> 打开。<ul>
+<li>一个新的编辑器将启动。其默认名称和投影是根据源文件设定的。</li>
+<li>同时，在 <strong>Catalog view</strong> 显示了数据文件 <code class="file docutils literal"><span class="pre">ne_10m_admin_0_countries.shp</span></code> 。这个面板显示当前 uDig 使用的数据。</li>
+<li>在 <strong>Layers</strong> 图层表显示了一个图层。该面板可以更改图层顺序和样式。</li>
+<li>在 <strong>Projects</strong> 工程面板可以看到当前工程是 <cite>projects &gt; ne 10m admin 0 countries</cite> 。用户可以同时操作多个工程，各个工程也可以同时使用多个地图视图。</li>
+</ul>
+</li>
+<li>从文件管理器打开 <code class="file docutils literal"><span class="pre">~/data/natural_earth2/</span></code> 目录：</li>
+<li>将 <code class="file docutils literal"><span class="pre">HYP_50M_SR_W.tif</span></code> 拖拽到地图试图即可添加新图层。</li>
+<li>图层表显示了图层的叠压顺序。当前 <cite>HYP_50M_SR_W</cite> 位于 <cite>ne 10m admin 0 countries</cite> 之上。</li>
+<li>选择 <cite>HYP_50M_SR_W</cite> 图层拖拽至列表底部。</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_QuickstartCountriesMap.png"><img alt="../../_images/udig_QuickstartCountriesMap.png" src="../../_images/udig_QuickstartCountriesMap.png" style="width: 718.9px; height: 524.3px;" /></a>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">企业和大型组织用户常常关心的一个问题是 uDig 的内存消耗。uDig 系统的内存资源占用很小，只有在必须渲染或操作时数据才会载入内存。</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">您也可以直接推拽 shp 文件载入。</p>
+</div>
+</div>
+<div class="section" id="map">
+<h2><a class="toc-backref" href="#id14">Map</a><a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h2>
+<p>　　在地图编辑界面中，顶部导航工具栏的工具可用于移动和缩放视野。</p>
+<ol class="arabic simple">
+<li>缩放 <img alt="ZOOM" src="../../_images/udig_zoom_mode.png" /> 是默认工具。<ul>
+<li>拖拽放大到指定区域</li>
+<li>右键缩小，右键推拽将控制当前视野在缩放后的范围。</li>
+</ul>
+</li>
+<li>平移 <img alt="PAN" src="../../_images/udig_pan_mode.png" /> 工具用于移动视野。</li>
+<li>其它工具：<ul>
+<li>全局试图 <img alt="SHOWALL" src="../../_images/udig_zoom_extent_co.png" /></li>
+<li>放大 <img alt="ZOOM_IN" src="../../_images/udig_zoom_in_co.png" /> 和缩小 <img alt="ZOOM_OUT" src="../../_images/udig_zoom_out_co.png" /> 每次动作的比例可以调节。</li>
+<li>回退 <img alt="BNAV" src="../../_images/udig_backward_nav.png" /> 前进 <img alt="FNAV" src="../../_images/udig_forward_nav.png" /> 可以返回之前的设置。</li>
+</ul>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">按住鼠标中键可以平移，滚轮可用于缩放。</p>
+</div>
+</div>
+<div class="section" id="wms">
+<h2><a class="toc-backref" href="#id15">网络地图服务（WMS）</a><a class="headerlink" href="#wms" title="Permalink to this headline">¶</a></h2>
+<p>　　使用 uDig 可以方便地使用众多的公共网络地图服务。本例使用 WMS 服务混合其它信息。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">若没有英特网连接，运行 <span class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</span> 可以获得一个本地 WMS 服务。该脚本会开启一个 &#8220;Service Capabilities&#8221; 并显示两个 WMS URL 。将其拖拽至 uDig 即可。</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">使用 <strong>Add Data</strong> （<span class="menuselection">Layer ‣ Add...</span>）也可以连接 WMS 。</p>
+</div>
+<ol class="arabic">
+<li><p class="first">从菜单选择 <span class="menuselection">File ‣ New ‣ New Map</span> 。</p>
+</li>
+<li><p class="first">点击 <strong>Catalog</strong> 旁边的 <em>Web</em> 更换至网络服务试图。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_WebViewClick.png"><img alt="../../_images/udig_WebViewClick.png" src="../../_images/udig_WebViewClick.png" style="width: 415.5px; height: 177.0px;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">点击 link WMS:<a class="reference external" href="http://www2.dmsolutions.ca/cgi-bin/mswms_gmap?Service=WMS&amp;VERSION=1.1.0&amp;REQUEST=GetCapabilities">dm solutions</a> 连接</p>
+<blockquote>
+<div></div></blockquote>
+</li>
+<li><p class="first">在 Resource Selection 选择：</p>
+<ul>
+<li><p class="first">Elevation/Bathymetry</p>
+</li>
+<li><p class="first">Parks</p>
+</li>
+<li><p class="first">Cities</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_AddWMSLayers.png"><img alt="../../_images/udig_AddWMSLayers.png" src="../../_images/udig_AddWMSLayers.png" style="width: 367.5px; height: 410.2px;" /></a>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p class="first">点击 <span class="guilabel">Finish</span> 添加图层</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_WMSMap.png"><img alt="../../_images/udig_WMSMap.png" src="../../_images/udig_WMSMap.png" style="width: 714.0px; height: 517.3px;" /></a>
+</div></blockquote>
+</li>
+<li><p class="first">使用 <img alt="ZOOM" src="../../_images/udig_zoom_mode.png" /> 放大至一个公园（park）</p>
+</li>
+<li><p class="first">使用 <img alt="INFO" src="../../_images/udig_info_mode.png" /> 属性工具点击一个要素了解其属性</p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">使用 <cite>Z</cite> 和 <cite>I</cite> 可以在两个工具间快速切换。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><a class="toc-backref" href="#id16">样式</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">选择 <cite>project &gt; ne 10m admin 0 countries</cite> 并双击打开。</p>
+</li>
+<li><p class="first">选择 countries 图层。</p>
+</li>
+<li><p class="first">右击 <cite>ne 10m admin 0 countries</cite> 选择 <span class="guilabel">Change Style</span> 打开 <strong>Style Editor</strong> 样式编辑器。</p>
+</li>
+<li><p class="first">调整该图层的几个样式设置：</p>
+<ul class="simple">
+<li>边界线：点击 <span class="guilabel">Border</span> 选择颜色（color）并调整。</li>
+<li>填充：点击 <span class="guilabel">Fill</span> 并取消 <span class="guilabel">enable/disable fill</span> 可关闭填充。</li>
+<li>标注：点击 <span class="guilabel">Labels</span> 选择 <span class="guilabel">enable/disable labeling</span> 并选中 <strong>NAME</strong> 字段用于标注。</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/udig_StyleEditor.png"><img alt="../../_images/udig_StyleEditor.png" src="../../_images/udig_StyleEditor.png" style="width: 716.8px; height: 498.4px;" /></a>
+</li>
+<li><p class="first">点击 <span class="guilabel">Apply</span> 应用样式，在 <strong>Layer</strong> 视图中的渲染结果会更新。</p>
+</li>
+<li><p class="first">点击 <span class="guilabel">Close</span> 关闭。</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">有些文件可以存储样式信息，例如 <code class="file docutils literal"><span class="pre">*.sld</span></code> 。其主文件名同相应的数据文件应相同。这样的 <a class="reference internal" href="../standards/sld_overview.html"><em>Styled Layer Description (SLD)</em></a> 样式文件存在时会被自动应用。</p>
+</div>
+<p>　　若图层较多，编辑样式时可能难以看清效果。点击 <span class="menuselection">Map ‣ Mylar</span> 并在 <em>Layer</em> 试图关闭一些图层可能有助于编辑。再次选取 <span class="menuselection">Map ‣ Mylar</span> 可以关闭这一效果。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/udig_MapMylar.png"><img alt="../../_images/udig_MapMylar.png" src="../../_images/udig_MapMylar.png" style="width: 718.9px; height: 524.3px;" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id7">
+<h2><a class="toc-backref" href="#id17">其它尝试</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>　　您可以继续尝试其它操作：</p>
+<ol class="arabic simple">
+<li>添加您自己的数据或 <a class="reference internal" href="../standards/wfs_overview.html"><em>Web Feature Service</em></a> 服务。</li>
+<li>更改 WFS 样式。</li>
+</ol>
+</div>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="#id18">其它信息</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>　　完成以上基本的演示后，您可以通过 <strong>Walkthrough</strong> 文档了解更多有关 uDig 的具体信息。</p>
+<ul>
+<li><p class="first">Walkthrough 1</p>
+<p>使用 <a class="reference internal" href="../overview/postgis_overview.html"><em>PostGIS</em></a> 从 WFS 读取要素。了解 <strong>Themes</strong> 主题配置和 <cite>Color Brewer</cite> 技术。</p>
+<p><code class="file docutils literal"><span class="pre">/usr/local/share/udig/udig-docs/uDigWalkthrough</span> <span class="pre">1.pdf</span></code></p>
+</li>
+<li><p class="first">Walkthrough 2 - 学习如何创建 shp 文件并编辑要素数据。本文涉及安装 <a class="reference internal" href="../overview/geoserver_overview.html"><em>GeoServer</em></a> 和配置 WFS 。</p>
+<p>地址：<a class="reference external" href="http://udig.refractions.net/">http://udig.refractions.net/</a></p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

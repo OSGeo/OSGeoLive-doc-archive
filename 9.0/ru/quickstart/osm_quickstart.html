@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Начало работы c OpenStreetMap &mdash; OSGeo-Live 9.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '9.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 9.0
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body>
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body">
+            
+  <a class="reference external image-reference" href="http://www.osm.org"><img alt="логотип проекта" class="align-right" src="../../_images/logo-osm21.png" style="width: 128.0px; height: 128.0px;" /></a>
+<div class="section" id="c-openstreetmap">
+<h1>Начало работы c OpenStreetMap<a class="headerlink" href="#c-openstreetmap" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Программы<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="josm">
+<h3>JOSM<a class="headerlink" href="#josm" title="Permalink to this headline">¶</a></h3>
+<p><strong>JOSM</strong> (Java OpenStreetMap Editor)&nbsp;— редактор для OpenStreetMap (OSM),
+написанный на языке Java. Текущая версия поддерживает одиночные GPX-треки,
+данные о GPX-треках из базы данных OSM и существующие узлы, линейные сегменты и
+теги метаданных из базы данных OSM.</p>
+<ul class="simple">
+<li>Домашняя страница: <a class="reference external" href="http://josm.openstreetmap.de">http://josm.openstreetmap.de</a></li>
+</ul>
+<p>В наборе JOSM содержатся следующие плагины:</p>
+<ul class="simple">
+<li>colorscheme        —  позволяет создавать различные цветовые схемы.</li>
+<li>livegps            —  поддерживает ввод данных GPS в реальном времени совместно с gpsd.</li>
+<li>measurement      —  добавляет диалоговое окно и слой для измерений длин и углов сегментов и создания линий для измерений.</li>
+<li>openvisible        —  позволяет открывать файлы в форматах <em>GPX</em> и <em>osm</em>, данные в которых пересекаются с текущей видимой областью.</li>
+<li>surveyor          —  позволяет добавлять маркеры/узлы для текущих GPS-местоположений.</li>
+<li>cadastre-fr       —  специальный модуль для работы с WMS-сервером Француской кадастровой службы.</li>
+<li>DirectUpload      —  напрямую загружает GPS-треки из текущего активного в JOSM слоя на openstreetmap.org.</li>
+<li>editgpx            —  обеспечивает анонимность временных меток и очень быстро удаляет части больших GPX-треков.</li>
+<li>lakewalker        —  помогает в оцифровке WMS-изображений.</li>
+<li>routing           —  обеспечивает функциональность построения маршрутов.</li>
+</ul>
+<div class="section" id="id2">
+<h4>Смотрите также<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Руководство пользователя: <a class="reference external" href="http://wiki.openstreetmap.org/wiki/JOSM/Guide">http://wiki.openstreetmap.org/wiki/JOSM/Guide</a></li>
+<li><a class="reference external" href="http://showmedo.com/videotutorials/video?name=1800050&amp;amp;fromSeriesID=180">Видео-урок</a></li>
+<li>Учебник онлайн: <a class="reference external" href="http://www.use-it.be/europe/docs/OSMmanual/">http://www.use-it.be/europe/docs/OSMmanual/</a></li>
+<li>Откройте образец данных с помощью меню <em class="menuselection">Файл (File) ‣ Открыть... (Open...) ‣ /usr/local/share/data/osm/feature_city.osm.bz2</em></li>
+<li>Дальнейшие инструкции будут предложены при запуске приложения.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="merkaartor">
+<h3>Merkaartor<a class="headerlink" href="#merkaartor" title="Permalink to this headline">¶</a></h3>
+<p><strong>Merkaartor</strong> — редактор карт для OpenStreetMap, который использует интерфейс Qt.
+Он легче в использовании, чем JOSM, но обладает меньшей функциональностью.</p>
+<ul class="simple">
+<li>Домашняя страница: <a class="reference external" href="http://merkaartor.be">http://merkaartor.be</a></li>
+<li>Справка онлайн: <a class="reference external" href="http://merkaartor.be/wiki/merkaartor/Documentation">http://merkaartor.be/wiki/merkaartor/Documentation</a></li>
+</ul>
+</div>
+<div class="section" id="gosmore">
+<h3>Gosmore<a class="headerlink" href="#gosmore" title="Permalink to this headline">¶</a></h3>
+<p><strong>Gosmore</strong> — это разрабатываемый в настоящий момент просмотрщик данных OpenStreetMap, а также инструмент для построения маршрутов и поисковый клиент с поддержкой речевого синтеза и получения текущего расположения пользователя
+по GPS с помощью <a class="reference external" href="http://savannah.nongnu.org/projects/gpsd">gpsd</a>.</p>
+<ul class="simple">
+<li>Домашняя страница: <a class="reference external" href="http://wiki.openstreetmap.org/index.php/Gosmore">http://wiki.openstreetmap.org/index.php/Gosmore</a></li>
+<li>Вики-справка онлайн: <a class="reference external" href="http://wiki.openstreetmap.org/wiki/Gosmore#User_Interface">http://wiki.openstreetmap.org/wiki/Gosmore#User_Interface</a></li>
+<li>Перед запуском Gosmore потребуется конвертировать файл данных <cite>planet-*.osm</cite>. Некоторые данные представлены в директории <cite>/usr/local/share/osm/</cite>.</li>
+</ul>
+<p>После запуска Gosmore из меню Geospatial или папок на Рабочем столе вам представится возможность
+создать необходимый файл с данными, если потребуется. Вы можете также импортировать его с помощью команды:</p>
+<div class="highlight-python"><div class="highlight"><pre>bzip2 -dc /usr/local/share/data/osm/Nottingham_CBD.osm.bz2 | gosmore rebuild
+</pre></div>
+</div>
+<p>Выполнение этой команды (запускать которую необходимо один раз) приведёт к созданию файла &#8220;gosmore.pak&#8221;.
+После этого станет возможен поиск местоположений в наборе данных OSM, например, &#8220;Jubilee Campus&#8221;.
+Используйте среднюю и правую кнопки мыши, чтобы задать начальную и
+конечную точки для поиска кратчайшего пути. Используйте кнопку &#8220;O&#8221; для доступа к
+настройкам программы, и кнопку &#8220;3D&#8221; для включения перспективного вида, полезного
+для использования GPS в автомобиле.</p>
+</div>
+<div class="section" id="osmarender">
+<h3>Osmarender<a class="headerlink" href="#osmarender" title="Permalink to this headline">¶</a></h3>
+<p><strong>Osmarender</strong> — инструмент для рендеринга на основе правил для создания SVG-изображений данных
+OSM. Инструмент использует набор данных OpenStreetMap и файл с правилами в качестве входных данных.
+Результатом является SVG-изображение, которое оформлено в соответствии со стилями,
+назначенными в файле с правилами. В будущем этот инструмент может быть замещён другим программным обеспечением,
+например, <a class="reference external" href="http://wiki.openstreetmap.org/wiki/Tilemill">TileMill</a>.</p>
+<ul class="simple">
+<li>Домашняя страница: <a class="reference external" href="http://wiki.openstreetmap.org/wiki/Osmarender">http://wiki.openstreetmap.org/wiki/Osmarender</a></li>
+</ul>
+<p>Пример:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Этот пример потребует приблизительно 1 ГБ свободной оперативной памяти и несколько дней для обработки
+целого города. Небольшой город или район города будет обработан быстрее.
+См. <a class="reference external" href="http://wiki.openstreetmap.org/wiki/Xapi">Xapi</a> в OSM-вики для
+дальнейших инструкций о том, как скачать меньшие объёмы данных в виде файла <tt class="docutils literal"><span class="pre">.osm</span></tt>, или используйте
+<em>JOSM</em> или <em>Merkaartor</em> для скачивания такого небольшого фрагмента.
+Файл с небольшим объёмом данных называется <cite>Nottingham_CBD.osm</cite>. Он включен в поставку для вашего
+удобства, однако обработка даже этого файла займет достаточно продолжительное время.</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>cp /usr/local/share/data/osm/feature_city_CBD.osm.bz2 .
+bzip2 -d feature_city_CBD.osm.bz2
+osmarender feature_city_CBD.osm
+</pre></div>
+</div>
+<p>Вы можете просмотреть результаты в SVG-вьюере, например в <cite>Inkscape</cite> или <cite>Firefox</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre>firefox feature_city.svg
+</pre></div>
+</div>
+</div>
+<div class="section" id="osm2pgsql">
+<h3>osm2pgsql<a class="headerlink" href="#osm2pgsql" title="Permalink to this headline">¶</a></h3>
+<p><strong>osm2pgsql</strong> — служебная программа для преобразования данных OpenStreetMap (.osm)
+в формат, который может быть загружен в PostgreSQL (PostGIS). Она часто используется
+при рендеринге данных OSM с последующим отображением средствами Mapnik, так Mapnik может выполнять запросы к
+PostgreSQL для получения картографических данных, но не может напрямую работать с файлами OSM.</p>
+<ul class="simple">
+<li>Домашняя страница: <a class="reference external" href="http://wiki.openstreetmap.org/wiki/Osm2pgsql">http://wiki.openstreetmap.org/wiki/Osm2pgsql</a></li>
+</ul>
+</div>
+<div class="section" id="osm2poidb">
+<h3>osm2poidb<a class="headerlink" href="#osm2poidb" title="Permalink to this headline">¶</a></h3>
+<p><strong>osm2poidb</strong> — служебная программа, которая извлекает данные о т.н. &#8220;точках интереса&#8221; (POI) из
+выгрузки данных OpenStreetMap (<em>.osm). Результаты сохраняются в файл базы данных SQLite.
+Обработанная версия объектов OSM типа &#8220;город&#8221;, входящая в состав данных на этом диске,
+находится в директории `/usr/local/share/data/osm` и может быть обнаружена
+с помощью программы `SQLite database browser` в меню Базы данных (Databases). На этом диске
+используется программное обеспечение :doc:`GpsDrive &lt;../overview/gpsdrive_overview&gt;` для
+получения доступного для поиска списка местных объектов инфраструктуры (ключ *amenity</em>).
+Чтобы запустить его &#8220;вручную&#8221;, выполните следующую команду:</p>
+<div class="highlight-python"><div class="highlight"><pre>bzcat /usr/local/share/data/osm/feature_city.osm.bz2 | osm2poidb -o feature_city_poi.db STDIN
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

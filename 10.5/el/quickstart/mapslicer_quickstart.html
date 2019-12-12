@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης MapSlicer &mdash; OSGeo-Live 10.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 10.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Περιεχόμενα OSGeo-Live 10.5" href="../overview/overview.html" />
+    <link rel="next" title="1. Εισαγωγή" href="mapwindow_quickstart.html" />
+    <link rel="prev" title="Εγχειρίδιο Γρήγορης Εκκίνησης MapServer" href="mapserver_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-mapslicer5.png"><img alt="project logo" class="align-right" src="../../_images/logo-mapslicer5.png" style="width: 128.0px; height: 128.0px;" /></a>
+<div class="section" id="mapslicer">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης MapSlicer<a class="headerlink" href="#mapslicer" title="Permalink to this headline">¶</a></h1>
+<p>Το <a class="reference external" href="https://wiki.osgeo.org/wiki/MapSlicer">MapSlicer</a> προσφέρει έναν απλό τρόπο για δημιουργία συνόλου τετράγωνων από γεωαναφερμένες εικόνες χαρτών. Τα τετράγωνα μπορεί να παρουσιαστούν σαν γεωαναφερμένα στρώματα χαρτών σε ένα διαδικτυακό εξυπηρετητή. Ακολουθεί τις προδιαγραφές του <a class="reference external" href="http://www.osgeo.org/">Open Source Geospatial Foundation&#8217;s (OSGeo&#8217;s)</a> <cite>Tile Map Service (TMS) &lt;http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification&gt;</cite>.</p>
+<ul class="simple">
+<li><strong>Input options</strong>: Οποιοδήποτε γεωαναφερμένο αρχείο εικόνας π.χ. από TIFF, JPEG μέχρι ArcGIS, QGIS.</li>
+<li><strong>Output options</strong>: Ένα σύνολο από φακέλους αρχείων με τις τετράγωνες εικόνες που μπορεί να αντιγραφούν σε ένα διαδικτυακό εξυπηρετητή για παρουσίαση σαν γεωαναφερμένα στρώματα.</li>
+<li><strong>Strengths</strong>: Το MapSlicer είναι ένα ελεύθερο, ανοιχτού κώδικα λογισμικό με εύκολο οδηγό, που παρουσιάζεται παρακάτω, για καθοδήγηση στις επιμέρους επιλογές.</li>
+</ul>
+<p>Το MapSlicer εκμεταλλεύεται το γεγονός ότι τα <a class="reference external" href="http://maps.google.com/">Google Maps</a> , <a class="reference external" href="http://maps.bing.com">Microsoft Bing</a> , <a class="reference external" href="http://maps.yahoo.com/">Yahoo Maps</a> , και άλλα εργαλεία για χάρτες στο διαδίκτυο συμπεριλαμβάνοντας το <a class="reference external" href="http://www.openstreetmap.org/">OpenStreetMap</a> χρησιμοποιούν την ίδια προβολή, τα ίδια προφίλ τετραγώνων και έτσι τα τετράγωνα είναι συμβατά. Η σελίδα <a class="reference external" href="http://www.maptiler.org/google-maps-coordinates-tile-bounds-projection/">Tiles à la Google Maps</a> το περιγράφει και το εξηγεί. Το MapSlicer φτιάχνει τα τετράγωνα χρησιμοποιώντας αυτές τις προδιαγραφές σαν έναν εύκολο και γρήγορο τρόπο για δημιουργία γεωαναφερμένων χαρτών σε διαδικτυακές σελίδες.</p>
+<div class="section" id="id2">
+<h2>Αρχίζοντας με το MapSlicer<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Κατεβάστε το MapSlicer στον υπολογιστή σας ή αρχίστε το κατευθείαν από αυτό το LiveDVD.</li>
+<li>Επιλέξτε το <strong>Tile Profile</strong>. Επιλέξτε το <em>Google Maps Compatible (Spherical Mercator)</em> για την βασική διαδικτυακή έκδοση. Επιλέξτε <em>Google Earth (KML SuperOverlay)</em> εάν θέλετε επίσης να δημιουργήσετε ένα KML αρχείο για χρήση το Google Earth. Κλικάρετε το <em>Continue</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer12.jpg"><img alt="../../_images/mapslicer12.jpg" class="align-center" src="../../_images/mapslicer12.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="3">
+<li>Επιλέξτε το <strong>Source Data Files</strong>. Αναζητήστε να επιλέξετε την εικόνα πλέγμα που θέλετε να κάνετε να δημιουργήσετε τετράγωνα. Μπορείτε επίσης να επιλέξετε το NODATA στοιχείο που εμφανίζεται σαν διαφάνεια στην τελική εικόνα. Κλικάρετε το <em>Continue</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer22.jpg"><img alt="../../_images/mapslicer22.jpg" class="align-center" src="../../_images/mapslicer22.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="4">
+<li>Ορίστε το <strong>Spatial Reference System / Coordinate System</strong> της εικόνας. Ορίστε το νούμερο από την EPSG/ESRI βάση δεδομένων. Εάν έχετε χάρτες από την Αγγλία για παράδειγμα, ο μετασχηματισμός πρέπει να περιέχει την παράμετρο <a class="reference external" href="http://help.maptiler.org/coordinates/europe/uk">EPSG:27700 με TOWGS84</a> . Κλικάρετε <em>Continue</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer32.jpg"><img alt="../../_images/mapslicer32.jpg" class="align-center" src="../../_images/mapslicer32.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="5">
+<li>Ορίστε τις λεπτομέρειες για το= <strong>Tile Pyramid</strong>. Οι επιλογές που υπάρχουν για το επίπεδο ζουμαρίσματος και τοπρότυπο του αρχείου είναι συνήθως οι καλύτερες. Κλικάρετε <em>Continue</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer42.jpg"><img alt="../../_images/mapslicer42.jpg" class="align-center" src="../../_images/mapslicer42.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="6">
+<li>Ορίστε τις λεπτομέρειες για το <strong>Destination folder and Addresses / URLs</strong> του συνόλου τετραγώνων. Εάν αυτό δεν το γνωρίζετε, τότε μπορείτε να προσθέσετε τα επιλεγμένα <em>googlemaps.html</em> και <em>openlayers.html</em> αρχεία για μετά την δημιουργία τετραγώνων. Κλικαρετε <em>Continue</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer52.jpg"><img alt="../../_images/mapslicer52.jpg" class="align-center" src="../../_images/mapslicer52.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="7">
+<li>Μαρκάρετε το <strong>Viewers that should be generated</strong>. Από μόνο του, το <em>googlemaps.html</em> και το <em>openlayers.html</em> αρχεία δημειουργούνται. Μπορείτε επίσης να επιλέξετε να δημιουργήσετε ένα KML SuperOverlay αρχείο από το Google Earth. Κλικάρετε <em>Continue</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer62.jpg"><img alt="../../_images/mapslicer62.jpg" class="align-center" src="../../_images/mapslicer62.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="8">
+<li>Ορίστε το <strong>Details for generating the Viewers</strong>, όπως τον τίτλο, την σημείωση για τα δικαιώματα, και τα API κλειδιά. Εάν δεν το γνωρίζετε αυτό, αυτά μπορούν να πρσθεθούν στα επιλεγμένα <em>googlemaps.html / openlayers.html</em> αρχεία μετά από την δημιουργία των τετραγώνων. Κλικάρετε <em>Continue</em>.</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapslicer72.jpg"><img alt="../../_images/mapslicer72.jpg" class="align-center" src="../../_images/mapslicer72.jpg" style="width: 60%;" /></a>
+<ol class="arabic simple" start="9">
+<li>Κλικάρετε το <strong>Render</strong> για να αρχίσετε να οπτικοποιήσετε την εικόνα. Όποτε ολοκληρωθεί, το MapSlicer δίνει έναν σύνδεσμο για να τελειώσει το σύνολο των τετραγώνων. Ανοοίξτε το <em>googlemaps.html</em> ή το <em>openlayers.html</em> αρχεία σε ένα διαδικτυακό εξυπηρετητή για να δείτε το στρώμα του συνόλου των τετραγώνων σε ένα διαδικτυακό χάρτη. Για να το παρουσιάσετε στο διαδίκτυο, απλά αντιγράψτε ολόκληρο το σύνολο των τετραγώνων και όλο το σύνολο των φακέλων και υποφακέλων των αρχείων σε ένα σιαδικτυακό εξυπηρετητή, και επεξεργαστείτε το googlemaps.html ή το openlayers.html αρχεία όπως απαιτείται.</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

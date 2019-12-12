@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης Kosmo Desktop &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Περιεχόμενα OSGeo-Live 10.0" href="../overview/overview.html" />
+    <link rel="next" title="&lt;no title&gt;" href="leaflet_quickstart.html" />
+    <link rel="prev" title="Jupyter Notebook Quickstart" href="jupyter_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.opengis.es/index.php?lang=en"><img alt="project logo" class="align-right" src="../../_images/logo-Kosmo5.png" style="width: 150.0px; height: 54.0px;" /></a>
+<div class="section" id="kosmo-desktop">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης Kosmo Desktop<a class="headerlink" href="#kosmo-desktop" title="Permalink to this headline">¶</a></h1>
+<p>Το Kosmo - Desktop είναι μια φιλική στον χρήστη, εφαρμογή για υπολογιστές GIS η οποία επιτρέπει να εξερευνήσετε, τροποποιήσετε και αναλύσετε χωρικά δεδομένα από ποικιλία βάσεων δεδομένων, σε δεδομένα μορφής πλέγματος αλλά και διανυσματικά.</p>
+<p>Ο συγκεκριμένος οδηγός γρήγορης εκκίνησης περιγράφει πως να:</p>
+<ul class="simple">
+<li>αρχίσετε μια εφαρμογή</li>
+<li>φορτώσετε στρώματα από αρχεία, βάσεις δεδομένων και υπηρεσίες OGC</li>
+<li>πλοηγηθείτε στον χάρτη</li>
+<li>εφαρμόσετε το δικό σας στίλ στα στρώματα που φορτώνονται</li>
+</ul>
+<div class="section" id="id1">
+<h2>Ξεκινώντας με το Kosmo Desktop<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Προκειμένου να αρχίσει η εφαρμογή, ακολουθείστε τα παρακάτω βήματα:</p>
+<ol class="arabic">
+<li><p class="first">Από το μενού έναρξης, επιλέξτε <em>Other &gt; Kosmo</em> (ή από τον υπολογιστή σας, πηγαίνετε στο φάκελο <em>Desktop GIS</em> και κάντε διπλό κλίκ στο εικονίδιο του Kosmo)</p>
+</li>
+<li><p class="first">Η εφαρμογή παίρνει κάποια δευτερόλεπτα για να ξεκινήσει (κατά την διάρκεια φορτώματος μια κηλίδα εμφανίτεται στην οθόνη)</p>
+<img alt="../../_images/kosmo_splash_screen2.png" src="../../_images/kosmo_splash_screen2.png" />
+</li>
+<li><p class="first">Στο διάλογο καλωσορίσματος, επιλέξτε την επιλογή <em>Create a new project &gt; With a new view</em> (<strong>1</strong>) και πατήστε το κουμπί <em>Ok</em> (<strong>2</strong>)</p>
+<img alt="../../_images/kosmo_welcome_dialog2.png" src="../../_images/kosmo_welcome_dialog2.png" />
+</li>
+<li><p class="first">Στο διάλογο επιλογής του Χωρικού Αναφερόμενου Συστήματος, πιέστε το κουμπί <em>...</em></p>
+<img alt="../../_images/kosmo_select_srs2.png" src="../../_images/kosmo_select_srs2.png" />
+</li>
+<li><p class="first">Επιλέξτε την επιλογή <em>EPSG</em> στο γραφικό περιβάλλον για τον χρήστη τύπου SRS (<strong>1</strong>), εισάγετε το κείμενο <cite>4326</cite> στο πεδίο κειμένου και πατήστε το κουμπί <em>Search</em> (<strong>2</strong>)</p>
+</li>
+<li><p class="first">Επιλέξτε το SRS EPSG:4326 - WSG4 (<strong>3</strong>) και πατήστς το κουμπί <em>Ok</em> (<strong>4</strong>)</p>
+<img alt="../../_images/kosmo_select_srs_epsg_43262.png" src="../../_images/kosmo_select_srs_epsg_43262.png" />
+</li>
+<li><p class="first">Πατήστε το κουμπί <em>Ok</em> ξανά και επιλέξτε το SRS να φορτώνεται. Η απεικόνηση θα αρχίσει με το EPSG:4326 σαν βασική προβολή</p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Μπορείτε να δείτε ποιά προβολή έχει επιλεγεί σαν βασική για την συγκεκριμένη απεικόνηση στο παράθυροτης απεικόνησης με την μπάρα του τίτλου, δεξιά στο όνομα της απεικόνησης</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Βασικό παράθυρο Kosmo Desktop<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Το βασικό παράθυρο του Kosmo Desktop έχει τις παρακάτω επιλογές:</p>
+<blockquote>
+<div><img alt="../../_images/kosmo_main_window2.jpg" src="../../_images/kosmo_main_window2.jpg" />
+</div></blockquote>
+<ul>
+<li><p class="first">Βασικά μενού</p>
+</li>
+<li><p class="first">Βασική γραμμή εργαλείων</p>
+</li>
+<li><p class="first">Το δέντρο στρωμάτων</p>
+<p>Το δέντρο το οποίο περιέχει τις κατηγορίες και τα στρώματα τα οποία έχουν φωορτωθεί στην συγκεκριμένη απεικόνηση.</p>
+</li>
+<li><p class="first">Χάρτη</p>
+</li>
+<li><p class="first">Μπάρα με την κατάσταση</p>
+<p>Δείχνει τα μηνύματα προειδοποίησης της εφαρμογής στον χρήστη.</p>
+</li>
+<li><p class="first">Τον κέρσορα με τις τρέχουσες συντεταγμένες</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>Στρώματα που φορτώνονται<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>Αρχεία<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Για να ξεκινήσετε, θα φορτώσετε μερικά από τα δείγματα δεδομένων που περιέχονται στο OSGeo-Live DVD:</p>
+<ol class="arabic">
+<li><p class="first">Επιλέξτε την επιλογή <em>View &gt; Load Dataset...</em> ή πατήστε το κουμπί με το πράσινο σήμα της πρόσθεσης από τη βασική γραμμή εργαλείων</p>
+</li>
+<li><p class="first">Στο <em>Format</em> γραφικό περιβάλλον για τον χρήστη, επιλέξτε το <em>Shapefile</em> (<strong>1</strong>)</p>
+</li>
+<li><p class="first">Στο αρχείο της επιλογής σας, επιλέξτε το αρχείο <code class="file docutils literal"><span class="pre">10m_admin_0_countries.shp</span></code> από το φάκελο αρχείων <code class="file docutils literal"><span class="pre">/usr/local/share/data/natural_earth</span></code> (<strong>2</strong>)</p>
+</li>
+<li><p class="first">Πατήστε το κουμπί <em>Ok</em> για να φορτώσετε το επιλεγμένο αρχείο τύπου shapefile (<strong>3</strong>)</p>
+<img alt="../../_images/kosmo_select_shape_file2.png" src="../../_images/kosmo_select_shape_file2.png" />
+</li>
+<li><p class="first">Στο δέντρο στρωμάτων, πατήστε το κουτί για εμφάνιση προκειμένου να γίνουν τα στρώματα ορατά</p>
+</li>
+<li><p class="first">Επιλέξτε κανά την επιλογή <em>View &gt; Load Dataset...</em> ή πιέστε το κουμπί με το πράσινο σήμα της πρόσθεσης από τη βασική γραμμή εργαλείων</p>
+</li>
+<li><p class="first">Στο <em>Format</em> γραφικό περιβάλλον για τον χρήστη, επιλέξτε το <em>Image file</em> (<strong>1</strong>)</p>
+</li>
+<li><p class="first">Στο αρχείο της επιλογής σας, επιλέξτε το αρχείο <code class="file docutils literal"><span class="pre">HYP_50M_SR_W.tif</span></code> από το φάκελο αρχείων <code class="file docutils literal"><span class="pre">/usr/local/share/data/natural_earth/HYP_50M_SR_W</span></code> (<strong>2</strong>)</p>
+</li>
+<li><p class="first">Πατήστε το κουμπί <em>Ok</em> για να φορτώσετε το επιλεγμένο αρχείο εικόνας (<strong>3</strong>)</p>
+<img alt="../../_images/kosmo_select_raster_file2.png" src="../../_images/kosmo_select_raster_file2.png" />
+</li>
+<li><p class="first">Στο δέντρο στρωμάτων, πατήστε το κουτί για εμφάνιση προκειμένου να γίνουν τα στρώματα ορατά</p>
+</li>
+<li><p class="first">Μπορείτε να δείτε πως η σειρά που ζωγραφίζονται τα στρώματα είναι από κάτω προς τα πάνω στο δέντρο των στρωμάτων: τροποποιείστε την σειρά των στρωμάτων σύροντάς τα προκειμένου να εμφανίζονται σωστά</p>
+<img alt="../../_images/kosmo_load_file_example2.jpg" src="../../_images/kosmo_load_file_example2.jpg" />
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<blockquote>
+<div>Το OSGeo-Live DVD περιέχει μερικά αρχεία δεδομένων με παραδείγματα στους παρακάτω φακέλους αρχείων:</div></blockquote>
+<ul class="simple">
+<li><code class="file docutils literal"><span class="pre">~/data</span></code> (a shortcut to <code class="file docutils literal"><span class="pre">/usr/local/share/data</span></code> or <code class="file docutils literal"><span class="pre">/home/user/data</span></code>)</li>
+<li><code class="file docutils literal"><span class="pre">/usr/local/share/openjump/data</span></code></li>
+</ul>
+<p class="last">Μπορείτε να προσπαθήσετε να φορτώσετε μερικά παραδείγματα από αυτούς τους φακέλους αρχείων. Θυμηθείτε να επιλέξετε το σωστό τύπο δεδομένων από το <em>Format</em> στο γραφικό περιβάλλον του χρήστη</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Είναι πιθανό να προσθεθούν όλες οι εικόνες από το φάκελο αρχείων σε ένα μόνο στρώμα επιλέγοντας τον μητρικό φάκελο αρχείων στο διάλογο <em>Load Dataset...</em> : το Kosmo Desktop θα τα φορτώσει σαν ένα μοσαϊκό.</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Βάσεις Δεδομένων<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Θα φορτώσουμε έναν πίνακα βάσης δεδομένων όπως στο παράδειγμα:</p>
+<ol class="arabic">
+<li><p class="first">Επιλέξτε την επιλογή <em>View &gt; Load Dataset...</em> ή πατήστε το κουμπί με το πράσινο σήμα της πρόσθεσης από τη βασική μπάρα εργαλείων</p>
+</li>
+<li><p class="first">Στο <em>Format</em> περιβάλλον για τον χρήστη, επιλέξτε <em>Database</em> (<strong>1</strong>)</p>
+</li>
+<li><p class="first">Γεμίστε τα πεδία διοργανωτής, θύρα, όνομα βάσης δεδομένων, όνομα χρήστη και κωδικός με τις τιμές:</p>
+<ul class="simple">
+<li>Host: localhost</li>
+<li>Port: 5432</li>
+<li>Database name: natural_earth</li>
+<li>User name: user</li>
+<li>Password: user</li>
+</ul>
+</li>
+<li><p class="first">Πατήστε το κουμπί <em>Connect</em> για να φορτώσετε τους πίνακες που παρουσιάζονται στην βάση δεδομένων <em>natural_earth</em> (<strong>2</strong>)</p>
+</li>
+<li><p class="first">Επιλέξτε το κουτί που αναφέρεται στον πίνακα <em>10m_populated_places_simple</em> (<strong>3</strong>)</p>
+</li>
+<li><p class="first">Πατήστε το κουμπί <em>Ok</em> για να φορτώσετε τον επιλεγμένο πίνακα της βάσης δεδομένων (<strong>4</strong>)</p>
+<img alt="../../_images/kosmo_database_connection2.png" src="../../_images/kosmo_database_connection2.png" />
+</li>
+<li><p class="first">Στο δέντρο των στρωμάτων, πατήστε το κουτί για ορατότητας για να κάνετε το στρώμα ορατό</p>
+<img alt="../../_images/kosmo_load_database_example2.jpg" src="../../_images/kosmo_load_database_example2.jpg" />
+</li>
+</ol>
+</div>
+<div class="section" id="ogc">
+<h3>Υπηρεσίες OGC<a class="headerlink" href="#ogc" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">Αρχίστε το <a class="reference internal" href="../overview/geoserver_overview.html"><em>GeoServer</em></a> WMS που συμπεριλαμβάνετε στο OSGeo-Live DVD επιλέγοντας την επιλογή <span class="menuselection">Geospatial ‣ Web Services ‣ GeoServer ‣ Start GeoServer</span> (ή από τον υπολογιστή, πηγαίνετε στο φάκελο <em>Web Services</em> και κάντε διπλό κλικ στο εικονίδιο εκκίνησης GeoServer)</p>
+</li>
+<li><p class="first">Πιέστε το κουμπί <em>Load SDI Service</em> στην βασική μπάρα εργαλείων και ανοίξτε τον οδηγό</p>
+</li>
+<li><p class="first">Στο ταμπλό <em>Select SDI service type</em>, επιλέξτε την επιλογή <em>WMS Service</em> (<strong>1</strong>) και πατήστε το κουμπί <em>Next</em> (<strong>2</strong>)</p>
+<img alt="../../_images/kosmo_wms_12.png" src="../../_images/kosmo_wms_12.png" />
+</li>
+<li><p class="first">Στο <em>Select Uniform Resource Locator (URL)</em>, πληκτρολογήστε το URL <a class="reference external" href="http://localhost:8082/geoserver/ows?VERSION=1.1.1">http://localhost:8082/geoserver/ows?VERSION=1.1.1</a> (<strong>1</strong>) στο αντίστοιχο πεδίο κειμένου και πατήστε το κουμπί <em>Connect</em> (<strong>2</strong>)</p>
+</li>
+<li><p class="first">Εάν η σύνδεδη είναι πετυχημένη, πατήστε το κουμπί <em>Next</em> για να πάτε στο επόμενο ταμπλό (<strong>3</strong>)</p>
+<img alt="../../_images/kosmo_wms_22.png" src="../../_images/kosmo_wms_22.png" />
+</li>
+<li><p class="first">Επιλέξτε το στρώμα <cite>North America Sample Imagery</cite> (<strong>1</strong>) και πατήστε το κουμπί <em>&gt;</em> (<strong>2</strong>) για να το μετακινήσετε στην δεξιά λίστα. Πατήστε το κουμπί <em>Next</em>. (<strong>3</strong>)</p>
+<img alt="../../_images/kosmo_wms_32.png" src="../../_images/kosmo_wms_32.png" />
+</li>
+<li><p class="first">Αφήστε τις εξ ορισμού επιλογές φορτώστε και πατήστε το κουμπί <em>Finish</em> (<strong>1</strong>) για να αρχίσετε να φορτώνετε τα στρώματα</p>
+<img alt="../../_images/kosmo_wms_42.png" src="../../_images/kosmo_wms_42.png" />
+</li>
+<li><p class="first">Στο δέντρο των στρωμάτων, πατήστε το κουμπί της ορατότητας για να κάνετε τα στώματα ορατά</p>
+</li>
+<li><p class="first">Επιλέξτε το στρώμα στο δέντρο στρωμάτων και πατήστε το κουμπί <em>Zoom To Layer</em> για να κεντράρετε το χάρτη στη απεικόνηση στρώματος WMS</p>
+</li>
+<li><p class="first">Ξανα οργανώστε το δέντρο στρωμάτων σύροντας το νέο στρώμα και τοποθετώντας το στο στρώμα σε μορφή πλέγματος <em>HYP_50M_SR_W</em></p>
+<img alt="../../_images/kosmo_load_wms_results2.jpg" src="../../_images/kosmo_load_wms_results2.jpg" />
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Το Kosmo Desktop περιέχει μια λίστα από τους WMS εξυπηρετητές εξ ορισμού (οι περισσότεροι είναι από την Ισπανία).
+Εάν συνδέεστε στο διαδίκτυο, μπορείτε να τους χρησιμοποιήσετε όπως περιγράφετε στο παράδειγμα με τον τοπικό εξυπηρετητή.</p>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Εργαλεία πλοήγησης στο χάρτη<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Μπορείτε να ελέγξετε που στον κόσμο είναι ο χάρτης που χρησιμοποιώντας τα εργαλεία που παρουσιάζονται στη βασική γραμμή εργαλείων:</p>
+<ol class="arabic simple">
+<li><img alt="ZOOM" src="../../_images/kosmo_zoom2.png" /> Ζουμάρισμα μέσα/έξω</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Είναι το εργαλείο που επιλέγεται εξ ορισμού όταν αρχίζετε την συνεδρία σας</li>
+<li>Χρησιμοποιείστε το αριστερό κουμπί του ποντικιού για να κάνετε ζουμάρισμα προς τα μέσα σε μια περιοχή στο σημείο του χάρτη που επιλέγεται</li>
+<li>Χρησιμοποιείστε το δεξί κουμπί του ποντικιού για να κάνετε ζουμάρισμα προς τα έξω σε μια περιοχή στο σημείο του χάρτη που επιλέγεται</li>
+<li>Πατήστε το αριστερό κουμπί του ποντικιού, κινήστε το ποντίκι, ζωγραφείστε ένα τετράγωνο και αφήστε το κουμπί εάν θέλετε να κάνετε ζουμ σε ένα τετράγωνο</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><img alt="PAN" src="../../_images/kosmo_pan2.png" /> Μετάθεση χάρτη</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Επιτρέπει την μετακίνηση γύρω από τον κόσμο χωρίς αλλαγή της κλίμακας</li>
+<li>Πατήστε το αριστερό κουμπί του ποντικιού, μετακινήστε το ποντίκι και αφήστε το έτσι ώστε να μετακινηθεί ο χάρτης στην επιλεγμένη θέση</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><img alt="ZOOM_PREV" src="../../_images/kosmo_zoom_prev2.png" /> Προηγούμενο Ζουμάρισμα</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Επιτρέπει το ζουμάρισμα στη προηγούμενη απεικόνηση από την ιστορία του ζουμ (εάν είναι διαθέσιμο)</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><img alt="ZOOM_NEXT" src="../../_images/kosmo_zoom_next2.png" /> Επόμενο Ζουμάρισμα</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Επιτρέπει το ζουμάρισμα στην επόμενη απεικόνηση από την ιστορία του ζουμ (εάν είναι διαθέσιμο)</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><img alt="ZOOM_FULL_EXTENT" src="../../_images/kosmo_zoom_to_full_extent2.png" /> Ζουμάρισμα σε όλη την έκταση</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Επιτρέπει την αλλαγή του τρέχοντος χάρτη για να περιέχει όλα τα ορατά στρώματα</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><img alt="ZOOM_TO_LAYER" src="../../_images/kosmo_zoom_to_layer2.png" /> Ζουμάρισμα σε στρώμα</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Επιτρέπει την αλλαγή του τρέχοντος χάρτη για να προσαρμόσει τα επιλεγμένα στρώματα</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><img alt="ZOOM_TO_SELECTED_ITEMS" src="../../_images/kosmo_zoom_to_selected_items2.png" /> Ζουμάρισμα στα επιλεγμένα αντικείμενα</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Επιτρέπει την αλλαγή του τρέχοντος χάρτη για να προσαρμόσει τα επιλεγμένα αντικείμενα</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><img alt="PAN_TO_CLICK" src="../../_images/kosmo_pan_to_click2.png" /> Μετάθεση του χάρτη με κλικ</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Κεντράρει το χάρτη στο σημείο που κλικάρεται, χωρίς να αλλάξει την τρέχουσα κλίμακα</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><img alt="COORDINATE_LOCALIZATION" src="../../_images/kosmo_coordinate_localization2.png" /> Τοποθέτηση συντεταγμένων</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Κεντράρει τον χάρτη στις συντεταγμένες X - Y που δίνονται</li>
+</ul>
+</div></blockquote>
+<p>Εκτός από αυτά τα εργαλεία, είναι επίσης διαθέσιμη η πιθανότητα του ζούμ μέσα/έξω με χρήση της ροδέλας του ποντικιού.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Εάν κάποιο εργαλείο/μενού δεν λειτουργεί, μπορείτε να βάλετε τον κένσορα πάνω στο κουμπί/επιλογή για να δείτε την σημείωση του εργαλείου όπου εμφανίζετε ο λόγος</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>Δημιουργώντας το στυλ<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>Σε αυτή την παράγραφο θα δημιουργήσουμε το στυλ για ένα στρώμα στο σύνολό του, χρησιμοποιώντας τον πληθυσμό της χώρας σαν ιδιότητα:</p>
+<ol class="arabic">
+<li><p class="first">Επιλέξτε το στρώμα <cite>10m_admin_0_countries</cite> από το δέντρο στρωμάτων</p>
+</li>
+<li><p class="first">Κάντε δεξί κλικ σε αυτό και επιλέξτε την επιλογή <em>Simbology &gt; Change Styles...</em></p>
+</li>
+<li><p class="first">Κλικάρετε στην ετικέτα <cite>Colour theming</cite></p>
+</li>
+<li><p class="first">Ενεργοποιήστε την επιλογή <em>Enable colour theming</em> και <em>by range</em> (<strong>1</strong>)</p>
+</li>
+<li><p class="first">Επιλέξτε το <cite>POP_EST</cite> σαν <em>Attribute</em> (<strong>2</strong>), το 8 σαν <em>Range count</em> (<strong>3</strong>) και το RYG (Color Brewer) σαν <em>Color schema</em> (<strong>4</strong>)</p>
+</li>
+<li><p class="first">Πατήστε το κουμπί <em>Ok</em> για να εφαρμόσετε τις αλλαγές (<strong>5</strong>)</p>
+<img alt="../../_images/kosmo_basic_style_classification2.png" src="../../_images/kosmo_basic_style_classification2.png" />
+</li>
+<li><p class="first">Τα στρώματα θα αλλάξουν το στίλ τους για να απεικονίσουν τις αλλαγές:</p>
+<img alt="../../_images/kosmo_styled_layer_by_range2.jpg" src="../../_images/kosmo_styled_layer_by_range2.jpg" />
+</li>
+</ol>
+</div>
+<div class="section" id="id8">
+<h2>Πράγματα για προσπάθεια<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Χρησιμοποιείστε το προχωρημένο επεξεργαστή στυλ (<cite>Symbology &gt; Advanced style editor...</cite>) για να δημιουργήσετε πιο πολύπλοκα στυλ</li>
+<li>Χρησιμοποιείστε το <cite>Query wizard</cite> για να επιλέξετε τα χαρακτηριστικά που ικανοποιούν τα δοθέντα κριτήρια</li>
+<li>Ενεργοποιείστε τον τρόπο επεξεργασίας των στρωμάτων και χρησιμοποιείστε το σαν διαθέσιμα εργαλεία για την επεξεργασία του</li>
+<li>Δημιουργήστε ένα σύνολο από τοπολογικούς κανόνες για το στρώμα και προσπαθήστε να το επεξεργαστείτε</li>
+<li>Ενεργοποιείστε ένα σύνολο από προεκτάσεις που σχηματίζουν μέρος από την εφαρμογή και δείτε τα νέα εργαλεία που παρουσιάζονται</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h2>Τι ακολουθεί;<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>Υπάρχουν ένα σύνολο από οδηγούς και βίντεο οδηγούς διαθέσιμους στο <a class="reference external" href="http://www.opengis.es/index.php?lang=en">http://www.opengis.es/index.php?lang=en</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

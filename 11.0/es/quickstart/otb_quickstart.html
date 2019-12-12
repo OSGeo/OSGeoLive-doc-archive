@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Guía de inicio rápido de OTB &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Quickstarts" href="toc.html" />
+    <link rel="next" title="Guía de inicio rápido de pgRouting" href="pgrouting_quickstart.html" />
+    <link rel="prev" title="Guía de inicio rápido de Ossim" href="ossim_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.orfeo-toolbox.org/"><img alt="project logo" class="align-right" src="../../_images/logo-otb.png" style="width: 131.2px; height: 100.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="guia-de-inicio-rapido-de-otb">
+<h1>Guía de inicio rápido de OTB<a class="headerlink" href="#guia-de-inicio-rapido-de-otb" title="Permalink to this headline">¶</a></h1>
+<p>La Biblioteca de Herramientas OTB (por sus siglas en inglés <em>ORFEO Toolbox library</em>) es una biblioteca de alto rendimiento para el procesamiento de imágenes orientada a la teledetección.</p>
+<p>Esta guía de inicio rápido describe cómo:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Conseguir información de los metadatos de una imagen.</li>
+<li>Desarrollar operaciones matemáticas entre las bandas de una imagen.</li>
+<li>Abrir imágenes <em>raster</em> con la aplicación monteverdi, desarrollar segmentación (<em>mean-shift clustering</em>) y visualizar el resultado.</li>
+<li>Desarrollar una clasificación supervisada basada en el algoritmo <em>Support Vector Machine</em> (Máquinas de Soporte Vectorial).</li>
+</ul>
+</div></blockquote>
+<p>El paquete de Aplicaciones OTB proporciona muchas aplicaciones interesantes que facilitan la manipulación de imágenes. Todas estas herramientas están disponibles a través de:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Interfaz de línea de comandos (CLI, por sus siglas en inglés: <em>command line interface</em>).</li>
+<li>QT GUI: una interfaz de usuario autónoma. Las -aplicaciones se pueden llamar desde un terminal con el alias <cite>otbgui_</cite> más el nombre de la aplicación. Otra opción es usar un pequeño lanzador (disponible en el menu -&gt; Geospatial -&gt; Spatial Tools -&gt; OTB Launcher).</li>
+<li>extensión para QGIS: una extensión que se usa directamente desde Quantum GIS .</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>Los datos de ejemplo usados en esta guía se pueden encontrar en:</dt>
+<dd><ul class="first last simple">
+<li>/home/user/data/north_carolina/rast_geotiffs</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="mostrar-la-informacion-de-los-metadatos-de-una-imagen">
+<h2>Mostrar la información de los metadatos de una imagen<a class="headerlink" href="#mostrar-la-informacion-de-los-metadatos-de-una-imagen" title="Permalink to this headline">¶</a></h2>
+<p>Se puede obtener toda la información contenida en los metadatos de una imagen mediante el comando:  <cite>otbcli_ReadImageInfo</cite>
+El único parámetro necesario es el nombre de archivo de la imagen de entrada, por ejemplo:</p>
+<div class="highlight-python"><div class="highlight"><pre>otbcli_ReadImageInfo -in ortho_2001_t792_1m.tif
+</pre></div>
+</div>
+</div>
+<div class="section" id="calculadora-de-bandas-de-imagen">
+<h2>Calculadora de bandas de imagen<a class="headerlink" href="#calculadora-de-bandas-de-imagen" title="Permalink to this headline">¶</a></h2>
+<p>La aplicación`otbBandMath-cli` proporciona un método eficiente para desarrollar operaciones matemáticas con imágenes monobanda.
+La sintaxis es muy simple. Por ejemplo, para restar dos bandas para estudiar las diferencias entre las imágenes SpotBefore.tif y SpotAfter.tif, sólo hay que usar el comando:</p>
+<div class="highlight-python"><div class="highlight"><pre>otbcli_BandMath -il lsat7_2002_10.tif lsat7_2002_20.tif -out difference.tif -exp &quot;im1b1-im2b1&quot;
+</pre></div>
+</div>
+<p>La aplicación es capaz de desarrollar operaciones matemáticas complejas sobre imágenes tales como cálculo de umbrales, reescalado logarítmico,...
+Esta calculadora digital &#8220;casera&#8221; incluye funciones personalizadas que permiten procesar una expresión compleja. Por ejemplo, dado que las imágenes de teledetección miden magnitudes físicas, es posible extraer varios índices como el NDVI (<em>Normalized Difference Vegetation Index</em>, Índice de vegetación de diferencia normalizada) para la vegetación. Con la calculadora se puede procesar el NDVI de una imagen de un sensor multispectral escribiendo:</p>
+<div class="highlight-python"><div class="highlight"><pre>otbcli_BandMath -il lsat7_2002_30.tif lsat7_2002_40.tif -out ~/ndvi.tif -exp &quot;ndvi(im1b1,im2b1)&quot;
+</pre></div>
+</div>
+<p>El archivo <cite>lsat7_2002_30.tif</cite> corresponde al canal rojo de Landsat 7 red y <cite>lsat7_2002_40.tif</cite> se corresponde con el infrarrojo cercano.</p>
+</div>
+<div class="section" id="clasificacion-a-nivel-de-pixel">
+<h2>Clasificación a nivel de pixel<a class="headerlink" href="#clasificacion-a-nivel-de-pixel" title="Permalink to this headline">¶</a></h2>
+<p>La clasificación en el marco de trabajo de la aplicación proporciona un flujo de clasificación pixel a pixel basado en el aprendizaje a partir de múltiples imágenes y usando un método específico de aprendizaje automático como SVM, Bayes, KNN, Random Forests, Redes Neuronales Artificiales y otros ... (ver la ayuda de la aplicación <cite>TrainImagesClassifier</cite> para más detalles sobre todos los clasificadores disponibles).
+Soporta imágenes muy grandes a través de <em>streaming</em> y <em>multi-threading</em>. El flujo de clasificación desarrolla una etapa de entrenamiento basadao en las intensidades de cada pixel como características. Hay que notar que todas las imágenes de entrada deben tener el mismo número de bandas para ser comparables.</p>
+</div>
+<div class="section" id="realizar-segmentacion">
+<h2>Realizar segmentación<a class="headerlink" href="#realizar-segmentacion" title="Permalink to this headline">¶</a></h2>
+<p>La aplicación de <em>Segmentación</em> de OTB permite producir una segmentación raster usando diferentes algoritmos y
+Hay cuatro métodos de segmentación disponibles:</p>
+<ul class="simple">
+<li>Mean-Shift</li>
+<li>Watershed (ITK implementation)</li>
+<li>Connected-Components</li>
+<li>Perfiles morfológicos.</li>
+</ul>
+<p>Se puede probar la segmentación con estos comandos:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Creación de una imagen multicanal Roja-Verde-Azul-NIR</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre>otbcli_ConcatenateImages -il lsat7_2002_30.tif lsat7_2002_20.tif lsat7_2002_10.tif lsat7_2002_40.tif -out ~/lsat7_rgbn.tif
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first">Aplicar segmentación</p>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre>otbcli_Segmentation -in ~/lsat7_rgbn.tif -filter meanshift -mode raster -mode.raster.out ~/segmentation.tif
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Generar colores en lugar de etiquetas</p>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre>otbcli_ColorMapping -in ~/segmentation.tif -out ~/segmentation_colored.tif -method image -method.image.in ~/lsat7_rgbn.tif
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>Además la aplicación puede funcionar en dos modos diferentes:</p>
+<ul>
+<li><p class="first">Modo ráster: permite segmentar una imagen pequeña y producir un ráster donde cada componente de la segmentación está etiquetado con un valor entero único.</p>
+</li>
+<li><p class="first">Modo vectorial: segmenta imágenes más grandes y produce un fichero vectorial donde cada segmento de la segmentación está representado por un polígono.</p>
+<img alt="../../_images/otb-meanshift-lsat7.png" src="../../_images/otb-meanshift-lsat7.png" />
+</li>
+</ul>
+<p>OTB incluye también un marco de trabajo para desarrollar segmentación basada en teselas de imágenes muy grandes con garantías (en teoría) de obtener idénticos resultados que aquellas sin teselado llamadas <a class="reference external" href="https://www.orfeo-toolbox.org/CookBook/CookBooksu42.html">LSMS</a>.</p>
+</div>
+<div class="section" id="otb-en-qgis">
+<h2>OTB en QGis<a class="headerlink" href="#otb-en-qgis" title="Permalink to this headline">¶</a></h2>
+<p>El mismo conjunto de aplicaciones OTB se pueden usar desde el menú  Procesos -&gt; Caja de Herramientas en QGis. Las aplicaciones están ordenadas por etiqueta.</p>
+<blockquote>
+<div><img alt="../../_images/otb-processing-qgis.png" src="../../_images/otb-processing-qgis.png" />
+</div></blockquote>
+</div>
+<div class="section" id="desarrollo-con-otb">
+<h2>Desarrollo con OTB<a class="headerlink" href="#desarrollo-con-otb" title="Permalink to this headline">¶</a></h2>
+<p>Para usar la biblioteca OTB library y compilar tu propio código C++ code dentro de OSGeo-Live, se necesita instalar el paquete de desarrollo  <strong>libotb-dev</strong> y <strong>libqt4-dev</strong> .
+También comprobar que <strong>cmake</strong> esté instalado.
+La localización OTB_DIR debería encontrarse automáticamente (normalmente en
+<em>/usr/lib/x86_64-linux-gnu/cmake/OTB-...</em>). En la configuración CMake, se deberían vincular las bibliotecas en la variable OTB_LIBRARIES. Se puede encontrar más información en la SoftwareGuide.</p>
+</div>
+<div class="section" id="y-despues">
+<h2>¿Y después?<a class="headerlink" href="#y-despues" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Guía de Software OTB  (en inglés)</p>
+<p>La principal fuente de información es la Guía de Software OTB. Esta es una guía exhaustiva que comprende cerca de 600 páginas, detallando los pasos para instalar y usar OTB. La mayoría de los temas están profusamente ilustradas con resultados de procesos reales de teledetección.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://orfeo-toolbox.org/packages/OTBSoftwareGuide.pdf">OTBSoftwareGuide.pdf</a></li>
+<li><a class="reference external" href="http://orfeo-toolbox.org/SoftwareGuide/">Guía Versión Online</a></li>
+</ul>
+</li>
+<li><p class="first">OTB CookBook</p>
+<p>También está disponible una guía para las Aplicaciones-OTB y Monteverdi orientada a no-desarrolladores. Esta guía está compuesta por un breve tour por las Aplicaciones-OTB y Monteverdi, seguida de un conjunto de recetas para ejecutar tareas habituales de teledetección con ambas herramientas.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://orfeo-toolbox.org/packages/OTBCookBook.pdf">OTBCookBook.pdf</a></li>
+<li><a class="reference external" href="https://www.orfeo-toolbox.org/CookBook/CookBook.html">Versión Online html</a></li>
+</ul>
+</li>
+<li><p class="first">Tutoriales OTB</p>
+<p><a class="reference external" href="http://www.orfeo-toolbox.org/SoftwareGuide/SoftwareGuidepa2.html#x17-49000II">Tutoriales</a> para aprender más sobre OTB.</p>
+</li>
+</ul>
+<ul>
+<li><p class="first">Documentación en el DVD</p>
+<p>Consultar la detallada documentación sobre aplicaciones <a class="reference internal" href=""><em>Guía de inicio rápido de OTB</em></a></p>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

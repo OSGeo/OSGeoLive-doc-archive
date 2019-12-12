@@ -1,0 +1,503 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Mapbender 快速入门文档 &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="欢迎访问 OSGeo-Live 11.0" href="../index.html" />
+    <link rel="next" title="Mapnik 快速入门文档" href="mapnik_quickstart.html" />
+    <link rel="prev" title="LibLAS 快速入门文档" href="liblas_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference internal image-reference" href="../../_images/logo-Mapbender3.png"><img alt="project logo" class="align-right" src="../../_images/logo-Mapbender3.png" style="width: 128.0px; height: 92.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="mapbender">
+<h1>Mapbender 快速入门文档<a class="headerlink" href="#mapbender" title="Permalink to this headline">¶</a></h1>
+<p>　　Mapbender 是一套用于发布、注册、浏览、监控和保护空间数据基础服务的网络服务框架。</p>
+<p>　　通过 Mapbender 的管理系统，管理人员可以管理、维护地理数据与地理要素服务，并为不同的个人、组织或其它服务管理权限。</p>
+<p>　　执行本文档的示例只需要一个 Web 浏览器。</p>
+<p>　　本文档描述了：</p>
+<blockquote>
+<div><ul class="simple">
+<li>启动 Mapbender</li>
+<li>载入一个应用</li>
+<li>载入一个 Web Map Service (OGC WMS) 网络地图服务</li>
+<li>配置 WMS</li>
+<li>创建一个新应用</li>
+<li>创建新的用户与用户组并配置应用权限</li>
+<li>载入 WFS 网络地理要素服务</li>
+<li>配置要素类型并启动一个支持检索和数字化的 WFS 服务</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/mapbender3_basic_application.png"><img alt="../../_images/mapbender3_basic_application.png" src="../../_images/mapbender3_basic_application.png" style="width: 557.2px; height: 399.7px;" /></a>
+</div></blockquote>
+<div class="section" id="id1">
+<h2>启动 Mapbender<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>选择 <span class="menuselection">Mapbender</span> 启动程序；</li>
+<li>稍等片刻；</li>
+</ol>
+<p>　　若无法正常启动，请检查 Apache 服务器或 PostgreSQL 数据库是否已经启动。</p>
+</div>
+<div class="section" id="id2">
+<h2>欢迎页面<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>在使用 Mapbender 前需要登录系统；</li>
+<li>在欢迎见面可以看到一些 Mapbender 重要页面的链接；</li>
+<li>以用户名 <span class="guilabel">root</span> 和密码 <span class="guilabel">root</span> 登录（该用户为 Mapbender 默认用户，请不要将其删除）；</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_welcome.png"><img alt="../../_images/mapbender3_welcome.png" src="../../_images/mapbender3_welcome.png" style="width: 775.6px; height: 583.1px;" /></a>
+</div></blockquote>
+<p>　　登录后， <span class="guilabel">application overview</span> 应用列表界面将显示。</p>
+</div>
+<div class="section" id="id3">
+<h2>应用列表<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>　　登录后， <span class="guilabel">application overview</span> 应用列表界面将显示所有可以使用的应用。Mapbender 支持模板（template）应用用于创建新的应用。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/mapbender3_application_overview.png"><img alt="../../_images/mapbender3_application_overview.png" src="../../_images/mapbender3_application_overview.png" style="width: 775.6px; height: 583.1px;" /></a>
+</div></blockquote>
+<dl class="docutils">
+<dt>　　Mapbender 提供了：</dt>
+<dd><ul class="first last simple">
+<li>管理应用</li>
+<li>地图服务应用</li>
+<li>容器应用</li>
+</ul>
+</dd>
+</dl>
+<p>　　应用以 <span class="guilabel">categories</span> 分类显示。类别的管理见后述。</p>
+</div>
+<div class="section" id="id4">
+<h2>管理类应用<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>　　通过 <span class="guilabel">Administration applications</span> 管理类应用可以载入服务、创建用于，配置新服务等。</p>
+<p>　　每个 <span class="guilabel">administration application</span> 都具有不的功能。后文将演示如何配置自己的 <span class="guilabel">administration application</span> 。</p>
+<dl class="docutils">
+<dt>　　用户 <span class="guilabel">root</span> 安装后可以使用：</dt>
+<dd><ul class="first last simple">
+<li>ADMINISTRATION, ADMINISTRATION_DE - WMS/WFS 服务、应用管理、用户及用户组管理；</li>
+<li>admin2_en - WMS 、应用、用户及用户组</li>
+<li>admin_en_services - WFS 、元数据管理、owsproxy 代理</li>
+<li>admin1 - 具备所有管理功能的模板</li>
+<li>admin_wms_metadata, admin_wfs_metadata, admin_wmc_metadata - 元数据管理</li>
+</ul>
+</dd>
+</dl>
+<p>　　示例截图为 admin2_en 。左侧面板显示了其各种功能。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="images/screenshots/800x600/mapbender_admin2_en.png"><img alt="images/screenshots/800x600/mapbender_admin2_en.png" src="images/screenshots/800x600/mapbender_admin2_en.png" /></a>
+</div></blockquote>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">You get back to the application overview with the <a class="reference internal" href="images/screenshots/800x600/mapbender_home.png"><img alt="HOME" src="images/screenshots/800x600/mapbender_home.png" /></a> button.</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>地图服务<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>　　地图服务类中包含了 OGC WMS 服务、相关数据浏览、样式参考（图例）、应用图标等。</p>
+<ol class="arabic simple">
+<li>从 <span class="guilabel">application overview</span> 选择 <span class="guilabel">by click</span> 应用。</li>
+<li>尝试 Mapbender 在该示例应用提供的功能。<ul>
+<li>开启 gui_digitize 图形界面下的数字化示例</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<div><a class="reference internal image-reference" href="images/screenshots/800x600/mapbender_gui_digitize.png"><img alt="images/screenshots/800x600/mapbender_gui_digitize.png" src="images/screenshots/800x600/mapbender_gui_digitize.png" /></a>
+</div></blockquote>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">在支持多标签页的浏览器中可以用不同的标签页打开不同的示例并轻松切换。</p>
+</div>
+</div>
+<div class="section" id="wms">
+<h2>WMS 容器应用<a class="headerlink" href="#wms" title="Permalink to this headline">¶</a></h2>
+<p>　　容器应用可用于包装 WMS 服务。这些服务并非用于直接显示数据，而是用于复杂条件下的服务组织。</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="images/screenshots/800x600/mapbender_container.png"><img alt="images/screenshots/800x600/mapbender_container.png" src="images/screenshots/800x600/mapbender_container.png" /></a>
+</div></blockquote>
+</div>
+<div class="section" id="id6">
+<h2>创建应用<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>打开管理应用 <span class="menuselection">admin2_en</span> ；</li>
+<li>选择 <span class="menuselection">Application Management ‣ Create new application</span> 创建新应用；</li>
+<li>输入其名称（name）和描述（description），点击 <strong>new</strong> 创建；</li>
+<li>在 <span class="menuselection">Application Management ‣ Edit application elements</span> 选择新应用；</li>
+<li>在顶部面板选中所需的模板，点击 <strong>add all elements</strong> 获取其中的内容；</li>
+<li>也可以选择模板中的具体项目复制到新应用中。只需在其列表中逐个选取并点击 <strong>save</strong> 保存即可；</li>
+<li>应用创建后，添加一个 WMS 服务进行显示。相见 <strong>WMS 管理</strong> 。</li>
+</ol>
+</div>
+<div class="section" id="id7">
+<h2>应用的复制和重命名<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>　　应用可以通过复制的方法创建。在 <span class="menuselection">Application Management ‣ Rename/copy application</span> 选择复制对象并输入新名称。这个过程同样复制了其中的服务和用户组（可选）。新应用将提供原有的地图服务，且原有的用户也能对其进行访问。</p>
+</div>
+<div class="section" id="id8">
+<h2>删除应用<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>　　通过 <span class="menuselection">Application Management ‣ Delete application</span> 可以删除应用。这只会影响应用本身，与其引用的服务无关。</p>
+<p>　　这个操作只能对当前用户所拥有的应用进行。</p>
+</div>
+<div class="section" id="id9">
+<h2>输出应用<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>　　通过 <span class="menuselection">Application Management ‣ Export application (SQL)</span> 可以将应用以 SQL 输出。SQL 数据包含了一个应用的全面信息，可以直接转移到另一个 Mapbender 实例。</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">注：SQL 导出并不包含引用的服务及用户权限信息。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h1>WMS 管理<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="web-map-services">
+<h2>载入 Web Map Services 网络地图服务<a class="headerlink" href="#web-map-services" title="Permalink to this headline">¶</a></h2>
+<p>　　本节演示在应用中载入 OGC Web Map Services (WMS) 网络地图服务。</p>
+<p>　　WMS 对 getCapabilities 请求返回一个 XML 文件。Mapbender 可以由此获知所需的服务信息。</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">注：在载入前建议阅读 Capabilities 说明文档。</p>
+</div>
+<ol class="arabic simple">
+<li>在 <span class="guilabel">admin2_en</span> 选择 <span class="menuselection">WMS Management ‣ Load WMS</span> 。选择所需的应用并输入 WMS getCapabilities URL ，点击 <strong>Load</strong> 载入。</li>
+<li>若干 WMS 示例服务可以直接载入：</li>
+</ol>
+<p>Cadastre of spain 西班牙地籍图</p>
+<p><a class="reference external" href="http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS">http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx?VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS</a></p>
+<p>Geoportal Barcelona 巴塞罗那地理数据服务门户 (Geoportalbcn - 详见该网址)</p>
+<p><a class="reference external" href="http://www.bcn.cat/geoportal/es/geoserveis.html">http://www.bcn.cat/geoportal/es/geoserveis.html</a></p>
+<p>Germany Workshop Demo 德国演示数据</p>
+<p><a class="reference external" href="http://wms.wheregroup.com/cgi-bin/germany_workshop.xml?VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS">http://wms.wheregroup.com/cgi-bin/germany_workshop.xml?VERSION=1.1.1&amp;REQUEST=GetCapabilities&amp;SERVICE=WMS</a></p>
+<p>WhereGroup OSM WMS Open Street Map 数据服务</p>
+<p><a class="reference external" href="http://osm.wheregroup.com/cgi-bin/osm_basic.xml?REQUEST=GetCapabilities&amp;SERVICE=WMS&amp;VERSION=1.1.1">http://osm.wheregroup.com/cgi-bin/osm_basic.xml?REQUEST=GetCapabilities&amp;SERVICE=WMS&amp;VERSION=1.1.1</a></p>
+<p>　　在一个应用中可以载入多个 WMS 服务。选择 <em>WMS application settings</em> 调整 WMS 序列或进行删除。</p>
+<p>　　Index 序号为 0 的 WMS 定义了坐标系统和数据范围。</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">你可以创建一个容器并加入所有的 WMS 服务，以此作为一个方便的模板向其它应用复制服务。当一个服务更新时，所有使用它的应用都会体现其更新。通过 <em>Link WMS to application</em> 可以实现这一过程。</p>
+</div>
+<p>配置 WMS 服务
+================================================================================　　在载入 WMS 后可对其进行配置。通过配置可以控制特定图层的访问，改变数据集的排序组合，屏蔽特定属性，控制缩放尺度等。</p>
+<a class="reference internal image-reference" href="../../_images/mapbender3_wms_application_settings.png"><img alt="../../_images/mapbender3_wms_application_settings.png" src="../../_images/mapbender3_wms_application_settings.png" style="width: 897.6px; height: 677.6px;" /></a>
+<ul class="simple">
+<li>on/off - 开启或关闭特定图层</li>
+<li>sel - 是否允许在数据集浏览中选中</li>
+<li>sel_default - 是否默认开启</li>
+<li>info / info default - 控制要素属性服务，info default 为默认开启</li>
+<li>minscale / maxscale - 显示的最小与最大比例，0 为无限制</li>
+<li>style - 若 WMS 提供样式选择，可以在此设置</li>
+<li>prio - 图层顺序</li>
+<li>setWFS - 将 WMS 图层同 WFS 要素类型配置连接（相见后述）</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id11">
+<h1>应用配置<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h1>
+<p>　　以上显示了在无代码级操作的条件下，Mapbender 应用也可以轻松地配置。</p>
+<p>　　当选定一个要素，例如 <strong>mapframe1</strong> ，程序将显示其很多属性。这些内容均以 HTML 的形式标注，也即 Mapbender 服务的元素是以 HTML 定义的。在应用启动时 Mapbender 会将其整合至一个 HTML 网页中。</p>
+<blockquote>
+<div><ul class="simple">
+<li>id - 要素专有名称</li>
+<li>on/off - 开启或关闭要素</li>
+<li>title - 以选项卡名或工具提示显示的名称</li>
+<li>HTML-TAG/CLOSE-TAG - HTML 标记类型，即 div 或 img 等</li>
+<li>top, left - 要素位置（fixed 绝对定位布局下）</li>
+<li>width/height - 要素尺寸</li>
+</ul>
+</div></blockquote>
+<p>　　要素还包含其独有其它变量，包括用于 JavaScript/PHP 的变量，CCS 引用和直接 CCS 样式设定等。</p>
+<p>　　变量示例：</p>
+<ul class="simple">
+<li>“copyright”版权要素可以通过变量设置其声明文字；</li>
+<li>“overview”概览图要素可以设置使用的 WMS 图层；</li>
+<li>treeGDE 数据集浏览器可以通过变量设定其样式</li>
+</ul>
+<div class="section" id="id12">
+<h2>其它练习<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>改变主显示区要素（element mapframe1）的尺寸</li>
+<li>改变应用图标，可以选择 <cite>foss4g-logo</cite> 文件（element logo）</li>
+<li>改变背景颜色（element body element-variable css_class_bg）</li>
+<li>改变按钮位置（修改要素左上角的像素位置）</li>
+<li>改变版权声明文字</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id13">
+<h1>用户与用户组管理<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h1>
+<p>　　访问 Mapbender 需要特定的权限。不同的用户与用户组对应用及其 WMS 或 WFS 服务具有不用的权限。</p>
+<p>　　不同的用户角色“roles”，例如 <span class="guilabel">guest</span> / <span class="guilabel">operator</span> / <span class="guilabel">administrator</span> 只取决于其被设定的访问权限。</p>
+<div class="section" id="id14">
+<h2>创建用户<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>在 <span class="guilabel">admin2_en</span> 选择 <span class="menuselection">User Management ‣ Create and edit user</span> 可创建用户。</li>
+<li>输入用户的名称和密码。</li>
+</ol>
+<a class="reference internal image-reference" href="../../_images/mapbender3_create_user.png"><img alt="../../_images/mapbender3_create_user.png" src="../../_images/mapbender3_create_user.png" style="width: 897.6px; height: 677.6px;" /></a>
+</div>
+<div class="section" id="id15">
+<h2>创建用户组<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>在 <span class="menuselection">User Management ‣ Create and edit group</span> 创建用户组。输入其名称和描述即可。</li>
+</ol>
+</div>
+<div class="section" id="id16">
+<h2>为用户（组）配置应用访问权限<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>通过 <span class="menuselection">User Management ‣ Add one user to several groups</span> 可将一个用户添加进用户组中。或者通过 <span class="menuselection">User Management ‣ Add several users to one group</span> 也可以。</li>
+<li>通过 <span class="menuselection">User Management ‣ Allow one user to access several applications</span> 可以将用户加入用户组。</li>
+<li>通过 <span class="menuselection">User Management ‣ Allow one group to access several applications</span> 可以将一个应用赋予一个用户组。</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">若需要写入权限，使用 <span class="menuselection">User Management ‣ Assign to edit an application to a user</span> 设置。</p>
+</div>
+<ol class="arabic simple">
+<li>要退出 Mapbender ，点击 <a class="reference internal" href="images/screenshots/800x600/mapbender3_logout.png"><img alt="LOGOUT" src="images/screenshots/800x600/mapbender3_logout.png" /></a> 按钮。</li>
+<li>尝试以另一个用户登录。</li>
+</ol>
+<blockquote>
+<div></div></blockquote>
+</div>
+</div>
+<div class="section" id="wfs">
+<h1>WFS 网络地理要素服务管理<a class="headerlink" href="#wfs" title="Permalink to this headline">¶</a></h1>
+<p>　　Mapbender 支持 OGC Web Feature Service 网络地理要素服务 WFS 1.0.0 和 1.1.0. 一个 WFS 通过 Mapbender 可以体现多种功能：</p>
+<ul class="simple">
+<li>记录检索</li>
+<li>空间检索</li>
+<li>数字化</li>
+<li>数据列表</li>
+<li>注释</li>
+<li>数据下载</li>
+</ul>
+<p>　　为使用 WFS 服务，请将 WFS 导入 Mapbender 并生成要素类型的配置。完成配置后，需对 WFS 及配置授予权限。</p>
+<p>　　对于数字化应用，WFS 需具备事务处理（WFS-T）能力。利用 <a class="reference internal" href="../overview/geoserver_overview.html"><em>GeoServer</em></a> 或 <a class="reference internal" href="../overview/deegree_overview.html"><em>deegree</em></a> 等可以建立 WFS-T 服务。</p>
+<div class="section" id="id17">
+<h2>载入 WFS 服务<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<p>　　配置 WFS 服务的模块集成于 <strong>admin_en_services</strong> 应用。</p>
+<ol class="arabic simple">
+<li>在 <em>admin_en_services</em> 选择 <em>WFS Management &#8211;&gt; Load WFS</em> 。选择目标应用，输入 WFS getCapabilities 的 URL 并点击 <strong>Load</strong> 执行；</li>
+</ol>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">建议首先查看 WFS getCapabilities 相关文档了解其细节。</p>
+</div>
+<p>示例 WFS</p>
+<p><a class="reference external" href="http://wms.wheregroup.com/geoserver/wfs?REQUEST=getCapabilities&amp;VERSION=1.0.0&amp;SERVICE=WFS">http://wms.wheregroup.com/geoserver/wfs?REQUEST=getCapabilities&amp;VERSION=1.0.0&amp;SERVICE=WFS</a></p>
+<a class="reference internal image-reference" href="images/screenshots/800x600/mapbender_loadWFS.png"><img alt="images/screenshots/800x600/mapbender_loadWFS.png" src="images/screenshots/800x600/mapbender_loadWFS.png" /></a>
+</div>
+<div class="section" id="id18">
+<h2>创建 WFS 要素类型配置<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<p>　　下一步将配置一个要素类型。在一个应用完成配置和权限设定后，可以在其中使用要素类型。</p>
+<a class="reference internal image-reference" href="images/screenshots/800x600/mapbender_configure_WFS_featureType.png"><img alt="images/screenshots/800x600/mapbender_configure_WFS_featureType.png" src="images/screenshots/800x600/mapbender_configure_WFS_featureType.png" /></a>
+<p><strong>配置</strong></p>
+<ol class="arabic simple">
+<li>从 <em>Select WFS</em> 选择一个 WFS 服务。所有类型都会出现在列表中；</li>
+<li>选择需要配置的类型；</li>
+<li>选中后，configuration fields 、attribute fields 等设置会出现；</li>
+<li>输入检索的摘要和标签设定等；</li>
+<li>定义检索按钮的文本（例如“OK”或“检索”)；</li>
+<li>在检索页面样式（style）和结果页面样式（result-style）使用 CSS 控制；</li>
+<li>定义一个缓冲距离，用于控制观察检索结果的默认缩放；</li>
+<li>选择 <cite>geometry</cite> 栏；</li>
+<li>search/pos - 定义检索内容与排序；</li>
+<li>minimum_input (<strong>Search</strong>) - 检索输入的最小长度；</li>
+<li>label - 检索栏标注</li>
+<li>show - 结果页面显示的栏目及其顺序</li>
+<li>show_detail - 在详细信息页面显示的栏目及顺序</li>
+<li>mandatory (<strong>digitizing</strong>) - 是否禁止栏目空置</li>
+<li>edit (<strong>digitizing</strong>) - 数字化过程中允许编辑的栏目</li>
+<li>html - 提供选择框、日期选择、勾选开关、文字栏、文件上传等工具；</li>
+<li>auth - 管理与要素级用户权限设置；</li>
+<li>operator - (<strong>Search</strong>) - 检索运算符；</li>
+<li>helptext - 定义帮助提示文本；</li>
+<li>category - 定义不同的类别，以选项卡的形式显示；</li>
+<li><strong>save</strong> 保存配置；</li>
+<li>配置将会被给与一个编号（configuration id）</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/800x600/mapbender_configure_WFS_featureType_attribute_table.png"><img alt="images/screenshots/800x600/mapbender_configure_WFS_featureType_attribute_table.png" src="images/screenshots/800x600/mapbender_configure_WFS_featureType_attribute_table.png" /></a>
+</div>
+<div class="section" id="id19">
+<h2>对应用执行指定配置<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+<p>　　通过 <em>WFS configuration -&gt; Assign WFS conf to application</em> 可以对一个或多个应用执行指定配置。</p>
+<ol class="arabic simple">
+<li>选择 WFS 服务；</li>
+<li>选择应用；</li>
+<li>将所需配置应用到 <em>GUI configuration list</em> 列表。</li>
+</ol>
+<a class="reference internal image-reference" href="images/screenshots/800x600/mapbender_set_featureType_access.png"><img alt="images/screenshots/800x600/mapbender_set_featureType_access.png" src="images/screenshots/800x600/mapbender_set_featureType_access.png" /></a>
+</div>
+<div class="section" id="id20">
+<h2>建立 WFS 检索<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<p>　　在 <em>admin_en_services -&gt; Edit application elements</em> 选择 <em>gazetteerWFS</em> 元素。该元素有 <em>wfsConfIdString</em> 属性。此处用于列举配置号（逗号分隔）。检索结果会依据此表的顺序显示。</p>
+<a class="reference internal image-reference" href="images/screenshots/800x600/mapbender_wfsConfIdString.png"><img alt="images/screenshots/800x600/mapbender_wfsConfIdString.png" src="images/screenshots/800x600/mapbender_wfsConfIdString.png" /></a>
+<p>　　查看检索的显示结果。本示例中，左侧面板用于检索 Mapbender 用户。检索可以基于空间范围或文本进行，并在列表中显示结果。点击一个条目，Mapbender 缩放至相应区域并显示具体信息。</p>
+<a class="reference internal image-reference" href="images/screenshots/800x600/mapbender_WFS_search.png"><img alt="images/screenshots/800x600/mapbender_WFS_search.png" src="images/screenshots/800x600/mapbender_WFS_search.png" /></a>
+</div>
+<div class="section" id="id21">
+<h2>建立 WFS 数字化功能<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
+<p>　　通过 gui_digitize 模板可以快速建立数字化应用。通过要素类型配置，可以连接 WMS 图层作为底图。在 <em>WMS application settings</em> 通过图层列表中的 <em>set WFS</em> 即可实现。选择正确的配置 ID 即可。</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">　　请确保 WMS 图层连接的 WFS 配置支持“feature info”特性。Mapbender 需要由此确定是否发送 WFS getFeature 请求。</p>
+</div>
+<p>　　配置完成后，在界面右侧可以检索已有地理要素，并在“seach result”面板显示。对这些要素可以进行移动（move）、添加基点（add basepoint）、编辑属性（edit attributes）、线切分（split line）、线延伸（continue line）、合并多边形（merge polygons）等操作。也可以新建要素。</p>
+<a class="reference internal image-reference" href="images/screenshots/800x600/mapbender_gui_digitize.png"><img alt="images/screenshots/800x600/mapbender_gui_digitize.png" src="images/screenshots/800x600/mapbender_gui_digitize.png" /></a>
+</div>
+<div class="section" id="id22">
+<h2>其它练习<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+<p>　　建议尝试以下操作：</p>
+<ol class="arabic simple">
+<li>在应用中载入一些 WMS 服务，并通过 <span class="menuselection">Configure WMS access ‣ WMS application settings</span> 进行配置。</li>
+<li>创建一个应用 - 改变背景色，移动按钮，调整地图框尺寸 (element mapframe1)等。请使用 <span class="menuselection">Application Management ‣ Edit application elements</span> 进行创建。</li>
+</ol>
+</div>
+<div class="section" id="id23">
+<h2>其它信息<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<p>　　以上演示了 Mapbender 的一些基本功能。此外，Mapbender 还有大量值得尝试的特性。</p>
+<p>Mapbender 项目主页</p>
+<blockquote>
+<div><a class="reference external" href="http://www.mapbender.org/">http://www.mapbender.org/</a></div></blockquote>
+<p>使用教程</p>
+<blockquote>
+<div><a class="reference external" href="http://www.mapbender.org/Tutorials">http://www.mapbender.org/Tutorials</a></div></blockquote>
+<p>教学演示</p>
+<blockquote>
+<div><a class="reference external" href="http://www.mapbender.org/Mapbender_Tutorial_en">http://www.mapbender.org/Mapbender_Tutorial_en</a></div></blockquote>
+<p>Mapbender 项目页面（OSGeo）</p>
+<blockquote>
+<div><a class="reference external" href="http://projects.mapbender.osgeo.org">http://projects.mapbender.osgeo.org</a></div></blockquote>
+<p>开发社区</p>
+<blockquote>
+<div><a class="reference external" href="http://www.mapbender.org/Community">http://www.mapbender.org/Community</a></div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

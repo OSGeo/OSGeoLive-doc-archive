@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pycsw: начало работы &mdash; OSGeo-Live 11.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '11.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 11.0
+ Documentation" href="../../index.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <!--li><a href="../standards/standards.html">Standards</a></li-->
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://pycsw.org/"><img alt="Лого проекта" class="align-right" src="../../_images/logo-pycsw.png" style="width: 102.4px; height: 102.4px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="pycsw">
+<h1>pycsw: начало работы<a class="headerlink" href="#pycsw" title="Permalink to this headline">¶</a></h1>
+<p><strong>pycsw</strong> является реализацией сервера OGC CSW на языке <a class="reference external" href="http://www.python.org/">Python</a>.</p>
+<p>pycsw реализует положения параграфа 10 (HTTP protocol binding (Catalogue
+Services for the Web, CSW)) спецификации`OpenGIS Catalogue Service Implementation
+Specification`_, версия 2.0.2. Процесс разработки начался в 2010 г. (официальный
+анонс сделан в <a class="reference external" href="http://www.kralidis.ca/blog/2011/02/04/help-wanted-baking-a-csw-server-in-python/">2011</a> г.).</p>
+<p>pycsw позволяет публиковать и просматривать пространственные метаданные.
+Существующие репозитории метаданных должны могут быть сделаны доступными
+через OGC:CSW 2.0.2.</p>
+<p>pycsw имеет <a class="reference external" href="http://www.opensource.org/">открытый код</a>, распространяется под лицензией MIT и работает на
+всех основных платформах (Windows, Linux, Mac OS X).</p>
+<p>pycsw входит в состав OSGeo-Live. Этот документ показывает, как:</p>
+<ul class="simple">
+<li>выполнить установку pycsw;</li>
+<li>проверить работоспособность pycsw при помощи проверочного приложения;</li>
+<li>редактировать документ Capabilities и отображать эту информацию в браузере;</li>
+<li>создавать описание метаданных в формате ISO 19139 (при помощи INSPIRE Metadata Editor или GIMED);</li>
+<li>загружать созданный файлы метаданных в базу данных pycsw;</li>
+<li>установить модуль CSWClient для QGIS;</li>
+<li>выполнять поиск данных в каталоге pycsw из QGIS.</li>
+</ul>
+<div class="section" id="id1">
+<h2>Установка<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Системные требования<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Для работы <strong>pycsw</strong> необходимо наличие следующих библиотек:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://lxml.de/">lxml</a> (версия &gt;= 2.2.3) для работы с XML</li>
+<li><a class="reference external" href="http://www.sqlalchemy.org/">SQLAlchemy</a> (версия &gt;= 0.0.5) для взаимодействия с базами данных</li>
+<li><a class="reference external" href="http://trac.gispython.org/lab/wiki/Shapely">Shapely</a> (версия &gt;= 1.2.8) для поддержки пространственных запросов</li>
+<li><a class="reference external" href="http://code.google.com/p/pyproj/">pyproj</a> (версия &gt;= 1.8.9) для преобразования координат</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Установка из исходных кодов<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://pycsw.org/download.html">Загрузите</a> последнюю версию pycsw или получите код из svn:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ svn co https://pycsw.svn.sourceforge.net/svnroot/pycsw pycsw
+</pre></div>
+</div>
+<p>Убедитесь, что для каталога установки разрешен CGI. Например, при использовании
+Apache, если вы установили pycsw в <code class="docutils literal"><span class="pre">/srv/www/htdocs/pycsw</span></code> (и ваш URL
+будет иметь вид <code class="docutils literal"><span class="pre">http://host/pycsw/csw.py</span></code>), добавьте следующие строки
+в <code class="docutils literal"><span class="pre">httpd.conf</span></code>:</p>
+<div class="highlight-none"><div class="highlight"><pre>&lt;Location /pycsw/&gt;
+ Options FollowSymLinks +ExecCGI
+ Allow from all
+ AddHandler cgi-script .py
+&lt;/Location&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="ubuntu-lubuntu-kubuntu">
+<h3>Установка в Ubuntu/Lubuntu/Kubuntu<a class="headerlink" href="#ubuntu-lubuntu-kubuntu" title="Permalink to this headline">¶</a></h3>
+<p>Для установки <strong>pycsw</strong> в Ubuntu и производных можно использовать установочный
+скрипт OSGeo-Live из <code class="docutils literal"><span class="pre">pycsw/etc/dist</span></code>:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">cd</span> pycsw/etc/dist
+$ sudo ./install_pycsw.sh
+</pre></div>
+</div>
+<p>Этот скрипт выполнит установку всех необходимых зависимостей (Apache, lxml,
+sqlalchemy, shapely, pyproj) и затем установит pycsw в <code class="docutils literal"><span class="pre">/var/www</span></code>.</p>
+</div>
+<div class="section" id="opensuse">
+<h3>Установка в openSUSE<a class="headerlink" href="#opensuse" title="Permalink to this headline">¶</a></h3>
+<p>Установить OBS-пакет в openSUSE 12.1 можно, выполнив следующие команду от
+имени <code class="docutils literal"><span class="pre">root</span></code>:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ zypper -ar http://download.opensuse.org/repositories/Application:/Geo/openSUSE_12.1/ GEO
+$ zypper -ar http://download.opensuse.org/repositories/devel:/languages:/python/openSUSE_12.1/ python
+$ zypper refresh
+$ zypper install pycsw
+</pre></div>
+</div>
+<p>Для предыдущих версий замените <code class="docutils literal"><span class="pre">12.1</span></code> на <code class="docutils literal"><span class="pre">11.4</span></code>. Для будущих версий
+openSUSE используйте <code class="docutils literal"><span class="pre">Factory</span></code>. Также поддерживается и rolling-ветка
+<code class="docutils literal"><span class="pre">Tumbleweed</span></code>. pycsw включен в официальный репозиторий Application::Geo
+OpenSUSE Build Service.</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Проверочное приложение<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Запустить проверочное приложение pycsw можно при помощи ярлыка pycsw в группе
+Web Services или открыв Firefox и указав адрес <code class="docutils literal"><span class="pre">http://localhost/pycsw/tester/index.html</span></code>:</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_startup.png"><img alt="../../_images/pycsw_tester_startup.png" src="../../_images/pycsw_tester_startup.png" style="width: 481.5px; height: 378.0px;" /></a>
+<p>В левом выпадающем списке пользователь может выбирать предустановленные
+POST-запросы в формате XML, которые затем будут отправлены pycsw:</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_selection.png"><img alt="../../_images/pycsw_tester_selection.png" src="../../_images/pycsw_tester_selection.png" style="width: 748.5px; height: 408.0px;" /></a>
+<p>Например, если выбрать &#8220;apiso/DescribeRecord&#8221; и нажать кнопку &#8220;Send&#8221;, в
+правой панели отобразится описание записи в ISO Application Profile:</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_describe_apiso_record.png"><img alt="../../_images/pycsw_tester_describe_apiso_record.png" src="../../_images/pycsw_tester_describe_apiso_record.png" style="width: 746.25px; height: 408.75px;" /></a>
+<p>Если выбрать &#8220;GetCapabilities-SOAP&#8221; и нажать кнопку &#8220;Send&#8221;, на сервер будет
+отправлен SOAP-запрос на получение его возможностей:</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_soap_capabillities.png"><img alt="../../_images/pycsw_tester_soap_capabillities.png" src="../../_images/pycsw_tester_soap_capabillities.png" style="width: 746.25px; height: 408.0px;" /></a>
+<p>Кроме того, пользователь может выполнять поиск данных с фильтрацией по охвату,
+выбрав &#8220;GetRecords-filter-bbox&#8221; и отредактировав координаты в XML-представлении
+запроса:</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_getrecords_bbox_filter.png"><img alt="../../_images/pycsw_tester_getrecords_bbox_filter.png" src="../../_images/pycsw_tester_getrecords_bbox_filter.png" style="width: 749.25px; height: 399.0px;" /></a>
+<p>Пользователь может пройтись по всем доступным запросам и выполнять различные
+операции из этого приложения. Более надежный и удобный способ выполнения
+запросов описан ниже.</p>
+</div>
+<div class="section" id="capabilities">
+<h2>Документа Capabilities и настрока<a class="headerlink" href="#capabilities" title="Permalink to this headline">¶</a></h2>
+<p>Описание capabilities можно просмотреть по адресу <code class="docutils literal"><span class="pre">http://localhost/pycsw/csw.py?service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</span></code>.</p>
+<p>Чтобы отредактировать метаданные сервиса, входящие в состав документа capabilities,
+необходимо изменить файл <code class="docutils literal"><span class="pre">/var/www/pycsw/default.cfg</span></code>, а именно раздел
+<code class="docutils literal"><span class="pre">[metadata:main]</span></code>. Если необходимо включить поддержку INSPIRE Discovery Service,
+заполните метаданые в разделе <code class="docutils literal"><span class="pre">[metadata:inspire]</span></code> и установите значение
+свойства <code class="docutils literal"><span class="pre">enabled</span></code> в <code class="docutils literal"><span class="pre">true</span></code>.</p>
+<p>За подробным описаним настроек обратитесь к <a class="reference external" href="http://pycsw.org/docs/documentation.html">документации</a> на сайте pycsw.</p>
+</div>
+<div class="section" id="id5">
+<h2>Создание метаданных<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="european-open-source-metadata-editor-euosme">
+<h3>При помощи European Open Source Metadata Editor (EUOSME)<a class="headerlink" href="#european-open-source-metadata-editor-euosme" title="Permalink to this headline">¶</a></h3>
+<p>Описание метаданных пространственного набора данных или пространственного
+веб-сервиса можно создать при помощи открытой реализации редактора INSPIRE,
+European Open Source Metadata Editor (EUOSME). Это приложение можно найти
+по адресу <code class="docutils literal"><span class="pre">http://inspire-geoportal.ec.europa.eu/editor/</span></code>. Также доступен
+исходный код <code class="docutils literal"><span class="pre">https://joinup.ec.europa.eu/svn/euosme/trunk</span></code></p>
+<p>Пользователь заполняет необходимые поля метаданных, переключаясь между
+вкладками приложения, и внося информацию о владельце данных, ключевых словах,
+размещении, географическом охвате (задавая координаты ограничивающего
+прямоугольника или название страны) и т.д.</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_euosme_metadata_input.png"><img alt="../../_images/pycsw_euosme_metadata_input.png" src="../../_images/pycsw_euosme_metadata_input.png" style="width: 831.75px; height: 485.25px;" /></a>
+<p>После добавления всей необходимой информации необходимо нажать кнопку валидации
+вверху страницы, чтобы проверить целостность и соответствие директивам INSPIRE.</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_euosme_save_metadata.png"><img alt="../../_images/pycsw_euosme_save_metadata.png" src="../../_images/pycsw_euosme_save_metadata.png" style="width: 830.25px; height: 485.25px;" /></a>
+<p>После успешной валидации файл можно сохранить на диск и просмотреть, используя
+текстовый редактор либо браузер.</p>
+</div>
+<div class="section" id="gimed">
+<h3>При помощи GIMED<a class="headerlink" href="#gimed" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://sourceforge.net/projects/gimed/">GIMED</a> — свободное приложение для создания и редактирования метаданных
+в формате XML, совместимом с директивами INSPIRE. Для установки приложения
+введите следующие команды в окне терминала:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ wget http://downloads.sourceforge.net/project/gimed/GIMED_v1.3.0.tar.gz
+$ tar zxvf GIMED_v1.3.0.tar.gz
+$ mono ./GIMED_v1.3.0/bin/GIMED.exe
+</pre></div>
+</div>
+<p>Пользователь может вводить или редактировать метаданные как и при использовании
+EUOSME, но без необходимости в подключении к Интернет.</p>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/pycsw_gimed.png"><img alt="images/screenshots/1024x768/pycsw_gimed.png" src="images/screenshots/1024x768/pycsw_gimed.png" /></a>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Загрузка метаданных<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>Настройка репозитория метаданных<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>pycsw поддерживает следующие базы данных:</p>
+<ul class="simple">
+<li>SQLite3</li>
+<li>PostgreSQL</li>
+<li>MySQL</li>
+</ul>
+<p>В OSGeo-Live использован простой вариант с SQLite. Базу данных можно найти
+в <code class="docutils literal"><span class="pre">/var/www/pycsw/data/cite</span></code></p>
+<p>В случае новой базы данных, процесс установки будет выглядеть так:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">cd</span> /path/to/pycsw
+$ <span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+$ python ./sbin/setup_db.py sqlite:////path/to/records.db
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>Импорт метаданных<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">cd</span> /path/to/pycsw
+$ <span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+$ python ./sbin/load_records.py /path/to/records sqlite:////path/to/records.db
+</pre></div>
+</div>
+<p>Эта последовательность команд импортирует все записи <code class="docutils literal"><span class="pre">*.xml</span></code> из <code class="docutils literal"><span class="pre">/path/to/records</span></code>
+в <code class="docutils literal"><span class="pre">records.db</span></code> и настроит репозиторий на отображение информации в соответствии
+с таблицей 53 OGC:CSW.</p>
+</div>
+</div>
+<div class="section" id="csw-client-qgis">
+<h2>Установка CSW Client для QGIS<a class="headerlink" href="#csw-client-qgis" title="Permalink to this headline">¶</a></h2>
+<p>Механизм HTTP запросов/ответов не достаточно удобен для конечных пользователей.
+Поэтому существует несколько различных клиентов CSW в форме веб-приложений
+как <a class="reference external" href="http://inspire-geoportal.ec.europa.eu/discovery/discovery/">INSPIRE Geoportal</a>
+или <a class="reference internal" href="../overview/geonetwork_overview.html"><em>GeoNetwork</em></a>. В этом документе
+мы будем использовать модуль <a class="reference external" href="https://sourceforge.net/apps/trac/qgiscommunitypl/wiki/qgcsw">OGC Catalogue Service Client</a>
+для <a class="reference internal" href="../overview/qgis_overview.html"><em>QGIS</em></a>.</p>
+<p>Для установки модуля выполните:</p>
+<div class="highlight-bash"><div class="highlight"><pre>$ <span class="nb">cd</span> ~
+$ <span class="nb">cd</span> .qgis/python/plugins
+$ svn co https://qgiscommunitypl.svn.sourceforge.net/svnroot/qgiscommunitypl/python/plugins/qgcsw/trunk qgcsw
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>Поиск данных<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="csw-qgis">
+<h3>Модуль CSW для QGIS<a class="headerlink" href="#csw-qgis" title="Permalink to this headline">¶</a></h3>
+<p>Запустите QGIS из группы Desktop GIS и найдите пункт &#8220;Manage Plugins&#8221;</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_qgis_plugin.png"><img alt="../../_images/pycsw_qgis_plugin.png" src="../../_images/pycsw_qgis_plugin.png" style="width: 831.75px; height: 485.25px;" /></a>
+<p>Активируйте модуль CSW</p>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/pycsw_qgis_plugin_enable.png"><img alt="images/screenshots/1024x768/pycsw_qgis_plugin_enable.png" src="images/screenshots/1024x768/pycsw_qgis_plugin_enable.png" /></a>
+<p>Затем при помощи кнопки CSW на панели инструментов запустите CSW Client</p>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/pycsw_qgis_csw_plugin_open.png"><img alt="images/screenshots/1024x768/pycsw_qgis_csw_plugin_open.png" src="images/screenshots/1024x768/pycsw_qgis_csw_plugin_open.png" /></a>
+<p>Добавьте сервер pycsw, нажав на кнопку &#8220;New&#8221; и введя адрес <code class="docutils literal"><span class="pre">http://localhost/pycsw/csw.py</span></code></p>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/pycsw_qgis_csw_plugin_add_server.png"><img alt="images/screenshots/1024x768/pycsw_qgis_csw_plugin_add_server.png" src="images/screenshots/1024x768/pycsw_qgis_csw_plugin_add_server.png" /></a>
+<p>Также можно добавить несколько предустановленных серверов, нажав кнопку
+&#8220;Add default servers&#8221; и получить описание возможностей сервера при помощи
+кнопки &#8220;Server info&#8221;</p>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/pycsw_qgis_csw_plugin_server_info.png"><img alt="images/screenshots/1024x768/pycsw_qgis_csw_plugin_server_info.png" src="images/screenshots/1024x768/pycsw_qgis_csw_plugin_server_info.png" /></a>
+<p>Выполнять поиск данных в каталоге можно как по описанию, так и по охвату</p>
+<a class="reference internal image-reference" href="images/screenshots/1024x768/pycsw_qgis_csw_plugin_search.png"><img alt="images/screenshots/1024x768/pycsw_qgis_csw_plugin_search.png" src="images/screenshots/1024x768/pycsw_qgis_csw_plugin_search.png" /></a>
+</div>
+<div class="section" id="id10">
+<h3>Проверочное приложение<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>Поиск данных также можно выполнять из проверочного приложения, задав
+соответствущий запрос, например, поиск по фразе &#8220;imagery&#8221; приведет к отображению
+всех данных, созданных ранее в EUOSME</p>
+<a class="reference internal image-reference" href="../../_images/pycsw_tester_discovery.png"><img alt="../../_images/pycsw_tester_discovery.png" src="../../_images/pycsw_tester_discovery.png" style="width: 786.75px; height: 342.0px;" /></a>
+<p>Более подробное описание pycsw можно получить в <a class="reference external" href="http://pycsw.org/docs/documentation.html">документации</a>, размещенной
+на официальном сайте.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PostGIS &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.0 Contenus" href="overview.html" />
+    <link rel="next" title="pycsw" href="pycsw_overview.html" />
+    <link rel="prev" title="pgRouting" href="pgrouting_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://postgis.refractions.net/"><img alt="Logo du projet" class="align-right" src="../../_images/logo-PostGIS10.png" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org/incubator/process/principles.html"><img alt="Projet OSGeo" class="align-right" src="../../_images/OSGeo_project10.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="postgis">
+<h1>PostGIS<a class="headerlink" href="#postgis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="base-de-donnees-spatiale">
+<h2>Base de données spatiale<a class="headerlink" href="#base-de-donnees-spatiale" title="Permalink to this headline">¶</a></h2>
+<p>PostGIS rend spatiale la base de données relationnelle populaire PostgreSQL, lui permettant d&#8217;être utilisée comme une base de données de stockage pour les Systèmes d&#8217;Information Géographique (SIG) et pour les applications de cartographie en ligne de la même manière qu&#8217;Oracle Spatial le fait sur la base de données Oracle.</p>
+<p>PostGIS est stable, rapide, conforme aux standards, avec des centaines de fonctions spatiales et est actuellement la base de données spatiale opensource la plus utilisée actuellement. PostGIS est utilisée par diverses organisations autour du monde, incluant des agences gouvernementales gérant des données à caractère sensible et des organisations stockant des térabytes de données servant des millions de requêtes par jour.</p>
+<p>L&#8217;administration de base de données est disponible pour le bureau et le web avec
+pgAdmin, phpPgAdmin, et d&#8217;autres. L&#8217;import/export de données peut être fait par
+des outils en ligne de  commande (shp2pgsql, pgsql2shp, ogr2ogr, dxf2postgis) ou
+depuis des clients SIG bureautiques et web. Ces clients peuvent aussi
+cartographier et manipuler les tables des bases de données spatiales PostGIS.</p>
+<a class="reference internal image-reference" href="../../_images/pgadmin5.png"><img alt="Gestionnaire de base de données pgAdmin" class="align-right" src="../../_images/pgadmin5.png" style="width: 443.3px; height: 317.35px;" /></a>
+<div class="section" id="caracteristiques-principales">
+<h3>Caractéristiques principales<a class="headerlink" href="#caracteristiques-principales" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Centaines de fonctions spatiales</li>
+<li>Tampons, unions, recouvrements, distance et plus</li>
+<li>Intégrité transactionnel ACID</li>
+<li>Index spatial R-Tree</li>
+<li>Support multiutilisateurs</li>
+<li>Verrouillage à la ligne</li>
+<li>Réplication</li>
+<li>Partitionnement</li>
+<li>Sécurité basée sur les rôles</li>
+<li>Espaces de table, schémas</li>
+</ul>
+</div>
+<div class="section" id="standards-implementes">
+<h3>Standards implémentés<a class="headerlink" href="#standards-implementes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Conforme au standard OGC SFSQL</li>
+</ul>
+</div>
+<div class="section" id="details">
+<h3>Détails<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h3>
+<p><strong>Site web:</strong> <a class="reference external" href="http://postgis.refractions.net/">http://postgis.refractions.net/</a></p>
+<p><strong>Licence:</strong> Licence GNU General Public (GPL) version 2</p>
+<p><strong>Version du logiciel:</strong> 2.1.3</p>
+<p><strong>Plates-formes supportées:</strong> Windows, Linux, Mac</p>
+<p><strong>Interface de l&#8217;API:</strong> SQL</p>
+<p><strong>Support:</strong> <a class="reference external" href="http://www.osgeo.org/search_profile">http://www.osgeo.org/search_profile</a></p>
+</div>
+<div class="section" id="guide-de-demarrage-rapide">
+<h3>Guide de démarrage rapide<a class="headerlink" href="#guide-de-demarrage-rapide" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/postgis_quickstart.html"><em>Documentation du guide de démarrage rapide</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GeoServer &mdash; OSGeo-Live 10.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 10.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Continguts OSGeo-Live 10.5" href="overview.html" />
+    <link rel="next" title="GeoTools" href="geotools_overview.html" />
+    <link rel="prev" title="GEOS" href="geos_overview.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://geoserver.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GeoServer.png" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org/incubator/process/principles.html"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_incubation.png" style="width: 150.0px; height: 53.0px;" /></a>
+<div class="section" id="geoserver">
+<h1>GeoServer<a class="headerlink" href="#geoserver" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="servei-web">
+<h2>Servei web<a class="headerlink" href="#servei-web" title="Permalink to this headline">¶</a></h2>
+<p>GeoServer és un servidor web que permet servir mapes i dades de diversos formats diferents a clients estàndard com navegadors web i programes SIG d&#8217;escriptori. Això vol dir que pot emmagatzemar les vostres dades espacials en el format que preferiu i que els vostres usuaris no han de saber res de dades SIG. En el nivell més simple tot el què necessiten és un navegador web per veure els mapes exactament com els heu creat.</p>
+<p>GeoServer és la implementació de referència dels estàndards de l&#8217;<a class="reference external" href="http://www.opengeospatial.org">Open Geospatial
+Consortium</a> (OGC)
+<a class="reference internal" href="../standards/wfs_overview.html"><em>Web Feature Service (WFS)</em></a> i
+<a class="reference internal" href="../standards/wcs_overview.html"><em>Web Coverage Service (WCS)</em></a>,
+així com un <a class="reference internal" href="../standards/wms_overview.html"><em>Web Map Service (WMS)</em></a> certificat d&#8217;alt rendiment.
+GeoServer és un component clau de la Web Geoespacial.</p>
+<a class="reference internal image-reference" href="../../_images/geoserver.png"><img alt="Screen Shot of GeoServer" class="align-right" src="../../_images/geoserver.png" style="width: 482.4px; height: 330.0px;" /></a>
+<div class="section" id="caracteristiques-principals">
+<h3>Característiques principals<a class="headerlink" href="#caracteristiques-principals" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt><strong>Serveix dades des de diversos magatzems de dades:</strong></dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Vector</dt>
+<dd><ul class="first last simple">
+<li>Shapefiles, WFS externs</li>
+<li>PostGIS, ArcSDE, DB2, Oracle Spatial, MySql, SQL Server</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Raster</dt>
+<dd><ul class="first last simple">
+<li>GeoTiff, JPG i PNG (amb arxiu extern), imatges piramidals, formats GDAL, mosaics d&#8217;imatges, Oracle GeoRaster</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt><strong>Les dades es serveixen ràpidament i de forma segura com imatges emprant els protocols WMS i WMTS:</strong></dt>
+<dd>Donat que les dades es serveixen com una imatge, les vostres dades estàn protogides. A menys que algú les digitalitzi, no hi ha manera de prendre les vostres dades.
+L&#8217;aspecte de cada capa del mapa es pot controlar emprant l&#8217;estàndard SLD, que permet donar color i posar etiquetes als elements. Combinant aquestes normes amb filtres OGC es pot implementar estils diferents segons l&#8217;escala, cosa que permet afegir detall a mida que l&#8217;usuari s&#8217;acosta al mapa. També s&#8217;implementen la gestió de la col·lisió d&#8217;etiquetes, l&#8217;agrupament i la priorització.</dd>
+<dt><strong>Les dades vector es poden fer arribar al client emprant el protocol WFS:</strong></dt>
+<dd>Un client WFS pot descarregar dades vector i usar-les per fer mapes, anàlisi espacial i altres operacions. Si es tenen permisos, l&#8217;usuari també podria modificar les dades i retornar-les al servidor per actualitzar les dades emmagatzemades emprant el protocol WFS-T.
+Les dades es poden tramsmetre utilizant GML (comprimit) o bé altres formats de dades estàndard com shapefile i json.</dd>
+<dt><strong>Els valors de les dades ràster es poden enviar a un client emprant el protocol WCS:</strong></dt>
+<dd>Un client SIG pot demanar les dades raster per usar-les en anàlisi espacial. Això permet als usuaris crear aplicacions que modelen els processos descrits per les vostres dades.</dd>
+<dt><strong>Reprojecció al vol:</strong></dt>
+<dd>GeoServer suporta la majoria de codis EPSG de projeccions i pot reprojectar a qualsevol d&#8217;ells sota demanda per permetre als client descarregar al servidor les tasques de reprojecció.</dd>
+<dt><strong>Cau de tessel·les</strong></dt>
+<dd><dl class="first last docutils">
+<dt><a class="reference external" href="http://geowebcache.org/">GeoWebCache</a>, el qual està integrat dins Geoserver, tesel·lat imatges de mapa</dt>
+<dd>des de diverses fonts com per exemple WMS. Implementa diverses interfaces (tals com WMS-C, WMTS, TMS, Google Maps KML,
+Virtuañ Earth) per tal d&#8217;accelerar i optimitzar l&#8217;enviament de les imatges. A més pot recombinar tesel·les per tal de
+treballar amb clients usuals de WMS.</dd>
+</dl>
+</dd>
+<dt><strong>Web Processing Service (WPS)</strong></dt>
+<dd>Algorismes geoespacials, incloent els <a class="reference internal" href="jts_overview.html"><em>JTS</em></a>,
+que es poden cridar a traves de la interface de <a class="reference internal" href="../standards/wps_overview.html"><em>WPS</em></a> de Geoserver.
+Inclou l&#8217;encadenament de processos, així com l&#8217;ús de transformacions de renderitzat per tal de crear
+visualitzacions de mapes a través de WMS.</dd>
+</dl>
+</div>
+<div class="section" id="estandards-implementats">
+<h3>Estàndards implementats<a class="headerlink" href="#estandards-implementats" title="Permalink to this headline">¶</a></h3>
+<p>Suporta nombrosos estàndards de l&#8217;Open Geospatial Consortium  (OGC):</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="../standards/wms_overview.html"><em>Web Map Service (WMS)</em></a></li>
+<li>Web Map Tile Service (WMTS)</li>
+<li><a class="reference internal" href="../standards/wfs_overview.html"><em>Web Feature Service (WFS)</em></a>, WFS-T (transaccional)</li>
+<li><a class="reference internal" href="../standards/wcs_overview.html"><em>Web Coverage Service (WCS)</em></a></li>
+<li><a class="reference internal" href="../standards/wps_overview.html"><em>Web Processing Service (WPS)</em></a></li>
+<li><a class="reference internal" href="../standards/fe_overview.html"><em>Filter Encoding (FE)</em></a></li>
+<li><a class="reference internal" href="../standards/sld_overview.html"><em>Style Layer Descriptor (SLD)</em></a></li>
+<li><a class="reference internal" href="../standards/gml_overview.html"><em>Geography Markup Language (GML)</em></a></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="detalls">
+<h3>Detalls<a class="headerlink" href="#detalls" title="Permalink to this headline">¶</a></h3>
+<p><strong>Lloc web:</strong> <a class="reference external" href="http://geoserver.org/">http://geoserver.org/</a></p>
+<p><strong>Llicència:</strong> GNU General Public License (GPL) version 2</p>
+<p><strong>Versió de programari:</strong> 2.10.1</p>
+<p><strong>Sistemes operatius:</strong> All Java 1.5 platforms: - Windows, Linux, Mac</p>
+<p><strong>Interfícies API:</strong> WMS, WFS, WCS, REST</p>
+<p><strong>Suport:</strong> <a class="reference external" href="http://geoserver.org/support/">http://geoserver.org/support/</a></p>
+</div>
+<div class="section" id="guia-rapida">
+<h3>Guia ràpida<a class="headerlink" href="#guia-rapida" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference internal" href="../quickstart/geoserver_quickstart.html"><em>Documentació de la guia ràpida</em></a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

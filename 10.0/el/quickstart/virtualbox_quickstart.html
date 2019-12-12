@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Εγχειρίδιο Γρήγορης Εκκίνησης OSGeo-Live για το Virtual Box &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Περιεχόμενα OSGeo-Live 10.0" href="../overview/overview.html" />
+    <link rel="next" title="Εγχειρίδιο Γρήγορης Εκκίνησης OSGeo-Live για το VMWare Player" href="vmware_quickstart.html" />
+    <link rel="prev" title="Εγχειρίδιο Γρήγορης Εκκίνησης Viking" href="viking_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="osgeo-live-virtual-box">
+<h1>Εγχειρίδιο Γρήγορης Εκκίνησης OSGeo-Live για το Virtual Box<a class="headerlink" href="#osgeo-live-virtual-box" title="Permalink to this headline">¶</a></h1>
+<p>Σε αυτό το κείμενο περιγράφουμε μια μέθοδο να τρέξετε το DVD ή ένα ISO αρχείο του OSGeo-Live DVD σε μια εικονική μηχανή <a class="reference external" href="http://www.virtualbox.org/">VirtualBox</a>.</p>
+<p>Το VirtualBox είναι ένα Ελεύθερο Λογισμικό εικονικών μηχανών (virtual machines) το οποίο χρησιμοποιείται από πολλούς προγραμματιστές και δοκιμαστές του OSGeo-Live.</p>
+<div class="section" id="id1">
+<h2>Απαιτήσεις συστήματος<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Μνήμη RAM: 1 GB, με προτίμηση τα 2 GB εφόσον θέλετε να εκτελέσετε και άλλες εφαρμογές μέσα στη μηχανή</li>
+<li>Διαθέσιμο χώρο σκηρού δίσκου:</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>20 GB εαν εκτελείτε από αρχείο ISO</li>
+<li>17 GB εαν εγκαταστήσετε τοπικά από αρχείο ISO</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>Δημιουργία Εικονικής Μηχανής<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Κατεβάστε και εγκαταστήστε το <a class="reference external" href="http://www.virtualbox.org/">Virtual Box</a>. Σε λειτουργικό linux (Ubuntu) κάντε το παρακάτω:</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">virtualbox-ose</span></code></div></blockquote>
+<p>Ανοίξτε το Virtual Box</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox2.png"><img alt="../../_images/virtualbox2.png" src="../../_images/virtualbox2.png" style="width: 544.6px; height: 404.6px;" /></a>
+</div></blockquote>
+<p>Επιλέξτε <span class="guilabel">New</span> για να δημιουργήσετε μια νέα εικονική μηχανή.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_create_vm2.png"><img alt="../../_images/virtualbox_create_vm2.png" src="../../_images/virtualbox_create_vm2.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>Επιλέξτε <span class="guilabel">Next</span></p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_select_name2.png"><img alt="../../_images/virtualbox_select_name2.png" src="../../_images/virtualbox_select_name2.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>Δώστε ένα όνομα στη μηχανή σας, και επιλέξτε &#8220;Linux&#8221;, &#8220;Ubuntu&#8221;.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_memory2.png"><img alt="../../_images/virtualbox_memory2.png" src="../../_images/virtualbox_memory2.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>Δώστε σαν ποσό μνήμης τουλάχιστο 768 MB.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_no_hard_disk2.png"><img alt="../../_images/virtualbox_no_hard_disk2.png" src="../../_images/virtualbox_no_hard_disk2.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>Απλή εγκατάσταση: Απενεργοποιήστε την επιλογή &#8220;Boot Hard Disk&#8221;, και η εικονική μηχανή θα ξεκινά συνέχεια από το DVD.</p>
+<p>Εαν θέλετε να δημιουργήσετε μόνιμη εικονική μηχανή. η οποία αποθηκεύει τις αλλαγές σε αυτή
+και στην οποία μπορείτε να βελτιώσετε τις ρυθμίσεις ανάλυσης της οθόνης
+τότε αφήστε ενεργοποιημένο την παραπάνω επιλογή σκληρού δίσκου και εγκαταστήστε αργότερα.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_warning_no_hard_disk2.png"><img alt="../../_images/virtualbox_warning_no_hard_disk2.png" src="../../_images/virtualbox_warning_no_hard_disk2.png" style="width: 253.4px; height: 164.5px;" /></a>
+</div></blockquote>
+<p>Επιλέξτε <span class="guilabel">Continue</span></p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_final_check2.png"><img alt="../../_images/virtualbox_final_check2.png" src="../../_images/virtualbox_final_check2.png" style="width: 406.0px; height: 301.7px;" /></a>
+</div></blockquote>
+<p>Επιλέξτε <span class="guilabel">Finish</span></p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_select_settings2.png"><img alt="../../_images/virtualbox_select_settings2.png" src="../../_images/virtualbox_select_settings2.png" style="width: 544.6px; height: 404.6px;" /></a>
+</div></blockquote>
+<p>Η εικονική μηχανή έχει δημιουργηθεί, αλλά τώρα χρειαζόμαστε την εξομοίωση ενός DVD OSGeo-Live στο CD-ROM της εικονικής μηχανής.</p>
+<p>Κάντε δεξί κλίκ στην εικόνα &#8220;osgeo-live&#8221;, και επιλέξτε <span class="guilabel">Settings</span>.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_set_cd2.png"><img alt="../../_images/virtualbox_set_cd2.png" src="../../_images/virtualbox_set_cd2.png" style="width: 469.7px; height: 364.7px;" /></a>
+</div></blockquote>
+<p>Επιλέξτε &#8220;Storage&#8221;, CD/DVD Device, ...</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_add_dvd2.png"><img alt="../../_images/virtualbox_add_dvd2.png" src="../../_images/virtualbox_add_dvd2.png" style="width: 439.6px; height: 341.6px;" /></a>
+</div></blockquote>
+<p>Επιλέξτε το αρχείο του OSGeo-Live.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_start_vm2.png"><img alt="../../_images/virtualbox_start_vm2.png" src="../../_images/virtualbox_start_vm2.png" style="width: 544.6px; height: 404.6px;" /></a>
+</div></blockquote>
+<p>Τώρα μπορείτε να ξεκινήσετε την μηχανή όπως περιγράφεται στο <a class="reference internal" href="osgeolive_quickstart.html"><em>Γρήγορη Εκκίνηση του OSGeo-Live</em></a></p>
+</div>
+<div class="section" id="id3">
+<h2>Δημιουργία μόνιμης εικονικής μηχανής<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Εαν έχετε σκοπό να χρησιμοποιήσετε το OSGeo-Live πολύ, πιθανόν να χρειαστείτε να δημιουργήσετε μια μόνιμη εικονική μηχανή, όπως στο: <a class="reference internal" href="osgeolive_install_quickstart.html"><em>Εγκατάσταση του OSGeo-Live στο σκληρό δίσκο</em></a>.</p>
+</div>
+<div class="section" id="id4">
+<h2>Αύξηση μεγέθους οθόνης<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Μπορείτε στη συνέχεια να προσθέσετε τα εργαλεία του Virtual Box που υποστηρίζουν την αύξηση της ανάλυσης της οθόνης,
+την αντιγραφή και επικόληση μεταξύ του φυσικού σας μηχανήματος και της εικονικής μηχανής, την επιτάχυνση γραφικών και πολλά άλλα.</p>
+<p>Σιγουρευτείτε ότι ο υπολογιστής σας είναι συνδεδεμένος με το διαδίκτυο.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_synaptic_menu2.png"><img alt="../../_images/virtualbox_synaptic_menu2.png" src="../../_images/virtualbox_synaptic_menu2.png" style="width: 303.8px; height: 420.0px;" /></a>
+</div></blockquote>
+<p>Επιλέξτε την εφαρμογή synaptic package manager.</p>
+<p>Εισάγετε κωδικό &#8220;user&#8221;</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_synaptic_select_tools2.png"><img alt="../../_images/virtualbox_synaptic_select_tools2.png" src="../../_images/virtualbox_synaptic_select_tools2.png" style="width: 453.6px; height: 353.5px;" /></a>
+</div></blockquote>
+<p>Επιλέξτε το &#8220;virtualbox-ose-guest-utils&#8221; για εγκατάσταση.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/virtualbox_synaptic_apply2.png"><img alt="../../_images/virtualbox_synaptic_apply2.png" src="../../_images/virtualbox_synaptic_apply2.png" style="width: 452.9px; height: 352.1px;" /></a>
+</div></blockquote>
+<p>Εφαρμοστε τις αλλαγές.</p>
+<p>Επανεκκινήστε την εικονική μηχανή και οι ρυθμίσεις της οθόνης σας θα πρέπει να έχουν γίνει αυτόματα. Αυτές μπορούν να γίνουν από:</p>
+<p>Επιλογή: <span class="menuselection">Applications ‣ Settings ‣ Xfce 4 Settings Manager ‣ Display</span></p>
+</div>
+<div class="section" id="id5">
+<h2>Δείτε ακόμα:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="osgeolive_quickstart.html"><em>Γρήγορη Εκκίνηση του OSGeo-Live</em></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><em>Εγκατάσταση του OSGeo-Live στο σκληρό δίσκο</em></a></li>
+<li><a class="reference internal" href="usb_quickstart.html"><em>Δημιουργώντας ένα εκκινήσιμο USB με το OSGeo-Live</em></a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

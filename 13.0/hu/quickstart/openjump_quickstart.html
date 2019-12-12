@@ -1,0 +1,158 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hu">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OpenJUMP GIS gyorstalpaló &#8212; OSGeoLive 13.0 Documentation</title>
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '13.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/translations.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Tárgymutató" href="../genindex.html" />
+    <link rel="search" title="Keresés" href="../search.html" />
+    <link rel="copyright" title="Minden jog fenntartva" href="../copyright.html" />
+    <link rel="next" title="OpenLayers gyorstalpaló" href="openlayers_quickstart.html" />
+    <link rel="prev" title="OpenCPN gyorstalpaló" href="opencpn_quickstart.html" />
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+
+  </head>
+  <body>
+
+        
+        
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    </div> 
+        
+
+
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.openjump.org"><img alt="../../_images/logo_openjump.png" class="align-right" src="../../_images/logo_openjump.png" /></a>
+<div class="section" id="openjump-gis-quickstart">
+<h1>OpenJUMP GIS gyorstalpaló<a class="headerlink" href="#openjump-gis-quickstart" title="Hivatkozás erre a fejezetcímre">¶</a></h1>
+<p>Az OpenJUMP egy asztali GIS program vektor adatok egyszerű megjelenítését és szerkesztését teszi lehetővé. A PLUS kiadás a raszter adatok elemzését is támogatja.</p>
+<p>Ez a gyorstalpaló a következőket írja le:</p>
+<blockquote>
+<div><ul class="simple">
+<li>ESRI shape fájl megnyitása OpenJUMP-al.</li>
+<li>A shape fájlból létrehozott réteg stílusának beállítása a könnyebb értelmezéshez.</li>
+<li>A réteg elemek geometriájának szerkesztése.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="starting-openjump">
+<h2>OpenJUMP indítása<a class="headerlink" href="#starting-openjump" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>OSGeo Live-DVD: indítsa az OpenJUMP ikont az asztalról vagy futtassa a /usr/bin/openjump parancsot</p>
+<p>Windows-on menjen az OpenJump könyvtár bin mappájába és kattintson duplán az OpenJUMP.exe vagy az oj_windows.bat fájlra. Linuxon indítsa az oj_linux.sh fájlt egy terminálból. MacOSX-en kattintson az OpenJUMP alkalmazás szimbólumra.</p>
+<p>(Kérjük vegye figyelembe: Egy Java futtatókörnyezet szükséges az OpenJUMP futttásához. A számítógépére letöltheti a Java futtatókörnyezetet innen: <a class="reference external" href="http://java.com/en/download/index.jsp">http://java.com/en/download/index.jsp</a>)</p>
+</div>
+<div class="section" id="basic-user-interface-overview">
+<h2>Felhasználói felület alapszintű áttekintése<a class="headerlink" href="#basic-user-interface-overview" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Az OpenJUMP felhasználói felülete négy (4) alapvető komponensből áll mint a legtöbb asztali GIS. (i) Az első a felső menüsor a legtöbb funkcionalitás eléréséhez. (ii) A második a fő eszköztár, mely a menüsor alatt helyezkedik el. A gombok hozzáférést biztosítanak a legfontosabb megjelenítési és navigációs funkciókhoz. (iii) A harmadik az aktív projekt réteg listáját tartalmazó baloldali fa nézet. (iv) A negyedik a térkép nézet. Ez az aktuális térkép, ahol minden réteg téradatainak grafikus reprezentációja található. Végül van egy információ sor az ablak alján, mely az aktuális egér koordinátákat, feldolgozási jelentéseket és a memória használatot jeleníti meg. Egy projekt ablak egy réteg listát és egy réteg nézetet tartalmaz. Minden OpenJUMP példány több projektet tartalmazhat. A gyorstalpalónkban egyetlen ablakkal fogunk dolgozni.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_01.png"><img alt="../../_images/openjump_ss_01.png" src="../../_images/openjump_ss_01.png" style="width: 563.2px; height: 400.95px;" /></a>
+</div>
+<div class="section" id="open-an-esri-shapefile">
+<h2>ESRI shape fájl megnyitása<a class="headerlink" href="#open-an-esri-shapefile" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A gyorstalpaló ezen fejezete röviden elmagyarázza hogyan nyissunk meg egy ESRI shape fájlt.</p>
+<p>Az OpenJUMP felső menüsorából válassza a [File] menüt. Majd válassza az  [Open File…] opciót. Ez egy párbeszédablakot jelenit meg, melynek segítségével térinformatikai adatokat tartalmazó fájlt nyithat meg. A példánkban ESRI shape fájlok között fogunk tallózni. Keressen egy .shp kiterjesztésű fájlt (pl. e.g. on the LiveDVD under <cite>/home/user/data/natural_earth2/ne_10m_admin_0_countries.shp</cite>). Válassza ki a fájlt és kattintson a [Finish] gombra a párbeszédablakban. Néhány pillanat múlva láthatja a shape fájljából jövő adatokat a térképnézetben.Azt is láthatja, hogy egy új réteg réteg jött létre az adatokhoz a réteg listában. A réteg neve megegyezik a shape fájl nevével.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_02.png"><img alt="../../_images/openjump_ss_02.png" src="../../_images/openjump_ss_02.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>Egy másik gyorsabb lehetőség a shape fájl megragadása és rádobása a réteg nézetre.</p>
+</div>
+<div class="section" id="style-a-layer">
+<h2>Réteg stílus beállítás<a class="headerlink" href="#style-a-layer" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A gyorstalpaló ezen fejezete röviden leírja hogyan állítsuk be egy réteg stílusát.</p>
+<p>A réteg listában jobb gombbal kattintson a réteg nevére. Ez egy felbukkanó menüt jelenít meg. Menjen a  [Style] menüelemre és válassza a  [Change Styles…]-t. A stílus módosítás párbeszédablaknak öt (5) füle van, melyek lehetővé teszik, hogy megváltoztassa hogyan jelenjen meg a réteg a térkép nézetben. Ez magába foglalja a vonalszín, a kitöltési szín a vonalstílus és vonalvastagság megváltoztatását, címkék hozzáadását és a minimum és maximum méretarány meghatározását melyeknél a réteg megjelenik.</p>
+<ul class="simple">
+<li>A MacOSX felhasználók nyomják meg a <span class="guilabel">Ctrl</span> gombot a menü eléréséhez.</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_03.png"><img alt="../../_images/openjump_ss_03.png" src="../../_images/openjump_ss_03.png" style="width: 563.2px; height: 400.95px;" /></a>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_04.png"><img alt="../../_images/openjump_ss_04.png" src="../../_images/openjump_ss_04.png" style="width: 563.2px; height: 400.95px;" /></a>
+</div>
+<div class="section" id="edit-feature-geometries-in-a-layer">
+<h2>Térképi elemek geometriájának szerkesztése<a class="headerlink" href="#edit-feature-geometries-in-a-layer" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>A réteg listában jobb gombbal kattintson a réteg nevére mint az előző példában. Ez egy felbukkanó menüt jelenít meg. Kattintson az „Editable” menüpontra, így egy pipa jelenik meg. Ez egy új lebegő eszközsort jelenít meg a térkép nézet felett a jobb oldalon. Ez az eszközsor a gombok egy halmazát tartalmazza, melyeket a térképi elemek geometriájának szerkesztésére használhat.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_05.png"><img alt="../../_images/openjump_ss_05.png" src="../../_images/openjump_ss_05.png" style="width: 563.2px; height: 400.95px;" /></a>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_06.png"><img alt="../../_images/openjump_ss_06.png" src="../../_images/openjump_ss_06.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>Próbáljunk ki egy gyors szerkesztést. Először ki kell választanunk egy geometriát, majd a geometria egy pontját elmozdítjuk. Ehhez először kattintsunk az egér mutatót tartalmazó gombra a szerkesztés eszközsorban (bal-felső sarok). Kattintson egy elemre a Térkép nézetben a kiválasztásához. Ha a kiválasztás működött, akkor a térképi elem színe sárgára változik és az elem geometria valamennyi töréspontjában egy kis sárga négyzet jelenik meg.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_07.png"><img alt="../../_images/openjump_ss_07.png" src="../../_images/openjump_ss_07.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>Ezután kattintson a kék keresztet  középen sárga négyzettel tartalmazó gombra, a <span class="guilabel">Move Vertex Tool</span>-ra (az egeret a gombokon tartva a gomb leírását kapjuk). Ha az egeret a térkép nézetbe húzza az egérmutató kis fekete keresztté változik.</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_08.png"><img alt="../../_images/openjump_ss_08.png" src="../../_images/openjump_ss_08.png" style="width: 563.2px; height: 400.95px;" /></a>
+<p>Használjuk a korábban kiválasztott geometria egy töréspontjának  mozgatására, kattintson egy töréspontra és húzza el azt (hagyja az egérgombot nyomva).</p>
+<a class="reference internal image-reference" href="../../_images/openjump_ss_09.png"><img alt="../../_images/openjump_ss_09.png" src="../../_images/openjump_ss_09.png" style="width: 563.2px; height: 400.95px;" /></a>
+</div>
+<div class="section" id="other-learning-resources-for-openjump">
+<h2>További tanulási források, az OpenJUMP-hoz<a class="headerlink" href="#other-learning-resources-for-openjump" title="Hivatkozás erre a fejezetcímre">¶</a></h2>
+<p>Ez csak az első lépés az úton az OpenJUMP használatához. Sokkal több anyag maradt, amit felfedezhet.</p>
+<p>Az OpenJUMP-hoz oktatóanyagokat innen tölthet le: <a class="reference external" href="http://sourceforge.net/projects/jump-pilot/files/Documentation/">http://sourceforge.net/projects/jump-pilot/files/Documentation/</a></p>
+<p>Az OpenJUMP wikit itt olvashatja: <a class="reference external" href="http://ojwiki.soldin.de/index.php?title=Main_Page">http://ojwiki.soldin.de/index.php?title=Main_Page</a></p>
+<p>És gyorsan segítséget kaphat az OpenJUMP felhasználók levelező listáján: <a class="reference external" href="http://groups.google.com/group/openjump-users">http://groups.google.com/group/openjump-users</a></p>
+<p>Végül a legújabb OpenJUMP verziót itt található: <a class="reference external" href="http://sourceforge.net/projects/jump-pilot/files/OpenJUMP/">http://sourceforge.net/projects/jump-pilot/files/OpenJUMP/</a></p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!-- alphabetical order -->
+              <a href="javascript:defaultRedirect('en')">English</a> |   <a href="javascript:defaultRedirect('de')">Deutsch</a> |   <a href="javascript:defaultRedirect('es')">Español</a> |   <a href="javascript:defaultRedirect('fi')">Suomen kieli</a> |   <a href="javascript:defaultRedirect('fr')">Français</a> |   <a href="javascript:defaultRedirect('it')">Italiano</a> |   <a href="javascript:defaultRedirect('ja')">日本語</a> |   <a href="javascript:defaultRedirect('hu')">Hungarian</a>
+		</div>
+	</font>
+    </div>
+
+
+
+        
+        
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+        
+
+
+  </body>
+</html>

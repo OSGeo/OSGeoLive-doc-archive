@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Com crear un disc USB d’arrencada per OSGeo-Live &mdash; OSGeo-Live 10.5
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.5
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="OSGeo-Live 10.5
+ Documentation" href="../../index.html" />
+    <link rel="up" title="Benvinguts a OSGeo-Live 10.5" href="../index.html" />
+    <link rel="next" title="Continguts OSGeo-Live 10.5" href="../overview/overview.html" />
+    <link rel="prev" title="OSGeo-Live Quickstart for Virtual Box" href="virtualbox_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="com-crear-un-disc-usb-d-arrencada-per-osgeo-live">
+<h1>Com crear un disc USB d&#8217;arrencada per OSGeo-Live<a class="headerlink" href="#com-crear-un-disc-usb-d-arrencada-per-osgeo-live" title="Permalink to this headline">¶</a></h1>
+<p>Aquí es descriu com crear un disc USB d&#8217;arrencada per OSGeo-Live. Arrancar des
+d&#8217;un disc USB és molt més ràpid que fer-ho des d&#8217;un DVD, i el disc USB es pot
+configurar per a desar dades entre sessions de treball.</p>
+<p>Hem descobert que hi ha unes quantes peculiaritats i trucs a l&#8217;hora de crear amb
+éxit un disc USB d&#8217;arrencada. Hem documentat les que coneixem, però és possible
+ue hi hagi altres trucs i problemes. Podeu trobar els consells més nous aquí:
+<a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB</a></p>
+<div class="section" id="requeriments">
+<h2>Requeriments<a class="headerlink" href="#requeriments" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Un disc USB de 4 GB, si penseu emprar osgeo-live-mini (sense instal·ladors per Windows ni Mac)</li>
+<li>Un disc USB de 8 GB USB, si penseu emprar osgeo-live (amb instal·ladors per Windows i per Mac)</li>
+<li>Un DVD d&#8217;OSGeo-Live DVD o bé una imatge ISO (que podeu descarregar de: <a class="reference external" href="http://live.osgeo.org/en/download.html">http://live.osgeo.org/en/download.html</a>)</li>
+</ul>
+</div>
+<div class="section" id="crear-un-disc-usb-d-arrencada-a-ubuntu">
+<h2>Crear un disc USB d&#8217;arrencada a Ubuntu<a class="headerlink" href="#crear-un-disc-usb-d-arrencada-a-ubuntu" title="Permalink to this headline">¶</a></h2>
+<p>(Aquest és el procediment recomanat per crear l&#8217;USB, i també s&#8217;aplica a les variants d&#8217;Ubuntu, com Lubuntu o OSGeo-Live.)</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">La versió d&#8217;Ubuntu que executeu ha de ser la mateixa o bé més nova que la
+versió de Lubuntu que instal·lareu al vostre USB. Si voleu instal·lar
+OSGeo-Live 5.0/5.5 en un USB, llavors heu d&#8217;estar executamt Ubuntu 11.04 o
+més recent.</p>
+</div>
+<p>Descarregueu osgeo-live o osgeo-live-mini al disc dur del vostre ordinador.</p>
+<p>Connecteu el disc USB al vostre ordinador.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/usb_select.png"><img alt="../../_images/usb_select.png" src="../../_images/usb_select.png" style="width: 305.2px; height: 294.0px;" /></a>
+</div></blockquote>
+<p>Escolliu <span class="menuselection">System ‣ Administration ‣ Startup Disk Creator</span>,
+o cerqueu <cite>Startup Disk Creator</cite> des de l&#8217;escriptori Unity.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/usb_set_params.png"><img alt="../../_images/usb_set_params.png" src="../../_images/usb_set_params.png" style="width: 333.2px; height: 375.2px;" /></a>
+</div></blockquote>
+<p>Escolliu la imatge ISO d&#8217;osgeo-live o bé d&#8217;osgeo-live-mini.</p>
+<p>Escolliu el disc USB.</p>
+<p>Escolliu <span class="guilabel">Make Startup Disk</span></p>
+<blockquote>
+<div><a class="reference internal image-reference" href="../../_images/usb_installing.png"><img alt="../../_images/usb_installing.png" src="../../_images/usb_installing.png" style="width: 302.4px; height: 100.8px;" /></a>
+</div></blockquote>
+<p>Espereu uns 20 minuts més o menys fins que s&#8217;hagi creat el disc USB.</p>
+</div>
+<div class="section" id="crear-un-disc-usb-d-arrencada-a-windows">
+<h2>Crear un disc USB d&#8217;arrencada a Windows<a class="headerlink" href="#crear-un-disc-usb-d-arrencada-a-windows" title="Permalink to this headline">¶</a></h2>
+<p>Connecteu el disc USB al vostre ordinador.</p>
+<p>Descarregueu i executeu l&#8217;Instal·lador Universal d&#8217;USB des de:
+<a class="reference external" href="http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/">http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/</a></p>
+<blockquote>
+<div><img alt="../../_images/usb_penlinux_licence.png" src="../../_images/usb_penlinux_licence.png" />
+</div></blockquote>
+<p>Accepteu les condicions de la llicència</p>
+<blockquote>
+<div><img alt="../../_images/usb_penlinux_selection.png" src="../../_images/usb_penlinux_selection.png" />
+</div></blockquote>
+<p>Pas 1: Distribució: Seleccioneu la distribució xubuntu i386 per a la imatge
+osgeo-live. (Per OSGeo-Live 5.5, seleccioneu xubuntu 11.04 Desktop i386)</p>
+<p>Pas 2: Seleccioneu la darrera imatge ISO d&#8217;osgeo-live que us heu descarregat
+localment. Nota: Heu de posar a mà la ruta fins l&#8217;arxiu ISO, ja que el botó
+<span class="guilabel">Browse</span> només troba arxius ISO per xubuntu.</p>
+<p>Pas 3: Escolliu el disc USB.</p>
+<p>Pas 4: Escolliu Persistence si voleu que es recordi l&#8217;estat entre sessions.</p>
+<p>Escolliu <span class="guilabel">Create</span></p>
+<blockquote>
+<div><img alt="../../_images/usb_penlinux_installing.png" src="../../_images/usb_penlinux_installing.png" />
+</div></blockquote>
+<p>Espereu uns 20 minuts més o menys fins que s&#8217;hagi creat el disc USB
+d&#8217;OSGeo-Live.</p>
+</div>
+<div class="section" id="crear-un-disc-usb-d-arrencada-en-d-altres-sistemes-operatius">
+<h2>Crear un disc USB d&#8217;arrencada en d&#8217;altres sistemes operatius<a class="headerlink" href="#crear-un-disc-usb-d-arrencada-en-d-altres-sistemes-operatius" title="Permalink to this headline">¶</a></h2>
+<p>Pas 1: Instaleu UNetbootin (el podeu descarregar de:
+<a class="reference external" href="http://unetbootin.sourceforge.net/">http://unetbootin.sourceforge.net/</a>).</p>
+<p>Pas 2: Connecteu el disc USB al vostre ordinador.</p>
+<p>Pas 3: Engegeu UNetbootin, escolliu Diskimage (el disc USB es selecciona
+automàticament).</p>
+<p>Pas 4: Seleccioneu la imatge ISO d&#8217;OSGeo-Live.</p>
+<p>Escolliu <span class="guilabel">OK</span></p>
+<blockquote>
+<div><img alt="../../_images/unetbootin_live_osgeo.png" src="../../_images/unetbootin_live_osgeo.png" />
+</div></blockquote>
+</div>
+<div class="section" id="definiu-l-ordre-d-arrencada-a-la-bios">
+<h2>Definiu l&#8217;ordre d&#8217;arrencada a la BIOS:<a class="headerlink" href="#definiu-l-ordre-d-arrencada-a-la-bios" title="Permalink to this headline">¶</a></h2>
+<p>La majoria d&#8217;ordinadors no tenen definit per defecte arrencar des d&#8217;un disc USB.</p>
+<p>Per aconseguir-ho, engegeu el vostre ordinador i premeu la tecla apropiada quan
+us demani d&#8217;entrar a la BIOS (usualment és la tecla &lt;Delete&gt; o bé alguna
+&lt;Function Key&gt; o similar).</p>
+<p>Escolliu d&#8217;arrencar des d&#8217;un disc USB.</p>
+<p>Nota, en alguns ordinadors cal que tingueu el disc USB connectat a l&#8217;ordinador
+per tal d&#8217;escoliir aquest opció.</p>
+<p>Nota segona, el disc USB bastant sovint apareix amb els disc durs i no pas amb
+els discs desmuntables.</p>
+</div>
+<div class="section" id="executeu">
+<h2>Executeu:<a class="headerlink" href="#executeu" title="Permalink to this headline">¶</a></h2>
+<p>Executeu segons: <a class="reference internal" href="osgeolive_quickstart.html"><em>Guia d&#8217;inici ràpid d&#8217;OSGeo-Live</em></a></p>
+</div>
+<div class="section" id="problemes-coneguts">
+<h2>Problemes coneguts:<a class="headerlink" href="#problemes-coneguts" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Els ordinadors MAC no arrencaran des d&#8217;aquest disc USB, heu de fer servir el LiveDVD</li>
+</ul>
+</div>
+<div class="section" id="vegeu-tambe">
+<h2>Vegeu també:<a class="headerlink" href="#vegeu-tambe" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="osgeolive_quickstart.html"><em>Guia d&#8217;inici ràpid d&#8217;OSGeo-Live</em></a></li>
+<li><a class="reference internal" href="virtualbox_quickstart.html"><em>OSGeo-Live Quickstart for Virtual Box</em></a></li>
+<li><a class="reference internal" href="osgeolive_install_quickstart.html"><em>Instal·lar OSGeo-Live al disc dur</em></a></li>
+<li>Si teniu problemes, si us plau informeu-ne en aquesta pàgina wiki:
+<a class="reference external" href="http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB">http://wiki.osgeo.org/wiki/Live_GIS_Disc_Quick_Start_for_USB</a> i parleu-ne a la
+llista de correu: <a class="reference external" href="http://lists.osgeo.org/mailman/listinfo/live-demo">http://lists.osgeo.org/mailman/listinfo/live-demo</a></li>
+<li>Per altres opcions d&#8217;arrencada USB, mireu-vos <a class="reference external" href="http://pendrivelinux.com">http://pendrivelinux.com</a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>

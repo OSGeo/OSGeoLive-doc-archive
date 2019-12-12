@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>QGIS Quickstart &mdash; OSGeo-Live 10.0
+ Documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/overview.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '10.0
+',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="OSGeo-Live 10.0
+ Documentation" href="../../index.html" />
+    <link rel="up" title="OSGeo-Live 10.0 Contents" href="../overview/overview.html" />
+    <link rel="next" title="Rasdaman Quickstart" href="rasdaman_quickstart.html" />
+    <link rel="prev" title="QGIS Server Quickstart" href="qgis_mapserver_quickstart.html" /> 
+	<script type="text/javascript" src="../../_static/osgeolive.js"></script>
+    <link rel="shortcut icon" href="../../_images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../_images/favicon.ico" type="image/x-icon">
+
+  </head>
+  <body role="document">
+    <div class="header">
+	<div class="banner"><a href="http://live.osgeo.org/"><img src="../../_images/banner.png"></a></div>
+        <div class="nowrap">
+            <ul id="top-nav">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../overview/overview.html">Contents</a></li>
+              <li><a href="../standards/standards.html">Standards</a></li>
+              <li><a href="../download.html">Download</a></li>
+              <li><a href="../metrics.html">Metrics</a></li>
+              <li><a href="../sponsors.html">Sponsors</a></li>
+              <li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <a class="reference external image-reference" href="http://www.qgis.org"><img alt="project logo" class="align-right" src="../../_images/logo-QGIS21.png" style="width: 128.0px; height: 128.0px;" /></a>
+<div class="section" id="qgis-quickstart">
+<h1>QGIS Quickstart<a class="headerlink" href="#qgis-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>Quantum GIS (QGIS)는 이용이 쉬운 데스크탑 GIS 클라이언트로서 데이터의 시각화, 관리, 편집, 분석을 가능하게 하고 지도화할 수 있게 해줍니다.</p>
+<p>이 Quick Start는 다음을 설명해줍니다 :</p>
+<blockquote>
+<div><ul class="simple">
+<li>기존 QGIS 프로젝트 업데이트</li>
+<li>단순 벡터 레이어로 새로운 QGIS 프로젝트 만들기</li>
+</ul>
+</div></blockquote>
+<div class="section" id="qgis">
+<h2>QGIS 프로젝트 편집<a class="headerlink" href="#qgis" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first"><span class="menuselection">Desktop ‣ Desktop GIS ‣ Quantum GIS</span>.</p>
+</li>
+<li><p class="first">menu에서 <span class="menuselection">File ‣ Open Project...</span> 선택.</p>
+</li>
+<li><p class="first"><code class="file docutils literal"><span class="pre">QGIS-NaturalEarth-Example.qgs</span></code> 선택 후 <span class="guilabel">Open</span> 클릭.</p>
+<ul class="simple">
+<li>세계 지도를 볼 수 있습니다.</li>
+</ul>
+</li>
+<li><p class="first">Layers에서 <strong>10m_populated_places_simple</strong> 체크</p>
+<ul>
+<li><p class="first">사람이 거주하는 지역을 볼 수 있습니다:</p>
+<a class="reference internal image-reference" href="../../_images/qgis21.png"><img alt="../../_images/qgis21.png" src="../../_images/qgis21.png" style="width: 512.0px; height: 372.0px;" /></a>
+</li>
+</ul>
+</li>
+<li><p class="first">Layers에서 <strong>10m_rivers_lake_centerlines</strong> 더블 클릭.</p>
+</li>
+<li><p class="first">Outline Options에서 다른 푸른 계열의 색으로 변환.</p>
+</li>
+<li><p class="first"><span class="guilabel">OK</span> 클릭.</p>
+<ul class="simple">
+<li>강이 다른 색으로 표현됩니다.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h2>새로운 QGIS 프로젝트 만들기<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><span class="menuselection">File ‣ New Project</span> 선택.</li>
+<li><span class="menuselection">Layer ‣ Add Vector Layer...</span> 클릭.</li>
+<li><code class="file docutils literal"><span class="pre">/home/user/data/natural_earth/10m_admin_0_countries.shp</span></code> 검색.</li>
+<li><span class="guilabel">Open</span> 클릭.<ul>
+<li>세계 지도를 볼 수 있습니다.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="postgis">
+<h2>PostGIS 공간 데이터 베이스로 연결<a class="headerlink" href="#postgis" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><span class="menuselection">File ‣ New Project</span> 선택.</li>
+<li><span class="menuselection">Layer ‣ Add PostGIS Layers...</span> 선택.<ul>
+<li>Natural Earth와 OpenStreetMap 데이터 베이스 모두 열람가능합니다.</li>
+</ul>
+</li>
+<li>OpenStreetMap 커넥션이 선택된 상태에서 <span class="guilabel">Connect</span> 클릭.<ul>
+<li>데이터 베이스 리스트가 출력됩니다.</li>
+</ul>
+</li>
+<li><code class="docutils literal"><span class="pre">planet_osm_roads</span></code> 선택 후, <span class="guilabel">Add</span> 클릭.<ul>
+<li>더 자세한 내용은 <a class="reference internal" href="postgis_quickstart.html"><em>PostGIS Quickstart</em></a> 를 참고하십시오.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="grass">
+<h2>GRASS 툴박스 이용하기<a class="headerlink" href="#grass" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><span class="menuselection">File ‣ New Project</span> 선택.</li>
+<li><span class="menuselection">Plugins ‣ Manage Plugins</span> 선택.</li>
+<li>Filter box에 <code class="docutils literal"><span class="pre">grass</span></code> 입력 후, <cite>GRASS</cite> plugin 선택. <span class="guilabel">Ok</span> 클릭.<ul>
+<li><cite>Plugin</cite> 메뉴에 새로운 <cite>GRASS</cite> 메뉴가 생성되고 새로운 툴바가 나타날 것입니다.</li>
+</ul>
+</li>
+<li><span class="menuselection">Plugins ‣ GRASS ‣ Open mapset</span> 선택.<ul>
+<li>GRASS GIS 데이터 베이스는 자동적으로 디스크의 <cite>~/grassdata</cite> 로 설정됩니다.</li>
+</ul>
+</li>
+<li><cite>nc_basic_smp</cite> Location과 <cite>user1</cite> working mapset을 선택한 후, click <span class="guilabel">Ok</span> 를 클릭하세요.</li>
+<li><span class="menuselection">Plugins ‣ GRASS ‣ Add GRASS raster layer</span> 선택.<ul>
+<li>PERMANENT mapset에서 <cite>elevation_shade</cite> 지도를 선택한 후 <span class="guilabel">Ok</span> 클릭.</li>
+</ul>
+</li>
+<li><span class="menuselection">Plugins ‣ GRASS ‣ Add GRASS raster layer</span> 선택.<ul>
+<li>PERMANENT mapset에서 <cite>elevation</cite> 지도 선택 후 <span class="guilabel">Ok</span> 클릭.</li>
+<li>QGIS layer list에서 <cite>elevation</cite> 지도를 더블 클릭 후 transparency를 65%로 지정.</li>
+</ul>
+</li>
+<li><span class="menuselection">Plugins ‣ GRASS ‣ Add GRASS vector layer</span> 선택.<ul>
+<li>PERMANENT mapset에서 <cite>roadsmajor</cite> 지도 선택 후, <span class="guilabel">Ok</span> 클릭.</li>
+</ul>
+</li>
+</ol>
+<p>이 외 다양한 GRASS 분석 모듈의 이용이 가능합니다.</p>
+<ol class="arabic simple">
+<li><span class="menuselection">Plugins ‣ GRASS ‣ Open GRASS tools</span> 선택.<ul>
+<li>analysis 툴의 리스트가 출력됩니다.</li>
+</ul>
+</li>
+<li>Modules List의 Filter box에 <code class="docutils literal"><span class="pre">nviz</span></code> 를 입력한 후 <cite>NVIZ</cite> 를 선택하십시오. 툴박스 창을 더 크게 보이려면 창의 모퉁이쪽을 드래그해 보십시오.</li>
+<li>나타나는 새로운 모듈 탭에서 map for elevation으로 <cite>elevation</cite> 지도를 선택하십시오.</li>
+<li>벡터 오버레이에 <cite>roadsmajor</cite> 를 선택한 후, <span class="guilabel">Run</span> 클릭.</li>
+<li>NVIZ 3D view가 나타나면 창을 최대화하고 왼쪽의 compass 박스에서 positioning puck을 드래그하십시오.</li>
+<li><span class="menuselection">Visualize ‣ Raster surfaces</span> 를 선택한 후, <cite>fine</cite> 해상도를 1로 설정하고, 상단 왼쪽의 초록색 DRAW 버튼을 클릭하고 잠시 기다리십시오.</li>
+</ol>
+</div>
+<div class="section" id="sextante">
+<h2>Sextante 툴박스 이용하기<a class="headerlink" href="#sextante" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><span class="menuselection">Plugins ‣ Manage Plugins</span> 선택.</li>
+<li>Filter box에 <code class="docutils literal"><span class="pre">sextante</span></code> 입력 후, <cite>SEXTANTE</cite> 플러그인 선택. <span class="guilabel">Ok</span> 클릭.<ul>
+<li>새로운 <cite>Analysis</cite> 메뉴와 툴바가 나타날 것입니다.</li>
+</ul>
+</li>
+<li><span class="menuselection">Analysis ‣ Sextante Toolbox</span> 선택.<ul>
+<li>다양한 프로세싱 툴을 가진 새로운 툴바가 화면의 오른쪽에 나타날 것입니다.</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="openstreetmap">
+<h2>OpenStreetMap 플러그인 이용<a class="headerlink" href="#openstreetmap" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Xubutu <span class="menuselection">Applications ‣ Accessories</span> 메뉴에서 Terminal Emulator 열기.<ul>
+<li>홈 디렉터리에서 OSM 데이터의 복사 :</li>
+</ul>
+</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre>cp data/osm/feature_city_CBD.osm.bz2 .
+bzip2 -d feature_city_CBD.osm.bz2
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>QGIS에서 <span class="menuselection">File ‣ New Project</span> 선택.</li>
+<li><span class="menuselection">Plugins ‣ Manage Plugins</span> 선택.</li>
+<li>Filter box에 <code class="docutils literal"><span class="pre">open</span></code> 입력 후 <cite>OpenStreetMap</cite> 플러그인 선택. <span class="guilabel">Ok</span> 클릭.<ul>
+<li>새로운 <cite>Web</cite> 메뉴와 툴바가 나타날 것입니다.</li>
+</ul>
+</li>
+<li><span class="menuselection">Web ‣ OpenStreetMap ‣ Load OSM from file</span> 선택.</li>
+<li>홈 디렉터리로 복사한 <cite>feature_city_CBD.osm</cite> 선택.</li>
+<li>체크 박스에서 <cite>name</cite>, <cite>highway</cite>, <cite>amenity</cite> 선택.</li>
+<li><span class="guilabel">Medium scale</span> rendering 선택 후, <span class="guilabel">Ok</span> 클릭.</li>
+</ol>
+</div>
+<div class="section" id="id2">
+<h2>다음은?<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>QGIS의 고급 기능은 다음에서 설명서를 확인하십시오 <a class="reference external" href="../../qgis/tutorials/en/">OSGeo-Live QGIS tutorials</a>.</p>
+<p>QGIS에 대한 사항은 QGIS 홈페이지의 <a class="reference external" href="http://www.qgis.org/en/documentation.html">Documentation page</a> 를 참조하십시오.</p>
+<p>OSGeo-Live는 <a class="reference external" href="../../qgis/qgis-1.0.0_a-gentle-gis-introduction_en.pdf">A Gentle Introduction to GIS</a>  와 <a class="reference external" href="../../qgis/QGIS-1.8-UserGuide-en.pdf">QGIS User Guide</a> 를 포함하고 있습니다.</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+	<font size="-2">
+		<div id="translations">
+		<!--
+			<a href="../../en/index.html">English</a> |
+			<a href="../../es/index.html">Español</a> |
+			<a href="../../ca/index.html">Català</a> |
+			<a href="../../fr/index.html">Français</a> |
+			<a href="../../de/index.html">Deutsch</a> |
+			<a href="../../it/index.html">Italiano</a> |
+			<a href="../../pl/index.html">Polski</a> |
+			<a href="../../el/index.html">Ελληνικά</a> |
+			<a href="../../ru/index.html">Русский</a> |
+			<a href="../../zh/index.html">中文</a> |
+			<a href="../../id/index.html">Bahasa Indonesia</a> |
+			<a href="../../ko/index.html">한국어</a> |
+			<a href="../../ja/index.html">日本語</a>
+		-->
+		<!-- geo-order: West to East, UK to Japan -->
+			<a href="javascript:defaultRedirect('en')">English</a> |
+<!--			<a href="javascript:defaultRedirect('pt')">Portugus</a> | -->
+			<a href="javascript:defaultRedirect('es')">Español</a> |
+			<a href="javascript:defaultRedirect('ca')">Català</a> |
+			<a href="javascript:defaultRedirect('fr')">Français</a> |
+			<a href="javascript:defaultRedirect('de')">Deutsch</a> |
+			<a href="javascript:defaultRedirect('it')">Italiano</a> |
+			<a href="javascript:defaultRedirect('pl')">Polski</a> |
+			<a href="javascript:defaultRedirect('el')">Ελληνικά</a> |
+			<a href="javascript:defaultRedirect('ru')">Русский</a> |
+			<a href="javascript:defaultRedirect('zh')">中文</a> |
+<!--			<a href="javascript:defaultRedirect('id')">Bahasa Indonesia</a> | -->
+			<a href="javascript:defaultRedirect('ko')">한국어</a> |
+			<a href="javascript:defaultRedirect('ja')">日本語</a>
+		</div>
+	</font>
+    </div>
+
+<span style="font-size:85%;"><i><a href="../copyright.html">Copyright & Disclaimer</a></i></span>
+
+  </body>
+</html>
