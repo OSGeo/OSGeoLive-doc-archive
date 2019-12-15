@@ -42,6 +42,7 @@ folders = [
     r"D:\GitHub\OSGeoLive-doc\8.0\_images",
     r"D:\GitHub\OSGeoLive-doc\8.5\_images",
     r"D:\GitHub\OSGeoLive-doc\9.0\_images",
+    r"D:\GitHub\OSGeoLive-doc\9.5\_images",
     r"D:\GitHub\OSGeoLive-doc\10.0\_images",
     r"D:\GitHub\OSGeoLive-doc\10.5\_images"
 ]
