@@ -18,7 +18,7 @@ This branch contains all documentation releases of OSGeoLive_.
 The archive is stored in the ``gh-pages`` branch of the ``OSGeoLive-doc`` repository. While the overall size of the repository is greatly increased ``git pull`` will
 only download this branch if explicitly requested. 
 
-In the future new releases could be automatically added to the archive via Travis. 
+In the future new releases could be automatically added to the archive via Travis or Appveyor. 
 
 Extraction Process
 ------------------
