@@ -93,7 +93,7 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <a class="reference external image-reference" href="http://www.geokettle.org/"><img alt="project logo" class="align-right" src="../../_images/logo-geokettle17.png" style="width: 102.4px; height: 102.4px;" /></a>
+  <a class="reference external image-reference" href="http://www.geokettle.org/"><img alt="project logo" class="align-right" src="../../_images/logo-geokettle.png" style="width: 102.4px; height: 102.4px;" /></a>
 <div class="section" id="geokettle-quickstart">
 <h1><a class="toc-backref" href="#id1">GeoKettle Quickstart</a><a class="headerlink" href="#geokettle-quickstart" title="Permalink to this headline">¶</a></h1>
 <p>GeoKettle is a “spatially-enabled” version of Pentaho Data Integration (also known as Kettle). It is a powerful, metadata-driven spatial ETL (Extract, Transform and Load) tool dedicated to the integration of different data sources for building and updating geospatial databases, data warehouses and web services.</p>
@@ -127,14 +127,14 @@
 <li>You will be prompted with the following dialog. Fill in the repository information or simply click the &#8220;No repository&#8221;&nbsp;button to enter the GeoKettle&#8217;s workbench</li>
 </ol>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/geokettle_welcome8.png"><img alt="../../_images/geokettle_welcome8.png" src="../../_images/geokettle_welcome8.png" style="width: 652.8px; height: 477.6px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_welcome.png"><img alt="../../_images/geokettle_welcome.png" src="../../_images/geokettle_welcome.png" style="width: 652.8px; height: 477.6px;" /></a>
 </div></blockquote>
 </div>
 <div class="section" id="workbench">
 <h2><a class="toc-backref" href="#id3">Workbench</a><a class="headerlink" href="#workbench" title="Permalink to this headline">¶</a></h2>
 <p>As illustrated in the following screenshot, the Workbench window is composed of different panels.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/geokettle_workbench8.png"><img alt="../../_images/geokettle_workbench8.png" src="../../_images/geokettle_workbench8.png" style="width: 819.2px; height: 572.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_workbench.png"><img alt="../../_images/geokettle_workbench.png" src="../../_images/geokettle_workbench.png" style="width: 819.2px; height: 572.0px;" /></a>
 </div></blockquote>
 <p>The left part acts as a catalog containing all the steps which could compose a data transformation. The right part of the workbench is the area where the transformation itself would be designed and run/debugged.</p>
 <p>The contents of these panels will be described further as we demonstrate their use.</p>
@@ -144,12 +144,12 @@
 <p>To load an existing transformation, select <em class="menuselection">File ‣ Open</em>. Browse to the transformation samples subdirectory <tt class="file docutils literal"><span class="pre">/opt/geokettle/samples/transformations/geokettle</span></tt>, then select one of the available sample transformations and click <em class="guilabel">OK</em>. GeoKettle transformation are stored in files with the extension <cite>*.ktr</cite>.</p>
 <p>The following picture shows the sample «&nbsp;intersection » transformation.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/geokettle_intersection_transformation8.png"><img alt="../../_images/geokettle_intersection_transformation8.png" src="../../_images/geokettle_intersection_transformation8.png" style="width: 819.2px; height: 539.2px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_intersection_transformation.png"><img alt="../../_images/geokettle_intersection_transformation.png" src="../../_images/geokettle_intersection_transformation.png" style="width: 819.2px; height: 539.2px;" /></a>
 </div></blockquote>
 <p>A description of the transformation and optional directives can be seen in the yellow tooltip area.</p>
 <p>Before starting the transformation, you will need to specify which shapefile to use. In order to do that, double click on each of the «&nbsp;GIS file input&nbsp;» steps to make the following dialog appear.</p>
 <blockquote>
-<div><img alt="../../_images/geokettle_shapefile_input_step8.png" src="../../_images/geokettle_shapefile_input_step8.png" />
+<div><img alt="../../_images/geokettle_shapefile_input_step.png" src="../../_images/geokettle_shapefile_input_step.png" />
 </div></blockquote>
 <p>Enter the name of your shapefile including the <cite>*.shp</cite> extension or leave it as is to use the sample dataset and click <em class="guilabel">OK</em>.</p>
 <p>You are now ready to start the transformation. To do so, simply hit the play button in the toolbar above your transformation.</p>
@@ -160,13 +160,13 @@
 <p>To create a new transformation, select <em class="menuselection">File ‣ New ‣ Transformation</em>. You can specify the name of the transformation by saving it under a different name (select&nbsp;<em class="menuselection">File ‣ Save as...</em>).</p>
 <p>As shown in the following picture, all available steps are listed by category in the left area of the workbench. Expand any category to see its available steps.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/geokettle_your_transformation8.png"><img alt="../../_images/geokettle_your_transformation8.png" src="../../_images/geokettle_your_transformation8.png" style="width: 640.0px; height: 489.6px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_your_transformation.png"><img alt="../../_images/geokettle_your_transformation.png" src="../../_images/geokettle_your_transformation.png" style="width: 640.0px; height: 489.6px;" /></a>
 </div></blockquote>
 <p>To add a new step to the transformation, drag it from the <strong>Steps</strong> panel to the <strong>transformation</strong> panel. You may then customize this new added step to your transformation by double clicking on it.</p>
 <p><strong>Hops</strong></p>
 <p>A hop, represented as an arrow between 2 steps, defines the dataflow between those steps. As shown in the following picture, adding a hop from <strong>Table Input</strong> to <strong>Add sequence</strong> means that the resulting output of <strong>Table Input</strong> will be sent to the <strong>Add sequence</strong> step for further processing and etc.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/geokettle_hop8.png"><img alt="../../_images/geokettle_hop8.png" src="../../_images/geokettle_hop8.png" style="width: 480.0px; height: 139.8px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_hop.png"><img alt="../../_images/geokettle_hop.png" src="../../_images/geokettle_hop.png" style="width: 480.0px; height: 139.8px;" /></a>
 </div></blockquote>
 <p>To create a new hop, select 2 steps, right click on one of them and select <em class="menuselection">New hop</em>. Another way of doing it is to press and hold <tt class="kbd docutils literal"><span class="pre">Ctrl</span></tt> while selecting the 2 steps.</p>
 <p>Any hop can be edited at any time by double clicking on it or right clicking on it and selecting <em class="menuselection">Edit hop</em> in the popup menu.</p>
@@ -176,12 +176,12 @@
 <p>When executing a transformation, a new panel appears below the one where the transformation is designed. This panel (aka the <strong>Execution Results</strong> panel) contains information about data flow through all steps involved in the transformation.</p>
 <p>The <strong>Step Metrics</strong> tab (shown in the next figure) will be initially displayed. You can see in this tab general information regarding the transformation&#8217;s dataflow such as the number of rows read, written, in input and in output in each step. The column <strong>Active</strong> informs the user if the step is started, running, finished, aborted, etc. The time elapsed since the step has been started is shown in the column <strong>Time</strong>, as well as the average speed (column <strong>Speed</strong>) of the step (rows/seconds).</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/geokettle_running_transformation8.png"><img alt="../../_images/geokettle_running_transformation8.png" src="../../_images/geokettle_running_transformation8.png" style="width: 716.8px; height: 461.3px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_running_transformation.png"><img alt="../../_images/geokettle_running_transformation.png" src="../../_images/geokettle_running_transformation.png" style="width: 716.8px; height: 461.3px;" /></a>
 </div></blockquote>
 <p><strong>Previewing a transformation</strong></p>
 <p>Trying to execute a transformation may result in errors in the <strong>Execution Results</strong> panel (see next figure). Please then review the content of the <strong>Logging</strong> tab. There is always a lot of useful information dealing with the source and reason of the error. Modify the parameters of the faulty step and restart the transformation.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/geokettle_transformation_fail8.png"><img alt="../../_images/geokettle_transformation_fail8.png" src="../../_images/geokettle_transformation_fail8.png" style="width: 716.8px; height: 442.4px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/geokettle_transformation_fail.png"><img alt="../../_images/geokettle_transformation_fail.png" src="../../_images/geokettle_transformation_fail.png" style="width: 716.8px; height: 442.4px;" /></a>
 </div></blockquote>
 <p>To help in finding the source of an error, you can also preview the results of a transformation from another step earlier in the workflow. To do so, right click on the step, and select <em class="menuselection">Preview</em> in the popup menu that appears. This way, you can see in a tabular and cartographic way what the data looks like at this point in the overall process without executing the whole transformation.</p>
 </div>

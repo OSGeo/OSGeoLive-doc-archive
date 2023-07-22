@@ -93,8 +93,8 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <a class="reference external image-reference" href="http://mapserver.org/"><img alt="Project logo" class="align-right" src="../../_images/logo-mapserver-new9.png" style="width: 45.5px; height: 65.0px;" /></a>
-<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project9.png" style="width: 150.0px; height: 53.0px;" /></a>
+  <a class="reference external image-reference" href="http://mapserver.org/"><img alt="Project logo" class="align-right" src="../../_images/logo-mapserver-new.png" style="width: 45.5px; height: 65.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 150.0px; height: 53.0px;" /></a>
 <div class="section" id="guia-de-inicio-rapido-de-mapserver">
 <h1>Guía de inicio rápido de MapServer<a class="headerlink" href="#guia-de-inicio-rapido-de-mapserver" title="Permalink to this headline">¶</a></h1>
 <p>MapServer es una aplicación servidor de <a class="reference external" href="http://www.opensource.org">Código Abierto</a> que te permite publicar imágenes de mapas geográficos y datos vectoriales a través de internet usando <a class="reference external" href="http://www.opengeospatial.org/standards">Estándares OGC</a> como <a class="reference external" href="http://www.opengeospatial.org/standards/wms">WMS</a> y <a class="reference external" href="http://www.opengeospatial.org/standards/wfs">WFS</a>.</p>
@@ -207,7 +207,7 @@ END
 </div>
 <p>¿Qué significa lo anterior? Si lo ponemos en palabras simples, es una consulta <strong>GetMap</strong> de WMS <a class="reference external" href="http://www.opengeospatial.org/standards/wms">Web Map Service</a> que le dice a MapServer que &#8220;<em>use el siguiente mapfile para generar una capa específica como una imagen png basada en ciertos parámetros provisto por el usuario como el tamaño de la imagen, los límites geográficos, la proyección, etc.</em>&#8221;. Todas las capas especificadas en la propiedad &#8220;<em>&amp;LAYERS=...</em>&#8221; que tengan <em>STATUS ON</em> en el mapfile, además de todas las capas con <em>STATUS DEFAULT</em>, serán dibujadas. El resultado debería parecerse a lo siguiente:</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/mapserver_map4.png"><img alt="../../_images/mapserver_map4.png" src="../../_images/mapserver_map4.png" style="width: 560.0px; height: 420.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_map.png"><img alt="../../_images/mapserver_map.png" src="../../_images/mapserver_map.png" style="width: 560.0px; height: 420.0px;" /></a>
 </div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -240,7 +240,7 @@ END
 <div><a class="reference external" href="http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Admin%20Countries,Lakes&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=PNG&amp;WIDTH=800&amp;HEIGHT=600">http://localhost/cgi-bin/mapserv?map=/home/user/mapserver_quickstart.map&amp;SERVICE=WMS&amp;REQUEST=Getmap&amp;VERSION=1.1.1&amp;LAYERS=Admin%20Countries,Lakes&amp;SRS=EPSG:4326&amp;BBOX=-137,29,-53,88&amp;FORMAT=PNG&amp;WIDTH=800&amp;HEIGHT=600</a></div></blockquote>
 <p>La imagen generada por MapServer se parece a nuestro mapa anterior pero con el agreado de los lagos, provistos por nuestra nueva capa:</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes4.png"><img alt="../../_images/mapserver_lakes4.png" src="../../_images/mapserver_lakes4.png" style="width: 560.0px; height: 420.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes.png"><img alt="../../_images/mapserver_lakes.png" src="../../_images/mapserver_lakes.png" style="width: 560.0px; height: 420.0px;" /></a>
 </div></blockquote>
 </div>
 <div class="section" id="darle-estilo-a-una-capa-usando-las-configuraciones-de-mapfile">
@@ -275,7 +275,7 @@ END
 <p>¿Qué hace nuestro nuevo objeto CLASS? Básicamente, le dice a MapServer que dibuje los elementos que tengan &#8220;ScaleRank&#8221; igual a &#8220;0&#8221; o &#8220;1&#8221;, con una línea exterior negra. Los objetos CLASS son siempre leídos desde arriba hacia abajo por cada elemento a ser dibujado. Cuando un elemento concuerda con la expresión (&#8220;EXPRESSION&#8221;) especificada en una clase (CLASS), esa clase es usada para generar el elemento. Si el elemento no concuerda con una clase, se revisa la clase siguiente. Si un elemento con concuerda con ninguna clase, entonces no se dibuja y si la última clase en la capa no contiene un objeto EXPRESSION, entonces actúa como clase por defecto. La propiedad &#8220;CLASSITEM&#8221; le dice a MapServer qué atributo usar para evaluar la expresión definida en el objeto EXPRESSION.</p>
 <p>El resultado de esta modificación debería hacer que los lagos grandes en nuestro mapa sean generados con un borde negro:</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes_scalerank4.png"><img alt="../../_images/mapserver_lakes_scalerank4.png" src="../../_images/mapserver_lakes_scalerank4.png" style="width: 560.0px; height: 420.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes_scalerank.png"><img alt="../../_images/mapserver_lakes_scalerank.png" src="../../_images/mapserver_lakes_scalerank.png" style="width: 560.0px; height: 420.0px;" /></a>
 </div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
