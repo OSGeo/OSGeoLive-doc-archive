@@ -88,7 +88,7 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <a class="reference external image-reference" href="http://postgis.org/"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS23.png" style="width: 89.7px; height: 131.7px;" /></a>
+  <a class="reference external image-reference" href="http://postgis.org/"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS.png" style="width: 89.7px; height: 131.7px;" /></a>
 <div class="section" id="postgis">
 <h1>PostGIS 快速入门<a class="headerlink" href="#postgis" title="Permalink to this headline">¶</a></h1>
 <p>　　PostGIS 是 PostgreSQL 关系数据库的空间操作扩展。它为 PostgreSQL 提供了存储、查询和修改空间关系的能力。本文中 &#8216;PostgreSQL&#8217; 指代基本的关系数据库功能，而 &#8216;PostGIS&#8217; 指代扩展的空间操作特性。</p>
@@ -223,29 +223,29 @@ demo=# INSERT INTO cities (id, the_geom, name) VALUES (3,ST_GeomFromText('POINT(
 <h2>制图<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>　　以 PostGIS 数据制图需要相应的客户端支持。包括 Quantum GIS、gvSIG、uDig 在内的多种客户端均可以。以下使用 Quantum GIS：</p>
 <p>　　从 Desktop GIS 菜单启动 Quantum GIS 并在其 layer 菜单选择 <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">PostGIS</span> <span class="pre">layers</span></tt> 。连接到 Natural Earth PostGIS 数据库的参数在 Connections 下拉菜单中有。这里可以定义和储存其它的配置。点击 <tt class="docutils literal"><span class="pre">Edit</span></tt> 可以查看具体参数。点击 <tt class="docutils literal"><span class="pre">Connect</span></tt> 连接：</p>
-<a class="reference internal image-reference" href="../../_images/postgis_addlayers11.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_addlayers11.png" style="width: 300.0px; height: 252.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_addlayers.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_addlayers.png" style="width: 300.0px; height: 252.0px;" /></a>
 <p>　　系统将显示所有空间信息表供选择：</p>
-<a class="reference internal image-reference" href="../../_images/postgis_listtables11.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables11.png" style="width: 300.0px; height: 252.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_listtables.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables.png" style="width: 300.0px; height: 252.0px;" /></a>
 <p>　　选择 lakes 湖泊表单并点击底部的 <tt class="docutils literal"><span class="pre">Add</span></tt> 添加。顶部的 <tt class="docutils literal"><span class="pre">Load</span></tt> 可以载入新的数据库连接配置。数据将被导入：</p>
-<a class="reference internal image-reference" href="../../_images/postgis_lakesmap11.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap11.png" style="width: 512.0px; height: 371.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_lakesmap.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap.png" style="width: 512.0px; height: 371.5px;" /></a>
 <p>　　界面上显示出湖泊的分布。QGIS 并不理解湖泊一词的含义，也许不会自动使用蓝色。请查看其手册了解如何设置。这里缩放到加拿大一处著名的湖泊群。</p>
 </div>
 <div class="section" id="id7">
 <h2>自动创建空间数据表单<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <p>　　OSGeo Live 的多数桌面 GIS 系统都可以将 shp 等文件导入数据库。这里依然使用 QGIS 演示。</p>
 <p>　　QGIS 中导入 shp 可以使用 PostGIS Manager 插件。在 Plugins 菜单选择 <tt class="docutils literal"><span class="pre">Fetch</span> <span class="pre">Plugins</span></tt> 导入最新的官方插件列表（需要网络连接）。找到 <tt class="docutils literal"><span class="pre">PostGIS</span> <span class="pre">Manager</span></tt> 点击 <tt class="docutils literal"><span class="pre">Install</span> <span class="pre">plugin</span></tt> 安装。</p>
-<a class="reference internal image-reference" href="../../_images/postgis_getmanager11.png"><img alt="Fetch PostGIS Manager Plugin" class="align-center" src="../../_images/postgis_getmanager11.png" style="width: 403.5px; height: 215.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_getmanager.png"><img alt="Fetch PostGIS Manager Plugin" class="align-center" src="../../_images/postgis_getmanager.png" style="width: 403.5px; height: 215.0px;" /></a>
 <p>　　完成后，在 Plugin 菜单点击 PostGIS Manager 启动。也可以点击工具栏上大象与地球的图标。</p>
 <p>　　该插件将连接 Natural Earth 数据库。若提示输入密码，留空即可。在开启的界面中，选择表单可以显示相应的信息。预览（Preview）选项卡可以显示地图预览。这里选择了 populated places 图层并缩放到一个小岛：</p>
-<a class="reference internal image-reference" href="../../_images/postgis_managerpreview11.png"><img alt="PostGIS Manager Preview" class="align-center" src="../../_images/postgis_managerpreview11.png" style="width: 354.0px; height: 264.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_managerpreview.png"><img alt="PostGIS Manager Preview" class="align-center" src="../../_images/postgis_managerpreview.png" style="width: 354.0px; height: 264.0px;" /></a>
 <p>　　接下来使用 PostGIS Manager 将 shp 导入数据库。这里使用 R 统计扩展包含的 North Carolina sudden infant death syndrome (SIDS) 数据：</p>
 <p>　　在 <tt class="docutils literal"><span class="pre">Data</span></tt> 菜单选择 <tt class="docutils literal"><span class="pre">Load</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">shapefile</span></tt> 选项。点击 <tt class="docutils literal"><span class="pre">...</span></tt> 选中 R <tt class="docutils literal"><span class="pre">maptools</span></tt> 中的 <tt class="docutils literal"><span class="pre">sids.shp</span></tt> 。</p>
-<a class="reference internal image-reference" href="../../_images/postgis_browsedata10.png"><img alt="Find the shapefile" class="align-center" src="../../_images/postgis_browsedata10.png" style="width: 394.0px; height: 306.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_browsedata.png"><img alt="Find the shapefile" class="align-center" src="../../_images/postgis_browsedata.png" style="width: 394.0px; height: 306.5px;" /></a>
 <p>　　直接点击 <tt class="docutils literal"><span class="pre">Load</span></tt> 即可：</p>
-<a class="reference internal image-reference" href="../../_images/postgis_importsids11.png"><img alt="Import a shapefile" class="align-center" src="../../_images/postgis_importsids11.png" style="width: 217.0px; height: 320.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_importsids.png"><img alt="Import a shapefile" class="align-center" src="../../_images/postgis_importsids.png" style="width: 217.0px; height: 320.0px;" /></a>
 <p>　　数据将被导入 PostGIS 。关闭 PostGIS Manager 回到主界面。</p>
 <p>　　使用 &#8216;Add PostGIS Layer&#8217; 导入 SIDS 数据。略加调整，得到被卡洛莱娜州新生儿猝死率分布图：</p>
-<a class="reference internal image-reference" href="../../_images/postgis_sidsmap11.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap11.png" style="width: 512.0px; height: 371.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_sidsmap.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap.png" style="width: 512.0px; height: 371.5px;" /></a>
 </div>
 <div class="section" id="pgadmin-iii">
 <h2>pgAdmin III<a class="headerlink" href="#pgadmin-iii" title="Permalink to this headline">¶</a></h2>

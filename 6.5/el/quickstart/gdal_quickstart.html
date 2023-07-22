@@ -88,7 +88,7 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL5.png" style="width: 81.0px; height: 89.4px;" /></a>
+  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL.png" style="width: 81.0px; height: 89.4px;" /></a>
 <div class="section" id="gdal-ogr">
 <h1>Εγχειρίδιο Γρήγορης Εκκίνησης GDAL/OGR<a class="headerlink" href="#gdal-ogr" title="Permalink to this headline">¶</a></h1>
 <p>Δεν θα χρειαστείτε τίποτα άλλο από ένα τερματικό για αυτή την γρήγορη εκκίνηση. Εαν θέλετε να οπτικοποιήσετε το αποτέλεσμα μπορείτε να χρησιμοποιήσετε ένα από τα λογισμικά GIS που περιέχει το OSGeo-Live π.χ. QuantumGIS.</p>
@@ -219,7 +219,7 @@ gdal_translate -srcwin 5400 0 5400 5400 HYP_50M_SR_W.tif  east.tif</pre>
 </div>
 <p>Ρίξτε μια ματιά στο αρχείο εξόδου shapefile με το Quantum GIS και το ogrinfo (θα μάθετε μερισσότερα για το ogrinfo αργότερα σε αυτόν τον οδηγό)</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex2.png"><img alt="../../_images/gdal_gdaltindex2.png" src="../../_images/gdal_gdaltindex2.png" style="width: 416.0px; height: 212.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex.png"><img alt="../../_images/gdal_gdaltindex.png" src="../../_images/gdal_gdaltindex.png" style="width: 416.0px; height: 212.0px;" /></a>
 </div></blockquote>
 <div class="highlight-python"><pre>ogrinfo ../HYP_50M_SR_W/ index
 INFO: Open of `../HYP_50M_SR_W/'
@@ -252,12 +252,12 @@ OGRFeature(index):1
 </div>
 <p>Χρησιμοποιείστε την gdalinfo για να επιβεβαιώσετε τις αλλαγές και να ρίξετε μια ματιά στην εικόνα.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/gdal_mercator2.png"><img alt="../../_images/gdal_mercator2.png" src="../../_images/gdal_mercator2.png" style="width: 405.6px; height: 327.2px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/gdal_mercator.png"><img alt="../../_images/gdal_mercator.png" src="../../_images/gdal_mercator.png" style="width: 405.6px; height: 327.2px;" /></a>
 </div></blockquote>
 <p>Εδώ προβάλαμε στην Ορθή προβολή.</p>
 <div class="highlight-python"><pre>gdalwarp -t_srs '+proj=ortho +datum=WGS84' HYP_50M_SR_W_4326.tif ortho.tif</pre>
 </div>
-<a class="reference internal image-reference" href="../../_images/gdal_ortho2.png"><img alt="../../_images/gdal_ortho2.png" src="../../_images/gdal_ortho2.png" style="width: 294.4px; height: 296.8px;" /></a>
+<a class="reference internal image-reference" href="../../_images/gdal_ortho.png"><img alt="../../_images/gdal_ortho.png" src="../../_images/gdal_ortho.png" style="width: 294.4px; height: 296.8px;" /></a>
 <p>Παρατηρείτε πως οι πόλοι είναι κομμένοι; Αυτό συμβαίενι επειδή οι ακμές στους πόλους
 δεν μπορούν να προβληθούν και η gdalwarp δεν μπορεί να διαβάσει όλα τα δεδομένα. Μπορούμε να αναγκάσουμε
 την gdalwarp να διαβάσει ένα πλήθος δεδομένων σε μεγάλα κομμάτια, ως ένας τρόπος να

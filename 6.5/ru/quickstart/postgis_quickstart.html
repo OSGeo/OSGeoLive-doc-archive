@@ -85,7 +85,7 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <a class="reference external image-reference" href="http://postgis.org/"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS21.png" style="width: 89.7px; height: 131.7px;" /></a>
+  <a class="reference external image-reference" href="http://postgis.org/"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS.png" style="width: 89.7px; height: 131.7px;" /></a>
 <div class="section" id="postgis">
 <h1>Введение в PostGIS<a class="headerlink" href="#postgis" title="Permalink to this headline">¶</a></h1>
 <p>PostGIS добавляет дополнительную функциональность к СУБД PostgreSQL. PostGIS расширяет возможности
@@ -285,12 +285,12 @@ PostGIS. Сейчас в нашей базе находятся три горо�
 <dd>Natural Earth в PostGIS уже определены в выпадающем меню <em>Соединения</em>. Там же вы можете создать новое подключение к серверу и хранить настройки для быстрого доступа. Нажмите <tt class="docutils literal"><span class="pre">Edit</span></tt>, если хотите увидеть, какие параметры указаны для данных Natural Earth,
 или нажмите <tt class="docutils literal"><span class="pre">Connect</span></tt>, чтобы продолжить:</dd>
 </dl>
-<a class="reference internal image-reference" href="../../_images/postgis_addlayers10.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_addlayers10.png" style="width: 300.0px; height: 252.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_addlayers.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_addlayers.png" style="width: 300.0px; height: 252.0px;" /></a>
 <p>Появится список пространственных таблиц базы данных:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_listtables10.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables10.png" style="width: 300.0px; height: 252.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_listtables.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables.png" style="width: 300.0px; height: 252.0px;" /></a>
 <p>Выберите озёра (&#8220;Lakes&#8221;) и нажмите <tt class="docutils literal"><span class="pre">Add</span></tt> внизу (не <a href="#id7"><span class="problematic" id="id8">``</span></a>Load``вверху, которая подгрузит параметры подключения базы данных),
 после чего слой откроется в QGIS:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_lakesmap10.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap10.png" style="width: 512.0px; height: 371.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_lakesmap.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap.png" style="width: 512.0px; height: 371.5px;" /></a>
 <p>Вы должны увидеть карту с озёрами. QGIS не знает, что это озера, поэтому, возможно, они будут не голубого цвета. Используйте документацию
 QGIS, чтобы узнать, как изменить цвет.</p>
 </div>
@@ -302,28 +302,28 @@ QGIS, чтобы узнать, как изменить цвет.</p>
 Чтобы установить его, перейдите в меню <tt class="docutils literal"><span class="pre">Модули</span></tt>, далее <tt class="docutils literal"><span class="pre">Загрузить</span> <span class="pre">модули</span></tt>. QGIS загрузит самую
 новую версию из репозитория (для этого вам потребуется работающее интернет-соединение).
 Найдите <tt class="docutils literal"><span class="pre">PostGIS</span> <span class="pre">Manager</span></tt> и нажмите кнопку <tt class="docutils literal"><span class="pre">Install</span> <span class="pre">plugin</span></tt>.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_getmanager10.png"><img alt="Fetch PostGIS Manager Plugin" class="align-center" src="../../_images/postgis_getmanager10.png" style="width: 403.5px; height: 215.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_getmanager.png"><img alt="Fetch PostGIS Manager Plugin" class="align-center" src="../../_images/postgis_getmanager.png" style="width: 403.5px; height: 215.0px;" /></a>
 <p>В меню <tt class="docutils literal"><span class="pre">Модули</span></tt> должен появиться  пункт <em>PostGIS Manager</em>.
 Для запуска плагина также можно кликнуть по кнопке с логотипом PostGIS (слон с земным шаром), расположенной на панели.</p>
 <p>После этого будет уставновлено соединение с базой данных <em>Natural Earth</em>. Оставьте поле пароль пустым, если будет необходимо его ввести.
 Вы увидите основное окно управления: слева вы сможете выбрать таблицы из базы данных, в правой части&nbsp;— узнать информацию о них.
 Вкладка <em>Просмотр</em> покажет небольшую карту.
 Для примера был выбран слой &#8220;Населённые пункты&#8221;, карта была приближена к произвольному месту.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_managerpreview10.png"><img alt="PostGIS Manager Preview" class="align-center" src="../../_images/postgis_managerpreview10.png" style="width: 354.0px; height: 264.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_managerpreview.png"><img alt="PostGIS Manager Preview" class="align-center" src="../../_images/postgis_managerpreview.png" style="width: 354.0px; height: 264.0px;" /></a>
 <dl class="docutils">
 <dt>Далее <em>PostGIS Manager</em> будет использован для  импорта шейп-файла в базу данных.  Мы используем данным о синдроме внезапной смерти у детей</dt>
 <dd>в Северной Каролине, которые входят в одно из дополнений статистического пакета R.</dd>
 </dl>
 <p>Из меню <tt class="docutils literal"><span class="pre">Data</span></tt> выберите опцию <tt class="docutils literal"><span class="pre">Load</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">shapefile</span></tt>.
 Нажмите кнопку <tt class="docutils literal"><span class="pre">...</span></tt> и загрузите шейпф-айл <tt class="docutils literal"><span class="pre">sids.shp</span></tt> в пакет R <tt class="docutils literal"><span class="pre">maptools</span></tt>:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_browsedata9.png"><img alt="Find the shapefile" class="align-center" src="../../_images/postgis_browsedata9.png" style="width: 394.0px; height: 306.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_browsedata.png"><img alt="Find the shapefile" class="align-center" src="../../_images/postgis_browsedata.png" style="width: 394.0px; height: 306.5px;" /></a>
 <p>Не изменяя настроек в появившемся окне, нажмите  <tt class="docutils literal"><span class="pre">Load</span></tt>:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_importsids10.png"><img alt="Import a shapefile" class="align-center" src="../../_images/postgis_importsids10.png" style="width: 217.0px; height: 320.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_importsids.png"><img alt="Import a shapefile" class="align-center" src="../../_images/postgis_importsids.png" style="width: 217.0px; height: 320.0px;" /></a>
 <p>Шейп-файл должен быть импортирован в PostGIS без ошибок. Закройте менеджер PostGIS и вернитесь в основное окно QGIS.</p>
 <p>Подгрузите данные SIDS с помощью опции &#8220;Добавить слой PostGIS&#8221;.
 Изменив порядок слоёв и заливок, вы сможете создать фоновую картограмму (хороплет),
 отображающую количество детей, умерших от синдрома внезапной смерти в Северной Каролине.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_sidsmap10.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap10.png" style="width: 512.0px; height: 371.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_sidsmap.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap.png" style="width: 512.0px; height: 371.5px;" /></a>
 </div>
 <div class="section" id="pgadmin-iii">
 <h2>Знакомство с pgAdmin III<a class="headerlink" href="#pgadmin-iii" title="Permalink to this headline">¶</a></h2>
