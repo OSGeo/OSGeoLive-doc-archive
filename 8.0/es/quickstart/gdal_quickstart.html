@@ -92,7 +92,7 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <a class="reference external image-reference" href="http://gdal.org/" id="gdal-quickstart"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL9.png" style="width: 81.0px; height: 89.4px;" /></a>
+  <a class="reference external image-reference" href="http://gdal.org/" id="gdal-quickstart"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL.png" style="width: 81.0px; height: 89.4px;" /></a>
 <div class="section" id="guia-de-incio-rapido-gdal-ogr">
 <h1>Guía de incio rápido GDAL/OGR<a class="headerlink" href="#guia-de-incio-rapido-gdal-ogr" title="Permalink to this headline">¶</a></h1>
 <p>No se necesitará nada más que un terminal para seguir esta guía de inicio rápido. Para visualizar los resultados, se puede usar uno de los programas de SIG de escritorio que hay en el OSGeo-Live como <a class="reference internal" href="../overview/qgis_overview.html"><em>Quantum GIS (QGIS)</em></a>.</p>
@@ -236,7 +236,7 @@ gdal_translate -srcwin 5400 0 5400 5400 HYP_50M_SR_W.tif  east.tif
 </div>
 <p>Se puede revisar el shapefile de salida con QGIS y ogrinfo (más adelante se aprenderá más sobre ogrinfo).</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex4.png"><img alt="../../_images/gdal_gdaltindex4.png" src="../../_images/gdal_gdaltindex4.png" style="width: 416.0px; height: 212.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex.png"><img alt="../../_images/gdal_gdaltindex.png" src="../../_images/gdal_gdaltindex.png" style="width: 416.0px; height: 212.0px;" /></a>
 </div></blockquote>
 <div class="highlight-python"><div class="highlight"><pre>ogrinfo ../HYP_50M_SR_W/ index
 INFO: Open of `../HYP_50M_SR_W/&#39;
@@ -270,13 +270,13 @@ OGRFeature(index):1
 </div>
 <p>Después se puede usar gdalinfo para verificar los cambios y ver las características de la imagen.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/gdal_mercator4.png"><img alt="../../_images/gdal_mercator4.png" src="../../_images/gdal_mercator4.png" style="width: 405.6px; height: 327.2px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/gdal_mercator.png"><img alt="../../_images/gdal_mercator.png" src="../../_images/gdal_mercator.png" style="width: 405.6px; height: 327.2px;" /></a>
 </div></blockquote>
 <p>Aquí se reproyecta a proyección ortogonal.</p>
 <div class="highlight-python"><div class="highlight"><pre>gdalwarp -t_srs &#39;+proj=ortho +datum=WGS84&#39; HYP_50M_SR_W_4326.tif ortho.tif
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/gdal_ortho4.png"><img alt="../../_images/gdal_ortho4.png" src="../../_images/gdal_ortho4.png" style="width: 294.4px; height: 296.8px;" /></a>
+<a class="reference internal image-reference" href="../../_images/gdal_ortho.png"><img alt="../../_images/gdal_ortho.png" src="../../_images/gdal_ortho.png" style="width: 294.4px; height: 296.8px;" /></a>
 <p>Usando QGIS para visualizarlo, se puede ver que los polos están cortados.Esto se debe a que los bordes de los polos no pueden ser reproyectados por gdalwarp ya que no lee todos los datos. Se puede forzar a gdalwarp a leer un racimo de datos alrededor de los trozos sobrantes como forma de resolver esto. Se puede leer más sobre esto en el Tutorial <em>Raster</em> <a class="reference external" href="http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial">http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial</a>.</p>
 </div>
 <div class="section" id="mosaicos">

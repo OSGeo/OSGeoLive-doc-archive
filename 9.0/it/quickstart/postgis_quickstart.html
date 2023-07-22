@@ -92,7 +92,7 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <a class="reference external image-reference" href="http://postgis.net"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS14.png" style="width: 26.1px; height: 38.4px;" /></a>
+  <a class="reference external image-reference" href="http://postgis.net"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS.png" style="width: 26.1px; height: 38.4px;" /></a>
 <div class="section" id="guida-rapida-a-postgis">
 <h1><a class="toc-backref" href="#id1">Guida rapida a PostGIS</a><a class="headerlink" href="#guida-rapida-a-postgis" title="Permalink to this headline">¶</a></h1>
 <p>PostGIS aggiunge funzionalità spaziali al database relazionale di PostgreSQL. Amplia
@@ -349,13 +349,13 @@ I parametri per connettersi ai dati Natural Earth in PostGIS sono già definiti 
 Connections. Qui si possono definire nuove connessioni server, e salvare i settaggi
 per richiamarle facilmente. Cliccare <tt class="docutils literal"><span class="pre">Edit</span></tt> se si vuole vedere quali sono questi parametri
 per Natural Earth, oppure cliccare solo <tt class="docutils literal"><span class="pre">Connect</span></tt> per continuare:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_addlayers6.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_addlayers6.png" style="width: 300.0px; height: 252.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_addlayers.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_addlayers.png" style="width: 300.0px; height: 252.0px;" /></a>
 <p>Verrà restituita una lista delle tabelle spaziali presenti nel database:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_listtables6.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables6.png" style="width: 300.0px; height: 252.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_listtables.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables.png" style="width: 300.0px; height: 252.0px;" /></a>
 <p>Scegliere la tabella ne_10m_lakes e cliccare <tt class="docutils literal"><span class="pre">Add</span></tt> in basso (non <tt class="docutils literal"><span class="pre">Load</span></tt> in alto
 - che carica i parametri di connessione al database), e dovrebbe essere caricato
 in QGIS:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_lakesmap6.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap6.png" style="width: 512.0px; height: 371.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_lakesmap.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap.png" style="width: 512.0px; height: 371.5px;" /></a>
 <p>Ora è possibile vedere una mappa dei laghi. QGIS non sa che sono laghi, quindi
 potrebbe non colorarli di blu - utilizzare la documentazione di QGIS per capire
 come cambiarlo. Zoommare su un gruppo famoso di laghi in Canada.</p>
@@ -370,7 +370,7 @@ Per caricarlo, andare nel menù Plugins, selezionare <tt class="docutils literal
 Successivamente QGIS scaricherà la lista più recente dei plugins dal repository
 (è necessaria una connessione internet funzionante per questo passaggio). Cercare il
 plugin <tt class="docutils literal"><span class="pre">PostGIS</span> <span class="pre">Manager</span></tt> e cliccare il pulsante <tt class="docutils literal"><span class="pre">Install</span> <span class="pre">plugin</span></tt>.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_getmanager6.png"><img alt="Fetch PostGIS Manager Plugin" class="align-center" src="../../_images/postgis_getmanager6.png" style="width: 403.5px; height: 215.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_getmanager.png"><img alt="Fetch PostGIS Manager Plugin" class="align-center" src="../../_images/postgis_getmanager.png" style="width: 403.5px; height: 215.0px;" /></a>
 <p>Ora nel menù Database dovrebbe esserci la dicitura PostGIS Manager che permette
 di avviare il gestore database. Si può anche cliccare il pulsante con il logo PostGIS
 (l&#8217;elefante con il mondo) nella barra degli strumenti.</p>
@@ -379,22 +379,22 @@ la password vuota se la chiede. Si vedrà la finestra principale del gestore. Su
 sinistra si può selezionare le tabelle dal database e usare le schede sulla destra
 per avere informazioni su di esse. La scheda Preview mostra una piccola mappa. Qui è
 stato selezionato il layer ne_10m_populated_places e zoommato su una piccola isola:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_managerpreview6.png"><img alt="PostGIS Manager Preview" class="align-center" src="../../_images/postgis_managerpreview6.png" style="width: 354.0px; height: 264.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_managerpreview.png"><img alt="PostGIS Manager Preview" class="align-center" src="../../_images/postgis_managerpreview.png" style="width: 354.0px; height: 264.0px;" /></a>
 <p>Ora si utilizzerà il PostGIS Manager per importare uno shapefile nel database.
 Si utilizzeranno i dati della sindrome della morte improvvisa del lattante (SIDS) del
 North Carolina che sono compresi in con un add-on del pacchetto R statistics.</p>
 <p>Dal menù <tt class="docutils literal"><span class="pre">Data</span></tt> scegliere l&#8217;opzione <tt class="docutils literal"><span class="pre">Load</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">shapefile</span></tt>.
 Cliccare il pulsante <tt class="docutils literal"><span class="pre">...</span></tt> e sfogliare fino allo shapefile <tt class="docutils literal"><span class="pre">sids.shp</span></tt> nel pacchetto
 di R <tt class="docutils literal"><span class="pre">maptools</span></tt> (situato in /usr/local/lib/R/site-library/):</p>
-<a class="reference internal image-reference" href="../../_images/postgis_browsedata5.png"><img alt="Find the shapefile" class="align-center" src="../../_images/postgis_browsedata5.png" style="width: 394.0px; height: 306.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_browsedata.png"><img alt="Find the shapefile" class="align-center" src="../../_images/postgis_browsedata.png" style="width: 394.0px; height: 306.5px;" /></a>
 <p>Lasciare tutto il resto come è e cliccare <tt class="docutils literal"><span class="pre">Load</span></tt></p>
-<a class="reference internal image-reference" href="../../_images/postgis_importsids6.png"><img alt="Import a shapefile" class="align-center" src="../../_images/postgis_importsids6.png" style="width: 217.0px; height: 320.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_importsids.png"><img alt="Import a shapefile" class="align-center" src="../../_images/postgis_importsids.png" style="width: 217.0px; height: 320.0px;" /></a>
 <p>Lo shapefile dovrebbe essere importato in PostGIS senza errori. Chiudere PostGIS manager e
 tornare alla finestra principale di QGIS.</p>
 <p>Ora caricare i dati SIDS nella mappa usando l&#8217;opzione &#8216;Add PostGIS Layer&#8217;.
 Riarrangiando e ricolorando un po&#8217; i layers, si dovrebbe essere in grado di produrre
 una mappa coropletica dei contatori della sindrome della morte improvvisa del lattante nel North Carolina:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_sidsmap6.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap6.png" style="width: 512.0px; height: 371.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_sidsmap.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap.png" style="width: 512.0px; height: 371.5px;" /></a>
 </div>
 <div class="section" id="conoscere-pgadmin-iii">
 <h2><a class="toc-backref" href="#id9">Conoscere pgAdmin III</a><a class="headerlink" href="#conoscere-pgadmin-iii" title="Permalink to this headline">¶</a></h2>
@@ -403,7 +403,7 @@ interrogare e modificare database non-spaziali. Questo è il client ufficiale pe
 PostgreSQL, e permette di utilizzare SQL per manipolare le tabelle dei dati.
 pgAdmin III si può trovare ed essere lanciato dalla cartella Databases, presente
 in OSGeo Live Desktop.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_pgadmin_main_window3.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_pgadmin_main_window3.png" style="width: 511.0px; height: 370.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_pgadmin_main_window.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_pgadmin_main_window.png" style="width: 511.0px; height: 370.5px;" /></a>
 <p>Qui, c&#8217;è l&#8217;opzione per creare una nuova connessione al server PostgreSQL, o ad un server esistente.
 In questo caso, ci si connette al server predefinito <tt class="docutils literal"><span class="pre">local</span></tt>.</p>
 <p>Una volta stabilita la connessione, si può vedere l&#8217;elenco dei databases già esistenti nel sistema.</p>

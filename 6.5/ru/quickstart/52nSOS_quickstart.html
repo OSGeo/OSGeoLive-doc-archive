@@ -95,18 +95,18 @@
 <li>Чтобы запустить 52°North SOS, выберите <em class="menuselection">Geospatial ‣ Web Services ‣ 52North ‣ Start 52North SOS</em>         или перейдите по <a class="reference external" href="http://localhost:8080/52nSOS/">ссылке</a>. Если сервис недоступен, попробуйте запустить контейнер сервлетов Tomcat, следуя шагам, описанным в конце этого документа.</li>
 <li>Связанный браузер откроет страницу приглашения тестового клиентского приложения 52°North SOS (см. Рис. 1). Пожалуйста выберите версию спецификации, которую вы хотели бы использовать, например, 1.0.0:</li>
 </ol>
-<a class="reference internal image-reference" href="../../_images/52n_sos_test_client_start10.png"><img alt="пример стартовой страницы тестового клиентского приложения 52°North SOS" class="align-center" src="../../_images/52n_sos_test_client_start10.png" style="width: 807.0px; height: 447.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/52n_sos_test_client_start.png"><img alt="пример стартовой страницы тестового клиентского приложения 52°North SOS" class="align-center" src="../../_images/52n_sos_test_client_start.png" style="width: 807.0px; height: 447.0px;" /></a>
 <p><strong>Рис. 1</strong>: Стартовой страницы тестового клиентского приложения 52°North SOS</p>
 <ol class="arabic simple" start="3">
 <li>Тестовый клиент может быть использован для отправки запросов к сервису используя простую форму. В выпадающем списке можно выбрать один из предопределенных запросов, адаптированных к выбранной на предыдущем шаге версии сервиса.</li>
 </ol>
-<a class="reference internal image-reference" href="../../_images/52n_sos_test_client_v1_0_0_GetCapabilities20.png"><img alt="пример стартовой страницы тестового клиентского приложения версии 1.0.0 52°North SOS" class="align-center" src="../../_images/52n_sos_test_client_v1_0_0_GetCapabilities20.png" style="width: 798.0px; height: 776.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/52n_sos_test_client_v1_0_0_GetCapabilities.png"><img alt="пример стартовой страницы тестового клиентского приложения версии 1.0.0 52°North SOS" class="align-center" src="../../_images/52n_sos_test_client_v1_0_0_GetCapabilities.png" style="width: 798.0px; height: 776.0px;" /></a>
 <p><strong>Рис. 2</strong>: Тестовый клиент 52°North SOS версия спецификации 1.0.0</p>
 <ol class="arabic simple" start="4">
 <li>Для начала работы с SOS выберите запрос GetCapabilities_allSections.xml из списка, который находится рядом с примерами запросов &#8220;Request Examples&#8221; (см. [1] на Рис. 2).</li>
 <li>Нажмите кнопку &#8220;отправить&#8221; <strong>Send button</strong> ([2] на Рис. 2) и запрос будет отправлен в 52°North SOS. В результате будет возвращен документ XML (см. Рис. 3), который будет описывать возможности (capabilities) сервиса SOS (метаданные сервиса, такие как, ключевые слова или провайдер, доступные операции и фильтры, содержащиеся данные наблюдений и т.д.). Чтобы увидеть содержимое ответа сервиса в оригинальном виде, откройте исходный код страницы (Ctrl+U).</li>
 </ol>
-<a class="reference internal image-reference" href="../../_images/52n_sos_response10.png"><img alt="пример результата ответа - GetCapabilities 52°North SOS в XML" class="align-center" src="../../_images/52n_sos_response10.png" style="width: 716.8px; height: 581.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/52n_sos_response.png"><img alt="пример результата ответа - GetCapabilities 52°North SOS в XML" class="align-center" src="../../_images/52n_sos_response.png" style="width: 716.8px; height: 581.0px;" /></a>
 <p><strong>Рис. 3</strong>: 52°North SOS&nbsp;— ответ GetCapabilities в XML</p>
 <ol class="arabic simple" start="6">
 <li>Чтобы создавать свои собственные запросы, вам понадобятся <a class="reference external" href="http://localhost:8080/52nSOS/sos?REQUEST=GetCapabilities&amp;SERVICE=SOS&amp;ACCEPTVERSIONS=1.0.0">capabilities</a>  сервиса 52°North SOS (версия спецификации 1.0.0). При использовании информации из &#8220;capabilities&#8221; особенно важна секция &#8220;содержание&#8221; (contents), где можно донастроить уже существующие запросы. Просто выберите запрос &#8220;GetObservation&#8221; (GetObs...) из выпадающего списка, и используйте его как шаблон для получения своих наборов данных.</li>
@@ -135,7 +135,7 @@ user@osgeolive:~$ sudo /etc/init.d/tomcat6 start
 <ul class="simple">
 <li>Разработка этой версии 52°North SOS была поддержана исследовательским Европейским проектом FP7 <a class="reference external" href="http://www.eo2heaven.org/">EO2HEAVEN</a> (софинансирование Европейской Комиссией, грант n°244100):</li>
 </ul>
-<a class="reference external image-reference" href="http://www.eo2heaven.org/"><img alt="EO2HEAVEN&nbsp;— Earth Observation and ENVironmental Modeling for the Mitigation of HEAlth Risks" class="align-center" src="../../_images/logo_52North_other_200px10.png" style="width: 200.0px; height: 105.0px;" /></a>
+<a class="reference external image-reference" href="http://www.eo2heaven.org/"><img alt="EO2HEAVEN&nbsp;— Earth Observation and ENVironmental Modeling for the Mitigation of HEAlth Risks" class="align-center" src="../../_images/logo_52North_other_200px.png" style="width: 200.0px; height: 105.0px;" /></a>
 </div>
 </div>
 

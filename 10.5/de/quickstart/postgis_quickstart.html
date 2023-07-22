@@ -92,7 +92,7 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <a class="reference external image-reference" href="http://postgis.net"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS3.png" style="width: 26.1px; height: 38.4px;" /></a>
+  <a class="reference external image-reference" href="http://postgis.net"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS.png" style="width: 26.1px; height: 38.4px;" /></a>
 <div class="section" id="postgis-quickstart">
 <h1>PostGIS Quickstart<a class="headerlink" href="#postgis-quickstart" title="Permalink to this headline">¶</a></h1>
 <p>PostGIS ist die räumliche Erweiterung der relationalen Datenbank PostgreSQL. PostGIS ermöglicht die
@@ -371,12 +371,12 @@ für die Natural Earth Datensätze sind bereits in der Liste der Verbindungsausw
 Sie können hier weitere Verbindungen zu Servern definieren und die Einstellungen speichern, so dass diese beim
 erneuten Aufruf wieder zur Verfügung stehen. Wählen Sie aus der Auswahl der Verbindungen Natrual Earth aus. Klicken Sie <code class="docutils literal"><span class="pre">Edit</span></code> (Bearbeiten), um die Verbindungsparameter anzusehen oder zu bearbeiten. Oder aber einfach
 <code class="docutils literal"><span class="pre">Connect</span></code> (Verbinden) um fortzufahren:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_addlayers1.png"><img alt="Verbindung mit Natural Earth aufbauen" class="align-center" src="../../_images/postgis_addlayers1.png" style="width: 300.0px; height: 252.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_addlayers.png"><img alt="Verbindung mit Natural Earth aufbauen" class="align-center" src="../../_images/postgis_addlayers.png" style="width: 300.0px; height: 252.0px;" /></a>
 <p>Im Anschluss daran erscheint eine Liste der Tabellen mit räumlichen Informationen:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_listtables1.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables1.png" style="width: 300.0px; height: 252.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_listtables.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables.png" style="width: 300.0px; height: 252.0px;" /></a>
 <p>Wählen Sie ne_10m_lakes table (Seen) und klicken Sie <code class="docutils literal"><span class="pre">Hinzufügen</span></code> (nicht <code class="docutils literal"><span class="pre">Abfrage</span> <span class="pre">erstellen</span></code>).
 Die Daten sollten nun in QGIS geladen werden:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_lakesmap1.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap1.png" style="width: 512.0px; height: 371.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_lakesmap.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap.png" style="width: 512.0px; height: 371.5px;" /></a>
 <p>Sie sollten eine Karte der Seen sehen. QGIS weiß nicht, dass es sich um Seen handelt und zeigt die Flächen
 möglicherweise nicht blau an. Nutzen Sie die QGIS Dokumentation, um herauszufinden, wie die Farbe angepasst
 werden kann. Navigieren Sie in die bekannte Seengruppe von Kanada.</p>
@@ -392,20 +392,20 @@ beispielsweise Shapedateien. Wir wollen wieder QGIS zur Demonstration nutzen.</p
 <p>Im Bereich public finden sich die Layer, die sich bereits in der Datenbank befinden. In dem Fenster befinden sich
 links die Tabelle. Diese können ausgewählt werden. Über die Reiter auf der rechten Seite erhalten Sie Informationen
 über die Layer. Der Preview Reiter zeigt eine kleine Karte.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_managerpreview1.png"><img alt="QGIS Manager Vorschau" class="align-center" src="../../_images/postgis_managerpreview1.png" style="width: 407.0px; height: 285.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_managerpreview.png"><img alt="QGIS Manager Vorschau" class="align-center" src="../../_images/postgis_managerpreview.png" style="width: 407.0px; height: 285.5px;" /></a>
 <p>Nun wollen wir DB Manager zum Import von Shape in die Datenbank nutzen. Wir werden die Daten
 <cite>North Carolina sudden infant death syndrome (SIDS)</cite> nutzen, die in einem der R Statistikpakete enthalten sind.</p>
 <p>Wählen Sie über das Menü <code class="docutils literal"><span class="pre">Tabelle`</span> <span class="pre">die</span> <span class="pre">Option</span> <span class="pre">``Layer/Datei</span> <span class="pre">importieren</span></code>.
 Klicken Sie den Button <code class="docutils literal"><span class="pre">...</span></code> und wählen Sie die Shapedatei <code class="docutils literal"><span class="pre">sids.shp</span></code> in dem R <code class="docutils literal"><span class="pre">Maptools</span></code> Paket
 (dies befindet sich unter /usr/lib/R/site-library/spdep/etc/shapes/) aus:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_browsedata1.png"><img alt="Auswahl der Shapedatei" class="align-center" src="../../_images/postgis_browsedata1.png" style="width: 394.0px; height: 306.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_browsedata.png"><img alt="Auswahl der Shapedatei" class="align-center" src="../../_images/postgis_browsedata.png" style="width: 394.0px; height: 306.5px;" /></a>
 <p>Belassen Sie die übrigen Angaben und klicken Sie <code class="docutils literal"><span class="pre">Load</span></code></p>
-<a class="reference internal image-reference" href="../../_images/postgis_importsids1.png"><img alt="Import der Shapedatei" class="align-center" src="../../_images/postgis_importsids1.png" style="width: 217.0px; height: 320.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_importsids.png"><img alt="Import der Shapedatei" class="align-center" src="../../_images/postgis_importsids.png" style="width: 217.0px; height: 320.0px;" /></a>
 <p>Die Shapedatei sollte ohne Fehler nach PostGIS importiert worden sein. Schließen Sie den PostGIS Manager und
 gehen Sie zurück in das QGIS Hauptfenster.</p>
 <p>Laden Sie nun die SIDS Daten über &#8216;PostGIS-Layer hinzufügen&#8217; in Ihre Karte.
 Über ein paar Anpassungen der Ebenenreihenfolge und der Farbgebung sollten Sie eine thematische Karte zum plötzlichen Kindstod (SIDS) in North Carolina erzeugen können;</p>
-<a class="reference internal image-reference" href="../../_images/postgis_sidsmap1.png"><img alt="thematische Karte zu SIDS" class="align-center" src="../../_images/postgis_sidsmap1.png" style="width: 512.0px; height: 371.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_sidsmap.png"><img alt="thematische Karte zu SIDS" class="align-center" src="../../_images/postgis_sidsmap.png" style="width: 512.0px; height: 371.5px;" /></a>
 </div>
 <div class="section" id="der-grafische-datenbankclient-pgadmin-iii">
 <h2>Der grafische Datenbankclient pgAdmin III<a class="headerlink" href="#der-grafische-datenbankclient-pgadmin-iii" title="Permalink to this headline">¶</a></h2>

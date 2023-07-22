@@ -88,7 +88,7 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <img alt="project logo" class="align-right" src="../../_images/logo-GeoServer23.png" />
+  <img alt="project logo" class="align-right" src="../../_images/logo-GeoServer.png" />
 <div class="section" id="geoserver">
 <h1>GeoServer 快速入门文档<a class="headerlink" href="#geoserver" title="Permalink to this headline">¶</a></h1>
 <p>　　GeoServer 是一款 Java 程序，用于为各类地理数据客户端提供数据服务。</p>
@@ -108,16 +108,16 @@
 <li>稍等片刻，系统将会启动。</li>
 <li>访问位于 <a class="reference external" href="http://localhost:8082/geoserver/web">http://localhost:8082/geoserver/web</a> 的系统界面。</li>
 </ol>
-<a class="reference internal image-reference" href="../../_images/geoserver-login11.png"><img alt="../../_images/geoserver-login11.png" src="../../_images/geoserver-login11.png" style="width: 560.0px; height: 288.4px;" /></a>
+<a class="reference internal image-reference" href="../../_images/geoserver-login.png"><img alt="../../_images/geoserver-login.png" src="../../_images/geoserver-login.png" style="width: 560.0px; height: 288.4px;" /></a>
 </div>
 <div class="section" id="id1">
 <h2>基本视图<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>　　开启 GeoServer 界面后，使用用户名“admin”和密码“geoserver”登录。管理界面将会显示。</p>
-<a class="reference internal image-reference" href="../../_images/geoserver-welcome11.png"><img alt="../../_images/geoserver-welcome11.png" src="../../_images/geoserver-welcome11.png" style="width: 560.0px; height: 324.8px;" /></a>
+<a class="reference internal image-reference" href="../../_images/geoserver-welcome.png"><img alt="../../_images/geoserver-welcome.png" src="../../_images/geoserver-welcome.png" style="width: 560.0px; height: 324.8px;" /></a>
 <p>　　*Data 数据* 面板中的 <strong>Layer Preview</strong> 连接可以用于预览服务中载入的数据。</p>
-<a class="reference internal image-reference" href="../../_images/geoserver-layerpreview11.png"><img alt="../../_images/geoserver-layerpreview11.png" src="../../_images/geoserver-layerpreview11.png" style="width: 784.7px; height: 458.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/geoserver-layerpreview.png"><img alt="../../_images/geoserver-layerpreview.png" src="../../_images/geoserver-layerpreview.png" style="width: 784.7px; height: 458.5px;" /></a>
 <p>　　在页面底部 <strong>tiger-ny</strong> 一览点击 <strong>OpenLayers</strong> ，可以用 OpenLayers 开启示例数据的显示。</p>
-<a class="reference internal image-reference" href="../../_images/geoserver-preview11.png"><img alt="../../_images/geoserver-preview11.png" src="../../_images/geoserver-preview11.png" style="width: 716.8px; height: 406.7px;" /></a>
+<a class="reference internal image-reference" href="../../_images/geoserver-preview.png"><img alt="../../_images/geoserver-preview.png" src="../../_images/geoserver-preview.png" style="width: 716.8px; height: 406.7px;" /></a>
 <p>　　该界面的缩放可以用三种方式控制：</p>
 <blockquote>
 <div><ul class="simple">
@@ -138,13 +138,13 @@
 </div>
 <p>　　这里的示例数据是 <a class="reference internal" href="../overview/naturalearth_overview.html"><em>Natural Earth data set</em></a> 。它已经包含在 OSGeo-Live 中了。 (<tt class="file docutils literal"><span class="pre">/usr/local/share/data/natural_earth/</span></tt>)</p>
 <p>　　为了存储服务所需的数据，需要创建一个“Store”。在 GeoServer 的管理员页面选择 <em class="guilabel">Stores</em> 并点击 <em class="guilabel">Add new Store</em> 建立。</p>
-<a class="reference internal image-reference" href="../../_images/geoserver-newstore11.png"><img alt="The New Store page" class="align-center" src="../../_images/geoserver-newstore11.png" style="width: 793.8px; height: 457.1px;" /></a>
+<a class="reference internal image-reference" href="../../_images/geoserver-newstore.png"><img alt="The New Store page" class="align-center" src="../../_images/geoserver-newstore.png" style="width: 793.8px; height: 457.1px;" /></a>
 <p>　　选择 <em class="guilabel">Directory of spatial files</em> 类别，创建页面显示如下：</p>
-<a class="reference internal image-reference" href="../../_images/geoserver-new-vector11.png"><img alt="Filling in the New Store page" class="align-center" src="../../_images/geoserver-new-vector11.png" style="width: 805.7px; height: 457.1px;" /></a>
+<a class="reference internal image-reference" href="../../_images/geoserver-new-vector.png"><img alt="Filling in the New Store page" class="align-center" src="../../_images/geoserver-new-vector.png" style="width: 805.7px; height: 457.1px;" /></a>
 <p>　　输入所需的名称，例如 <em>Natural Earth</em> ；以及目标目录，例如 <tt class="file docutils literal"><span class="pre">/usr/local/share/data/natural_earth/</span></tt> 。 <em class="guilabel">Browse</em> 按钮可用于选择目标目录。完成后点击 <em class="guilabel">save</em> 。</p>
-<a class="reference internal image-reference" href="../../_images/geoserver-naturalearth11.png"><img alt="The Natural Earth Datastore" class="align-center" src="../../_images/geoserver-naturalearth11.png" style="width: 536.2px; height: 303.8px;" /></a>
+<a class="reference internal image-reference" href="../../_images/geoserver-naturalearth.png"><img alt="The Natural Earth Datastore" class="align-center" src="../../_images/geoserver-naturalearth.png" style="width: 536.2px; height: 303.8px;" /></a>
 <p>　　点击各个图层右侧的 <em class="guilabel">publish</em> 执行发布。界面将转到 <a href="#id3"><span class="problematic" id="id4">*</span></a>Layers*：</p>
-<a class="reference internal image-reference" href="../../_images/geoserver-publish11.png"><img alt="The layer publishing page" class="align-center" src="../../_images/geoserver-publish11.png" style="width: 532.7px; height: 1051.4px;" /></a>
+<a class="reference internal image-reference" href="../../_images/geoserver-publish.png"><img alt="The layer publishing page" class="align-center" src="../../_images/geoserver-publish.png" style="width: 532.7px; height: 1051.4px;" /></a>
 <p>　　示例数据集中的很多信息 GeoServer 可以自动识别并填入表格。在 <em class="guilabel">Coordinate Reference System</em> （坐标系统）中，*Native SRS 原始坐标系* 显示为“UNKNOWN 未知”。此处应当在 <em>declared SRS 名义坐标系</em> 填入正确的值，使得 GeoServer 能够对数据进行定位。在本例中，填入“epsg:4326”即可。在 <a class="reference external" href="http://prj2epsg.org/search">http://prj2epsg.org/search</a> 可以用“UNKNOWN”右侧的字符串查询对应的 EPSG 标准坐标系代码。点击 <em class="guilabel">Compute from data</em> 和 <em class="guilabel">Compute from native bounds</em> 计算地理范围参数。最后点击 <em class="guilabel">save</em> 保存即可。</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -162,21 +162,21 @@
 <p class="last">有关 uDig 使用的详细信息，请看 <a class="reference internal" href="udig_quickstart.html"><em>uDig Quickstart</em></a> 。</p>
 </div>
 <p>　　开启 uDig 并添加（左上角“add data”按钮）shp 文件，或者拖拽目标至地图显示窗口亦可。这里使用 10m_land 和 10m_ocean 两个数据。 uDig 会自动使用一个默认的样式进行显示。</p>
-<a class="reference internal image-reference" href="../../_images/geoserver-udig_startup11.png"><img alt="Default Styling in uDig" class="align-center" src="../../_images/geoserver-udig_startup11.png" style="width: 773.5px; height: 357.7px;" /></a>
+<a class="reference internal image-reference" href="../../_images/geoserver-udig_startup.png"><img alt="Default Styling in uDig" class="align-center" src="../../_images/geoserver-udig_startup.png" style="width: 773.5px; height: 357.7px;" /></a>
 <p>　　这里默认的桔黄色海洋看上去很不自然。在 <a class="reference internal" href="#layer-list"><em>Layer list 图层列表</em></a> 选择形似调色板的样式编辑按钮：</p>
-<a class="reference internal image-reference" href="../../_images/geoserver-layer-chooser11.png" id="layer-list"><img alt="The Layer list window" class="align-center" id="layer-list" src="../../_images/geoserver-layer-chooser11.png" style="width: 177.8px; height: 167.3px;" /></a>
+<a class="reference internal image-reference" href="../../_images/geoserver-layer-chooser.png" id="layer-list"><img alt="The Layer list window" class="align-center" id="layer-list" src="../../_images/geoserver-layer-chooser.png" style="width: 177.8px; height: 167.3px;" /></a>
 <p>　　这将开启 <a class="reference internal" href="#style-pane"><em>Style Pane 样式控制面板</em></a> 。这里可以直接选择蓝色作为海洋图层的颜色，调节透明度（此处设为 100%），并调节边界颜色使之匹配。</p>
-<a class="reference internal image-reference" href="../../_images/geoserver-style-pane11.png" id="style-pane"><img alt="The Style Pane" class="align-center" id="style-pane" src="../../_images/geoserver-style-pane11.png" style="width: 680.4px; height: 501.9px;" /></a>
+<a class="reference internal image-reference" href="../../_images/geoserver-style-pane.png" id="style-pane"><img alt="The Style Pane" class="align-center" id="style-pane" src="../../_images/geoserver-style-pane.png" style="width: 680.4px; height: 501.9px;" /></a>
 <p>　　双击 <tt class="docutils literal"><span class="pre">OK</span></tt> 后， uDig 将显示结果。</p>
-<a class="reference internal image-reference" href="../../_images/geoserver-blue-ocean11.png"><img alt="Blue Oceans" class="align-center" src="../../_images/geoserver-blue-ocean11.png" style="width: 770.7px; height: 394.8px;" /></a>
-<a class="reference internal image-reference" href="../../_images/geoserver-custom-colour11.png"><img alt="Defining a nicer land color" class="align-center" src="../../_images/geoserver-custom-colour11.png" style="width: 359.1px; height: 208.6px;" /></a>
+<a class="reference internal image-reference" href="../../_images/geoserver-blue-ocean.png"><img alt="Blue Oceans" class="align-center" src="../../_images/geoserver-blue-ocean.png" style="width: 770.7px; height: 394.8px;" /></a>
+<a class="reference internal image-reference" href="../../_images/geoserver-custom-colour.png"><img alt="Defining a nicer land color" class="align-center" src="../../_images/geoserver-custom-colour.png" style="width: 359.1px; height: 208.6px;" /></a>
 <p>　　调整后的世界地图显示效果。</p>
-<a class="reference internal image-reference" href="../../_images/geoserver-basic-world11.png"><img alt="A basic word map" class="align-center" src="../../_images/geoserver-basic-world11.png" style="width: 743.4px; height: 375.2px;" /></a>
+<a class="reference internal image-reference" href="../../_images/geoserver-basic-world.png"><img alt="A basic word map" class="align-center" src="../../_images/geoserver-basic-world.png" style="width: 743.4px; height: 375.2px;" /></a>
 </div>
 <div class="section" id="id6">
 <h4>在 GeoServer 中添加样式<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p>　　完成以上步骤后，需要将样式导入 GeoServer 中。在 uDig 界面点击“Export”可以输出 SLD 文件。完成两个图层的输出后，在 GeoServer 管理界面选择 <tt class="docutils literal"><span class="pre">Styles``（``Data</span></tt> 面板），并点击 <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">New</span> <span class="pre">Style</span></tt> 。在页面底部点击 <tt class="docutils literal"><span class="pre">browse</span></tt> 可以浏览选择之前创建的 SLD 文件。选中后点击 <tt class="docutils literal"><span class="pre">browse</span></tt> 旁边的 <tt class="docutils literal"><span class="pre">upload</span></tt> 可导入该文件。导入后，编辑器中若出现高亮的错误行，系统可以执行检查并提供进一步的信息。若不需要这些行的信息，也可以直接忽略。</p>
-<a class="reference internal image-reference" href="../../_images/geoserver-add-style11.png"><img alt="Adding a Style to GeoServer" class="align-center" src="../../_images/geoserver-add-style11.png" style="width: 765.1px; height: 455.7px;" /></a>
+<a class="reference internal image-reference" href="../../_images/geoserver-add-style.png"><img alt="Adding a Style to GeoServer" class="align-center" src="../../_images/geoserver-add-style.png" style="width: 765.1px; height: 455.7px;" /></a>
 </div>
 </div>
 <div class="section" id="id7">

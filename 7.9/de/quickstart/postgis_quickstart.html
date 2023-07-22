@@ -92,7 +92,7 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <a class="reference external image-reference" href="http://postgis.net"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS3.png" style="width: 89.7px; height: 131.7px;" /></a>
+  <a class="reference external image-reference" href="http://postgis.net"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS.png" style="width: 89.7px; height: 131.7px;" /></a>
 <div class="section" id="postgis-quickstart">
 <h1>PostGIS Quickstart<a class="headerlink" href="#postgis-quickstart" title="Permalink to this headline">¶</a></h1>
 <p>PostGIS ist die räumliche Erweiterung der relationalen Datenbank PostgreSQL. PostGIS ermöglicht die
@@ -316,12 +316,12 @@ Sie können hier weitere Verbindungen zu Servern definieren und die Einstellunge
 erneuten Aufruf wieder zur Verfügung stehen.</p>
 <p>Klicken Sie <tt class="docutils literal"><span class="pre">Edit</span></tt> (Bearbeiten), um die Verbindungsparameter anzusehen oder zu bearbeiten. Oder aber einfach
 <tt class="docutils literal"><span class="pre">Connect</span></tt> (Verbinden) um fortzufahren:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_addlayers1.png"><img alt="Natural Earth Layer" class="align-center" src="../../_images/postgis_addlayers1.png" style="width: 300.0px; height: 252.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_addlayers.png"><img alt="Natural Earth Layer" class="align-center" src="../../_images/postgis_addlayers.png" style="width: 300.0px; height: 252.0px;" /></a>
 <p>Im Anschluss daran erscheint eine Liste der Datenbanktabellen mit räumlichen Informationen:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_listtables1.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables1.png" style="width: 300.0px; height: 252.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_listtables.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables.png" style="width: 300.0px; height: 252.0px;" /></a>
 <p>Wählen Sie das ne_10m_lakes table (Seen) und klicken Sie <tt class="docutils literal"><span class="pre">Hinzufügen</span></tt> (nicht <tt class="docutils literal"><span class="pre">Abfrage</span> <span class="pre">erstellen</span></tt>).
 Die Daten sollten nun in QGIS geladen werden:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_lakesmap1.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap1.png" style="width: 512.0px; height: 371.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_lakesmap.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap.png" style="width: 512.0px; height: 371.5px;" /></a>
 <p>Sie sollten eine Karte der Seen sehen. QGIS weiß nicht, dass es sich um Seen handelt und zeigt die Flächen
 möglicherweise nicht blau an. Nutzen Sie die QGIS Dokumentation, um herauszufinden, wie die Farbe angepasst
 werden kann. Navigieren Sie in die bekannte Seengruppe von Kanada.</p>
@@ -338,27 +338,27 @@ Plugin aus und klicken Sie ok.</p>
 <p>Sie sollten den PostGIS Manager nun im Menü finden und können ihn starten.</p>
 <p>Das Plugin verwendet die vorher eingegebenen Daten zur Verbindung mit der Natural Earth Datenbank. Lassen Sie
 das Passwort-Feld leer, falls Sie danach gefragt werden. Sie werden das Hauptfenster sehen.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_getmanager1.png"><img alt="Suche nach dem PostGIS Manager Plugin" class="align-center" src="../../_images/postgis_getmanager1.png" style="width: 403.5px; height: 215.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_getmanager.png"><img alt="Suche nach dem PostGIS Manager Plugin" class="align-center" src="../../_images/postgis_getmanager.png" style="width: 403.5px; height: 215.0px;" /></a>
 <p>Hat alles soweit funktioniert, sollten Sie einen Entrag vorfinden, um den PostGIS Maganger zu starten. Sie können
 ebenso auf den PostGIS Button mitdem Logo (der Elephant mit dem Globus) in der Toolbar klicken. Dies wird eine
 Verbindung zur Natural Earth Datenbank öffnen. Geben Sie kein Kennwort an, wenn dieses angefragt wird. Sie werden
 das Hauptfenster des Managers sehen. In der Voransicht werden Sie einen kleine Karte zu sehen bekommen.
 Hier habe ich den Layer ne_10m_populated_places  Layer ausgewählt und bin zu einer Insel, die ich kenne gezoomt.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_managerpreview1.png"><img alt="PostGIS Manager Vorschau" class="align-center" src="../../_images/postgis_managerpreview1.png" style="width: 354.0px; height: 264.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_managerpreview.png"><img alt="PostGIS Manager Vorschau" class="align-center" src="../../_images/postgis_managerpreview.png" style="width: 354.0px; height: 264.0px;" /></a>
 <p>Nun wollen wir den PostGIS Manager zum Import von Shape in die Datenbank nutzen. Wir werden die Daten
 <cite>North Carolina sudden infant death syndrome (SIDS)</cite> nutzen, die in einem der R Statistikpakete enthalten sind.</p>
 <p>Wählen Sie über das Menü <tt class="docutils literal"><span class="pre">Data</span></tt> die Option <tt class="docutils literal"><span class="pre">Load</span> <span class="pre">data</span> <span class="pre">from</span> <span class="pre">shapefile</span></tt>.
 Klicken Sie den Button <tt class="docutils literal"><span class="pre">...</span></tt> und wählen Sie die Shapedatei <tt class="docutils literal"><span class="pre">sids.shp</span></tt> in dem R <tt class="docutils literal"><span class="pre">Maptools</span></tt> Paket
 (dies befindet sich unter /usr/local/lib/R/site-library/) aus:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_browsedata1.png"><img alt="Auswahl der Shapedatei" class="align-center" src="../../_images/postgis_browsedata1.png" style="width: 394.0px; height: 306.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_browsedata.png"><img alt="Auswahl der Shapedatei" class="align-center" src="../../_images/postgis_browsedata.png" style="width: 394.0px; height: 306.5px;" /></a>
 <p>Belassen Sie die übrigen Angaben und klicken Sie <tt class="docutils literal"><span class="pre">Load</span></tt></p>
-<a class="reference internal image-reference" href="../../_images/postgis_importsids1.png"><img alt="Import der Shapedatei" class="align-center" src="../../_images/postgis_importsids1.png" style="width: 217.0px; height: 320.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_importsids.png"><img alt="Import der Shapedatei" class="align-center" src="../../_images/postgis_importsids.png" style="width: 217.0px; height: 320.0px;" /></a>
 <p>Die Shapedatei sollte ohne Fehler nach PostGIS importiert worden sein. Schließen Sie den PostGIS Manager und
 gehen Sie zurück in das QGIS Hauptfenster.</p>
 <p>Laden Sie nun die SIDS Daten über &#8216;PostGIS-Layer hinzufügen&#8217; in Ihre Karte.
 Über ein paar Anpassungen der Ebenenreihenfolge und der Farbgebung sollten Sie eine thematische Karte zu
 SIDS in North Carolina erzeugen können;</p>
-<a class="reference internal image-reference" href="../../_images/postgis_sidsmap1.png"><img alt="thematische Karte zu SIDS" class="align-center" src="../../_images/postgis_sidsmap1.png" style="width: 512.0px; height: 371.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_sidsmap.png"><img alt="thematische Karte zu SIDS" class="align-center" src="../../_images/postgis_sidsmap.png" style="width: 512.0px; height: 371.5px;" /></a>
 </div>
 <div class="section" id="der-grafische-datenbankclient-pgadmin-iii">
 <h2>Der grafische Datenbankclient pgAdmin III<a class="headerlink" href="#der-grafische-datenbankclient-pgadmin-iii" title="Permalink to this headline">¶</a></h2>

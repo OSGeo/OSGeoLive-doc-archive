@@ -132,15 +132,15 @@ In addition the CPU in your computer should support virtual machines. (Most comp
 </ul>
 </dd>
 </dl>
-<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_form7.png"><img alt="../../_images/vmware_easyvmx_form7.png" src="../../_images/vmware_easyvmx_form7.png" style="width: 600.0px; height: 498.0px;" /></a>
-<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_disk7.png"><img alt="../../_images/vmware_easyvmx_disk7.png" src="../../_images/vmware_easyvmx_disk7.png" style="width: 600.0px; height: 498.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_form.png"><img alt="../../_images/vmware_easyvmx_form.png" src="../../_images/vmware_easyvmx_form.png" style="width: 600.0px; height: 498.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_disk.png"><img alt="../../_images/vmware_easyvmx_disk.png" src="../../_images/vmware_easyvmx_disk.png" style="width: 600.0px; height: 498.0px;" /></a>
 <p>Click the button at bottom &#8220;Create Experimental Virtual Machine&#8221;. The website creates a properly formated <strong>vmx</strong> file containing all the above configurations. You need to place this file into the directory on your computer where the OSGeo vmdk file is located. So in the next screen, copy all lines from <tt class="docutils literal"><span class="pre">#!/usr/bin/vmplayer</span></tt> to <tt class="docutils literal"><span class="pre">#</span> <span class="pre">END</span> <span class="pre">OF</span> <span class="pre">EasyVMX!</span> <span class="pre">CONFIG</span></tt> and paste into a new file named osgeolive-5.5.vmx.</p>
-<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_output7.png"><img alt="../../_images/vmware_easyvmx_output7.png" src="../../_images/vmware_easyvmx_output7.png" style="width: 600.0px; height: 498.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_output.png"><img alt="../../_images/vmware_easyvmx_output.png" src="../../_images/vmware_easyvmx_output.png" style="width: 600.0px; height: 498.0px;" /></a>
 <p>The file basename (without the vmx extension) should match the file basename of the OSGeo vmdk file. Also double check the line in the vmx file that refers to <tt class="docutils literal"><span class="pre">scsi0:0.fileName</span> <span class="pre">=</span></tt>. Make sure that this also <strong>exactly matches the downloaded vmdk</strong> file name.
 Save this new vmx file into the same directory as your downloaded OSGeo vmdk.</p>
 <p>Now fire up VMWare Player and click the <strong>Open a Virtual Machine</strong> button. Browse to the directory where both the downloaded vmdk and the newly created vmx are located. Point to the vmx and the new virtual machine should be added to the list in the Player window. Click the <strong>Play Virtual Machine</strong> button and the OSGeo VM should boot up.</p>
-<a class="reference internal image-reference" href="../../_images/vmware_open7.png"><img alt="../../_images/vmware_open7.png" src="../../_images/vmware_open7.png" style="width: 540.0px; height: 474.3px;" /></a>
-<a class="reference internal image-reference" href="../../_images/vmware_play7.png"><img alt="../../_images/vmware_play7.png" src="../../_images/vmware_play7.png" style="width: 540.0px; height: 474.3px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_open.png"><img alt="../../_images/vmware_open.png" src="../../_images/vmware_open.png" style="width: 540.0px; height: 474.3px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_play.png"><img alt="../../_images/vmware_play.png" src="../../_images/vmware_play.png" style="width: 540.0px; height: 474.3px;" /></a>
 </div>
 <div class="section" id="once-the-vm-is-running">
 <h2>Once the VM is running<a class="headerlink" href="#once-the-vm-is-running" title="Permalink to this headline">¶</a></h2>
@@ -148,7 +148,7 @@ Save this new vmx file into the same directory as your downloaded OSGeo vmdk.</p
 <div class="highlight-python"><pre>sudo apt-get install open-vm-dkms open-vm-toolbox</pre>
 </div>
 <p>In the Virtual Machine window, select <em class="menuselection">Virtual Machine ‣ Virtual Machine Settings</em> menu, shift over to the Options tab, and click the Shared Folders setting. Now you can click the &#8220;+&#8221; button to add a directory from your host computer to be shared inside the virtual OSGeo-Live system. Suppose you want to share the directory <cite>C:\Users\your_name\Downloads</cite>. Click the browse button to find the directory, give it a name such as &#8220;Downloads&#8221;, and click &#8220;Save&#8221;.</p>
-<a class="reference internal image-reference" href="../../_images/vmware_shared7.png"><img alt="../../_images/vmware_shared7.png" src="../../_images/vmware_shared7.png" style="width: 640.0px; height: 527.2px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_shared.png"><img alt="../../_images/vmware_shared.png" src="../../_images/vmware_shared.png" style="width: 640.0px; height: 527.2px;" /></a>
 <p>Now run two additional commands in the terminal to mount the shared folder:</p>
 <div class="highlight-python"><pre>sudo mkdir /mnt/Downloads
 sudo mount -t vmhgfs .host:/Downloads /mnt/Downloads</pre>

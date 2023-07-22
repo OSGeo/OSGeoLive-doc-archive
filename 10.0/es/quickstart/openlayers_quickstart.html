@@ -95,7 +95,7 @@
             
   <div class="section" id="guia-de-inicio-rapido-de-openlayers">
 <h1><a class="toc-backref" href="#id1">Guía de inicio rápido de OpenLayers</a><a class="headerlink" href="#guia-de-inicio-rapido-de-openlayers" title="Permalink to this headline">¶</a></h1>
-<a class="reference external image-reference" href="http://openlayers.org/"><img alt="project logo" class="align-right" src="../../_images/logo-OpenLayers8.png" style="width: 100.0px; height: 100.8px;" /></a>
+<a class="reference external image-reference" href="http://openlayers.org/"><img alt="project logo" class="align-right" src="../../_images/logo-OpenLayers.png" style="width: 100.0px; height: 100.8px;" /></a>
 <p>Esta Guía de Inicio Rápido describe algunos pasos básicos necesarios para empezar a trabajar con penLayers3: crear un mapa básico, añadir capas raster y vectorial y dar estilos a los elementos.</p>
 <p>OpenLayers3 es una biblioteca de mapeo ligera para clientes web y móviles que usa tecnologías de navegadores modernos como HTML5, WebGL y CSS3.</p>
 <div class="contents topic" id="contents">
@@ -183,7 +183,7 @@ En el caso de las <em>capas vectoriales</em>, esta fuente lee lso datos vectoria
 </div>
 <p><strong>Ej. 1</strong>: Estructura del código básico</p>
 <p>Ahora, intentar abri el archivo basic-map.html desde un navegador web. Se debería ver lo siguiente:</p>
-<a class="reference internal image-reference" href="../../_images/openlayers-basic-map3.png"><img alt="../../_images/openlayers-basic-map3.png" src="../../_images/openlayers-basic-map3.png" style="width: 711.0px; height: 620.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/openlayers-basic-map.png"><img alt="../../_images/openlayers-basic-map.png" src="../../_images/openlayers-basic-map.png" style="width: 711.0px; height: 620.0px;" /></a>
 <p>Notas:</p>
 <ul class="simple">
 <li>El código sigue la buena práctica de cargar el código Javascript al final del fichero html.</li>
@@ -244,7 +244,7 @@ En el caso de las <em>capas vectoriales</em>, esta fuente lee lso datos vectoria
 </pre></div>
 </div>
 <p><strong>Ej. 5:</strong> Construcción de una capa vectorial GeoJSON</p>
-<a class="reference internal image-reference" href="../../_images/openlayers-vector3.png"><img alt="../../_images/openlayers-vector3.png" src="../../_images/openlayers-vector3.png" style="width: 518.0px; height: 277.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/openlayers-vector.png"><img alt="../../_images/openlayers-vector.png" src="../../_images/openlayers-vector.png" style="width: 518.0px; height: 277.0px;" /></a>
 <p>Nota: en el código anterior se debe cambiar <code class="docutils literal"><span class="pre">url_to_file</span></code> para apuntar a un fichero GeoJSON válido localizado en el servidor.
 Hay que tener en cuenta que la seguridad Javascript evitará usar como fuente juegos de datos de una URL externa o de un dominio diferente.</p>
 <p>Las entidades se pueden crear también de forma manual. En este caso es necesario crear una geometría que represente a la entidad:</p>
@@ -283,7 +283,7 @@ Hay que tener en cuenta que la seguridad Javascript evitará usar como fuente ju
 <p>Las entidades pertenecientes a capas vectoriales pueden tomar estilos.
 El estilo está determinado por una combinación de relleno, grosor, texto e imagen, los cuales son todos opcionales. Además, un estilo se puede aplicar a una capa, lo que marcará el estilo de todas las entidades contenidas, o a una entidad individual.</p>
 <p>Un estilo se representa por la clase <code class="docutils literal"><span class="pre">ol.style.Style</span></code> que tiene propiedades para definir el relleno (<code class="docutils literal"><span class="pre">fill</span></code>),  grosor(<code class="docutils literal"><span class="pre">stroke</span></code>), texto (<code class="docutils literal"><span class="pre">text</span></code>) e imágen (<code class="docutils literal"><span class="pre">image</span></code>) a ser aplicadas. El siguiente ejemplo muestra los límites administrativos mundiales con un estilo que les da relleno verde y grosor.</p>
-<a class="reference internal image-reference" href="../../_images/openlayers-styling3.png"><img alt="../../_images/openlayers-styling3.png" src="../../_images/openlayers-styling3.png" style="width: 555.0px; height: 283.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/openlayers-styling.png"><img alt="../../_images/openlayers-styling.png" src="../../_images/openlayers-styling.png" style="width: 555.0px; height: 283.0px;" /></a>
 <div class="highlight-javascript"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">limitsLayer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">layer</span><span class="p">.</span><span class="nx">Vector</span><span class="p">({</span>
   <span class="nx">source</span><span class="o">:</span> <span class="k">new</span> <span class="nx">ol</span><span class="p">.</span><span class="nx">source</span><span class="p">.</span><span class="nx">StaticVector</span><span class="p">({</span>
     <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;data/world_limits.json&#39;</span><span class="p">,</span>

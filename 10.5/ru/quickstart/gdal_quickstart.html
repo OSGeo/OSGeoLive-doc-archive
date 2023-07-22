@@ -89,7 +89,7 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL25.png" style="width: 81.0px; height: 89.4px;" /></a>
+  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL.png" style="width: 81.0px; height: 89.4px;" /></a>
 <div class="section" id="gdal-ogr">
 <h1>Начало работы с GDAL/OGR<a class="headerlink" href="#gdal-ogr" title="Permalink to this headline">¶</a></h1>
 <p>Для начала работы вам не понадобится ничего, кроме терминала
@@ -252,7 +252,7 @@ gdal_translate -srcwin 5400 0 5400 5400 HYP_50M_SR_W.tif  east.tif
 <p>Посмотрим на получившийся шейп-файл в QGIS и <em>ogrinfo</em> (мы ещё рассмотрим
 ogrinfo ниже).</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex12.png"><img alt="../../_images/gdal_gdaltindex12.png" src="../../_images/gdal_gdaltindex12.png" style="width: 416.0px; height: 212.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex.png"><img alt="../../_images/gdal_gdaltindex.png" src="../../_images/gdal_gdaltindex.png" style="width: 416.0px; height: 212.0px;" /></a>
 </div></blockquote>
 <div class="highlight-python"><div class="highlight"><pre>ogrinfo ../HYP_50M_SR_W/ index
 INFO: Open of `../HYP_50M_SR_W/&#39;
@@ -291,13 +291,13 @@ OGRFeature(index):1
 <p>Используйте <em>gdalinfo</em>, чтобы проверить изменения и посмотреть на
 свойства растра.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/gdal_mercator12.png"><img alt="../../_images/gdal_mercator12.png" src="../../_images/gdal_mercator12.png" style="width: 405.6px; height: 327.2px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/gdal_mercator.png"><img alt="../../_images/gdal_mercator.png" src="../../_images/gdal_mercator.png" style="width: 405.6px; height: 327.2px;" /></a>
 </div></blockquote>
 <p>Теперь перепроецируем растр в ортографическую проекцию:</p>
 <div class="highlight-python"><div class="highlight"><pre>gdalwarp -t_srs &#39;+proj=ortho +datum=WGS84&#39; HYP_50M_SR_W_4326.tif ortho.tif
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/gdal_ortho12.png"><img alt="../../_images/gdal_ortho12.png" src="../../_images/gdal_ortho12.png" style="width: 294.4px; height: 296.8px;" /></a>
+<a class="reference internal image-reference" href="../../_images/gdal_ortho.png"><img alt="../../_images/gdal_ortho.png" src="../../_images/gdal_ortho.png" style="width: 294.4px; height: 296.8px;" /></a>
 <p>Вы обратили внимание, что земные полюса &#8220;обрезаны&#8221;? Это случилось потому,
 что приполярные области не могут быть перепроецированы <em>gdalwarp</em>, т.к.
 программа не получает на входе полный набор данных. Мы может заставить

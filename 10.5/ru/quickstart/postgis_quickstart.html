@@ -89,7 +89,7 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <a class="reference external image-reference" href="http://postgis.net"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS25.png" style="width: 26.1px; height: 38.4px;" /></a>
+  <a class="reference external image-reference" href="http://postgis.net"><img alt="project logo" class="align-right" src="../../_images/logo-PostGIS.png" style="width: 26.1px; height: 38.4px;" /></a>
 <div class="section" id="postgis">
 <h1><a class="toc-backref" href="#id10">Введение в PostGIS</a><a class="headerlink" href="#postgis" title="Permalink to this headline">¶</a></h1>
 <p>PostGIS добавляет дополнительную функциональность к СУБД PostgreSQL. PostGIS расширяет возможности
@@ -338,12 +338,12 @@ demo=# INSERT INTO cities (id, the_geom, name) VALUES (3,ST_GeomFromText(&#39;PO
 <dd>Natural Earth в PostGIS уже определены в выпадающем меню <em>Соединения</em>. Там же вы можете создать новое подключение к серверу и хранить настройки для быстрого доступа. Нажмите <code class="docutils literal"><span class="pre">Edit</span></code>, если хотите увидеть, какие параметры указаны для данных Natural Earth,
 или нажмите <code class="docutils literal"><span class="pre">Connect</span></code>, чтобы продолжить:</dd>
 </dl>
-<a class="reference internal image-reference" href="../../_images/postgis_addlayers12.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_addlayers12.png" style="width: 300.0px; height: 252.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_addlayers.png"><img alt="Connect to Natural Earth" class="align-center" src="../../_images/postgis_addlayers.png" style="width: 300.0px; height: 252.0px;" /></a>
 <p>Появится список пространственных таблиц базы данных:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_listtables12.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables12.png" style="width: 300.0px; height: 252.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_listtables.png"><img alt="Natural Earth Layers" class="align-center" src="../../_images/postgis_listtables.png" style="width: 300.0px; height: 252.0px;" /></a>
 <p>Выберите озёра (&#8220;Lakes&#8221;) и нажмите <code class="docutils literal"><span class="pre">Add</span></code> внизу (не <code class="docutils literal"><span class="pre">Load</span></code> вверху, которая подгрузит параметры подключения базы данных),
 после чего слой откроется в QGIS:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_lakesmap12.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap12.png" style="width: 512.0px; height: 371.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_lakesmap.png"><img alt="My First PostGIS layer" class="align-center" src="../../_images/postgis_lakesmap.png" style="width: 512.0px; height: 371.5px;" /></a>
 <p>Вы должны увидеть карту с озёрами. QGIS не знает, что это озера, поэтому,
 возможно, они будут не голубого цвета. Используйте документацию QGIS, чтобы
 узнать, как изменить цвет. Увеличьте обзор до группы знаменитаых озёр Канады.</p>
@@ -356,14 +356,14 @@ demo=# INSERT INTO cities (id, the_geom, name) VALUES (3,ST_GeomFromText(&#39;PO
 Чтобы установить его, перейдите в меню <code class="docutils literal"><span class="pre">Модули</span></code>, далее <code class="docutils literal"><span class="pre">Загрузить</span> <span class="pre">модули</span></code>. QGIS загрузит самую
 новую версию из репозитория (для этого вам потребуется работающее интернет-соединение).
 Найдите <code class="docutils literal"><span class="pre">PostGIS</span> <span class="pre">Manager</span></code> и нажмите кнопку <code class="docutils literal"><span class="pre">Install</span> <span class="pre">plugin</span></code>.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_getmanager4.png"><img alt="Fetch PostGIS Manager Plugin" class="align-center" src="../../_images/postgis_getmanager4.png" style="width: 399.0px; height: 312.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_getmanager.png"><img alt="Fetch PostGIS Manager Plugin" class="align-center" src="../../_images/postgis_getmanager.png" style="width: 399.0px; height: 312.0px;" /></a>
 <p>В меню <code class="docutils literal"><span class="pre">Модули</span></code> должен появиться  пункт <em>PostGIS Manager</em>.
 Для запуска плагина также можно кликнуть по кнопке с логотипом PostGIS (слон с земным шаром), расположенной на панели.</p>
 <p>После этого будет уставновлено соединение с базой данных <em>Natural Earth</em>. Оставьте поле пароль пустым, если будет необходимо его ввести.
 Вы увидите основное окно управления: слева вы сможете выбрать таблицы из базы данных, в правой части&nbsp;— узнать информацию о них.
 Вкладка <em>Просмотр</em> покажет небольшую карту.
 Для примера был выбран слой &#8220;Населённые пункты&#8221;, карта была приближена к произвольному месту.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_managerpreview12.png"><img alt="PostGIS Manager Preview" class="align-center" src="../../_images/postgis_managerpreview12.png" style="width: 407.0px; height: 285.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_managerpreview.png"><img alt="PostGIS Manager Preview" class="align-center" src="../../_images/postgis_managerpreview.png" style="width: 407.0px; height: 285.5px;" /></a>
 <dl class="docutils">
 <dt>Далее <em>PostGIS Manager</em> будет использован для импорта шейп-файла в базу данных.</dt>
 <dd>Мы используем данным о синдроме внезапной смерти у детей в Северной Каролине,
@@ -389,19 +389,19 @@ demo=# INSERT INTO cities (id, the_geom, name) VALUES (3,ST_GeomFromText(&#39;PO
 </table>
 </div></blockquote>
 <p>Не изменяя настроек в появившемся окне, нажмите  <code class="docutils literal"><span class="pre">Load</span></code>:</p>
-<a class="reference internal image-reference" href="../../_images/postgis_importsids12.png"><img alt="Import a shapefile" class="align-center" src="../../_images/postgis_importsids12.png" style="width: 217.0px; height: 320.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_importsids.png"><img alt="Import a shapefile" class="align-center" src="../../_images/postgis_importsids.png" style="width: 217.0px; height: 320.0px;" /></a>
 <p>Шейп-файл должен быть импортирован в PostGIS без ошибок. Закройте менеджер PostGIS и вернитесь в основное окно QGIS.</p>
 <p>Подгрузите данные SIDS с помощью опции &#8220;Добавить слой PostGIS&#8221;.
 Изменив порядок слоёв и заливок, вы сможете создать фоновую картограмму (хороплет),
 отображающую количество детей, умерших от синдрома внезапной смерти в Северной Каролине.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_sidsmap12.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap12.png" style="width: 512.0px; height: 371.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_sidsmap.png"><img alt="SIDS data mapped" class="align-center" src="../../_images/postgis_sidsmap.png" style="width: 512.0px; height: 371.5px;" /></a>
 </div>
 <div class="section" id="pgadmin-iii">
 <h2><a class="toc-backref" href="#id18">Знакомство с pgAdmin III</a><a class="headerlink" href="#pgadmin-iii" title="Permalink to this headline">¶</a></h2>
 <p>Вы можете использовать графический клиент базы данных <code class="docutils literal"><span class="pre">pgAdmin</span> <span class="pre">III</span></code> из системного меню &#8220;Базы данных&#8221;,
 чтобы сделать запрос или изменить атрибутивную информацию в базе данных.
 Это официальный клиент для PostgreSQL, позволяющий использовать SQL для управления таблицами данных.</p>
-<a class="reference internal image-reference" href="../../_images/postgis_pgadmin_main_window9.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_pgadmin_main_window9.png" style="width: 511.0px; height: 370.5px;" /></a>
+<a class="reference internal image-reference" href="../../_images/postgis_pgadmin_main_window.png"><img alt="pgAdmin III" class="align-center" src="../../_images/postgis_pgadmin_main_window.png" style="width: 511.0px; height: 370.5px;" /></a>
 <p>В клиенте имеется опция создания нового соединения с сервером PostgreSQL или
 подключения с имеющимся соединением. В этом случае необходимо подключиться к
 локальному серверу (<code class="docutils literal"><span class="pre">local</span></code>).</p>

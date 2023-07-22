@@ -136,14 +136,14 @@ Ebenso sollte die CPU des Host-Systems VM&#8217;s unterstützen (die meisten Com
 </ul>
 </dd>
 </dl>
-<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_form1.png"><img alt="../../_images/vmware_easyvmx_form1.png" src="../../_images/vmware_easyvmx_form1.png" style="width: 600.0px; height: 498.0px;" /></a>
-<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_disk1.png"><img alt="../../_images/vmware_easyvmx_disk1.png" src="../../_images/vmware_easyvmx_disk1.png" style="width: 600.0px; height: 498.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_form.png"><img alt="../../_images/vmware_easyvmx_form.png" src="../../_images/vmware_easyvmx_form.png" style="width: 600.0px; height: 498.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_disk.png"><img alt="../../_images/vmware_easyvmx_disk.png" src="../../_images/vmware_easyvmx_disk.png" style="width: 600.0px; height: 498.0px;" /></a>
 <p>Klicken Sie auf die Schaltfläche &#8220;Create Experimental Virtual Machine&#8221;. Es wird eine formatierte <strong>vmx</strong> Datei von der Webseite bereitgestellt, die die oben eingegebenen Einstellungen beinhaltet. Die Datei ist in dem Verzeichnis Ihres Computers abzulegen, wo zuvor die die OSGeo vmdk Datei aus dem ZIP Archiv entpackt wurde. Die in der folgenden Ansicht zu sehenden Zeilen, beginnend ab <tt class="docutils literal"><span class="pre">#!/usr/bin/vmplayer</span></tt> bis <tt class="docutils literal"><span class="pre">#</span> <span class="pre">END</span> <span class="pre">OF</span> <span class="pre">EasyVMX!</span> <span class="pre">CONFIG</span></tt> sind zu kopieren und in eine neue Datei <cite>osgeolive-5.5.vmx</cite> einzufügen.</p>
-<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_output1.png"><img alt="../../_images/vmware_easyvmx_output1.png" src="../../_images/vmware_easyvmx_output1.png" style="width: 600.0px; height: 498.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_easyvmx_output.png"><img alt="../../_images/vmware_easyvmx_output.png" src="../../_images/vmware_easyvmx_output.png" style="width: 600.0px; height: 498.0px;" /></a>
 <p>Der Dateiname (ohne der Extension vmx) sollte dem der vmdk Datei entsprechen. Bitte prüfen Sie sorgfältig die Datei, besonders die Zeile für die SCSI Definition <tt class="docutils literal"><span class="pre">scsi0:0.fileName</span> <span class="pre">=</span></tt>. Stellen Sie sicher, dass der referenzierte Dateiname dem der vmdk Datei entspricht. Speichern Sie anschließend die neue Datei in das gleiche Verzeichnis der vmdk Datei.</p>
 <p>Sie können nun den VMWare Player starten und im Menü über <strong>Open a Virtual Machine</strong> die vmdk Datei auswählen, die im Verzeichnis zu finden ist, wo zuvor die vmx Datei gespeichert worden ist. Die neue VM sollte nun in der Liste des VMWare Players erscheinen. Wählen Sie <strong>Play Virtual Machine</strong> und die VM sollte booten.</p>
-<a class="reference internal image-reference" href="../../_images/vmware_open1.png"><img alt="../../_images/vmware_open1.png" src="../../_images/vmware_open1.png" style="width: 540.0px; height: 474.3px;" /></a>
-<a class="reference internal image-reference" href="../../_images/vmware_play1.png"><img alt="../../_images/vmware_play1.png" src="../../_images/vmware_play1.png" style="width: 540.0px; height: 474.3px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_open.png"><img alt="../../_images/vmware_open.png" src="../../_images/vmware_open.png" style="width: 540.0px; height: 474.3px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_play.png"><img alt="../../_images/vmware_play.png" src="../../_images/vmware_play.png" style="width: 540.0px; height: 474.3px;" /></a>
 </div>
 <div class="section" id="wenn-die-vm-lauft">
 <h2>Wenn die VM läuft<a class="headerlink" href="#wenn-die-vm-lauft" title="Permalink to this headline">¶</a></h2>
@@ -151,7 +151,7 @@ Ebenso sollte die CPU des Host-Systems VM&#8217;s unterstützen (die meisten Com
 <div class="highlight-python"><pre>sudo apt-get install open-vm-dkms open-vm-toolbox</pre>
 </div>
 <p>Im Fenster des VMWare Players wählen Sie <em class="menuselection">Virtual Machine ‣ Virtual Machine Settings</em> wechseln Sie in den Optionen Tab und klicken Sie anschließend auf die Shared Folder Einstellungen. Hier können Sie mit &#8220;+&#8221; neue Verzeichnisse hinzufügen. Für den Fall, dass Sie unter Windows das Verzeichnis <cite>C:\Users\your_name\Downloads</cite> nutzen wollen, navigieren Sie zum entsprechenden Verzeichnis und geben Sie der Freigabe den Namen &#8220;Downloads&#8221;. Anschließend die Konfiguration übernehmen und speichern, fertig.</p>
-<a class="reference internal image-reference" href="../../_images/vmware_shared1.png"><img alt="../../_images/vmware_shared1.png" src="../../_images/vmware_shared1.png" style="width: 640.0px; height: 527.2px;" /></a>
+<a class="reference internal image-reference" href="../../_images/vmware_shared.png"><img alt="../../_images/vmware_shared.png" src="../../_images/vmware_shared.png" style="width: 640.0px; height: 527.2px;" /></a>
 <p>Im Terminal der VM sollten noch zwei Kommandos aufgerufen werden, um diese Freigabe nutzen zu können:</p>
 <div class="highlight-python"><pre>sudo mkdir /mnt/Downloads
 sudo mount -t vmhgfs .host:/Downloads /mnt/Downloads</pre>
