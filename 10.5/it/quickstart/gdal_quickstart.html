@@ -92,7 +92,7 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL17.png" style="width: 81.0px; height: 89.4px;" /></a>
+  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL.png" style="width: 81.0px; height: 89.4px;" /></a>
 <div class="section" id="guida-rapida-su-gdal-ogr">
 <h1>Guida rapida su GDAL/OGR<a class="headerlink" href="#guida-rapida-su-gdal-ogr" title="Permalink to this headline">¶</a></h1>
 <p>Non sarà necessario nient&#8217;altro che un terminale per questo tutorial. Se volete
@@ -246,7 +246,7 @@ al file.</p>
 <p>Controllate lo shapefile di output con QGIS e ogrinfo (imparerete di più su
 ogrinfo dopo in questo tutorial)</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex8.png"><img alt="../../_images/gdal_gdaltindex8.png" src="../../_images/gdal_gdaltindex8.png" style="width: 416.0px; height: 212.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex.png"><img alt="../../_images/gdal_gdaltindex.png" src="../../_images/gdal_gdaltindex.png" style="width: 416.0px; height: 212.0px;" /></a>
 </div></blockquote>
 <div class="highlight-python"><div class="highlight"><pre>ogrinfo ../HYP_50M_SR_W/ index
 INFO: Open of `../HYP_50M_SR_W/&#39;
@@ -284,13 +284,13 @@ l&#8217;immagine WGS84 in una proiezione di Mercatore:</p>
 </div>
 <p>Usare gdalinfo per verificare il cambio e visualizzate l&#8217;immagine.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/gdal_mercator8.png"><img alt="../../_images/gdal_mercator8.png" src="../../_images/gdal_mercator8.png" style="width: 405.6px; height: 327.2px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/gdal_mercator.png"><img alt="../../_images/gdal_mercator.png" src="../../_images/gdal_mercator.png" style="width: 405.6px; height: 327.2px;" /></a>
 </div></blockquote>
 <p>Qui si riproietta in una proiezione Ortho.</p>
 <div class="highlight-python"><div class="highlight"><pre>gdalwarp -t_srs &#39;+proj=ortho +datum=WGS84&#39; HYP_50M_SR_W_4326.tif ortho.tif
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/gdal_ortho8.png"><img alt="../../_images/gdal_ortho8.png" src="../../_images/gdal_ortho8.png" style="width: 294.4px; height: 296.8px;" /></a>
+<a class="reference internal image-reference" href="../../_images/gdal_ortho.png"><img alt="../../_images/gdal_ortho.png" src="../../_images/gdal_ortho.png" style="width: 294.4px; height: 296.8px;" /></a>
 <p>Notare come i poli sono tagliati?  Questo perchè gli angoli al polo non possono
 essere riproiettati gdalwarp non legge tutti i dati. Come soluzione si può forzare gdalwarp a
 leggere un mucchio di dati eccedenti. Approfondire questo argomento nel RasterTutorial <a class="reference external" href="http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial">http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial</a>.</p>
