@@ -92,7 +92,7 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL25.png" style="width: 81.0px; height: 89.4px;" /></a>
+  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL.png" style="width: 81.0px; height: 89.4px;" /></a>
 <div class="section" id="gdal-ogr">
 <h1>GDAL/OGR 快速入门<a class="headerlink" href="#gdal-ogr" title="Permalink to this headline">¶</a></h1>
 <p>　　本教程只涉及命令行操作。对于数据的可视化，请使用 OSGeo-Live 所提供的各款桌面 GIS 系统，例如 <a class="reference internal" href="../overview/qgis_overview.html"><em>Quantum GIS (QGIS)</em></a> 。</p>
@@ -223,7 +223,7 @@ gdal_translate -srcwin 5400 0 5400 5400 HYP_50M_SR_W.tif  east.tif</pre>
 </div>
 <p>　　可以使用 QGIS 和 ogrinfo（相见后述）查看输出的 shp 文件。</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex12.png"><img alt="../../_images/gdal_gdaltindex12.png" src="../../_images/gdal_gdaltindex12.png" style="width: 416.0px; height: 212.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex.png"><img alt="../../_images/gdal_gdaltindex.png" src="../../_images/gdal_gdaltindex.png" style="width: 416.0px; height: 212.0px;" /></a>
 </div></blockquote>
 <div class="highlight-python"><pre>ogrinfo ../HYP_50M_SR_W/ index
 INFO: Open of `../HYP_50M_SR_W/'
@@ -254,12 +254,12 @@ OGRFeature(index):1
 </div>
 <p>　　使用 gdalinfo 验证或显示查看。</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/gdal_mercator12.png"><img alt="../../_images/gdal_mercator12.png" src="../../_images/gdal_mercator12.png" style="width: 405.6px; height: 327.2px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/gdal_mercator.png"><img alt="../../_images/gdal_mercator.png" src="../../_images/gdal_mercator.png" style="width: 405.6px; height: 327.2px;" /></a>
 </div></blockquote>
 <p>　　这里再将影象重采样到正交投影：</p>
 <div class="highlight-python"><pre>gdalwarp -t_srs '+proj=ortho +datum=WGS84' HYP_50M_SR_W_4326.tif ortho.tif</pre>
 </div>
-<a class="reference internal image-reference" href="../../_images/gdal_ortho12.png"><img alt="../../_images/gdal_ortho12.png" src="../../_images/gdal_ortho12.png" style="width: 294.4px; height: 296.8px;" /></a>
+<a class="reference internal image-reference" href="../../_images/gdal_ortho.png"><img alt="../../_images/gdal_ortho.png" src="../../_images/gdal_ortho.png" style="width: 294.4px; height: 296.8px;" /></a>
 <p>　　请注意，地球两极被部分裁切了，这是因为非常靠近两极的边缘是难以重投影的，gdalwarp 放弃了这部分的数据。通过强制 gdalwarp 读取两极数据可以改善这一问题。相见栅格处理教程中的有关内容：http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial 。</p>
 </div>
 <div class="section" id="id5">

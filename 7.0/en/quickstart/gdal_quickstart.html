@@ -92,7 +92,7 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL7.png" style="width: 81.0px; height: 89.4px;" /></a>
+  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL.png" style="width: 81.0px; height: 89.4px;" /></a>
 <div class="section" id="gdal-ogr-quickstart">
 <h1>GDAL/OGR Quickstart<a class="headerlink" href="#gdal-ogr-quickstart" title="Permalink to this headline">¶</a></h1>
 <p>You will need nothing but a terminal for this quickstart. If you want to
@@ -236,7 +236,7 @@ the path to the file.</p>
 <p>Have a look at your output shapefile with QGIS and ogrinfo (you
 will learn more about ogrinfo later in this tutorial)</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex3.png"><img alt="../../_images/gdal_gdaltindex3.png" src="../../_images/gdal_gdaltindex3.png" style="width: 416.0px; height: 212.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex.png"><img alt="../../_images/gdal_gdaltindex.png" src="../../_images/gdal_gdaltindex.png" style="width: 416.0px; height: 212.0px;" /></a>
 </div></blockquote>
 <div class="highlight-python"><pre>ogrinfo ../HYP_50M_SR_W/ index
 INFO: Open of `../HYP_50M_SR_W/'
@@ -271,12 +271,12 @@ the WGS84 geographic image to the Mercator projection:</p>
 </div>
 <p>Use gdalinfo to verify the change and have a look at the image.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/gdal_mercator3.png"><img alt="../../_images/gdal_mercator3.png" src="../../_images/gdal_mercator3.png" style="width: 405.6px; height: 327.2px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/gdal_mercator.png"><img alt="../../_images/gdal_mercator.png" src="../../_images/gdal_mercator.png" style="width: 405.6px; height: 327.2px;" /></a>
 </div></blockquote>
 <p>Here we reproject to the Ortho projection.</p>
 <div class="highlight-python"><pre>gdalwarp -t_srs '+proj=ortho +datum=WGS84' HYP_50M_SR_W_4326.tif ortho.tif</pre>
 </div>
-<a class="reference internal image-reference" href="../../_images/gdal_ortho3.png"><img alt="../../_images/gdal_ortho3.png" src="../../_images/gdal_ortho3.png" style="width: 294.4px; height: 296.8px;" /></a>
+<a class="reference internal image-reference" href="../../_images/gdal_ortho.png"><img alt="../../_images/gdal_ortho.png" src="../../_images/gdal_ortho.png" style="width: 294.4px; height: 296.8px;" /></a>
 <p>Note how the poles are clipped?  This is because the edges at the pole
 can&#8217;t be reprojected gdalwarp does not read all the data.  We can force
 gdalwarp to read a bunch of surplus data around chunks as one way to
