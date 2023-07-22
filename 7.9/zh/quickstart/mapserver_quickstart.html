@@ -92,8 +92,8 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <a class="reference external image-reference" href="http://mapserver.org/"><img alt="Project logo" class="align-right" src="../../_images/logo-mapserver-new25.png" style="width: 245.05px; height: 65.0px;" /></a>
-<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project25.png" style="width: 150.0px; height: 53.0px;" /></a>
+  <a class="reference external image-reference" href="http://mapserver.org/"><img alt="Project logo" class="align-right" src="../../_images/logo-mapserver-new.png" style="width: 245.05px; height: 65.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 150.0px; height: 53.0px;" /></a>
 <div class="section" id="mapserver">
 <h1>MapServer 快速入门文档<a class="headerlink" href="#mapserver" title="Permalink to this headline">¶</a></h1>
 <p>　　MapServer 是一款 <a class="reference external" href="http://www.opensource.org">开源</a> 的服务程序，用于以 <a class="reference external" href="http://www.opengeospatial.org/standards">OGC 标准服务</a> 发布影象、矢量要素等地理信息。其提供的服务包括 <a class="reference external" href="http://www.opengeospatial.org/standards/wms">WMS 网络地图服务</a> 和 <a class="reference external" href="http://www.opengeospatial.org/standards/wfs">WFS 网络地理要素服务</a> 。</p>
@@ -206,7 +206,7 @@ END</pre>
 </div>
 <p>　　以上 URL 为一个 <a class="reference external" href="http://www.opengeospatial.org/standards/wms">Web Map Service (WMS)</a> <strong>GetMap</strong> 请求。MapServer 通过其中指定的 mapfile 将指定图层渲染为 PNG 图像，并且符合用户指定的参数（图像大小、地理区域范围、投影等）。在 mapfile 的 &#8220;<em>&amp;LAYERS=...</em>&#8221; 中指定的各图层都具备 <em>STATUS ON</em> 属性，同时 <em>STATUS DEFAULT</em> 的图层也会被渲染。渲染结果如图所示。</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/mapserver_map12.png"><img alt="../../_images/mapserver_map12.png" src="../../_images/mapserver_map12.png" style="width: 560.0px; height: 420.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_map.png"><img alt="../../_images/mapserver_map.png" src="../../_images/mapserver_map.png" style="width: 560.0px; height: 420.0px;" /></a>
 </div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -238,7 +238,7 @@ END</pre>
 </div>
 <p>　　请求的结果与上一次的相似，但添加了湖泊图层：</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes12.png"><img alt="../../_images/mapserver_lakes12.png" src="../../_images/mapserver_lakes12.png" style="width: 560.0px; height: 420.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes.png"><img alt="../../_images/mapserver_lakes.png" src="../../_images/mapserver_lakes.png" style="width: 560.0px; height: 420.0px;" /></a>
 </div></blockquote>
 </div>
 <div class="section" id="mapserver-quickstart-styling-a-layer-zh">
@@ -272,7 +272,7 @@ END</pre>
 <p>　　新的 CLASS 对象使得 MapServer 根据 &#8220;ScaleRank&#8221; 属性控制样式。ScaleRank 为 &#8220;0&#8221; 或 &#8220;1&#8221; 者边界线以黑色显示。CLASS 列表以从前到后的顺序调用。当一个要素满足了 &#8220;EXPRESSION&#8221; 的定义，该要素会使用相应 CLASS 进行渲染。不满足时，系统将检查下一个。若没有任何条目满足，该要素默认不会渲染，除非该对象包含 no EXPRESSION 作为默认。图层的 &#8220;CLASSITEM&#8221; 参数指导 MapServer 调用所需的属性用于 EXPRESSION 对比。</p>
 <p>　　以上改动使得渲染图像上较大的湖泊出现黑边，如图所示。</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes_scalerank12.png"><img alt="../../_images/mapserver_lakes_scalerank12.png" src="../../_images/mapserver_lakes_scalerank12.png" style="width: 560.0px; height: 420.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes_scalerank.png"><img alt="../../_images/mapserver_lakes_scalerank.png" src="../../_images/mapserver_lakes_scalerank.png" style="width: 560.0px; height: 420.0px;" /></a>
 </div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>

@@ -92,7 +92,7 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL3.png" style="width: 81.0px; height: 89.4px;" /></a>
+  <a class="reference external image-reference" href="http://gdal.org/"><img alt="project logo" class="align-right" src="../../_images/logo-GDAL.png" style="width: 81.0px; height: 89.4px;" /></a>
 <div class="section" id="gdal-ogr-quickstart">
 <h1>GDAL/OGR Quickstart<a class="headerlink" href="#gdal-ogr-quickstart" title="Permalink to this headline">¶</a></h1>
 <p>Sie brauchen lediglich ein Terminal für die Übungen. Zur Visualisierung der Ergebnisse
@@ -231,7 +231,7 @@ wird ein Polygon mit dem Umring der Rasterdatei und dem Pfad zur Rasterdatei erz
 <p>Schauen Sie sich Ihre Ausgabe-Shapedatei mit QGIS und ogrinfo an (später werden Sie
 noch mehr über ogrinfo erfahren).</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex1.png"><img alt="../../_images/gdal_gdaltindex1.png" src="../../_images/gdal_gdaltindex1.png" style="width: 416.0px; height: 212.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/gdal_gdaltindex.png"><img alt="../../_images/gdal_gdaltindex.png" src="../../_images/gdal_gdaltindex.png" style="width: 416.0px; height: 212.0px;" /></a>
 </div></blockquote>
 <div class="highlight-python"><pre>ogrinfo ../HYP_50M_SR_W/ index
 INFO: Open of `../HYP_50M_SR_W/'
@@ -266,12 +266,12 @@ Geographischen Projektion WGS84 in die Mercator Projektion umwandeln:</p>
 </div>
 <p>Verwenden Sie gdalinfo, um sich die Veränderung anzuschauen. Schauen Sie sich das Bild auch mit QGIS an.</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/gdal_mercator1.png"><img alt="../../_images/gdal_mercator1.png" src="../../_images/gdal_mercator1.png" style="width: 405.6px; height: 327.2px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/gdal_mercator.png"><img alt="../../_images/gdal_mercator.png" src="../../_images/gdal_mercator.png" style="width: 405.6px; height: 327.2px;" /></a>
 </div></blockquote>
 <p>Nun projizieren wir in die Orthoprojektion.</p>
 <div class="highlight-python"><pre>gdalwarp -t_srs '+proj=ortho +datum=WGS84' HYP_50M_SR_W_4326.tif ortho.tif</pre>
 </div>
-<a class="reference internal image-reference" href="../../_images/gdal_ortho1.png"><img alt="../../_images/gdal_ortho1.png" src="../../_images/gdal_ortho1.png" style="width: 294.4px; height: 296.8px;" /></a>
+<a class="reference internal image-reference" href="../../_images/gdal_ortho.png"><img alt="../../_images/gdal_ortho.png" src="../../_images/gdal_ortho.png" style="width: 294.4px; height: 296.8px;" /></a>
 <p>Beachten Sie, wie die Pole abgeschnitten werden. Weil die Ecken an den Polen nicht umprojiziert werden können, kann gdalwarp nicht alle Daten lesen. Als Lösung können wir gdalwarp zwingen, ein wenig zusätzliche Daten zu lesen. Zu diesem Thema erfahren Sie mehr im Raster-Tutorial <a class="reference external" href="http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial">http://trac.osgeo.org/gdal/wiki/UserDocs/RasterProcTutorial</a>.</p>
 </div>
 <div class="section" id="zusammenfassen-von-daten">
