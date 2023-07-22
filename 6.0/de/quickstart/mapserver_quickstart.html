@@ -85,8 +85,8 @@
       <div class="documentwrapper">
           <div class="body">
             
-  <a class="reference external image-reference" href="http://mapserver.org/"><img alt="Project logo" class="align-right" src="../../_images/logo-mapserver-new3.png" style="width: 245.05px; height: 65.0px;" /></a>
-<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project3.png" style="width: 150.0px; height: 53.0px;" /></a>
+  <a class="reference external image-reference" href="http://mapserver.org/"><img alt="Project logo" class="align-right" src="../../_images/logo-mapserver-new.png" style="width: 245.05px; height: 65.0px;" /></a>
+<a class="reference external image-reference" href="http://www.osgeo.org"><img alt="OSGeo Project" class="align-right" src="../../_images/OSGeo_project.png" style="width: 150.0px; height: 53.0px;" /></a>
 <div class="section" id="mapserver-quickstart">
 <h1>MapServer Quickstart<a class="headerlink" href="#mapserver-quickstart" title="Permalink to this headline">¶</a></h1>
 <p>MapServer ist eine <a class="reference external" href="http://www.opensource.org">Open Source</a> serverbasierte Anwendung, mit der geografische Kartenbilder und Vektordaten im Internet mittels <a class="reference external" href="http://www.opengeospatial.org/standards">OGC standards</a> wie etwa <a class="reference external" href="http://www.opengeospatial.org/standards/wms">WMS</a> und <a class="reference external" href="http://www.opengeospatial.org/standards/wfs">WFS</a> veröffentlicht werden können.</p>
@@ -197,7 +197,7 @@ END</pre>
 </div>
 <p>Was bedeutet das Obige ? Einfach gesagt, es ist ein <a class="reference external" href="http://www.opengeospatial.org/standards/wms">Web Map Service (WMS)</a> <strong>GetMap</strong> Request, der dem mapserver sagt, er soll den angegebenen mapfile verwenden, um bestimmte Karten als PNG Bild mit festgelegten Eigenschaften wie Bildgröße, Ausdehnung, Projektion, etc.* darzustellen.  Alle Karten im &#8220;<em>&amp;LAYERS=...</em>&#8221; Bereich, die <em>STATUS ON</em> oder <em>STATUS DEFAULT</em> im mapfile haben, werden nun dargestellt. Das Ergebnis sollte so aussehen:</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/mapserver_map1.png"><img alt="../../_images/mapserver_map1.png" src="../../_images/mapserver_map1.png" style="width: 560.0px; height: 420.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_map.png"><img alt="../../_images/mapserver_map.png" src="../../_images/mapserver_map.png" style="width: 560.0px; height: 420.0px;" /></a>
 </div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -229,7 +229,7 @@ END</pre>
 </div>
 <p>Das Bild, das nun vom MapServer dargestellt wird sieht aus wie das vorherige, nur mit dem zusätzlichen neuen lake Layer:</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes1.png"><img alt="../../_images/mapserver_lakes1.png" src="../../_images/mapserver_lakes1.png" style="width: 560.0px; height: 420.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes.png"><img alt="../../_images/mapserver_lakes.png" src="../../_images/mapserver_lakes.png" style="width: 560.0px; height: 420.0px;" /></a>
 </div></blockquote>
 </div>
 <div class="section" id="darstellung-eines-layers-anpassen-mit-mapfile-konfigurationen">
@@ -264,7 +264,7 @@ END</pre>
 <p>Im Grunde sagt es, das Elemente mit der &#8220;ScaleRank&#8221;-Eigenschaft gleich &#8220;0&#8221; oder &#8220;1&#8221; mit einem schwarzen Umriss gezeichnet werden sollen. CLASS-Objekte werden immer von oben nach unten für jede Funktion gelesen. Wenn ein Objekt mit der &#8220;EXPRESSION&#8221; in einer Klasse übereinstimmt, wird diese Klasse verwendet, um das Objekt darzustellen. Wenn das Objekt nicht mit einer Klasse übereinstimmt, wird es anhand der nächsten Klasse überprüft. Wenn ein Objekt mit keiner Klasse übereinstimmt, und die letzte Klasse in einem LAYER-Objekt keine &#8220;EXPRESSION&#8221; enthält, dann wird diese Klasse als Standard benutzt. Das LAYER-Objekt &#8220;CLASSITEM&#8221; teilt MapServer mit, welches Attribut bei der Auswertung von EXPRESSIONs benutzt werden soll.</p>
 <p>Das Ergebnis dieser Ergänzung bewirkt, dass große Seen mit einem schwarzen Umriss gezeichnet werden:</p>
 <blockquote>
-<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes_scalerank1.png"><img alt="../../_images/mapserver_lakes_scalerank1.png" src="../../_images/mapserver_lakes_scalerank1.png" style="width: 560.0px; height: 420.0px;" /></a>
+<div><a class="reference internal image-reference" href="../../_images/mapserver_lakes_scalerank.png"><img alt="../../_images/mapserver_lakes_scalerank.png" src="../../_images/mapserver_lakes_scalerank.png" style="width: 560.0px; height: 420.0px;" /></a>
 </div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
