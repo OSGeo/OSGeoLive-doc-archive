@@ -13,8 +13,8 @@ import os
 from shutil import copyfile
 from pathlib import Path
 
-def create_image_copy(fn):
 
+def create_image_copy(fn):
     try:
         with open(fn, "r") as f:
             image_file = f.read()
@@ -26,13 +26,14 @@ def create_image_copy(fn):
             copyfile(src, fn)
             print("Copying {}".format(src))
     except (UnicodeDecodeError, ValueError):
-        pass # is an image or binary file
+        pass  # is an image or binary file
         # ValueError: stat: embedded null character in path
     except AssertionError:
         print("{} failed".format(fn))
-    except:
+    except Exception:
         print("Unknown error for {}".format(fn))
         raise
+
 
 folders = [
     r"D:\GitHub\OSGeoLive-doc\6.0\_images",
@@ -44,11 +45,11 @@ folders = [
     r"D:\GitHub\OSGeoLive-doc\9.0\_images",
     r"D:\GitHub\OSGeoLive-doc\9.5\_images",
     r"D:\GitHub\OSGeoLive-doc\10.0\_images",
-    r"D:\GitHub\OSGeoLive-doc\10.5\_images"
+    r"D:\GitHub\OSGeoLive-doc\10.5\_images",
 ]
 
 for fld in folders:
-    for fn in Path(fld).rglob('*.*'):
+    for fn in Path(fld).rglob("*.*"):
         create_image_copy(fn)
 
 print("Done!")
