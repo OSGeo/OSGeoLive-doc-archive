@@ -23,10 +23,10 @@ In the future new releases could be automatically added to the archive via GitHu
 From the email chain at https://lists.osgeo.org/pipermail/osgeolive/2019-December/014520.html - Cameron Shorter
 writes there are no docs for v1 of OSGeo Live:
 
-> Version 1.0 was effectively a test run of OSGeoLive (called the Live DVD at the time). 
-> Our aim was to have OSGeoLive ready for FOSS4G 2009 in Australia, and we had an 
-> early version ready for FOSS4G 2008 in South Africa.
-> While I can't remember for sure, I don't think had developed documentation for the 1.0 release.
+  Version 1.0 was effectively a test run of OSGeoLive (called the Live DVD at the time). 
+  Our aim was to have OSGeoLive ready for FOSS4G 2009 in Australia, and we had an 
+  early version ready for FOSS4G 2008 in South Africa.
+  While I can't remember for sure, I don't think had developed documentation for the 1.0 release.
 
 Extraction Process
 ------------------
@@ -44,9 +44,13 @@ From v9.0 onwards ``casper/filesystem.squashfs`` was extracted using 7Zip and th
 Image Duplication
 -----------------
 
-The repository size is ~10GB due to many duplicate images. These were originally symlinks in the ISO
+The repository size was ~10GB due to many duplicate images. These were originally symlinks in the ISO
 files, but do not work correctly in git. A Python script was written to simply make copies of these 
-files - see `scripts/symlinks.py`. 
+files - see ``scripts/symlinks.py``. 
+
+Due to limitations on publishing the site using GitHub Actions (the runner VMs only allowed 10GB of content)
+a second script was written to remove the duplicates and update the HTML links - see ``scripts/fix_images``.
+This reduced the size of the repo by 50% (less than 5GB).
 
 Archive Compilation
 -------------------
