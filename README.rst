@@ -13,7 +13,8 @@ around.
 General Notes
 -------------
 
-This branch contains all documentation releases of OSGeoLive_. These are published to https://live-archive.osgeo.org/
+This branch contains all documentation releases of OSGeoLive_. These are published to https://live-archive.osgeo.org/. The OSGeoLive releases themselves can be 
+downloaded from http://download.osgeo.org/livedvd/releases/. 
 
 The archive is stored in the ``gh-pages`` branch of the ``OSGeoLive-doc`` repository. While the overall size of the repository is greatly increased ``git pull`` will
 only download this branch if explicitly requested. 
